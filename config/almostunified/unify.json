@@ -2,9 +2,10 @@
   "modPriorities": [
     "minecraft",
     "create",
-    "embers",
+    "eidolon",
     "immersiveengineering",
-    "mekanism"
+    "mekanism",
+    "embers"
   ],
   "stoneStrata": [
     "stone",
