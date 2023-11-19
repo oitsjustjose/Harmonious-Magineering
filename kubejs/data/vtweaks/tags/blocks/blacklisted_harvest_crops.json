@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:sweet_berry_bush",
+    "minecraft:mangrove_propagule",
+    "minecraft:bamboo",
+    "farmersdelight:tomatoes"
+  ]
+}
