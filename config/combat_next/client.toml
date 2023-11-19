@@ -1,0 +1,63 @@
+
+# This category holds configs that affect shield combat.
+["Shield Combat Config Options"]
+	#Toggles crouching causing activation of any shield present in the offhand.
+	#Note: Must be on solid ground in order to do so.
+	#For vanilla, this value is false.
+	#
+	shield_crouch = true
+	#Adjusts the status of the Shield Indicator.
+	#A value of 0 means the Shield Indicator will be turned off.
+	#A value of 1 means the Shield Indicator will render with the Crosshair.
+	#A value of 2 means the Shield Indicator will render with the Hotbar.
+	#For vanilla, this value is 0.
+	#
+	#Range: 0 ~ 2
+	shield_indicator_status = 1
+	#Adjusts the vertical offset of the Crosshair Shield Indicator, in pixels.
+	#This will be subtracted from 1/2 of the screen's width.
+	#Higher values will move the Crosshair Shield Indicator left on the screen.
+	#For vanilla, this value is 8 (1/2 the Crosshair Shield Indicator's texture width of 16).
+	#
+	#Range: -8000 ~ 8000
+	shield_indicator_crosshair_offset_x = 8
+	#Adjusts the vertical offset of the Crosshair Shield Indicator, in pixels.
+	#This will be added to 1/2 of the screen's height.
+	#Higher values will move the Crosshair Shield Indicator down on the screen.
+	#For vanilla, this value is 9 (The Crosshair Shield Indicator's texture height of 16 - 1/2 the Crosshair's texture height of 15).
+	#
+	#Range: -8000 ~ 8000
+	shield_indicator_crosshair_offset_y = 9
+	#Adjusts the horizontal offset of the Hotbar Shield Indicator when the Main Hand is Right, in pixels.
+	#This will be added to 1/2 of the screen's width.
+	#Higher values will move the Hotbar Shield Indicator right on the screen.
+	#For vanilla, this value is 115 (1/2 the Hotbar's texture width of 192 + 1/2 the Hotbar Attack Indicator's texture width of 18 + 6).
+	#
+	#Range: -8000 ~ 8000
+	shield_indicator_hotbar_right_offset_x = 115
+	#Adjusts the horizontal offset of the Hotbar Shield Indicator when the Main Hand is Left, in pixels.
+	#This will be subtracted from 1/2 of the screen's width.
+	#Higher values will move the Hotbar Shield Indicator left on the screen.
+	#For vanilla, this value is 131 (1/2 the Hotbar's texture width of 192 + 1/2 the Hotbar Attack Indicator's texture width of 18 + 22).
+	#
+	#Range: -8000 ~ 8000
+	shield_indicator_hotbar_left_offset_x = 131
+	#Adjusts the vertical offset of the Hotbar Shield Indicator, in pixels.
+	#This will be subtracted from the screen's height.
+	#Higher values will move the Hotbar Shield Indicator up on the screen.
+	#For vanilla, this value is 20 (The Hotbar Shield Indicator's texture width of 18 + 2).
+	#
+	#Range: 20 ~ 8000
+	shield_indicator_hotbar_offset_y = 20
+
+# This category holds configs that affect client animations.
+["Animation Config Options"]
+	#Determines whether vanilla or CTS arm height animation will be used after attacks.
+	#For vanilla, this value is false.
+	#
+	arm_height_anim = true
+	#Determines whether the arm will raise up to the charged attack value.
+	#For vanilla, this value is false.
+	#
+	arm_height_raises_to_charged = true
+

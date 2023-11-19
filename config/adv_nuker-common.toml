@@ -1,0 +1,5 @@
+nuke_all = false
+nuke_recipes = true
+nuke_mods = []
+whitelist_keywords = ["bumblezone:root"]
+

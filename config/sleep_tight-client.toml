@@ -1,0 +1,47 @@
+
+[hammock]
+	#Completely turns off the animation
+	animation = true
+	#Oscillation frequency of a hammock (oscillations /sec). Exact one will match this on small angles and will increase slightly on big one like a real pendulum
+	#Range: 0.0 ~ 2.0
+	oscillation_frequency = 0.25
+	#Maximum angle a hammock can reach
+	#Range: 0.0 ~ 360.0
+	max_angle = 100.0
+	#Minimum angle a hammock can reach
+	#Range: 0.0 ~ 360.0
+	min_angle = 5.0
+	#Hammock damping factor. Slows a hammock over time
+	#Range: 0.0 ~ 10.0
+	damping = 0.2
+	#Intensity of velocity increment that is applied when controlling a hammock
+	#Range: 0.0 ~ 10.0
+	swing_force = 0.008
+	#Camera roll intensity when swinging on a hammock. Set to 0 to turn it off entirely
+	#Range: 0.0 ~ 1.0
+	camera_roll_intensity = 1.0
+	#Swinging too much on a hammock will make you fall. Disable to do a barrel roll
+	hammock_fall = true
+
+[dream_essence]
+	#How subtle the effect will be essentially. Set to one for bring fancy particles
+	#Range: 0.0 ~ 1.0
+	particle_alpha = 0.1
+	#Affects the plume height. lower to make the plume shorter
+	#Range: 1 ~ 10000
+	particle_lifetime = 380
+	#Makes particles spawn more often. Set to 0 to disable
+	#Range: 0.0 ~ 1.0
+	particle_spawn_chance = 0.15
+	24h_time_format = true
+
+[misc]
+	#Show insomnia missing time when laying on a bed
+	show_insomnia_timer = false
+	#Show insomnia cooldown as a small bed icon above crossair when aiming at a bed or in one
+	crossair_insomnia_cooldown = true
+	#Displays current time when sleeping
+	show_time_when_sleeping = true
+	#Makes villagers close their eyes when sleeping
+	sleeping_villagers_eyes = true
+

@@ -1,0 +1,10 @@
+{
+  "value": {
+    "hud": 2,
+    "chat": 0
+  },
+  "toggle": {
+    "support": true,
+    "sync": false
+  }
+}

@@ -1,0 +1,50 @@
+
+
+
+
+profile Saved activate HOT5
+	HOT1
+		"minecraft:diamond_sword" -> "Enchantments" : [{id:"minecraft:sharpness",lvl:3},{id:"minecraft:looting",lvl:2},{id:"minecraft:unbreaking",lvl:3},{id:"minecraft:mending",lvl:1}]
+	HOT2
+		"minecraft:diamond_pickaxe" -> "Enchantments" : [{id:"minecraft:efficiency",lvl:4},{id:"minecraft:unbreaking",lvl:3},{id:"minecraft:fortune",lvl:3},{id:"minecraft:mending",lvl:1}]
+	HOT3
+		"minecraft:diamond_axe" -> "Enchantments" : [{id:"minecraft:unbreaking",lvl:3},{id:"minecraft:efficiency",lvl:3},{id:"minecraft:mending",lvl:1}]
+	HOT4
+		"minecraft:torch"
+	OFFHAND
+		"farmersdelight:bacon_sandwich"
+	HEAD
+		"minecraft:diamond_helmet" -> "Enchantments" : [{id:"minecraft:unbreaking",lvl:3},{id:"feathers:lightweight",lvl:3},{id:"minecraft:protection",lvl:4},{id:"minecraft:respiration",lvl:2},{id:"minecraft:mending",lvl:1}]
+	CHEST
+		"minecraft:diamond_chestplate" -> "Enchantments" : [{id:"minecraft:protection",lvl:4},{id:"minecraft:unbreaking",lvl:3},{id:"minecraft:mending",lvl:1}]
+	LEGS
+		"minecraft:diamond_leggings" -> "Enchantments" : [{id:"feathers:lightweight",lvl:3},{id:"minecraft:unbreaking",lvl:3},{id:"minecraft:protection",lvl:4},{id:"minecraft:mending",lvl:1}]
+	FEET
+		"minecraft:diamond_boots" -> "Enchantments" : [{id:"minecraft:depth_strider",lvl:3},{id:"minecraft:unbreaking",lvl:3},{id:"feathers:lightweight",lvl:3},{id:"minecraft:protection",lvl:3},{id:"minecraft:feather_falling",lvl:4},{id:"minecraft:mending",lvl:1}]
+
+profile Saved activate HOT9
+	HOT1
+		"minecraft:netherite_sword" -> "Enchantments" : [{id:"minecraft:sharpness",lvl:5},{id:"minecraft:looting",lvl:3},{id:"minecraft:unbreaking",lvl:3},{id:"minecraft:mending",lvl:1}]
+	HOT2
+		"minecraft:netherite_pickaxe" -> "Enchantments" : [{id:"minecraft:unbreaking",lvl:3},{id:"minecraft:efficiency",lvl:3},{id:"minecraft:silk_touch",lvl:1},{id:"minecraft:mending",lvl:1}]
+	HOT3
+		"minecraft:netherite_axe" -> "Enchantments" : [{id:"minecraft:efficiency",lvl:3},{id:"minecraft:unbreaking",lvl:3},{id:"minecraft:mending",lvl:1}]
+	HOT4
+		"minecraft:firework_rocket"
+	HOT5
+		"minecraft:coal"
+	HOT6
+		"minecraft:bone"
+	HOT9
+		"create:layered_andesite"
+	OFFHAND
+		"farmersdelight:cabbage_rolls"
+	HEAD
+		"minecraft:diamond_helmet" -> "Enchantments" : [{id:"minecraft:unbreaking",lvl:3},{id:"feathers:lightweight",lvl:3},{id:"minecraft:protection",lvl:4},{id:"minecraft:respiration",lvl:2},{id:"minecraft:mending",lvl:1}]
+	CHEST
+		"minecraft:diamond_chestplate" -> "Enchantments" : [{id:"minecraft:protection",lvl:4},{id:"minecraft:unbreaking",lvl:3},{id:"minecraft:mending",lvl:1}]
+	LEGS
+		"minecraft:diamond_leggings" -> "Enchantments" : [{id:"feathers:lightweight",lvl:3},{id:"minecraft:unbreaking",lvl:3},{id:"minecraft:protection",lvl:4},{id:"minecraft:mending",lvl:1}]
+	FEET
+		"minecraft:diamond_boots" -> "Enchantments" : [{id:"minecraft:depth_strider",lvl:3},{id:"minecraft:unbreaking",lvl:3},{id:"feathers:lightweight",lvl:3},{id:"minecraft:protection",lvl:3},{id:"minecraft:feather_falling",lvl:4},{id:"minecraft:mending",lvl:1}]
+
