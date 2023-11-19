@@ -542,6 +542,7 @@
 
 			[light_sources.settings.entities.spawn]
 				hamster = true
+				tuna = true
 
 			[light_sources.settings.entities.eidolon]
 				wraith = true
@@ -563,6 +564,14 @@
 			[light_sources.settings.entities.productivebees]
 				configurable_bee = true
 				bumble_bee = true
+				chocolate_mining_bee = true
+				yellow_black_carpenter_bee = true
+				digger_bee = true
+				ashy_mining_bee = true
+				green_carpenter_bee = true
+				resin_bee = true
+				mason_bee = true
+				leafcutter_bee = true
 
 		[light_sources.settings.block_entities]
 
