@@ -3,8 +3,8 @@
     "minecraft",
     "create",
     "eidolon",
-    "immersiveengineering",
     "mekanism",
+    "immersiveengineering",
     "embers"
   ],
   "stoneStrata": [
@@ -86,7 +86,9 @@
   "blockTagInheritanceMode": "ALLOW",
   "blockTagInheritance": {},
   "ignoredTags": [
-    "forge:buckets/honey"
+    "forge:buckets/honey",
+    "forge:ores/silver",
+    "forge:ores/lead"
   ],
   "ignoredItems": [],
   "ignoredRecipeTypes": [

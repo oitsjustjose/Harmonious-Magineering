@@ -543,6 +543,8 @@
 			[light_sources.settings.entities.spawn]
 				hamster = true
 				tuna = true
+				snail = true
+				seahorse = true
 
 			[light_sources.settings.entities.eidolon]
 				wraith = true
@@ -572,6 +574,7 @@
 				resin_bee = true
 				mason_bee = true
 				leafcutter_bee = true
+				nomad_bee = true
 
 		[light_sources.settings.block_entities]
 
