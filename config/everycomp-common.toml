@@ -139,12 +139,6 @@
 		[types.leaves_type.eidolon]
 			illwood = true
 
-	[types.cake]
-
-		[types.cake.createaddition]
-			chocolate_cake = true
-			honey_cake = true
-
 [entries]
 
 	[entries.wood_type]
