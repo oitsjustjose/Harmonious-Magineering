@@ -49,6 +49,7 @@ const Crops = [
   'minecraft:mangrove_propagule',
   'minecraft:bamboo',
   'farmersdelight:tomatoes',
+  'ecologics:prickly_pear',
 ];
 
 ServerEvents.tags('block', event => {
