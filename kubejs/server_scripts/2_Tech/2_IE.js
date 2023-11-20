@@ -13,12 +13,12 @@ ServerEvents.recipes(event => {
         {item: 'minecraft:clay_ball'},
         {item: 'minecraft:clay_ball'},
         {item: 'minecraft:clay_ball'},
+        {item: 'minecraft:clay_ball'},
         {item: 'supplementaries:ash_brick'},
         {item: 'supplementaries:ash_brick'},
         {item: 'supplementaries:ash_brick'},
-        {tag: 'forge:nuggets/steel'},
-        {tag: 'forge:nuggets/steel'},
-        {tag: 'forge:nuggets/steel'},
+        {item: 'supplementaries:ash_brick'},
+        {item: mod('component_steel')},
         {tag: 'forge:sandstone'},
       ],
       results: [{item: mod('cokebrick'), count: 3}],
@@ -31,12 +31,12 @@ ServerEvents.recipes(event => {
         {item: 'minecraft:nether_brick'},
         {item: 'minecraft:nether_brick'},
         {item: 'minecraft:nether_brick'},
+        {item: 'minecraft:nether_brick'},
         {item: 'embers:ember_crystal'},
         {item: 'embers:ember_crystal'},
         {item: 'embers:ember_crystal'},
-        {tag: 'forge:nuggets/steel'},
-        {tag: 'forge:nuggets/steel'},
-        {tag: 'forge:nuggets/steel'},
+        {item: 'embers:ember_crystal'},
+        {item: mod('component_steel')},
         {item: 'minecraft:magma_block'},
       ],
       results: [{item: mod('blastbrick'), count: 3}],
@@ -55,6 +55,7 @@ ServerEvents.recipes(event => {
 
   event.remove({id: mod('alloysmelter/brass')});
   event.remove({id: mod('alloysmelter/bronze')});
+  event.replaceInput({output: mod('hammer')}, '#forge:ingots/iron', '#forge:ingots/steel');
 
   Steel();
 });

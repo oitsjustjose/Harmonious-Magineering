@@ -2,7 +2,7 @@ ServerEvents.recipes(event => {
   // Gate the Tinker Hammer behind Hellforged Ingots from BloodMagic
   event.remove({output: 'embers:tinker_hammer'});
   event.shaped('embers:tinker_hammer', ['LDL', 'LSL', ' S '], {
-    L: '#forge:ingots/lead',
+    L: '#forge:ingots/dark_steel',
     D: '#forge:ingots/hellforged',
     S: '#forge:rods/wooden',
   });
