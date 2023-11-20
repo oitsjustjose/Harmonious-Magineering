@@ -56,7 +56,7 @@
 		#large tin vein Generation Settings.
 		[world_generation.tin.large]
 			#Determines if large tin veins should be added to world generation. Note: Requires generating tin ore to be enabled.
-			shouldGenerate = true
+			shouldGenerate = false
 			#Chance that large tin veins generates in a chunk.
 			#Range: 1 ~ 256
 			perChunk = 12
@@ -97,7 +97,7 @@
 	#Generation Settings for osmium ore.
 	[world_generation.osmium]
 		#Determines if osmium ore should be added to world generation.
-		shouldGenerate = false
+		shouldGenerate = true
 
 		#upper osmium vein Generation Settings.
 		[world_generation.osmium.upper]
@@ -105,7 +105,7 @@
 			shouldGenerate = true
 			#Chance that upper osmium veins generates in a chunk.
 			#Range: 1 ~ 256
-			perChunk = 65
+			perChunk = 6
 			#Maximum number of blocks in a upper osmium vein.
 			#Range: 1 ~ 64
 			maxVeinSize = 7
