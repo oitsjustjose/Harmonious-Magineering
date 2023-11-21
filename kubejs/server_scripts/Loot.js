@@ -57,7 +57,8 @@ LootJS.modifiers(event => {
       event.addEntityLootModifier(mob).modifyLoot(ItemFilter.ALWAYS_TRUE, stack => {
         if (stack.getId() === 'minecraft:leather') {
           stack.setCount(stack.getCount() * 2);
-        } else if (stack.is()) return stack;
+        }
+        return stack;
       });
     });
 
