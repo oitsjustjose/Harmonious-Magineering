@@ -95,13 +95,6 @@
     "crafting_monitor": true,
     "part_name": true
   },
-  "productivebees": {
-    "solitary_nest": true,
-    "jar": true,
-    "canvas_beehive": true,
-    "bee_attributes": true,
-    "productive_bee": true
-  },
   "modularrouters": {
     "router": true
   },
