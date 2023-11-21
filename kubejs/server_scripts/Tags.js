@@ -67,5 +67,27 @@ ServerEvents.tags('item', event => {
 });
 
 ServerEvents.tags('entity_type', event => {
+  // Creepies are easy enough thanks to the existing tag
   event.add('forge:creepers', '#creeperoverhaul:creepers');
+
+  // Endermen don't have a similar tag though :D
+  event.add('forge:endermen', 'minecraft:enderman');
+  event.add('forge:endermen', 'endermanoverhaul:badlands_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:cave_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:crimson_forest_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:dark_oak_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:desert_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:end_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:end_islands_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:flower_fields_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:ice_spikes_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:mushroom_fields_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:nether_wastes_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:ocean_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:savanna_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:snowy_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:soulsand_valley_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:swamp_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:warped_forest_enderman');
+  event.add('forge:endermen', 'endermanoverhaul:windswept_hills_enderman');
 });
