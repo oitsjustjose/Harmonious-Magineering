@@ -111,6 +111,9 @@
     "energy": true,
     "tooltip_renderer": true
   },
+  "delightful": {
+    "crop_progress": true
+  },
   "create": {
     "filter": true,
     "backtank_capacity": true,
