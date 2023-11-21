@@ -1,56 +1,31 @@
 // Typing immersiveengineering over and over is annoying a.f.
-const mod = id => `immersiveengineering:${id}`;
 
 ServerEvents.recipes(event => {
+  const mod = id => `immersiveengineering:${id}`;
+
   const Steel = () => {
     event.remove({output: mod('cokebrick')});
     event.remove({output: mod('blastbrick')});
 
-    event.custom({
-      type: 'create:compacting',
-      heatRequirement: 'superheated',
-      ingredients: [
-        {item: 'minecraft:clay_ball'},
-        {item: 'minecraft:clay_ball'},
-        {item: 'minecraft:clay_ball'},
-        {item: 'minecraft:clay_ball'},
-        {item: 'supplementaries:ash_brick'},
-        {item: 'supplementaries:ash_brick'},
-        {item: 'supplementaries:ash_brick'},
-        {item: 'supplementaries:ash_brick'},
-        {item: mod('component_steel')},
-        {tag: 'forge:sandstone'},
-      ],
-      results: [{item: mod('cokebrick'), count: 3}],
-    });
+    event.recipes.create
+      .compacting(Item.of(mod('cokebrick'), 3), [
+        Item.of('minecraft:clay_ball', 4),
+        Item.of('supplementaries:ash_brick', 4),
+        Item.of(mod('component_steel'), 1),
+      ])
+      .superheated();
 
-    event.custom({
-      type: 'create:compacting',
-      heatRequirement: 'superheated',
-      ingredients: [
-        {item: 'minecraft:nether_brick'},
-        {item: 'minecraft:nether_brick'},
-        {item: 'minecraft:nether_brick'},
-        {item: 'minecraft:nether_brick'},
-        {item: 'embers:ember_crystal'},
-        {item: 'embers:ember_crystal'},
-        {item: 'embers:ember_crystal'},
-        {item: 'embers:ember_crystal'},
-        {item: mod('component_steel')},
-        {item: 'minecraft:magma_block'},
-      ],
-      results: [{item: mod('blastbrick'), count: 3}],
-    });
+    event.recipes.create
+      .compacting(Item.of(mod('blastbrick'), 3), [
+        Item.of('minecraft:nether_brick', 4),
+        Item.of('embers:ember_crystal', 4),
+        Item.of(mod('component_steel'), 1),
+      ])
+      .superheated();
 
-    event.custom({
-      type: 'create:mixing',
-      heatRequirement: 'superheated',
-      ingredients: [
-        {tag: 'forge:nuggets/iron'},
-        [{item: 'minecraft:charcoal'}, {tag: 'forge:dusts/ash'}],
-      ],
-      results: [{item: 'mekanism:nugget_steel', count: 1}],
-    });
+    event.recipes.create
+      .mixing('mekanism:nugget_steel', ['#forge:nuggets/iron', '#forge:dusts/ash'])
+      .superheated();
   };
 
   event.remove({id: mod('alloysmelter/brass')});

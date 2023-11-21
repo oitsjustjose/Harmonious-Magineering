@@ -44,6 +44,8 @@ LootJS.modifiers(event => {
       'minecraft:horse',
       'minecraft:mooshroom',
       'minecraft:mule',
+      'minecraft:llama',
+      'minecraft:trader_llama',
     ].forEach(mob => {
       event.addEntityLootModifier(mob).modifyLoot(ItemFilter.ALWAYS_TRUE, stack => {
         if (stack.getId() === 'minecraft:leather') {

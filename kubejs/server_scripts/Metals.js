@@ -47,16 +47,16 @@ ServerEvents.recipes(event => {
   };
 
   const PlateCompat = () => {
+    // Remove recipes that let you plate/crush metals with the IE hammer
+    event.remove({input: 'immersiveengineering:hammer', output: '#forge:dusts'});
+    event.remove({input: 'immersiveengineering:hammer', output: '#forge:plates'});
+
     /**
      * @param {Internal.Ingredient} input
      * @param {Internal.Ingredient} output
      */
     const Create = (input, output) => {
-      event.custom({
-        type: 'create:pressing',
-        ingredients: [input.toJson()],
-        results: [output.toJson()],
-      });
+      event.recipes.create.pressing(output, input);
     };
 
     /**
