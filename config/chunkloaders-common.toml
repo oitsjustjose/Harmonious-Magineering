@@ -5,7 +5,7 @@
 
     # After how many minutes of offline time should players' chunk loaders be disabled? Use -1 to disable the inactivity timeout.
     # Allowed range: -1 ~ 525600 - Default: 10080
-    inactivityTimeout = 10080
+    inactivityTimeout = -1
 
     # Chunk loaders from before version 1.2.0 are not bound to a player. Should these chunk loaders' loaded chunks stay loaded?
     # Allowed values: true, false - Default: true
@@ -26,11 +26,11 @@
 
     # In what radius should the Advanced Chunk Loader be able to load chunks?
     # Allowed range: 1 ~ 6 - Default: 3
-    advancedChunkLoaderRadius = 3
+    advancedChunkLoaderRadius = 4
 
     # In what radius should the Ultimate Chunk Loader be able to load chunks?
     # Allowed range: 1 ~ 6 - Default: 4
-    ultimateChunkLoaderRadius = 4
+    ultimateChunkLoaderRadius = 6
 
     # Should chunk loaders do random ticks in loaded chunks?
     # Allowed values: true, false - Default: true

@@ -7,7 +7,9 @@
       "entity": [
         "minecraft:skeleton",
         "minecraft:skeleton_horse",
-        "minecraft:stray"
+        "minecraft:stray",
+        "eidolon:giant_skeleton",
+        "eidolon:wraith"
       ],
       "particle": {
         "type": "visuality:bone"
@@ -20,7 +22,16 @@
       }
     },
     {
-      "entity": "minecraft:chicken",
+      "entity": [
+        "minecraft:chicken",
+        "naturalist:bluejay",
+        "naturalist:canary",
+        "naturalist:duck",
+        "naturalist:finch",
+        "naturalist:robin",
+        "naturalist:sparrow",
+        "naturalist:vulture"
+      ],
       "particle": {
         "type": "visuality:feather"
       }

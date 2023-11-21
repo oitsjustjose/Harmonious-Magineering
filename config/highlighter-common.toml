@@ -8,9 +8,9 @@
 		# If new item markers should be cleared when the item tooltip is displayed.
 		clear_on_hover = true
 		# If icons should match the color of items names (as shown in tooltips).  Otherwise icons will all be gold.
-		item_name_color = false
+		item_name_color = true
 		# If new item markers should show on the hotbar.
-		show_on_hotbar = true
+		show_on_hotbar = false
 		# The position of new item markers.
 		#Allowed Values: UpperLeft, UpperRight, LowerLeft, LowerRight
 		icon_position = "UpperLeft"

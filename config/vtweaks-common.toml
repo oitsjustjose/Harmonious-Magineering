@@ -54,7 +54,7 @@
 		peacefulSurfaceMinY = 48
 		#Peaceful Surface will only apply on nights whose moon phases are contained in this list (by default, all nights except for New Moons are going to be peaceful).
 		#Options can include: FULL, WANING_GIBBOUS, LAST_QUARTER, WANING_CRESCENT, NEW, WAXING_CRESCENT, FIRST_QUARTER, WAXING_GIBBOUS
-		moonPhasesToApplyTo = ["NEW", "WANING_GIBBOUS", "LAST_QUARTER", "WANING_CRESCENT", "WAXING_CRESCENT", "FIRST_QUARTER", "WAXING_GIBBOUS"]
+		moonPhasesToApplyTo = ["FULL", "WANING_GIBBOUS", "WANING_CRESCENT", "WAXING_CRESCENT", "WAXING_GIBBOUS"]
 
 [block]
 	#Trees fall down (like, actually not just like lumbering). Credit to Ternsip's impl (https://www.curseforge.com/minecraft/mc-mods/chopdown)

@@ -20,7 +20,11 @@
     {
       "block": [
         "minecraft:diamond_ore",
-        "minecraft:deepslate_diamond_ore"
+        "minecraft:deepslate_diamond_ore",
+        "rftoolsbase:dimensionalshard_overworld",
+        "rftoolsbase:dimensionalshard_nether",
+        "rftoolsbase:dimensionalshard_end",
+        "bloodmagic:dungeon_ore"
       ],
       "particle": {
         "type": "visuality:sparkle",
