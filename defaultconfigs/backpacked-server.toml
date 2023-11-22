@@ -1,0 +1,22 @@
+
+#Common configuration settings
+[common]
+	#If enabled, allows players to access the backpack of another player by interacting with the visible backpack on their back.
+	pickpocketBackpacks = true
+	#The maximum reach distance of a player to interact with another player's backpack.
+	pickpocketDistance = 2.0
+	#Allows every player to use any backpack cosmetic variant without needing to complete the challenges. Side note, any progress to a challenge will not be tracked while enabled.
+	unlockAllBackpacks = false
+	#Stops players from removing the backpack if it's not empty. This prevents players from carrying multiple backpacks.
+	lockBackpackIntoSlot = true
+	#When picking up a backpack (with items inside) off the ground, the item will automatically equip. Having this enabled may not be ideal for multiplayer servers.
+	autoEquipBackpackOnPickup = false
+	#The maximum angle at which another player's backpack can be accessed
+	pickpocketMaxRangeAngle = 80.0
+	#A list of items that are not allowed inside a backpack. Note: It is recommended to ban items that have an inventory as this will create large NBT data and potentially crash the server!
+	bannedItems = ["travelersbackpack:custom_travelers_backpack", "pinesbarrels:better_barrel",  "quark:backpack", "sophisticatedbackpacks:backpack", "sophisticatedbackpacks:iron_backpack", "sophisticatedbackpacks:gold_backpack", "sophisticatedbackpacks:diamond_backpack", "sophisticatedbackpacks:netherite_backpack", "improvedbackpacks:tiny_pocket", "improvedbackpacks:medium_pocket", "improvedbackpacks:large_pocket", "improvedbackpacks:white_backpack", "improvedbackpacks:orange_backpack", "improvedbackpacks:magenta_backpack", "improvedbackpacks:light_blue_backpack", "improvedbackpacks:yellow_backpack", "improvedbackpacks:lime_backpack", "improvedbackpacks:pink_backpack", "improvedbackpacks:gray_backpack", "improvedbackpacks:light_gray_backpack", "improvedbackpacks:cyan_backpack", "improvedbackpacks:purple_backpack", "improvedbackpacks:blue_backpack", "improvedbackpacks:brown_backpack", "improvedbackpacks:green_backpack", "improvedbackpacks:red_backpack", "improvedbackpacks:black_backpack", "immersiveengineering:toolbox", "mekanism:personal_chest"]
+	#When breaking a shelf, the placed backpack will also drops it's items into the world. This prevents players from carrying multiple backpacks
+	dropContentsFromShelf = true
+	#If enabled, prevents backpacks from being customised. This will remove the customise button from the backpack inventory
+	disableCustomisation = false
+
