@@ -297,13 +297,7 @@ ServerEvents.recipes(event => {
         for (let i = 0; i < curr.items.length; i++) {
           // If there isn't an equivalent item for this type (i.e. Embers doesn't add Lead Armor), skip it.
           if (!curr.items[i] || !next.items[i]) return;
-
-          event.smithing(
-            next.items[i].item,
-            next.items[i].material,
-            curr.items[i],
-            next.items[i].material
-          );
+          event.smithing(next.items[i].item, next.items[i].material, curr.items[i].item, next.items[i].material);
         }
       });
     });
