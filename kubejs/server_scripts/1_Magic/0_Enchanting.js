@@ -6,7 +6,7 @@
     - [x] Remove Vanilla Enchanting - the Soul Enchanter is VERY cool and should be used!!
       - [x]  Should also repurpose the Enchanting Table for that recipe
     - [x] Remove EnderIO's Enchanter -- see above statement!
-    - Tools never get destroyed
+    - TODO: Tools never get destroyed
  */
 LootJS.modifiers(event => {
   // Remove anything with Mending on it from *all* loot tables

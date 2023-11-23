@@ -34,7 +34,7 @@
 	halved_book_costs = true
 	#The additional cost in levels for each valid repair material an item is repaired with in an anvil.
 	#Range: > -2147483648
-	repair_with_material_unit_cost = 0
+	repair_with_material_unit_cost = 1
 	#Max cost of enchantment level allowed to be spent in an anvil. Every operation exceeding the limit will show as 'Too Expensive!' and will be disallowed.
 	#If set to '-1' the limit is disabled.
 	#Set to '40' enchantment levels in vanilla.
