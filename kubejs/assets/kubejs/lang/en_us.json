@@ -1,5 +1,6 @@
 {
   "tooltip.kubejs.shift": "[Press Shift]",
   "tooltip.kubejs.dark_steel_ingot": "Can be found in various chests while out exploring!",
-  "tooltip.kubejs.modid": "Added by %s"
+  "tooltip.kubejs.modid": "Added by %s",
+  "tooltip.kubejs.enchanting_disabled": "Vanilla Enchanting is Disabled! See the Soul Enchanter."
 }
