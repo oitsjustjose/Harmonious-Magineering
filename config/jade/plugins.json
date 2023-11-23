@@ -66,6 +66,14 @@
   "entangled": {
     "entangled_block_component": true
   },
+  "pneumaticcraft": {
+    "pneumatic": true,
+    "tube_module": true,
+    "entity": true,
+    "redstone": true,
+    "camo": true,
+    "semiblock": true
+  },
   "immersiveengineering": {
     "multiblock_icon": true
   },
