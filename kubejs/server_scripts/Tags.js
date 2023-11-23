@@ -44,13 +44,7 @@ const Ores = [
   'mekanism:lead_ore',
 ];
 
-const Crops = [
-  'minecraft:sweet_berry_bush',
-  'minecraft:mangrove_propagule',
-  'minecraft:bamboo',
-  'farmersdelight:tomatoes',
-  'ecologics:prickly_pear',
-];
+const Crops = ['minecraft:sweet_berry_bush', 'minecraft:mangrove_propagule', 'minecraft:bamboo', 'farmersdelight:tomatoes', 'ecologics:prickly_pear'];
 
 ServerEvents.tags('block', event => {
   RegionsUnexplored.logs.forEach(log => event.add('forge:stripped_logs', log));

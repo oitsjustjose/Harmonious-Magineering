@@ -1,21 +1,13 @@
 LootJS.modifiers(event => {
   const CustomSilverLead = () => {
-    event
-      .addBlockLootModifier('embers:lead_ore')
-      .replaceLoot('embers:raw_lead', 'eidolon:raw_lead', true);
-    event
-      .addBlockLootModifier('embers:deepslate_lead_ore')
-      .replaceLoot('embers:raw_lead', 'eidolon:raw_lead', true);
-    event
-      .addBlockLootModifier('embers:silver_ore')
-      .replaceLoot('embers:raw_silver', 'eidolon:raw_silver', true);
-    event
-      .addBlockLootModifier('embers:deepslate_silver_ore')
-      .replaceLoot('embers:raw_silver', 'eidolon:raw_silver', true);
+    event.addBlockLootModifier('embers:lead_ore').replaceLoot('embers:raw_lead', 'eidolon:raw_lead', true);
+    event.addBlockLootModifier('embers:deepslate_lead_ore').replaceLoot('embers:raw_lead', 'eidolon:raw_lead', true);
+    event.addBlockLootModifier('embers:silver_ore').replaceLoot('embers:raw_silver', 'eidolon:raw_silver', true);
+    event.addBlockLootModifier('embers:deepslate_silver_ore').replaceLoot('embers:raw_silver', 'eidolon:raw_silver', true);
   };
 
   const BoostDeepslateLoot = () => {
-    const Ores = [
+    [
       'create:deepslate_zinc_ore',
       'embers:deepslate_lead_ore',
       'embers:deepslate_silver_ore',
@@ -27,9 +19,7 @@ LootJS.modifiers(event => {
       'minecraft:deepslate_copper_ore',
       'minecraft:deepslate_gold_ore',
       'minecraft:deepslate_iron_ore',
-    ];
-
-    Ores.forEach(ore => {
+    ].forEach(ore => {
       event.addBlockLootModifier(ore).modifyLoot(ItemFilter.ALWAYS_TRUE, stack => {
         stack.setCount(stack.getCount() * 2);
         return stack;
@@ -93,9 +83,44 @@ LootJS.modifiers(event => {
   const Lootr = () => {
     // Replace the Lootr chest drop with Expanded Storage's
     ['lootr:lootr_chest', 'lootr:lootr_inventory', 'lootr:lootr_trapped_chest'].forEach(l => {
-      event
-        .addBlockLootModifier(l)
-        .replaceLoot('minecraft:chest', 'expandedstorage:wood_chest', true);
+      event.addBlockLootModifier(l).replaceLoot('minecraft:chest', 'expandedstorage:wood_chest', true);
+    });
+  };
+
+  const ModLoot = () => {
+    [
+      'enderio:dark_bimetal_gear',
+      'enderio:dark_steel_sword',
+      'enderio:energized_gear',
+      'enderio:iron_gear',
+      'enderio:stone_gear',
+      'enderio:vibrant_gear',
+      'enderio:wood_gear',
+      'pneumaticcraft:capacitor',
+      'pneumaticcraft:compressed_iron_boots',
+      'pneumaticcraft:compressed_iron_chestplate',
+      'pneumaticcraft:compressed_iron_helmet',
+      'pneumaticcraft:compressed_iron_leggings',
+      'pneumaticcraft:compressed_stone',
+      'pneumaticcraft:gun_ammo_ap',
+      'pneumaticcraft:gun_ammo_explosive',
+      'pneumaticcraft:gun_ammo_freezing',
+      'pneumaticcraft:gun_ammo_incendiary',
+      'pneumaticcraft:gun_ammo_weighted',
+      'pneumaticcraft:gun_ammo',
+      'pneumaticcraft:ingot_iron_compressed',
+      'pneumaticcraft:logistics_core',
+      'pneumaticcraft:micromissiles',
+      'pneumaticcraft:nuke_virus',
+      'pneumaticcraft:pneumatic_cylinder',
+      'pneumaticcraft:pressure_tube',
+      'pneumaticcraft:programming_puzzle',
+      'pneumaticcraft:spawner_agitator',
+      'pneumaticcraft:stop_worm',
+      'pneumaticcraft:transistor',
+      'pneumaticcraft:vortex_cannon',
+    ].forEach(x => {
+      event.addLootTableModifier(/.*/).removeLoot(x);
     });
   };
 
@@ -105,4 +130,5 @@ LootJS.modifiers(event => {
   BoostDeepslateLoot();
   BoostSomeMobDrops();
   Lootr();
+  ModLoot();
 });

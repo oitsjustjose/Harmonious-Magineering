@@ -98,11 +98,7 @@ const SilverAndLead = event => {
     event.replaceOutput({}, ore, 'embers:lead_ore');
   });
   // Deepslate Lead -> Embers Deepslate Lead
-  [
-    'immersiveengineering:deepslate_ore_lead',
-    'mekanism:deepslate_lead_ore',
-    'eidolon:deep_lead_ore',
-  ].forEach(ore => {
+  ['immersiveengineering:deepslate_ore_lead', 'mekanism:deepslate_lead_ore', 'eidolon:deep_lead_ore'].forEach(ore => {
     event.replaceInput({}, ore, 'embers:deepslate_lead_ore');
     event.replaceOutput({}, ore, 'embers:deepslate_lead_ore');
   });

@@ -23,9 +23,7 @@ ServerEvents.recipes(event => {
       ])
       .superheated();
 
-    event.recipes.create
-      .mixing('mekanism:nugget_steel', ['#forge:nuggets/iron', '#forge:dusts/ash'])
-      .superheated();
+    event.recipes.create.mixing('mekanism:nugget_steel', ['#forge:nuggets/iron', '#forge:dusts/ash']).superheated();
   };
 
   event.remove({id: mod('alloysmelter/brass')});

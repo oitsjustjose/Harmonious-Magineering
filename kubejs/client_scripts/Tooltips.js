@@ -13,4 +13,6 @@ ItemEvents.tooltip(event => {
       tooltips.add(Text.blue(Text.translate('tooltip.kubejs.modid', ModName)));
     }
   });
+
+  event.add('minecraft:enchanting_table', Text.red(Text.translate('tooltip.kubejs.enchanting_disabled')));
 });
