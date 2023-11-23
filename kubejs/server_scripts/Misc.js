@@ -212,18 +212,6 @@ ServerEvents.recipes(event => {
     Wash(Ingredient.of(AllButWhite('supplementaries', null, 'flag')), Ingredient.of('supplementaries:flag_white'));
   };
 
-  const Powah = () => {
-    event.custom({
-      type: 'powah:energizing',
-      ingredients: [{item: 'mekanism:raw_uranium'}],
-      energy: 500,
-      result: {
-        item: 'powah:uraninite',
-        count: 3,
-      },
-    });
-  };
-
   const Slabs = () => {
     [
       {slab: 'ae2:chiseled_quartz_slab', full: 'ae2:chiseled_quartz_block'},
@@ -601,7 +589,6 @@ ServerEvents.recipes(event => {
   Chunkloaders();
   Entangled();
   Handwashing();
-  Powah();
   Slabs();
   Storage();
   Supplementaries();

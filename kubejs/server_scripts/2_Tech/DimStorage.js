@@ -1,15 +1,15 @@
 ServerEvents.recipes(event => {
   event.remove({mod: 'dimstorage'});
 
-  event.shaped('dimstorage:dimensional_chest', ['SSS', 'ECE', 'SSS'], {
+  event.shaped('dimstorage:dimensional_chest', ['SSS', 'HCH', 'SSS'], {
     S: '#forge:ingots/steel',
-    E: 'powah:ender_core',
+    H: 'create_enchantment_industry:hyper_experience_bottle',
     C: 'minecraft:ender_chest',
   });
 
-  event.shaped('dimstorage:dimensional_tank', ['SSS', 'ETE', 'SSS'], {
+  event.shaped('dimstorage:dimensional_tank', ['SSS', 'HTH', 'SSS'], {
     S: '#forge:ingots/steel',
-    E: 'powah:ender_core',
+    H: 'create_enchantment_industry:hyper_experience_bottle',
     T: ['mekanism:basic_fluid_tank', 'create:fluid_tank', 'enderio:pressurized_fluid_tank'],
   });
 
