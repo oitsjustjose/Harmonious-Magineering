@@ -9,214 +9,222 @@
 	#Don't touch unless you are told to
 	debug_packet = false
 
-[types]
+	[general.tooltips]
+		#Enabled tooltips showing which mod an EC item is from
+		mod_origin_enabled = true
+		#Enabled tooltips showing which block type an EC item is made from
+		block_type_ednabld = true
+		#Only show on advanced settings
+		show_on_advanced_tooltips = false
 
-	[types.wood_type]
+	[general.types]
 
-		[types.wood_type.aether]
-			skyroot = true
+		[general.types.leaves_type]
 
-		[types.wood_type.aether_redux]
-			blightwillow = true
-			cloudcap = true
-			springshroom = true
-			crystal = true
-			glacia = true
-			fieldsprout = true
+			[general.types.leaves_type.regions_unexplored]
+				bamboo = true
+				golden_larch = true
+				alpha = true
+				apple_oak = true
+				baobab = true
+				blackwood = true
+				magnolia = true
+				cypress = true
+				dead = true
+				dead_pine = true
+				eucalyptus = true
+				flowering = true
+				kapok = true
+				larch = true
+				maple = true
+				mauve = true
+				orange_maple = true
+				palm = true
+				pine = true
+				blue_magnolia = true
+				pink_magnolia = true
+				redwood = true
+				red_maple = true
+				brimwood = true
+				enchanted_birch = true
+				small_oak = true
+				silver_birch = true
+				socotra = true
+				white_magnolia = true
+				willow = true
+				ashen = true
 
-		[types.wood_type.regions_unexplored]
-			alpha = true
-			baobab = true
-			blackwood = true
-			blue_bioshroom = true
-			brimwood = true
-			cobalt = true
-			cypress = true
-			dead = true
-			eucalyptus = true
-			green_bioshroom = true
-			joshua = true
-			kapok = true
-			larch = true
-			magnolia = true
-			maple = true
-			mauve = true
-			palm = true
-			pine = true
-			pink_bioshroom = true
-			redwood = true
-			socotra = true
-			willow = true
-			yellow_bioshroom = true
+			[general.types.leaves_type.ecologics]
+				coconut = true
+				walnut = true
 
-		[types.wood_type.enlightened_end]
-			indigo = true
-			cerulean = true
+			[general.types.leaves_type.eidolon]
+				illwood = true
 
-		[types.wood_type.deep_aether]
-			roseroot = true
-			cruderoot = true
-			conberry = true
-			sunroot = true
+			[general.types.leaves_type.aether]
+				skyroot = true
+				golden_oak = true
+				crystal = true
+				crystal_fruit = true
+				holiday = true
+				decorated_holiday = true
 
-		[types.wood_type.ecologics]
-			flowering_azalea = true
-			azalea = true
-			coconut = true
-			walnut = true
+			[general.types.leaves_type.deep_aether]
+				roseroot = true
+				flowering_roseroot = true
+				blue_roseroot = true
+				flowering_blue_roseroot = true
+				yagroot = true
+				cruderoot = true
+				conberry = true
+				sunroot = true
 
-		[types.wood_type.spawn]
-			rotten = true
+			[general.types.leaves_type.aether_redux]
+				blightwillow = true
+				glacia = true
+				gilded_oak = true
+				blighted_skyroot = true
+				chromatic = true
+				chromatic_berry = true
 
-		[types.wood_type.eidolon]
-			illwood = true
+		[general.types.wood_type]
 
-	[types.leaves_type]
+			[general.types.wood_type.ecologics]
+				flowering_azalea = true
+				azalea = true
+				coconut = true
+				walnut = true
 
-		[types.leaves_type.aether]
-			skyroot = true
-			golden_oak = true
-			crystal = true
-			crystal_fruit = true
-			holiday = true
-			decorated_holiday = true
+			[general.types.wood_type.eidolon]
+				illwood = true
 
-		[types.leaves_type.aether_redux]
-			blightwillow = true
-			glacia = true
-			gilded_oak = true
-			blighted_skyroot = true
-			chromatic = true
-			chromatic_berry = true
+			[general.types.wood_type.aether]
+				skyroot = true
 
-		[types.leaves_type.regions_unexplored]
-			bamboo = true
-			golden_larch = true
-			alpha = true
-			apple_oak = true
-			baobab = true
-			blackwood = true
-			magnolia = true
-			cypress = true
-			dead = true
-			dead_pine = true
-			eucalyptus = true
-			flowering = true
-			kapok = true
-			larch = true
-			maple = true
-			mauve = true
-			orange_maple = true
-			palm = true
-			pine = true
-			blue_magnolia = true
-			pink_magnolia = true
-			redwood = true
-			red_maple = true
-			brimwood = true
-			enchanted_birch = true
-			small_oak = true
-			silver_birch = true
-			socotra = true
-			white_magnolia = true
-			willow = true
-			ashen = true
+			[general.types.wood_type.deep_aether]
+				roseroot = true
+				cruderoot = true
+				conberry = true
+				sunroot = true
 
-		[types.leaves_type.deep_aether]
-			roseroot = true
-			flowering_roseroot = true
-			blue_roseroot = true
-			flowering_blue_roseroot = true
-			yagroot = true
-			cruderoot = true
-			conberry = true
-			sunroot = true
+			[general.types.wood_type.aether_redux]
+				fieldsprout = true
+				blightwillow = true
+				cloudcap = true
+				springshroom = true
+				crystal = true
+				glacia = true
 
-		[types.leaves_type.ecologics]
-			coconut = true
-			walnut = true
+			[general.types.wood_type.enlightened_end]
+				indigo = true
+				cerulean = true
 
-		[types.leaves_type.eidolon]
-			illwood = true
+			[general.types.wood_type.regions_unexplored]
+				alpha = true
+				baobab = true
+				blackwood = true
+				blue_bioshroom = true
+				brimwood = true
+				cobalt = true
+				cypress = true
+				dead = true
+				eucalyptus = true
+				green_bioshroom = true
+				joshua = true
+				kapok = true
+				larch = true
+				magnolia = true
+				maple = true
+				mauve = true
+				palm = true
+				pine = true
+				pink_bioshroom = true
+				redwood = true
+				socotra = true
+				willow = true
+				yellow_bioshroom = true
 
-[entries]
+			[general.types.wood_type.spawn]
+				rotten = true
 
-	[entries.wood_type]
+	[general.entries]
 
-		[entries.wood_type.cfm]
-			stripped_kitchen_sink_light = true
-			table = true
-			coffee_table = true
-			park_bench = true
-			stripped_kitchen_counter = true
-			stripped_cabinet = true
-			kitchen_drawer = true
-			desk = true
-			stripped_bedside_cabinet = true
-			desk_cabinet = true
-			stripped_kitchen_drawer = true
-			upgraded_fence = true
-			kitchen_sink_dark = true
-			stripped_desk_cabinet = true
-			kitchen_counter = true
-			upgraded_gate = true
-			stripped_park_bench = true
-			cabinet = true
-			stripped_table = true
-			mail_box = true
-			blinds = true
-			stripped_chair = true
-			crate = true
-			chair = true
-			stripped_mail_box = true
-			stripped_blinds = true
-			stripped_kitchen_sink_dark = true
-			bedside_cabinet = true
-			stripped_upgraded_fence = true
-			stripped_desk = true
-			kitchen_sink_light = true
-			stripped_coffee_table = true
-			stripped_crate = true
-			stripped_upgraded_gate = true
+		[general.entries.leaves_type]
 
-		[entries.wood_type.decorative_blocks]
-			beam = true
-			support = true
-			seat = true
-			palisade = true
+			[general.entries.leaves_type.cfm]
+				hedge = true
 
-		[entries.wood_type.create]
-			window_pane = true
-			window = true
+		[general.entries.wood_type]
 
-		[entries.wood_type.storagedrawers]
-			half_drawers_1 = true
-			half_drawers_4 = true
-			half_drawers_2 = true
-			trim = true
-			full_drawers_2 = true
-			full_drawers_4 = true
-			full_drawers_1 = true
+			[general.entries.wood_type.cfm]
+				stripped_kitchen_sink_light = true
+				table = true
+				coffee_table = true
+				park_bench = true
+				stripped_kitchen_counter = true
+				stripped_cabinet = true
+				kitchen_drawer = true
+				desk = true
+				stripped_bedside_cabinet = true
+				desk_cabinet = true
+				stripped_kitchen_drawer = true
+				upgraded_fence = true
+				kitchen_sink_dark = true
+				stripped_desk_cabinet = true
+				kitchen_counter = true
+				upgraded_gate = true
+				stripped_park_bench = true
+				cabinet = true
+				stripped_table = true
+				mail_box = true
+				blinds = true
+				stripped_chair = true
+				crate = true
+				chair = true
+				stripped_mail_box = true
+				stripped_blinds = true
+				stripped_kitchen_sink_dark = true
+				bedside_cabinet = true
+				stripped_upgraded_fence = true
+				stripped_desk = true
+				kitchen_sink_light = true
+				stripped_coffee_table = true
+				stripped_crate = true
+				stripped_upgraded_gate = true
 
-		[entries.wood_type.backpacked]
-			backpack_shelf = true
+			[general.entries.wood_type.decorative_blocks]
+				beam = true
+				support = true
+				seat = true
+				palisade = true
 
-		[entries.wood_type.farmersdelight]
-			cabinet = true
+			[general.entries.wood_type.mcwbridges]
+				bridge_pier = true
+				rope_bridge_stair = true
+				log_bridge_stair = true
+				rail_bridge = true
+				rope_bridge = true
+				log_bridge_middle = true
 
-		[entries.wood_type.twigs]
-			table = true
+			[general.entries.wood_type.create]
+				window_pane = true
+				window = true
 
-		[entries.wood_type.mcwbridges]
-			bridge_pier = true
-			rope_bridge_stair = true
-			log_bridge_stair = true
-			rail_bridge = true
-			rope_bridge = true
-			log_bridge_middle = true
+			[general.entries.wood_type.storagedrawers]
+				half_drawers_1 = true
+				half_drawers_4 = true
+				half_drawers_2 = true
+				trim = true
+				full_drawers_2 = true
+				full_drawers_4 = true
+				full_drawers_1 = true
 
-	[entries.leaves_type]
+			[general.entries.wood_type.backpacked]
+				backpack_shelf = true
 
-		[entries.leaves_type.cfm]
-			hedge = true
+			[general.entries.wood_type.farmersdelight]
+				cabinet = true
+
+			[general.entries.wood_type.twigs]
+				table = true
 
