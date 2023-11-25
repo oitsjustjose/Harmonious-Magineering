@@ -7,7 +7,7 @@ ServerEvents.recipes(event => {
       {material: 'iron', nugget: 'minecraft:iron_nugget'},
       {material: 'lead', nugget: 'eidolon:lead_nugget'},
       {material: 'nickel', nugget: 'immersiveengineering:nugget_nickel'},
-      {material: 'osmium', nugget: 'mekanism:nugget_osmium'},
+      // {material: 'osmium', nugget: 'mekanism:nugget_osmium'},
       {material: 'silver', nugget: 'eidolon:silver_nugget'},
       {material: 'tin', nugget: 'mekanism:nugget_tin'},
       {material: 'uranium', nugget: 'mekanism:nugget_uranium'},
@@ -79,6 +79,47 @@ ServerEvents.recipes(event => {
     Create(Ingredient.of('#forge:ingots/aluminum'), Ingredient.of('immersiveengineering:plate_aluminum'));
   };
 
+  const NukeOsmium = () => {
+    [
+      'mekanism:block_raw_osmium',
+      'mekanism:nugget_osmium',
+      'mekanism:raw_osmium',
+      'mekanism:ingot_osmium',
+      'mekanism:clump_osmium',
+      'mekanism:dirty_dust_osmium',
+      'mekanism:dust_osmium',
+      'mekanism:crystal_osmium',
+      'mekanism:shard_osmium',
+      'mekanism:deepslate_osmium_ore',
+      'mekanism:osmium_ore',
+      'mekanism:block_osmium',
+      'create:crushed_raw_osmium',
+    ].forEach(osm => {
+      event.remove({output: osm});
+    });
+
+    // Replace any recipe that has Osmium as the input with the tag itself. The tag is modified to contain different ingots instead
+    event.replaceInput({input: 'mekanism:ingot_osmium'}, 'mekanism:ingot_osmium', '#forge:ingots/osmium');
+
+    event.remove({id: 'mekanism:processing/refined_obsidian/ingot/from_dust'});
+    event.remove({id: 'mekanism:processing/refined_glowstone/ingot/from_dust'});
+
+    event.custom({
+      type: 'mekanism:compressing',
+      chemicalInput: {amount: 1, gas: 'mekanism:oxygen'},
+      itemInput: {ingredient: {tag: 'forge:dusts/glowstone'}},
+      output: {item: 'mekanism:ingot_refined_glowstone'},
+    });
+
+    event.custom({
+      type: 'mekanism:compressing',
+      chemicalInput: {amount: 1, gas: 'mekanism:oxygen'},
+      itemInput: {ingredient: {tag: 'forge:dusts/refined_obsidian'}},
+      output: {item: 'mekanism:ingot_refined_obsidian'},
+    });
+  };
+
+  NukeOsmium();
   NuggetsFromSmelting();
   PlateCompat();
 });

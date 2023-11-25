@@ -58,6 +58,12 @@ ServerEvents.tags('item', event => {
   RegionsUnexplored.logs.forEach(log => event.add('forge:stripped_logs', log));
   RegionsUnexplored.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   Ores.forEach(ore => event.removeAllTagsFrom(ore));
+
+  // Replace all Osmium with Steel Ingots
+  event.removeAll('forge:ingots/osmium');
+  event.removeAll('forge:dusts/osmium');
+  event.add('forge:ingots/osmium', '#forge:ingots/steel');
+  event.add('forge:dusts/osmium', '#forge:dusts/steel');
 });
 
 ServerEvents.tags('entity_type', event => {
