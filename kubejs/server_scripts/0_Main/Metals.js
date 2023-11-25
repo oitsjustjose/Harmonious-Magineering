@@ -134,44 +134,22 @@ ServerEvents.recipes(event => {
       'mekanism:processing/osmium/storage_blocks/from_ingots',
     ].forEach(id => event.remove({id: id}));
 
-    // --BEGIN-- hacky fuckery
-    // This chunk of code below is a result of replaceInput not working for tags right now
-    // In exchange, I go through every Mekanism recipe, stringify its JSON recipe, check it for the tags we want,
-    //  and set up a list of changes we'll need to make. This even seems to work great across other recipe types too!
-    const Changes = [];
+    // event.remove({id: 'mekanism:processing/refined_obsidian/ingot/from_dust'});
+    // event.remove({id: 'mekanism:processing/refined_glowstone/ingot/from_dust'});
 
-    event.forEachRecipe({}, rec => {
-      const recipeString = rec.json.toString();
-      if (!(recipeString.includes('forge:ingots/osmium') || recipeString.includes('forge:dusts/osmium'))) return;
+    // event.custom({
+    //   type: 'mekanism:compressing',
+    //   chemicalInput: {amount: 1, gas: 'mekanism:oxygen'},
+    //   itemInput: {ingredient: {tag: 'forge:dusts/glowstone'}},
+    //   output: {item: 'mekanism:ingot_refined_glowstone'},
+    // });
 
-      Changes.push({
-        id: rec.getId(),
-        str: recipeString.replaceAll('forge:ingots/osmium', 'forge:ingots/steel').replaceAll('forge:dusts/osmium', 'forge:dusts/steel'),
-      });
-    });
-
-    Changes.forEach(change => {
-      event.remove({id: change.id});
-      event.custom(change.str);
-    });
-    // --END-- hacky fuckery
-
-    event.remove({id: 'mekanism:processing/refined_obsidian/ingot/from_dust'});
-    event.remove({id: 'mekanism:processing/refined_glowstone/ingot/from_dust'});
-
-    event.custom({
-      type: 'mekanism:compressing',
-      chemicalInput: {amount: 1, gas: 'mekanism:oxygen'},
-      itemInput: {ingredient: {tag: 'forge:dusts/glowstone'}},
-      output: {item: 'mekanism:ingot_refined_glowstone'},
-    });
-
-    event.custom({
-      type: 'mekanism:compressing',
-      chemicalInput: {amount: 1, gas: 'mekanism:oxygen'},
-      itemInput: {ingredient: {tag: 'forge:dusts/refined_obsidian'}},
-      output: {item: 'mekanism:ingot_refined_obsidian'},
-    });
+    // event.custom({
+    //   type: 'mekanism:compressing',
+    //   chemicalInput: {amount: 1, gas: 'mekanism:oxygen'},
+    //   itemInput: {ingredient: {tag: 'forge:dusts/refined_obsidian'}},
+    //   output: {item: 'mekanism:ingot_refined_obsidian'},
+    // });
   };
 
   NukeOsmium();

@@ -56,7 +56,7 @@ ServerEvents.tags('block', event => {
 
 ServerEvents.tags('item', event => {
   const Osmium = () => {
-    [/*'ingots', 'dusts', */ 'storage_blocks', 'raw_materials', 'ores', 'nuggets'].forEach(type => event.removeAll(`forge:${type}/osmium`));
+    ['ingots', 'dusts', 'storage_blocks', 'raw_materials', 'ores', 'nuggets'].forEach(type => event.removeAll(`forge:${type}/osmium`));
     ['clumps', 'dirty_dusts', 'crystals', 'shards'].forEach(type => event.removeAll(`mekanism:${type}/osmium`));
     event.removeAll(`forge:storage_blocks/raw_osmium`);
   };
