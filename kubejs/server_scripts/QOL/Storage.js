@@ -24,4 +24,10 @@ ServerEvents.recipes(event => {
     S: 'minecraft:string',
     I: '#forge:ingots/iron',
   });
+
+  // Bundles!
+  event.shaped('minecraft:bundle', [' S ', 'L L', ' L '], {
+    S: 'minecraft:string',
+    L: 'minecraft:rabbit_hide',
+  });
 });
