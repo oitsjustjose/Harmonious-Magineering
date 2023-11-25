@@ -7,7 +7,6 @@ ServerEvents.recipes(event => {
       {material: 'iron', nugget: 'minecraft:iron_nugget'},
       {material: 'lead', nugget: 'eidolon:lead_nugget'},
       {material: 'nickel', nugget: 'immersiveengineering:nugget_nickel'},
-      // {material: 'osmium', nugget: 'mekanism:nugget_osmium'},
       {material: 'silver', nugget: 'eidolon:silver_nugget'},
       {material: 'tin', nugget: 'mekanism:nugget_tin'},
       {material: 'uranium', nugget: 'mekanism:nugget_uranium'},
