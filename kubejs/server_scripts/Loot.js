@@ -21,6 +21,13 @@ LootJS.modifiers(event => {
       'minecraft:deepslate_iron_ore',
     ].forEach(ore => {
       event.addBlockLootModifier(ore).modifyLoot(ItemFilter.ALWAYS_TRUE, stack => {
+        const hasTag =
+          stack
+            .getTags()
+            .toArray()
+            .filter(x => x.location().toString() === 'forge:raw_materials').length > 0;
+        if (!hasTag) return stack;
+
         stack.setCount(stack.getCount() * 2);
         return stack;
       });
