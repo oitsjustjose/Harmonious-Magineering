@@ -64,6 +64,12 @@ ServerEvents.tags('item', event => {
   RegionsUnexplored.logs.forEach(log => event.add('forge:stripped_logs', log));
   RegionsUnexplored.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   Ores.forEach(ore => event.removeAllTagsFrom(ore));
+
+  event.remove('forge:buckets/honey', 'productivebees:honey_bucket');
+
+  event.remove('forge:rope', 'farmersdelight:rope');
+  event.remove('supplementaries:ropes', 'farmersdelight:rope');
+
   Osmium();
 });
 
@@ -91,4 +97,11 @@ ServerEvents.tags('entity_type', event => {
   event.add('forge:endermen', 'endermanoverhaul:swamp_enderman');
   event.add('forge:endermen', 'endermanoverhaul:warped_forest_enderman');
   event.add('forge:endermen', 'endermanoverhaul:windswept_hills_enderman');
+});
+
+ServerEvents.tags('fluid', event => {
+  event.removeAll('minecraft:water');
+  event.add('minecraft:water', 'minecraft:water');
+
+  event.remove('forge:honey', 'productivebees:honey');
 });

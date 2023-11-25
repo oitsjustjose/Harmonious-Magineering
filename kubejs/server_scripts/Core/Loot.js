@@ -133,9 +133,5 @@ LootJS.modifiers(event => {
 
   event.addEntityLootModifier('minecraft:warden').removeLoot(ItemFilter.ALWAYS_TRUE);
 
-  CustomSilverLead();
-  BoostDeepslateLoot();
-  BoostSomeMobDrops();
-  Lootr();
-  ModLoot();
+  [CustomSilverLead, BoostDeepslateLoot, BoostSomeMobDrops, Lootr, ModLoot].forEach(Module => Module());
 });

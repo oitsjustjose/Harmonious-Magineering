@@ -9,6 +9,7 @@ ServerEvents.recipes(event => {
     G: '#forge:dusts/grains_of_infinity',
     C: 'mekanism:steel_casing',
   });
+
   event.custom({
     type: 'enderio:alloy_smelting',
     energy: 6400,

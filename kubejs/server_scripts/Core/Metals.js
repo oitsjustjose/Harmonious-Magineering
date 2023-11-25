@@ -32,53 +32,6 @@ ServerEvents.recipes(event => {
     });
   };
 
-  const PlateCompat = () => {
-    // Remove recipes that let you plate/crush metals with the IE hammer
-    event.remove({input: 'immersiveengineering:hammer', output: '#forge:dusts'});
-    event.remove({input: 'immersiveengineering:hammer', output: '#forge:plates'});
-
-    /**
-     * @param {Internal.Ingredient} input
-     * @param {Internal.Ingredient} output
-     */
-    const Create = (input, output) => {
-      event.recipes.create.pressing(output, input);
-    };
-
-    /**
-     * @param {Internal.Ingredient} input
-     * @param {Internal.Ingredient} output
-     */
-    const IE = (input, output) => {
-      event.custom({
-        type: 'immersiveengineering:metal_press',
-        energy: 2400,
-        input: input.toJson(),
-        mold: 'immersiveengineering:mold_plate',
-        result: output.toJson(),
-      });
-    };
-
-    /**
-     * @param {Internal.Ingredient} input
-     * @param {Internal.Ingredient} output
-     */
-    const Both = (input, output) => {
-      Create(input, output);
-      IE(input, output);
-    };
-
-    Both(Ingredient.of('#forge:ingots/dawnstone'), Ingredient.of('embers:dawnstone_plate'));
-    Create(Ingredient.of('#forge:ingots/steel'), Ingredient.of('immersiveengineering:plate_steel'));
-    Create(Ingredient.of('#forge:ingots/electrum'), Ingredient.of('immersiveengineering:plate_electrum'));
-    Create(Ingredient.of('#forge:ingots/constantan'), Ingredient.of('immersiveengineering:plate_constantan'));
-    Create(Ingredient.of('#forge:ingots/uranium'), Ingredient.of('immersiveengineering:plate_uranium'));
-    Create(Ingredient.of('#forge:ingots/nickel'), Ingredient.of('immersiveengineering:plate_nickel'));
-    Create(Ingredient.of('#forge:ingots/silver'), Ingredient.of('immersiveengineering:plate_silver'));
-    Create(Ingredient.of('#forge:ingots/lead'), Ingredient.of('immersiveengineering:plate_lead'));
-    Create(Ingredient.of('#forge:ingots/aluminum'), Ingredient.of('immersiveengineering:plate_aluminum'));
-  };
-
   const NukeOsmium = () => {
     [
       'mekanism:block_raw_osmium',
@@ -152,7 +105,73 @@ ServerEvents.recipes(event => {
     // });
   };
 
-  NukeOsmium();
+  const PlateCompat = () => {
+    // Remove recipes that let you plate/crush metals with the IE hammer
+    event.remove({input: 'immersiveengineering:hammer', output: '#forge:dusts'});
+    event.remove({input: 'immersiveengineering:hammer', output: '#forge:plates'});
+
+    /**
+     * @param {Internal.Ingredient} input
+     * @param {Internal.Ingredient} output
+     */
+    const Create = (input, output) => {
+      event.recipes.create.pressing(output, input);
+    };
+
+    /**
+     * @param {Internal.Ingredient} input
+     * @param {Internal.Ingredient} output
+     */
+    const IE = (input, output) => {
+      event.custom({
+        type: 'immersiveengineering:metal_press',
+        energy: 2400,
+        input: input.toJson(),
+        mold: 'immersiveengineering:mold_plate',
+        result: output.toJson(),
+      });
+    };
+
+    /**
+     * @param {Internal.Ingredient} input
+     * @param {Internal.Ingredient} output
+     */
+    const Both = (input, output) => {
+      Create(input, output);
+      IE(input, output);
+    };
+
+    Both(Ingredient.of('#forge:ingots/dawnstone'), Ingredient.of('embers:dawnstone_plate'));
+    Create(Ingredient.of('#forge:ingots/steel'), Ingredient.of('immersiveengineering:plate_steel'));
+    Create(Ingredient.of('#forge:ingots/electrum'), Ingredient.of('immersiveengineering:plate_electrum'));
+    Create(Ingredient.of('#forge:ingots/constantan'), Ingredient.of('immersiveengineering:plate_constantan'));
+    Create(Ingredient.of('#forge:ingots/uranium'), Ingredient.of('immersiveengineering:plate_uranium'));
+    Create(Ingredient.of('#forge:ingots/nickel'), Ingredient.of('immersiveengineering:plate_nickel'));
+    Create(Ingredient.of('#forge:ingots/silver'), Ingredient.of('immersiveengineering:plate_silver'));
+    Create(Ingredient.of('#forge:ingots/lead'), Ingredient.of('immersiveengineering:plate_lead'));
+    Create(Ingredient.of('#forge:ingots/aluminum'), Ingredient.of('immersiveengineering:plate_aluminum'));
+  };
+
+  const SilverAndLead = () => {
+    // Replace all Silver & Lead inputs to prioritize Ember's -- this is because of my weird preferences -_-
+    [
+      {replace: ['immersiveengineering:ore_lead', 'mekanism:lead_ore', 'eidolon:lead_ore'], with: 'embers:lead_ore'},
+      {
+        replace: ['immersiveengineering:deepslate_ore_lead', 'mekanism:deepslate_lead_ore', 'eidolon:deep_lead_ore'],
+        with: 'embers:deepslate_lead_ore',
+      },
+      {replace: ['immersiveengineering:ore_silver', 'eidolon:silver_ore'], with: 'embers:silver_ore'},
+      {replace: ['immersiveengineering:deepslate_ore_silver', 'eidolon:deep_silver_ore'], with: 'embers:deepslate_silver_ore'},
+    ].forEach(x => {
+      x.replace.forEach(y => {
+        event.replaceInput({}, y, x.with);
+        event.replaceOutput({}, y, x.with);
+      });
+    });
+  };
+
   NuggetsFromSmelting();
+  NukeOsmium();
   PlateCompat();
+  SilverAndLead();
 });
