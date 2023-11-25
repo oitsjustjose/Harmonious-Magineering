@@ -34,6 +34,8 @@ const Removals = [
   'mekanism:deepslate_lead_ore',
   'mekanism:deepslate_osmium_ore',
   'mekanism:dirty_dust_osmium',
+  'mekanism:dust_osmium',
+  'mekanism:ingot_osmium',
   'mekanism:lead_ore',
   'mekanism:nugget_osmium',
   'mekanism:osmium_ore',
