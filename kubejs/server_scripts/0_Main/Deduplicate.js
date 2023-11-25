@@ -1,54 +1,47 @@
-/**
- * @param {Internal.RecipesEventJS} event
- */
-const Mekanism = event => {
-  [Item.of('mekanism:cardboard_box')].forEach(x => event.remove({output: x}));
-};
-
-/**
- * @param {Internal.RecipesEventJS} event
- */
-const Rope = event => {
-  event.replaceInput({}, 'farmersdelight:rope', 'supplementaries:rope');
-  event.replaceOutput({}, 'farmersdelight:rope', 'supplementaries:rope');
-};
-
-/**
- * @param {Internal.RecipesEventJS} event
- */
-const Snails = event => {
-  event.replaceInput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
-  event.replaceOutput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
-};
-
-/**
- * @param {Internal.RecipesEventJS} event
- */
-const SilverAndLead = event => {
-  // Lead -> Embers Lead
-  ['immersiveengineering:ore_lead', 'mekanism:lead_ore', 'eidolon:lead_ore'].forEach(ore => {
-    event.replaceInput({}, ore, 'embers:lead_ore');
-    event.replaceOutput({}, ore, 'embers:lead_ore');
-  });
-  // Deepslate Lead -> Embers Deepslate Lead
-  ['immersiveengineering:deepslate_ore_lead', 'mekanism:deepslate_lead_ore', 'eidolon:deep_lead_ore'].forEach(ore => {
-    event.replaceInput({}, ore, 'embers:deepslate_lead_ore');
-    event.replaceOutput({}, ore, 'embers:deepslate_lead_ore');
-  });
-  // Silver -> Embers Silver
-  ['immersiveengineering:ore_silver', 'eidolon:silver_ore'].forEach(ore => {
-    event.replaceInput({}, ore, 'embers:silver_ore');
-    event.replaceOutput({}, ore, 'embers:silver_ore');
-  });
-  // Deepslate Silver -> Embers Deepslate Silver
-  ['immersiveengineering:deepslate_ore_silver', 'eidolon:deep_silver_ore'].forEach(ore => {
-    event.replaceInput({}, ore, 'embers:deepslate_silver_ore');
-    event.replaceOutput({}, ore, 'embers:deepslate_silver_ore');
-  });
-};
-
 ServerEvents.recipes(event => {
-  [Mekanism, Rope, Snails, SilverAndLead].forEach(Module => Module(event));
+  const Mekanism = () => {
+    [Item.of('mekanism:cardboard_box')].forEach(x => event.remove({output: x}));
+  };
+
+  const Rope = () => {
+    event.replaceInput({}, 'farmersdelight:rope', 'supplementaries:rope');
+    event.replaceOutput({}, 'farmersdelight:rope', 'supplementaries:rope');
+  };
+
+  const Silicon = () => {
+    event.remove({id: 'ae2:blasting/silicon_from_certus_quartz_dust'});
+    event.remove({id: 'ae2:smelting/silicon_from_certus_quartz_dust'});
+  };
+
+  const Snails = () => {
+    event.replaceInput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
+    event.replaceOutput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
+  };
+
+  const SilverAndLead = () => {
+    // Lead -> Embers Lead
+    ['immersiveengineering:ore_lead', 'mekanism:lead_ore', 'eidolon:lead_ore'].forEach(ore => {
+      event.replaceInput({}, ore, 'embers:lead_ore');
+      event.replaceOutput({}, ore, 'embers:lead_ore');
+    });
+    // Deepslate Lead -> Embers Deepslate Lead
+    ['immersiveengineering:deepslate_ore_lead', 'mekanism:deepslate_lead_ore', 'eidolon:deep_lead_ore'].forEach(ore => {
+      event.replaceInput({}, ore, 'embers:deepslate_lead_ore');
+      event.replaceOutput({}, ore, 'embers:deepslate_lead_ore');
+    });
+    // Silver -> Embers Silver
+    ['immersiveengineering:ore_silver', 'eidolon:silver_ore'].forEach(ore => {
+      event.replaceInput({}, ore, 'embers:silver_ore');
+      event.replaceOutput({}, ore, 'embers:silver_ore');
+    });
+    // Deepslate Silver -> Embers Deepslate Silver
+    ['immersiveengineering:deepslate_ore_silver', 'eidolon:deep_silver_ore'].forEach(ore => {
+      event.replaceInput({}, ore, 'embers:deepslate_silver_ore');
+      event.replaceOutput({}, ore, 'embers:deepslate_silver_ore');
+    });
+  };
+
+  [Mekanism, Rope, Silicon, Snails, SilverAndLead].forEach(Module => Module());
   // --BEGIN-- hacky fuckery
   // This chunk of code below is a result of replaceInput not working for tags right now
   //  In exchange, I go through every recipe, stringify its JSON recipe, check it for the tags we want,

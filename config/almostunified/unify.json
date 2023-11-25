@@ -5,7 +5,8 @@
     "eidolon",
     "mekanism",
     "immersiveengineering",
-    "embers"
+    "embers",
+    "ae2"
   ],
   "stoneStrata": [
     "stone",
@@ -27,7 +28,8 @@
     "forge:rods/{material}",
     "forge:wires/{material}",
     "forge:storage_blocks/{material}",
-    "forge:storage_blocks/raw_{material}"
+    "forge:storage_blocks/raw_{material}",
+    "forge:silicon"
   ],
   "materials": [
     "aeternium",
