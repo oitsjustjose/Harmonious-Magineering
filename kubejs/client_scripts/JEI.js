@@ -16,6 +16,7 @@ const Removals = [
   'dimstorage:dim_core',
   'dimstorage:dim_wall',
   'dimstorage:solid_dim_core',
+  'eidolon:candle',
   'eidolon:deep_lead_ore',
   'eidolon:deep_silver_ore',
   'eidolon:lead_ore',

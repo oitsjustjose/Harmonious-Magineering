@@ -70,6 +70,8 @@ ServerEvents.tags('item', event => {
   event.remove('forge:rope', 'farmersdelight:rope');
   event.remove('supplementaries:ropes', 'farmersdelight:rope');
 
+  event.add('forge:tallow', 'delightful:animal_fat');
+
   Osmium();
 });
 
