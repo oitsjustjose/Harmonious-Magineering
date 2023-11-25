@@ -1,0 +1,12 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "mediu"
+	group: "7ACE386F34E81744"
+	icon: "pneumaticcraft:pressure_gauge"
+	id: "299E9FA46C6CDE00"
+	order_index: 1
+	quest_links: [ ]
+	quests: [ ]
+	title: "Medium"
+}

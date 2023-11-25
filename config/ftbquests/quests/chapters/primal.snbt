@@ -1,0 +1,18 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "primal"
+	group: "237E59D678B7F5E1"
+	icon: {
+		Count: 1b
+		id: "eidolon:soulfire_wand"
+		tag: {
+			Damage: 0
+		}
+	}
+	id: "5B03A2714E94DB16"
+	order_index: 0
+	quest_links: [ ]
+	quests: [ ]
+	title: "Primal"
+}

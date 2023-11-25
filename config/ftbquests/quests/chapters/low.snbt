@@ -1,0 +1,12 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "low"
+	group: "7ACE386F34E81744"
+	icon: "create:track"
+	id: "03799584BC804083"
+	order_index: 0
+	quest_links: [ ]
+	quests: [ ]
+	title: "Low"
+}

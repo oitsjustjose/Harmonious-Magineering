@@ -1,0 +1,12 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "blood"
+	group: "237E59D678B7F5E1"
+	icon: "bloodmagic:weakbloodshard"
+	id: "1A293DCDB8B8E8B7"
+	order_index: 2
+	quest_links: [ ]
+	quests: [ ]
+	title: "Blood"
+}

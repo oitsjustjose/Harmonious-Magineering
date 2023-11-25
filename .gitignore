@@ -1,14 +1,19 @@
 .vscode
+/backups
+/config/jei/world
+/config/xaero*
 /coremods
 /crash-reports
 /data
 /ESM
 /local
 /logs
+/map_atlases
 /mod_data
 /modernfix
 /mods
 /options.txt
+/options.txt.bak
 /patchouli_data.json
 /resourcepacks
 /rhino.local.properties
@@ -22,6 +27,3 @@
 /usercache.json
 /usernamecache.json
 /Xaero*
-/config/xaero*
-/config/jei/world
-/map_atlases

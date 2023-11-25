@@ -1,0 +1,12 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "high"
+	group: "7ACE386F34E81744"
+	icon: "mekanism:elite_control_circuit"
+	id: "568F407CA2EA96C6"
+	order_index: 2
+	quest_links: [ ]
+	quests: [ ]
+	title: "High"
+}
