@@ -1,21 +1,17 @@
 /* Tool/Enchanting Overhaul -- Goals:
     - [x] Remove Mending - Anvil Repair is very cheap
-      - [x] Remove from EnderIO Enchanter
+      - [x] Remove Functionality -- Done via Fabrication/Forgery
+      - [x] Remove from Trading -- Done via Fabrication/Forgery
+      - [x] Remove from EnderIO Enchanter & Recipes
       - [x] Remove from Loot
-      - [x] Remove from Trading
     - [x] Remove Vanilla Enchanting - the Soul Enchanter is VERY cool and should be used!!
       - [x]  Should also repurpose the Enchanting Table for that recipe
     - [x] Remove EnderIO's Enchanter -- see above statement!
-    - TODO: Tools never get destroyed
+    - TODO: Tools never get destroyed?
  */
 LootJS.modifiers(event => {
   // Remove anything with Mending on it from *all* loot tables
   event.addLootTableModifier(/.*/).removeLoot(ItemFilter.hasEnchantment('minecraft:mending'));
-});
-
-MoreJSEvents.filterEnchantedBookTrade(event => {
-  event.remove('minecraft:mending');
-  event.remove('backpacked:repairman');
 });
 
 ServerEvents.recipes(event => {
