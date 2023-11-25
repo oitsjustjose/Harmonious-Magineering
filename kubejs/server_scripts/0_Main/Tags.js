@@ -55,15 +55,16 @@ ServerEvents.tags('block', event => {
 });
 
 ServerEvents.tags('item', event => {
+  const Osmium = () => {
+    [/*'ingots', 'dusts', */ 'storage_blocks', 'raw_materials', 'ores', 'nuggets'].forEach(type => event.removeAll(`forge:${type}/osmium`));
+    ['clumps', 'dirty_dusts', 'crystals', 'shards'].forEach(type => event.removeAll(`mekanism:${type}/osmium`));
+    event.removeAll(`forge:storage_blocks/raw_osmium`);
+  };
+
   RegionsUnexplored.logs.forEach(log => event.add('forge:stripped_logs', log));
   RegionsUnexplored.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   Ores.forEach(ore => event.removeAllTagsFrom(ore));
-
-  // Replace all Osmium with Steel Ingots
-  event.removeAll('forge:ingots/osmium');
-  event.removeAll('forge:dusts/osmium');
-  event.add('forge:ingots/osmium', '#forge:ingots/steel');
-  event.add('forge:dusts/osmium', '#forge:dusts/steel');
+  Osmium();
 });
 
 ServerEvents.tags('entity_type', event => {
