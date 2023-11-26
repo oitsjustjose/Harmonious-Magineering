@@ -27,6 +27,8 @@ const Removals = [
   'immersiveengineering:deepslate_ore_silver',
   'immersiveengineering:ore_lead',
   'immersiveengineering:ore_silver',
+  'laserio:logic_chip',
+  'laserio:logic_chip_raw',
   'mekanism:block_osmium',
   'mekanism:block_raw_osmium',
   'mekanism:cardboard_box',
