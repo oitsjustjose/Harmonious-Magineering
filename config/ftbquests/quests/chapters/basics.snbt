@@ -1,0 +1,353 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "basics"
+	group: "7B95A8B4604FCF48"
+	icon: "minecraft:campfire"
+	id: "07F6AB892BB8EB3D"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Upon entering the world, you'll begin to notice that keeping your body temperature regulated is incredibly important; being too cold may prevent you from sleeping, or being too hot may start to blur your vision!"
+				""
+				"There are a few measures you can take to help keep your body temperature regulated, but a campfire will at least keep you warm at night!"
+			]
+			id: "19D30A4F9A99AC5D"
+			rewards: [{
+				count: 4
+				id: "6638E2FB2228A566"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			shape: "octagon"
+			tasks: [{
+				id: "0999C57FE7D7EC5A"
+				item: "minecraft:campfire"
+				type: "item"
+			}]
+			title: "Chilling Out"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["656EACDA88A244CF"]
+			id: "767ED700EB86700A"
+			tasks: [{
+				id: "73E5C061A1447BF6"
+				item: "sophisticatedbackpacks:backpack"
+				type: "item"
+			}]
+			title: "Portable Storage"
+			x: -4.5d
+			y: 0.0d
+		}
+		{
+			description: [
+				"You may find yourself struggling to keep up with where you've been or where you are now - in such a case, I'd recommend an Atlas! The Atlas will consume Empty Maps as you explore, and when opened, can be used to change between dimension's maps, set markers and navigate around to see the surrounding area! Additionally, it can go in one of your \"Hand\" Curios slot and can be accessed with keybinds when in said slot or your hotbar!"
+				""
+				"More Empty Maps can be added to the Atlas using Paper or Maps (up to 8) in a shapeless crafting recipe!"
+			]
+			id: "656EACDA88A244CF"
+			rewards: [{
+				count: 32
+				id: "13F3653D04E9D5B6"
+				item: "minecraft:paper"
+				random_bonus: 32
+				type: "item"
+			}]
+			shape: "octagon"
+			tasks: [{
+				id: "57368BC9305C86EF"
+				item: {
+					Count: 1b
+					ForgeCaps: {
+						Parent: {
+							maps: [I; ]
+						}
+					}
+					id: "map_atlases:atlas"
+				}
+				type: "item"
+			}]
+			title: "Maps \\& Atlases"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			icon: "minecraft:deepslate_iron_ore"
+			id: "56D9CB36C6FE6B1A"
+			shape: "octagon"
+			tasks: [{
+				id: "43408BB344F74F7D"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:cobblestone/deepslate"
+					}
+				}
+				type: "item"
+			}]
+			title: "Deepslate Ores"
+			x: -1.0d
+			y: -1.0d
+		}
+		{
+			id: "509A87C70B07370E"
+			shape: "octagon"
+			tasks: [{
+				entity: "minecraft:zombie"
+				id: "284BE4DAE85C2E72"
+				title: "Harder Mobs"
+				type: "kill"
+				value: 100L
+			}]
+			x: -1.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["56D9CB36C6FE6B1A"]
+			icon: "minecraft:blast_furnace"
+			id: "460CB64A1D17F1E0"
+			tasks: [{
+				id: "3DA4EEBF397AF138"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "forge:nuggets"
+					}
+				}
+				title: "Any Nugget"
+				type: "item"
+			}]
+			title: "Nuggets"
+			x: -1.0d
+			y: -3.5d
+		}
+		{
+			dependencies: ["19D30A4F9A99AC5D"]
+			description: [
+				"Serene Seasons integrates with Cold Sweat and will add slight variances to temperature and precipitation based on the current season. In addition to changing Biome temperature, Serene Seasons will also modify how various crops grow, causing some to grow better in some seasons than others."
+				""
+				"Craft yourself a calendar to keep up with the current season!"
+			]
+			icon: "regions_unexplored:red_maple_leaf_pile"
+			id: "7D5AC48A59C77D8A"
+			rewards: [{
+				count: 12
+				id: "05D64C2BF691F085"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6E5E3B1BFAB3705D"
+				item: "sereneseasons:calendar"
+				type: "item"
+			}]
+			title: "Seasons"
+			x: 2.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["656EACDA88A244CF"]
+			description: ["Perhaps you've tried opening up your F3 menu to figure out how deep you are as you explore -- don't worry, it's what we all expected to see. Anyways, you'll probably notice that your coordinates are not shown in the Debug Menu anymore, so in order to know how deep you are in the world you'll want an Altimeter! Not only does its texture update as you get higher or deeper in the world, but it can also be right-clicked to tell you an exact depth!"]
+			id: "67F64F723F89BF0F"
+			rewards: [{
+				count: 12
+				id: "4D215AD4650535D2"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			tasks: [{
+				id: "234CFCF3489BD816"
+				item: "supplementaries:altimeter"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["509A87C70B07370E"]
+			icon: "waystones:waystone"
+			id: "576FF66D4CC88795"
+			tasks: [{
+				id: "03B87FA6D20C14A9"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "waystones:waystones"
+					}
+				}
+				title: "Any Waystone"
+				type: "item"
+			}]
+			title: "Waystones"
+			x: -2.5d
+			y: 2.5d
+		}
+		{
+			dependencies: ["56D9CB36C6FE6B1A"]
+			id: "4CB200B926639C59"
+			tasks: [{
+				id: "529E6C42E7331DF7"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "minecraft:anvil"
+					}
+				}
+				type: "item"
+			}]
+			title: "Anvil Forging"
+			x: 0.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["56D9CB36C6FE6B1A"]
+			id: "0633F2071EF79273"
+			tasks: [{
+				id: "3649733A7F398382"
+				item: "minecraft:smithing_table"
+				type: "item"
+			}]
+			title: "Gear Upgrading"
+			x: -2.5d
+			y: -2.5d
+		}
+		{
+			dependencies: ["767ED700EB86700A"]
+			id: "2A76157BAB25E4B7"
+			tasks: [{
+				id: "13F322D839043036"
+				item: "minecraft:bundle"
+				type: "item"
+			}]
+			x: -6.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["656EACDA88A244CF"]
+			id: "2CBEE3863FAE834A"
+			tasks: [{
+				id: "3E1041941E8EA738"
+				item: {
+					Count: 1b
+					id: "itemfilters:tag"
+					tag: {
+						value: "comforts:sleeping_bags"
+					}
+				}
+				title: "Any Sleeping Bag"
+				type: "item"
+			}]
+			title: "Camping"
+			x: -3.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["19D30A4F9A99AC5D"]
+			description: [
+				"The first step to keeping yourself warm, or cool, is to insulate your armor to keep your body temperature regulated. Using a sewing table, you can insulate using a variety of materials which have different regulation effects:"
+				""
+				"- Chameleon Molt is Adaptive, meaning it can keep your body warm &oor&r cool!"
+				""
+				"- Goat Fur will keep you nice and warm in cold environments"
+				""
+				"- Rabbit \\& Hoglin Hide will keep you from overheating"
+				""
+				"- Leather will keep your body generally insulated, reducing drastic body temperature changes in either direction"
+			]
+			id: "4960FD0824F95A4A"
+			rewards: [{
+				id: "57E10A4290A23DFB"
+				item: "cold_sweat:chameleon_molt"
+				random_bonus: 1
+				type: "item"
+			}]
+			tasks: [{
+				id: "0024C7815267DA29"
+				item: "cold_sweat:sewing_table"
+				type: "item"
+			}]
+			title: "Armor Insulation"
+			x: 1.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["19D30A4F9A99AC5D"]
+			description: ["In addition to keeping your own body regulated (which is super important when going on various treks throughout the world), you can also keep your whole home regulated! Using &l&9Water&r&r and &l&4Lava&r&r &lBuckets&r, you can start up a Hearth which will fill your home with heating and cooling!"]
+			id: "427904E6359510A8"
+			rewards: [{
+				id: "0763578E1612F0AF"
+				item: "minecraft:lava_bucket"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3615501C0AD0E4B4"
+				item: "cold_sweat:hearth"
+				type: "item"
+			}]
+			title: "Housing Insulation"
+			x: 1.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7D5AC48A59C77D8A"]
+			description: [
+				"As you might suspect, the Nether is going to be &l&4HOT&r! In order to help fight against this, you're going to need a Soulspring Lamp, which uses &3Soul Sprouts&r to stay lit and provides an ominous freeze to your body, almost like Soul Fire."
+				""
+				"&lKeep an eye on your Lamp.&r It will eventually run out of Soul Sprouts and will need to be refilled - you can grow more of these sprouts by planting them on &bSoul Sand&r near &4Lava&r (and this can even be in the Overworld). To refill your Lamp, pick up some Sprouts with your mouse cursor and right-click the Lamp in your inventory!"
+				""
+				"You'll also see a friendly reminder the first time you try to enter the Nether without this Lamp"
+			]
+			id: "73EBC9DF198D124A"
+			rewards: [{
+				count: 4
+				id: "014A784AAD092FCD"
+				item: "cold_sweat:soul_sprout"
+				random_bonus: 4
+				type: "item"
+			}]
+			shape: "hexagon"
+			tasks: [{
+				id: "52D06467CE224B2F"
+				item: {
+					Count: 1b
+					id: "cold_sweat:soulspring_lamp"
+					tag: {
+						fuel: 64.0d
+						isOn: 1b
+					}
+				}
+				type: "item"
+			}]
+			title: "Nether-Proofing"
+			x: 4.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["509A87C70B07370E"]
+			icon: {
+				Count: 1b
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "supplementaries:item/globes/globe_moon"
+				}
+			}
+			id: "20A32E7A733EBFFF"
+			tasks: [{
+				id: "67ADC0C7BF21485F"
+				title: "Peaceful Surface"
+				type: "checkmark"
+			}]
+			x: 0.5d
+			y: 2.5d
+		}
+	]
+	title: "Basics"
+}
