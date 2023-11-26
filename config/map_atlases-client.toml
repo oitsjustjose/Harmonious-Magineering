@@ -59,6 +59,8 @@ in_hand_renderer = "NOT_LOCKED"
 	map_change_sound = false
 	#Automatically switches to the nearest slice when possible
 	automatic_slice_change = false
+	#Displays chunk coordinates
+	chunk_coordinate_text = false
 
 [world_map]
 	crossair = false
