@@ -85,23 +85,6 @@ ServerEvents.recipes(event => {
       'mekanism:processing/osmium/slurry/dirty/from_raw_ore',
       'mekanism:processing/osmium/storage_blocks/from_ingots',
     ].forEach(id => event.remove({id: id}));
-
-    // event.remove({id: 'mekanism:processing/refined_obsidian/ingot/from_dust'});
-    // event.remove({id: 'mekanism:processing/refined_glowstone/ingot/from_dust'});
-
-    // event.custom({
-    //   type: 'mekanism:compressing',
-    //   chemicalInput: {amount: 1, gas: 'mekanism:oxygen'},
-    //   itemInput: {ingredient: {tag: 'forge:dusts/glowstone'}},
-    //   output: {item: 'mekanism:ingot_refined_glowstone'},
-    // });
-
-    // event.custom({
-    //   type: 'mekanism:compressing',
-    //   chemicalInput: {amount: 1, gas: 'mekanism:oxygen'},
-    //   itemInput: {ingredient: {tag: 'forge:dusts/refined_obsidian'}},
-    //   output: {item: 'mekanism:ingot_refined_obsidian'},
-    // });
   };
 
   const PlateCompat = () => {

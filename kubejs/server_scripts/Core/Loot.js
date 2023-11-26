@@ -81,7 +81,7 @@ LootJS.modifiers(event => {
             .filter(x => x.location().toString() === 'forge:ender_pearls').length > 0;
         if (!hasTag) return stack;
 
-        stack.setCount(stack.getCount() * 2);
+        stack.setCount(stack.getCount() + 1);
         return stack;
       });
     });
