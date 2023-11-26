@@ -128,8 +128,8 @@ ServerEvents.recipes(event => {
   Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_p')), Ingredient.of('enderio:fused_quartz_p'));
 
   // Farmer's Delight
-  Wash(Ingredient.of(AllColorsOf('farmersdelight', '_canvas_sign')), Ingredient.of('farmersdelight:canvas_sign'));
-  Wash(Ingredient.of(AllColorsOf('farmersdelight', '_hanging_canvas_sign')), Ingredient.of('farmersdelight:hanging_canvas_sign'));
+  Wash(Ingredient.of(AllColorsOf('farmersdelight', 'canvas_sign')), Ingredient.of('farmersdelight:canvas_sign'));
+  Wash(Ingredient.of(AllColorsOf('farmersdelight', 'hanging_canvas_sign')), Ingredient.of('farmersdelight:hanging_canvas_sign'));
 
   // Handcrafted
   Wash(Ingredient.of(AllButWhite('handcrafted', 'cushion')), Ingredient.of('handcrafted:white_cushion'));
