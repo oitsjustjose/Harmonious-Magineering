@@ -1,4 +1,0 @@
-#The alignment of the buttons in the backpack inventory screen
-buttonAlignment = "LEFT"
-#If enabled, hides the config button from the backpack screen
-hideConfigButton = false

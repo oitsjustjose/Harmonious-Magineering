@@ -219,9 +219,6 @@
 				full_drawers_4 = true
 				full_drawers_1 = true
 
-			[general.entries.wood_type.backpacked]
-				backpack_shelf = true
-
 			[general.entries.wood_type.farmersdelight]
 				cabinet = true
 
