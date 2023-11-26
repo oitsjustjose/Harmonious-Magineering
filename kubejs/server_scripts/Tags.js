@@ -71,6 +71,7 @@ ServerEvents.tags('item', event => {
   event.remove('supplementaries:ropes', 'farmersdelight:rope');
 
   event.add('forge:tallow', 'delightful:animal_fat');
+  event.add('pneumaticcraft:plastic_sheets', 'mekanism:hdpe_sheet');
 
   Osmium();
 });
