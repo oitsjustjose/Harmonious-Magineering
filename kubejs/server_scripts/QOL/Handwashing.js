@@ -4,13 +4,11 @@ ServerEvents.recipes(event => {
    * @param {Internal.Ingredient} output
    */
   const Wash = (input, output) => {
-    input.stacks.forEach(x => {
-      event.custom({
-        type: 'vtweaks:fluid_conversion',
-        input: x.toJson(),
-        output: output.toJson(),
-        fluid: 'minecraft:water',
-      });
+    event.custom({
+      type: 'vtweaks:fluid_conversion',
+      input: input.toJson(),
+      output: output.toJson(),
+      fluid: 'minecraft:water',
     });
   };
 
