@@ -57,19 +57,23 @@
 		moonPhasesToApplyTo = ["FULL", "WANING_GIBBOUS", "LAST_QUARTER", "FIRST_QUARTER", "WAXING_GIBBOUS"]
 
 [block]
-	#Trees fall down (like, actually not just like lumbering). Credit to Ternsip's impl (https://www.curseforge.com/minecraft/mc-mods/chopdown)
-	enableTreeChopDown = false
-	#The radius that this tweak will use to attempt to find leaves. Set this to a large number to detect larger trees (may cause lag)
-	#Range: > 1
-	chopdownSearchRadius = 64
-	#The number of logs above the one broken to trigger the chopdown effect
-	#Range: > 1
-	chopDownLogRequirement = 3
 	#Allows for uneaten cake to drop on break
 	enableCakeDrop = true
 	#Allows the player to re-light certain blocks like Candles and Campfires (defined by the block using the `lit` blockstate) using torches or other items in the tag `vtweaks:ignition_item`
 	enableTorchLighting = true
 	enableCropTweaks = true
+
+	[block.chopdown]
+		#Trees fall down (like, actually not just like lumbering). Credit to Ternsip's impl (https://www.curseforge.com/minecraft/mc-mods/chopdown)
+		enableTreeChopDown = false
+		#The number of logs above the one broken to trigger the chopdown effect
+		#Range: > 1
+		chopDownLogRequirement = 3
+		#The radius that this tweak will use to attempt to find leaves. Set this to a large number to detect larger trees (may cause lag)
+		#Range: > 1
+		chopdownSearchRadius = 64
+		#If set to true, ChopDown will only work when the player is using the right tool for the log
+		requiresRightTool = false
 
 [entity]
 	#If set to "OWNER", this will prevent owners of pets from attacking their own pet. If set to "ALL", this prevents all players from attacking anyone's pet
