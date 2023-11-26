@@ -49,6 +49,10 @@ const Removals = [
   'spawn:snail_spawn_egg',
 ];
 
+JEIEvents.addItems(event => {
+  event.add('minecraft:bundle');
+});
+
 JEIEvents.hideItems(event => {
   Removals.forEach(x => event.hide(x));
 });
