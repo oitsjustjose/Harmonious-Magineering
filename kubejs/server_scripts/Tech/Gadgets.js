@@ -5,6 +5,8 @@ ServerEvents.recipes(event => {
     powercore2: Item.of('rftoolspower:power_core2'),
     powercore3: Item.of('rftoolspower:power_core3'),
     plastic: '#pneumaticcraft:plastic_sheets',
+    circuitish: [Item.of('mekanism:basic_control_circuit'), Item.of('pneumaticcraft:printed_circuit_board')],
+    template: Item.of('minecraft:paper'),
   };
 
   const BuildingGadgets = () => {
@@ -52,6 +54,11 @@ ServerEvents.recipes(event => {
       C: Items.powercore3,
       T: 'minecraft:tnt',
     });
+
+    event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"buildinggadgets2:buildinggadgets2book"}'), [
+      'minecraft:book',
+      'create:empty_schematic',
+    ]);
   };
 
   const MiningGadgets = () => {
@@ -63,7 +70,7 @@ ServerEvents.recipes(event => {
       L: 'laserio:laser_connector',
       P: Items.plastic,
       B: Items.powercore,
-      C: ['mekanism:advanced_control_circuit', 'pneumaticcraft:printed_circuit_board'],
+      C: Items.circuitish,
     });
 
     event.smithing(
@@ -75,10 +82,7 @@ ServerEvents.recipes(event => {
     event.smithing(MG('mininggadget'), 'enlightened_end:adamantite_smithing_template', MG('mininggadget_fancy'), 'enlightened_end:adamantite_block');
 
     // Base Upgrade
-    event.shaped(MG('upgrade_empty'), ['PPP', 'PCP', 'PPP'], {
-      P: Items.plastic,
-      C: ['mekanism:advanced_control_circuit', 'pneumaticcraft:printed_circuit_board'],
-    });
+    event.shaped(MG('upgrade_empty'), ['PPP', 'PCP', 'PPP'], {P: Items.plastic, C: Items.circuitish});
 
     // Modification Table
     event.smithing(MG('modificationtable'), 'immersiveengineering:circuit_table', Items.plastic, Items.screen);
@@ -89,59 +93,33 @@ ServerEvents.recipes(event => {
     // Fortune Upgrades
     [1, 2, 3].forEach(tier => {
       const Left = tier === 1 ? MG('upgrade_empty') : MG(`upgrade_fortune_${tier - 1}`);
-      event.custom({
-        type: 'vtweaks:anvil',
-        left: {item: Left},
-        right: Item.of('minecraft:enchanted_book')
-          .enchant('minecraft:fortune', tier === 1 ? 1 : tier - 1)
-          .toJson(),
-        result: {item: MG(`upgrade_fortune_${tier}`)},
-        cost: 5 * tier,
-        strict: true,
-      });
+      const UpgradeBook = Item.of('minecraft:enchanted_book').enchant('minecraft:fortune', tier === 1 ? 1 : tier - 1);
+      const FreshBook = Item.of('minecraft:enchanted_book').enchant('minecraft:fortune', tier);
 
-      event.custom({
-        type: 'vtweaks:anvil',
-        left: {item: MG('upgrade_empty')},
-        right: Item.of('minecraft:enchanted_book').enchant('minecraft:fortune', tier).toJson(),
-        result: {item: MG(`upgrade_fortune_${tier}`)},
-        cost: 5 * tier,
-        strict: true,
-      });
+      event.smithing(MG(`upgrade_fortune_${tier}`), Items.template, MG('upgrade_empty'), FreshBook.weakNBT());
+      if (tier > 1) {
+        event.smithing(MG(`upgrade_fortune_${tier}`), Items.template, Left, UpgradeBook.weakNBT());
+      }
     });
 
-    // Silktouch Upgrade
-    event.custom({
-      type: 'vtweaks:anvil',
-      left: {item: MG('upgrade_empty')},
-      right: Item.of('minecraft:enchanted_book').enchant('minecraft:silk_touch', 1).toJson(),
-      result: {item: MG('upgrade_silk')},
-      cost: 20,
-      strict: true,
-    });
+    // Silk Touch Upgrade
+    event.smithing(
+      MG('upgrade_silk'),
+      Items.template,
+      MG('upgrade_empty'),
+      Item.of('minecraft:enchanted_book').enchant('minecraft:silk_touch', 1).weakNBT()
+    );
 
     // Efficiency Upgrade
     [1, 2, 3, 4, 5].forEach(tier => {
       const Left = tier === 1 ? MG('upgrade_empty') : MG(`upgrade_efficiency_${tier - 1}`);
-      event.custom({
-        type: 'vtweaks:anvil',
-        left: {item: Left},
-        right: Item.of('minecraft:enchanted_book')
-          .enchant('minecraft:efficiency', tier === 1 ? 1 : tier - 1)
-          .toJson(),
-        result: {item: MG(`upgrade_efficiency_${tier}`)},
-        cost: 4 * tier,
-        strict: true,
-      });
+      const UpgradeBook = Item.of('minecraft:enchanted_book').enchant('minecraft:efficiency', tier === 1 ? 1 : tier - 1);
+      const FreshBook = Item.of('minecraft:enchanted_book').enchant('minecraft:efficiency', tier);
 
-      event.custom({
-        type: 'vtweaks:anvil',
-        left: {item: MG('upgrade_empty')},
-        right: Item.of('minecraft:enchanted_book').enchant('minecraft:efficiency', tier).toJson(),
-        result: {item: MG(`upgrade_efficiency_${tier}`)},
-        cost: 4 * tier,
-        strict: true,
-      });
+      event.smithing(MG(`upgrade_efficiency_${tier}`), Items.template, MG('upgrade_empty'), FreshBook.weakNBT());
+      if (tier > 1) {
+        event.smithing(MG(`upgrade_efficiency_${tier}`), Items.template, Left, UpgradeBook.weakNBT());
+      }
     });
 
     /*********************************************
@@ -237,7 +215,51 @@ ServerEvents.recipes(event => {
     });
   };
 
-  const LaserIO = () => {};
+  const LaserIO = () => {
+    const L = item => `laserio:${item}`;
+    event.remove({mod: 'laserio'});
+
+    event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"laserio:laseriobook"}'), ['minecraft:book', L('laser_connector')]);
+
+    event.shaped(L('overclocker_card'), [' P ', 'RCR', 'PSP'], {
+      P: '#forge:plates/gold',
+      R: 'minecraft:redstone',
+      S: 'minecraft:sugar',
+      C: Items.circuitish,
+    });
+
+    event.shaped(L('overclocker_node'), [' P ', 'RCR', 'PSP'], {
+      P: 'minecraft:diamond',
+      R: 'minecraft:redstone',
+      S: 'minecraft:sugar',
+      C: Items.circuitish,
+    });
+
+    event.shapeless(L('filter_basic'), [Items.plastic, 'minecraft:paper']);
+    event.custom({
+      type: 'vtweaks:anvil',
+      left: {item: L('filter_basic')},
+      right: Items.circuitish.map(x => x.toJson()),
+      result: {item: L('filter_count')},
+      cost: 1,
+    });
+
+    event.custom({
+      type: 'vtweaks:anvil',
+      left: {item: L('filter_basic')},
+      right: {item: 'minecraft:name_tag'},
+      result: {item: L('filter_tag')},
+      cost: 4,
+    });
+
+    event.custom({
+      type: 'vtweaks:anvil',
+      left: {item: L('filter_basic')},
+      right: {tag: 'minecraft:anvil'},
+      result: {item: L('filter_mod')},
+      cost: 4,
+    });
+  };
 
   BuildingGadgets();
   MiningGadgets();
