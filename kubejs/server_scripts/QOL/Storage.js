@@ -1,4 +1,20 @@
 ServerEvents.recipes(event => {
+  /**
+   *
+   * @param {Internal.ItemStackKJS} output
+   * @param {Internal.Ingredient} backpack
+   * @param {Internal.Ingredient} input
+   */
+  const BackpackSmithing = (output, backpack, input) => {
+    event.custom({
+      type: 'sophisticatedbackpacks:smithing_backpack_upgrade',
+      base: backpack.toJson(),
+      addition: input.toJson(),
+      template: {tag: 'forge:leather'},
+      result: output.toJson(),
+    });
+  };
+
   // Replace minecraft:chest with tags
   event.replaceInput({}, 'minecraft:chest', '#forge:chests/wooden');
   event.replaceOutput({}, 'minecraft:chest', 'expandedstorage:wood_chest');
@@ -17,17 +33,31 @@ ServerEvents.recipes(event => {
   // 4 chests from logs
   event.shaped('4x expandedstorage:wood_chest', ['LLL', 'L L', 'LLL'], {L: '#minecraft:logs'});
 
-  // Backpacked: backpacks are big expensive by default -_-
-  event.remove({output: 'backpacked:backpack'});
-  event.shaped('backpacked:backpack', ['LLL', 'SIS', 'LLL'], {
-    L: 'minecraft:leather',
-    S: 'minecraft:string',
-    I: '#forge:ingots/iron',
-  });
-
   // Bundles!
   event.shaped('minecraft:bundle', [' S ', 'L L', ' L '], {
     S: 'minecraft:string',
     L: 'minecraft:rabbit_hide',
   });
+
+  // Backpacks
+  event.remove({id: 'sophisticatedbackpacks:iron_backpack'});
+  BackpackSmithing(
+    Item.of('sophisticatedbackpacks:iron_backpack'),
+    Ingredient.of('sophisticatedbackpacks:backpack'),
+    Ingredient.of('#forge:storage_blocks/iron')
+  );
+
+  event.remove({id: 'sophisticatedbackpacks:gold_backpack'});
+  BackpackSmithing(
+    Item.of('sophisticatedbackpacks:gold_backpack'),
+    Ingredient.of('sophisticatedbackpacks:iron_backpack'),
+    Ingredient.of('#forge:storage_blocks/gold')
+  );
+
+  event.remove({id: 'sophisticatedbackpacks:diamond_backpack'});
+  BackpackSmithing(
+    Item.of('sophisticatedbackpacks:diamond_backpack'),
+    Ingredient.of('sophisticatedbackpacks:gold_backpack'),
+    Ingredient.of('#forge:storage_blocks/diamond')
+  );
 });
