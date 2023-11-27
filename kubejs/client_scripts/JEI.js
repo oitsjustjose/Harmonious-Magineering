@@ -23,6 +23,7 @@ const Removals = [
   'eidolon:silver_ore',
   'enderio:enchanter',
   'enderio:primitive_alloy_smelter',
+  'farmersdelight:fried_egg',
   'immersiveengineering:deepslate_ore_lead',
   'immersiveengineering:deepslate_ore_silver',
   'immersiveengineering:ore_lead',

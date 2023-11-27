@@ -3,6 +3,9 @@ ServerEvents.recipes(event => {
   event.replaceInput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
   event.replaceOutput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
 
+  /* ~~Eggs:~~ Unify Farmer's Delight Naturalist's Cooked Egg items */
+  event.remove({output: 'farmersdelight:fried_egg'});
+
   // --BEGIN-- hacky fuckery
   // This chunk of code below is a result of replaceInput not working for tags right now
   //  In exchange, I go through every recipe, stringify its JSON recipe, check it for the tags we want,
