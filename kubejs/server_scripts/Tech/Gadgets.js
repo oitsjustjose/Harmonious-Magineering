@@ -82,7 +82,11 @@ ServerEvents.recipes(event => {
     event.smithing(MG('mininggadget'), 'enlightened_end:adamantite_smithing_template', MG('mininggadget_fancy'), 'enlightened_end:adamantite_block');
 
     // Base Upgrade
-    event.shaped(MG('upgrade_empty'), ['PPP', 'PCP', 'PPP'], {P: Items.plastic, C: Items.circuitish});
+    event.shaped(Item.of(MG('upgrade_empty'), 2), ['NIN', 'IPI', 'NIN'], {
+      P: 'pneumaticcraft:plastic',
+      N: '#forge:nuggets/aluminum',
+      I: '#forge:ingots/aluminum',
+    });
 
     // Modification Table
     event.smithing(MG('modificationtable'), 'immersiveengineering:circuit_table', Items.plastic, Items.screen);
