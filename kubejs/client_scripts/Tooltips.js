@@ -9,9 +9,6 @@ ItemEvents.tooltip(event => {
 
   event.addAdvanced('mininggadgets:upgrade_empty', (stack, advanced, tooltips) => {
     tooltips.removeIf(x => Text.string(x).getString().includes('tooltop.mininggadgets.empty'));
-    // tooltips.forEach(x => {
-    //   console.log(Text.string(x).getContents().resolve(null, null, 0).get);
-    // });
   });
 
   event.addAdvanced(Ingredient.all, (stack, advanced, tooltips) => {
