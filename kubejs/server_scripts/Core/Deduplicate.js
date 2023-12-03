@@ -20,6 +20,21 @@ ServerEvents.recipes(event => {
   event.remove({id: 'modularrouters:guide_book'});
   event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"modularrouters:book"}'), ['minecraft:book', 'modularrouters:modular_router']);
 
+  /* ~~eIngots:~~ Preemptive Cleanup :) */
+  event.remove({id: 'create:blasting/ingot_osmium_compat_mekanism'});
+  event.remove({id: 'create:smelting/ingot_osmium_compat_mekanism'});
+  event.remove({id: 'immersiveengineering:crafting/storage_steel_to_ingot_steel'});
+  event.remove({id: 'immersiveengineering:smelting/ingot_steel_from_dust_from_blasting'});
+  event.remove({id: 'immersiveengineering:smelting/ingot_steel_from_dust'});
+  event.remove({id: 'mekanism:processing/osmium/ingot/from_block'});
+  event.remove({id: 'mekanism:processing/osmium/ingot/from_dust_blasting'});
+  event.remove({id: 'mekanism:processing/osmium/ingot/from_dust_smelting'});
+  event.remove({id: 'mekanism:processing/osmium/ingot/from_nuggets'});
+  event.remove({id: 'mekanism:processing/osmium/ingot/from_ore_blasting'});
+  event.remove({id: 'mekanism:processing/osmium/ingot/from_ore_smelting'});
+  event.remove({id: 'mekanism:processing/osmium/ingot/from_raw_blasting'});
+  event.remove({id: 'mekanism:processing/osmium/ingot/from_raw_smelting'});
+
   // --BEGIN-- hacky fuckery
   // This chunk of code below is a result of replaceInput not working for tags right now
   //  In exchange, I go through every recipe, stringify its JSON recipe, check it for the tags we want,
@@ -31,6 +46,8 @@ ServerEvents.recipes(event => {
     {in: 'forge:dusts/osmium', out: 'forge:dusts/steel'},
     {in: 'forge:ingots/osmium', out: 'forge:ingots/steel'},
     {in: 'forge:nuggets/osmium', out: 'forge:nuggets/steel'},
+    {in: 'forge:ores/osmium', out: 'forge:dusts/steel'},
+    {in: 'forge:raw_materials/osmium', out: 'forge:dusts/steel'},
     {in: 'forge:storage_blocks/osmium', out: 'forge:storage_blocks/steel'},
     {in: 'mekanism:block_osmium', out: 'mekanism:block_steel'},
     {in: 'mekanism:dust_osmium', out: 'mekanism:dust_steel'},
@@ -60,10 +77,10 @@ ServerEvents.recipes(event => {
   //  Then we'll add in the new recipe as a "custom" recipe, which is just a stringified JSON
   Changes.forEach(change => {
     event.remove({id: change.id});
-    event.custom(change.str);
+    event.custom(change.str).id(change.id);
   });
 
-  console.info(`[oitsjustjose] Manually replaced ${Changes.length} recipes through Brute Force`);
+  console.info(`Manually replaced ${Changes.length} recipes through Brute Force`);
 
   // Clean up any remaining recipes
   Remaps.forEach(change => {
@@ -77,4 +94,6 @@ ServerEvents.recipes(event => {
   });
 
   // --END-- hacky fuckery
+
+  event.remove({id: 'enlightened_end:cerulean_planks'});
 });

@@ -73,6 +73,26 @@ ServerEvents.tags('item', event => {
   event.add('forge:tallow', 'delightful:animal_fat');
   event.add('pneumaticcraft:plastic_sheets', 'mekanism:hdpe_sheet');
 
+  [
+    'aether_redux:springshroom_hyphae',
+    'aether_redux:stripped_cloudcap_hyphae',
+    'aether_redux:cloudcap_hyphae',
+    'regions_unexplored:stripped_yellow_bioshroom_hyphae',
+    'regions_unexplored:yellow_bioshroom_hyphae',
+    'regions_unexplored:stripped_pink_bioshroom_hyphae',
+    'regions_unexplored:pink_bioshroom_hyphae',
+    'regions_unexplored:stripped_green_bioshroom_hyphae',
+    'regions_unexplored:green_bioshroom_hyphae',
+    'regions_unexplored:stripped_blue_bioshroom_hyphae',
+    'regions_unexplored:blue_bioshroom_hyphae',
+    'enlightened_end:stripped_indigo_hyphae',
+    'enlightened_end:indigo_hyphae',
+    'minecraft:stripped_warped_hyphae',
+    'minecraft:warped_hyphae',
+    'minecraft:stripped_crimson_hyphae',
+    'minecraft:crimson_hyphae',
+  ].forEach(hyphae => event.add('minecraft:mushroom_hyphae', hyphae));
+
   Osmium();
 });
 
