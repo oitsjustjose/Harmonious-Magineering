@@ -120,7 +120,7 @@
 
 [player]
 	#Feather Falling IV or above directs 100% of fall damage to boots
-	enableFeatherFallTweak = true
+	enableFeatherFallTweak = false
 	#Prevents any drops dropped by the player on death from despawning
 	enablePlayerDeathDropSafety = true
 

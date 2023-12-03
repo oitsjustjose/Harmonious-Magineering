@@ -9,3 +9,16 @@ ItemEvents.modification(event => {
     item.maxDamage = 128;
   });
 });
+
+StartupEvents.registry('minecraft:item', event => {
+  [
+    'unknown_holy_item',
+    'unknown_bloody_item',
+    'unknown_dwarven_item',
+    'unknown_kinetic_item',
+    'unknown_pneumatic_item',
+    'unknown_electric_item',
+    'unknown_ender_item',
+    'unknown_energistic_item',
+  ].forEach(x => event.create(x));
+});

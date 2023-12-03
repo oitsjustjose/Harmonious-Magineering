@@ -4,7 +4,7 @@
 	inverseXpCost = true
 	#The amount of blocks per xp level requirement. If set to 500, the base xp cost for travelling 1000 blocks will be 2 levels.
 	#Range: > -2147483648
-	blocksPerXpLevel = 2500
+	blocksPerXpLevel = 1000
 	#The minimum base xp cost (may be subceeded by multipliers defined below)
 	#Range: -1.7976931348623157E308 ~ 1.7976931348623157E308
 	minimumBaseXpCost = 1.0

@@ -6,7 +6,7 @@ ServerEvents.recipes(event => {
   event.remove({id: 'create:item_application/copper_casing_from_wood'});
   event.remove({id: 'create:item_application/railway_casing'});
 
-  event.recipes.create.deploying('create:copper_casing', [['#forge:stripped_logs', '#forge:stripped_wood'], '#forge:ingots/brass']);
+  event.recipes.create.deploying('create:copper_casing', [['#forge:stripped_logs', '#forge:stripped_wood'], '#forge:ingots/copper']);
   event.recipes.create.deploying('create:brass_casing', [['#forge:stripped_logs', '#forge:stripped_wood'], '#forge:ingots/brass']);
   event.recipes.create.deploying('create:railway_casing', ['create:brass_casing', '#forge:plates/obsidian']);
 
