@@ -29,7 +29,7 @@ in_hand_renderer = "NOT_LOCKED"
 	vertical_offset = 4
 	#The number of pixels to shift vertically when there's an active effect
 	#Range: -4000 ~ 4000
-	active_potion_effects_vertical_offset = 26
+	active_potion_effects_vertical_offset = 0
 	#When enabled, the player's current Coords will be displayed
 	coordinate_text = false
 	#When enabled, the player's current Biome will be displayed
@@ -65,7 +65,7 @@ in_hand_renderer = "NOT_LOCKED"
 [world_map]
 	crossair = false
 	#Use bigger book like texture for worldmap view. Makes the view a bit bigger. Recommended to ebe used with map scale 1 (you might want to lower lectern one too if buttons dont show)
-	alternative_texture = false
+	alternative_texture = true
 	#Pan smoothly. When off it will pan in map increments instead
 	smooth_panning = true
 	#Makes zooming work smoothly instead of in 2 maps increments
