@@ -1,155 +1,110 @@
 ServerEvents.recipes(event => {
   /**
-   * @param {Internal.Ingredient} input
-   * @param {Internal.Ingredient} output
+   * @param {String} input
+   * @param {String} output
    */
   const Wash = (input, output) => {
-    event.custom({
-      type: 'vtweaks:fluid_conversion',
-      input: input.toJson(),
-      output: output.toJson(),
-      fluid: 'minecraft:water',
-    });
-  };
-
-  const AllButWhite = (modid, postfix, prefix) => {
-    return [
-      'pink',
-      'magenta',
-      'purple',
-      'blue',
-      'light_blue',
-      'cyan',
-      'green',
-      'lime',
-      'yellow',
-      'orange',
-      'red',
-      'brown',
-      'black',
-      'gray',
-      'light_gray',
-    ].map(color => `${modid}:${prefix || ''}${prefix ? '_' : ''}${color}${postfix ? '_' : ''}${postfix || ''}`);
-  };
-
-  const AllColorsOf = (modid, postfix, prefix) => {
-    return [
-      'pink',
-      'magenta',
-      'purple',
-      'blue',
-      'light_blue',
-      'cyan',
-      'green',
-      'lime',
-      'yellow',
-      'orange',
-      'red',
-      'brown',
-      'black',
-      'gray',
-      'light_gray',
-      'white',
-    ].map(color => `${modid}:${prefix || ''}${prefix ? '_' : ''}${color}${postfix ? '_' : ''}${postfix || ''}`);
+    const id = `vtweaks:${new ResourceLocation(input.substring(1)).getPath()}_to_${new ResourceLocation(output).getPath()}`;
+    event
+      .custom({
+        type: 'vtweaks:fluid_conversion',
+        input: Ingredient.of(input).toJson(),
+        output: Item.of(output).toJson(),
+        fluid: 'minecraft:water',
+      })
+      .id(id);
   };
 
   // Vanilla
-  Wash(Ingredient.of(AllButWhite('minecraft', 'wool')), Ingredient.of('minecraft:white_wool'));
-  Wash(Ingredient.of(AllButWhite('minecraft', 'carpet')), Ingredient.of('minecraft:white_carpet'));
-  Wash(Ingredient.of(AllButWhite('minecraft', 'banner')), Ingredient.of('minecraft:white_banner'));
-  Wash(Ingredient.of(AllButWhite('minecraft', 'bed')), Ingredient.of('minecraft:white_bed'));
+  Wash('#vtweaks:colored_wool', 'minecraft:white_wool');
+  Wash('#vtweaks:colored_carpet', 'minecraft:white_carpet');
+  Wash('#vtweaks:colored_banner', 'minecraft:white_banner');
+  Wash('#vtweaks:colored_bed', 'minecraft:white_bed');
 
-  Wash(Ingredient.of(AllColorsOf('minecraft', 'stained_glass')), Ingredient.of('minecraft:glass'));
-  Wash(Ingredient.of(AllColorsOf('minecraft', 'candle')), Ingredient.of('minecraft:candle'));
-  Wash(Ingredient.of(AllColorsOf('minecraft', 'shulker_box')), Ingredient.of('minecraft:shulker_box'));
+  Wash('#vtweaks:colored_stained_glass', 'minecraft:glass');
+  Wash('#vtweaks:colored_candle', 'minecraft:candle');
 
   // AE2
-  Wash(Ingredient.of(AllColorsOf('ae2', 'covered_cable')), Ingredient.of('ae2:fluix_covered_cable'));
-  Wash(Ingredient.of(AllColorsOf('ae2', 'covered_dense_cable')), Ingredient.of('ae2:fluix_covered_dense_cable'));
-  Wash(Ingredient.of(AllColorsOf('ae2', 'glass_cable')), Ingredient.of('ae2:fluix_glass_cable'));
-  Wash(Ingredient.of(AllColorsOf('ae2', 'smart_cable')), Ingredient.of('ae2:fluix_smart_cable'));
-  Wash(Ingredient.of(AllColorsOf('ae2', 'smart_dense_cable')), Ingredient.of('ae2:fluix_smart_dense_cable'));
+  Wash('#vtweaks:colored_covered_cable', 'ae2:fluix_covered_cable');
+  Wash('#vtweaks:colored_covered_dense_cable', 'ae2:fluix_covered_dense_cable');
+  Wash('#vtweaks:colored_glass_cable', 'ae2:fluix_glass_cable');
+  Wash('#vtweaks:colored_smart_cable', 'ae2:fluix_smart_cable');
+  Wash('#vtweaks:colored_smart_dense_cable', 'ae2:fluix_smart_dense_cable');
 
   // Comforts
-  Wash(Ingredient.of(AllButWhite('comforts', null, 'hammock')), Ingredient.of('comforts:hammock_white'));
-  Wash(Ingredient.of(AllButWhite('comforts', null, 'sleeping_bag')), Ingredient.of('comforts:sleeping_bag_white'));
+  Wash('#vtweaks:colored_hammock', 'comforts:hammock_white');
+  Wash('#vtweaks:colored_sleeping_bag', 'comforts:sleeping_bag_white');
 
   // Connected Glass
-  Wash(Ingredient.of(AllColorsOf('connectedglass', 'pane', 'borderless_glass')), Ingredient.of('connectedglass:borderless_glass_pane'));
-  Wash(Ingredient.of(AllColorsOf('connectedglass', null, 'borderless_glass')), Ingredient.of('connectedglass:borderless_glass'));
-  Wash(Ingredient.of(AllColorsOf('connectedglass', 'pane', 'clear_glass')), Ingredient.of('connectedglass:clear_glass_pane'));
-  Wash(Ingredient.of(AllColorsOf('connectedglass', null, 'clear_glass')), Ingredient.of('connectedglass:clear_glass'));
-  Wash(Ingredient.of(AllColorsOf('connectedglass', 'pane', 'scratched_glass')), Ingredient.of('connectedglass:scratched_glass_pane'));
-  Wash(Ingredient.of(AllColorsOf('connectedglass', null, 'scratched_glass')), Ingredient.of('connectedglass:scratched_glass'));
-  Wash(Ingredient.of(AllColorsOf('connectedglass', null, 'tinted_borderless_glass')), Ingredient.of('connectedglass:tinted_borderless_glass'));
+  Wash('#vtweaks:colored_borderless_glass_pane', 'connectedglass:borderless_glass_pane');
+  Wash('#vtweaks:colored_borderless_glass', 'connectedglass:borderless_glass');
+  Wash('#vtweaks:colored_clear_glass_pane', 'connectedglass:clear_glass_pane');
+  Wash('#vtweaks:colored_clear_glass', 'connectedglass:clear_glass');
+  Wash('#vtweaks:colored_scratched_glass_pane', 'connectedglass:scratched_glass_pane');
+  Wash('#vtweaks:colored_scratched_glass', 'connectedglass:scratched_glass');
+  Wash('#vtweaks:colored_tinted_borderless_glass', 'connectedglass:tinted_borderless_glass');
 
   // EnderIO
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_a')), Ingredient.of('enderio:clear_glass_a'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_d')), Ingredient.of('enderio:clear_glass_d'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_da')), Ingredient.of('enderio:clear_glass_da'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_dm')), Ingredient.of('enderio:clear_glass_dm'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_dna')), Ingredient.of('enderio:clear_glass_dna'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_dnm')), Ingredient.of('enderio:clear_glass_dnm'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_dnp')), Ingredient.of('enderio:clear_glass_dnp'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_dp')), Ingredient.of('enderio:clear_glass_dp'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_e')), Ingredient.of('enderio:clear_glass_e'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_ea')), Ingredient.of('enderio:clear_glass_ea'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_em')), Ingredient.of('enderio:clear_glass_em'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_ena')), Ingredient.of('enderio:clear_glass_ena'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_enm')), Ingredient.of('enderio:clear_glass_enm'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_enp')), Ingredient.of('enderio:clear_glass_enp'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_ep')), Ingredient.of('enderio:clear_glass_ep'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_m')), Ingredient.of('enderio:clear_glass_m'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass')), Ingredient.of('enderio:clear_glass'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_na')), Ingredient.of('enderio:clear_glass_na'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_nm')), Ingredient.of('enderio:clear_glass_nm'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_np')), Ingredient.of('enderio:clear_glass_np'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'clear_glass_p')), Ingredient.of('enderio:clear_glass_p'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_a')), Ingredient.of('enderio:fused_quartz_a'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_d')), Ingredient.of('enderio:fused_quartz_d'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_da')), Ingredient.of('enderio:fused_quartz_da'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_dm')), Ingredient.of('enderio:fused_quartz_dm'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_dna')), Ingredient.of('enderio:fused_quartz_dna'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_dnm')), Ingredient.of('enderio:fused_quartz_dnm'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_dnp')), Ingredient.of('enderio:fused_quartz_dnp'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_dp')), Ingredient.of('enderio:fused_quartz_dp'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_e')), Ingredient.of('enderio:fused_quartz_e'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_ea')), Ingredient.of('enderio:fused_quartz_ea'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_em')), Ingredient.of('enderio:fused_quartz_em'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_ena')), Ingredient.of('enderio:fused_quartz_ena'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_enm')), Ingredient.of('enderio:fused_quartz_enm'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_enp')), Ingredient.of('enderio:fused_quartz_enp'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_ep')), Ingredient.of('enderio:fused_quartz_ep'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_m')), Ingredient.of('enderio:fused_quartz_m'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz')), Ingredient.of('enderio:fused_quartz'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_na')), Ingredient.of('enderio:fused_quartz_na'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_nm')), Ingredient.of('enderio:fused_quartz_nm'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_np')), Ingredient.of('enderio:fused_quartz_np'));
-  Wash(Ingredient.of(AllColorsOf('enderio', null, 'fused_quartz_p')), Ingredient.of('enderio:fused_quartz_p'));
+  Wash('#vtweaks:colored_clear_glass_a', 'enderio:clear_glass_a');
+  Wash('#vtweaks:colored_clear_glass_d', 'enderio:clear_glass_d');
+  Wash('#vtweaks:colored_clear_glass_da', 'enderio:clear_glass_da');
+  Wash('#vtweaks:colored_clear_glass_dm', 'enderio:clear_glass_dm');
+  Wash('#vtweaks:colored_clear_glass_dna', 'enderio:clear_glass_dna');
+  Wash('#vtweaks:colored_clear_glass_dnm', 'enderio:clear_glass_dnm');
+  Wash('#vtweaks:colored_clear_glass_dnp', 'enderio:clear_glass_dnp');
+  Wash('#vtweaks:colored_clear_glass_dp', 'enderio:clear_glass_dp');
+  Wash('#vtweaks:colored_clear_glass_e', 'enderio:clear_glass_e');
+  Wash('#vtweaks:colored_clear_glass_ea', 'enderio:clear_glass_ea');
+  Wash('#vtweaks:colored_clear_glass_em', 'enderio:clear_glass_em');
+  Wash('#vtweaks:colored_clear_glass_ena', 'enderio:clear_glass_ena');
+  Wash('#vtweaks:colored_clear_glass_enm', 'enderio:clear_glass_enm');
+  Wash('#vtweaks:colored_clear_glass_enp', 'enderio:clear_glass_enp');
+  Wash('#vtweaks:colored_clear_glass_ep', 'enderio:clear_glass_ep');
+  Wash('#vtweaks:colored_clear_glass_m', 'enderio:clear_glass_m');
+  Wash('#vtweaks:colored_clear_glass', 'enderio:clear_glass');
+  Wash('#vtweaks:colored_clear_glass_na', 'enderio:clear_glass_na');
+  Wash('#vtweaks:colored_clear_glass_nm', 'enderio:clear_glass_nm');
+  Wash('#vtweaks:colored_clear_glass_np', 'enderio:clear_glass_np');
+  Wash('#vtweaks:colored_clear_glass_p', 'enderio:clear_glass_p');
+  Wash('#vtweaks:colored_fused_quartz_a', 'enderio:fused_quartz_a');
+  Wash('#vtweaks:colored_fused_quartz_d', 'enderio:fused_quartz_d');
+  Wash('#vtweaks:colored_fused_quartz_da', 'enderio:fused_quartz_da');
+  Wash('#vtweaks:colored_fused_quartz_dm', 'enderio:fused_quartz_dm');
+  Wash('#vtweaks:colored_fused_quartz_dna', 'enderio:fused_quartz_dna');
+  Wash('#vtweaks:colored_fused_quartz_dnm', 'enderio:fused_quartz_dnm');
+  Wash('#vtweaks:colored_fused_quartz_dnp', 'enderio:fused_quartz_dnp');
+  Wash('#vtweaks:colored_fused_quartz_dp', 'enderio:fused_quartz_dp');
+  Wash('#vtweaks:colored_fused_quartz_e', 'enderio:fused_quartz_e');
+  Wash('#vtweaks:colored_fused_quartz_ea', 'enderio:fused_quartz_ea');
+  Wash('#vtweaks:colored_fused_quartz_em', 'enderio:fused_quartz_em');
+  Wash('#vtweaks:colored_fused_quartz_ena', 'enderio:fused_quartz_ena');
+  Wash('#vtweaks:colored_fused_quartz_enm', 'enderio:fused_quartz_enm');
+  Wash('#vtweaks:colored_fused_quartz_enp', 'enderio:fused_quartz_enp');
+  Wash('#vtweaks:colored_fused_quartz_ep', 'enderio:fused_quartz_ep');
+  Wash('#vtweaks:colored_fused_quartz_m', 'enderio:fused_quartz_m');
+  Wash('#vtweaks:colored_fused_quartz', 'enderio:fused_quartz');
+  Wash('#vtweaks:colored_fused_quartz_na', 'enderio:fused_quartz_na');
+  Wash('#vtweaks:colored_fused_quartz_nm', 'enderio:fused_quartz_nm');
+  Wash('#vtweaks:colored_fused_quartz_np', 'enderio:fused_quartz_np');
+  Wash('#vtweaks:colored_fused_quartz_p', 'enderio:fused_quartz_p');
 
   // Farmer's Delight
-  Wash(Ingredient.of(AllColorsOf('farmersdelight', 'canvas_sign')), Ingredient.of('farmersdelight:canvas_sign'));
-  Wash(Ingredient.of(AllColorsOf('farmersdelight', 'hanging_canvas_sign')), Ingredient.of('farmersdelight:hanging_canvas_sign'));
+  Wash('#vtweaks:colored_canvas_sign', 'farmersdelight:canvas_sign');
+  Wash('#vtweaks:colored_hanging_canvas_sign', 'farmersdelight:hanging_canvas_sign');
 
   // Handcrafted
-  Wash(Ingredient.of(AllButWhite('handcrafted', 'cushion')), Ingredient.of('handcrafted:white_cushion'));
-  Wash(Ingredient.of(AllButWhite('handcrafted', 'sheet')), Ingredient.of('handcrafted:white_sheet'));
+  Wash('#vtweaks:colored_cushion', 'handcrafted:white_cushion');
+  Wash('#vtweaks:colored_sheet', 'handcrafted:white_sheet');
 
   // IE
-  Wash(
-    Ingredient.of(AllButWhite('immersiveengineering', null, 'sheetmetal_colored')),
-    Ingredient.of('immersiveengineering:sheetmetal_colored_white')
-  );
-  Wash(
-    Ingredient.of(AllButWhite('immersiveengineering', null, 'slab_sheetmetal_colored')),
-    Ingredient.of('immersiveengineering:slab_sheetmetal_colored_white')
-  );
+  Wash('#vtweaks:colored_sheetmetal_colored', 'immersiveengineering:sheetmetal_colored_white');
+  Wash('#vtweaks:colored_slab_sheetmetal_colored', 'immersiveengineering:slab_sheetmetal_colored_white');
 
   // Interiors
-  Wash(Ingredient.of(AllButWhite('interiors', 'chair')), Ingredient.of('interiors:white_chair'));
-  Wash(Ingredient.of(AllButWhite('interiors', 'floor_chair')), Ingredient.of('interiors:white_floor_chair'));
+  Wash('#vtweaks:colored_chair', 'interiors:white_chair');
+  Wash('#vtweaks:colored_floor_chair', 'interiors:white_floor_chair');
 
   // Supplementaries
-  Wash(Ingredient.of(AllColorsOf('supplementaries', null, 'candle_holder')), Ingredient.of('supplementaries:candle_holder'));
-  Wash(Ingredient.of(AllButWhite('supplementaries', null, 'flag')), Ingredient.of('supplementaries:flag_white'));
+  Wash('#vtweaks:colored_candle_holder', 'supplementaries:candle_holder');
+  Wash('#vtweaks:colored_flag', 'supplementaries:flag_white');
 });

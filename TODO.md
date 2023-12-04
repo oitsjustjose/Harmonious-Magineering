@@ -1,0 +1,4 @@
+- [ ] Unlock Bloodmagic Tag when player picks up the bricks they need in the Aether
+- [ ] Fix Aether logs being used to craft Overworld Sticks
+- [ ] Lootr texture compatibility with Mimics
+- [ ] Mimic chest drop is vanilla, should be Expanded Storage
