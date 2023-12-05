@@ -1,3 +1,127 @@
+ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
+  const Recipes = {
+    'ae2:certus_quartz_axe': Ingredient.of('#forge:gems/certus_quartz'),
+    'ae2:certus_quartz_cutting_knife': Ingredient.of('#forge:gems/certus_quartz'),
+    'ae2:certus_quartz_hoe': Ingredient.of('#forge:gems/certus_quartz'),
+    'ae2:certus_quartz_pickaxe': Ingredient.of('#forge:gems/certus_quartz'),
+    'ae2:certus_quartz_shovel': Ingredient.of('#forge:gems/certus_quartz'),
+    'ae2:certus_quartz_sword': Ingredient.of('#forge:gems/certus_quartz'),
+    'ae2:certus_quartz_wrench': Ingredient.of('#forge:gems/certus_quartz'),
+    'ae2:fluix_axe': Ingredient.of('#forge:gems/fluix'),
+    'ae2:fluix_hoe': Ingredient.of('#forge:gems/fluix'),
+    'ae2:fluix_pickaxe': Ingredient.of('#forge:gems/fluix'),
+    'ae2:fluix_shovel': Ingredient.of('#forge:gems/fluix'),
+    'ae2:fluix_sword': Ingredient.of('#forge:gems/fluix'),
+    'ae2:nether_quartz_axe': Ingredient.of('#forge:gems/quartz'),
+    'ae2:nether_quartz_cutting_knife': Ingredient.of('#forge:gems/quartz'),
+    'ae2:nether_quartz_hoe': Ingredient.of('#forge:gems/quartz'),
+    'ae2:nether_quartz_shovel': Ingredient.of('#forge:gems/quartz'),
+    'ae2:nether_quartz_sword': Ingredient.of('#forge:gems/quartz'),
+    'aether:chainmail_gloves': Ingredient.of('#forge:ingots/iron'),
+    'aether:diamond_gloves': Ingredient.of('#forge:gems/diamond'),
+    'aether:golden_gloves': Ingredient.of('#forge:ingots/gold'),
+    'aether:iron_gloves': Ingredient.of('#forge:ingots/iron'),
+    'aether:leather_gloves': Ingredient.of('#forge:leather'),
+    'aether:netherite_gloves': Ingredient.of('#forge:ingots/netherite'),
+    'aether:obsidian_boots': Ingredient.of('#forge:obsidian'),
+    'aether:obsidian_chestplate': Ingredient.of('#forge:obsidian'),
+    'aether:obsidian_gloves': Ingredient.of('#forge:obsidian'),
+    'aether:obsidian_helmet': Ingredient.of('#forge:obsidian'),
+    'aether:obsidian_leggings': Ingredient.of('#forge:obsidian'),
+    'bloodmagic:soulaxe': Ingredient.of('#forge:ingots/iron'),
+    'bloodmagic:soulpickaxe': Ingredient.of('#forge:ingots/iron'),
+    'bloodmagic:soulscythe': Ingredient.of('#forge:ingots/iron'),
+    'bloodmagic:soulshovel': Ingredient.of('#forge:ingots/iron'),
+    'bloodmagic:soulsword': Ingredient.of('#forge:ingots/iron'),
+    'eidolon:athame': Ingredient.of('#forge:ingots/pewter'),
+    'eidolon:bonechill_wand': Ingredient.of('eidolon:wraith_heart'),
+    'eidolon:bonelord_chestplate': Ingredient.of('eidolon:imbued_bones'),
+    'eidolon:bonelord_greaves': Ingredient.of('eidolon:imbued_bones'),
+    'eidolon:bonelord_helm': Ingredient.of('eidolon:imbued_bones'),
+    'eidolon:cleaving_axe': Ingredient.of('#forge:ingots/pewter'),
+    'eidolon:deathbringer_scythe': Ingredient.of('eidolon:shadow_gem'),
+    'eidolon:reaper_scythe': Ingredient.of('#forge:ingots/pewter'),
+    'eidolon:reversal_pick': Ingredient.of('eidolon:lesser_soul_gem'),
+    'eidolon:sapping_sword': Ingredient.of('minecraft:ghast_tear'),
+    'eidolon:silver_axe': Ingredient.of('#forge:ingots/silver'),
+    'eidolon:silver_boots': Ingredient.of('#forge:ingots/silver'),
+    'eidolon:silver_chestplate': Ingredient.of('#forge:ingots/silver'),
+    'eidolon:silver_helmet': Ingredient.of('#forge:ingots/silver'),
+    'eidolon:silver_hoe': Ingredient.of('#forge:ingots/silver'),
+    'eidolon:silver_leggings': Ingredient.of('#forge:ingots/silver'),
+    'eidolon:silver_pickaxe': Ingredient.of('#forge:ingots/silver'),
+    'eidolon:silver_shovel': Ingredient.of('#forge:ingots/silver'),
+    'eidolon:silver_sword': Ingredient.of('#forge:ingots/silver'),
+    'eidolon:soulfire_wand': Ingredient.of('eidolon:shadow_gem'),
+    'eidolon:top_hat': Ingredient.of('minecraft:black_wool'),
+    'eidolon:warlock_boots': Ingredient.of('eidolon:wicked_weave'),
+    'eidolon:warlock_cloak': Ingredient.of('eidolon:wicked_weave'),
+    'eidolon:warlock_hat': Ingredient.of('eidolon:wicked_weave'),
+    'embers:ashen_boots': Ingredient.of('embers:ashen_fabric'),
+    'embers:ashen_cloak': Ingredient.of('embers:ashen_fabric'),
+    'embers:ashen_goggles': Ingredient.of('embers:ashen_fabric'),
+    'embers:ashen_leggings': Ingredient.of('embers:ashen_fabric'),
+    'embers:dawnstone_axe': Ingredient.of('#forge:ingots/dawnstone'),
+    'embers:dawnstone_hoe': Ingredient.of('#forge:ingots/dawnstone'),
+    'embers:dawnstone_pickaxe': Ingredient.of('#forge:ingots/dawnstone'),
+    'embers:dawnstone_shovel': Ingredient.of('#forge:ingots/dawnstone'),
+    'embers:dawnstone_sword': Ingredient.of('#forge:ingots/dawnstone'),
+    'embers:lead_axe': Ingredient.of('#forge:ingots/lead'),
+    'embers:lead_hoe': Ingredient.of('#forge:ingots/lead'),
+    'embers:lead_pickaxe': Ingredient.of('#forge:ingots/lead'),
+    'embers:lead_shovel': Ingredient.of('#forge:ingots/lead'),
+    'embers:lead_sword': Ingredient.of('#forge:ingots/lead'),
+    'embers:tyrfing': Ingredient.of('#embers:aspectus/lead'),
+    'enlightened_end:adamantite_axe': Ingredient.of('#forge:ingots/adamantite'),
+    'enlightened_end:adamantite_pickaxe': Ingredient.of('#forge:ingots/adamantite'),
+    'enlightened_end:adamantite_shovel': Ingredient.of('#forge:ingots/adamantite'),
+    'enlightened_end:adamantite_sword': Ingredient.of('#forge:ingots/adamantite'),
+    'farmersdelight:diamond_knife': Ingredient.of('#forge:gems/diamond'),
+    'farmersdelight:flint_knife': Ingredient.of('minecraft:flint'),
+    'farmersdelight:iron_knife': Ingredient.of('#forge:ingots/iron'),
+    'farmersdelight:netherite_knife': Ingredient.of('#forge:ingots/netherite'),
+    'immersiveengineering:axe_steel': Ingredient.of('#forge:ingots/steel'),
+    'immersiveengineering:hammer': Ingredient.of('#forge:ingots/steel'),
+    'immersiveengineering:hoe_steel': Ingredient.of('#forge:ingots/steel'),
+    'immersiveengineering:pickaxe_steel': Ingredient.of('#forge:ingots/steel'),
+    'immersiveengineering:screwdriver': Ingredient.of('#forge:ingots/steel'),
+    'immersiveengineering:shield': Ingredient.of('#forge:ingots/steel'),
+    'immersiveengineering:shovel_steel': Ingredient.of('#forge:ingots/steel'),
+    'immersiveengineering:sword_steel': Ingredient.of('#forge:ingots/steel'),
+    'immersiveengineering:wirecutter': Ingredient.of('#forge:ingots/steel'),
+    'minecraft:bow': Ingredient.of('#forge:string'),
+    'minecraft:carrot_on_a_stick': Ingredient.of('#forge:string'),
+    'minecraft:crossbow': Ingredient.of('#forge:string'),
+    'minecraft:fishing_rod': Ingredient.of('#forge:string'),
+    'minecraft:flint_and_steel': Ingredient.of('#forge:ingots/iron'),
+    'minecraft:shears': Ingredient.of('#forge:ingots/iron'),
+    'minecraft:shield': Ingredient.of('#forge:ingots/iron'),
+    'minecraft:trident': Ingredient.of('#forge:gems/prismarine'),
+    'minecraft:warped_fungus_on_a_stick': Ingredient.of('#forge:string'),
+    'nethersdelight:diamond_machete': Ingredient.of('#forge:gems/diamond'),
+    'nethersdelight:golden_machete': Ingredient.of('#forge:ingots/gold'),
+    'nethersdelight:iron_machete': Ingredient.of('#forge:ingots/iron'),
+    'nethersdelight:netherite_machete': Ingredient.of('#forge:ingots/netherite'),
+    'supplementaries:wrench': Ingredient.of('#forge:ingots/copper'),
+  };
+
+  const input = event.getLeft();
+  if (input.isEmpty() || event.getRight().isEmpty()) return;
+  if (input.getDamageValue() === 0) return;
+
+  const key = input.getId();
+  if (!Object.keys(Recipes).includes(key)) return;
+  if (!Recipes[key].test(event.getRight())) return;
+
+  const result = input.copy();
+  result.setDamageValue(0);
+
+  const cost = Math.min(1, Math.round(3 * (input.getDamageValue() / input.getMaxDamage())));
+
+  event.setCost(cost);
+  event.setOutput(result);
+});
+
 ItemEvents.modification(event => {
   ['minecraft:wooden_sword', 'minecraft:wooden_pickaxe', 'minecraft:wooden_shovel', 'minecraft:wooden_axe', 'minecraft:wooden_hoe'].forEach(tool => {
     event.modify(tool, item => {
@@ -18,7 +142,6 @@ StartupEvents.registry('minecraft:item', event => {
     'unknown_kinetic_item',
     'unknown_pneumatic_item',
     'unknown_electric_item',
-    'unknown_ender_item',
     'unknown_energistic_item',
   ].forEach(x => event.create(x));
 });

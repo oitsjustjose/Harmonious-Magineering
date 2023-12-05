@@ -153,7 +153,7 @@ ServerEvents.recipes(event => {
     tag: 'mekanism',
     mod: 'mekanism',
     substitute: {item: 'kubejs:unknown_energistic_item'},
-    exceptions: {item: 'mekanism:exception'},
+    exceptions: {tag: 'mekanism:exception'},
   });
 
   event.custom({
@@ -226,14 +226,5 @@ ServerEvents.recipes(event => {
     tag: 'ae2',
     mod: 'appmek',
     substitute: {item: 'kubejs:unknown_energistic_item'},
-  });
-
-  /* ~~ ENDERIO ~~ */
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'enderio',
-    mod: 'enderio',
-    substitute: {item: 'kubejs:unknown_ender_item'},
-    exceptions: [{item: 'enderio:dark_steel_ingot'}, {item: 'enderio:dark_steel_nugget'}, {item: 'enderio:dark_steel_block'}],
   });
 });

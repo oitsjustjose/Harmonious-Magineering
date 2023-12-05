@@ -4,15 +4,13 @@ ServerEvents.recipes(event => {
    * @param {String} output
    */
   const Wash = (input, output) => {
-    const id = `vtweaks:${new ResourceLocation(input.substring(1)).getPath()}_to_${new ResourceLocation(output).getPath()}`;
     event
       .custom({
         type: 'vtweaks:fluid_conversion',
         input: Ingredient.of(input).toJson(),
         output: Item.of(output).toJson(),
         fluid: 'minecraft:water',
-      })
-      .id(id);
+      });
   };
 
   // Vanilla
@@ -43,50 +41,6 @@ ServerEvents.recipes(event => {
   Wash('#vtweaks:colored_scratched_glass_pane', 'connectedglass:scratched_glass_pane');
   Wash('#vtweaks:colored_scratched_glass', 'connectedglass:scratched_glass');
   Wash('#vtweaks:colored_tinted_borderless_glass', 'connectedglass:tinted_borderless_glass');
-
-  // EnderIO
-  Wash('#vtweaks:colored_clear_glass_a', 'enderio:clear_glass_a');
-  Wash('#vtweaks:colored_clear_glass_d', 'enderio:clear_glass_d');
-  Wash('#vtweaks:colored_clear_glass_da', 'enderio:clear_glass_da');
-  Wash('#vtweaks:colored_clear_glass_dm', 'enderio:clear_glass_dm');
-  Wash('#vtweaks:colored_clear_glass_dna', 'enderio:clear_glass_dna');
-  Wash('#vtweaks:colored_clear_glass_dnm', 'enderio:clear_glass_dnm');
-  Wash('#vtweaks:colored_clear_glass_dnp', 'enderio:clear_glass_dnp');
-  Wash('#vtweaks:colored_clear_glass_dp', 'enderio:clear_glass_dp');
-  Wash('#vtweaks:colored_clear_glass_e', 'enderio:clear_glass_e');
-  Wash('#vtweaks:colored_clear_glass_ea', 'enderio:clear_glass_ea');
-  Wash('#vtweaks:colored_clear_glass_em', 'enderio:clear_glass_em');
-  Wash('#vtweaks:colored_clear_glass_ena', 'enderio:clear_glass_ena');
-  Wash('#vtweaks:colored_clear_glass_enm', 'enderio:clear_glass_enm');
-  Wash('#vtweaks:colored_clear_glass_enp', 'enderio:clear_glass_enp');
-  Wash('#vtweaks:colored_clear_glass_ep', 'enderio:clear_glass_ep');
-  Wash('#vtweaks:colored_clear_glass_m', 'enderio:clear_glass_m');
-  Wash('#vtweaks:colored_clear_glass', 'enderio:clear_glass');
-  Wash('#vtweaks:colored_clear_glass_na', 'enderio:clear_glass_na');
-  Wash('#vtweaks:colored_clear_glass_nm', 'enderio:clear_glass_nm');
-  Wash('#vtweaks:colored_clear_glass_np', 'enderio:clear_glass_np');
-  Wash('#vtweaks:colored_clear_glass_p', 'enderio:clear_glass_p');
-  Wash('#vtweaks:colored_fused_quartz_a', 'enderio:fused_quartz_a');
-  Wash('#vtweaks:colored_fused_quartz_d', 'enderio:fused_quartz_d');
-  Wash('#vtweaks:colored_fused_quartz_da', 'enderio:fused_quartz_da');
-  Wash('#vtweaks:colored_fused_quartz_dm', 'enderio:fused_quartz_dm');
-  Wash('#vtweaks:colored_fused_quartz_dna', 'enderio:fused_quartz_dna');
-  Wash('#vtweaks:colored_fused_quartz_dnm', 'enderio:fused_quartz_dnm');
-  Wash('#vtweaks:colored_fused_quartz_dnp', 'enderio:fused_quartz_dnp');
-  Wash('#vtweaks:colored_fused_quartz_dp', 'enderio:fused_quartz_dp');
-  Wash('#vtweaks:colored_fused_quartz_e', 'enderio:fused_quartz_e');
-  Wash('#vtweaks:colored_fused_quartz_ea', 'enderio:fused_quartz_ea');
-  Wash('#vtweaks:colored_fused_quartz_em', 'enderio:fused_quartz_em');
-  Wash('#vtweaks:colored_fused_quartz_ena', 'enderio:fused_quartz_ena');
-  Wash('#vtweaks:colored_fused_quartz_enm', 'enderio:fused_quartz_enm');
-  Wash('#vtweaks:colored_fused_quartz_enp', 'enderio:fused_quartz_enp');
-  Wash('#vtweaks:colored_fused_quartz_ep', 'enderio:fused_quartz_ep');
-  Wash('#vtweaks:colored_fused_quartz_m', 'enderio:fused_quartz_m');
-  Wash('#vtweaks:colored_fused_quartz', 'enderio:fused_quartz');
-  Wash('#vtweaks:colored_fused_quartz_na', 'enderio:fused_quartz_na');
-  Wash('#vtweaks:colored_fused_quartz_nm', 'enderio:fused_quartz_nm');
-  Wash('#vtweaks:colored_fused_quartz_np', 'enderio:fused_quartz_np');
-  Wash('#vtweaks:colored_fused_quartz_p', 'enderio:fused_quartz_p');
 
   // Farmer's Delight
   Wash('#vtweaks:colored_canvas_sign', 'farmersdelight:canvas_sign');

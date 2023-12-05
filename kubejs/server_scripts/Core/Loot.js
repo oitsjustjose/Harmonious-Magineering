@@ -96,13 +96,6 @@ LootJS.modifiers(event => {
 
   const ModLoot = () => {
     [
-      'enderio:dark_bimetal_gear',
-      'enderio:dark_steel_sword',
-      'enderio:energized_gear',
-      'enderio:iron_gear',
-      'enderio:stone_gear',
-      'enderio:vibrant_gear',
-      'enderio:wood_gear',
       'pneumaticcraft:capacitor',
       'pneumaticcraft:compressed_iron_boots',
       'pneumaticcraft:compressed_iron_chestplate',

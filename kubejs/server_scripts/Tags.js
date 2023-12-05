@@ -143,50 +143,6 @@ ServerEvents.tags('item', event => {
     event.add('vtweaks:colored_scratched_glass', AllColorsOf('connectedglass', null, 'scratched_glass'));
     event.add('vtweaks:colored_tinted_borderless_glass', AllColorsOf('connectedglass', null, 'tinted_borderless_glass'));
 
-    // EnderIO
-    event.add('vtweaks:colored_clear_glass_a', AllColorsOf('enderio', null, 'clear_glass_a'));
-    event.add('vtweaks:colored_clear_glass_d', AllColorsOf('enderio', null, 'clear_glass_d'));
-    event.add('vtweaks:colored_clear_glass_da', AllColorsOf('enderio', null, 'clear_glass_da'));
-    event.add('vtweaks:colored_clear_glass_dm', AllColorsOf('enderio', null, 'clear_glass_dm'));
-    event.add('vtweaks:colored_clear_glass_dna', AllColorsOf('enderio', null, 'clear_glass_dna'));
-    event.add('vtweaks:colored_clear_glass_dnm', AllColorsOf('enderio', null, 'clear_glass_dnm'));
-    event.add('vtweaks:colored_clear_glass_dnp', AllColorsOf('enderio', null, 'clear_glass_dnp'));
-    event.add('vtweaks:colored_clear_glass_dp', AllColorsOf('enderio', null, 'clear_glass_dp'));
-    event.add('vtweaks:colored_clear_glass_e', AllColorsOf('enderio', null, 'clear_glass_e'));
-    event.add('vtweaks:colored_clear_glass_ea', AllColorsOf('enderio', null, 'clear_glass_ea'));
-    event.add('vtweaks:colored_clear_glass_em', AllColorsOf('enderio', null, 'clear_glass_em'));
-    event.add('vtweaks:colored_clear_glass_ena', AllColorsOf('enderio', null, 'clear_glass_ena'));
-    event.add('vtweaks:colored_clear_glass_enm', AllColorsOf('enderio', null, 'clear_glass_enm'));
-    event.add('vtweaks:colored_clear_glass_enp', AllColorsOf('enderio', null, 'clear_glass_enp'));
-    event.add('vtweaks:colored_clear_glass_ep', AllColorsOf('enderio', null, 'clear_glass_ep'));
-    event.add('vtweaks:colored_clear_glass_m', AllColorsOf('enderio', null, 'clear_glass_m'));
-    event.add('vtweaks:colored_clear_glass', AllColorsOf('enderio', null, 'clear_glass'));
-    event.add('vtweaks:colored_clear_glass_na', AllColorsOf('enderio', null, 'clear_glass_na'));
-    event.add('vtweaks:colored_clear_glass_nm', AllColorsOf('enderio', null, 'clear_glass_nm'));
-    event.add('vtweaks:colored_clear_glass_np', AllColorsOf('enderio', null, 'clear_glass_np'));
-    event.add('vtweaks:colored_clear_glass_p', AllColorsOf('enderio', null, 'clear_glass_p'));
-    event.add('vtweaks:colored_fused_quartz_a', AllColorsOf('enderio', null, 'fused_quartz_a'));
-    event.add('vtweaks:colored_fused_quartz_d', AllColorsOf('enderio', null, 'fused_quartz_d'));
-    event.add('vtweaks:colored_fused_quartz_da', AllColorsOf('enderio', null, 'fused_quartz_da'));
-    event.add('vtweaks:colored_fused_quartz_dm', AllColorsOf('enderio', null, 'fused_quartz_dm'));
-    event.add('vtweaks:colored_fused_quartz_dna', AllColorsOf('enderio', null, 'fused_quartz_dna'));
-    event.add('vtweaks:colored_fused_quartz_dnm', AllColorsOf('enderio', null, 'fused_quartz_dnm'));
-    event.add('vtweaks:colored_fused_quartz_dnp', AllColorsOf('enderio', null, 'fused_quartz_dnp'));
-    event.add('vtweaks:colored_fused_quartz_dp', AllColorsOf('enderio', null, 'fused_quartz_dp'));
-    event.add('vtweaks:colored_fused_quartz_e', AllColorsOf('enderio', null, 'fused_quartz_e'));
-    event.add('vtweaks:colored_fused_quartz_ea', AllColorsOf('enderio', null, 'fused_quartz_ea'));
-    event.add('vtweaks:colored_fused_quartz_em', AllColorsOf('enderio', null, 'fused_quartz_em'));
-    event.add('vtweaks:colored_fused_quartz_ena', AllColorsOf('enderio', null, 'fused_quartz_ena'));
-    event.add('vtweaks:colored_fused_quartz_enm', AllColorsOf('enderio', null, 'fused_quartz_enm'));
-    event.add('vtweaks:colored_fused_quartz_enp', AllColorsOf('enderio', null, 'fused_quartz_enp'));
-    event.add('vtweaks:colored_fused_quartz_ep', AllColorsOf('enderio', null, 'fused_quartz_ep'));
-    event.add('vtweaks:colored_fused_quartz_m', AllColorsOf('enderio', null, 'fused_quartz_m'));
-    event.add('vtweaks:colored_fused_quartz', AllColorsOf('enderio', null, 'fused_quartz'));
-    event.add('vtweaks:colored_fused_quartz_na', AllColorsOf('enderio', null, 'fused_quartz_na'));
-    event.add('vtweaks:colored_fused_quartz_nm', AllColorsOf('enderio', null, 'fused_quartz_nm'));
-    event.add('vtweaks:colored_fused_quartz_np', AllColorsOf('enderio', null, 'fused_quartz_np'));
-    event.add('vtweaks:colored_fused_quartz_p', AllColorsOf('enderio', null, 'fused_quartz_p'));
-
     // Farmer's Delight
     event.add('vtweaks:colored_canvas_sign', AllColorsOf('farmersdelight', 'canvas_sign'));
     event.add('vtweaks:colored_hanging_canvas_sign', AllColorsOf('farmersdelight', 'hanging_canvas_sign'));
@@ -511,6 +467,7 @@ ServerEvents.tags('entity_type', event => {
 ServerEvents.tags('fluid', event => {
   event.removeAll('minecraft:water');
   event.add('minecraft:water', 'minecraft:water');
+  event.add('minecraft:water', 'minecraft:flowing_water');
 
   event.remove('forge:honey', 'productivebees:honey');
 });

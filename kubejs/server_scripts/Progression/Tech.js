@@ -110,50 +110,13 @@ ServerEvents.recipes(event => {
     event.shaped('dimstorage:dimensional_tank', ['SSS', 'HTH', 'SSS'], {
       S: '#forge:ingots/steel',
       H: 'create_enchantment_industry:hyper_experience_bottle',
-      T: ['mekanism:basic_fluid_tank', 'create:fluid_tank', 'enderio:pressurized_fluid_tank'],
+      T: ['mekanism:basic_fluid_tank', 'create:fluid_tank'],
     });
 
     event.shaped('dimstorage:dimensional_tablet', ['SSS', 'HWH', 'SSS'], {
       S: '#forge:plates/steel',
       H: 'create_enchantment_industry:hyper_experience_bottle',
       W: 'rftoolsbase:information_screen',
-    });
-  };
-
-  const EnderIo = () => {
-    // Remove the primitive alloy smelter
-    event.remove({output: 'enderio:primitive_alloy_smelter'});
-
-    // Re-work Void Chassis behind HDPE
-    event.remove({output: 'enderio:void_chassis'});
-    event.shaped('enderio:void_chassis', ['GHG', 'HCH', 'GHG'], {
-      H: 'mekanism:hdpe_sheet',
-      G: '#forge:dusts/grains_of_infinity',
-      C: 'mekanism:steel_casing',
-    });
-
-    event.custom({
-      type: 'enderio:alloy_smelting',
-      energy: 6400,
-      experience: 0.0,
-      inputs: [
-        {
-          ingredient: {item: 'mekanism:hdpe_sheet'},
-          count: 2,
-        },
-        {
-          ingredient: {tag: 'forge:dusts/grains_of_infinity'},
-          count: 2,
-        },
-        {
-          ingredient: {item: 'mekanism:steel_casing'},
-          count: 1,
-        },
-      ],
-      result: {
-        item: 'enderio:void_chassis',
-        count: 2,
-      },
     });
   };
 
@@ -194,7 +157,8 @@ ServerEvents.recipes(event => {
 
     event.remove({id: mod('alloysmelter/brass')});
     event.remove({id: mod('alloysmelter/bronze')});
-    event.replaceInput({output: mod('hammer')}, '#forge:ingots/iron', '#forge:ingots/steel');
+    event.replaceInput({ output: mod('hammer') }, '#forge:ingots/iron', '#forge:ingots/steel');
+    event.replaceInput({ output: mod('wirecutter') }, '#forge:ingots/iron', '#forge:ingots/steel');
 
     Steel();
   };
@@ -417,7 +381,6 @@ ServerEvents.recipes(event => {
     Chunkloaders,
     Create,
     DimStorage,
-    EnderIo,
     Entangled,
     ImmersiveEngineering,
     LaserIO,

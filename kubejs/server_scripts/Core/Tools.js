@@ -305,3 +305,5 @@ ServerEvents.recipes(event => {
 
   [BaseTools, Armor, Gloves, Knives, Machetes].forEach(ProcessSet);
 });
+
+
