@@ -133,6 +133,9 @@
     "goggles.detailed": false,
     "placard": true
   },
+  "supplementaries": {
+    "hat_stand": true
+  },
   "waystones": {
     "waystone": true
   },

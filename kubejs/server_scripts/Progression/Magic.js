@@ -231,16 +231,6 @@ ServerEvents.recipes(event => {
 
     event.custom({
       type: 'bloodmagic:altar',
-      altarSyphon: 9000,
-      consumptionRate: 5,
-      drainRate: 5,
-      input: {tag: 'forge:storage_blocks/gold'},
-      output: {item: 'eidolon:arcane_gold_block'},
-      upgradeLevel: 1,
-    });
-
-    event.custom({
-      type: 'bloodmagic:altar',
       altarSyphon: 111,
       consumptionRate: 5,
       drainRate: 5,

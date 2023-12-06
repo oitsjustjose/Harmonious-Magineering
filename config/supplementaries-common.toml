@@ -210,6 +210,7 @@
 	doormat = true
 	flint_block = true
 	candle_holder = true
+	hat_stand = true
 
 	[building.blackboard]
 		enabled = true
@@ -556,6 +557,8 @@
 		min_search_radius = 75
 		#Makes blocks tagged as 'tinted_on_map' use their tint color. This allows for accurate biome colors for water and grass as well as other custom block that use any tint
 		tinted_blocks_on_maps = true
+		#Select a random structure to look for instead of iterating through all of the ones in the tag returning the closest. Turning on will make ones that have diff structures (aka all different ruined portals) show up more. On could take much more time to compute
+		random_adventurer_maps_select_random_structure = true
 
 	[tweaks.ceiling_banners]
 		#Allow banners to be placed on ceilings

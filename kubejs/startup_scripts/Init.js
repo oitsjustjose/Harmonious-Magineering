@@ -105,21 +105,26 @@ ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
     'supplementaries:wrench': Ingredient.of('#forge:ingots/copper'),
   };
 
-  const input = event.getLeft();
-  if (input.isEmpty() || event.getRight().isEmpty()) return;
-  if (input.getDamageValue() === 0) return;
+  try {
+    const input = event.getLeft();
+    if (input.isEmpty() || event.getRight().isEmpty()) return;
+    if (input.getDamageValue() === 0) return;
 
-  const key = input.getId();
-  if (!Object.keys(Recipes).includes(key)) return;
-  if (!Recipes[key].test(event.getRight())) return;
+    const key = input.getId();
+    if (!Object.keys(Recipes).includes(key)) return;
+    if (!Recipes[key].test(event.getRight())) return;
 
-  const result = input.copy();
-  result.setDamageValue(0);
+    const result = input.copy();
+    result.setDamageValue(0);
 
-  const cost = Math.min(1, Math.round(3 * (input.getDamageValue() / input.getMaxDamage())));
-
-  event.setCost(cost);
-  event.setOutput(result);
+    event.setCost(1);
+    event.setOutput(result);
+  } catch (ex) {
+    event.setCost(0);
+    event.setOutput(Item.getEmpty());
+    console.log(ex);
+    console.log(event);
+  }
 });
 
 ItemEvents.modification(event => {
