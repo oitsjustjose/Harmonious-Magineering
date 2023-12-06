@@ -1,4 +1,5 @@
 
 [Settings]
-displayArmorModels = false
-displayToolsModels = false
+	displayArmorModels = false
+	displayToolsModels = false
+
