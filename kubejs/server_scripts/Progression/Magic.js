@@ -2,13 +2,13 @@ ServerEvents.recipes(event => {
   const Aether = () => {
     /**
      * @param {Internal.Ingredient} input
-     * @param {Number} time
+     * @param {Number} time (in seconds)
      */
     const Repairing = (input, time) => {
       event.custom({
         type: 'aether:repairing',
         ingredient: input.toJson(),
-        repairTime: time || 500,
+        repairTime: time * 20,
       });
     };
 
@@ -25,60 +25,60 @@ ServerEvents.recipes(event => {
     });
 
     [
-      {item: Ingredient.of('aether_redux:infused_veridium_axe'), time: 1200},
-      {item: Ingredient.of('aether_redux:infused_veridium_hoe'), time: 1200},
-      {item: Ingredient.of('aether_redux:infused_veridium_pickaxe'), time: 1200},
-      {item: Ingredient.of('aether_redux:infused_veridium_shovel'), time: 1200},
-      {item: Ingredient.of('aether_redux:infused_veridium_sword'), time: 1200},
-      {item: Ingredient.of('aether_redux:spectral_dart_shooter'), time: 1350},
-      {item: Ingredient.of('aether_redux:subzero_crossbow'), time: 1350},
-      {item: Ingredient.of('aether_redux:veridium_axe'), time: 1200},
-      {item: Ingredient.of('aether_redux:veridium_hoe'), time: 1200},
-      {item: Ingredient.of('aether_redux:veridium_pickaxe'), time: 1200},
-      {item: Ingredient.of('aether_redux:veridium_shovel'), time: 1200},
-      {item: Ingredient.of('aether_redux:veridium_sword'), time: 1200},
-      {item: Ingredient.of('aether:candy_cane_sword'), time: 1350},
-      {item: Ingredient.of('aether:cloud_staff'), time: 1350},
-      {item: Ingredient.of('aether:flaming_sword'), time: 1700},
-      {item: Ingredient.of('aether:hammer_of_kingbdogz'), time: 1350},
-      {item: Ingredient.of('aether:holy_sword'), time: 1350},
-      {item: Ingredient.of('aether:ice_pendant'), time: 1350},
-      {item: Ingredient.of('aether:ice_ring'), time: 250},
-      {item: Ingredient.of('aether:lightning_sword'), time: 1350},
-      {item: Ingredient.of('aether:nature_staff'), time: 750},
-      {item: Ingredient.of('aether:neptune_boots'), time: 850},
-      {item: Ingredient.of('aether:neptune_chestplate'), time: 850},
-      {item: Ingredient.of('aether:neptune_gloves'), time: 850},
-      {item: Ingredient.of('aether:neptune_helmet'), time: 850},
-      {item: Ingredient.of('aether:neptune_leggings'), time: 850},
-      {item: Ingredient.of('aether:phoenix_boots'), time: 1700},
-      {item: Ingredient.of('aether:phoenix_bow'), time: 1700},
-      {item: Ingredient.of('aether:phoenix_chestplate'), time: 1700},
-      {item: Ingredient.of('aether:phoenix_gloves'), time: 1700},
-      {item: Ingredient.of('aether:phoenix_helmet'), time: 1700},
-      {item: Ingredient.of('aether:phoenix_leggings'), time: 1700},
-      {item: Ingredient.of('aether:pig_slayer'), time: 1350},
-      {item: Ingredient.of('aether:poison_dart_shooter'), time: 750},
-      {item: Ingredient.of('aether:sentry_boots'), time: 750},
-      {item: Ingredient.of('aether:shield_of_repulsion'), time: 2500},
-      {item: Ingredient.of('aether:valkyrie_axe'), time: 1500},
-      {item: Ingredient.of('aether:valkyrie_boots'), time: 1500},
-      {item: Ingredient.of('aether:valkyrie_chestplate'), time: 1500},
-      {item: Ingredient.of('aether:valkyrie_gloves'), time: 1500},
-      {item: Ingredient.of('aether:valkyrie_helmet'), time: 1500},
-      {item: Ingredient.of('aether:valkyrie_hoe'), time: 1500},
-      {item: Ingredient.of('aether:valkyrie_lance'), time: 1500},
-      {item: Ingredient.of('aether:valkyrie_leggings'), time: 1500},
-      {item: Ingredient.of('aether:valkyrie_pickaxe'), time: 1500},
-      {item: Ingredient.of('aether:valkyrie_shovel'), time: 1500},
-      {item: Ingredient.of('aether:vampire_blade'), time: 1350},
-      {item: Ingredient.of('create:netherite_diving_boots'), time: 2000},
-      {item: Ingredient.of('create:netherite_diving_helmet'), time: 2000},
-      {item: Ingredient.of('deep_aether:gravitite_ring'), time: 750},
-      {item: Ingredient.of('deep_aether:skyjade_ring'), time: 400},
-      {item: Ingredient.of('deep_aether:stratus_ring'), time: 500},
-      {item: Ingredient.of('farmersdelight:netherite_knife'), time: 2000},
-      {item: Ingredient.of('nethersdelight:netherite_machete'), time: 2000},
+      {item: Ingredient.of('aether_redux:infused_veridium_axe'), time: 70},
+      {item: Ingredient.of('aether_redux:infused_veridium_hoe'), time: 70},
+      {item: Ingredient.of('aether_redux:infused_veridium_pickaxe'), time: 70},
+      {item: Ingredient.of('aether_redux:infused_veridium_shovel'), time: 70},
+      {item: Ingredient.of('aether_redux:infused_veridium_sword'), time: 70},
+      {item: Ingredient.of('aether_redux:spectral_dart_shooter'), time: 90},
+      {item: Ingredient.of('aether_redux:subzero_crossbow'), time: 45},
+      {item: Ingredient.of('aether_redux:veridium_axe'), time: 35},
+      {item: Ingredient.of('aether_redux:veridium_hoe'), time: 35},
+      {item: Ingredient.of('aether_redux:veridium_pickaxe'), time: 35},
+      {item: Ingredient.of('aether_redux:veridium_shovel'), time: 35},
+      {item: Ingredient.of('aether_redux:veridium_sword'), time: 35},
+      {item: Ingredient.of('aether:candy_cane_sword'), time: 20},
+      {item: Ingredient.of('aether:cloud_staff'), time: 90},
+      {item: Ingredient.of('aether:flaming_sword'), time: 90},
+      {item: Ingredient.of('aether:hammer_of_kingbdogz'), time: 90},
+      {item: Ingredient.of('aether:holy_sword'), time: 45},
+      {item: Ingredient.of('aether:ice_pendant'), time: 25},
+      {item: Ingredient.of('aether:ice_ring'), time: 25},
+      {item: Ingredient.of('aether:lightning_sword'), time: 90},
+      {item: Ingredient.of('aether:nature_staff'), time: 90},
+      {item: Ingredient.of('aether:neptune_boots'), time: 50},
+      {item: Ingredient.of('aether:neptune_chestplate'), time: 50},
+      {item: Ingredient.of('aether:neptune_gloves'), time: 50},
+      {item: Ingredient.of('aether:neptune_helmet'), time: 50},
+      {item: Ingredient.of('aether:neptune_leggings'), time: 50},
+      {item: Ingredient.of('aether:phoenix_boots'), time: 80},
+      {item: Ingredient.of('aether:phoenix_bow'), time: 80},
+      {item: Ingredient.of('aether:phoenix_chestplate'), time: 80},
+      {item: Ingredient.of('aether:phoenix_gloves'), time: 80},
+      {item: Ingredient.of('aether:phoenix_helmet'), time: 80},
+      {item: Ingredient.of('aether:phoenix_leggings'), time: 80},
+      {item: Ingredient.of('aether:pig_slayer'), time: 90},
+      {item: Ingredient.of('aether:poison_dart_shooter'), time: 90},
+      {item: Ingredient.of('aether:sentry_boots'), time: 90},
+      {item: Ingredient.of('aether:shield_of_repulsion'), time: 90},
+      {item: Ingredient.of('aether:valkyrie_axe'), time: 120},
+      {item: Ingredient.of('aether:valkyrie_boots'), time: 120},
+      {item: Ingredient.of('aether:valkyrie_chestplate'), time: 120},
+      {item: Ingredient.of('aether:valkyrie_gloves'), time: 120},
+      {item: Ingredient.of('aether:valkyrie_helmet'), time: 120},
+      {item: Ingredient.of('aether:valkyrie_hoe'), time: 120},
+      {item: Ingredient.of('aether:valkyrie_lance'), time: 120},
+      {item: Ingredient.of('aether:valkyrie_leggings'), time: 120},
+      {item: Ingredient.of('aether:valkyrie_pickaxe'), time: 120},
+      {item: Ingredient.of('aether:valkyrie_shovel'), time: 120},
+      {item: Ingredient.of('aether:vampire_blade'), time: 90},
+      {item: Ingredient.of('create:netherite_diving_boots'), time: 100},
+      {item: Ingredient.of('create:netherite_diving_helmet'), time: 100},
+      {item: Ingredient.of('deep_aether:gravitite_ring'), time: 75},
+      {item: Ingredient.of('deep_aether:skyjade_ring'), time: 37},
+      {item: Ingredient.of('deep_aether:stratus_ring'), time: 75},
+      {item: Ingredient.of('farmersdelight:netherite_knife'), time: 100},
+      {item: Ingredient.of('nethersdelight:netherite_machete'), time: 100},
     ].forEach(pair => Repairing(pair.item, pair.time));
 
     [
@@ -240,6 +240,9 @@ ServerEvents.recipes(event => {
       event.remove({type: 'bloodmagic:arc', input: `#forge:raw_materials/${metal}`});
     });
 
+    event.remove({id: 'bloodmagic:alchemytable/sand_iron'});
+    event.remove({id: 'bloodmagic:alchemytable/sand_gold'});
+
     const cuttingFluid = Ingredient.of('#bloodmagic:arc/cuttingfluid');
     const explosive = Ingredient.of('#bloodmagic:arc/explosive');
     [
@@ -255,53 +258,61 @@ ServerEvents.recipes(event => {
       {material: 'zinc', dust: 'create:crushed_raw_zinc'},
     ].forEach(x => {
       const dust = Item.of(x.dust);
-      ARC(dust.withCount(3), Ingredient.of(`#forge:ores/${x.material}`), cuttingFluid);
+      ARC(dust.withCount(2), Ingredient.of(`#forge:ores/${x.material}`), cuttingFluid, true);
       ARC(dust, Ingredient.of(`#forge:ingots/${x.material}`), explosive);
-      ARC(dust, Ingredient.of(`#forge:raw_materials/${x.material}`), cuttingFluid, true);
+      ARC(dust, Ingredient.of(`#forge:raw_materials/${x.material}`), cuttingFluid, false);
     });
 
     // Arcane Ashes should require Enchanted Ash from Eidolon
     event.remove({id: 'bloodmagic:alchemytable/arcane_ash'});
-    event.custom({
-      type: 'bloodmagic:altar',
-      altarSyphon: 1000,
-      consumptionRate: 3,
-      drainRate: 5,
-      input: {item: 'eidolon:enchanted_ash'},
-      output: {item: 'bloodmagic:arcaneashes'},
-      upgradeLevel: 1,
-    });
+    event
+      .custom({
+        type: 'bloodmagic:altar',
+        altarSyphon: 1000,
+        consumptionRate: 3,
+        drainRate: 5,
+        input: {item: 'eidolon:enchanted_ash'},
+        output: {item: 'bloodmagic:arcaneashes'},
+        upgradeLevel: 1,
+      })
+      .id('bloodmagic:alchemytable/arcane_ash');
 
     // Binding Reagent should be more involved
     event.remove({id: 'bloodmagic:alchemytable/reagent_binding'});
-    event.custom({
-      type: 'bloodmagic:alchemytable',
-      input: [{item: 'aether:regeneration_stone'}, {item: 'eidolon:enchanted_ash'}, {item: 'aether_redux:purified_luxbuds'}],
-      output: {item: 'bloodmagic:reagentbinding', count: 2},
-      syphon: 1000,
-      ticks: 200,
-      upgradeLevel: 3,
-    });
+    event
+      .custom({
+        type: 'bloodmagic:alchemytable',
+        input: [{item: 'aether:regeneration_stone'}, {item: 'eidolon:enchanted_ash'}, {item: 'aether_redux:purified_luxbuds'}],
+        output: {item: 'bloodmagic:reagentbinding', count: 2},
+        syphon: 1000,
+        ticks: 200,
+        upgradeLevel: 3,
+      })
+      .id('bloodmagic:alchemytable/reagent_binding');
 
     // Blank Slates should require Aether Things as well :)
     event.remove({id: 'bloodmagic:altar/slate'});
-    event.custom({
-      type: 'bloodmagic:altar',
-      altarSyphon: 1000,
-      consumptionRate: 5,
-      drainRate: 5,
-      input: {item: 'aether:carved_stone'},
-      output: {item: 'bloodmagic:blankslate'},
-      upgradeLevel: 0,
-    });
+    event
+      .custom({
+        type: 'bloodmagic:altar',
+        altarSyphon: 1000,
+        consumptionRate: 5,
+        drainRate: 5,
+        input: {item: 'aether:carved_stone'},
+        output: {item: 'bloodmagic:blankslate'},
+        upgradeLevel: 0,
+      })
+      .id('bloodmagic:altar/slate');
 
     // Blank Rune blocks should require Aether Stones
     event.remove({id: 'bloodmagic:blood_rune_blank'});
-    event.shaped(Item.of('bloodmagic:blankrune', 2), ['DSD', 'DOD', 'DDD'], {
-      D: {item: 'minecraft:deepslate'},
-      O: {type: 'bloodmagic:bloodorb', orb_tier: 1},
-      S: {item: 'bloodmagic:blankslate'},
-    });
+    event
+      .shaped(Item.of('bloodmagic:blankrune', 2), ['DSD', 'DOD', 'DDD'], {
+        D: {item: 'minecraft:deepslate'},
+        O: {type: 'bloodmagic:bloodorb', orb_tier: 1},
+        S: {item: 'bloodmagic:blankslate'},
+      })
+      .id('bloodmagic:blood_rune_blank');
   };
 
   const Eidolon = () => {
