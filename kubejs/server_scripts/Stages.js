@@ -152,7 +152,7 @@ ServerEvents.recipes(event => {
     type: 'itemgator:mod',
     tag: 'mekanism',
     mod: 'mekanism',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
+    substitute: {item: 'kubejs:unknown_electric_item'},
     exceptions: {tag: 'mekanism:exception'},
   });
 
@@ -160,14 +160,14 @@ ServerEvents.recipes(event => {
     type: 'itemgator:mod',
     tag: 'mekanism',
     mod: 'mekanismgenerators',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
+    substitute: {item: 'kubejs:unknown_electric_item'},
   });
 
   event.custom({
     type: 'itemgator:mod',
     tag: 'mekanism',
     mod: 'mekaweapons',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
+    substitute: {item: 'kubejs:unknown_electric_item'},
   });
 
   /* ~~ RFTOOLS + Addons ~~ */
@@ -175,7 +175,7 @@ ServerEvents.recipes(event => {
     type: 'itemgator:mod',
     tag: 'rftools',
     mod: 'rftoolsbase',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
+    substitute: {item: 'kubejs:unknown_electric_item'},
     exceptions: [
       {item: 'rftoolsbase:dimensionalshard'},
       {item: 'rftoolsbase:dimensionalshard_overworld'},
@@ -188,21 +188,21 @@ ServerEvents.recipes(event => {
     type: 'itemgator:mod',
     tag: 'rftools',
     mod: 'rftoolspower',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
+    substitute: {item: 'kubejs:unknown_electric_item'},
   });
 
   event.custom({
     type: 'itemgator:mod',
     tag: 'rftools',
     mod: 'rftoolsstorage',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
+    substitute: {item: 'kubejs:unknown_electric_item'},
   });
 
   event.custom({
     type: 'itemgator:mod',
     tag: 'rftools',
     mod: 'xnet',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
+    substitute: {item: 'kubejs:unknown_electric_item'},
   });
 
   /* ~~ AE2 + ADDONS ~~ */
@@ -210,7 +210,7 @@ ServerEvents.recipes(event => {
     type: 'itemgator:mod',
     tag: 'ae2',
     mod: 'ae2',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
+    substitute: {item: 'kubejs:unknown_electric_item'},
     exceptions: {tag: 'ae2:exception'},
   });
 
@@ -218,13 +218,13 @@ ServerEvents.recipes(event => {
     type: 'itemgator:mod',
     tag: 'ae2',
     mod: 'more_immersive_wires',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
+    substitute: {item: 'kubejs:unknown_electric_item'},
   });
 
   event.custom({
     type: 'itemgator:mod',
     tag: 'ae2',
     mod: 'appmek',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
+    substitute: {item: 'kubejs:unknown_electric_item'},
   });
 });

@@ -1,7 +1,7 @@
 {
   "mob": {
-    "classic_cockatrices": "modern",
-    "classic_moas": "modern",
+    "classic_cockatrices": "classic",
+    "classic_moas": "classic",
     "better_aechor_plants": true
   },
   "item": {

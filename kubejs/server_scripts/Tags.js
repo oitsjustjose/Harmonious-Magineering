@@ -55,9 +55,7 @@ ServerEvents.tags('block', event => {
 });
 
 ServerEvents.tags('item', event => {
-  /**
-   * Used to define Handwashing with smaller tag sets to prevent Packet Overflow
-   */
+  /* Used to define Handwashing with smaller tag sets to prevent Packet Overflow */
   const Colors = () => {
     /**
      * Gets all colors of a given material
@@ -164,11 +162,14 @@ ServerEvents.tags('item', event => {
     event.add('vtweaks:colored_flag', AllButWhite('supplementaries', null, 'flag'));
   };
 
-  /**
-   * Used to define tags that are excluded in ItemGator Gates
-   */
+  /* Used to define tags that are excluded in ItemGator Gates */
   const Exclusions = () => {
     [
+      '#forge:dusts',
+      '#forge:gems',
+      '#forge:ingots',
+      '#forge:raw_materials',
+      '#forge:storage_blocks',
       '#create:stone_types/andesite',
       '#create:stone_types/asurine',
       '#create:stone_types/calcite',
@@ -283,6 +284,11 @@ ServerEvents.tags('item', event => {
     ].forEach(cc => event.add('compressedcreativity:gated', cc));
 
     [
+      '#forge:dusts',
+      '#forge:gems',
+      '#forge:ingots',
+      '#forge:raw_materials',
+      '#forge:storage_blocks',
       'immersiveengineering:bannerpattern_bevels',
       'immersiveengineering:bannerpattern_hammer',
       'immersiveengineering:bannerpattern_ornate',
@@ -344,6 +350,11 @@ ServerEvents.tags('item', event => {
     ].forEach(exception => event.add('immersiveengineering:exception', exception));
 
     [
+      '#forge:dusts',
+      '#forge:gems',
+      '#forge:ingots',
+      '#forge:raw_materials',
+      '#forge:storage_blocks',
       'mekanism:block_fluorite',
       'mekanism:block_raw_tin',
       'mekanism:block_raw_uranium',
@@ -369,6 +380,11 @@ ServerEvents.tags('item', event => {
     ].forEach(exception => event.add('mekanism:exception', exception));
 
     [
+      '#forge:dusts',
+      '#forge:gems',
+      '#forge:ingots',
+      '#forge:raw_materials',
+      '#forge:storage_blocks',
       'ae2:certus_quartz_crystal',
       'ae2:chiseled_quartz_block',
       'ae2:cut_quartz_block',
@@ -389,9 +405,7 @@ ServerEvents.tags('item', event => {
     ].forEach(exception => event.add('ae2:exception', exception));
   };
 
-  /**
-   * Hyphae aren't added but are used by BloodMagic, so let's add them
-   */
+  /* Hyphae aren't added but are used by BloodMagic, so let's add them */
   const Hyphae = () => {
     [
       'aether_redux:cloudcap_hyphae',
@@ -414,9 +428,7 @@ ServerEvents.tags('item', event => {
     ].forEach(hyphae => event.add('minecraft:mushroom_hyphae', hyphae));
   };
 
-  /**
-   * Osmium just isn't in our pack at all and should gets removed here
-   */
+  /* Osmium just isn't in our pack at all and should gets removed here */
   const Osmium = () => {
     ['ingots', 'dusts', 'storage_blocks', 'raw_materials', 'ores', 'nuggets'].forEach(type => event.removeAll(`forge:${type}/osmium`));
     ['clumps', 'dirty_dusts', 'crystals', 'shards'].forEach(type => event.removeAll(`mekanism:${type}/osmium`));
@@ -427,19 +439,22 @@ ServerEvents.tags('item', event => {
   RegionsUnexplored.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   Ores.forEach(ore => event.removeAllTagsFrom(ore));
 
-  event.remove('forge:buckets/honey', 'productivebees:honey_bucket');
-
+  /* Rope Intercompat */
   event.remove('forge:rope', 'farmersdelight:rope');
   event.remove('supplementaries:ropes', 'farmersdelight:rope');
 
+  /* Tallow / Fat Intercompat */
   event.add('forge:tallow', 'delightful:animal_fat');
+  /* Plastic Intercompat */
   event.add('pneumaticcraft:plastic_sheets', 'mekanism:hdpe_sheet');
+  /* Chiseled Bookshelf Compat */
+  event.add('minecraft:bookshelf_books', ['ae2:guide', 'aether:book_of_lore', 'eidolon:codex', 'rftoolsbase:manual']);
 
   [Colors, Exclusions, Hyphae, Osmium].forEach(Module => Module());
 });
 
 ServerEvents.tags('entity_type', event => {
-  // Creepies are easy enough thanks to the existing tag
+  // Creepers are easy enough thanks to the existing tag
   event.add('forge:creepers', '#creeperoverhaul:creepers');
 
   // Endermen don't have a similar tag though :D

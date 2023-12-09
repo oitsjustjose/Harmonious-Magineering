@@ -44,7 +44,6 @@ ServerEvents.recipes(event => {
       {item: Ingredient.of('aether:holy_sword'), time: 1350},
       {item: Ingredient.of('aether:ice_pendant'), time: 1350},
       {item: Ingredient.of('aether:ice_ring'), time: 250},
-      {item: Ingredient.of('aether:lightning_knife'), time: 1350},
       {item: Ingredient.of('aether:lightning_sword'), time: 1350},
       {item: Ingredient.of('aether:nature_staff'), time: 750},
       {item: Ingredient.of('aether:neptune_boots'), time: 850},
@@ -60,6 +59,7 @@ ServerEvents.recipes(event => {
       {item: Ingredient.of('aether:phoenix_leggings'), time: 1700},
       {item: Ingredient.of('aether:pig_slayer'), time: 1350},
       {item: Ingredient.of('aether:poison_dart_shooter'), time: 750},
+      {item: Ingredient.of('aether:sentry_boots'), time: 750},
       {item: Ingredient.of('aether:shield_of_repulsion'), time: 2500},
       {item: Ingredient.of('aether:valkyrie_axe'), time: 1500},
       {item: Ingredient.of('aether:valkyrie_boots'), time: 1500},
@@ -72,9 +72,13 @@ ServerEvents.recipes(event => {
       {item: Ingredient.of('aether:valkyrie_pickaxe'), time: 1500},
       {item: Ingredient.of('aether:valkyrie_shovel'), time: 1500},
       {item: Ingredient.of('aether:vampire_blade'), time: 1350},
+      {item: Ingredient.of('create:netherite_diving_boots'), time: 2000},
+      {item: Ingredient.of('create:netherite_diving_helmet'), time: 2000},
       {item: Ingredient.of('deep_aether:gravitite_ring'), time: 750},
       {item: Ingredient.of('deep_aether:skyjade_ring'), time: 400},
       {item: Ingredient.of('deep_aether:stratus_ring'), time: 500},
+      {item: Ingredient.of('farmersdelight:netherite_knife'), time: 2000},
+      {item: Ingredient.of('nethersdelight:netherite_machete'), time: 2000},
     ].forEach(pair => Repairing(pair.item, pair.time));
 
     [
@@ -121,16 +125,6 @@ ServerEvents.recipes(event => {
       'leather_gloves_repairing',
       'leather_helmet_repairing',
       'leather_leggings_repairing',
-      'netherite_axe_repairing',
-      'netherite_boots_repairing',
-      'netherite_chestplate_repairing',
-      'netherite_gloves_repairing',
-      'netherite_helmet_repairing',
-      'netherite_hoe_repairing',
-      'netherite_leggings_repairing',
-      'netherite_pickaxe_repairing',
-      'netherite_shovel_repairing',
-      'netherite_sword_repairing',
       'shield_repairing',
       'stone_axe_repairing',
       'stone_hoe_repairing',
@@ -240,10 +234,18 @@ ServerEvents.recipes(event => {
     });
 
     // Alchemical Reaction Chamber recipes :)
+    ['iron', 'gold', 'copper'].forEach(metal => {
+      event.remove({type: 'bloodmagic:arc', input: `#forge:ingots/${metal}`});
+      event.remove({type: 'bloodmagic:arc', input: `#forge:ores/${metal}`});
+      event.remove({type: 'bloodmagic:arc', input: `#forge:raw_materials/${metal}`});
+    });
+
     const cuttingFluid = Ingredient.of('#bloodmagic:arc/cuttingfluid');
     const explosive = Ingredient.of('#bloodmagic:arc/explosive');
-
     [
+      {material: 'iron', dust: 'mekanism:dust_iron'},
+      {material: 'gold', dust: 'mekanism:dust_gold'},
+      {material: 'copper', dust: 'mekanism:dust_copper'},
       {material: 'aluminum', dust: 'immersiveengineering:dust_aluminum'},
       {material: 'lead', dust: 'mekanism:dust_lead'},
       {material: 'nickel', dust: 'immersiveengineering:dust_nickel'},
@@ -256,6 +258,49 @@ ServerEvents.recipes(event => {
       ARC(dust.withCount(3), Ingredient.of(`#forge:ores/${x.material}`), cuttingFluid);
       ARC(dust, Ingredient.of(`#forge:ingots/${x.material}`), explosive);
       ARC(dust, Ingredient.of(`#forge:raw_materials/${x.material}`), cuttingFluid, true);
+    });
+
+    // Arcane Ashes should require Enchanted Ash from Eidolon
+    event.remove({id: 'bloodmagic:alchemytable/arcane_ash'});
+    event.custom({
+      type: 'bloodmagic:altar',
+      altarSyphon: 1000,
+      consumptionRate: 3,
+      drainRate: 5,
+      input: {item: 'eidolon:enchanted_ash'},
+      output: {item: 'bloodmagic:arcaneashes'},
+      upgradeLevel: 1,
+    });
+
+    // Binding Reagent should be more involved
+    event.remove({id: 'bloodmagic:alchemytable/reagent_binding'});
+    event.custom({
+      type: 'bloodmagic:alchemytable',
+      input: [{item: 'aether:regeneration_stone'}, {item: 'eidolon:enchanted_ash'}, {item: 'aether_redux:purified_luxbuds'}],
+      output: {item: 'bloodmagic:reagentbinding', count: 2},
+      syphon: 1000,
+      ticks: 200,
+      upgradeLevel: 3,
+    });
+
+    // Blank Slates should require Aether Things as well :)
+    event.remove({id: 'bloodmagic:altar/slate'});
+    event.custom({
+      type: 'bloodmagic:altar',
+      altarSyphon: 1000,
+      consumptionRate: 5,
+      drainRate: 5,
+      input: {item: 'aether:carved_stone'},
+      output: {item: 'bloodmagic:blankslate'},
+      upgradeLevel: 0,
+    });
+
+    // Blank Rune blocks should require Aether Stones
+    event.remove({id: 'bloodmagic:blood_rune_blank'});
+    event.shaped(Item.of('bloodmagic:blankrune', 2), ['DSD', 'DOD', 'DDD'], {
+      D: {item: 'minecraft:deepslate'},
+      O: {type: 'bloodmagic:bloodorb', orb_tier: 1},
+      S: {item: 'bloodmagic:blankslate'},
     });
   };
 

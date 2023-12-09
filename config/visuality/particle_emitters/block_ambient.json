@@ -61,6 +61,17 @@
       }
     },
     {
+      "block": "aether:gravitite_ore",
+      "particle": {
+        "type": "visuality:sparkle",
+        "value": [
+          1.0,
+          0.6117647,
+          0.8980392
+        ]
+      }
+    },
+    {
       "block": [
         "minecraft:soul_sand",
         "minecraft:soul_soil"
