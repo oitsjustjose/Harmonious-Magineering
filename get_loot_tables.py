@@ -2,8 +2,6 @@ import zipfile
 import json
 import os
 
-size = os.get_terminal_size() 
-
 for file in os.listdir("./mods"):
     if not file.endswith(".jar"):
         continue
@@ -33,6 +31,4 @@ for file in os.listdir("./mods"):
                     drops.append(entry["name"])
             
 
-            print(f"{namespace}:{path}\n")
-            print("\n".join(drops))
-            print("_" * size.columns)
+            print(f"{namespace}:{path}: [{','.join(drops)}]")
