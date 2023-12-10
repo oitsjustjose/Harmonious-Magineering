@@ -315,6 +315,550 @@ ServerEvents.recipes(event => {
       .id('bloodmagic:blood_rune_blank');
   };
 
+  const CagedMobs = () => {
+    /**
+     *
+     * @param {String} entityType
+     * @param {Array<String>} environments
+     * @param {Number} time (in seconds)
+     * @param {Array<OutputItem>} outputs
+     * @param {Number} tier
+     * @param {Boolean} water
+     */
+    const caging = (entityType, environments, time, outputs, tier, water) => {
+      const results = outputs.map(output => {
+        return {
+          output: output.item.toJson(),
+          minAmount: 1,
+          maxAmount: output.getChance() > 1 ? parseInt(output.getChance()) : 1,
+          chance: output.getChance() > 1 ? 1.0 : output.getChance(),
+        };
+      });
+
+      event.custom({
+        type: 'cagedmobs:entity_data',
+        entity: entityType,
+        samplerTier: tier || 1,
+        environments: environments,
+        growTicks: time * 20,
+        results: results,
+        requiresWater: !!water,
+      });
+    };
+
+    event.remove({type: 'minecraft:crafting_shaped', mod: 'cagedmobs'});
+    event.remove({type: 'minecraft:crafting_shapeless', mod: 'cagedmobs'});
+    event.remove({type: 'cagedmobs:entity_data'});
+    event.remove({id: 'cagedmobs:crafting/netherite_dna_sampler'});
+
+    // Iron DNA Sampler
+    event.custom({
+      type: 'bloodmagic:alchemytable',
+      input: [{item: 'bloodmagic:throwing_dagger_syringe'}, {item: 'minecraft:iron_block'}, {item: 'aether:golden_dart'}],
+      output: {item: 'cagedmobs:dna_sampler'},
+      syphon: 10000,
+      ticks: 500,
+      upgradeLevel: 4,
+    });
+
+    // Diamond DNA Sampler
+    event.custom({
+      type: 'bloodmagic:alchemytable',
+      input: [{item: 'bloodmagic:amethystthrowingdagger'}, {item: 'minecraft:diamond_block'}, {item: 'aether:enchanted_dart'}],
+      output: {item: 'cagedmobs:diamond_dna_sampler'},
+      syphon: 50000,
+      ticks: 1000,
+      upgradeLevel: 5,
+    });
+
+    // Mob Cage from high-tier BM :D
+    event.custom({
+      type: 'bloodmagic:altar',
+      altarSyphon: 50000,
+      consumptionRate: 10,
+      drainRate: 10,
+      input: {item: 'supplementaries:cage'},
+      output: {item: 'cagedmobs:mob_cage'},
+      upgradeLevel: 4,
+    });
+
+    // Hopping Mob Cage
+    event.shaped('cagedmobs:hopping_mob_cage', ['C', 'H'], {C: 'cagedmobs:mob_cage', H: 'minecraft:hopper'});
+
+    // Environments (Pre-requisite)
+    const Environments = () => {
+      event.remove({id: 'cagedmobs:environments/diamond_ore'});
+      event.remove({id: 'cagedmobs:environments/deepslate_diamond_ore'});
+
+      event.custom({
+        type: 'cagedmobs:environment_data',
+        input: {tag: 'aether:aerclouds'},
+        render: 'aether:cold_aercloud',
+        growModifier: 1.0,
+        categories: ['aether'],
+      });
+
+      event.custom({
+        type: 'cagedmobs:environment_data',
+        input: {tag: 'forge:actual_underground_stones'},
+        render: 'minecraft:stone',
+        growModifier: 1.0,
+        categories: ['cave'],
+      });
+
+      event.custom({
+        type: 'cagedmobs:environment_data',
+        input: {item: 'minecraft:dripstone_block'},
+        render: 'minecraft:stone',
+        growModifier: 1.0,
+        categories: ['dripstone'],
+      });
+
+      event.custom({
+        type: 'cagedmobs:environment_data',
+        input: {item: 'minecraft:moss_block'},
+        render: 'minecraft:moss_block',
+        growModifier: 1.0,
+        categories: ['mossy'],
+      });
+
+      event.custom({
+        type: 'cagedmobs:environment_data',
+        input: {tag: 'forge:mud'},
+        render: 'minecraft:mud',
+        growModifier: 1.0,
+        categories: ['swampy'],
+      });
+
+      event.custom({
+        type: 'cagedmobs:environment_data',
+        input: {tag: 'forge:ocean_blocks'},
+        render: 'minecraft:gravel',
+        growModifier: 1.0,
+        categories: ['ocean'],
+      });
+
+      event.custom({
+        type: 'cagedmobs:environment_data',
+        input: {item: 'minecraft:sand'},
+        render: 'minecraft:sand',
+        growModifier: 1.0,
+        categories: ['white_sand'],
+      });
+
+      event.custom({
+        type: 'cagedmobs:environment_data',
+        input: {tag: 'forge:podzol'},
+        render: 'minecraft:podzol',
+        growModifier: 1.0,
+        categories: ['wooded'],
+      });
+    };
+
+    // Individual Mob Recipes w/ Mod Compat & Rebalance! :D
+    const Aether = () => {
+      caging('aether_redux:vanilla_swet', ['aether'], 60, [Item.of('aether_redux:vanilla_swet_ball').withChance(1)]);
+      caging('aether:aechor_plant', ['aether'], 60, [Item.of('aether:aechor_petal').withChance(1)]);
+      caging('aether:aerbunny', ['aether'], 60, [Item.of('minecraft:string').withChance(1)]);
+      caging('aether:blue_swet', ['aether'], 60, [Item.of('aether:swet_ball').withChance(0.8), Item.of('aether:blue_aercloud').withChance(0.01)]);
+      caging('aether:cockatrice', ['aether'], 60, [Item.of('minecraft:feather').withChance(1)], 2);
+      caging('aether:flying_cow', ['aether'], 60, [Item.of('minecraft:leather').withChance(3.0), Item.of('minecraft:beef').withChance(2.0)]);
+      caging('aether:golden_swet', ['aether'], 60, [Item.of('minecraft:glowstone').withChance(1)]);
+      caging('aether:phyg', ['aether'], 60, [Item.of('minecraft:porkchop').withChance(2.0), Item.of('minecraft:feather').withChance(0.9)]);
+      caging('aether:sentry', ['aether'], 60, [Item.of('aether:carved_stone').withChance(0.9), Item.of('aether:sentry_stone').withChance(0.01)], 2);
+      caging('aether:sheepuff', ['aether'], 60, [Item.of('minecraft:mutton').withChance(1)]);
+      caging('aether:zephyr', ['aether'], 60, [Item.of('aether:cold_aercloud').withChance(1)], 2);
+      caging('deep_aether:quail', ['aether'], 60, [Item.of('minecraft:feather').withChance(2.0), Item.of('deep_aether:raw_quail').withChance(0.8)]);
+      caging(
+        'deep_aether:aerglow_fish',
+        ['aether'],
+        60,
+        [Item.of('deep_aether:raw_aerglow_fish').withChance(0.9), Item.of('minecraft:bone_meal').withChance(0.1)],
+        1,
+        true
+      );
+    };
+
+    const CreeperOverhaul = () => {
+      caging('creeperoverhaul:bamboo_creeper', ['wooded'], 60, [Item.of('minecraft:bamboo').withChance(1)], 2);
+      caging(
+        'creeperoverhaul:dark_oak_creeper',
+        ['wooded'],
+        60,
+        [
+          Item.of('minecraft:gunpowder').withChance(1),
+          Item.of('minecraft:dark_oak_log').withChance(0.7),
+          Item.of('minecraft:cobweb').withChance(0.03),
+        ],
+        2
+      );
+      caging('creeperoverhaul:jungle_creeper', ['wooded'], 60, [Item.of('minecraft:gunpowder').withChance(1)], 2);
+      caging('creeperoverhaul:hills_creeper', ['wooded'], 60, [Item.of('minecraft:gunpowder').withChance(1)], 2);
+      caging(
+        'creeperoverhaul:spruce_creeper',
+        ['snow', 'wooded'],
+        60,
+        [Item.of('minecraft:gunpowder').withChance(1), Item.of('minecraft:spruce_log').withChance(0.7)],
+        2
+      );
+      caging('creeperoverhaul:snowy_creeper', ['snow'], 60, [Item.of('minecraft:white_wool').withChance(1)], 2);
+      caging(
+        'creeperoverhaul:badlands_creeper',
+        ['sand'],
+        60,
+        [Item.of('minecraft:gunpowder').withChance(1), Item.of('minecraft:gold_nugget').withChance(0.7)],
+        2
+      );
+      caging(
+        'creeperoverhaul:beach_creeper',
+        ['white_sand'],
+        60,
+        [
+          Item.of('minecraft:gunpowder').withChance(1),
+          Item.of('minecraft:sand').withChance(0.7),
+          Item.of('minecraft:seagrass').withChance(0.7),
+          Item.of('minecraft:nautilus_shell').withChance(0.7),
+        ],
+        2
+      );
+      caging(
+        'creeperoverhaul:desert_creeper',
+        ['sand'],
+        60,
+        [Item.of('minecraft:gunpowder').withChance(1), Item.of('minecraft:cactus').withChance(0.7)],
+        2
+      );
+      caging('creeperoverhaul:savannah_creeper', ['sand'], 60, [Item.of('minecraft:acacia_log').withChance(1)], 2);
+      caging('creeperoverhaul:mushroom_creeper', ['mycelium'], 60, [Item.of('minecraft:gunpowder').withChance(1)], 2);
+      caging(
+        'creeperoverhaul:cave_creeper',
+        ['cave'],
+        60,
+        [Item.of('minecraft:gunpowder').withChance(1), Item.of('minecraft:stone').withChance(0.7), Item.of('minecraft:deepslate').withChance(0.7)],
+        2
+      );
+      caging(
+        'creeperoverhaul:dripstone_creeper',
+        ['dripstone'],
+        60,
+        [Item.of('minecraft:gunpowder').withChance(1), Item.of('minecraft:pointed_dripstone').withChance(0.7)],
+        2
+      );
+      caging(
+        'creeperoverhaul:swamp_creeper',
+        ['swampy'],
+        60,
+        [Item.of('minecraft:gunpowder').withChance(1), Item.of('minecraft:bone').withChance(0.7)],
+        2
+      );
+      caging(
+        'creeperoverhaul:ocean_creeper',
+        ['ocean'],
+        60,
+        [Item.of('minecraft:cod').withChance(0.5), Item.of('minecraft:salmon').withChance(0.5)],
+        2,
+        true
+      );
+    };
+
+    const Ecologics = () => {
+      caging('ecologics:coconut_crab', ['white_sand'], 60, [Item.of('ecologics:crab_claw').withChance(0.5)]);
+    };
+
+    const Eidolon = () => {
+      caging('eidolon:giant_skeleton', ['cave'], 60, [Item.of('minecraft:bone').withChance(4.0)]);
+      caging('eidolon:raven', ['wooded'], 60, [Item.of('eidolon:raven_feather').withChance(0.01)]);
+      caging('eidolon:slimy_slug', ['swampy'], 60, [Item.of('minecraft:slime_ball').withChance(0.85)]);
+      caging('eidolon:wraith', ['cave'], 60, [Item.of('eidolon:tattered_cloth').withChance(2), Item.of('eidolon:wraith_heart').withChance(0.01)]);
+      caging('eidolon:zombie_brute', ['cave'], 60, [
+        Item.of('minecraft:rotten_flesh').withChance(4.0),
+        Item.of('minecraft:bone').withChance(2.0),
+        Item.of('eidolon:zombie_heart').withChance(0.01),
+      ]);
+    };
+
+    const EndermanOverhaul = () => {
+      caging(
+        'endermanoverhaul:badlands_enderman',
+        ['sand'],
+        120,
+        [Item.of('minecraft:ender_pearl').withChance(0.9), Item.of('endermanoverhaul:tiny_skull').withChance(0.01)],
+        2
+      );
+      caging(
+        'endermanoverhaul:cave_enderman',
+        ['cave'],
+        120,
+        [
+          Item.of('minecraft:ender_pearl').withChance(0.9),
+          Item.of('minecraft:stone').withChance(0.33),
+          Item.of('minecraft:deepslate').withChance(0.33),
+        ],
+        2
+      );
+      caging('endermanoverhaul:coral_enderman', ['ocean'], 120, [Item.of('endermanoverhaul:bubble_pearl').withChance(0.65)], 2, true);
+      caging(
+        'endermanoverhaul:crimson_forest_enderman',
+        ['nether'],
+        120,
+        [Item.of('endermanoverhaul:crimson_pearl').withChance(0.65), Item.of('minecraft:crimson_fungus').withChance(0.35)],
+        2
+      );
+      caging('endermanoverhaul:dark_oak_enderman', ['wooded'], 120, [Item.of('minecraft:ender_pearl').withChance(0.9)], 2);
+      caging('endermanoverhaul:desert_enderman', ['sand'], 120, [Item.of('minecraft:ender_pearl').withChance(0.9)], 2);
+      caging(
+        'endermanoverhaul:end_enderman',
+        ['end'],
+        120,
+        [
+          Item.of('endermanoverhaul:corrupted_pearl').withChance(0.55),
+          Item.of('minecraft:chorus_fruit').withChance(0.15),
+          Item.of('endermanoverhaul:enderman_tooth').withChance(0.02),
+        ],
+        2
+      );
+      caging(
+        'endermanoverhaul:end_islands_enderman',
+        ['end'],
+        120,
+        [Item.of('minecraft:ender_pearl').withChance(0.9), Item.of('endermanoverhaul:ancient_pearl').withChance(0.05)],
+        2
+      );
+      caging('endermanoverhaul:flower_fields_enderman', ['farm'], 120, [Item.of('minecraft:ender_pearl').withChance(0.9)], 2);
+      caging(
+        'endermanoverhaul:ice_spikes_enderman',
+        ['snow'],
+        120,
+        [
+          Item.of('minecraft:ender_pearl').withChance(0.9),
+          Item.of('endermanoverhaul:icy_pearl').withChance(0.05),
+          Item.of('minecraft:packed_ice').withChance(0.3),
+        ],
+        2
+      );
+      caging(
+        'endermanoverhaul:mushroom_fields_enderman',
+        ['mycelium'],
+        120,
+        [Item.of('minecraft:ender_pearl').withChance(0.9), Item.of('minecraft:red_mushroom').withChance(0.15)],
+        2
+      );
+      caging(
+        'endermanoverhaul:nether_wastes_enderman',
+        ['nether'],
+        120,
+        [Item.of('minecraft:ender_pearl').withChance(0.9), Item.of('minecraft:bone').withChance(0.35)],
+        2
+      );
+      caging(
+        'endermanoverhaul:savanna_enderman',
+        ['sand'],
+        120,
+        [Item.of('minecraft:ender_pearl').withChance(0.9), Item.of('minecraft:acacia_log').withChance(0.15)],
+        2
+      );
+      caging(
+        'endermanoverhaul:snowy_enderman',
+        ['snow'],
+        120,
+        [
+          Item.of('minecraft:ender_pearl').withChance(0.9),
+          Item.of('endermanoverhaul:icy_pearl').withChance(0.15),
+          Item.of('minecraft:snowball').withChance(0.35),
+        ],
+        2
+      );
+      caging(
+        'endermanoverhaul:soulsand_valley_enderman',
+        ['nether'],
+        120,
+        [Item.of('endermanoverhaul:soul_pearl').withChance(0.65), Item.of('minecraft:bone').withChance(0.35)],
+        2
+      );
+      caging(
+        'endermanoverhaul:swamp_enderman',
+        ['swampy'],
+        120,
+        [Item.of('minecraft:ender_pearl').withChance(0.9), Item.of('endermanoverhaul:summoner_pearl').withChance(0.25)],
+        2
+      );
+      caging(
+        'endermanoverhaul:warped_forest_enderman',
+        ['wooded'],
+        120,
+        [Item.of('endermanoverhaul:warped_pearl').withChance(0.65), Item.of('minecraft:warped_fungus').withChance(0.35)],
+        2
+      );
+      caging(
+        'endermanoverhaul:windswept_hills_enderman',
+        ['snow', 'cave'],
+        120,
+        [Item.of('minecraft:ender_pearl').withChance(0.9), Item.of('endermanoverhaul:summoner_pearl').withChance(0.15)],
+        2
+      );
+    };
+
+    const EnlightenedEnd = () => {
+      caging(
+        'enlightened_end:stalker',
+        ['end'],
+        60,
+        [Item.of('enlightened_end:stalker_tooth').withChance(0.0125), Item.of('enlightened_end:raw_stalker').withChance(0.9)],
+        2,
+        true
+      );
+    };
+
+    const Minecraft = () => {
+      // Zombie Variants
+      caging('minecraft:drowned', ['ocean'], 75, [Item.of('rotten_flesh').withChance(2.0)], 2, true);
+      caging('minecraft:husk', ['sand'], 90, [Item.of('rotten_flesh').withChance(0.9)], 2);
+      caging('minecraft:zoglin', ['farm'], 100, [Item.of('rotten_flesh').withChance(4.0)], 2);
+      caging('minecraft:zombie_horse', ['farm'], 90, [Item.of('rotten_flesh').withChance(3.0)], 2);
+      caging('minecraft:zombie', ['cave'], 60, [Item.of('rotten_flesh').withChance(0.9)], 2);
+      caging('minecraft:zombified_piglin', ['nether'], 90, [Item.of('rotten_flesh').withChance(3.0)], 2);
+
+      // Generic cave mobs
+      caging(
+        'minecraft:cave_spider',
+        ['cave'],
+        60,
+        [Item.of('minecraft:string').withChance(0.9), Item.of('minecraft:spider_eye').withChance(0.1)],
+        2
+      );
+      caging('minecraft:creeper', ['cave'], 60, [Item.of('minecraft:gunpowder').withChance(0.9)], 2);
+      caging('minecraft:enderman', ['cave'], 120, [Item.of('minecraft:ender_pearl').withChance(0.9)], 2);
+      caging('minecraft:skeleton', ['cave'], 60, [Item.of('minecraft:arrow').withChance(0.9), Item.of('minecraft:bone').withChance(0.9)], 2);
+      caging('minecraft:spider', ['cave'], 60, [Item.of('minecraft:string').withChance(0.9), Item.of('minecraft:spider_eye').withChance(0.1)], 2);
+
+      // Water Mobs
+      caging('minecraft:cod', ['ocean'], 60, [Item.of('minecraft:cod').withChance(0.9), Item.of('minecraft:bone_meal').withChance(0.05)], 1, true);
+      caging('minecraft:dolphin', ['ocean'], 60, [Item.of('minecraft:cod').withChance(0.9)], 1, true);
+      caging('minecraft:glow_squid', ['ocean'], 60, [Item.of('minecraft:glow_ink_sac').withChance(0.9)], 1, true);
+      caging(
+        'minecraft:guardian',
+        ['ocean'],
+        60,
+        [Item.of('minecraft:cod').withChance(2.0), Item.of('minecraft:wet_sponge').withChance(0.015)],
+        2,
+        true
+      );
+      caging(
+        'minecraft:pufferfish',
+        ['ocean'],
+        60,
+        [Item.of('minecraft:pufferfish').withChance(0.9), Item.of('minecraft:bone_meal').withChance(0.05)],
+        1,
+        true
+      );
+      caging(
+        'minecraft:salmon',
+        ['ocean'],
+        60,
+        [Item.of('minecraft:salmon').withChance(0.9), Item.of('minecraft:bone_meal').withChance(0.05)],
+        1,
+        true
+      );
+      caging('minecraft:squid', ['ocean'], 60, [Item.of('minecraft:ink_sac').withChance(0.9)], 1, true);
+      caging(
+        'minecraft:tropical_fish',
+        ['ocean'],
+        60,
+        [Item.of('minecraft:tropical_fish').withChance(0.9), Item.of('minecraft:bone_meal').withChance(0.05)],
+        1,
+        true
+      );
+      caging('minecraft:turtle', ['ocean'], 60, [Item.of('minecraft:seagrass').withChance(0.9)], 1, true);
+
+      // Farm Animals
+      caging('minecraft:chicken', ['farm'], 60, [Item.of('minecraft:feather').withChance(2.0), Item.of('minecraft:chicken').withChance(0.9)]);
+      caging('minecraft:cow', ['farm'], 60, [Item.of('minecraft:leather').withChance(2.0), Item.of('minecraft:beef').withChance(0.9)]);
+      caging('minecraft:donkey', ['farm'], 60, [Item.of('minecraft:leather').withChance(2.0)]);
+      caging('minecraft:horse', ['farm'], 60, [Item.of('minecraft:leather').withChance(2.0)]);
+      caging('minecraft:llama', ['farm'], 60, [Item.of('minecraft:leather').withChance(2.0)]);
+      caging('minecraft:mooshroom', ['farm'], 60, [Item.of('minecraft:leather').withChance(2.0), Item.of('minecraft:beef').withChance(0.9)]);
+      caging('minecraft:mule', ['farm'], 60, [Item.of('minecraft:leather').withChance(2.0)]);
+      caging('minecraft:pig', ['farm'], 60, [Item.of('minecraft:porkchop').withChance(0.9)]);
+      caging('minecraft:rabbit', ['farm'], 60, [
+        Item.of('minecraft:rabbit_hide').withChance(0.5),
+        Item.of('minecraft:rabbit').withChance(0.9),
+        Item.of('minecraft:rabbit_foot').withChance(0.001),
+      ]);
+      caging('minecraft:sheep', ['farm'], 60, [Item.of('minecraft:mutton').withChance(0.9)]);
+      caging('minecraft:skeleton_horse', ['farm'], 60, [Item.of('minecraft:bone').withChance(0.9)]);
+
+      // Snow Mobs
+      caging('minecraft:polar_bear', ['snow'], 100, [Item.of('minecraft:cod').withChance(0.6), Item.of('minecraft:salmon').withChance(0.6)]);
+      caging('minecraft:snow_golem', ['snow'], 40, [Item.of('minecraft:snowball').withChance(0.25)]);
+      caging('minecraft:stray', ['snow'], 60, [Item.of('minecraft:arrow').withChance(0.9), Item.of('minecraft:bone').withChance(0.9)], 2);
+
+      // Nether Mobs
+
+      caging('minecraft:blaze', ['nether'], 60, [Item.of('minecraft:blaze_rod').withChance(0.66)], 2);
+      caging('minecraft:ghast', ['nether'], 60, [Item.of('minecraft:gunpowder').withChance(0.9), Item.of('minecraft:ghast_tear').withChance(0.1)], 2);
+      caging('minecraft:hoglin', ['nether'], 60, [
+        Item.of('nethersdelight:hoglin_loin').withChance(0.4),
+        Item.of('minecraft:leather').withChance(2.0),
+      ]);
+      caging('minecraft:magma_cube', ['nether'], 60, [Item.of('minecraft:magma_cream').withChance(0.3)]);
+      caging('minecraft:piglin', ['nether'], 60, [Item.of('minecraft:arrow').withChance(0.9)], 2);
+      caging('minecraft:strider', ['nether'], 60, [Item.of('nethersdelight:strider_slice').withChance(0.4)]);
+      caging(
+        'minecraft:wither_skeleton',
+        ['nether'],
+        60,
+        [Item.of('minecraft:bone').withChance(2.0), Item.of('minecraft:wither_skeleton_skull').withChance(0.001)],
+        2
+      );
+
+      // Misc
+      caging('minecraft:panda', ['wooded'], 90, [Item.of('minecraft:bamboo').withChance(0.9)]);
+      caging('minecraft:parrot', ['wooded'], 30, [Item.of('minecraft:feather').withChance(0.9)]);
+
+      caging('minecraft:slime', ['swampy'], 60, [Item.of('minecraft:slime_ball').withChance(0.9)]);
+      caging('minecraft:witch', ['swampy'], 60, [Item.of('minecraft:stick').withChance(0.9)], 2);
+
+      caging('minecraft:iron_golem', ['farm'], 300, [Item.of('minecraft:poppy').withChance(5.0)]);
+
+      caging('minecraft:phantom', ['end'], 60, [Item.of('minecraft:phantom_membrane').withChance(0.45)], 2);
+      caging('minecraft:shulker', ['end'], 60, [Item.of('minecraft:shulker_shell').withChance(0.45)], 2);
+    };
+
+    const Naturalist = () => {
+      caging('naturalist:duck', ['white_sand'], 60, [Item.of('minecraft:feather').withChance(0.45), Item.of('naturalist:duck').withChance(0.45)]);
+      caging('naturalist:bass', ['white_sand'], 60, [Item.of('naturalist:bass').withChance(0.9)], 1, true);
+      caging('naturalist:catfish', ['swampy'], 60, [Item.of('naturalist:catfish').withChance(0.9)], 1, true);
+
+      caging('naturalist:bluejay', ['farm'], 60, [Item.of('minecraft:feather').withChance(0.9)]);
+      caging('naturalist:canary', ['farm'], 60, [Item.of('minecraft:feather').withChance(0.9)]);
+      caging('naturalist:cardinal', ['farm'], 60, [Item.of('minecraft:feather').withChance(0.9)]);
+      caging('naturalist:robin', ['farm'], 60, [Item.of('minecraft:feather').withChance(0.9)]);
+
+      caging('naturalist:boar', ['wooded'], 60, [Item.of('minecraft:leather').withChance(0.22), Item.of('minecraft:porkchop').withChance(0.22)]);
+      caging('naturalist:deer', ['wooded'], 60, [Item.of('naturalist:venison').withChance(0.9), Item.of('naturalist:antler').withChance(0.01)]);
+
+      caging('naturalist:dragonfly', ['swampy'], 60, [
+        Item.of('naturalist:azure_froglass').withChance(0.25),
+        Item.of('naturalist:verdant_froglass').withChance(0.25),
+        Item.of('naturalist:crimson_froglass').withChance(0.25),
+      ]);
+
+      caging('naturalist:firefly', ['wooded', 'swampy'], 60, [Item.of('naturalist:glow_goop').withChance(0.45)]);
+      caging('naturalist:snail', ['wooded', 'swampy'], 60, [
+        Item.of('minecraft:slime_ball').withChance(0.15),
+        Item.of('naturalist:snail_shell').withChance(0.015),
+      ]);
+    };
+
+    const Spawn = () => {
+      caging('spawn:angler_fish', ['ocean'], 60, [Item.of('spawn:angler_fish').withChance(0.9)], 1, true);
+      caging('spawn:tuna', ['ocean'], 60, [Item.of('spawn:tuna_chunk').withChance(0.9)], 1, true);
+    };
+
+    Environments();
+    [Aether, CreeperOverhaul, Ecologics, Eidolon, EndermanOverhaul, EnlightenedEnd, Minecraft, Naturalist, Spawn].forEach(Submodule => Submodule());
+  };
+
   const Eidolon = () => {
     // Candle deduplication-ish
     event.remove({output: 'eidolon:candle'});
@@ -360,7 +904,7 @@ ServerEvents.recipes(event => {
     });
   };
 
-  [Aether, BloodMagic, Eidolon, Embers, Enchanting].forEach(Module => Module());
+  [Aether, BloodMagic, CagedMobs, Eidolon, Embers, Enchanting].forEach(Module => Module());
 });
 
 LootJS.modifiers(event => {

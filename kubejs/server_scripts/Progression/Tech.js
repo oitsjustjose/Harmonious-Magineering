@@ -157,8 +157,8 @@ ServerEvents.recipes(event => {
 
     event.remove({id: mod('alloysmelter/brass')});
     event.remove({id: mod('alloysmelter/bronze')});
-    event.replaceInput({ output: mod('hammer') }, '#forge:ingots/iron', '#forge:ingots/steel');
-    event.replaceInput({ output: mod('wirecutter') }, '#forge:ingots/iron', '#forge:ingots/steel');
+    event.replaceInput({output: mod('hammer')}, '#forge:ingots/iron', '#forge:ingots/steel');
+    event.replaceInput({output: mod('wirecutter')}, '#forge:ingots/iron', '#forge:ingots/steel');
 
     Steel();
   };
@@ -225,12 +225,7 @@ ServerEvents.recipes(event => {
       C: Items.circuitish,
     });
 
-    event.smithing(
-      MG('mininggadget_fancy'),
-      'minecraft:netherite_upgrade_smithing_template',
-      MG('mininggadget_simple'),
-      'cagedmobs:star_infused_netherite_ingot'
-    );
+    event.smithing(MG('mininggadget_fancy'), 'minecraft:netherite_upgrade_smithing_template', MG('mininggadget_simple'), '#forge:ingots/netherite');
     event.smithing(MG('mininggadget'), 'enlightened_end:adamantite_smithing_template', MG('mininggadget_fancy'), 'enlightened_end:adamantite_block');
 
     // Base Upgrade
@@ -375,17 +370,7 @@ ServerEvents.recipes(event => {
     event.remove({output: 'rftoolsbase:dimensionalshard'});
   };
 
-  [
-    AE2,
-    BuildingGadgets,
-    Chunkloaders,
-    Create,
-    DimStorage,
-    Entangled,
-    ImmersiveEngineering,
-    LaserIO,
-    Mekanism,
-    MiningGadgets,
-    RFTools,
-  ].forEach(Module => Module());
+  [AE2, BuildingGadgets, Chunkloaders, Create, DimStorage, Entangled, ImmersiveEngineering, LaserIO, Mekanism, MiningGadgets, RFTools].forEach(
+    Module => Module()
+  );
 });

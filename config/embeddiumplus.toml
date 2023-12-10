@@ -19,7 +19,7 @@
 		"Enable Max Distance Checks" = true
 		"(TileEntity) Max Horizontal Render Distance [Squared, Default 64^2]" = 4096
 		"(TileEntity) Max Vertical Render Distance [Raw, Default 32]" = 32
-		"(Entity) Max Horizontal Render Distance [Squared, Default 64^2]" = 4096
+		"(Entity) Max Horizontal Render Distance [Squared, Default 64^2]" = 16384
 		"(Entity) Max Vertical Render Distance [Raw, Default 32]" = 32
 		#List of entities to not cull based on distance.
 		#Example: "minecraft:bat"

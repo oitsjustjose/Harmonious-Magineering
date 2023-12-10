@@ -48,8 +48,7 @@ ServerEvents.tags('block', event => {
   RegionsUnexplored.logs.forEach(log => event.add('forge:stripped_logs', log));
   RegionsUnexplored.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   Ores.forEach(ore => event.removeAllTagsFrom(ore));
-
-  ['minecraft:sweet_berry_bush', 'minecraft:mangrove_propagule', 'minecraft:bamboo', 'farmersdelight:tomatoes', 'ecologics:prickly_pear'].forEach(
+  [('minecraft:sweet_berry_bush', 'minecraft:mangrove_propagule', 'minecraft:bamboo', 'farmersdelight:tomatoes', 'ecologics:prickly_pear')].forEach(
     crop => event.add('vtweaks:blacklisted_harvest_crops', crop)
   );
 });
@@ -449,6 +448,50 @@ ServerEvents.tags('item', event => {
   event.add('pneumaticcraft:plastic_sheets', 'mekanism:hdpe_sheet');
   /* Chiseled Bookshelf Compat */
   event.add('minecraft:bookshelf_books', ['ae2:guide', 'aether:book_of_lore', 'eidolon:codex', 'rftoolsbase:manual']);
+
+  event.add('forge:mud', ['regions_unexplored:silt_mud', 'regions_unexplored:peat_mud', 'minecraft:mud']);
+  event.add('forge:ocean_blocks', [
+    'minecraft:brain_coral_block',
+    'minecraft:bubble_coral_block',
+    'minecraft:dead_brain_coral_block',
+    'minecraft:dead_bubble_coral_block',
+    'minecraft:dead_fire_coral_block',
+    'minecraft:dead_horn_coral_block',
+    'minecraft:dead_tube_coral_block',
+    'minecraft:fire_coral_block',
+    'minecraft:gravel',
+    'minecraft:horn_coral_block',
+    'minecraft:sand',
+    'minecraft:tube_coral_block',
+  ]);
+  event.add('forge:actual_underground_stones', [
+    'create:asurine',
+    'create:crimsite',
+    'create:limestone',
+    'create:scorchia',
+    'create:scoria',
+    'create:veridium',
+    'minecraft:andesite',
+    'minecraft:deepslate',
+    'minecraft:dripstone_block',
+    'minecraft:diorite',
+    'minecraft:granite',
+    'minecraft:tuff',
+    'minecraft:calcite',
+    'minecraft:calcite',
+    'regions_unexplored:argillite',
+    'regions_unexplored:chalk',
+    'regions_unexplored:mossy_stone',
+  ]);
+  event.add('forge:podzol', [
+    'regions_unexplored:silt_podzol',
+    'minecraft:podzol',
+    'regions_unexplored:peat_farmland',
+    'regions_unexplored:peat_podzol',
+    'regions_unexplored:peat_coarse_dirt',
+    'regions_unexplored:peat_dirt',
+    'regions_unexplored:peat_grass_block',
+  ]);
 
   [Colors, Exclusions, Hyphae, Osmium].forEach(Module => Module());
 });
