@@ -448,6 +448,8 @@ ServerEvents.tags('item', event => {
   event.add('pneumaticcraft:plastic_sheets', 'mekanism:hdpe_sheet');
   /* Chiseled Bookshelf Compat */
   event.add('minecraft:bookshelf_books', ['ae2:guide', 'aether:book_of_lore', 'eidolon:codex', 'rftoolsbase:manual']);
+  /* More Obsidian Variants */
+  event.add('forge:obsidian', 'minecraft:crying_obsidian');
 
   event.add('forge:mud', ['regions_unexplored:silt_mud', 'regions_unexplored:peat_mud', 'minecraft:mud']);
   event.add('forge:ocean_blocks', [
@@ -528,4 +530,8 @@ ServerEvents.tags('fluid', event => {
   event.add('minecraft:water', 'minecraft:flowing_water');
 
   event.remove('forge:honey', 'productivebees:honey');
+});
+
+ServerEvents.tags('dimension_type', event => {
+  event.add('vtweaks:peaceful_surface_blacklist_dims', 'bloodmagic:dungeon');
 });

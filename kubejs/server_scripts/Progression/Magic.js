@@ -304,6 +304,12 @@ ServerEvents.recipes(event => {
       })
       .id('bloodmagic:altar/slate');
 
+    // Large Bloodstone Brick should use the Aether's Hellfire Stone (i.e. kill the level-3 boss in the Aether)
+    event.remove({id: 'bloodmagic:largebloodstonebrick'});
+    event
+      .shapeless(Item.of('bloodmagic:largebloodstonebrick', 8), [Item.of('aether:hellfire_stone'), Item.of('bloodmagic:weakbloodshard')])
+      .id('bloodmagic:largebloodstonebrick');
+
     // Blank Rune blocks should require Aether Stones
     event.remove({id: 'bloodmagic:blood_rune_blank'});
     event
@@ -313,6 +319,127 @@ ServerEvents.recipes(event => {
         S: {item: 'bloodmagic:blankslate'},
       })
       .id('bloodmagic:blood_rune_blank');
+
+    // Re-do all of the Blood Orb recipes
+    event.remove({id: 'bloodmagic:altar/weakbloodorb'});
+    event.remove({id: 'bloodmagic:altar/apprenticebloodorb'});
+    event.remove({id: 'bloodmagic:altar/magicianbloodorb'});
+    event.remove({id: 'bloodmagic:altar/masterbloodorb'});
+    event.remove({id: 'bloodmagic:altar/archmagebloodorb'});
+
+    event
+      .custom({
+        type: 'bloodmagic:altar',
+        altarSyphon: 2000,
+        consumptionRate: 5,
+        drainRate: 1,
+        input: {item: 'eidolon:crimson_gem'},
+        output: {item: 'bloodmagic:weakbloodorb'},
+        upgradeLevel: 0,
+      })
+      .id('bloodmagic:altar/weakbloodorb');
+
+    event
+      .custom({
+        type: 'bloodmagic:altar',
+        altarSyphon: 5000,
+        consumptionRate: 5,
+        drainRate: 5,
+        input: {item: 'minecraft:ender_pearl'},
+        output: {item: 'bloodmagic:apprenticebloodorb'},
+        upgradeLevel: 1,
+      })
+      .id('bloodmagic:altar/apprenticebloodorb');
+
+    event
+      .custom({
+        type: 'bloodmagic:altar',
+        altarSyphon: 25000,
+        consumptionRate: 20,
+        drainRate: 20,
+        input: {item: 'endermanoverhaul:soul_pearl'},
+        output: {item: 'bloodmagic:magicianbloodorb'},
+        upgradeLevel: 2,
+      })
+      .id('bloodmagic:altar/magicianbloodorb');
+
+    event
+      .custom({
+        type: 'bloodmagic:altar',
+        altarSyphon: 40000,
+        consumptionRate: 30,
+        drainRate: 50,
+        input: {item: 'eidolon:offering_incense'},
+        output: {item: 'bloodmagic:masterbloodorb'},
+        upgradeLevel: 3,
+      })
+      .id('bloodmagic:altar/masterbloodorb');
+
+    event
+      .custom({
+        type: 'bloodmagic:altar',
+        altarSyphon: 80000,
+        consumptionRate: 50,
+        drainRate: 100,
+        input: {item: 'endermanoverhaul:summoner_pearl'},
+        output: {item: 'bloodmagic:archmagebloodorb'},
+        upgradeLevel: 4,
+      })
+      .id('bloodmagic:altar/archmagebloodorb');
+
+    // Also applies to the reversion recipes :)
+    event.remove({id: 'bloodmagic:arc/reversion/weak_blood_orb'});
+    event.remove({id: 'bloodmagic:arc/reversion/apprentice_blood_orb'});
+    event.remove({id: 'bloodmagic:arc/reversion/magician_blood_orb'});
+    event.remove({id: 'bloodmagic:arc/reversion/master_blood_orb'});
+
+    event
+      .custom({
+        type: 'bloodmagic:arc',
+        consumeingredient: true,
+        input: {item: 'bloodmagic:weakbloodorb'},
+        inputsize: 1,
+        mainoutputchance: 0.0,
+        output: {item: 'eidolon:crimson_gem'},
+        tool: {tag: 'bloodmagic:arc/reverter'},
+      })
+      .id('bloodmagic:arc/reversion/weak_blood_orb');
+
+    event
+      .custom({
+        type: 'bloodmagic:arc',
+        consumeingredient: true,
+        input: {item: 'bloodmagic:apprenticebloodorb'},
+        inputsize: 1,
+        mainoutputchance: 0.0,
+        output: {item: 'minecraft:ender_pearl'},
+        tool: {tag: 'bloodmagic:arc/reverter'},
+      })
+      .id('bloodmagic:arc/reversion/apprentice_blood_orb');
+
+    event
+      .custom({
+        type: 'bloodmagic:arc',
+        consumeingredient: true,
+        input: {item: 'bloodmagic:magicianbloodorb'},
+        inputsize: 1,
+        mainoutputchance: 0.0,
+        output: {item: 'endermanoverhaul:soul_pearl'},
+        tool: {tag: 'bloodmagic:arc/reverter'},
+      })
+      .id('bloodmagic:arc/reversion/magician_blood_orb');
+
+    event
+      .custom({
+        type: 'bloodmagic:arc',
+        consumeingredient: true,
+        input: {item: 'bloodmagic:masterbloodorb'},
+        inputsize: 1,
+        mainoutputchance: 0.0,
+        output: {item: 'eidolon:offering_incense'},
+        tool: {tag: 'bloodmagic:arc/reverter'},
+      })
+      .id('bloodmagic:arc/reversion/master_blood_orb');
   };
 
   const CagedMobs = () => {
@@ -684,7 +811,7 @@ ServerEvents.recipes(event => {
       );
       caging(
         'endermanoverhaul:warped_forest_enderman',
-        ['wooded'],
+        ['nether'],
         120,
         [Item.of('endermanoverhaul:warped_pearl').withChance(0.65), Item.of('minecraft:warped_fungus').withChance(0.35)],
         2
