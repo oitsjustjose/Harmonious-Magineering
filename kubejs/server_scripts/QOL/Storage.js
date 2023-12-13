@@ -60,4 +60,54 @@ ServerEvents.recipes(event => {
     Ingredient.of('sophisticatedbackpacks:gold_backpack'),
     Ingredient.of('#forge:storage_blocks/diamond')
   );
+
+  // Framed Storage Drawers
+  event.remove({mod: 'framedcompactdrawers'});
+
+  event.shaped('framedcompactdrawers:framed_full_one', ['FFF', ' C ', 'FFF'], {
+    F: 'framedblocks:framed_cube',
+    C: '#forge:chests/wooden',
+  });
+  event.shaped(Item.of('framedcompactdrawers:framed_full_two', 2), ['FFF', 'CFC', 'FFF'], {
+    F: 'framedblocks:framed_cube',
+    C: '#forge:chests/wooden',
+  });
+  event.shaped(Item.of('framedcompactdrawers:framed_full_four', 4), ['CFC', 'FFF', 'CFC'], {
+    F: 'framedblocks:framed_cube',
+    C: '#forge:chests/wooden',
+  });
+  event.shaped('framedcompactdrawers:framed_half_one', ['FFF', ' C ', 'FFF'], {
+    F: 'framedblocks:framed_slab',
+    C: '#forge:chests/wooden',
+  });
+  event.shaped(Item.of('framedcompactdrawers:framed_half_two', 2), ['FFF', 'CFC', 'FFF'], {
+    F: 'framedblocks:framed_slab',
+    C: '#forge:chests/wooden',
+  });
+  event.shaped(Item.of('framedcompactdrawers:framed_half_four', 4), ['CFC', 'FFF', 'CFC'], {
+    F: 'framedblocks:framed_slab',
+    C: '#forge:chests/wooden',
+  });
+  event.shaped('framedcompactdrawers:framed_trim', ['FSF', 'SFS', 'FSF'], {
+    S: 'minecraft:stick',
+    F: 'framedblocks:framed_cube',
+  });
+  event.shaped('framedcompactdrawers:framed_slave', ['FFF', 'CDC', 'FGF'], {
+    F: 'framedblocks:framed_cube',
+    D: '#storagedrawers:drawers',
+    C: 'minecraft:comparator',
+    G: '#forge:ingots/gold',
+  });
+  event.shaped('framedcompactdrawers:framed_drawer_controller', ['FFF', 'CDC', 'FGF'], {
+    F: 'framedblocks:framed_cube',
+    D: '#storagedrawers:drawers',
+    C: 'minecraft:comparator',
+    G: 'minecraft:diamond',
+  });
+  event.shaped('framedcompactdrawers:framed_compact_drawer', ['FFF', 'PDP', 'FGF'], {
+    F: 'framedblocks:framed_cube',
+    D: '#storagedrawers:drawers',
+    P: 'minecraft:piston',
+    G: '#forge:ingots/iron',
+  });
 });
