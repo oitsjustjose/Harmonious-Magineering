@@ -72,7 +72,30 @@ const Removals = [
   'spawn:snail_eggs',
   'spawn:snail_shell',
   'spawn:snail_spawn_egg',
+  'waystones:black_sharestone',
+  'waystones:blue_sharestone',
+  'waystones:brown_sharestone',
+  'waystones:cyan_sharestone',
+  'waystones:gray_sharestone',
+  'waystones:green_sharestone',
+  'waystones:light_blue_sharestone',
+  'waystones:light_gray_sharestone',
+  'waystones:lime_sharestone',
+  'waystones:magenta_sharestone',
+  'waystones:orange_sharestone',
+  'waystones:pink_sharestone',
+  'waystones:purple_sharestone',
+  'waystones:red_sharestone',
+  'waystones:return_scroll',
+  'waystones:warp_dust',
+  'waystones:warp_plate',
+  'waystones:white_sharestone',
+  'waystones:yellow_sharestone',
 ];
+
+JEIEvents.removeCategories(event => {
+  event.remove('waystones:warp_plate');
+});
 
 JEIEvents.addItems(event => {
   event.add('minecraft:bundle');

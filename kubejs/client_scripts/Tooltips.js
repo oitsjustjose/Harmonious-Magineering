@@ -88,4 +88,5 @@ ItemEvents.tooltip(event => {
   );
 
   event.add('minecraft:enchanting_table', Text.red(Text.translate('tooltip.kubejs.enchanting_disabled')));
+  event.add('waystones:sharestone', Text.gold(Text.translate('tooltip.kubejs.can_be_dyed')))
 });
