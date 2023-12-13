@@ -1,4 +1,73 @@
 ServerEvents.recipes(event => {
+  /* ~~Delightful:~~ Remove the easier pie recipe */
+  event.remove({output: 'minecraft:pumpkin_pie'});
+  event.shaped('minecraft:pumpkin_pie', ['SPE', ' C '], {
+    P: 'minecraft:pumpkin',
+    S: 'minecraft:sugar',
+    C: 'farmersdelight:pie_crust',
+    E: '#forge:eggs',
+  });
+
+  event.custom({
+    type: 'create:sequenced_assembly',
+    ingredient: {item: 'farmersdelight:pie_crust'},
+    loops: 1,
+    results: [{item: 'minecraft:pumpkin_pie'}],
+    sequence: [
+      {
+        type: 'create:deploying',
+        ingredients: [{item: 'farmersdelight:pie_crust'}, [{tag: 'forge:eggs'}]],
+        results: [{item: 'farmersdelight:pie_crust'}],
+      },
+      {
+        type: 'create:deploying',
+        ingredients: [{item: 'farmersdelight:pie_crust'}, [{item: 'minecraft:sugar'}]],
+        results: [{item: 'farmersdelight:pie_crust'}],
+      },
+      {
+        type: 'create:deploying',
+        ingredients: [{item: 'farmersdelight:pie_crust'}, [{item: 'minecraft:pumpkin'}]],
+        results: [{item: 'farmersdelight:pie_crust'}],
+      },
+      {
+        type: 'create:pressing',
+        ingredients: [{item: 'farmersdelight:pie_crust'}],
+        results: [{item: 'farmersdelight:pie_crust'}],
+      },
+    ],
+    transitionalItem: {item: 'farmersdelight:pie_crust'},
+  });
+
+  event.custom({
+    type: 'create:sequenced_assembly',
+    ingredient: {item: 'farmersdelight:pie_crust'},
+    loops: 1,
+    results: [{item: 'minecraft:pumpkin_pie'}],
+    sequence: [
+      {
+        type: 'create:deploying',
+        ingredients: [{item: 'farmersdelight:pie_crust'}, [{tag: 'forge:eggs'}]],
+        results: [{item: 'farmersdelight:pie_crust'}],
+      },
+      {
+        type: 'create:filling',
+        ingredients: [{item: 'farmersdelight:pie_crust'}, {amount: 100, fluid: 'create:honey', nbt: {}}],
+        results: [{item: 'farmersdelight:pie_crust'}],
+      },
+      {
+        type: 'create:deploying',
+        ingredients: [{item: 'farmersdelight:pie_crust'}, [{item: 'minecraft:pumpkin'}]],
+        results: [{item: 'farmersdelight:pie_crust'}],
+      },
+      {
+        type: 'create:pressing',
+        ingredients: [{item: 'farmersdelight:pie_crust'}],
+        results: [{item: 'farmersdelight:pie_crust'}],
+      },
+    ],
+    transitionalItem: {item: 'farmersdelight:pie_crust'},
+  });
+
   /* ~~Snails:~~ Unify Spawn & Naturalist's snail shell items */
   event.replaceInput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
   event.replaceOutput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
