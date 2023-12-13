@@ -1031,7 +1031,96 @@ ServerEvents.recipes(event => {
     });
   };
 
-  [Aether, BloodMagic, CagedMobs, Eidolon, Embers, Enchanting].forEach(Module => Module());
+  const Waystones = () => {
+    event.remove({mod: 'waystones'});
+
+    event.shaped('waystones:warp_stone', ['SZS', 'ZTZ', 'SZS'], {
+      Z: 'aether:zanite_gemstone',
+      T: 'bloodmagic:teleposerfocus',
+      S: 'eidolon:soul_shard'
+    });
+
+    event.custom({
+      type: 'bloodmagic:alchemytable',
+      input: [
+        {item: 'eidolon:parchment'},
+        {item: 'eidolon:parchment'},
+        {item: 'eidolon:parchment'},
+        {item: 'eidolon:parchment'},
+        {item: 'eidolon:parchment'},
+        {item: 'endermanoverhaul:soul_pearl'},
+      ],
+      output: {item: 'waystones:bound_scroll', count: 5},
+      syphon: 1000,
+      ticks: 200,
+      upgradeLevel: 3,
+    });
+
+    event.custom({
+      type: 'bloodmagic:alchemytable',
+      input: [
+        {item: 'eidolon:parchment'},
+        {item: 'eidolon:parchment'},
+        {item: 'eidolon:parchment'},
+        {item: 'minecraft:emerald'},
+        {item: 'waystones:warp_stone'},
+      ],
+      output: {item: 'waystones:warp_scroll', count: 3},
+      syphon: 1000,
+      ticks: 200,
+      upgradeLevel: 2,
+    });
+
+    event.shaped('waystones:waystone', [' S ', 'SBS', 'STS'], {
+      T: 'waystones:warp_stone',
+      B: 'bloodmagic:blankslate',
+      S: 'minecraft:stone',
+    });
+
+    event.shaped('waystones:mossy_waystone', [' S ', 'SBS', 'STS'], {
+      T: 'waystones:warp_stone',
+      B: 'bloodmagic:blankslate',
+      S: 'regions_unexplored:mossy_stone',
+    });
+
+    event.shaped('waystones:sandy_waystone', [' S ', 'SBS', 'STS'], {
+      T: 'waystones:warp_stone',
+      B: 'bloodmagic:blankslate',
+      S: '#forge:sandstone/colorless',
+    });
+
+    event.shaped('waystones:sharestone', ['SLS', 'FWF', 'SLS'], {
+      S: 'minecraft:stone',
+      L: 'minecraft:stone_slab',
+      W: 'waystones:warp_stone',
+      F: 'minecraft:stone_brick_wall',
+    });
+
+    event.shaped('waystones:portstone', ['W', 'S'], {W: 'waystones:warp_stone', S: 'minecraft:stone_brick_stairs'});
+
+    [
+      'black',
+      'blue',
+      'brown',
+      'cyan',
+      'gray',
+      'green',
+      'light_blue',
+      'light_gray',
+      'lime',
+      'magenta',
+      'orange',
+      'pink',
+      'purple',
+      'red',
+      'white',
+      'yellow',
+    ].forEach(color => {
+      event.shapeless(`waystones:${color}_sharestone`, [`#forge:dyes/${color}`, '#waystones:sharestones']);
+    });
+  };
+
+  [Aether, BloodMagic, CagedMobs, Eidolon, Embers, Enchanting, Waystones].forEach(Module => Module());
 });
 
 LootJS.modifiers(event => {
