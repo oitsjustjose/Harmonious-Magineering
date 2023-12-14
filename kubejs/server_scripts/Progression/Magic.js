@@ -999,7 +999,7 @@ ServerEvents.recipes(event => {
     // Gate the Tinker Hammer behind Hellforged Ingots from BloodMagic
     event.remove({output: 'embers:tinker_hammer'});
     event.shaped('embers:tinker_hammer', ['LDL', 'LSL', ' S '], {
-      L: '#forge:ingots/dark_steel',
+      L: '#forge:ingots/pewter',
       D: '#forge:ingots/hellforged',
       S: '#forge:rods/wooden',
     });
@@ -1037,7 +1037,7 @@ ServerEvents.recipes(event => {
     event.shaped('waystones:warp_stone', ['SZS', 'ZTZ', 'SZS'], {
       Z: 'aether:zanite_gemstone',
       T: 'bloodmagic:teleposerfocus',
-      S: 'eidolon:soul_shard'
+      S: 'eidolon:soul_shard',
     });
 
     event.custom({

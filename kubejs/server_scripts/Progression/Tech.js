@@ -46,7 +46,7 @@ ServerEvents.recipes(event => {
     });
 
     event.shaped(bG('gadget_cut_paste'), ['DSD', 'ECE', 'DGD'], {
-      D: '#forge:ingots/dark_steel',
+      D: '#forge:ingots/steel',
       S: items.screen,
       C: items.powercore3,
       E: 'minecraft:shears',
@@ -54,7 +54,7 @@ ServerEvents.recipes(event => {
     });
 
     event.shaped(bG('gadget_destruction'), ['DSD', 'DTD', 'DCD'], {
-      D: '#forge:ingots/dark_steel',
+      D: '#forge:ingots/steel',
       S: items.screen,
       C: items.powercore3,
       T: 'minecraft:tnt',
@@ -69,7 +69,7 @@ ServerEvents.recipes(event => {
   const chunkloaders = () => {
     event.remove({output: 'chunkloaders:basic_chunk_loader'});
     event.shaped('chunkloaders:basic_chunk_loader', ['ABA', 'BCB', 'ABA'], {
-      A: ['#forge:ingots/steel', '#forge:ingots/dark_steel'],
+      A: '#forge:ingots/steel',
       B: '#forge:obsidian',
       C: '#forge:ender_pearls',
     });
