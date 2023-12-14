@@ -1,5 +1,5 @@
 const __DebugFind = () => {
-  const ItemOrNull = resloc => {
+  const itemOrNull = resloc => {
     const ret = Item.of(resloc);
     return ret.isEmpty() ? null : ret;
   };
@@ -7,30 +7,30 @@ const __DebugFind = () => {
   [
     // PUT NEW SLABS HERE!
   ].forEach(slab => {
-    const Base = slab.replace('_slab', '').replace('slab_', '');
-    const Tries = [
-      `${Base}_planks`, // i.e. {oak}_planks
-      `${Base}_block`, // i.e. {quartz}_block
-      `${Base}s`, // i.e. {stone_brick}s
-      Base, // i.e. {stone}
+    const base = slab.replace('_slab', '').replace('slab_', '');
+    const tries = [
+      `${base}_planks`, // i.e. {oak}_planks
+      `${base}_block`, // i.e. {quartz}_block
+      `${base}s`, // i.e. {stone_brick}s
+      base, // i.e. {stone}
     ];
 
-    let Choices = Tries.map(ItemOrNull).filter(x => !!x);
+    let choices = tries.map(itemOrNull).filter(x => !!x);
 
-    if (Choices.length === 0) {
-      console.error(`Failed to find the fullblock for ${slab}, tried ${Tries.join(', ')}`);
+    if (choices.length === 0) {
+      console.error(`Failed to find the fullblock for ${slab}, tried ${tries.join(', ')}`);
       return;
     }
 
-    if (Choices.length > 1) {
+    if (choices.length > 1) {
       // in the case of ["walnut_planks", "walnut"] we don't want to pick the base if other options are available..
-      Choices = Choices.filter(x => x !== Base);
+      choices = choices.filter(x => x !== base);
     }
 
-    if (Choices.length == 1) {
-      console.log(`{slab:'${slab}',full:'${Choices[0]}'}`);
+    if (choices.length == 1) {
+      console.log(`{slab:'${slab}',full:'${choices[0]}'}`);
     } else {
-      console.error(`{slab:'${slab}',full:[${Choices.map(x => `'${x}'`).join(', ')}]}`);
+      console.error(`{slab:'${slab}',full:[${choices.map(x => `'${x}'`).join(', ')}]}`);
     }
   });
 };

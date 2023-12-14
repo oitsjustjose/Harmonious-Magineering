@@ -1,4 +1,4 @@
-const Removals = [
+const removals = [
   '/embers:silver_axe/',
   '/embers:silver_hoe/',
   '/embers:silver_pickaxe/',
@@ -102,5 +102,5 @@ JEIEvents.addItems(event => {
 });
 
 JEIEvents.hideItems(event => {
-  Removals.forEach(x => event.hide(x));
+  removals.forEach(x => event.hide(x));
 });

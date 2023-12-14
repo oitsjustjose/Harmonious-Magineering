@@ -1,6 +1,6 @@
 ServerEvents.recipes(event => {
   /* Gearset Order: Sword, Pick, Shovel, Axe, Hoe */
-  const BaseTools = [
+  const baseTools = [
     {
       type: 'wood',
       next: ['stone'],
@@ -125,7 +125,7 @@ ServerEvents.recipes(event => {
   ];
 
   /* Gearset Order: Helmet, Chestplate, Leggings, Boots */
-  const Armor = [
+  const armor = [
     {
       type: 'leather',
       next: ['chain'],
@@ -199,7 +199,7 @@ ServerEvents.recipes(event => {
     },
   ];
 
-  const Gloves = [
+  const gloves = [
     {
       type: 'leather',
       next: ['chain'],
@@ -227,7 +227,7 @@ ServerEvents.recipes(event => {
     },
   ];
 
-  const Knives = [
+  const knives = [
     {
       type: 'flint',
       next: ['iron'],
@@ -260,7 +260,7 @@ ServerEvents.recipes(event => {
     },
   ];
 
-  const Machetes = [
+  const machetes = [
     {
       type: 'iron',
       next: ['gold', 'diamond'],
@@ -278,15 +278,15 @@ ServerEvents.recipes(event => {
     },
   ];
 
-  const ProcessSet = set => {
-    const FindNextSet = type => {
-      const Results = set.filter(x => x.type === type);
-      return Results.length ? Results[0] : null;
+  const processSet = set => {
+    const findNextSet = type => {
+      const results = set.filter(x => x.type === type);
+      return results.length ? results[0] : null;
     };
 
     set.forEach(curr => {
       curr.next.forEach(id => {
-        const next = FindNextSet(id);
+        const next = findNextSet(id);
         if (!next) return;
 
         if (curr.items.length != next.items.length) {
@@ -303,7 +303,7 @@ ServerEvents.recipes(event => {
     });
   };
 
-  [BaseTools, Armor, Gloves, Knives, Machetes].forEach(ProcessSet);
+  [baseTools, armor, gloves, knives, machetes].forEach(processSet);
 });
 
 

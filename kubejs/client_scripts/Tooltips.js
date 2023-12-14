@@ -5,8 +5,8 @@ ItemEvents.tooltip(event => {
 
   event.addAdvanced(Ingredient.all, (stack, advanced, tooltips) => {
     if (event.isShift()) {
-      const ModName = Platform.getMods()[stack.getMod()].getName();
-      tooltips.add(Text.blue(Text.translate('tooltip.kubejs.modid', ModName)));
+      let modName = Platform.getMods()[stack.getMod()].getName();
+      tooltips.add(Text.blue(Text.translate('tooltip.kubejs.modid', modName)));
     }
   });
 

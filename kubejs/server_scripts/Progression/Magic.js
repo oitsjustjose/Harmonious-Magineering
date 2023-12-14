@@ -1,10 +1,10 @@
 ServerEvents.recipes(event => {
-  const Aether = () => {
+  const aether = () => {
     /**
      * @param {Internal.Ingredient} input
      * @param {Number} time (in seconds)
      */
-    const Repairing = (input, time) => {
+    const repairing = (input, time) => {
       event.custom({
         type: 'aether:repairing',
         ingredient: input.toJson(),
@@ -79,7 +79,7 @@ ServerEvents.recipes(event => {
       {item: Ingredient.of('deep_aether:stratus_ring'), time: 75},
       {item: Ingredient.of('farmersdelight:netherite_knife'), time: 100},
       {item: Ingredient.of('nethersdelight:netherite_machete'), time: 100},
-    ].forEach(pair => Repairing(pair.item, pair.time));
+    ].forEach(pair => repairing(pair.item, pair.time));
 
     [
       // Remove these -- they should all be declared in the anvil because they're vanilla-adjacent tools
@@ -139,7 +139,7 @@ ServerEvents.recipes(event => {
     ].forEach(x => event.remove({id: `aether:${x}`}));
   };
 
-  const BloodMagic = () => {
+  const bloodMagic = () => {
     /**
      * @param {Internal.ItemStackKJS} output
      * @param {Internal.Ingredient} input
@@ -442,7 +442,7 @@ ServerEvents.recipes(event => {
       .id('bloodmagic:arc/reversion/master_blood_orb');
   };
 
-  const CagedMobs = () => {
+  const cagedMobs = () => {
     /**
      *
      * @param {String} entityType
@@ -513,7 +513,7 @@ ServerEvents.recipes(event => {
     event.shaped('cagedmobs:hopping_mob_cage', ['C', 'H'], {C: 'cagedmobs:mob_cage', H: 'minecraft:hopper'});
 
     // Environments (Pre-requisite)
-    const Environments = () => {
+    const environments = () => {
       event.remove({id: 'cagedmobs:environments/diamond_ore'});
       event.remove({id: 'cagedmobs:environments/deepslate_diamond_ore'});
 
@@ -583,7 +583,7 @@ ServerEvents.recipes(event => {
     };
 
     // Individual Mob Recipes w/ Mod Compat & Rebalance! :D
-    const Aether = () => {
+    const aether = () => {
       caging('aether_redux:vanilla_swet', ['aether'], 60, [Item.of('aether_redux:vanilla_swet_ball').withChance(1)]);
       caging('aether:aechor_plant', ['aether'], 60, [Item.of('aether:aechor_petal').withChance(1)]);
       caging('aether:aerbunny', ['aether'], 60, [Item.of('minecraft:string').withChance(1)]);
@@ -606,7 +606,7 @@ ServerEvents.recipes(event => {
       );
     };
 
-    const CreeperOverhaul = () => {
+    const creeperOverhaul = () => {
       caging('creeperoverhaul:bamboo_creeper', ['wooded'], 60, [Item.of('minecraft:bamboo').withChance(1)], 2);
       caging(
         'creeperoverhaul:dark_oak_creeper',
@@ -688,11 +688,11 @@ ServerEvents.recipes(event => {
       );
     };
 
-    const Ecologics = () => {
+    const ecologics = () => {
       caging('ecologics:coconut_crab', ['white_sand'], 60, [Item.of('ecologics:crab_claw').withChance(0.5)]);
     };
 
-    const Eidolon = () => {
+    const eidolon = () => {
       caging('eidolon:giant_skeleton', ['cave'], 60, [Item.of('minecraft:bone').withChance(4.0)]);
       caging('eidolon:raven', ['wooded'], 60, [Item.of('eidolon:raven_feather').withChance(0.01)]);
       caging('eidolon:slimy_slug', ['swampy'], 60, [Item.of('minecraft:slime_ball').withChance(0.85)]);
@@ -704,7 +704,7 @@ ServerEvents.recipes(event => {
       ]);
     };
 
-    const EndermanOverhaul = () => {
+    const endermanOverhaul = () => {
       caging(
         'endermanoverhaul:badlands_enderman',
         ['sand'],
@@ -825,7 +825,7 @@ ServerEvents.recipes(event => {
       );
     };
 
-    const EnlightenedEnd = () => {
+    const enlightenedEnd = () => {
       caging(
         'enlightened_end:stalker',
         ['end'],
@@ -836,7 +836,7 @@ ServerEvents.recipes(event => {
       );
     };
 
-    const Minecraft = () => {
+    const minecraft = () => {
       // Zombie Variants
       caging('minecraft:drowned', ['ocean'], 75, [Item.of('rotten_flesh').withChance(2.0)], 2, true);
       caging('minecraft:husk', ['sand'], 90, [Item.of('rotten_flesh').withChance(0.9)], 2);
@@ -951,7 +951,7 @@ ServerEvents.recipes(event => {
       caging('minecraft:shulker', ['end'], 60, [Item.of('minecraft:shulker_shell').withChance(0.45)], 2);
     };
 
-    const Naturalist = () => {
+    const naturalist = () => {
       caging('naturalist:duck', ['white_sand'], 60, [Item.of('minecraft:feather').withChance(0.45), Item.of('naturalist:duck').withChance(0.45)]);
       caging('naturalist:bass', ['white_sand'], 60, [Item.of('naturalist:bass').withChance(0.9)], 1, true);
       caging('naturalist:catfish', ['swampy'], 60, [Item.of('naturalist:catfish').withChance(0.9)], 1, true);
@@ -977,16 +977,16 @@ ServerEvents.recipes(event => {
       ]);
     };
 
-    const Spawn = () => {
+    const spawn = () => {
       caging('spawn:angler_fish', ['ocean'], 60, [Item.of('spawn:angler_fish').withChance(0.9)], 1, true);
       caging('spawn:tuna', ['ocean'], 60, [Item.of('spawn:tuna_chunk').withChance(0.9)], 1, true);
     };
 
-    Environments();
-    [Aether, CreeperOverhaul, Ecologics, Eidolon, EndermanOverhaul, EnlightenedEnd, Minecraft, Naturalist, Spawn].forEach(Submodule => Submodule());
+    environments();
+    [aether, creeperOverhaul, ecologics, eidolon, endermanOverhaul, enlightenedEnd, minecraft, naturalist, spawn].forEach(Submodule => Submodule());
   };
 
-  const Eidolon = () => {
+  const eidolon = () => {
     // Candle deduplication-ish
     event.remove({output: 'eidolon:candle'});
     event.remove({id: 'delightful:candle_from_animal_fat'});
@@ -995,7 +995,7 @@ ServerEvents.recipes(event => {
     event.replaceInput({}, 'eidolon:candle', 'minecraft:candle');
   };
 
-  const Embers = () => {
+  const embers = () => {
     // Gate the Tinker Hammer behind Hellforged Ingots from BloodMagic
     event.remove({output: 'embers:tinker_hammer'});
     event.shaped('embers:tinker_hammer', ['LDL', 'LSL', ' S '], {
@@ -1016,7 +1016,7 @@ ServerEvents.recipes(event => {
     });
   };
 
-  const Enchanting = () => {
+  const enchanting = () => {
     event.remove({output: 'minecraft:enchanting_table'});
     event.custom({
       type: 'eidolon:worktable',
@@ -1031,7 +1031,7 @@ ServerEvents.recipes(event => {
     });
   };
 
-  const Waystones = () => {
+  const waystones = () => {
     event.remove({mod: 'waystones'});
 
     event.shaped('waystones:warp_stone', ['SZS', 'ZTZ', 'SZS'], {
@@ -1120,7 +1120,7 @@ ServerEvents.recipes(event => {
     });
   };
 
-  [Aether, BloodMagic, CagedMobs, Eidolon, Embers, Enchanting, Waystones].forEach(Module => Module());
+  [aether, bloodMagic, cagedMobs, eidolon, embers, enchanting, waystones].forEach(Module => Module());
 });
 
 LootJS.modifiers(event => {

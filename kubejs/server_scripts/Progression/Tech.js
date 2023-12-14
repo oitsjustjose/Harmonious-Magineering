@@ -1,5 +1,5 @@
 ServerEvents.recipes(event => {
-  const Items = {
+  const items = {
     screen: Item.of('rftoolsbase:information_screen'),
     powercore: Item.of('rftoolspower:power_core1'),
     powercore2: Item.of('rftoolspower:power_core2'),
@@ -9,54 +9,54 @@ ServerEvents.recipes(event => {
     template: Item.of('minecraft:paper'),
   };
 
-  const AE2 = () => {
+  const ae2 = () => {
     event.remove({id: 'ae2:blasting/silicon_from_certus_quartz_dust'});
     event.remove({id: 'ae2:smelting/silicon_from_certus_quartz_dust'});
   };
 
-  const BuildingGadgets = () => {
-    const BG = item => `buildinggadgets2:${item}`;
+  const buildingGadgets = () => {
+    const bG = item => `buildinggadgets2:${item}`;
     event.remove({mod: 'buildinggadgets2'});
 
-    event.shaped(BG('template_manager'), ['PPP', 'PTP', 'PEP'], {
-      P: Items.plastic,
+    event.shaped(bG('template_manager'), ['PPP', 'PTP', 'PEP'], {
+      P: items.plastic,
       T: 'create:schematic_table',
       E: 'create:empty_schematic',
     });
 
-    event.shaped(BG('gadget_building'), ['PSP', 'PBP', 'PCP'], {
-      P: Items.plastic,
-      S: Items.screen,
+    event.shaped(bG('gadget_building'), ['PSP', 'PBP', 'PCP'], {
+      P: items.plastic,
+      S: items.screen,
       B: 'create:extendo_grip',
-      C: Items.powercore,
+      C: items.powercore,
     });
 
-    event.shaped(BG('gadget_exchanging'), ['PPP', ' SP', ' CP'], {
-      P: Items.plastic,
-      S: Items.screen,
-      C: Items.powercore,
+    event.shaped(bG('gadget_exchanging'), ['PPP', ' SP', ' CP'], {
+      P: items.plastic,
+      S: items.screen,
+      C: items.powercore,
     });
 
-    event.shaped(BG('gadget_copy_paste'), ['PSP', 'ECE', 'PGP'], {
-      P: Items.plastic,
-      S: Items.screen,
-      C: Items.powercore2,
+    event.shaped(bG('gadget_copy_paste'), ['PSP', 'ECE', 'PGP'], {
+      P: items.plastic,
+      S: items.screen,
+      C: items.powercore2,
       E: 'create:empty_schematic',
       G: 'create:extendo_grip',
     });
 
-    event.shaped(BG('gadget_cut_paste'), ['DSD', 'ECE', 'DGD'], {
+    event.shaped(bG('gadget_cut_paste'), ['DSD', 'ECE', 'DGD'], {
       D: '#forge:ingots/dark_steel',
-      S: Items.screen,
-      C: Items.powercore3,
+      S: items.screen,
+      C: items.powercore3,
       E: 'minecraft:shears',
       G: 'create:extendo_grip',
     });
 
-    event.shaped(BG('gadget_destruction'), ['DSD', 'DTD', 'DCD'], {
+    event.shaped(bG('gadget_destruction'), ['DSD', 'DTD', 'DCD'], {
       D: '#forge:ingots/dark_steel',
-      S: Items.screen,
-      C: Items.powercore3,
+      S: items.screen,
+      C: items.powercore3,
       T: 'minecraft:tnt',
     });
 
@@ -66,7 +66,7 @@ ServerEvents.recipes(event => {
     ]);
   };
 
-  const Chunkloaders = () => {
+  const chunkloaders = () => {
     event.remove({output: 'chunkloaders:basic_chunk_loader'});
     event.shaped('chunkloaders:basic_chunk_loader', ['ABA', 'BCB', 'ABA'], {
       A: ['#forge:ingots/steel', '#forge:ingots/dark_steel'],
@@ -75,7 +75,7 @@ ServerEvents.recipes(event => {
     });
   };
 
-  const Create = () => {
+  const create = () => {
     // Only Andesite Casing can be made by hand - everything else should be deployed
     event.remove({id: 'create:item_application/brass_casing_from_log'});
     event.remove({id: 'create:item_application/brass_casing_from_wood'});
@@ -98,7 +98,7 @@ ServerEvents.recipes(event => {
     });
   };
 
-  const DimStorage = () => {
+  const dimStorage = () => {
     event.remove({mod: 'dimstorage'});
 
     event.shaped('dimstorage:dimensional_chest', ['SSS', 'HCH', 'SSS'], {
@@ -120,7 +120,7 @@ ServerEvents.recipes(event => {
     });
   };
 
-  const Entangled = () => {
+  const entangled = () => {
     event.remove({output: 'entangled:block'});
     event.shaped('entangled:block', ['ABA', 'BCB', 'ABA'], {
       A: 'endermanoverhaul:soul_pearl',
@@ -129,10 +129,10 @@ ServerEvents.recipes(event => {
     });
   };
 
-  const ImmersiveEngineering = () => {
+  const immersiveEngineering = () => {
     const mod = id => `immersiveengineering:${id}`;
 
-    const Steel = () => {
+    const steel = () => {
       event.remove({output: mod('cokebrick')});
       event.remove({output: mod('blastbrick')});
 
@@ -160,116 +160,116 @@ ServerEvents.recipes(event => {
     event.replaceInput({output: mod('hammer')}, '#forge:ingots/iron', '#forge:ingots/steel');
     event.replaceInput({output: mod('wirecutter')}, '#forge:ingots/iron', '#forge:ingots/steel');
 
-    Steel();
+    steel();
   };
 
-  const LaserIO = () => {
-    const L = item => `laserio:${item}`;
+  const laserIO = () => {
+    const l = item => `laserio:${item}`;
     event.remove({mod: 'laserio'});
 
-    event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"laserio:laseriobook"}'), ['minecraft:book', L('laser_connector')]);
+    event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"laserio:laseriobook"}'), ['minecraft:book', l('laser_connector')]);
 
-    event.shaped(L('overclocker_card'), [' P ', 'RCR', 'PSP'], {
+    event.shaped(l('overclocker_card'), [' P ', 'RCR', 'PSP'], {
       P: '#forge:plates/gold',
       R: 'minecraft:redstone',
       S: 'minecraft:sugar',
-      C: Items.circuitish,
+      C: items.circuitish,
     });
 
-    event.shaped(L('overclocker_node'), [' P ', 'RCR', 'PSP'], {
+    event.shaped(l('overclocker_node'), [' P ', 'RCR', 'PSP'], {
       P: 'minecraft:diamond',
       R: 'minecraft:redstone',
       S: 'minecraft:sugar',
-      C: Items.circuitish,
+      C: items.circuitish,
     });
 
-    event.shapeless(L('filter_basic'), [Items.plastic, 'minecraft:paper']);
+    event.shapeless(l('filter_basic'), [items.plastic, 'minecraft:paper']);
     event.custom({
       type: 'vtweaks:anvil',
-      left: {item: L('filter_basic')},
-      right: Items.circuitish.map(x => x.toJson()),
-      result: {item: L('filter_count')},
+      left: {item: l('filter_basic')},
+      right: items.circuitish.map(x => x.toJson()),
+      result: {item: l('filter_count')},
       cost: 1,
     });
 
     event.custom({
       type: 'vtweaks:anvil',
-      left: {item: L('filter_basic')},
+      left: {item: l('filter_basic')},
       right: {item: 'minecraft:name_tag'},
-      result: {item: L('filter_tag')},
+      result: {item: l('filter_tag')},
       cost: 4,
     });
 
     event.custom({
       type: 'vtweaks:anvil',
-      left: {item: L('filter_basic')},
+      left: {item: l('filter_basic')},
       right: {tag: 'minecraft:anvil'},
-      result: {item: L('filter_mod')},
+      result: {item: l('filter_mod')},
       cost: 4,
     });
   };
 
-  const Mekanism = () => {
+  const mekanism = () => {
     [Item.of('mekanism:cardboard_box')].forEach(x => event.remove({output: x}));
   };
 
-  const MiningGadgets = () => {
-    const MG = item => `mininggadgets:${item}`;
+  const miningGadgets = () => {
+    const mG = item => `mininggadgets:${item}`;
 
     // Mining Gadgets
     event.remove({mod: 'mininggadgets'});
-    event.shaped(MG('mininggadget_simple'), [' PP', 'LCB', ' PP'], {
+    event.shaped(mG('mininggadget_simple'), [' PP', 'LCB', ' PP'], {
       L: 'laserio:laser_connector',
-      P: Items.plastic,
-      B: Items.powercore,
-      C: Items.circuitish,
+      P: items.plastic,
+      B: items.powercore,
+      C: items.circuitish,
     });
 
-    event.smithing(MG('mininggadget_fancy'), 'minecraft:netherite_upgrade_smithing_template', MG('mininggadget_simple'), '#forge:ingots/netherite');
-    event.smithing(MG('mininggadget'), 'enlightened_end:adamantite_smithing_template', MG('mininggadget_fancy'), 'enlightened_end:adamantite_block');
+    event.smithing(mG('mininggadget_fancy'), 'minecraft:netherite_upgrade_smithing_template', mG('mininggadget_simple'), '#forge:ingots/netherite');
+    event.smithing(mG('mininggadget'), 'enlightened_end:adamantite_smithing_template', mG('mininggadget_fancy'), 'enlightened_end:adamantite_block');
 
     // Base Upgrade
-    event.shaped(Item.of(MG('upgrade_empty'), 2), ['NIN', 'IPI', 'NIN'], {
+    event.shaped(Item.of(mG('upgrade_empty'), 2), ['NIN', 'IPI', 'NIN'], {
       P: 'pneumaticcraft:plastic',
       N: '#forge:nuggets/aluminum',
       I: '#forge:ingots/aluminum',
     });
 
     // Modification Table
-    event.smithing(MG('modificationtable'), 'immersiveengineering:circuit_table', Items.plastic, Items.screen);
+    event.smithing(mG('modificationtable'), 'immersiveengineering:circuit_table', items.plastic, items.screen);
 
     /*********************************************
      *              BEGIN ENCHANTS               *
      ********************************************/
     // Fortune Upgrades
     [1, 2, 3].forEach(tier => {
-      const Left = tier === 1 ? MG('upgrade_empty') : MG(`upgrade_fortune_${tier - 1}`);
-      const UpgradeBook = Item.of('minecraft:enchanted_book').enchant('minecraft:fortune', tier === 1 ? 1 : tier - 1);
-      const FreshBook = Item.of('minecraft:enchanted_book').enchant('minecraft:fortune', tier);
+      const left = tier === 1 ? mG('upgrade_empty') : mG(`upgrade_fortune_${tier - 1}`);
+      const upgradeBook = Item.of('minecraft:enchanted_book').enchant('minecraft:fortune', tier === 1 ? 1 : tier - 1);
+      const freshBook = Item.of('minecraft:enchanted_book').enchant('minecraft:fortune', tier);
 
-      event.smithing(MG(`upgrade_fortune_${tier}`), Items.template, MG('upgrade_empty'), FreshBook.weakNBT());
+      event.smithing(mG(`upgrade_fortune_${tier}`), items.template, mG('upgrade_empty'), freshBook.weakNBT());
       if (tier > 1) {
-        event.smithing(MG(`upgrade_fortune_${tier}`), Items.template, Left, UpgradeBook.weakNBT());
+        event.smithing(mG(`upgrade_fortune_${tier}`), items.template, left, upgradeBook.weakNBT());
       }
     });
 
     // Silk Touch Upgrade
     event.smithing(
-      MG('upgrade_silk'),
-      Items.template,
-      MG('upgrade_empty'),
+      mG('upgrade_silk'),
+      items.template,
+      mG('upgrade_empty'),
       Item.of('minecraft:enchanted_book').enchant('minecraft:silk_touch', 1).weakNBT()
     );
 
     // Efficiency Upgrade
     [1, 2, 3, 4, 5].forEach(tier => {
-      const Left = tier === 1 ? MG('upgrade_empty') : MG(`upgrade_efficiency_${tier - 1}`);
-      const UpgradeBook = Item.of('minecraft:enchanted_book').enchant('minecraft:efficiency', tier === 1 ? 1 : tier - 1);
-      const FreshBook = Item.of('minecraft:enchanted_book').enchant('minecraft:efficiency', tier);
+      const left = tier === 1 ? mG('upgrade_empty') : mG(`upgrade_efficiency_${tier - 1}`);
+      const upgradeBook = Item.of('minecraft:enchanted_book').enchant('minecraft:efficiency', tier === 1 ? 1 : tier - 1);
+      const freshBook = Item.of('minecraft:enchanted_book').enchant('minecraft:efficiency', tier);
 
-      event.smithing(MG(`upgrade_efficiency_${tier}`), Items.template, MG('upgrade_empty'), FreshBook.weakNBT());
+      event.smithing(mG(`upgrade_efficiency_${tier}`), items.template, mG('upgrade_empty'), freshBook.weakNBT());
       if (tier > 1) {
-        event.smithing(MG(`upgrade_efficiency_${tier}`), Items.template, Left, UpgradeBook.weakNBT());
+        event.smithing(mG(`upgrade_efficiency_${tier}`), items.template, left, upgradeBook.weakNBT());
       }
     });
 
@@ -280,97 +280,97 @@ ServerEvents.recipes(event => {
     // Void Upgrade
     event.custom({
       type: 'vtweaks:anvil',
-      left: {item: MG('upgrade_empty')},
+      left: {item: mG('upgrade_empty')},
       right: {item: 'trashcans:item_trash_can'},
-      result: {item: MG('upgrade_void_junk')},
+      result: {item: mG('upgrade_void_junk')},
       cost: 3,
     });
 
     // Magnet Upgrade
     event.custom({
       type: 'vtweaks:anvil',
-      left: {item: MG('upgrade_empty')},
+      left: {item: mG('upgrade_empty')},
       right: {item: 'pneumaticcraft:magnet_upgrade'},
-      result: {item: MG('upgrade_magnet')},
+      result: {item: mG('upgrade_magnet')},
       cost: 8,
     });
 
     // 3x3 Upgrade
     event.custom({
       type: 'vtweaks:anvil',
-      left: {item: MG('upgrade_empty')},
+      left: {item: mG('upgrade_empty')},
       right: {item: 'pneumaticcraft:drill_bit_compressed_iron'},
-      result: {item: MG('upgrade_size_1')},
+      result: {item: mG('upgrade_size_1')},
       cost: 9,
     });
 
     // 5x5 Upgrade
     event.custom({
       type: 'vtweaks:anvil',
-      left: {item: MG('upgrade_size_1')},
+      left: {item: mG('upgrade_size_1')},
       right: {item: 'pneumaticcraft:drill_bit_diamond'},
-      result: {item: MG('upgrade_size_2')},
+      result: {item: mG('upgrade_size_2')},
       cost: 18,
     });
 
     // 7x7 Upgrade
     event.custom({
       type: 'vtweaks:anvil',
-      left: {item: MG('upgrade_size_2')},
+      left: {item: mG('upgrade_size_2')},
       right: {item: 'pneumaticcraft:drill_bit_netherite'},
-      result: {item: MG('upgrade_size_3')},
+      result: {item: mG('upgrade_size_3')},
       cost: 27,
     });
 
     // Light Placer Upgrade
     event.custom({
       type: 'vtweaks:anvil',
-      left: {item: MG('upgrade_empty')},
+      left: {item: mG('upgrade_empty')},
       right: {item: 'immersiveengineering:floodlight'},
-      result: {item: MG('upgrade_light_placer')},
+      result: {item: mG('upgrade_light_placer')},
       cost: 4,
     });
 
     // Freezing Upgrade
     event.custom({
       type: 'vtweaks:anvil',
-      left: {item: MG('upgrade_empty')},
+      left: {item: mG('upgrade_empty')},
       right: {item: 'endermanoverhaul:icy_pearl'},
-      result: {item: MG('upgrade_freezing')},
+      result: {item: mG('upgrade_freezing')},
       cost: 12,
     });
 
     // Range
     [1, 2, 3].forEach(tier => {
-      const Left = tier === 1 ? MG('upgrade_empty') : MG(`upgrade_range_${tier - 1}`);
+      const left = tier === 1 ? mG('upgrade_empty') : mG(`upgrade_range_${tier - 1}`);
       event.custom({
         type: 'vtweaks:anvil',
-        left: {item: Left},
+        left: {item: left},
         right: {item: 'create:extendo_grip'},
-        result: {item: MG(`upgrade_range_${tier}`)},
+        result: {item: mG(`upgrade_range_${tier}`)},
         cost: Math.pow(2, tier + 1),
       });
     });
 
     // Battery
     [1, 2, 3].forEach(tier => {
-      const Left = tier === 1 ? MG('upgrade_empty') : MG(`upgrade_battery_${tier - 1}`);
-      const Right = Items[`powercore${tier === 1 ? '' : tier}`];
+      const left = tier === 1 ? mG('upgrade_empty') : mG(`upgrade_battery_${tier - 1}`);
+      const right = items[`powercore${tier === 1 ? '' : tier}`];
       event.custom({
         type: 'vtweaks:anvil',
-        left: {item: Left},
-        right: Right.toJson(),
-        result: {item: MG(`upgrade_battery_${tier}`)},
+        left: {item: left},
+        right: right.toJson(),
+        result: {item: mG(`upgrade_battery_${tier}`)},
         cost: 10 * tier,
       });
     });
   };
 
-  const RFTools = () => {
+  const rfTools = () => {
     event.remove({output: 'rftoolsbase:dimensionalshard'});
   };
 
-  [AE2, BuildingGadgets, Chunkloaders, Create, DimStorage, Entangled, ImmersiveEngineering, LaserIO, Mekanism, MiningGadgets, RFTools].forEach(
+  [ae2, buildingGadgets, chunkloaders, create, dimStorage, entangled, immersiveEngineering, laserIO, mekanism, miningGadgets, rfTools].forEach(
     Module => Module()
   );
 });

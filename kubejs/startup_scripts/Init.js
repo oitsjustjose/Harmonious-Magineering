@@ -1,7 +1,7 @@
 Platform.setModName('kubejs', 'Harmonious Magineering');
 
 ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
-  const Recipes = {
+  const recipes = {
     'ae2:certus_quartz_axe': Ingredient.of('#forge:gems/certus_quartz'),
     'ae2:certus_quartz_cutting_knife': Ingredient.of('#forge:gems/certus_quartz'),
     'ae2:certus_quartz_hoe': Ingredient.of('#forge:gems/certus_quartz'),
@@ -113,8 +113,8 @@ ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
     if (input.getDamageValue() === 0) return;
 
     let key = input.getId();
-    if (!Object.keys(Recipes).includes(key)) return;
-    if (!Recipes[key].test(event.getRight())) return;
+    if (!Object.keys(recipes).includes(key)) return;
+    if (!recipes[key].test(event.getRight())) return;
 
     let result = input.copy();
     result.setDamageValue(0);

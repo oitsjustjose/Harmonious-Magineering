@@ -5,7 +5,7 @@ ServerEvents.recipes(event => {
    * @param {Internal.Ingredient} backpack
    * @param {Internal.Ingredient} input
    */
-  const BackpackSmithing = (output, backpack, input) => {
+  const backpackSmithing = (output, backpack, input) => {
     event.custom({
       type: 'sophisticatedbackpacks:smithing_backpack_upgrade',
       base: backpack.toJson(),
@@ -41,21 +41,21 @@ ServerEvents.recipes(event => {
 
   // Backpacks
   event.remove({id: 'sophisticatedbackpacks:iron_backpack'});
-  BackpackSmithing(
+  backpackSmithing(
     Item.of('sophisticatedbackpacks:iron_backpack'),
     Ingredient.of('sophisticatedbackpacks:backpack'),
     Ingredient.of('#forge:storage_blocks/iron')
   );
 
   event.remove({id: 'sophisticatedbackpacks:gold_backpack'});
-  BackpackSmithing(
+  backpackSmithing(
     Item.of('sophisticatedbackpacks:gold_backpack'),
     Ingredient.of('sophisticatedbackpacks:iron_backpack'),
     Ingredient.of('#forge:storage_blocks/gold')
   );
 
   event.remove({id: 'sophisticatedbackpacks:diamond_backpack'});
-  BackpackSmithing(
+  backpackSmithing(
     Item.of('sophisticatedbackpacks:diamond_backpack'),
     Ingredient.of('sophisticatedbackpacks:gold_backpack'),
     Ingredient.of('#forge:storage_blocks/diamond')
@@ -128,4 +128,59 @@ ServerEvents.recipes(event => {
     P: 'minecraft:piston',
     G: '#forge:ingots/iron',
   });
+
+  // Storage drawer upgrades
+  event.remove({output: 'storagedrawers:drawer_key'});
+  event.smithing('storagedrawers:drawer_key', '#forge:plates/gold', 'supplementaries:key', 'storagedrawers:upgrade_template');
+
+  event.remove({output: 'storagedrawers:quantify_key'});
+  event.smithing('storagedrawers:quantify_key', '#forge:plates/gold', 'supplementaries:key', 'supplementaries:crystal_display');
+
+  event.remove({output: 'storagedrawers:shroud_key'});
+  event.smithing('storagedrawers:shroud_key', '#forge:plates/gold', 'supplementaries:key', 'minecraft:ender_eye');
+
+  event.remove({output: 'storagedrawers:obsidian_storage_upgrade'});
+  event.shaped('storagedrawers:obsidian_storage_upgrade', ['MMM', 'LCL', 'MMM'], {
+    M: '#forge:ingots/pewter',
+    L: '#minecraft:logs',
+    C: 'storagedrawers:upgrade_template',
+  });
+
+  event.remove({output: 'storagedrawers:iron_storage_upgrade'});
+  event.shaped('storagedrawers:iron_storage_upgrade', ['MMM', 'LCL', 'MMM'], {
+    M: '#forge:ingots/veridium',
+    L: '#minecraft:logs',
+    C: 'storagedrawers:upgrade_template',
+  });
+
+  event.remove({output: 'storagedrawers:gold_storage_upgrade'});
+  event.shaped('storagedrawers:gold_storage_upgrade', ['MMM', 'LCL', 'MMM'], {
+    M: '#forge:ingots/dawnstone',
+    L: '#minecraft:logs',
+    C: 'storagedrawers:upgrade_template',
+  });
+
+  event.remove({output: 'storagedrawers:diamond_storage_upgrade'});
+  event.shaped('storagedrawers:diamond_storage_upgrade', ['MMM', 'LCL', 'MMM'], {
+    M: '#forge:ingots/steel',
+    L: '#minecraft:logs',
+    C: 'storagedrawers:upgrade_template',
+  });
+
+  event.remove({output: 'storagedrawers:emerald_storage_upgrade'});
+  event.shaped('storagedrawers:emerald_storage_upgrade', ['MMM', 'LCL', 'MMM'], {
+    M: '#forge:ingots/refined_obsidian',
+    L: '#minecraft:logs',
+    C: 'storagedrawers:upgrade_template',
+  });
+
+  event.remove({output: 'storagedrawers:one_stack_upgrade'});
+    event.shaped('storagedrawers:one_stack_upgrade', ['MMM', 'LCL', 'MMM'], {
+      M: 'minecraft:flint',
+      L: '#minecraft:logs',
+      C: 'storagedrawers:upgrade_template',
+    });
+
+  event.remove({output: 'storagedrawers:void_upgrade'});
+  event.shapeless('storagedrawers:void_upgrade', ['trashcans:item_trash_can', 'storagedrawers:upgrade_template']);
 });

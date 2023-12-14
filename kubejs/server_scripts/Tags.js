@@ -1,4 +1,4 @@
-const RegionsUnexplored = {
+const regionsUnexplored = {
   logs: [
     'regions_unexplored:stripped_baobab_log',
     'regions_unexplored:stripped_blackwood_log',
@@ -31,7 +31,7 @@ const RegionsUnexplored = {
   ],
 };
 
-const Ores = [
+const ores = [
   'eidolon:deep_lead_ore',
   'eidolon:deep_silver_ore',
   'eidolon:lead_ore',
@@ -45,17 +45,109 @@ const Ores = [
 ];
 
 ServerEvents.tags('block', event => {
-  RegionsUnexplored.logs.forEach(log => event.add('forge:stripped_logs', log));
-  RegionsUnexplored.woods.forEach(wood => event.add('forge:stripped_wood', wood));
-  Ores.forEach(ore => event.removeAllTagsFrom(ore));
-  [('minecraft:sweet_berry_bush', 'minecraft:mangrove_propagule', 'minecraft:bamboo', 'farmersdelight:tomatoes', 'ecologics:prickly_pear')].forEach(
-    crop => event.add('vtweaks:blacklisted_harvest_crops', crop)
-  );
+  regionsUnexplored.logs.forEach(log => event.add('forge:stripped_logs', log));
+  regionsUnexplored.woods.forEach(wood => event.add('forge:stripped_wood', wood));
+  ores.forEach(ore => event.removeAllTagsFrom(ore));
+
+  event.add('snowrealmagic:containables', [
+    'aether:berry_bush_stem',
+    'regions_unexplored:alpha_dandelion',
+    'regions_unexplored:alpha_rose',
+    'regions_unexplored:ashen_grass',
+    'regions_unexplored:aster',
+    'regions_unexplored:barley',
+    'regions_unexplored:black_snowbelle',
+    'regions_unexplored:bladed_grass',
+    'regions_unexplored:bladed_tall_grass',
+    'regions_unexplored:bleeding_heart',
+    'regions_unexplored:blue_lupine',
+    'regions_unexplored:blue_magnolia_flowers',
+    'regions_unexplored:blue_snowbelle',
+    'regions_unexplored:brimsprout',
+    'regions_unexplored:brown_snowbelle',
+    'regions_unexplored:clover',
+    'regions_unexplored:cobalt_earlight',
+    'regions_unexplored:cobalt_roots',
+    'regions_unexplored:cyan_snowbelle',
+    'regions_unexplored:daisy',
+    'regions_unexplored:day_lily',
+    'regions_unexplored:dead_steppe_shrub',
+    'regions_unexplored:dorcel',
+    'regions_unexplored:elephant_ear',
+    'regions_unexplored:enchanted_birch_leaf_pile',
+    'regions_unexplored:felicia_daisy',
+    'regions_unexplored:fireweed',
+    'regions_unexplored:frozen_grass',
+    'regions_unexplored:glister_bulb',
+    'regions_unexplored:glister_spire',
+    'regions_unexplored:glistering_bloom',
+    'regions_unexplored:glistering_fern',
+    'regions_unexplored:glistering_sprout',
+    'regions_unexplored:gray_snowbelle',
+    'regions_unexplored:green_snowbelle',
+    'regions_unexplored:hibiscus',
+    'regions_unexplored:hyacinth_bloom',
+    'regions_unexplored:hyacinth_flowers',
+    'regions_unexplored:hyacinth_lamp',
+    'regions_unexplored:hyssop',
+    'regions_unexplored:light_blue_snowbelle',
+    'regions_unexplored:light_gray_snowbelle',
+    'regions_unexplored:lime_snowbelle',
+    'regions_unexplored:magenta_snowbelle',
+    'regions_unexplored:mallow',
+    'regions_unexplored:maple_leaf_pile',
+    'regions_unexplored:meadow_sage',
+    'regions_unexplored:medium_grass',
+    'regions_unexplored:mycotoxic_daisy',
+    'regions_unexplored:mycotoxic_grass',
+    'regions_unexplored:orange_coneflower',
+    'regions_unexplored:orange_maple_leaf_pile',
+    'regions_unexplored:orange_snowbelle',
+    'regions_unexplored:pink_lupine',
+    'regions_unexplored:pink_magnolia_flowers',
+    'regions_unexplored:pink_snowbelle',
+    'regions_unexplored:poppy_bush',
+    'regions_unexplored:purple_coneflower',
+    'regions_unexplored:purple_lupine',
+    'regions_unexplored:purple_snowbelle',
+    'regions_unexplored:red_lupine',
+    'regions_unexplored:red_maple_leaf_pile',
+    'regions_unexplored:red_snowbelle',
+    'regions_unexplored:salmon_poppy_bush',
+    'regions_unexplored:sandy_grass',
+    'regions_unexplored:sandy_tall_grass',
+    'regions_unexplored:silver_birch_leaf_pile',
+    'regions_unexplored:small_desert_shrub',
+    'regions_unexplored:steppe_grass',
+    'regions_unexplored:steppe_shrub',
+    'regions_unexplored:steppe_tall_grass',
+    'regions_unexplored:stone_bud',
+    'regions_unexplored:tall_cobalt_earlight',
+    'regions_unexplored:tall_hyacinth_stock',
+    'regions_unexplored:tassel',
+    'regions_unexplored:tsubaki',
+    'regions_unexplored:waratah',
+    'regions_unexplored:white_magnolia_flowers',
+    'regions_unexplored:white_snowbelle',
+    'regions_unexplored:white_trillium',
+    'regions_unexplored:wilting_trillium',
+    'regions_unexplored:windswept_grass',
+    'regions_unexplored:yellow_lupine',
+    'regions_unexplored:yellow_snowbelle',
+  ]);
+
+  event.add('vtweaks:blacklisted_harvest_crops', [
+    'minecraft:sweet_berry_bush',
+    'minecraft:mangrove_propagule',
+    'minecraft:bamboo',
+    'farmersdelight:tomatoes',
+    'ecologics:prickly_pear',
+  ]);
 });
 
 ServerEvents.tags('item', event => {
   /* Used to define Handwashing with smaller tag sets to prevent Packet Overflow */
-  const Colors = () => {
+  const colors = () => {
     /**
      * Gets all colors of a given material
      * @param {String} modid
@@ -63,7 +155,7 @@ ServerEvents.tags('item', event => {
      * @param {String} prefix
      * @returns Array<String>
      */
-    const AllColorsOf = (modid, postfix, prefix) => {
+    const allColorsOf = (modid, postfix, prefix) => {
       return [
         'pink',
         'magenta',
@@ -91,7 +183,7 @@ ServerEvents.tags('item', event => {
      * @param {String} prefix
      * @returns Array<String>
      */
-    const AllButWhite = (modid, postfix, prefix) => {
+    const allButWhite = (modid, postfix, prefix) => {
       return [
         'pink',
         'magenta',
@@ -112,58 +204,58 @@ ServerEvents.tags('item', event => {
     };
 
     // Vanilla
-    event.add('vtweaks:colored_wool', AllButWhite('minecraft', 'wool'));
-    event.add('vtweaks:colored_carpet', AllButWhite('minecraft', 'carpet'));
-    event.add('vtweaks:colored_banner', AllButWhite('minecraft', 'banner'));
-    event.add('vtweaks:colored_bed', AllButWhite('minecraft', 'bed'));
+    event.add('vtweaks:colored_wool', allButWhite('minecraft', 'wool'));
+    event.add('vtweaks:colored_carpet', allButWhite('minecraft', 'carpet'));
+    event.add('vtweaks:colored_banner', allButWhite('minecraft', 'banner'));
+    event.add('vtweaks:colored_bed', allButWhite('minecraft', 'bed'));
 
-    event.add('vtweaks:colored_stained_glass', AllColorsOf('minecraft', 'stained_glass'));
-    event.add('vtweaks:colored_candle', AllColorsOf('minecraft', 'candle'));
+    event.add('vtweaks:colored_stained_glass', allColorsOf('minecraft', 'stained_glass'));
+    event.add('vtweaks:colored_candle', allColorsOf('minecraft', 'candle'));
 
     // AE2
-    event.add('vtweaks:colored_covered_cable', AllColorsOf('ae2', 'covered_cable'));
-    event.add('vtweaks:colored_covered_dense_cable', AllColorsOf('ae2', 'covered_dense_cable'));
-    event.add('vtweaks:colored_glass_cable', AllColorsOf('ae2', 'glass_cable'));
-    event.add('vtweaks:colored_smart_cable', AllColorsOf('ae2', 'smart_cable'));
-    event.add('vtweaks:colored_smart_dense_cable', AllColorsOf('ae2', 'smart_dense_cable'));
+    event.add('vtweaks:colored_covered_cable', allColorsOf('ae2', 'covered_cable'));
+    event.add('vtweaks:colored_covered_dense_cable', allColorsOf('ae2', 'covered_dense_cable'));
+    event.add('vtweaks:colored_glass_cable', allColorsOf('ae2', 'glass_cable'));
+    event.add('vtweaks:colored_smart_cable', allColorsOf('ae2', 'smart_cable'));
+    event.add('vtweaks:colored_smart_dense_cable', allColorsOf('ae2', 'smart_dense_cable'));
 
     // Comforts
-    event.add('vtweaks:colored_hammock', AllButWhite('comforts', null, 'hammock'));
-    event.add('vtweaks:colored_sleeping_bag', AllButWhite('comforts', null, 'sleeping_bag'));
+    event.add('vtweaks:colored_hammock', allButWhite('comforts', null, 'hammock'));
+    event.add('vtweaks:colored_sleeping_bag', allButWhite('comforts', null, 'sleeping_bag'));
 
     // Connected Glass
-    event.add('vtweaks:colored_borderless_glass_pane', AllColorsOf('connectedglass', 'pane', 'borderless_glass'));
-    event.add('vtweaks:colored_borderless_glass', AllColorsOf('connectedglass', null, 'borderless_glass'));
-    event.add('vtweaks:colored_clear_glass_pane', AllColorsOf('connectedglass', 'pane', 'clear_glass'));
-    event.add('vtweaks:colored_clear_glass', AllColorsOf('connectedglass', null, 'clear_glass'));
-    event.add('vtweaks:colored_scratched_glass_pane', AllColorsOf('connectedglass', 'pane', 'scratched_glass'));
-    event.add('vtweaks:colored_scratched_glass', AllColorsOf('connectedglass', null, 'scratched_glass'));
-    event.add('vtweaks:colored_tinted_borderless_glass', AllColorsOf('connectedglass', null, 'tinted_borderless_glass'));
+    event.add('vtweaks:colored_borderless_glass_pane', allColorsOf('connectedglass', 'pane', 'borderless_glass'));
+    event.add('vtweaks:colored_borderless_glass', allColorsOf('connectedglass', null, 'borderless_glass'));
+    event.add('vtweaks:colored_clear_glass_pane', allColorsOf('connectedglass', 'pane', 'clear_glass'));
+    event.add('vtweaks:colored_clear_glass', allColorsOf('connectedglass', null, 'clear_glass'));
+    event.add('vtweaks:colored_scratched_glass_pane', allColorsOf('connectedglass', 'pane', 'scratched_glass'));
+    event.add('vtweaks:colored_scratched_glass', allColorsOf('connectedglass', null, 'scratched_glass'));
+    event.add('vtweaks:colored_tinted_borderless_glass', allColorsOf('connectedglass', null, 'tinted_borderless_glass'));
 
     // Farmer's Delight
-    event.add('vtweaks:colored_canvas_sign', AllColorsOf('farmersdelight', 'canvas_sign'));
-    event.add('vtweaks:colored_hanging_canvas_sign', AllColorsOf('farmersdelight', 'hanging_canvas_sign'));
+    event.add('vtweaks:colored_canvas_sign', allColorsOf('farmersdelight', 'canvas_sign'));
+    event.add('vtweaks:colored_hanging_canvas_sign', allColorsOf('farmersdelight', 'hanging_canvas_sign'));
 
     // Handcrafted
-    event.add('vtweaks:colored_cushion', AllButWhite('handcrafted', 'cushion'));
-    event.add('vtweaks:colored_sheet', AllButWhite('handcrafted', 'sheet'));
+    event.add('vtweaks:colored_cushion', allButWhite('handcrafted', 'cushion'));
+    event.add('vtweaks:colored_sheet', allButWhite('handcrafted', 'sheet'));
 
     // IE
-    event.add('vtweaks:colored_sheetmetal_colored', AllButWhite('immersiveengineering', null, 'sheetmetal_colored'));
-    event.add('vtweaks:colored_slab_sheetmetal_colored', AllButWhite('immersiveengineering', null, 'slab_sheetmetal_colored'));
+    event.add('vtweaks:colored_sheetmetal_colored', allButWhite('immersiveengineering', null, 'sheetmetal_colored'));
+    event.add('vtweaks:colored_slab_sheetmetal_colored', allButWhite('immersiveengineering', null, 'slab_sheetmetal_colored'));
 
     // Interiors
-    event.add('vtweaks:colored_chair', AllButWhite('interiors', 'chair'));
-    event.add('vtweaks:colored_floor_chair', AllButWhite('interiors', 'floor_chair'));
+    event.add('vtweaks:colored_chair', allButWhite('interiors', 'chair'));
+    event.add('vtweaks:colored_floor_chair', allButWhite('interiors', 'floor_chair'));
 
     // Supplementaries
-    event.add('vtweaks:colored_candle_holder', AllColorsOf('supplementaries', null, 'candle_holder'));
-    event.add('vtweaks:colored_flag', AllButWhite('supplementaries', null, 'flag'));
+    event.add('vtweaks:colored_candle_holder', allColorsOf('supplementaries', null, 'candle_holder'));
+    event.add('vtweaks:colored_flag', allButWhite('supplementaries', null, 'flag'));
   };
 
   /* Used to define tags that are excluded in ItemGator Gates */
-  const Exclusions = () => {
-    [
+  const exclusions = () => {
+    event.add('create:cosmetics', [
       '#forge:dusts',
       '#forge:gems',
       '#forge:ingots',
@@ -260,9 +352,9 @@ ServerEvents.tags('item', event => {
       'create:weathered_copper_tile_slab',
       'create:weathered_copper_tile_stairs',
       'create:weathered_copper_tiles',
-    ].forEach(cosmetic => event.add('create:cosmetics', cosmetic));
+    ]);
 
-    [
+    event.add('compressedcreativity:gated', [
       'compressedcreativity:air_blower',
       'compressedcreativity:brass_coated_upgrade_matrix',
       'compressedcreativity:brass_gilded_lapis_lazuli',
@@ -280,9 +372,9 @@ ServerEvents.tags('item', event => {
       'compressedcreativity:mesh_splashing',
       'compressedcreativity:mesh_woven',
       'compressedcreativity:rotational_compressor',
-    ].forEach(cc => event.add('compressedcreativity:gated', cc));
+    ]);
 
-    [
+    event.add('immersiveengineering:exception', [
       '#forge:dusts',
       '#forge:gems',
       '#forge:ingots',
@@ -346,9 +438,9 @@ ServerEvents.tags('item', event => {
       'immersiveengineering:stairs_concrete',
       'immersiveengineering:stairs_hempcrete_brick',
       'immersiveengineering:stairs_hempcrete',
-    ].forEach(exception => event.add('immersiveengineering:exception', exception));
+    ]);
 
-    [
+    event.add('mekanism:exception', [
       '#forge:dusts',
       '#forge:gems',
       '#forge:ingots',
@@ -376,9 +468,9 @@ ServerEvents.tags('item', event => {
       'mekanism:raw_uranium',
       'mekanism:tin_ore',
       'mekanism:uranium_ore',
-    ].forEach(exception => event.add('mekanism:exception', exception));
+    ]);
 
-    [
+    event.add('ae2:exception', [
       '#forge:dusts',
       '#forge:gems',
       '#forge:ingots',
@@ -401,42 +493,19 @@ ServerEvents.tags('item', event => {
       'ae2:smooth_sky_stone_block',
       'ae2:smooth_sky_stone_chest',
       'ae2:tiny_tnt',
-    ].forEach(exception => event.add('ae2:exception', exception));
-  };
-
-  /* Hyphae aren't added but are used by BloodMagic, so let's add them */
-  const Hyphae = () => {
-    [
-      'aether_redux:cloudcap_hyphae',
-      'aether_redux:springshroom_hyphae',
-      'aether_redux:stripped_cloudcap_hyphae',
-      'enlightened_end:indigo_hyphae',
-      'enlightened_end:stripped_indigo_hyphae',
-      'minecraft:crimson_hyphae',
-      'minecraft:stripped_crimson_hyphae',
-      'minecraft:stripped_warped_hyphae',
-      'minecraft:warped_hyphae',
-      'regions_unexplored:blue_bioshroom_hyphae',
-      'regions_unexplored:green_bioshroom_hyphae',
-      'regions_unexplored:pink_bioshroom_hyphae',
-      'regions_unexplored:stripped_blue_bioshroom_hyphae',
-      'regions_unexplored:stripped_green_bioshroom_hyphae',
-      'regions_unexplored:stripped_pink_bioshroom_hyphae',
-      'regions_unexplored:stripped_yellow_bioshroom_hyphae',
-      'regions_unexplored:yellow_bioshroom_hyphae',
-    ].forEach(hyphae => event.add('minecraft:mushroom_hyphae', hyphae));
+    ]);
   };
 
   /* Osmium just isn't in our pack at all and should gets removed here */
-  const Osmium = () => {
+  const osmium = () => {
     ['ingots', 'dusts', 'storage_blocks', 'raw_materials', 'ores', 'nuggets'].forEach(type => event.removeAll(`forge:${type}/osmium`));
     ['clumps', 'dirty_dusts', 'crystals', 'shards'].forEach(type => event.removeAll(`mekanism:${type}/osmium`));
     event.removeAll(`forge:storage_blocks/raw_osmium`);
   };
 
-  RegionsUnexplored.logs.forEach(log => event.add('forge:stripped_logs', log));
-  RegionsUnexplored.woods.forEach(wood => event.add('forge:stripped_wood', wood));
-  Ores.forEach(ore => event.removeAllTagsFrom(ore));
+  regionsUnexplored.logs.forEach(log => event.add('forge:stripped_logs', log));
+  regionsUnexplored.woods.forEach(wood => event.add('forge:stripped_wood', wood));
+  ores.forEach(ore => event.removeAllTagsFrom(ore));
 
   /* Rope Intercompat */
   event.remove('forge:rope', 'farmersdelight:rope');
@@ -452,6 +521,7 @@ ServerEvents.tags('item', event => {
   event.add('forge:obsidian', 'minecraft:crying_obsidian');
 
   event.add('forge:mud', ['regions_unexplored:silt_mud', 'regions_unexplored:peat_mud', 'minecraft:mud']);
+
   event.add('forge:ocean_blocks', [
     'minecraft:brain_coral_block',
     'minecraft:bubble_coral_block',
@@ -466,6 +536,7 @@ ServerEvents.tags('item', event => {
     'minecraft:sand',
     'minecraft:tube_coral_block',
   ]);
+
   event.add('forge:actual_underground_stones', [
     'create:asurine',
     'create:crimsite',
@@ -485,6 +556,7 @@ ServerEvents.tags('item', event => {
     'regions_unexplored:chalk',
     'regions_unexplored:mossy_stone',
   ]);
+
   event.add('forge:podzol', [
     'regions_unexplored:silt_podzol',
     'minecraft:podzol',
@@ -495,7 +567,27 @@ ServerEvents.tags('item', event => {
     'regions_unexplored:peat_grass_block',
   ]);
 
-  [Colors, Exclusions, Hyphae, Osmium].forEach(Module => Module());
+  event.add('minecraft:mushroom_hyphae', [
+    'aether_redux:cloudcap_hyphae',
+    'aether_redux:springshroom_hyphae',
+    'aether_redux:stripped_cloudcap_hyphae',
+    'enlightened_end:indigo_hyphae',
+    'enlightened_end:stripped_indigo_hyphae',
+    'minecraft:crimson_hyphae',
+    'minecraft:stripped_crimson_hyphae',
+    'minecraft:stripped_warped_hyphae',
+    'minecraft:warped_hyphae',
+    'regions_unexplored:blue_bioshroom_hyphae',
+    'regions_unexplored:green_bioshroom_hyphae',
+    'regions_unexplored:pink_bioshroom_hyphae',
+    'regions_unexplored:stripped_blue_bioshroom_hyphae',
+    'regions_unexplored:stripped_green_bioshroom_hyphae',
+    'regions_unexplored:stripped_pink_bioshroom_hyphae',
+    'regions_unexplored:stripped_yellow_bioshroom_hyphae',
+    'regions_unexplored:yellow_bioshroom_hyphae',
+  ]);
+
+  [colors, exclusions, osmium].forEach(Module => Module());
 });
 
 ServerEvents.tags('entity_type', event => {

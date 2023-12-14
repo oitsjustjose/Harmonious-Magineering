@@ -1,12 +1,12 @@
 LootJS.modifiers(event => {
-  const CustomSilverLead = () => {
+  const customSilverLead = () => {
     event.addBlockLootModifier('embers:lead_ore').replaceLoot('embers:raw_lead', 'eidolon:raw_lead', true);
     event.addBlockLootModifier('embers:deepslate_lead_ore').replaceLoot('embers:raw_lead', 'eidolon:raw_lead', true);
     event.addBlockLootModifier('embers:silver_ore').replaceLoot('embers:raw_silver', 'eidolon:raw_silver', true);
     event.addBlockLootModifier('embers:deepslate_silver_ore').replaceLoot('embers:raw_silver', 'eidolon:raw_silver', true);
   };
 
-  const BoostDeepslateLoot = () => {
+  const boostDeepslateLoot = () => {
     [
       'create:deepslate_zinc_ore',
       'embers:deepslate_lead_ore',
@@ -34,7 +34,7 @@ LootJS.modifiers(event => {
     });
   };
 
-  const BoostSomeMobDrops = () => {
+  const boostSomeMobDrops = () => {
     [
       'minecraft:cow',
       'minecraft:donkey',
@@ -87,14 +87,14 @@ LootJS.modifiers(event => {
     });
   };
 
-  const Lootr = () => {
+  const lootr = () => {
     // Replace the Lootr chest drop with Expanded Storage's
     ['lootr:lootr_chest', 'lootr:lootr_inventory', 'lootr:lootr_trapped_chest'].forEach(l => {
       event.addBlockLootModifier(l).replaceLoot('minecraft:chest', 'expandedstorage:wood_chest', true);
     });
   };
 
-  const ModLoot = () => {
+  const modLoot = () => {
     [
       'pneumaticcraft:capacitor',
       'pneumaticcraft:compressed_iron_boots',
@@ -126,5 +126,5 @@ LootJS.modifiers(event => {
 
   event.addEntityLootModifier('minecraft:warden').removeLoot(ItemFilter.ALWAYS_TRUE);
 
-  [CustomSilverLead, BoostDeepslateLoot, BoostSomeMobDrops, Lootr, ModLoot].forEach(Module => Module());
+  [customSilverLead, boostDeepslateLoot, boostSomeMobDrops, lootr, modLoot].forEach(Module => Module());
 });
