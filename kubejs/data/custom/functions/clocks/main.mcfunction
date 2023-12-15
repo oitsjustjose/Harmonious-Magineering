@@ -11,5 +11,7 @@ execute as @a[tag=!aether, nbt={Inventory:[{id: 'eidolon:holy_symbol'}]}] run fu
 execute as @a[tag=!bloodmagic, nbt={Inventory:[{id: 'aether:bronze_dungeon_key'}]}] run function custom:player/stages/bloodmagic
 execute as @a[tag=!bloodmagic, nbt={Inventory:[{id: 'aether:silver_dungeon_key'}]}] run function custom:player/stages/bloodmagic
 execute as @a[tag=!bloodmagic, nbt={Inventory:[{id: 'aether:gold_dungeon_key'}]}] run function custom:player/stages/bloodmagic
+## Embers
+execute as @a[tag=!embers, nbt={Inventory:[{id: 'embers:tinker_hammer'}]}] run function custom:player/stages/embers
 
 schedule function custom:clocks/main 1t replace

@@ -44,7 +44,7 @@ ServerEvents.recipes(event => {
     tag: 'embers',
     mod: 'embers',
     substitute: {item: 'kubejs:unknown_dwarven_item'},
-    exceptions: [{tag: 'forge:ores/lead'}, {tag: 'forge:ores/silver'}, {tag: 'forge:ingots/archaic_brick'}],
+    exceptions: [{tag: 'forge:ores/lead'}, {tag: 'forge:ores/silver'}, {tag: 'forge:ingots/archaic_brick'}, {item: 'embers:tinker_hammer'}],
   });
 
   /* ~~ CREATE + ADDONS ~~ */
