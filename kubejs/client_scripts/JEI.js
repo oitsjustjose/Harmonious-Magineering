@@ -62,6 +62,7 @@ const removals = [
   'mekanism:osmium_ore',
   'mekanism:raw_osmium',
   'mekanism:shard_osmium',
+  'minecraft:enchanting_table',
   'modularrouters:augment_core',
   'modularrouters:blank_module',
   'modularrouters:blank_upgrade',

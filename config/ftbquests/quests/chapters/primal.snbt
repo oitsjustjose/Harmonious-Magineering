@@ -61,7 +61,7 @@
 				item: "eidolon:codex"
 				type: "item"
 			}]
-			shape: "octagon"
+			shape: "diamond"
 			size: 2.0d
 			subtitle: "Responsible for all those giant Zombies"
 			tasks: [{
@@ -126,15 +126,25 @@
 			]
 			title: "Your First Ritual"
 			x: 0.0d
-			y: 4.5d
+			y: 4.0d
 		}
 		{
 			dependencies: ["40907AF544414A94"]
-			description: [""]
+			description: [
+				"Now that you &ohave&r &5Soul Shards&r, you seem to have unlocked an entire new facet of the occult... well - congratulations! (I guess?)"
+				""
+				"Soul Shards are used in dozens of different forms of Magic, but perhaps sticking with the occult will make gathering more &5Shards&r easier going forward..."
+			]
 			id: "77C8FCAD613E21D7"
-			shape: "diamond"
-			size: 2.0d
-			subtitle: "Not for the feint of heart"
+			rewards: [{
+				id: "5E776FB1C292D1C6"
+				item: "eidolon:soul_shard"
+				random_bonus: 3
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "..do they even have souls?"
 			tasks: [{
 				id: "4DB9E96F7E9C4A44"
 				item: "eidolon:soul_shard"
@@ -142,10 +152,11 @@
 			}]
 			title: "Soul Shards"
 			x: 0.0d
-			y: 7.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["6689477876AE87CB"]
+			description: ["You've found you're hitting the limits of a standard Crafting Table, but it seems that you might be able to create a significantly better crafting experience using a Pewter Inlay. This new workbench is significantly more potent for crafting all types of supernatural items, resources and more!"]
 			id: "6ECBE8D8B8A57392"
 			rewards: [{
 				count: 4
@@ -162,7 +173,7 @@
 			}]
 			title: "Magical Crafting"
 			x: 2.0d
-			y: 3.5d
+			y: 2.5d
 		}
 		{
 			dependencies: ["6ECBE8D8B8A57392"]
@@ -171,6 +182,7 @@
 				""
 				"It seems like an Athame can be used on &aJungle Leaves&r, &aLily Pads&r, &2Ferns&r, and any &7White Flower&r to get some of these resources. It seems like &5Illwood&r can be found in the similar environments as Dark Oak Wood too!"
 			]
+			icon: "eidolon:merammer_root"
 			id: "4E5D33BEC2D528CC"
 			rewards: [{
 				count: 8
@@ -220,10 +232,13 @@
 			]
 			title: "Mythic Botany"
 			x: 2.0d
-			y: 5.5d
+			y: 4.5d
 		}
 		{
-			dependencies: ["4E5D33BEC2D528CC"]
+			dependencies: [
+				"4E5D33BEC2D528CC"
+				"77C8FCAD613E21D7"
+			]
 			description: ["It seems like &6Merammer&r, &2Sprigs of Avenna&r, &cSildrian Seeds&r and &dFlowering Oanna&r cannot be grown in normal earth. Perhaps a planter like this one will provide a more suitable substrate for their roots to form?"]
 			id: "492DB76E6A1FBACA"
 			rewards: [{
@@ -241,7 +256,200 @@
 			}]
 			title: "Planters"
 			x: 2.0d
+			y: 6.5d
+		}
+		{
+			dependencies: ["77C8FCAD613E21D7"]
+			description: ["Using a &6Crucible&r and the &5Soul Shards&r you've been gathering, you seem to be able to augment Gold Ingots with the souls of the undead to create a new metal capable of holding much more magic power than you've seen before. A new Inlay can also be made with this material"]
+			id: "270AFC0FA41305D1"
+			rewards: [{
+				count: 8
+				id: "5AF7D4A4ACAC63F2"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			shape: "pentagon"
+			size: 1.0d
+			subtitle: "Putting that gold to use!"
+			tasks: [{
+				id: "1A6D1763160FAAC7"
+				item: "eidolon:arcane_gold_ingot"
+				type: "item"
+			}]
+			title: "Arcane Gold"
+			x: 0.0d
 			y: 8.0d
+		}
+		{
+			dependencies: ["270AFC0FA41305D1"]
+			description: [
+				"As you've started to learn more about magic, you've likely started to look into the standard approaches of augmenting your tools with magic with an Enchanting Table, but everywhere you look you can't seem to find one - until now."
+				""
+				"You've discovered some sort of "
+			]
+			id: "2732A6F56D91A7E9"
+			tasks: [{
+				id: "3B9F1147463B9BBC"
+				item: "eidolon:soul_enchanter"
+				type: "item"
+			}]
+			title: "Enchanting"
+			x: 2.0d
+			y: 8.5d
+		}
+		{
+			dependencies: ["259253F0B5E9952E"]
+			id: "6C7968AB932CAFD0"
+			subtitle: "&5Soul Shards&r, the fast way!"
+			tasks: [{
+				id: "4567D5653CF8EFAC"
+				item: {
+					Count: 1b
+					id: "eidolon:reaper_scythe"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "Easier Reaping"
+			x: 2.0d
+			y: 13.5d
+		}
+		{
+			dependencies: ["2EFF78EBD4191993"]
+			description: [
+				"As you step further into the occult, you can't help but hear a voice from beyond beckoning out to you... perhaps demanding a sacrifice? That's odd..."
+				""
+				"You feel as though you might be able to reach back out to this diety by praying at an Altar once every so often, but what should you pray &oto&r? A crude &6Straw Effigy&r is the best you're able to fashion up for now - perhaps you should try chanting a &l&5Dark Prayer&r&r at this effigy."
+				""
+				""
+				"Maybe your altar could use some more supernatural additions like Skulls and a Chalice..."
+				""
+				""
+				"{image:eidolon:textures/vfx/wicked_sign.png width:100 height:100 align:1}"
+			]
+			icon: "eidolon:straw_effigy"
+			id: "1E00538EB87E83E6"
+			rewards: [{
+				id: "368BC51EB8B28C7B"
+				item: "minecraft:skeleton_skull"
+				type: "item"
+			}]
+			subtitle: "&oAre we sure it's a god?&r"
+			tasks: [
+				{
+					id: "0E5487995C8FFD37"
+					item: "eidolon:wooden_altar"
+					type: "item"
+				}
+				{
+					id: "74799513105163A2"
+					item: "eidolon:straw_effigy"
+					type: "item"
+				}
+			]
+			title: "Praying to a... god?"
+			x: -2.0d
+			y: 6.5d
+		}
+		{
+			dependencies: ["270AFC0FA41305D1"]
+			description: [
+				"You've been told by the diety you continue to pray to that it &ldemands&r a &4blood&r sacrifice.... good thing it doesn't have to be &oyour&r blood I suppose. You'll need somewhere to store the blood in, but a goblet can be fashioned from &6Arcane Gold&r and should be perfectly suitable for the time being. You can also improve your altar by upgrading it from a crude wooden one to a nicer Stone one made with &5Soul Shards&r."
+				""
+				"Try starting off with the blood of &nany animal&r using the &lSacrifice Animal&r chant - though this chant can only be used &nonce a day&r."
+				""
+				""
+				"{image:eidolon:textures/vfx/sanguine_ritual.png width:100 height:100 align:1}"
+			]
+			icon: "eidolon:stone_altar"
+			id: "3C0939420ECF23DE"
+			rewards: [{
+				count: 4
+				id: "46DC997688707220"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			subtitle: "Yay, &4Blood Sacrifice&r!"
+			tasks: [
+				{
+					id: "02DFD50B35AED111"
+					item: "eidolon:goblet"
+					type: "item"
+				}
+				{
+					id: "2A06423192338D37"
+					item: "eidolon:stone_altar"
+					type: "item"
+				}
+			]
+			title: "Expanding your Altar"
+			x: 0.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["3C0939420ECF23DE"]
+			description: [
+				"The Diety has told you about all of its ways and all of its magical tools and artifice, but you aren't able to make any of these things as a mere mortal.."
+				""
+				"Fortunately, the Diety has shown you how to create a symbol of its likeness to create some more potent things - all you need is to chant a &lTouch of Darkness&r towards a &6Pewter Inlay&r that has been placed on your &lAltar&r "
+				""
+				"{image:eidolon:textures/vfx/soul_sign.png width:100 height:100 align:1}"
+			]
+			icon: "eidolon:unholy_symbol"
+			id: "259253F0B5E9952E"
+			rewards: [{
+				count: 16
+				id: "70148BD62331D46B"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			shape: "octagon"
+			size: 2.0d
+			subtitle: "&oNot accepted at any arcades that I know of...&r"
+			tasks: [{
+				id: "015192CC1BF147A1"
+				item: "eidolon:unholy_symbol"
+				type: "item"
+			}]
+			title: "A Token"
+			x: 0.0d
+			y: 13.0d
+		}
+		{
+			dependencies: ["6689477876AE87CB"]
+			description: [
+				"One of the well-known crafts of the supernatural is the ability to combine various materials in a &6Crucible&r to imbue it with magic or additional properties. Place this over a &4Fire&r or &4Lava&r source and fill it with a bucket of water to get a brew going!"
+				""
+				"Tip: When you see a recipe that requires stirring &oafter&r a set of items are added, toss them in first and then stir immediately! If they've already mixed into the rest of your brew, then you've waited too long!"
+			]
+			id: "2EFF78EBD4191993"
+			rewards: [
+				{
+					id: "7DC639D80D9AF049"
+					item: "minecraft:netherrack"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "2F0B823604991446"
+					item: "create:experience_nugget"
+					random_bonus: 6
+					type: "item"
+				}
+			]
+			subtitle: "&oGood Soup&r"
+			tasks: [{
+				id: "5EB739625F4D9E6A"
+				item: "eidolon:crucible"
+				type: "item"
+			}]
+			title: "Boil \\& Toil"
+			x: -2.0d
+			y: 2.5d
 		}
 	]
 	title: "Primal Magiks"

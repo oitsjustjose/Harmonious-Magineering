@@ -1034,21 +1034,6 @@ ServerEvents.recipes(event => {
     });
   };
 
-  const enchanting = () => {
-    event.remove({output: 'minecraft:enchanting_table'});
-    event.custom({
-      type: 'eidolon:worktable',
-      pattern: ['   ', ' e ', '   '],
-      reagents: 'didi',
-      key: {
-        e: {item: 'minecraft:enchanting_table'},
-        d: {tag: 'forge:ingots/arcane_gold'},
-        i: {item: 'eidolon:gold_inlay'},
-      },
-      result: {item: 'eidolon:soul_enchanter'},
-    });
-  };
-
   const waystones = () => {
     event.remove({mod: 'waystones'});
 
@@ -1138,10 +1123,20 @@ ServerEvents.recipes(event => {
     });
   };
 
-  [aether, bloodMagic, cagedMobs, eidolon, embers, enchanting, waystones].forEach(Module => Module());
+  event.remove({output: 'minecraft:enchanting_table'});
+
+  [aether, bloodMagic, cagedMobs, eidolon, embers, waystones].forEach(Module => Module());
 });
 
 LootJS.modifiers(event => {
   // Remove anything with Mending on it from *all* loot tables
   event.addLootTableModifier(/.*/).removeLoot(ItemFilter.hasEnchantment('minecraft:mending'));
+  // Also remove vanilla Enchanting Table drops.
+  event.addLootTableModifier(/.*/).removeLoot('minecraft:enchanting_table');
+});
+
+BlockEvents.rightClicked('minecraft:enchanting_table', event => {
+  event.getPlayer().displayClientMessage(Text.gold(Text.translate('tooltip.kubejs.enchanting_disabled')), false);
+  event.getLevel().destroyBlock(event.getBlock().getPos(), false, event.getPlayer(), 3);
+  event.cancel();
 });
