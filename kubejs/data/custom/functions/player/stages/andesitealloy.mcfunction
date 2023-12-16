@@ -1,0 +1,2 @@
+title @s actionbar ["",{"text":"Your research towards "},{"text":"Dawnstone ","color":"#DB9A48"},{"text":"has left you wondering if you can make an alloy with "},{"text":"Andesite ","color":"#A6A899"},{"text":"& "},{"text":"Iron","color":"#ACA7A7"}]
+tag @s add andesitealloy

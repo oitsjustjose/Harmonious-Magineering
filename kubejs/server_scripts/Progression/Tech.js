@@ -93,9 +93,14 @@ ServerEvents.recipes(event => {
       type: 'embers:stamping',
       input: {item: 'minecraft:andesite'},
       stamp: {item: 'embers:ingot_stamp'},
-      fluid: {amount: 20, tag: 'forge:molten_iron'},
+      fluid: {amount: 90, tag: 'forge:molten_iron'},
       output: {item: 'create:andesite_alloy', count: 1},
     });
+
+    // Make it easier to make Dawnstone once you get into Create :)
+    event.recipes.create
+      .mixing(Item.of('embers:dawnstone_ingot', 2), [Ingredient.of('#forge:ingots/copper'), Ingredient.of('#forge:ingots/gold')])
+      .heated();
   };
 
   const dimStorage = () => {

@@ -30,7 +30,6 @@ ServerEvents.recipes(event => {
   });
 
   /* ~~ BLOODMAGIC ~~ */
-
   event.custom({
     type: 'itemgator:mod',
     tag: 'bloodmagic',
