@@ -13,6 +13,236 @@
 	id: "5B03A2714E94DB16"
 	order_index: 0
 	quest_links: [ ]
-	quests: [ ]
-	title: "Primal"
+	quests: [
+		{
+			dependencies: ["202D5B86D1E2CCC6"]
+			description: [
+				"Pewter is a very simple compound consisting of equal parts Lead and Iron. Once you've created this concoction, applying some heat will result in an Ingot that you can seemingly imbue with supernatural energy."
+				""
+				"Enchanted Ash can be made by smelting down the bones of fallen foes, at which point it can be used in a number of ways.."
+			]
+			icon: "eidolon:pewter_block"
+			id: "6689477876AE87CB"
+			rewards: [{
+				count: 4
+				id: "51023E290F83EC15"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			subtitle: "A Magical Amalgam"
+			tasks: [
+				{
+					id: "660519D05518635D"
+					item: "eidolon:pewter_blend"
+					type: "item"
+				}
+				{
+					id: "11314ADC2CB98632"
+					item: "eidolon:pewter_ingot"
+					type: "item"
+				}
+				{
+					id: "30292032D5BE0EB1"
+					item: "eidolon:enchanted_ash"
+					type: "item"
+				}
+			]
+			title: "Occult Essentials"
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			description: ["As you've explored your surroundings and faced several creatures, you've heard whispers of &o&6Eidolon&r from the various &2Zombie Brutes&r and &7Wraiths&r you've fought off. Perhaps it would be wise to explore this potentially occult magiks, and see if there's anything of use from it.."]
+			icon: "eidolon:codex"
+			id: "202D5B86D1E2CCC6"
+			rewards: [{
+				id: "74B8DA5B9DF2BA65"
+				item: "eidolon:codex"
+				type: "item"
+			}]
+			shape: "octagon"
+			size: 2.0d
+			subtitle: "Responsible for all those giant Zombies"
+			tasks: [{
+				id: "5C69F747FE47DBB2"
+				title: "Welcome to Eidolon"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6689477876AE87CB"]
+			description: [
+				"As you delve into your &6Ars Ecclesia&r, you've seen mention of &5Soul Shards&r and have been left wondering how to obtain them. It should seem that a simple setup with a &3Brazier&r and &32 Stone Hands&r would allow you to sacrifice nearby undead creatures in exchange for the souls that once kept them going."
+				""
+				"Both Stone Hands must be near the &6Brazier&r, and should contain a piece of &cRedstone Dust&r in each of them. Finally, the &6Brazier&r should contain a piece of &7Bone Meal&r before being lit with a &6Flint and Steel&r."
+			]
+			icon: "eidolon:brazier"
+			id: "40907AF544414A94"
+			rewards: [{
+				count: 6
+				id: "2F82DB4EE9C89371"
+				item: "create:experience_nugget"
+				random_bonus: 6
+				type: "item"
+			}]
+			subtitle: "This won't hurt a bit.."
+			tasks: [
+				{
+					count: 2L
+					id: "1F69C67494FD3616"
+					item: "eidolon:stone_hand"
+					type: "item"
+				}
+				{
+					id: "749BA93BBE3A6BAE"
+					item: "eidolon:brazier"
+					type: "item"
+				}
+				{
+					id: "7C53D13BB906BCCA"
+					item: {
+						Count: 1b
+						id: "minecraft:flint_and_steel"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "551CC5E8385F73C3"
+					item: "minecraft:bone_meal"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "0518F6F51BED0A34"
+					item: "minecraft:redstone"
+					type: "item"
+				}
+			]
+			title: "Your First Ritual"
+			x: 0.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["40907AF544414A94"]
+			description: [""]
+			id: "77C8FCAD613E21D7"
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "Not for the feint of heart"
+			tasks: [{
+				id: "4DB9E96F7E9C4A44"
+				item: "eidolon:soul_shard"
+				type: "item"
+			}]
+			title: "Soul Shards"
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["6689477876AE87CB"]
+			id: "6ECBE8D8B8A57392"
+			rewards: [{
+				count: 4
+				id: "5643E1E87C64769D"
+				item: "create:experience_nugget"
+				random_bonus: 4
+				type: "item"
+			}]
+			subtitle: "Unlocking Even More Recipes"
+			tasks: [{
+				id: "6FC77F5669D0CF3E"
+				item: "eidolon:worktable"
+				type: "item"
+			}]
+			title: "Magical Crafting"
+			x: 2.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["6ECBE8D8B8A57392"]
+			description: [
+				"Using your newly obtained Magical Workbench and the Pewter you've been collecting, it seems like you'll be able to obtain some new materials using an Athame, and these resources might come in handy as you continue!"
+				""
+				"It seems like an Athame can be used on &aJungle Leaves&r, &aLily Pads&r, &2Ferns&r, and any &7White Flower&r to get some of these resources. It seems like &5Illwood&r can be found in the similar environments as Dark Oak Wood too!"
+			]
+			id: "4E5D33BEC2D528CC"
+			rewards: [{
+				count: 8
+				id: "7BD176B3160B5C29"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			subtitle: "No, not that one"
+			tasks: [
+				{
+					id: "7E42D65CAF588F61"
+					item: {
+						Count: 1b
+						id: "eidolon:athame"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "32AD6E0C2EABF436"
+					item: "eidolon:merammer_root"
+					type: "item"
+				}
+				{
+					id: "3604F8B74B544971"
+					item: "eidolon:avennian_sprig"
+					type: "item"
+				}
+				{
+					id: "21B29864FEF3FC5F"
+					item: "eidolon:sildrian_seed"
+					type: "item"
+				}
+				{
+					id: "07FDEC62FEF5233C"
+					item: "eidolon:oanna_bloom"
+					type: "item"
+				}
+				{
+					id: "7DB81AB8257D42EF"
+					item: "eidolon:illwood_sapling"
+					type: "item"
+				}
+			]
+			title: "Mythic Botany"
+			x: 2.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["4E5D33BEC2D528CC"]
+			description: ["It seems like &6Merammer&r, &2Sprigs of Avenna&r, &cSildrian Seeds&r and &dFlowering Oanna&r cannot be grown in normal earth. Perhaps a planter like this one will provide a more suitable substrate for their roots to form?"]
+			id: "492DB76E6A1FBACA"
+			rewards: [{
+				count: 4
+				id: "3A4C6A0DAEE901D5"
+				item: "create:experience_nugget"
+				random_bonus: 4
+				type: "item"
+			}]
+			subtitle: "Growing more for later!"
+			tasks: [{
+				id: "22EDE49E130EC143"
+				item: "eidolon:planter"
+				type: "item"
+			}]
+			title: "Planters"
+			x: 2.0d
+			y: 8.0d
+		}
+	]
+	title: "Primal Magiks"
 }

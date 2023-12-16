@@ -3,10 +3,10 @@
 	default_quest_shape: ""
 	filename: "low"
 	group: "7ACE386F34E81744"
-	icon: "create:track"
+	icon: "create:large_cogwheel"
 	id: "03799584BC804083"
 	order_index: 0
 	quest_links: [ ]
 	quests: [ ]
-	title: "Low"
+	title: "No Voltage, No Problem!"
 }

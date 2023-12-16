@@ -9,6 +9,7 @@
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["3025147B8EB09C0C"]
 			description: [
 				"Upon entering the world, you'll begin to notice that keeping your body temperature regulated is incredibly important; being too cold may prevent you from sleeping, or being too hot may start to blur your vision!"
 				""
@@ -16,48 +17,70 @@
 			]
 			id: "19D30A4F9A99AC5D"
 			rewards: [{
-				count: 4
-				id: "6638E2FB2228A566"
-				item: "create:experience_nugget"
+				count: 2
+				id: "7F61590C5152BB7D"
+				item: "delightful:smore"
+				random_bonus: 6
 				type: "item"
 			}]
-			shape: "octagon"
+			shape: "hexagon"
+			subtitle: "S'mores included!"
 			tasks: [{
 				id: "0999C57FE7D7EC5A"
 				item: "minecraft:campfire"
 				type: "item"
 			}]
 			title: "Chilling Out"
-			x: 0.0d
+			x: 0.5d
 			y: 0.0d
 		}
 		{
 			dependencies: ["656EACDA88A244CF"]
+			description: ["Of course like most Modpacks you'll find that there's too much to carry with you as you explore, loot and more! It seems wise to make a backpack as soon as possible to make it easier to bring more around with you. You can have multiple backpacks, and while they start out small, they can be upgraded all the way to 5-rows and 4 upgrade slots!"]
 			id: "767ED700EB86700A"
+			rewards: [{
+				count: 6
+				id: "42C3416AFDF994D8"
+				item: "create:experience_nugget"
+				random_bonus: 6
+				type: "item"
+			}]
+			subtitle: "Too much stuff, not enough space?"
 			tasks: [{
 				id: "73E5C061A1447BF6"
 				item: "sophisticatedbackpacks:backpack"
 				type: "item"
 			}]
 			title: "Portable Storage"
-			x: -4.5d
+			x: -5.0d
 			y: 0.0d
 		}
 		{
+			dependencies: ["3025147B8EB09C0C"]
 			description: [
 				"You may find yourself struggling to keep up with where you've been or where you are now - in such a case, I'd recommend an Atlas! The Atlas will consume Empty Maps as you explore, and when opened, can be used to change between dimension's maps, set markers and navigate around to see the surrounding area! Additionally, it can go in one of your \"Hand\" Curios slot and can be accessed with keybinds when in said slot or your hotbar!"
 				""
 				"More Empty Maps can be added to the Atlas using Paper or Maps (up to 8) in a shapeless crafting recipe!"
+				"{@pagebreak}"
+				"This &5Eccentric Tome&r reward item is interesting - it seems to be a good way to consolidate all of the Manuals, Atlases and Guides you find along the way."
+				""
+				"You can add new books to the Tome by combining the book and Tome in a &6Crafting Grid&r. You can right-click the tome to select the book you want, then left-click in the air with the selected book to de-select the book. It seems you can remove a book from the Tome by selecting it, Crouching, and throwing the book using the &lToss Item&r keybind."
 			]
 			id: "656EACDA88A244CF"
 			rewards: [{
-				count: 32
-				id: "13F3653D04E9D5B6"
-				item: "minecraft:paper"
-				random_bonus: 32
+				id: "0D60C2BB095D547B"
+				item: {
+					Count: 1b
+					id: "eccentrictome:tome"
+					tag: {
+						"eccentrictome:mods": { }
+					}
+				}
+				only_one: true
 				type: "item"
 			}]
-			shape: "octagon"
+			shape: "hexagon"
+			subtitle: "Three Descending Artichokes"
 			tasks: [{
 				id: "57368BC9305C86EF"
 				item: {
@@ -72,46 +95,91 @@
 				type: "item"
 			}]
 			title: "Maps \\& Atlases"
-			x: -2.0d
+			x: -2.5d
 			y: 0.0d
 		}
 		{
+			dependencies: ["3025147B8EB09C0C"]
+			description: ["As you delve deeper underground, you've noticed that these &8Deepslate Ore Variants&r are yielding more Raw Ore than the Stone Variants! While the creatures this deep in the ground are significantly tougher to stave off, it seems worth it for the improved Raw Ore yields at the very least.."]
 			icon: "minecraft:deepslate_iron_ore"
 			id: "56D9CB36C6FE6B1A"
-			shape: "octagon"
-			tasks: [{
-				id: "43408BB344F74F7D"
-				item: {
-					Count: 1b
-					id: "itemfilters:tag"
-					tag: {
-						value: "forge:cobblestone/deepslate"
-					}
-				}
+			rewards: [{
+				count: 12
+				id: "3F4A7819268B4D34"
+				item: "create:experience_nugget"
+				random_bonus: 12
 				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "Finally worthwhile!"
+			tasks: [{
+				icon: "embers:deepslate_silver_ore"
+				id: "211977909829233F"
+				observe_type: 1
+				timer: 0L
+				title: "Ponder Upon Deepslate Ore"
+				to_observe: "forge:ores_in_ground/deepslate"
+				type: "observation"
 			}]
 			title: "Deepslate Ores"
 			x: -1.0d
-			y: -1.0d
+			y: -1.5d
 		}
 		{
+			dependencies: ["3025147B8EB09C0C"]
+			description: ["As you explore the deepest depths of the world, you'll start to find these creatures are better and better prepared for combat - what the heck?!? Well, it'd probably be best to gear up and be ready!"]
+			icon: "minecraft:zombie_head"
 			id: "509A87C70B07370E"
-			shape: "octagon"
-			tasks: [{
-				entity: "minecraft:zombie"
-				id: "284BE4DAE85C2E72"
-				title: "Harder Mobs"
-				type: "kill"
-				value: 100L
+			rewards: [{
+				count: 4
+				id: "04FCD949AB009152"
+				item: "create:experience_nugget"
+				random_bonus: 4
+				type: "item"
 			}]
+			shape: "hexagon"
+			subtitle: "Stronger the Deeper you Delve!"
+			tasks: [{
+				dimension: "minecraft:overworld"
+				icon: "minecraft:deepslate"
+				id: "61FF7FA7187FD2C7"
+				ignore_dimension: false
+				position: [I;
+					-784662528
+					-64
+					-784662528
+				]
+				size: [I;
+					1569325055
+					64
+					1569325055
+				]
+				title: "Enter Deepslate Level"
+				type: "location"
+			}]
+			title: "Strengthened Mobs"
 			x: -1.0d
-			y: 1.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["56D9CB36C6FE6B1A"]
+			description: [
+				"As you start to process your &6Ore&r in a Furnace, you've noticed that you're not able to process with much efficiency at all! It seems like Smelting the &oWhole Ore&r yields an entire Ingot's worth of Metal, but smelting &oRaw Ore&r is only getting you &o3 Nuggets&r! Seems like Blasting the Raw Ore will yield more, but not much more... "
+				""
+				"Perhaps someday Ore Processing can be optimized for improved output and processing speed!"
+			]
 			icon: "minecraft:blast_furnace"
 			id: "460CB64A1D17F1E0"
+			rewards: [{
+				count: 6
+				id: "42298DBB4D85637E"
+				item: "create:experience_nugget"
+				random_bonus: 6
+				type: "item"
+			}]
+			subtitle: "It ain't much, but it's honest"
 			tasks: [{
+				icon: "eidolon:pewter_nugget"
 				id: "3DA4EEBF397AF138"
 				item: {
 					Count: 1b
@@ -123,9 +191,9 @@
 				title: "Any Nugget"
 				type: "item"
 			}]
-			title: "Nuggets"
+			title: "Primitive Ore Processing"
 			x: -1.0d
-			y: -3.5d
+			y: -4.0d
 		}
 		{
 			dependencies: ["19D30A4F9A99AC5D"]
@@ -137,18 +205,20 @@
 			icon: "regions_unexplored:red_maple_leaf_pile"
 			id: "7D5AC48A59C77D8A"
 			rewards: [{
-				count: 12
+				count: 4
 				id: "05D64C2BF691F085"
 				item: "create:experience_nugget"
+				random_bonus: 4
 				type: "item"
 			}]
+			subtitle: "It's a Swinter Swonderland"
 			tasks: [{
 				id: "6E5E3B1BFAB3705D"
 				item: "sereneseasons:calendar"
 				type: "item"
 			}]
 			title: "Seasons"
-			x: 2.5d
+			x: 3.0d
 			y: 0.0d
 		}
 		{
@@ -156,24 +226,36 @@
 			description: ["Perhaps you've tried opening up your F3 menu to figure out how deep you are as you explore -- don't worry, it's what we all expected to see. Anyways, you'll probably notice that your coordinates are not shown in the Debug Menu anymore, so in order to know how deep you are in the world you'll want an Altimeter! Not only does its texture update as you get higher or deeper in the world, but it can also be right-clicked to tell you an exact depth!"]
 			id: "67F64F723F89BF0F"
 			rewards: [{
-				count: 12
+				count: 6
 				id: "4D215AD4650535D2"
 				item: "create:experience_nugget"
+				random_bonus: 6
 				type: "item"
 			}]
+			subtitle: "Gauging your height"
 			tasks: [{
 				id: "234CFCF3489BD816"
 				item: "supplementaries:altimeter"
 				type: "item"
 			}]
-			x: -3.5d
+			x: -4.0d
 			y: 1.5d
 		}
 		{
 			dependencies: ["509A87C70B07370E"]
+			description: ["You may find in your exploration these odd little pylon-looking structures called \"&5Waystones&r\". They seem to remember where they've been activated and allow you to quickly travel between them, but it comes at a cost of &aExperience&r. The further two Waystones are, the &ocheaper&r the cost will be - perhaps instead of using Waystones you should explore other options like Rails, Trains, Teleposers or other modes of transportation!"]
 			icon: "waystones:waystone"
 			id: "576FF66D4CC88795"
+			rewards: [{
+				count: 8
+				id: "24E5F4A55A57725E"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			subtitle: "Quick travel, but not the cheapest.."
 			tasks: [{
+				icon: "waystones:mossy_waystone"
 				id: "03B87FA6D20C14A9"
 				item: {
 					Count: 1b
@@ -187,12 +269,22 @@
 			}]
 			title: "Waystones"
 			x: -2.5d
-			y: 2.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["56D9CB36C6FE6B1A"]
+			description: ["No matter how hard you try, you can't seem to find any Enchanted Books or Gear that have been imbued with the &5Mending&r enchantment... seems as though an Anvil is as good as you can manage for now.."]
 			id: "4CB200B926639C59"
+			rewards: [{
+				count: 6
+				id: "475EC961255FDBC0"
+				item: "create:experience_nugget"
+				random_bonus: 6
+				type: "item"
+			}]
+			subtitle: "Mending? Never heard of it.."
 			tasks: [{
+				icon: "minecraft:anvil"
 				id: "529E6C42E7331DF7"
 				item: {
 					Count: 1b
@@ -201,15 +293,30 @@
 						value: "minecraft:anvil"
 					}
 				}
+				title: "An Anvil"
 				type: "item"
 			}]
 			title: "Anvil Forging"
 			x: 0.5d
-			y: -2.5d
+			y: -3.0d
 		}
 		{
 			dependencies: ["56D9CB36C6FE6B1A"]
+			description: [
+				"&8Smithing Tables&r seem like a really convenient way to adorn any existing gear with improved materials - it seems like this gear even takes on the attributes of the improved materials while keeping my existing upgrades, insulation, enchantments and more!"
+				""
+				""
+				"{image:kubejs:textures/quest_images/smithing_upgrading.png width:527 height:249 align:1 fit:true}"
+			]
 			id: "0633F2071EF79273"
+			rewards: [{
+				count: 6
+				id: "3A20FE51DAE2E7A4"
+				item: "create:experience_nugget"
+				random_bonus: 6
+				type: "item"
+			}]
+			subtitle: "Have your gear and keep it too!"
 			tasks: [{
 				id: "3649733A7F398382"
 				item: "minecraft:smithing_table"
@@ -217,23 +324,40 @@
 			}]
 			title: "Gear Upgrading"
 			x: -2.5d
-			y: -2.5d
+			y: -3.0d
 		}
 		{
 			dependencies: ["767ED700EB86700A"]
+			description: ["Another issue you'll likely run into is having a small amount of many items - this happens to everyone! Not a problem - Minecraft's Bundles are enabled in this pack, and can be crafted with some Rabbit Hide and String. You can also put these in backpacks!! &4&oDon't try putting bundles in bundles though, things can break that way...&r&r"]
 			id: "2A76157BAB25E4B7"
+			rewards: [{
+				count: 6
+				id: "60430E0DBB247AF2"
+				item: "create:experience_nugget"
+				random_bonus: 6
+				type: "item"
+			}]
+			subtitle: "Keeping Tidy!"
 			tasks: [{
 				id: "13F322D839043036"
 				item: "minecraft:bundle"
 				type: "item"
 			}]
-			x: -6.5d
+			x: -7.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["656EACDA88A244CF"]
+			description: ["This pack is oriented around a &olot&r of exploration and discovery in the world - as such, you'll likely find it &overy&r annoying having to wait out the night every night. Fortunately for you, &1Sleeping Bags&r exist and can be used to pass the night without resetting your spawn point! Make yourself one of these for the peak exploration and discovery experience :)"]
 			id: "2CBEE3863FAE834A"
+			rewards: [{
+				id: "781313F4EDC88222"
+				item: "minecraft:campfire"
+				type: "item"
+			}]
+			subtitle: "Sleeping on Solid Ground"
 			tasks: [{
+				icon: "comforts:sleeping_bag_gray"
 				id: "3E1041941E8EA738"
 				item: {
 					Count: 1b
@@ -246,7 +370,7 @@
 				type: "item"
 			}]
 			title: "Camping"
-			x: -3.5d
+			x: -4.0d
 			y: -1.5d
 		}
 		{
@@ -264,18 +388,20 @@
 			]
 			id: "4960FD0824F95A4A"
 			rewards: [{
-				id: "57E10A4290A23DFB"
-				item: "cold_sweat:chameleon_molt"
-				random_bonus: 1
+				count: 8
+				id: "3D41B2865A78B37C"
+				item: "create:experience_nugget"
+				random_bonus: 4
 				type: "item"
 			}]
+			subtitle: "Keep Yourself Warm or Cool!"
 			tasks: [{
 				id: "0024C7815267DA29"
 				item: "cold_sweat:sewing_table"
 				type: "item"
 			}]
 			title: "Armor Insulation"
-			x: 1.5d
+			x: 2.0d
 			y: -1.5d
 		}
 		{
@@ -283,17 +409,20 @@
 			description: ["In addition to keeping your own body regulated (which is super important when going on various treks throughout the world), you can also keep your whole home regulated! Using &l&9Water&r&r and &l&4Lava&r&r &lBuckets&r, you can start up a Hearth which will fill your home with heating and cooling!"]
 			id: "427904E6359510A8"
 			rewards: [{
-				id: "0763578E1612F0AF"
-				item: "minecraft:lava_bucket"
+				count: 4
+				id: "357D0467596BDC2D"
+				item: "create:experience_nugget"
+				random_bonus: 4
 				type: "item"
 			}]
+			subtitle: "Because HVAC is just too expensive"
 			tasks: [{
 				id: "3615501C0AD0E4B4"
 				item: "cold_sweat:hearth"
 				type: "item"
 			}]
 			title: "Housing Insulation"
-			x: 1.5d
+			x: 2.0d
 			y: 1.5d
 		}
 		{
@@ -314,6 +443,7 @@
 				type: "item"
 			}]
 			shape: "hexagon"
+			subtitle: "Some like it hot!"
 			tasks: [{
 				id: "52D06467CE224B2F"
 				item: {
@@ -327,11 +457,12 @@
 				type: "item"
 			}]
 			title: "Nether-Proofing"
-			x: 4.5d
+			x: 5.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["509A87C70B07370E"]
+			description: ["It seems that as long as the moon is &orelatively&r full, there aren't any monsters coming out at night on the surface!"]
 			icon: {
 				Count: 1b
 				id: "ftbquests:custom_icon"
@@ -340,13 +471,47 @@
 				}
 			}
 			id: "20A32E7A733EBFFF"
+			subtitle: "Don't be afraid of the night!"
 			tasks: [{
-				id: "67ADC0C7BF21485F"
-				title: "Peaceful Surface"
+				id: "6E9F1823B1ED5246"
+				title: "Click Me!"
 				type: "checkmark"
 			}]
+			title: "Peaceful Surface"
 			x: 0.5d
-			y: 2.5d
+			y: 3.0d
+		}
+		{
+			description: [
+				"One thing you may notice starting out in this pack is that it tries to mask various components of the game as much as possible. You'll find that Jade (at the top center of the screen) won't tell you what Mod a block is from, you'll find the F3 screen to be very barren, and you'll notice that even item tooltips won't tell you what mod adds them!"
+				""
+				"One tip is that holding &6&nShift&r&r while hovering over an item will tell you which mod adds it in if you're curious or entirely unfamiliar with a mod, but I hope that this questline helps explain things to you in a way that prevent you from feeling so lost."
+				""
+				"{@pagebreak}"
+				""
+				"You'll also find that if you find or make something too technical for you based on your current knowledge-set, it'll turn into an unknown artifact. Keep these around!! You'll be able to understand what these artifacts do as you progress through the pack, so it won't be permanently useless!!!"
+				""
+				"Anyways, enjoy your progression through Magiks, Technology, and a mix in-between!"
+				""
+				"&o- oitsjustjose&r"
+			]
+			icon: "ae2:cyan_lumen_paint_ball"
+			id: "3025147B8EB09C0C"
+			rewards: [{
+				id: "2447A2E32897CBE2"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			shape: "octagon"
+			subtitle: "Welcome to Harmonious Magineering!"
+			tasks: [{
+				id: "3DD6B824CBE0D9F4"
+				title: "Click Me :)"
+				type: "checkmark"
+			}]
+			title: "Getting Started"
+			x: -1.0d
+			y: 0.0d
 		}
 	]
 	title: "Basics"

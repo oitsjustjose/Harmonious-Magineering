@@ -1,0 +1,12 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "primitively_digitized"
+	group: "30752BCABB2D0E90"
+	icon: "rftoolsstorage:modular_storage"
+	id: "58498F80D07A316F"
+	order_index: 2
+	quest_links: [ ]
+	quests: [ ]
+	title: "Primitively Digitized"
+}

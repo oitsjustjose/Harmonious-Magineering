@@ -1,0 +1,12 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "tools_for_rf"
+	group: "5336980E34DC09BA"
+	icon: "rftoolspower:dimensionalcell"
+	id: "6D9A1B9BB36B4380"
+	order_index: 1
+	quest_links: [ ]
+	quests: [ ]
+	title: "Tools for Flux"
+}

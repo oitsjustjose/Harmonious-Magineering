@@ -1,0 +1,12 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "some_wires_required"
+	group: "7ACE386F34E81744"
+	icon: "immersiveengineering:wirecoil_copper"
+	id: "0AA8A334E721D765"
+	order_index: 2
+	quest_links: [ ]
+	quests: [ ]
+	title: "Some Wires Required"
+}
