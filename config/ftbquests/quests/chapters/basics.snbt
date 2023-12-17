@@ -273,7 +273,11 @@
 		}
 		{
 			dependencies: ["56D9CB36C6FE6B1A"]
-			description: ["No matter how hard you try, you can't seem to find any Enchanted Books or Gear that have been imbued with the &5Mending&r enchantment... seems as though an Anvil is as good as you can manage for now.."]
+			description: [
+				"No matter how hard you try, you can't seem to find any Enchanted Books or Gear that have been imbued with the &5Mending&r enchantment... seems as though an Anvil is as good as you can manage for now."
+				""
+				"Additionally, nearly anything can be repaired in this Anvil using the predominant material (i.e. &7Shears&r require &7Iron&r, a &6Bow&r requires &7String&r, &bPewter Tools&r require &bPewter Ingots&r, etc.)"
+			]
 			id: "4CB200B926639C59"
 			rewards: [{
 				count: 6
@@ -304,7 +308,6 @@
 			dependencies: ["56D9CB36C6FE6B1A"]
 			description: [
 				"&8Smithing Tables&r seem like a really convenient way to adorn any existing gear with improved materials - it seems like this gear even takes on the attributes of the improved materials while keeping my existing upgrades, insulation, enchantments and more!"
-				""
 				""
 				"{image:kubejs:textures/quest_images/smithing_upgrading.png width:527 height:249 align:1 fit:true}"
 			]
@@ -495,7 +498,7 @@
 				""
 				"&o- oitsjustjose&r"
 			]
-			icon: "ae2:cyan_lumen_paint_ball"
+			icon: "bloodmagic:hellforgedparts"
 			id: "3025147B8EB09C0C"
 			rewards: [{
 				id: "2447A2E32897CBE2"

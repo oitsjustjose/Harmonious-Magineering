@@ -7,6 +7,81 @@
 	id: "1A293DCDB8B8E8B7"
 	order_index: 2
 	quest_links: [ ]
-	quests: [ ]
-	title: "Blood"
+	quests: [
+		{
+			dependencies: ["26B018666C63C97F"]
+			hide: true
+			icon: "bloodmagic:altar"
+			id: "66810454B2C6116C"
+			rewards: [
+				{
+					id: "1B1240C8BA1CE159"
+					item: {
+						Count: 1b
+						id: "bloodmagic:sacrificialdagger"
+						tag: { }
+					}
+					type: "item"
+				}
+				{
+					id: "08512453153D83B9"
+					item: {
+						Count: 1b
+						id: "patchouli:guide_book"
+						tag: {
+							"patchouli:book": "bloodmagic:guide"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "diamond"
+			size: 2.0d
+			tasks: [
+				{
+					id: "0CF219A408CCB7CB"
+					item: "eidolon:crimson_gem"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "3F2446851707E4D7"
+					item: "eidolon:arcane_seal"
+					type: "item"
+				}
+				{
+					id: "28184D418A61B758"
+					item: "aether:altar"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "05E1FD51FDBF27F5"
+					item: "aether:carved_stone"
+					type: "item"
+				}
+				{
+					id: "30CBB29198C10A4B"
+					item: "bloodmagic:altar"
+					type: "item"
+				}
+			]
+			title: "Basic Blood Sacrifice"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "5780D21D153AF10D"
+			shape: "octagon"
+			size: 2.0d
+			tasks: [{
+				id: "41D8E03FB9756A4C"
+				item: "bloodmagic:ingot_hellforged"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 3.5d
+		}
+	]
+	title: "Dark \\& Blood"
 }

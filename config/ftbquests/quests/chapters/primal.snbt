@@ -11,6 +11,18 @@
 		}
 	}
 	id: "5B03A2714E94DB16"
+	images: [{
+		click: ""
+		corner: false
+		dev: false
+		height: 4.0d
+		hover: [ ]
+		image: "kubejs:textures/quest_images/eidolon.png"
+		rotation: 0.0d
+		width: 5.2d
+		x: 0.0d
+		y: -1.75d
+	}]
 	order_index: 0
 	quest_links: [ ]
 	quests: [
@@ -286,9 +298,19 @@
 			description: [
 				"As you've started to learn more about magic, you've likely started to look into the standard approaches of augmenting your tools with magic with an Enchanting Table, but everywhere you look you can't seem to find one - until now."
 				""
-				"You've discovered some sort of "
+				"You've discovered some sort of Enchanting Device that consumes &5Soul Shards&r instead of &9Lapis&r, but more interesting yet is that you can seemingly continue to enchant the same piece of gear over and over again, leveling each enchantment up one level at a time. This does seem quickly consume a large number of &5Soul Shards&r though."
+				""
+				"It also seems that this device doesn't require a large collection of texts like the Enchanting Table of yore; the enchanting power seems to be entirely unphazed by how many bookshelves you surround the &5Soul Enchanter&r with."
 			]
 			id: "2732A6F56D91A7E9"
+			rewards: [{
+				count: 2
+				id: "1D708A745683217E"
+				item: "eidolon:soul_shard"
+				random_bonus: 6
+				type: "item"
+			}]
+			subtitle: "Pick and Choose"
 			tasks: [{
 				id: "3B9F1147463B9BBC"
 				item: "eidolon:soul_enchanter"
@@ -299,8 +321,19 @@
 			y: 8.5d
 		}
 		{
-			dependencies: ["259253F0B5E9952E"]
+			dependencies: [
+				"259253F0B5E9952E"
+				"2732A6F56D91A7E9"
+			]
+			description: ["With Enchanting and other occult magiks, you've found yourself in search of more Soul Shards and these rituals are getting pretty old. Fortunately, the Unholy Token seems to be a great catalyst in various recipes and &ldoes not get consumed&r when you use it in recipes, so perhaps you can fashion yourself a new weapon that can steal the souls from the undead much more easily than a ritual..."]
 			id: "6C7968AB932CAFD0"
+			rewards: [{
+				count: 8
+				id: "0259BBC9BD5C60DB"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
 			subtitle: "&5Soul Shards&r, the fast way!"
 			tasks: [{
 				id: "4567D5653CF8EFAC"
@@ -328,7 +361,7 @@
 				"Maybe your altar could use some more supernatural additions like Skulls and a Chalice..."
 				""
 				""
-				"{image:eidolon:textures/vfx/wicked_sign.png width:100 height:100 align:1}"
+				"{image:eidolon:textures/vfx/wicked_sign.png width:50 height:50 align:1}"
 			]
 			icon: "eidolon:straw_effigy"
 			id: "1E00538EB87E83E6"
@@ -337,7 +370,7 @@
 				item: "minecraft:skeleton_skull"
 				type: "item"
 			}]
-			subtitle: "&oAre we sure it's a god?&r"
+			subtitle: "Are we sure it's a &okind&r diety?"
 			tasks: [
 				{
 					id: "0E5487995C8FFD37"
@@ -350,9 +383,9 @@
 					type: "item"
 				}
 			]
-			title: "Praying to a... god?"
+			title: "Praying to a... &odiety&r?"
 			x: -2.0d
-			y: 6.5d
+			y: 8.5d
 		}
 		{
 			dependencies: ["270AFC0FA41305D1"]
@@ -362,7 +395,7 @@
 				"Try starting off with the blood of &nany animal&r using the &lSacrifice Animal&r chant - though this chant can only be used &nonce a day&r."
 				""
 				""
-				"{image:eidolon:textures/vfx/sanguine_ritual.png width:100 height:100 align:1}"
+				"{image:eidolon:textures/vfx/sanguine_ritual.png width:50 height:50 align:1}"
 			]
 			icon: "eidolon:stone_altar"
 			id: "3C0939420ECF23DE"
@@ -397,7 +430,13 @@
 				""
 				"Fortunately, the Diety has shown you how to create a symbol of its likeness to create some more potent things - all you need is to chant a &lTouch of Darkness&r towards a &6Pewter Inlay&r that has been placed on your &lAltar&r "
 				""
-				"{image:eidolon:textures/vfx/soul_sign.png width:100 height:100 align:1}"
+				"{image:eidolon:textures/vfx/soul_sign.png width:50 height:50 align:1}"
+				"{@pagebreak}"
+				"At this point, most of your remaining research in these &5Occult Practices&r will have to be self-led using the &6Ars Ecclesia&r to keep your notes and guide you along the way. If ever you find yourself stuck in your research, it is recommended to try the even your most wicked and cryptic ideas."
+				""
+				"There definitely seem to be new chants and possibly even &ospells&r? Much is left to be learned!"
+				""
+				"{image:eidolon:item/notetaking_tools width:50 height:50 align:1}"
 			]
 			icon: "eidolon:unholy_symbol"
 			id: "259253F0B5E9952E"
@@ -407,7 +446,7 @@
 				item: "create:experience_nugget"
 				type: "item"
 			}]
-			shape: "octagon"
+			shape: "hexagon"
 			size: 2.0d
 			subtitle: "&oNot accepted at any arcades that I know of...&r"
 			tasks: [{
@@ -451,6 +490,196 @@
 			x: -2.0d
 			y: 2.5d
 		}
+		{
+			dependencies: [
+				"259253F0B5E9952E"
+				"1E00538EB87E83E6"
+			]
+			description: ["As you continue your prayers, you feel as though the crude effigy you made from scraps of Hay is no longer enough to properly respect and praise the Diety... fortunately the &8Unholy Symbol&r that you were sent to will allow you to form a closer bond to the diety and learn even more chants and types of magiks as you continue on your journey."]
+			id: "0F7026A06FEB1170"
+			rewards: [{
+				count: 6
+				id: "7D5BDA9EEC23F823"
+				item: "create:experience_nugget"
+				random_bonus: 6
+				type: "item"
+			}]
+			subtitle: "Pray Louder!"
+			tasks: [{
+				id: "15C09BB372F0B668"
+				item: "eidolon:unholy_effigy"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 13.5d
+		}
+		{
+			dependencies: ["259253F0B5E9952E"]
+			icon: {
+				Count: 1b
+				ForgeCaps: {
+					"cold_sweat:item_insulation": {
+						Insulation: [ ]
+					}
+				}
+				id: "eidolon:warlock_hat"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "69EDAE3B4FC06547"
+			optional: true
+			rewards: [{
+				count: 5
+				id: "73C020DA47E0AEFF"
+				item: "eidolon:grape_candy"
+				random_bonus: 5
+				type: "item"
+			}]
+			shape: "octagon"
+			subtitle: "For the Completionists"
+			tasks: [
+				{
+					id: "32C86C3FBFE4B928"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "eidolon:warlock_hat"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "229E9F3FDFF9FFFC"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "eidolon:warlock_cloak"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "55EBEFC2FCDCD406"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "eidolon:warlock_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3729983031DEBCFF"
+					item: "eidolon:prestigious_palm"
+					type: "item"
+				}
+			]
+			title: "Becoming a Warlock"
+			x: -1.0d
+			y: 15.5d
+		}
+		{
+			dependencies: ["259253F0B5E9952E"]
+			icon: {
+				Count: 1b
+				ForgeCaps: {
+					"cold_sweat:item_insulation": {
+						Insulation: [ ]
+					}
+				}
+				id: "eidolon:bonelord_helm"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "52AD448C7F0CDCE9"
+			rewards: [{
+				count: 5
+				id: "294D7E9798FE5EC5"
+				item: "eidolon:red_candy"
+				random_bonus: 5
+				type: "item"
+			}]
+			shape: "octagon"
+			subtitle: "For the Completionists"
+			tasks: [
+				{
+					id: "46D049C3BBFE7747"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "eidolon:bonelord_helm"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6CFB0535D071C5E0"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "eidolon:bonelord_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6327201B1AC2DB4B"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "eidolon:bonelord_greaves"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "5DFCE52EED6FB6F2"
+					item: "eidolon:soulbone_amulet"
+					type: "item"
+				}
+			]
+			title: "Becoming a Bone Paladin"
+			x: 1.0d
+			y: 15.5d
+		}
 	]
-	title: "Primal Magiks"
+	title: "Supernatural"
 }

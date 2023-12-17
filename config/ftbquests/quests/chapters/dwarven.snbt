@@ -7,6 +7,21 @@
 	id: "3BD1CF04413936A6"
 	order_index: 3
 	quest_links: [ ]
-	quests: [ ]
+	quests: [{
+		dependencies: ["5780D21D153AF10D"]
+		hide: true
+		id: "70FFC8521726C961"
+		shape: "diamond"
+		size: 2.0d
+		subtitle: "Primitive but Powerful"
+		tasks: [{
+			id: "109218C1D54D84F1"
+			item: "embers:tinker_hammer"
+			type: "item"
+		}]
+		title: "Dwarven Tech"
+		x: 0.0d
+		y: 0.0d
+	}]
 	title: "Dwarven"
 }

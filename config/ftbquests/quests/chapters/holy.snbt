@@ -5,8 +5,584 @@
 	group: "237E59D678B7F5E1"
 	icon: "aether:aether_portal_frame"
 	id: "4937E45FC8A05024"
+	images: [{
+		click: ""
+		corner: false
+		dev: false
+		height: 1.0d
+		hover: [ ]
+		image: "aether:textures/gui/title/aether.png"
+		rotation: 0.0d
+		width: 4.605263157894737d
+		x: 0.0d
+		y: -1.0d
+	}]
 	order_index: 1
 	quest_links: [ ]
-	quests: [ ]
-	title: "Holy"
+	quests: [
+		{
+			dependencies: ["259253F0B5E9952E"]
+			description: ["The Diety has told you of a paradise locked away entirely behind a Portal of Glowstone, but all attempts to form this portal yourself have been entirely fruitless. Perhaps you the Diety's need help in order to proceed.."]
+			hide: true
+			id: "2AB0349D89A4B983"
+			rewards: [
+				{
+					id: "4817E401333DB295"
+					item: "aether:book_of_lore"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7EB48C7605DD2FB4"
+					item: {
+						Count: 1b
+						id: "aether:cold_parachute"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "diamond"
+			size: 1.5d
+			subtitle: "&oMore &cHostile&f than &eHeavenly&f.."
+			tasks: [{
+				id: "523C1C49852438B6"
+				item: "aether:aether_portal_frame"
+				type: "item"
+			}]
+			title: "Entering the Aether"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2AB0349D89A4B983"]
+			description: [
+				"As you explore the Aether (carefully, mind you), you've discovered an odd structure made of dark bricks. As you enter you find Sentinels that seem to be guarding a greater boss - &1The Slider&r"
+				""
+				"Once you defeat the boss, a grand key is dropped and you find that a set of Trapdoors have revealed themselves in the middle of the boss room, covering a treasure chest."
+			]
+			id: "108A316D3F4BFE38"
+			rewards: [{
+				count: 6
+				id: "6C2428DB12C59F84"
+				item: "create:experience_nugget"
+				random_bonus: 6
+				type: "item"
+			}]
+			shape: "pentagon"
+			size: 1.5d
+			subtitle: "Home of &1The Slider&r"
+			tasks: [{
+				id: "06FDFB115F8D30F0"
+				item: "aether:bronze_dungeon_key"
+				type: "item"
+			}]
+			title: "&6Bronze Dungeons&r"
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["2AB0349D89A4B983"]
+			id: "7BF1DBC64ED535E6"
+			rewards: [{
+				count: 6
+				id: "66D6834D5E3C8BAF"
+				item: "create:experience_nugget"
+				random_bonus: 6
+				type: "item"
+			}]
+			subtitle: "A &6Valkyrian Paradise&r"
+			tasks: [{
+				id: "17409FE3CD6CC3B5"
+				item: "aether:silver_dungeon_key"
+				type: "item"
+			}]
+			title: "&eSilver Dungeons&r"
+			x: -2.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["2AB0349D89A4B983"]
+			id: "583CBBEC8643FFC4"
+			rewards: [{
+				count: 6
+				id: "305AAB03A0536EA5"
+				item: "create:experience_nugget"
+				random_bonus: 6
+				type: "item"
+			}]
+			subtitle: "Warm as &4The Nether&r"
+			tasks: [{
+				id: "381B4F71C2B6F2A6"
+				item: "aether:gold_dungeon_key"
+				type: "item"
+			}]
+			title: "&cGold Dungeons&r"
+			x: 2.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7BF1DBC64ED535E6"]
+			icon: {
+				Count: 1b
+				ForgeCaps: {
+					"cold_sweat:item_insulation": {
+						Insulation: [ ]
+					}
+				}
+				id: "aether:valkyrie_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "01F4F9A1D1AD7EAB"
+			optional: true
+			rewards: [{
+				count: 5
+				id: "484BB6AD2A2F3963"
+				item: "deep_aether:chromatic_aercloud"
+				type: "item"
+			}]
+			shape: "octagon"
+			subtitle: "For all you completionists"
+			tasks: [
+				{
+					id: "21BE74BBD5630971"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "aether:valkyrie_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "507CC3DDF8A5D81E"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "aether:valkyrie_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "31228B07D355692A"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "aether:valkyrie_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3C3E4DDC236F5E62"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "aether:valkyrie_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1699D2A62B50B156"
+					item: {
+						Count: 1b
+						id: "aether:valkyrie_gloves"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "&eA Complete Valkyrie Armor Set&r"
+			x: -4.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["7BF1DBC64ED535E6"]
+			icon: {
+				Count: 1b
+				id: "aether:valkyrie_lance"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "7E1E329A5AA85A39"
+			optional: true
+			rewards: [{
+				count: 5
+				id: "7F256A0F48DCDF5A"
+				item: "deep_aether:chromatic_aercloud"
+				type: "item"
+			}]
+			shape: "octagon"
+			subtitle: "For all you completionists"
+			tasks: [
+				{
+					id: "3076E172A0040580"
+					item: {
+						Count: 1b
+						id: "aether:valkyrie_lance"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "31F4387D8590C912"
+					item: {
+						Count: 1b
+						id: "aether:valkyrie_pickaxe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "192883863885F506"
+					item: {
+						Count: 1b
+						id: "aether:valkyrie_shovel"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2AA93B9FB8CA07F1"
+					item: {
+						Count: 1b
+						id: "aether:valkyrie_axe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "12DBC847A19DECAE"
+					item: {
+						Count: 1b
+						id: "aether:valkyrie_hoe"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "&eA Complete Valkyrie Tool Set&r"
+			x: -4.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["583CBBEC8643FFC4"]
+			icon: {
+				Count: 1b
+				ForgeCaps: {
+					"cold_sweat:item_insulation": {
+						Insulation: [ ]
+					}
+				}
+				id: "aether:phoenix_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "0E77E733728F3787"
+			optional: true
+			rewards: [{
+				count: 5
+				id: "07942D52C771032B"
+				item: "deep_aether:chromatic_aercloud"
+				type: "item"
+			}]
+			shape: "octagon"
+			subtitle: "For all you completionists"
+			tasks: [
+				{
+					id: "7591A34D9D9D3D82"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "aether:phoenix_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "742764E52E75C1C8"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "aether:phoenix_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "47A6BE04CC47E4BB"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "aether:phoenix_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "3C371E8C683824BA"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "aether:phoenix_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "5CC8F1F1D4492D1C"
+					item: {
+						Count: 1b
+						id: "aether:phoenix_gloves"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "&cA Complete Phoenix Armor Set&r"
+			x: 4.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["583CBBEC8643FFC4"]
+			description: ["(Read up on the &cPhoenix Gear&r in the &3Lore Book&r to learn more about obtaining this gear)"]
+			icon: {
+				Count: 1b
+				ForgeCaps: {
+					"cold_sweat:item_insulation": {
+						Insulation: [ ]
+					}
+				}
+				id: "aether:obsidian_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "3DD275FE74E21690"
+			optional: true
+			rewards: [{
+				count: 5
+				id: "28C9BFF1F7AA3F24"
+				item: "deep_aether:chromatic_aercloud"
+				type: "item"
+			}]
+			shape: "octagon"
+			subtitle: "For all you completionists"
+			tasks: [
+				{
+					id: "416267AB2C12B1E2"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "aether:obsidian_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "349268C1306DA909"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "aether:obsidian_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "72A5371EDA883E52"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "aether:obsidian_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6C735D3F7EE12910"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							"cold_sweat:item_insulation": {
+								Insulation: [ ]
+							}
+						}
+						id: "aether:obsidian_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "44462157F70B89A4"
+					item: {
+						Count: 1b
+						id: "aether:obsidian_gloves"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "&5A Complete Obsidian Armor Set&r"
+			x: 4.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["108A316D3F4BFE38"]
+			description: ["Aside from the treasure inside the boss chamber, you have now released the rest of the dungeon from the clutches of the dreaded &1Slider&r, you find that the bricks in the walls of the dungeon can be used for deeper magiks.. you should take some with you."]
+			id: "26B018666C63C97F"
+			rewards: [{
+				count: 8
+				id: "4FAECECA73A953E2"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			shape: "octagon"
+			size: 2.0d
+			subtitle: "Imbued with a new kind of magic.."
+			tasks: [{
+				count: 16L
+				id: "3CE64D93B8D4D663"
+				item: "aether:carved_stone"
+				type: "item"
+			}]
+			title: "&6Carved Stone&r"
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["7BF1DBC64ED535E6"]
+			description: ["Now that the &eValkyrie Queen&r has fallen, you notice that the Dungeon Walls are no longer enchanted to be unbreakable. While you aren't certain what good it will be at the moment, you feel that a Stone with such Angelic properties will surely be of use in the &6future&r.."]
+			id: "63DA06491D0E1269"
+			rewards: [{
+				count: 8
+				id: "3C1E149FDDBCDCE1"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			tasks: [{
+				count: 16L
+				id: "1DC238BCBD180CA3"
+				item: "aether:angelic_stone"
+				type: "item"
+			}]
+			title: "&eAngelic Stone&r"
+			x: -5.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["583CBBEC8643FFC4"]
+			description: ["Now that the &4Sun Spirit&r has been defeated, not only has the &eAether&r has been freed from an infinite day, but the walls of the dungeon have been freed from the spirit's clutches and can be destroyed. You should bring some &cHellfire Stone&r with you as it has some very... &ointeresting&r auras coming off of it."]
+			id: "561E3392FED4849A"
+			rewards: [{
+				count: 8
+				id: "0EC7FFC54AADB871"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			subtitle: "It feels warm to the touch"
+			tasks: [{
+				count: 16L
+				id: "3E0785221AE8D197"
+				item: "aether:hellfire_stone"
+				type: "item"
+			}]
+			title: "&cHellfire Stone&r"
+			x: 5.5d
+			y: 1.5d
+		}
+	]
+	title: "Aetherical"
 }

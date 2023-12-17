@@ -1032,6 +1032,13 @@ ServerEvents.recipes(event => {
       fluid: {amount: 90, tag: 'forge:molten_iron'},
       output: {item: 'eidolon:pewter_ingot', count: 2},
     });
+
+    // Make Caminite Brick consume Angelic Stone
+    event.remove({id: 'embers:caminite_bricks'});
+    event.shaped(Item.of('embers:caminite_bricks', 2), [' C ', 'CAC', ' C '], {
+      C: 'embers:caminite_brick',
+      A: 'aether:angelic_stone',
+    });
   };
 
   const waystones = () => {
