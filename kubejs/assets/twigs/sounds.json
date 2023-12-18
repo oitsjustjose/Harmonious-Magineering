@@ -1,0 +1,167 @@
+{
+  "block.rhyolite.break": {
+    "replace": true,
+    "sounds": ["block/tuff/break1", "block/tuff/break2", "block/tuff/break3", "block/tuff/break4"],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.rhyolite.fall": {
+    "replace": true,
+    "sounds": ["block/tuff/step1", "block/tuff/step2", "block/tuff/step3", "block/tuff/step4", "block/tuff/step5", "block/tuff/step6"]
+  },
+  "block.rhyolite.hit": {
+    "replace": true,
+    "sounds": ["block/tuff/step1", "block/tuff/step2", "block/tuff/step3", "block/tuff/step4", "block/tuff/step5", "block/tuff/step6"],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.rhyolite.place": {
+    "replace": true,
+    "sounds": ["block/tuff/break1", "block/tuff/break2", "block/tuff/break3", "block/tuff/break4"],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.rhyolite.step": {
+    "replace": true,
+    "sounds": ["block/tuff/step1", "block/tuff/step2", "block/tuff/step3", "block/tuff/step4", "block/tuff/step5", "block/tuff/step6"],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "block.rhyolite_bricks.break": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "block/tuff/break1",
+        "pitch": 1.3,
+        "volume": 0.92
+      },
+      {
+        "name": "block/tuff/break2",
+        "pitch": 1.3,
+        "volume": 0.92
+      },
+      {
+        "name": "block/tuff/break3",
+        "pitch": 1.3,
+        "volume": 0.92
+      },
+      {
+        "name": "block/tuff/break4",
+        "pitch": 1.3,
+        "volume": 0.92
+      }
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.rhyolite_bricks.fall": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "block/tuff/step1",
+        "pitch": 1.3
+      },
+      {
+        "name": "block/tuff/step2",
+        "pitch": 1.3
+      },
+      {
+        "name": "block/tuff/step3",
+        "pitch": 1.3
+      },
+      {
+        "name": "block/tuff/step4",
+        "pitch": 1.3
+      },
+      {
+        "name": "block/tuff/step5",
+        "pitch": 1.3
+      },
+      {
+        "name": "block/tuff/step6",
+        "pitch": 1.3
+      }
+    ]
+  },
+  "block.rhyolite_bricks.hit": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "block/tuff/step1",
+        "pitch": 1.3
+      },
+      {
+        "name": "block/tuff/step2",
+        "pitch": 1.3
+      },
+      {
+        "name": "block/tuff/step3",
+        "pitch": 1.3
+      },
+      {
+        "name": "block/tuff/step4",
+        "pitch": 1.3
+      },
+      {
+        "name": "block/tuff/step5",
+        "pitch": 1.3
+      },
+      {
+        "name": "block/tuff/step6",
+        "pitch": 1.3
+      }
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.rhyolite_bricks.place": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "block/tuff/break1",
+        "pitch": 1.2,
+        "volume": 0.85
+      },
+      {
+        "name": "block/tuff/break2",
+        "pitch": 1.2,
+        "volume": 0.85
+      },
+      {
+        "name": "block/tuff/break3",
+        "pitch": 1.2,
+        "volume": 0.85
+      },
+      {
+        "name": "block/tuff/break4",
+        "pitch": 1.2,
+        "volume": 0.85
+      }
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.rhyolite_bricks.step": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "block/tuff/step1",
+        "pitch": 1.2
+      },
+      {
+        "name": "block/tuff/step2",
+        "pitch": 1.2
+      },
+      {
+        "name": "block/tuff/step3",
+        "pitch": 1.2
+      },
+      {
+        "name": "block/tuff/step4",
+        "pitch": 1.2
+      },
+      {
+        "name": "block/tuff/step5",
+        "pitch": 1.2
+      },
+      {
+        "name": "block/tuff/step6",
+        "pitch": 1.2
+      }
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  }
+}
