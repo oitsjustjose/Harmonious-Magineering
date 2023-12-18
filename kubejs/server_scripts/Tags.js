@@ -244,10 +244,6 @@ ServerEvents.tags('item', event => {
     event.add('vtweaks:colored_sheetmetal_colored', allButWhite('immersiveengineering', null, 'sheetmetal_colored'));
     event.add('vtweaks:colored_slab_sheetmetal_colored', allButWhite('immersiveengineering', null, 'slab_sheetmetal_colored'));
 
-    // Interiors
-    event.add('vtweaks:colored_chair', allButWhite('interiors', 'chair'));
-    event.add('vtweaks:colored_floor_chair', allButWhite('interiors', 'floor_chair'));
-
     // Supplementaries
     event.add('vtweaks:colored_candle_holder', allColorsOf('supplementaries', null, 'candle_holder'));
     event.add('vtweaks:colored_flag', allButWhite('supplementaries', null, 'flag'));
@@ -523,7 +519,6 @@ ServerEvents.tags('item', event => {
   event.add('minecraft:bookshelf_books', ['ae2:guide', 'aether:book_of_lore', 'eidolon:codex', 'rftoolsbase:manual']);
   /* More Obsidian Variants */
   event.add('forge:obsidian', 'minecraft:crying_obsidian');
-
   event.add('forge:mud', ['regions_unexplored:silt_mud', 'regions_unexplored:peat_mud', 'minecraft:mud']);
 
   event.add('forge:ocean_blocks', [

@@ -84,13 +84,6 @@ ServerEvents.recipes(event => {
     substitute: {item: 'kubejs:unknown_kinetic_item'},
   });
 
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'create',
-    mod: 'create_enchantment_industry',
-    substitute: {item: 'kubejs:unknown_kinetic_item'},
-  });
-
   /* ~~ PnC + ADDONS ~~ */
   event.custom({
     type: 'itemgator:mod',
@@ -112,8 +105,15 @@ ServerEvents.recipes(event => {
     type: 'itemgator:mod',
     tag: 'ie',
     mod: 'immersiveengineering',
-    substitute: {item: 'kubejs:unknown_electric_item'},
+    substitute: {item: 'kubejs:unknown_engineering_item'},
     exceptions: {tag: 'immersiveengineering:exception'},
+  });
+
+  event.custom({
+    type: 'itemgator:mod',
+    tag: 'ae2',
+    mod: 'more_immersive_wires',
+    substitute: {item: 'kubejs:unknown_engineering_item'},
   });
 
   /* ~~ GADGETS ~~ */
@@ -186,13 +186,6 @@ ServerEvents.recipes(event => {
   event.custom({
     type: 'itemgator:mod',
     tag: 'rftools',
-    mod: 'rftoolspower',
-    substitute: {item: 'kubejs:unknown_electric_item'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'rftools',
     mod: 'rftoolsstorage',
     substitute: {item: 'kubejs:unknown_electric_item'},
   });
@@ -211,13 +204,6 @@ ServerEvents.recipes(event => {
     mod: 'ae2',
     substitute: {item: 'kubejs:unknown_electric_item'},
     exceptions: {tag: 'ae2:exception'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'ae2',
-    mod: 'more_immersive_wires',
-    substitute: {item: 'kubejs:unknown_electric_item'},
   });
 
   event.custom({

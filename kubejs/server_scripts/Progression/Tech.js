@@ -1,9 +1,6 @@
 ServerEvents.recipes(event => {
   const items = {
     screen: Item.of('rftoolsbase:information_screen'),
-    powercore: Item.of('rftoolspower:power_core1'),
-    powercore2: Item.of('rftoolspower:power_core2'),
-    powercore3: Item.of('rftoolspower:power_core3'),
     plastic: '#pneumaticcraft:plastic_sheets',
     circuitish: [Item.of('mekanism:basic_control_circuit'), Item.of('pneumaticcraft:printed_circuit_board')],
     template: Item.of('minecraft:paper'),
@@ -28,19 +25,19 @@ ServerEvents.recipes(event => {
       P: items.plastic,
       S: items.screen,
       B: 'create:extendo_grip',
-      C: items.powercore,
+      C: 'kubejs:rf_core',
     });
 
     event.shaped(bG('gadget_exchanging'), ['PPP', ' SP', ' CP'], {
       P: items.plastic,
       S: items.screen,
-      C: items.powercore,
+      C: 'kubejs:rf_core',
     });
 
     event.shaped(bG('gadget_copy_paste'), ['PSP', 'ECE', 'PGP'], {
       P: items.plastic,
       S: items.screen,
-      C: items.powercore2,
+      C: 'kubejs:rf_core',
       E: 'create:empty_schematic',
       G: 'create:extendo_grip',
     });
@@ -48,7 +45,7 @@ ServerEvents.recipes(event => {
     event.shaped(bG('gadget_cut_paste'), ['DSD', 'ECE', 'DGD'], {
       D: '#forge:ingots/steel',
       S: items.screen,
-      C: items.powercore3,
+      C: 'kubejs:rf_core',
       E: 'minecraft:shears',
       G: 'create:extendo_grip',
     });
@@ -56,7 +53,7 @@ ServerEvents.recipes(event => {
     event.shaped(bG('gadget_destruction'), ['DSD', 'DTD', 'DCD'], {
       D: '#forge:ingots/steel',
       S: items.screen,
-      C: items.powercore3,
+      C: 'kubejs:rf_core',
       T: 'minecraft:tnt',
     });
 
@@ -108,19 +105,19 @@ ServerEvents.recipes(event => {
 
     event.shaped('dimstorage:dimensional_chest', ['SSS', 'HCH', 'SSS'], {
       S: '#forge:ingots/steel',
-      H: 'create_enchantment_industry:hyper_experience_bottle',
+      H: 'mekanism:elite_control_circuit',
       C: 'minecraft:ender_chest',
     });
 
-    event.shaped('dimstorage:dimensional_tank', ['SSS', 'HTH', 'SSS'], {
+    event.shaped('dimstorage:dimensional_tank', ['SHS', 'STS', 'SHS'], {
       S: '#forge:ingots/steel',
-      H: 'create_enchantment_industry:hyper_experience_bottle',
+      H: 'mekanism:elite_control_circuit',
       T: ['mekanism:basic_fluid_tank', 'create:fluid_tank'],
     });
 
     event.shaped('dimstorage:dimensional_tablet', ['SSS', 'HWH', 'SSS'], {
       S: '#forge:plates/steel',
-      H: 'create_enchantment_industry:hyper_experience_bottle',
+      H: 'mekanism:elite_control_circuit',
       W: 'rftoolsbase:information_screen',
     });
   };
@@ -172,6 +169,25 @@ ServerEvents.recipes(event => {
     const l = item => `laserio:${item}`;
     event.remove({mod: 'laserio'});
 
+    /**
+     * @param {Internal.ItemStackKJS} result
+     * @param {Internal.Ingredient|Array<Internal.Ingredient>} left
+     * @param {Internal.Ingredient|Array<Internal.Ingredient>} right
+     * @param {Number} cost
+     */
+    const anvilOrDeploy = (result, left, right, cost) => {
+      const useLeft = Array.isArray(left) ? left.map(x => x.toJson()) : left.toJson();
+      const useRight = Array.isArray(right) ? right.map(x => x.toJson()) : right.toJson();
+      event.recipes.create.deploying(result, [useLeft, useRight]);
+      event.custom({
+        type: 'vtweaks:anvil',
+        left: useLeft,
+        right: useRight,
+        result: result.toJson(),
+        cost: cost,
+      });
+    };
+
     event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"laserio:laseriobook"}'), ['minecraft:book', l('laser_connector')]);
 
     event.shaped(l('overclocker_card'), [' P ', 'RCR', 'PSP'], {
@@ -188,30 +204,42 @@ ServerEvents.recipes(event => {
       C: items.circuitish,
     });
 
-    event.shapeless(l('filter_basic'), [items.plastic, 'minecraft:paper']);
-    event.custom({
-      type: 'vtweaks:anvil',
-      left: {item: l('filter_basic')},
-      right: items.circuitish.map(x => x.toJson()),
-      result: {item: l('filter_count')},
-      cost: 1,
+    event.shapeless(l('filter_basic'), [items.plastic, '#forge:chests/wooden']);
+    anvilOrDeploy(Item.of(l('filter_count')), Ingredient.of(l('filter_basic')), items.circuitish, 4);
+    anvilOrDeploy(Item.of(l('filter_tag')), Ingredient.of(l('filter_basic')), Ingredient.of('minecraft:name_tag'), 4);
+    anvilOrDeploy(Item.of(l('filter_mod')), Ingredient.of(l('filter_basic')), Ingredient.of('#minecraft:anvil'), 4);
+    anvilOrDeploy(Item.of(l('filter_nbt')), Ingredient.of(l('filter_basic')), Ingredient.of('#forge:gems/diamond'), 8);
+
+    anvilOrDeploy(Item.of(l('card_item'), 16), Ingredient.of('pneumaticcraft:module_expansion_card'), Ingredient.of('#forge:chests/wooden'), 3);
+    anvilOrDeploy(Item.of(l('card_fluid'), 16), Ingredient.of('pneumaticcraft:module_expansion_card'), Ingredient.of('minecraft:bucket'), 3);
+    anvilOrDeploy(Item.of(l('card_energy'), 16), Ingredient.of('pneumaticcraft:module_expansion_card'), Ingredient.of('rftoolspower:power_core1'), 3);
+    anvilOrDeploy(Item.of(l('card_redstone'), 16), Ingredient.of('pneumaticcraft:module_expansion_card'), Ingredient.of('minecraft:redstone'), 3);
+    anvilOrDeploy(Item.of(l('laser_wrench')), Ingredient.of('rftoolsbase:smartwrench'), Ingredient.of(l('filter_basic')), 5);
+
+    event.shaped(l('card_holder'), ['P P', 'PCP', 'PAP'], {
+      P: items.plastic,
+      C: Item.of('minecraft:bundle').strongNBT(),
+      A: [l('card_item'), l('card_fluid'), l('card_energy'), l('card_redstone')],
     });
 
-    event.custom({
-      type: 'vtweaks:anvil',
-      left: {item: l('filter_basic')},
-      right: {item: 'minecraft:name_tag'},
-      result: {item: l('filter_tag')},
-      cost: 4,
+    event.shaped(l('card_cloner'), ['P P', 'PCP', 'PAP'], {
+      P: items.plastic,
+      C: 'create:empty_schematic',
+      A: [l('card_item'), l('card_fluid'), l('card_energy'), l('card_redstone')],
     });
 
-    event.custom({
-      type: 'vtweaks:anvil',
-      left: {item: l('filter_basic')},
-      right: {tag: 'minecraft:anvil'},
-      result: {item: l('filter_mod')},
-      cost: 4,
+    event.shaped(l('laser_node'), [' P ', 'PRP', ' P '], {
+      P: items.plastic,
+      R: 'minecraft:redstone_block',
     });
+
+    event.shaped(l('laser_connector'), [' R ', 'PNP', 'PPP'], {
+      R: 'minecraft:redstone_torch',
+      P: items.plastic,
+      N: l('laser_node'),
+    });
+
+    anvilOrDeploy(Item.of(l('laser_connector_advanced')), Ingredient.of(l('laser_connector')), Ingredient.of('#forge:storage_blocks/gold'), 6);
   };
 
   const mekanism = () => {
@@ -226,7 +254,7 @@ ServerEvents.recipes(event => {
     event.shaped(mG('mininggadget_simple'), [' PP', 'LCB', ' PP'], {
       L: 'laserio:laser_connector',
       P: items.plastic,
-      B: items.powercore,
+      B: 'kubejs:rf_core',
       C: items.circuitish,
     });
 
@@ -360,7 +388,7 @@ ServerEvents.recipes(event => {
     // Battery
     [1, 2, 3].forEach(tier => {
       const left = tier === 1 ? mG('upgrade_empty') : mG(`upgrade_battery_${tier - 1}`);
-      const right = items[`powercore${tier === 1 ? '' : tier}`];
+      const right = Ingredient.of('kubejs:rf_core');
       event.custom({
         type: 'vtweaks:anvil',
         left: {item: left},

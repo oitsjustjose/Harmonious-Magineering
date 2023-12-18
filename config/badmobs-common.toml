@@ -2636,20 +2636,6 @@
 		#Should the entity spawn via mob conversion? i.e. villager -> zombie
 		allowConversions = true
 
-#Options for the interiors mod.
-[interiors]
-
-	#Spawning options for interiors:big_seat
-	[interiors.big_seat]
-		#Should the entity be allowed to spawn normally?
-		allowNormalSpawning = true
-		#Should spawners be able to spawn the entity?
-		allowSpawners = true
-		#Should spawn eggs be able to spawn the entity?
-		allowSpawnEggs = true
-		#Should the entity spawn via mob conversion? i.e. villager -> zombie
-		allowConversions = true
-
 #Options for the prettypipes mod.
 [prettypipes]
 
@@ -3810,31 +3796,6 @@
 
 	#Spawning options for spawn:ant
 	[spawn.ant]
-		#Should the entity be allowed to spawn normally?
-		allowNormalSpawning = true
-		#Should spawners be able to spawn the entity?
-		allowSpawners = true
-		#Should spawn eggs be able to spawn the entity?
-		allowSpawnEggs = true
-		#Should the entity spawn via mob conversion? i.e. villager -> zombie
-		allowConversions = true
-
-#Options for the create_enchantment_industry mod.
-[create_enchantment_industry]
-
-	#Spawning options for create_enchantment_industry:hyper_experience_orb
-	[create_enchantment_industry.hyper_experience_orb]
-		#Should the entity be allowed to spawn normally?
-		allowNormalSpawning = true
-		#Should spawners be able to spawn the entity?
-		allowSpawners = true
-		#Should spawn eggs be able to spawn the entity?
-		allowSpawnEggs = true
-		#Should the entity spawn via mob conversion? i.e. villager -> zombie
-		allowConversions = true
-
-	#Spawning options for create_enchantment_industry:hyper_experience_bottle
-	[create_enchantment_industry.hyper_experience_bottle]
 		#Should the entity be allowed to spawn normally?
 		allowNormalSpawning = true
 		#Should spawners be able to spawn the entity?

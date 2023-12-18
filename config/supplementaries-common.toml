@@ -217,7 +217,11 @@
 	doormat = true
 	flint_block = true
 	candle_holder = true
-	hat_stand = true
+
+	[building.hat_stand]
+		enabled = true
+		#Allow all items to go on hat stand
+		unrestricted = false
 
 	[building.blackboard]
 		enabled = true

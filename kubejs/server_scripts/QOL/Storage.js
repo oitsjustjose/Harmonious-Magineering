@@ -61,6 +61,13 @@ ServerEvents.recipes(event => {
     Ingredient.of('#forge:storage_blocks/diamond')
   );
 
+  event.remove({id: 'sophisticatedbackpacks:battery_upgrade'});
+  event.shaped('sophisticatedbackpacks:battery_upgrade', ['GRG', 'RBR', 'GRG'], {
+    G: '#forge:ingots/gold',
+    R: 'kubejs:rf_core',
+    B: 'sophisticatedbackpacks:upgrade_base',
+  });
+
   // Framed Storage Drawers
   event.remove({id: 'framedcompactdrawers:framed_compact_drawer'});
   event.remove({id: 'framedcompactdrawers:framed_drawer_controller'});
@@ -175,11 +182,11 @@ ServerEvents.recipes(event => {
   });
 
   event.remove({output: 'storagedrawers:one_stack_upgrade'});
-    event.shaped('storagedrawers:one_stack_upgrade', ['MMM', 'LCL', 'MMM'], {
-      M: 'minecraft:flint',
-      L: '#minecraft:logs',
-      C: 'storagedrawers:upgrade_template',
-    });
+  event.shaped('storagedrawers:one_stack_upgrade', ['MMM', 'LCL', 'MMM'], {
+    M: 'minecraft:flint',
+    L: '#minecraft:logs',
+    C: 'storagedrawers:upgrade_template',
+  });
 
   event.remove({output: 'storagedrawers:void_upgrade'});
   event.shapeless('storagedrawers:void_upgrade', ['trashcans:item_trash_can', 'storagedrawers:upgrade_template']);

@@ -58,10 +58,6 @@ ServerEvents.recipes(event => {
   wash('#vtweaks:colored_sheetmetal_colored', 'immersiveengineering:sheetmetal_colored_white');
   wash('#vtweaks:colored_slab_sheetmetal_colored', 'immersiveengineering:slab_sheetmetal_colored_white');
 
-  // Interiors
-  wash('#vtweaks:colored_chair', 'interiors:white_chair');
-  wash('#vtweaks:colored_floor_chair', 'interiors:white_floor_chair');
-
   // Supplementaries
   wash('#vtweaks:colored_candle_holder', 'supplementaries:candle_holder');
   wash('#vtweaks:colored_flag', 'supplementaries:flag_white');

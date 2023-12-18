@@ -8,5 +8,15 @@ ServerEvents.recipes(event => {
     });
   };
 
-  [coldsweat].forEach(module => module());
+  const supplementaries = () => {
+    event.remove({output: 'supplementaries:sack'});
+  };
+
+  event.shaped('kubejs:rf_core', [' CC', 'SWC', 'SS '], {
+    C: '#forge:plates/copper',
+    S: '#forge:plates/steel',
+    W: 'pneumaticcraft:capacitor',
+  });
+
+  [(coldsweat, supplementaries)].forEach(module => module());
 });

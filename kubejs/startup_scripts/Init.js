@@ -150,5 +150,7 @@ StartupEvents.registry('minecraft:item', event => {
     'unknown_pneumatic_item',
     'unknown_electric_item',
     'unknown_energistic_item',
+    'unknown_engineering_item',
+    'rf_core',
   ].forEach(x => event.create(x));
 });
