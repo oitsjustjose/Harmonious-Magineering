@@ -399,11 +399,16 @@ ServerEvents.recipes(event => {
     });
   };
 
+  const pnc = () => {
+    event.remove({type: 'pneumaticcraft:explosion_crafting'});
+    event.recipes.create.compacting('pneumaticcraft:ingot_iron_compressed', ['#forge:ingots/iron', 'minecraft:tnt']).superheated();
+  };
+
   const rfTools = () => {
     event.remove({output: 'rftoolsbase:dimensionalshard'});
   };
 
-  [ae2, buildingGadgets, chunkloaders, create, dimStorage, entangled, immersiveEngineering, laserIO, mekanism, miningGadgets, rfTools].forEach(
+  [ae2, buildingGadgets, chunkloaders, create, dimStorage, entangled, immersiveEngineering, laserIO, mekanism, miningGadgets, pnc, rfTools].forEach(
     Module => Module()
   );
 });
