@@ -5,6 +5,18 @@
 	group: "237E59D678B7F5E1"
 	icon: "embers:grandhammer"
 	id: "3BD1CF04413936A6"
+	images: [{
+		click: ""
+		corner: false
+		dev: false
+		height: 4.0d
+		hover: [ ]
+		image: "kubejs:textures/quest_images/chapter/embers.png"
+		rotation: 0.0d
+		width: 5.92d
+		x: 0.0d
+		y: -1.5d
+	}]
 	order_index: 3
 	quest_links: [ ]
 	quests: [{

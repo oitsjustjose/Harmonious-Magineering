@@ -5,8 +5,29 @@
 	group: "7ACE386F34E81744"
 	icon: "create:large_cogwheel"
 	id: "03799584BC804083"
+	images: [{
+		click: ""
+		corner: false
+		dev: false
+		height: 2.0d
+		hover: [ ]
+		image: "kubejs:textures/quest_images/chapter/create.png"
+		rotation: 0.0d
+		width: 2.0d
+		x: 0.0d
+		y: 0.0d
+	}]
 	order_index: 0
 	quest_links: [ ]
-	quests: [ ]
+	quests: [{
+		id: "18AFCE909FA8D0DC"
+		tasks: [{
+			id: "02C4149843D55A1E"
+			item: "create:andesite_alloy"
+			type: "item"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
 	title: "No Voltage, No Problem!"
 }

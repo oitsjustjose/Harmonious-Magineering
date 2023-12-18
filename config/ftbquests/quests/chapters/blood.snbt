@@ -5,6 +5,18 @@
 	group: "237E59D678B7F5E1"
 	icon: "bloodmagic:weakbloodshard"
 	id: "1A293DCDB8B8E8B7"
+	images: [{
+		click: ""
+		corner: false
+		dev: false
+		height: 4.0d
+		hover: [ ]
+		image: "kubejs:textures/quest_images/chapter/bloodmagic.png"
+		rotation: 0.0d
+		width: 8.0d
+		x: 0.0d
+		y: -1.0d
+	}]
 	order_index: 2
 	quest_links: [ ]
 	quests: [
@@ -37,35 +49,12 @@
 			]
 			shape: "diamond"
 			size: 2.0d
-			tasks: [
-				{
-					id: "0CF219A408CCB7CB"
-					item: "eidolon:crimson_gem"
-					type: "item"
-				}
-				{
-					count: 2L
-					id: "3F2446851707E4D7"
-					item: "eidolon:arcane_seal"
-					type: "item"
-				}
-				{
-					id: "28184D418A61B758"
-					item: "aether:altar"
-					type: "item"
-				}
-				{
-					count: 4L
-					id: "05E1FD51FDBF27F5"
-					item: "aether:carved_stone"
-					type: "item"
-				}
-				{
-					id: "30CBB29198C10A4B"
-					item: "bloodmagic:altar"
-					type: "item"
-				}
-			]
+			subtitle: "&oUnsavory to say the least..&r"
+			tasks: [{
+				id: "30CBB29198C10A4B"
+				item: "bloodmagic:altar"
+				type: "item"
+			}]
 			title: "Basic Blood Sacrifice"
 			x: 0.0d
 			y: 0.0d
@@ -80,7 +69,378 @@
 				type: "item"
 			}]
 			x: 0.0d
-			y: 3.5d
+			y: 22.0d
+		}
+		{
+			dependencies: ["66810454B2C6116C"]
+			id: "14361626385C1CD1"
+			subtitle: "Very simple, but quite effective"
+			tasks: [{
+				id: "5485A7EA72853E63"
+				item: "bloodmagic:weakbloodorb"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"0901E2EBBDA97388"
+				"0FA3C6AE8BDDED58"
+			]
+			id: "5189D7F09DCEA09B"
+			subtitle: "Now we're talking!"
+			tasks: [{
+				id: "0F4CD60E99A09909"
+				item: "bloodmagic:apprenticebloodorb"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			dependencies: [
+				"7E28CB483C62627B"
+				"453D3762164EB3AA"
+			]
+			id: "40AE7428AF9DEBB1"
+			tasks: [{
+				id: "016E0C74919FCF3B"
+				item: "bloodmagic:magicianbloodorb"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 10.0d
+		}
+		{
+			dependencies: [
+				"57382C8C5C44D0D2"
+				"52A71B5A24ABE047"
+				"1B810F89AA924AC1"
+			]
+			id: "4EADCE8B463D0A34"
+			tasks: [{
+				id: "59D07BA9FC1E1C9E"
+				item: "bloodmagic:masterbloodorb"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 14.0d
+		}
+		{
+			id: "1E7EEA3943C56B47"
+			tasks: [{
+				id: "366D61BEC97F61E0"
+				item: "bloodmagic:archmagebloodorb"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 23.5d
+		}
+		{
+			dependencies: ["40AE7428AF9DEBB1"]
+			id: "52A71B5A24ABE047"
+			tasks: [{
+				dimension: "bloodmagic:dungeon"
+				icon: "bloodmagic:simplekey"
+				id: "6814118E2C84A2D0"
+				type: "dimension"
+			}]
+			title: "&3The Antechamber&r"
+			x: 1.5d
+			y: 12.0d
+		}
+		{
+			dependencies: ["14361626385C1CD1"]
+			id: "0FA3C6AE8BDDED58"
+			subtitle: "We could all use one, hey?"
+			tasks: [{
+				id: "171EB07705425CBC"
+				item: "bloodmagic:blankslate"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["14361626385C1CD1"]
+			id: "0901E2EBBDA97388"
+			subtitle: "The core of larger &4Blood Altars&r!"
+			tasks: [{
+				id: "038786B6DA9B32F4"
+				item: "bloodmagic:blankrune"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["0FA3C6AE8BDDED58"]
+			id: "58BFF9429CC659D3"
+			optional: true
+			shape: "octagon"
+			subtitle: "Keeping tabs on your blood network"
+			tasks: [{
+				id: "1D6F1DF7953ABFE0"
+				item: "bloodmagic:divinationsigil"
+				type: "item"
+			}]
+			x: -4.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["0FA3C6AE8BDDED58"]
+			id: "1A62870CC00E393F"
+			optional: true
+			shape: "octagon"
+			subtitle: "Never too much lava!"
+			tasks: [{
+				id: "283A8374A0406DCC"
+				item: "bloodmagic:lavasigil"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0FA3C6AE8BDDED58"]
+			id: "5BBA88EAD644A0F5"
+			optional: true
+			shape: "octagon"
+			subtitle: "Water's already infinite, but.."
+			tasks: [{
+				id: "1A92419C3E87FACC"
+				item: "bloodmagic:watersigil"
+				type: "item"
+			}]
+			x: -3.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0901E2EBBDA97388"]
+			id: "374FC0E9B29ACB1F"
+			optional: true
+			shape: "octagon"
+			subtitle: "Make sacrifice worthwhile!"
+			tasks: [{
+				id: "2DF7E8C5B5B126BC"
+				item: "bloodmagic:sacrificerune"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0901E2EBBDA97388"]
+			id: "5F704F9ECB1767F0"
+			optional: true
+			shape: "octagon"
+			subtitle: "Storing more LP for the long-run"
+			tasks: [{
+				id: "64575E0FD8976265"
+				item: "bloodmagic:altarcapacityrune"
+				type: "item"
+			}]
+			x: 3.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0901E2EBBDA97388"]
+			id: "5A9F9626EDB58C73"
+			optional: true
+			shape: "octagon"
+			subtitle: "Keeping rituals short and sweet!"
+			tasks: [{
+				id: "4E8FD4C60C553DB9"
+				item: "bloodmagic:speedrune"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["5189D7F09DCEA09B"]
+			id: "453D3762164EB3AA"
+			tasks: [{
+				id: "72152E594A7F97A0"
+				item: "bloodmagic:daggerofsacrifice"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["14361626385C1CD1"]
+			icon: "bloodmagic:soulforge"
+			id: "2E669CE987B261F6"
+			tasks: [
+				{
+					id: "4D4CF2829383F125"
+					item: "bloodmagic:soulforge"
+					type: "item"
+				}
+				{
+					id: "14487CD932A6B6D4"
+					item: "bloodmagic:soulsnare"
+					type: "item"
+				}
+				{
+					id: "663463732E84F0C5"
+					item: {
+						Count: 1b
+						id: "bloodmagic:basemonstersoul"
+						tag: {
+							souls: 5.0d
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Hellfiring"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["2E669CE987B261F6"]
+			icon: {
+				Count: 1b
+				id: "bloodmagic:soulsword"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "3DA799298A2C1E35"
+			shape: "pentagon"
+			tasks: [
+				{
+					id: "46284D9581C33FA8"
+					item: {
+						Count: 1b
+						id: "bloodmagic:soulsword"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1F5738292DE7E9AD"
+					item: {
+						Count: 1b
+						id: "bloodmagic:soulgempetty"
+						tag: {
+							souls: 64.0d
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Harnessing Will"
+			x: 0.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["5189D7F09DCEA09B"]
+			id: "7E28CB483C62627B"
+			tasks: [{
+				id: "7E17D49D0F5F0747"
+				item: "bloodmagic:reinforcedslate"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 8.5d
+		}
+		{
+			dependencies: [
+				"52A71B5A24ABE047"
+				"40AE7428AF9DEBB1"
+			]
+			icon: "bloodmagic:weak_tau"
+			id: "37476053E9DE608B"
+			tasks: [
+				{
+					id: "2725110497AAA08D"
+					item: "bloodmagic:weak_tau"
+					type: "item"
+				}
+				{
+					id: "0F57893048A3AF87"
+					item: "bloodmagic:strong_tau"
+					type: "item"
+				}
+			]
+			title: "Tau Fruit"
+			x: 0.0d
+			y: 11.5d
+		}
+		{
+			dependencies: ["37476053E9DE608B"]
+			id: "1B810F89AA924AC1"
+			shape: "pentagon"
+			tasks: [{
+				id: "331672E7FCF0D554"
+				item: "bloodmagic:weakbloodshard"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 12.5d
+		}
+		{
+			dependencies: ["40AE7428AF9DEBB1"]
+			id: "57382C8C5C44D0D2"
+			tasks: [{
+				id: "6C149BE09E78DB6C"
+				item: "bloodmagic:infusedslate"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 12.0d
+		}
+		{
+			id: "0A6E4582D557383D"
+			tasks: [{
+				id: "5EB881AEFF752F33"
+				item: "bloodmagic:demonslate"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 19.0d
+		}
+		{
+			id: "6A391606207F69AC"
+			tasks: [{
+				id: "24E5FFEAF04C0616"
+				item: "bloodmagic:rawdemonite"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 19.0d
+		}
+		{
+			id: "52E923A38DF4A394"
+			tasks: [{
+				id: "3B68BF93FC04BB9D"
+				item: "bloodmagic:alchemicalreactionchamber"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 15.5d
+		}
+		{
+			id: "17BEA5650586DD06"
+			tasks: [{
+				id: "317749046A4B764E"
+				item: {
+					Count: 1b
+					id: "bloodmagic:basiccuttingfluid"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			x: 1.0d
+			y: 15.5d
 		}
 	]
 	title: "Dark \\& Blood"

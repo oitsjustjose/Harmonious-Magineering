@@ -17,7 +17,7 @@
 		dev: false
 		height: 4.0d
 		hover: [ ]
-		image: "kubejs:textures/quest_images/eidolon.png"
+		image: "kubejs:textures/quest_images/chapter/eidolon.png"
 		rotation: 0.0d
 		width: 5.2d
 		x: 0.0d
