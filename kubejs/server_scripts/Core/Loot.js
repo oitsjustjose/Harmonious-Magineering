@@ -122,6 +122,8 @@ LootJS.modifiers(event => {
     ].forEach(x => {
       event.addLootTableModifier(/.*/).removeLoot(x);
     });
+
+    event.addLootTableModifier(/.*/).replaceLoot('bloodmagic:sulfur', 'eidolon:sulfur');
   };
 
   event.addEntityLootModifier('minecraft:warden').removeLoot(ItemFilter.ALWAYS_TRUE);
