@@ -18,5 +18,5 @@ ServerEvents.recipes(event => {
     W: 'pneumaticcraft:capacitor',
   });
 
-  [(coldsweat, supplementaries)].forEach(module => module());
+  [coldsweat, supplementaries].forEach(module => module());
 });
