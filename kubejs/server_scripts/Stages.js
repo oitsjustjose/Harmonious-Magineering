@@ -109,13 +109,6 @@ ServerEvents.recipes(event => {
     exceptions: {tag: 'immersiveengineering:exception'},
   });
 
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'ae2',
-    mod: 'more_immersive_wires',
-    substitute: {item: 'kubejs:unknown_engineering_item'},
-  });
-
   /* ~~ GADGETS ~~ */
   event.custom({
     type: 'itemgator:mod',
@@ -202,7 +195,7 @@ ServerEvents.recipes(event => {
     type: 'itemgator:mod',
     tag: 'ae2',
     mod: 'ae2',
-    substitute: {item: 'kubejs:unknown_electric_item'},
+    substitute: {item: 'kubejs:unknown_energistic_item'},
     exceptions: {tag: 'ae2:exception'},
   });
 
@@ -210,6 +203,13 @@ ServerEvents.recipes(event => {
     type: 'itemgator:mod',
     tag: 'ae2',
     mod: 'appmek',
-    substitute: {item: 'kubejs:unknown_electric_item'},
+    substitute: {item: 'kubejs:unknown_energistic_item'},
+  });
+
+  event.custom({
+    type: 'itemgator:mod',
+    tag: 'ae2',
+    mod: 'more_immersive_wires',
+    substitute: {item: 'kubejs:unknown_energistic_item'},
   });
 });
