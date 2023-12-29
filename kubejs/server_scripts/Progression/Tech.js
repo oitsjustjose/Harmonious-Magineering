@@ -266,85 +266,16 @@ ServerEvents.recipes(event => {
     steel();
   };
 
-  const laserIO = () => {
-    const l = item => `laserio:${item}`;
-    event.remove({mod: 'laserio'});
-
-    /**
-     * @param {Internal.ItemStackKJS} result
-     * @param {Internal.Ingredient|Array<Internal.Ingredient>} left
-     * @param {Internal.Ingredient|Array<Internal.Ingredient>} right
-     * @param {Number} cost
-     */
-    const anvilOrDeploy = (result, left, right, cost) => {
-      const useLeft = Array.isArray(left) ? left.map(x => x.toJson()) : left.toJson();
-      const useRight = Array.isArray(right) ? right.map(x => x.toJson()) : right.toJson();
-      event.recipes.create.deploying(result, [useLeft, useRight]);
-      event.custom({
-        type: 'vtweaks:anvil',
-        left: useLeft,
-        right: useRight,
-        result: result.toJson(),
-        cost: cost,
-      });
-    };
-
-    event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"laserio:laseriobook"}'), ['minecraft:book', l('laser_connector')]);
-
-    event.shaped(l('overclocker_card'), [' P ', 'RCR', 'PSP'], {
-      P: '#forge:plates/gold',
-      R: 'minecraft:redstone',
-      S: 'minecraft:sugar',
-      C: items.circuitish,
-    });
-
-    event.shaped(l('overclocker_node'), [' P ', 'RCR', 'PSP'], {
-      P: 'minecraft:diamond',
-      R: 'minecraft:redstone',
-      S: 'minecraft:sugar',
-      C: items.circuitish,
-    });
-
-    event.shapeless(l('filter_basic'), [items.plastic, '#forge:chests/wooden']);
-    anvilOrDeploy(Item.of(l('filter_count')), Ingredient.of(l('filter_basic')), items.circuitish, 4);
-    anvilOrDeploy(Item.of(l('filter_tag')), Ingredient.of(l('filter_basic')), Ingredient.of('minecraft:name_tag'), 4);
-    anvilOrDeploy(Item.of(l('filter_mod')), Ingredient.of(l('filter_basic')), Ingredient.of('#minecraft:anvil'), 4);
-    anvilOrDeploy(Item.of(l('filter_nbt')), Ingredient.of(l('filter_basic')), Ingredient.of('#forge:gems/diamond'), 8);
-
-    anvilOrDeploy(Item.of(l('card_item'), 16), Ingredient.of('pneumaticcraft:module_expansion_card'), Ingredient.of('#forge:chests/wooden'), 3);
-    anvilOrDeploy(Item.of(l('card_fluid'), 16), Ingredient.of('pneumaticcraft:module_expansion_card'), Ingredient.of('minecraft:bucket'), 3);
-    anvilOrDeploy(Item.of(l('card_energy'), 16), Ingredient.of('pneumaticcraft:module_expansion_card'), Ingredient.of('rftoolspower:power_core1'), 3);
-    anvilOrDeploy(Item.of(l('card_redstone'), 16), Ingredient.of('pneumaticcraft:module_expansion_card'), Ingredient.of('minecraft:redstone'), 3);
-    anvilOrDeploy(Item.of(l('laser_wrench')), Ingredient.of('rftoolsbase:smartwrench'), Ingredient.of(l('filter_basic')), 5);
-
-    event.shaped(l('card_holder'), ['P P', 'PCP', 'PAP'], {
-      P: items.plastic,
-      C: Item.of('minecraft:bundle').strongNBT(),
-      A: [l('card_item'), l('card_fluid'), l('card_energy'), l('card_redstone')],
-    });
-
-    event.shaped(l('card_cloner'), ['P P', 'PCP', 'PAP'], {
-      P: items.plastic,
-      C: 'create:empty_schematic',
-      A: [l('card_item'), l('card_fluid'), l('card_energy'), l('card_redstone')],
-    });
-
-    event.shaped(l('laser_node'), [' P ', 'PRP', ' P '], {
-      P: items.plastic,
-      R: 'minecraft:redstone_block',
-    });
-
-    event.shaped(l('laser_connector'), [' R ', 'PNP', 'PPP'], {
-      R: 'minecraft:redstone_torch',
-      P: items.plastic,
-      N: l('laser_node'),
-    });
-
-    anvilOrDeploy(Item.of(l('laser_connector_advanced')), Ingredient.of(l('laser_connector')), Ingredient.of('#forge:storage_blocks/gold'), 6);
-  };
-
   const mekanism = () => {
     [Item.of('mekanism:cardboard_box')].forEach(x => event.remove({output: x}));
+
+    event.custom({
+      type: 'immersiveengineering:metal_press',
+      energy: 2400,
+      input: {item: 'mekanism:hdpe_sheet'},
+      mold: 'immersiveengineering:mold_rod',
+      result: {base_ingredient: {item: 'mekanism:hdpe_stick'}, count: 2},
+    });
   };
 
   const miningGadgets = () => {
@@ -353,7 +284,7 @@ ServerEvents.recipes(event => {
     // Mining Gadgets
     event.remove({mod: 'mininggadgets'});
     event.shaped(mG('mininggadget_simple'), [' PP', 'LCB', ' PP'], {
-      L: 'laserio:laser_connector',
+      L: 'minecraft:barrier',
       P: items.plastic,
       B: 'kubejs:rf_core',
       C: items.circuitish,
@@ -531,9 +462,9 @@ ServerEvents.recipes(event => {
     event.remove({mod: 'rftoolsbase'});
     event.remove({mod: 'xnet'});
 
-    event.shaped(Item.of('xnet:netcable_routing', 8), ['CCC', 'CSC', 'CCC'], {
+    event.shaped(Item.of('xnet:netcable_routing', 16), ['CCC', 'CSC', 'CCC'], {
       C: 'mekanism:basic_logistical_transporter',
-      S: 'immersiveengineering:sorter',
+      S: 'mekanism:logistical_sorter',
     });
 
     event.custom({
@@ -581,7 +512,7 @@ ServerEvents.recipes(event => {
 
     event.smithing('xnet:wireless_router', 'mekanism:ultimate_control_circuit', 'xnet:router', 'mekanism:ultimate_control_circuit');
     event.shaped('xnet:antenna', ['RIR', 'RIR', ' I '], {R: '#forge:rods/steel', I: '#forge:ingots/steel'});
-    event.shaped('xnet:antenna_base', [' R ', 'IBI'], {R: '#forge:rods/steel', B: '#forge:storage_blocks/steel', I: '#forge:ingots/steel'});
+    event.shaped('xnet:antenna_base', [' R ', ' R ', 'IBI'], {R: '#forge:rods/steel', B: '#forge:storage_blocks/steel', I: '#forge:ingots/steel'});
     event.shaped('xnet:antenna_dish', ['PPP', 'PPP', ' R '], {R: '#forge:rods/steel', P: '#forge:plates/steel'});
   };
 
@@ -593,7 +524,6 @@ ServerEvents.recipes(event => {
     dimStorage,
     entangled,
     immersiveEngineering,
-    laserIO,
     mekanism,
     miningGadgets,
     pnc,
