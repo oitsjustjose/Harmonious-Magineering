@@ -352,26 +352,6 @@ ServerEvents.tags('item', event => {
       'create:weathered_copper_tiles',
     ]);
 
-    event.add('compressedcreativity:gated', [
-      'compressedcreativity:air_blower',
-      'compressedcreativity:brass_coated_upgrade_matrix',
-      'compressedcreativity:brass_gilded_lapis_lazuli',
-      'compressedcreativity:compressed_air_engine',
-      'compressedcreativity:compressed_iron_casing',
-      'compressedcreativity:engine_rotor',
-      'compressedcreativity:heater',
-      'compressedcreativity:incomplete_mesh_splashing',
-      'compressedcreativity:industrial_air_blower',
-      'compressedcreativity:mechanical_visor_upgrade',
-      'compressedcreativity:mesh_dense',
-      'compressedcreativity:mesh_empty',
-      'compressedcreativity:mesh_haunted',
-      'compressedcreativity:mesh_splashing_frozen',
-      'compressedcreativity:mesh_splashing',
-      'compressedcreativity:mesh_woven',
-      'compressedcreativity:rotational_compressor',
-    ]);
-
     event.add('immersiveengineering:exception', [
       '#forge:dusts',
       '#forge:gems',

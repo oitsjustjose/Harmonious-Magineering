@@ -93,13 +93,6 @@ ServerEvents.recipes(event => {
     exceptions: [{item: 'pneumaticcraft:oil_bucket'}],
   });
 
-  event.custom({
-    type: 'itemgator:ingredient',
-    tag: 'pnc',
-    input: {tag: 'compressedcreativity:gated'},
-    substitute: {item: 'kubejs:unknown_pneumatic_item'},
-  });
-
   /* ~~ IE ~~ */
   event.custom({
     type: 'itemgator:mod',
