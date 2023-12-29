@@ -8,6 +8,7 @@ ServerEvents.recipes(event => {
 
   const ae2 = () => {
     event.replaceInput({mod: 'ae2'}, '#forge:ingots/iron', '#forge:ingots/steel');
+    event.replaceInput({mod: 'aeinfinitybooster'}, 'minecraft:ender_eye', 'ae2:singularity');
     // By the time you get to AE, you'll have power...
     event.remove({id: 'ae2:network/blocks/crank'});
 
@@ -164,11 +165,36 @@ ServerEvents.recipes(event => {
   };
 
   const chunkloaders = () => {
-    event.remove({output: 'chunkloaders:basic_chunk_loader'});
-    event.shaped('chunkloaders:basic_chunk_loader', ['ABA', 'BCB', 'ABA'], {
-      A: '#forge:ingots/steel',
-      B: '#forge:obsidian',
-      C: '#forge:ender_pearls',
+    event.remove({mod: 'chunkloaders'});
+
+    event.shapeless(Item.of('chunkloaders:single_chunk_loader', 9), ['chunkloaders:basic_chunk_loader']);
+    event.shapeless('chunkloaders:basic_chunk_loader', [
+      'chunkloaders:single_chunk_loader',
+      'chunkloaders:single_chunk_loader',
+      'chunkloaders:single_chunk_loader',
+      'chunkloaders:single_chunk_loader',
+      'chunkloaders:single_chunk_loader',
+      'chunkloaders:single_chunk_loader',
+      'chunkloaders:single_chunk_loader',
+      'chunkloaders:single_chunk_loader',
+      'chunkloaders:single_chunk_loader',
+    ]);
+    event.shaped('chunkloaders:basic_chunk_loader', ['IBI', 'BEB', 'IBI'], {
+      B: '#forge:storage_blocks/compressed_iron',
+      I: 'minecraft:blaze_powder',
+      E: 'minecraft:respawn_anchor',
+    });
+
+    event.shaped('chunkloaders:advanced_chunk_loader', ['IBI', 'BEB', 'IBI'], {
+      B: '#forge:ingots/gold',
+      I: '#forge:plates/gold',
+      E: ['minecraft:respawn_anchor', 'chunkloaders:basic_chunk_loader'],
+    });
+
+    event.shaped('chunkloaders:ultimate_chunk_loader', ['IBI', 'BEB', 'IBI'], {
+      B: 'mekanism:alloy_reinforced',
+      I: 'mekanism:enriched_diamond',
+      E: ['minecraft:respawn_anchor', 'chunkloaders:advanced_chunk_loader'],
     });
   };
 
@@ -224,10 +250,9 @@ ServerEvents.recipes(event => {
 
   const entangled = () => {
     event.remove({output: 'entangled:block'});
-    event.shaped('entangled:block', ['ABA', 'BCB', 'ABA'], {
-      A: 'endermanoverhaul:soul_pearl',
-      B: '#forge:obsidian',
-      C: 'dimstorage:dimensional_chest',
+    event.shaped('entangled:block', [' O ', 'OSO', ' O '], {
+      O: '#forge:obsidian',
+      S: 'ae2:singularity',
     });
   };
 
