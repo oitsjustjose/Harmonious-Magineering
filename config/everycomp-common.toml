@@ -116,10 +116,6 @@
 				crystal = true
 				glacia = true
 
-			[general.types.wood_type.enlightened_end]
-				indigo = true
-				cerulean = true
-
 			[general.types.wood_type.regions_unexplored]
 				alpha = true
 				baobab = true

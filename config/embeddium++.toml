@@ -30,7 +30,7 @@
 		#Allowed Values: OFF, FAST, FANCY
 		ChunkFadeInQuality = "FANCY"
 		#Allowed Values: WINDOWED, BORDERLESS, FULLSCREEN
-		BorderlessFullscreen = "WINDOWED"
+		BorderlessFullscreen = "BORDERLESS"
 		ExtendedServerViewDistance = true
 
 	#Configure max Entity distance

@@ -550,8 +550,6 @@ ServerEvents.tags('item', event => {
     'aether_redux:cloudcap_hyphae',
     'aether_redux:springshroom_hyphae',
     'aether_redux:stripped_cloudcap_hyphae',
-    'enlightened_end:indigo_hyphae',
-    'enlightened_end:stripped_indigo_hyphae',
     'minecraft:crimson_hyphae',
     'minecraft:stripped_crimson_hyphae',
     'minecraft:stripped_warped_hyphae',

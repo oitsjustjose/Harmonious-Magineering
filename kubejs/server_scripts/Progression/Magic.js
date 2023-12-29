@@ -838,17 +838,6 @@ ServerEvents.recipes(event => {
       );
     };
 
-    const enlightenedEnd = () => {
-      caging(
-        'enlightened_end:stalker',
-        ['end'],
-        60,
-        [Item.of('enlightened_end:stalker_tooth').withChance(0.0125), Item.of('enlightened_end:raw_stalker').withChance(0.9)],
-        2,
-        true
-      );
-    };
-
     const minecraft = () => {
       // Zombie Variants
       caging('minecraft:drowned', ['ocean'], 75, [Item.of('rotten_flesh').withChance(2.0)], 2, true);
@@ -996,7 +985,7 @@ ServerEvents.recipes(event => {
     };
 
     environments();
-    [aether, creeperOverhaul, ecologics, eidolon, endermanOverhaul, enlightenedEnd, minecraft, naturalist, spawn].forEach(Submodule => Submodule());
+    [aether, creeperOverhaul, ecologics, eidolon, endermanOverhaul, minecraft, naturalist, spawn].forEach(Submodule => Submodule());
   };
 
   const eidolon = () => {

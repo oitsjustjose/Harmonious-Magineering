@@ -291,7 +291,7 @@ ServerEvents.recipes(event => {
     });
 
     event.smithing(mG('mininggadget_fancy'), 'minecraft:netherite_upgrade_smithing_template', mG('mininggadget_simple'), '#forge:ingots/netherite');
-    event.smithing(mG('mininggadget'), 'enlightened_end:adamantite_smithing_template', mG('mininggadget_fancy'), 'enlightened_end:adamantite_block');
+    // event.smithing(mG('mininggadget'), 'enlightened_end:adamantite_smithing_template', mG('mininggadget_fancy'), 'enlightened_end:adamantite_block');
 
     // Base Upgrade
     event.shaped(Item.of(mG('upgrade_empty'), 2), ['NIN', 'IPI', 'NIN'], {
