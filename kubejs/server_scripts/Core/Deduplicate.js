@@ -75,17 +75,6 @@ ServerEvents.recipes(event => {
   /* ~~Eggs:~~ Unify Farmer's Delight Naturalist's Cooked Egg items */
   event.remove({output: 'farmersdelight:fried_egg'});
 
-  /* ~~Blank Modules:~~ Use Mining Gadgets & Mekanism */
-  event.remove({output: 'prettypipes:blank_module'});
-  event.replaceInput({}, 'prettypipes:blank_module', 'mininggadgets:upgrade_empty');
-  event.remove({output: 'modularrouters:blank_upgrade'});
-  event.replaceInput({}, 'modularrouters:blank_upgrade', 'mininggadgets:upgrade_empty');
-  event.remove({output: 'modularrouters:augment_core'});
-  event.replaceInput({}, 'modularrouters:augment_core', 'mininggadgets:upgrade_empty');
-  event.remove({output: 'modularrouters:blank_module'});
-  event.replaceInput({}, 'modularrouters:blank_module', 'mininggadgets:upgrade_empty');
-  event.remove({output: 'modularrouters:extruder_module_2'});
-
   event.remove({id: 'modularrouters:guide_book'});
   event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"modularrouters:book"}'), ['minecraft:book', 'modularrouters:modular_router']);
 
@@ -123,9 +112,6 @@ ServerEvents.recipes(event => {
     {in: 'mekanism:ingot_osmium', out: 'mekanism:ingot_steel'},
     {in: 'mekanism:nugget_osmium', out: 'mekanism:nugget_steel'},
     {in: 'mekanism:nugget_osmium', out: 'mekanism:nugget_steel'},
-    {in: 'modularrouters:augment_core', out: 'mininggadgets:upgrade_empty'},
-    {in: 'modularrouters:blank_module', out: 'mininggadgets:upgrade_empty'},
-    {in: 'modularrouters:blank_upgrade', out: 'mininggadgets:upgrade_empty'},
   ];
 
   // Fiddle through each recipe, checking to see if the recipe contains anything we want to modify.

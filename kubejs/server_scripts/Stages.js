@@ -115,7 +115,6 @@ ServerEvents.recipes(event => {
     tag: 'gadgets',
     mod: 'mininggadgets',
     substitute: {item: 'kubejs:unknown_energistic_item'},
-    exceptions: {item: 'mininggadgets:upgrade_empty'},
   });
 
   event.custom({
