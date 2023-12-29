@@ -163,6 +163,4 @@ ServerEvents.recipes(event => {
   });
 
   // --END-- hacky fuckery
-
-  event.remove({id: 'enlightened_end:cerulean_planks'});
 });
