@@ -1,4 +1,5 @@
 .vscode
+.mixin.out
 /backups
 /config/jei/world
 /config/xaero*
