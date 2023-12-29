@@ -12,10 +12,10 @@
 	[general.tooltips]
 		#Enabled tooltips showing which mod an EC item is from
 		mod_origin_enabled = true
-		#Enabled tooltips showing which block type an EC item is made from
-		block_type_ednabld = true
 		#Only show on advanced settings
 		show_on_advanced_tooltips = false
+		#Enabled tooltips showing which block type an EC item is made from
+		block_type_enabled = true
 
 	[general.types]
 
@@ -106,6 +106,7 @@
 				cruderoot = true
 				conberry = true
 				sunroot = true
+				yagroot = true
 
 			[general.types.wood_type.aether_redux]
 				fieldsprout = true
