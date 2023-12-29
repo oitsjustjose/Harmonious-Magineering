@@ -278,6 +278,16 @@ ServerEvents.recipes(event => {
     });
   };
 
+  const modularRouters = () => {
+    event.replaceInput({output: 'modularrouters:blank_module'}, 'minecraft:paper', items.plastic);
+    event.replaceInput({output: 'modularrouters:blank_upgrade'}, 'minecraft:paper', items.plastic);
+    event.shaped('modularrouters:modular_router', ['EPE', 'PCP', 'EPE'], {
+      P: items.plastic,
+      E: '#forge:ender_pearls',
+      C: 'pneumaticcraft:compressed_iron_block',
+    });
+  };
+
   const pnc = () => {
     event.remove({type: 'pneumaticcraft:explosion_crafting'});
     event.recipes.create.compacting('pneumaticcraft:ingot_iron_compressed', ['#forge:ingots/iron', 'ae2:tiny_tnt']).superheated();
@@ -285,6 +295,12 @@ ServerEvents.recipes(event => {
   };
 
   const prettyPipes = () => {
+    event.remove({output: 'prettypipes:blank_module'});
+    event.shaped(Item.of('prettypipes:blank_module', 8), [' P ', 'PUP', ' P '], {
+      P: items.plastic,
+      U: 'pneumaticcraft:upgrade_matrix',
+    });
+
     event.remove({output: 'prettypipes:pipe'});
     event.shaped(Item.of('prettypipes:pipe', 16), ['IGI'], {I: '#forge:ingots/compressed_iron', G: '#forge:glass/colorless'});
 
@@ -363,7 +379,18 @@ ServerEvents.recipes(event => {
     event.shaped('xnet:antenna_dish', ['PPP', 'PPP', ' R '], {R: '#forge:rods/steel', P: '#forge:plates/steel'});
   };
 
-  [ae2, buildingGadgets, chunkloaders, create, dimStorage, entangled, immersiveEngineering, mekanism, pnc, prettyPipes, rfTools].forEach(Module =>
-    Module()
-  );
+  [
+    ae2,
+    buildingGadgets,
+    chunkloaders,
+    create,
+    dimStorage,
+    entangled,
+    immersiveEngineering,
+    mekanism,
+    modularRouters,
+    pnc,
+    prettyPipes,
+    rfTools,
+  ].forEach(Module => Module());
 });
