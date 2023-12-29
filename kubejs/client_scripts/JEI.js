@@ -68,8 +68,6 @@ JEIEvents.hideItems(event => {
     'kubejs:unknown_holy_item',
     'kubejs:unknown_kinetic_item',
     'kubejs:unknown_pneumatic_item',
-    'laserio:logic_chip_raw',
-    'laserio:logic_chip',
     'mekanism:block_osmium',
     'mekanism:block_raw_osmium',
     'mekanism:cardboard_box',
