@@ -1,5 +1,9 @@
 Platform.setModName('kubejs', 'Harmonious Magineering');
 
+// Map of packed coords vs. timestamps
+const snowRecalcs = {};
+const snowRecalcTimeout = 60000;
+
 ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
   const recipes = {
     'ae2:certus_quartz_axe': Ingredient.of('#forge:gems/certus_quartz'),
@@ -123,6 +127,21 @@ ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
     console.log(ex);
     console.log(event);
   }
+});
+
+// Fix random patches of snow sitting around when they shouldn't be due to serene seasons
+ForgeEvents.onEvent('net.minecraftforge.event.entity.EntityEvent$EnteringSection', event => {
+  if (!event.getEntity().isPlayer()) return;
+  if (!event.didChunkChange()) return;
+
+  let key = event.getPackedNewPos();
+
+  if (Object.keys(snowRecalcs).includes(key)) {
+    if (Date.now() - snowRecalcs[key] > snowRecalcTimeout) return;
+  }
+
+  snowRecalcs[key] = Date.now();
+  event.getEntity().runCommandSilent('/snow recalculate');
 });
 
 ItemEvents.modification(event => {
