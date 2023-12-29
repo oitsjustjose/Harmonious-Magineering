@@ -440,6 +440,19 @@ ServerEvents.recipes(event => {
         tool: {tag: 'bloodmagic:arc/reverter'},
       })
       .id('bloodmagic:arc/reversion/master_blood_orb');
+
+    event.remove({id: 'bloodmagic:altar/daggerofsacrifice'});
+    event
+      .custom({
+        type: 'bloodmagic:altar',
+        altarSyphon: 3000,
+        consumptionRate: 5,
+        drainRate: 5,
+        input: {item: 'aether:vampire_blade'},
+        output: {item: 'bloodmagic:daggerofsacrifice'},
+        upgradeLevel: 1,
+      })
+      .id('bloodmagic:altar/daggerofsacrifice');
   };
 
   const cagedMobs = () => {

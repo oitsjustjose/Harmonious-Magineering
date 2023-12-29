@@ -18,5 +18,7 @@ ServerEvents.recipes(event => {
     W: 'pneumaticcraft:capacitor',
   });
 
-  [(coldsweat, supplementaries)].forEach(module => module());
+  event.remove({mod: 'ftbquests'});
+
+  [coldsweat, supplementaries].forEach(module => module());
 });

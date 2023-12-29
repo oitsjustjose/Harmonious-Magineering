@@ -1,14 +1,114 @@
 ServerEvents.recipes(event => {
   const items = {
-    screen: Item.of('rftoolsbase:information_screen'),
+    screen: Item.of('supplementaries:crystal_display'),
     plastic: '#pneumaticcraft:plastic_sheets',
     circuitish: [Item.of('mekanism:basic_control_circuit'), Item.of('pneumaticcraft:printed_circuit_board')],
     template: Item.of('minecraft:paper'),
   };
 
   const ae2 = () => {
+    event.replaceInput({mod: 'ae2'}, '#forge:ingots/iron', '#forge:ingots/steel');
+    // By the time you get to AE, you'll have power...
+    event.remove({id: 'ae2:network/blocks/crank'});
+
+    // Silicon redux
     event.remove({id: 'ae2:blasting/silicon_from_certus_quartz_dust'});
     event.remove({id: 'ae2:smelting/silicon_from_certus_quartz_dust'});
+    event.recipes.create.compacting(Item.of('ae2:silicon', 2), [Item.of('mekanism:dust_quartz'), Item.of('mekanism:dust_coal')]).superheated();
+    event.custom({
+      type: 'mekanism:metallurgic_infusing',
+      chemicalInput: {amount: 10, tag: 'mekanism:carbon'},
+      itemInput: {ingredient: {item: 'minecraft:quartz'}},
+      output: {item: 'ae2:silicon', count: 2},
+    });
+
+    // Dusts shouldn't be made in the inscriber..
+    event.remove({id: 'ae2:inscriber/certus_quartz_dust'});
+    event.remove({id: 'ae2:inscriber/ender_dust'});
+    event.remove({id: 'ae2:inscriber/fluix_dust'});
+    event.remove({id: 'ae2:inscriber/sky_stone_dust'});
+
+    event.custom({type: 'mekanism:crushing', input: {ingredient: {tag: 'forge:ender_pearls'}}, output: {item: 'ae2:ender_dust'}});
+
+    // Use Skystone Dust in more recipes - it's massively under-utilized :/
+    event.replaceInput({output: 'ae2:cell_component_1k'}, '#forge:dusts', 'ae2:sky_dust');
+    event.replaceInput({output: 'ae2:cell_component_4k'}, '#forge:dusts', 'ae2:sky_dust');
+    event.replaceInput({output: 'ae2:cell_component_16k'}, '#forge:dusts', 'ae2:sky_dust');
+    event.replaceInput({output: 'ae2:cell_component_64k'}, '#forge:dusts', 'ae2:sky_dust');
+    event.replaceInput({output: 'ae2:cell_component_256k'}, '#forge:dusts', 'ae2:sky_dust');
+
+    // Use Copper Wiring in processor recipes
+    event.remove({id: 'ae2:inscriber/logic_processor'});
+    event.custom({
+      type: 'ae2:inscriber',
+      mode: 'press',
+      ingredients: {
+        bottom: {item: 'ae2:printed_silicon'},
+        middle: {tag: 'forge:wires/copper'},
+        top: {item: 'ae2:printed_logic_processor'},
+      },
+      result: {item: 'ae2:logic_processor'},
+    });
+
+    event.remove({id: 'ae2:inscriber/engineering_processor'});
+    event.custom({
+      type: 'ae2:inscriber',
+      mode: 'press',
+      ingredients: {
+        bottom: {item: 'ae2:printed_silicon'},
+        middle: {tag: 'forge:wires/copper'},
+        top: {item: 'ae2:printed_engineering_processor'},
+      },
+      result: {item: 'ae2:engineering_processor'},
+    });
+
+    event.remove({id: 'ae2:inscriber/calculation_processor'});
+    event.custom({
+      type: 'ae2:inscriber',
+      mode: 'press',
+      ingredients: {
+        bottom: {item: 'ae2:printed_silicon'},
+        middle: {tag: 'forge:wires/copper'},
+        top: {item: 'ae2:printed_calculation_processor'},
+      },
+      result: {item: 'ae2:calculation_processor'},
+    });
+
+    // Use mekanism circuits for the printed circuits
+    event.remove({id: 'ae2:inscriber/calculation_processor_print'});
+    event.remove({id: 'ae2:inscriber/engineering_processor_print'});
+    event.remove({id: 'ae2:inscriber/logic_processor_print'});
+
+    // Basic Control Circuit -> Logic Processor
+    event.custom({
+      type: 'ae2:inscriber',
+      mode: 'inscribe',
+      ingredients: {
+        middle: {tag: 'forge:circuits/basic'},
+        top: {item: 'ae2:logic_processor_press'},
+      },
+      result: {item: 'ae2:printed_logic_processor'},
+    });
+    // Advanced Control Circuit -> Calculation Processor
+    event.custom({
+      type: 'ae2:inscriber',
+      mode: 'inscribe',
+      ingredients: {
+        middle: {tag: 'forge:circuits/advanced'},
+        top: {item: 'ae2:calculation_processor_press'},
+      },
+      result: {item: 'ae2:printed_calculation_processor'},
+    });
+    // Elite Control Circuit -> Engineering Processor
+    event.custom({
+      type: 'ae2:inscriber',
+      mode: 'inscribe',
+      ingredients: {
+        middle: {tag: 'forge:circuits/elite'},
+        top: {item: 'ae2:engineering_processor_press'},
+      },
+      result: {item: 'ae2:printed_engineering_processor'},
+    });
   };
 
   const buildingGadgets = () => {
@@ -118,7 +218,7 @@ ServerEvents.recipes(event => {
     event.shaped('dimstorage:dimensional_tablet', ['SSS', 'HWH', 'SSS'], {
       S: '#forge:plates/steel',
       H: 'mekanism:elite_control_circuit',
-      W: 'rftoolsbase:information_screen',
+      W: items.screen,
     });
   };
 
@@ -161,6 +261,7 @@ ServerEvents.recipes(event => {
     event.remove({id: mod('alloysmelter/bronze')});
     event.replaceInput({output: mod('hammer')}, '#forge:ingots/iron', '#forge:ingots/steel');
     event.replaceInput({output: mod('wirecutter')}, '#forge:ingots/iron', '#forge:ingots/steel');
+    event.remove({input: mod('wirecutter'), output: '#forge:wires'});
 
     steel();
   };
@@ -401,14 +502,102 @@ ServerEvents.recipes(event => {
 
   const pnc = () => {
     event.remove({type: 'pneumaticcraft:explosion_crafting'});
-    event.recipes.create.compacting('pneumaticcraft:ingot_iron_compressed', ['#forge:ingots/iron', 'minecraft:tnt']).superheated();
+    event.recipes.create.compacting('pneumaticcraft:ingot_iron_compressed', ['#forge:ingots/iron', 'ae2:tiny_tnt']).superheated();
+    event.recipes.create.compacting('pneumaticcraft:compressed_iron_block', ['#forge:storage_blocks/iron', 'minecraft:tnt']).superheated();
+  };
+
+  const prettyPipes = () => {
+    event.remove({output: 'prettypipes:pipe'});
+    event.shaped(Item.of('prettypipes:pipe', 16), ['IGI'], {I: '#forge:ingots/compressed_iron', G: '#forge:glass/colorless'});
+
+    event.remove({output: 'prettypipes:pressurizer'});
+    event.smithing('prettypipes:pressurizer', 'pneumaticcraft:pressure_gauge', 'pneumaticcraft:pressure_chamber_valve', 'prettypipes:pipe');
+
+    event.remove({output: 'prettypipes:item_terminal'});
+    event.shaped('prettypipes:item_terminal', ['DSC', 'EHR', 'CSD'], {
+      C: 'pneumaticcraft:compressed_iron_block',
+      D: 'minecraft:diamond',
+      E: 'prettypipes:high_extraction_module',
+      H: '#forge:chests/wooden',
+      R: 'prettypipes:high_retrieval_module',
+      S: items.screen,
+    });
+
+    event.remove({output: 'prettypipes:crafting_terminal'});
+    event.smithing('prettypipes:crafting_terminal', 'minecraft:crafting_table', 'prettypipes:item_terminal', 'minecraft:crafting_table');
   };
 
   const rfTools = () => {
-    event.remove({output: 'rftoolsbase:dimensionalshard'});
+    event.remove({mod: 'rftoolsbase'});
+    event.remove({mod: 'xnet'});
+
+    event.shaped(Item.of('xnet:netcable_routing', 8), ['CCC', 'CSC', 'CCC'], {
+      C: 'mekanism:basic_logistical_transporter',
+      S: 'immersiveengineering:sorter',
+    });
+
+    event.custom({
+      type: 'vtweaks:fluid_conversion',
+      input: Ingredient.of(['xnet:netcable_red', 'xnet:netcable_green', 'xnet:netcable_blue', 'xnet:netcable_yellow']).toJson(),
+      output: Item.of('xnet:netcable_routing').toJson(),
+      fluid: 'minecraft:water',
+    });
+
+    event.shapeless('xnet:connector_routing', ['xnet:netcable_routing', 'mekanism:basic_control_circuit']);
+    event.shapeless('xnet:advanced_connector_routing', ['xnet:netcable_routing', 'mekanism:elite_control_circuit']);
+
+    ['red', 'green', 'blue', 'yellow'].forEach(color => {
+      // Base Cable
+      event.shaped(Item.of(`xnet:netcable_${color}`, 8), ['CCC', 'CDC', 'CCC'], {
+        C: '#xnet:cables',
+        D: `#forge:dyes/${color}`,
+      });
+      event.shapeless(`xnet:netcable_${color}`, ['#xnet:cables', `#forge:dyes/${color}`]);
+
+      // Connectors
+      event.shapeless(`xnet:connector_${color}`, [`xnet:netcable_${color}`, 'mekanism:basic_control_circuit']);
+      event.shapeless(`xnet:advanced_connector_${color}`, [`xnet:netcable_${color}`, 'mekanism:elite_control_circuit']);
+    });
+
+    event.shapeless('xnet:redstone_proxy', ['entangled:block', 'minecraft:redstone_torch']);
+    event.shapeless('xnet:redstone_proxy_upd', ['entangled:block', 'minecraft:redstone_torch', 'minecraft:observer']);
+
+    event.shaped(Item.of('xnet:facade', 16), ['PPP', 'PCP', 'PPP'], {
+      P: 'minecraft:paper',
+      C: '#xnet:cables',
+    });
+
+    event.shaped('xnet:controller', ['SSS', 'HPH', 'SSS'], {
+      H: 'mekanism:hdpe_sheet',
+      P: 'mekanism:ultimate_control_circuit',
+      S: '#forge:ingots/steel',
+    });
+
+    event.shaped('xnet:router', ['SSS', 'RPR', 'SSS'], {
+      R: 'xnet:netcable_routing',
+      P: 'mekanism:basic_control_circuit',
+      S: '#forge:ingots/steel',
+    });
+
+    event.smithing('xnet:wireless_router', 'mekanism:ultimate_control_circuit', 'xnet:router', 'mekanism:ultimate_control_circuit');
+    event.shaped('xnet:antenna', ['RIR', 'RIR', ' I '], {R: '#forge:rods/steel', I: '#forge:ingots/steel'});
+    event.shaped('xnet:antenna_base', [' R ', 'IBI'], {R: '#forge:rods/steel', B: '#forge:storage_blocks/steel', I: '#forge:ingots/steel'});
+    event.shaped('xnet:antenna_dish', ['PPP', 'PPP', ' R '], {R: '#forge:rods/steel', P: '#forge:plates/steel'});
   };
 
-  [ae2, buildingGadgets, chunkloaders, create, dimStorage, entangled, immersiveEngineering, laserIO, mekanism, miningGadgets, pnc, rfTools].forEach(
-    Module => Module()
-  );
+  [
+    ae2,
+    buildingGadgets,
+    chunkloaders,
+    create,
+    dimStorage,
+    entangled,
+    immersiveEngineering,
+    laserIO,
+    mekanism,
+    miningGadgets,
+    pnc,
+    prettyPipes,
+    rfTools,
+  ].forEach(Module => Module());
 });
