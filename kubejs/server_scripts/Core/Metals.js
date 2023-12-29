@@ -134,6 +134,12 @@ ServerEvents.recipes(event => {
     create(Ingredient.of('#forge:ingots/aluminum'), Ingredient.of('immersiveengineering:plate_aluminum'));
   };
 
+  const rods = () => {
+    event.remove({id: 'immersiveengineering:crafting/stick_aluminum'});
+    event.remove({id: 'immersiveengineering:crafting/stick_iron'});
+    event.remove({id: 'immersiveengineering:crafting/stick_steel'});
+  };
+
   const silverAndLead = () => {
     // Replace all Silver & Lead inputs to prioritize Ember's -- this is because of my weird preferences -_-
     [
@@ -152,8 +158,5 @@ ServerEvents.recipes(event => {
     });
   };
 
-  nuggetsFromSmelting();
-  nukeOsmium();
-  plateCompat();
-  silverAndLead();
+  [nuggetsFromSmelting, nukeOsmium, plateCompat, rods, silverAndLead].forEach(module => module());
 });
