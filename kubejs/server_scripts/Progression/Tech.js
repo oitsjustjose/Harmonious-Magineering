@@ -311,6 +311,10 @@ ServerEvents.recipes(event => {
       E: '#forge:ender_pearls',
       C: 'pneumaticcraft:compressed_iron_block',
     });
+
+    event.remove({output: '/modularrouters:extruder_module_2/'});
+    event.remove({output: '/modularrouters:extruder_module_1/'});
+    event.remove({output: '/modularrouters:breaker_module/'});
   };
 
   const pnc = () => {

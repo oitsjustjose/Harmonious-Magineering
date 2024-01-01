@@ -78,7 +78,7 @@ ServerEvents.recipes(event => {
   event.remove({id: 'modularrouters:guide_book'});
   event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"modularrouters:book"}'), ['minecraft:book', 'modularrouters:modular_router']);
 
-  /* ~~eIngots:~~ Preemptive Cleanup :) */
+  /* ~~Ingots:~~ Preemptive Cleanup :) */
   event.remove({id: 'create:blasting/ingot_osmium_compat_mekanism'});
   event.remove({id: 'create:smelting/ingot_osmium_compat_mekanism'});
   event.remove({id: 'immersiveengineering:crafting/storage_steel_to_ingot_steel'});
@@ -92,6 +92,10 @@ ServerEvents.recipes(event => {
   event.remove({id: 'mekanism:processing/osmium/ingot/from_ore_smelting'});
   event.remove({id: 'mekanism:processing/osmium/ingot/from_raw_blasting'});
   event.remove({id: 'mekanism:processing/osmium/ingot/from_raw_smelting'});
+
+  /* ~~ Dough:~~ Smol dedup! */
+  event.replaceInput({}, 'create:dough', 'farmersdelight:wheat_dough');
+  event.replaceOutput({output: 'create:dough'}, 'create:dough', 'farmersdelight:wheat_dough');
 
   // --BEGIN-- hacky fuckery
   // This chunk of code below is a result of replaceInput not working for tags right now
