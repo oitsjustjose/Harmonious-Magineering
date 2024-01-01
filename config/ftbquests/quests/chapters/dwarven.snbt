@@ -20,20 +20,25 @@
 	order_index: 3
 	quest_links: [ ]
 	quests: [{
-		dependencies: ["5780D21D153AF10D"]
+		dependencies: [
+			"5780D21D153AF10D"
+			"44D69C73A8D34FB9"
+		]
+		dependency_requirement: "one_completed"
 		hide: true
 		id: "70FFC8521726C961"
 		shape: "diamond"
 		size: 2.0d
-		subtitle: "Primitive but Powerful"
+		subtitle: "No bonks allowed"
 		tasks: [{
 			id: "109218C1D54D84F1"
 			item: "embers:tinker_hammer"
 			type: "item"
 		}]
-		title: "Dwarven Tech"
+		title: "The Tinkers Hammer"
 		x: 0.0d
 		y: 0.0d
 	}]
-	title: "Dwarven"
+	subtitle: ["&eDwarven Delight&r"]
+	title: "&6Embers&r"
 }

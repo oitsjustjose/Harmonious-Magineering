@@ -681,5 +681,6 @@
 			y: 15.5d
 		}
 	]
-	title: "Supernatural"
+	subtitle: ["&dDiety or Demon?&r"]
+	title: "&5Eidolon&r"
 }

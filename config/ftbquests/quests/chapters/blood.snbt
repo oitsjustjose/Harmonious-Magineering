@@ -22,6 +22,11 @@
 	quests: [
 		{
 			dependencies: ["26B018666C63C97F"]
+			description: [
+				"As you return from your exploration in the sky, you begin to wonder if perhaps there are more advanced magiks that can be reached by means of sacrificial rituals.. perhaps a &4Blood Altar&r can be fashioned from the &6Carved Stone&r you obtained and would allow you to perform some crude self-sacrifice rituals..."
+				"{@pagebreak}"
+				"[ \"If you feel even slightly uncomfortable with the idea of self-sacrifice / self-harm, I totally understand and don't want you to feel this way at all! If this is the case, \", { \"text\": \"click here\", \"color\": \"gold\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"44D69C73A8D34FB9\" } }, \" to skip this entire quest chapter!\" ]"
+			]
 			hide: true
 			icon: "bloodmagic:altar"
 			id: "66810454B2C6116C"
@@ -60,21 +65,55 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["37476053E9DE608B"]
+			description: [
+				"The &4Sanguine Scientiem&r has filled you with even more knowledge about dungeon delving as you;ve progressed. As it happens, the &3Antechamber&r was just the beginning of the ritual-driven dungeons - you've read that the &9Endless Realm&r is a significantly more difficult roguelike dungeon that contains the occasional Demonite in the walls of some rooms. "
+				""
+				"As you explore and find Demonite, you begin to wonder what other uses such a durable metal has..."
+			]
+			icon: "bloodmagic:ingot_hellforged"
 			id: "5780D21D153AF10D"
-			shape: "octagon"
-			size: 2.0d
-			tasks: [{
-				id: "41D8E03FB9756A4C"
-				item: "bloodmagic:ingot_hellforged"
+			rewards: [{
+				count: 12
+				id: "3E5355DA5E767C2A"
+				item: "create:experience_nugget"
+				random_bonus: 12
 				type: "item"
 			}]
+			shape: "octagon"
+			size: 2.0d
+			tasks: [
+				{
+					icon: "bloodmagic:dungeon_ore"
+					id: "7D8707B4AFA06BD9"
+					observe_type: 0
+					timer: 0L
+					title: "Find Demonite in the Mines"
+					to_observe: "bloodmagic:dungeon_ore"
+					type: "observation"
+				}
+				{
+					id: "010F3F808A9A644D"
+					item: "bloodmagic:ingot_hellforged"
+					type: "item"
+				}
+			]
+			title: "Hellforged Metals"
 			x: 0.0d
-			y: 22.0d
+			y: 13.5d
 		}
 		{
 			dependencies: ["66810454B2C6116C"]
+			description: ["As you study the pool of blood stored within the &4Blood Altar&r, you realize that there's potential to turn a Crimson Gem into something much more than the sum of its parts... perhaps a primitive blood orb of sorts would unlock the ability to permanently store blood in the form of Life Essence within a type of &bSoul Network&r."]
 			id: "14361626385C1CD1"
-			subtitle: "Very simple, but quite effective"
+			rewards: [{
+				count: 4
+				id: "638FD97424FC922F"
+				item: "create:experience_nugget"
+				random_bonus: 4
+				type: "item"
+			}]
+			subtitle: "Starting a primitive &bSoul Network&r"
 			tasks: [{
 				id: "5485A7EA72853E63"
 				item: "bloodmagic:weakbloodorb"
@@ -88,83 +127,86 @@
 				"0901E2EBBDA97388"
 				"0FA3C6AE8BDDED58"
 			]
+			description: ["As you've expanded your &4Blood Altar&r, you discover that Ender Pearls may serve as a means to create an improved Blood Orb. With this new Blood Orb comes the ability to use it in more complex crafting recipes, but also an increase in Life Essence storage within your &bSoul Network&r!"]
 			id: "5189D7F09DCEA09B"
-			subtitle: "Now we're talking!"
+			rewards: [{
+				count: 5
+				id: "4E0B5162B77C8397"
+				item: "create:experience_nugget"
+				random_bonus: 5
+				type: "item"
+			}]
+			subtitle: "Enhancing your &bSoul Network&r"
 			tasks: [{
 				id: "0F4CD60E99A09909"
 				item: "bloodmagic:apprenticebloodorb"
 				type: "item"
 			}]
 			x: 0.0d
-			y: 7.0d
+			y: 5.0d
 		}
 		{
-			dependencies: [
-				"7E28CB483C62627B"
-				"453D3762164EB3AA"
+			dependencies: ["5189D7F09DCEA09B"]
+			description: [
+				"As you further your reading in the &4Sanguine Scientiem&r, you find an entire chapter describing a ritual that allows you to enter some type of unending dungeon in what it refers to as the \"&6Antechamber&r\". Perhaps this new dungeon will come with great rewards, but be warned that these rewards may come at great risk of your wellbeing.."
+				""
+				"Be warned, the Antechamber exists in a space between realms.. it's inadvisable to go mining around too much in this realm or else you may risk falling into &0The Void&r"
 			]
-			id: "40AE7428AF9DEBB1"
-			tasks: [{
-				id: "016E0C74919FCF3B"
-				item: "bloodmagic:magicianbloodorb"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 10.0d
-		}
-		{
-			dependencies: [
-				"57382C8C5C44D0D2"
-				"52A71B5A24ABE047"
-				"1B810F89AA924AC1"
-			]
-			id: "4EADCE8B463D0A34"
-			tasks: [{
-				id: "59D07BA9FC1E1C9E"
-				item: "bloodmagic:masterbloodorb"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 14.0d
-		}
-		{
-			id: "1E7EEA3943C56B47"
-			tasks: [{
-				id: "366D61BEC97F61E0"
-				item: "bloodmagic:archmagebloodorb"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 23.5d
-		}
-		{
-			dependencies: ["40AE7428AF9DEBB1"]
+			icon: "bloodmagic:simplekey"
 			id: "52A71B5A24ABE047"
+			rewards: [{
+				count: 10
+				id: "304C9E1BEEBBF1C8"
+				item: "create:experience_nugget"
+				random_bonus: 10
+				type: "item"
+			}]
+			subtitle: "The dungeon dimension"
 			tasks: [{
 				dimension: "bloodmagic:dungeon"
-				icon: "bloodmagic:simplekey"
+				icon: "bloodmagic:inversion_pillar"
 				id: "6814118E2C84A2D0"
+				title: "Enter the Antechamber"
 				type: "dimension"
 			}]
 			title: "&3The Antechamber&r"
-			x: 1.5d
-			y: 12.0d
+			x: 0.0d
+			y: 7.0d
 		}
 		{
 			dependencies: ["14361626385C1CD1"]
+			description: ["You've read in the &4Sanguine Scientiem&r that Blank Slates are the key to many various Blood Magiks, including a selection of sigils which seem to utilize the Life Essence stored in your &bSoul Network&r to work."]
 			id: "0FA3C6AE8BDDED58"
+			rewards: [{
+				count: 8
+				id: "4ADBA9BD9E68FD64"
+				item: "aether:carved_stone"
+				type: "item"
+			}]
 			subtitle: "We could all use one, hey?"
 			tasks: [{
 				id: "171EB07705425CBC"
 				item: "bloodmagic:blankslate"
 				type: "item"
 			}]
+			title: "Blank Slates"
 			x: -1.5d
-			y: 4.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["14361626385C1CD1"]
+			description: [
+				"The &4Sanguine Scientiem&r indicates that Blank Runes can be used as a bare minimum means to improve your &4Blood Altar&r. With 8 of these runes surrounding the base of the &4Blood Altar&r, you can upgrade it to a \"Tier II\" altar which is capable of storing more Life Essence and crafting even more than before!"
+				""
+				"In addition to Blank Runes, you can replace these runes in any tier of &4Blood Altar&r with augmented variants of this rune to improve Life Essence yield, storage, crafting speed and more!"
+			]
 			id: "0901E2EBBDA97388"
+			rewards: [{
+				count: 6
+				id: "30075796C4D1187C"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
 			subtitle: "The core of larger &4Blood Altars&r!"
 			tasks: [{
 				id: "038786B6DA9B32F4"
@@ -172,107 +214,54 @@
 				type: "item"
 			}]
 			x: 1.5d
-			y: 4.5d
-		}
-		{
-			dependencies: ["0FA3C6AE8BDDED58"]
-			id: "58BFF9429CC659D3"
-			optional: true
-			shape: "octagon"
-			subtitle: "Keeping tabs on your blood network"
-			tasks: [{
-				id: "1D6F1DF7953ABFE0"
-				item: "bloodmagic:divinationsigil"
-				type: "item"
-			}]
-			x: -4.0d
-			y: 4.5d
-		}
-		{
-			dependencies: ["0FA3C6AE8BDDED58"]
-			id: "1A62870CC00E393F"
-			optional: true
-			shape: "octagon"
-			subtitle: "Never too much lava!"
-			tasks: [{
-				id: "283A8374A0406DCC"
-				item: "bloodmagic:lavasigil"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 6.0d
-		}
-		{
-			dependencies: ["0FA3C6AE8BDDED58"]
-			id: "5BBA88EAD644A0F5"
-			optional: true
-			shape: "octagon"
-			subtitle: "Water's already infinite, but.."
-			tasks: [{
-				id: "1A92419C3E87FACC"
-				item: "bloodmagic:watersigil"
-				type: "item"
-			}]
-			x: -3.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["0901E2EBBDA97388"]
-			id: "374FC0E9B29ACB1F"
-			optional: true
-			shape: "octagon"
-			subtitle: "Make sacrifice worthwhile!"
-			tasks: [{
-				id: "2DF7E8C5B5B126BC"
-				item: "bloodmagic:sacrificerune"
-				type: "item"
-			}]
-			x: 3.5d
-			y: 3.0d
-		}
-		{
-			dependencies: ["0901E2EBBDA97388"]
-			id: "5F704F9ECB1767F0"
-			optional: true
-			shape: "octagon"
-			subtitle: "Storing more LP for the long-run"
-			tasks: [{
-				id: "64575E0FD8976265"
-				item: "bloodmagic:altarcapacityrune"
-				type: "item"
-			}]
-			x: 3.5d
-			y: 6.0d
-		}
-		{
-			dependencies: ["0901E2EBBDA97388"]
-			id: "5A9F9626EDB58C73"
-			optional: true
-			shape: "octagon"
-			subtitle: "Keeping rituals short and sweet!"
-			tasks: [{
-				id: "4E8FD4C60C553DB9"
-				item: "bloodmagic:speedrune"
-				type: "item"
-			}]
-			x: 4.0d
-			y: 4.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["5189D7F09DCEA09B"]
+			description: [
+				"After enough reading, the &4Sanguine Scientiem&r seems to indicate that feeding a &cVampiric Blade&r with enough blood will curse the blade with an unending hunger that can never be fulfilled. With this curse comes the ability to devour creatures near a &4Blood Altar&r in a single slash, draining the creatures of all of their blood and siphoning it directly into the altar."
+				""
+				"Perhaps this is the answer to ending the self-sacrifice you've had to take part in until now?"
+			]
 			id: "453D3762164EB3AA"
+			rewards: [{
+				count: 10
+				id: "10C78DE1FE8271C2"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			subtitle: "An insatiable hunger"
 			tasks: [{
 				id: "72152E594A7F97A0"
 				item: "bloodmagic:daggerofsacrifice"
 				type: "item"
 			}]
 			x: 1.5d
-			y: 8.5d
+			y: 5.0d
 		}
 		{
-			dependencies: ["14361626385C1CD1"]
+			dependencies: [
+				"14361626385C1CD1"
+				"171EB07705425CBC"
+			]
+			description: [
+				"dIt seems as though the life of all living creatures can be harvested in multiple ways, but the most simple of those is to harvest the &o&bWill&r of the creature. By doing so, it can be harnessed to create other tools and constructs for your own use."
+				""
+				"To harvest the &bWill&r of a creature, you will need to entrap it with a Soul Snare. It may take multiple Snares to entrap it, but you know it has worked when you see white particles eminating from the creature. Once the snare has been put to use, killing the creature will yield &3Demon Will&r."
+				""
+				"With this, you are able to perform many different crafts at a Hellfire Forge - the &4Sanguine Scientiem&r suggests a &6Petty Tartaric Gem&r for starters, but eventually you'll be able to forge weapons that will harvest the &bWill&r from creatures without the need of a snare."
+			]
+			hide: true
 			icon: "bloodmagic:soulforge"
 			id: "2E669CE987B261F6"
+			rewards: [{
+				count: 3
+				id: "4A286C101C9DFBA2"
+				item: "bloodmagic:soulsnare"
+				random_bonus: 3
+				type: "item"
+			}]
+			subtitle: "Demonic Wills and where to find them!"
 			tasks: [
 				{
 					id: "4D4CF2829383F125"
@@ -296,67 +285,47 @@
 					type: "item"
 				}
 			]
-			title: "Hellfiring"
-			x: 0.0d
-			y: 4.0d
-		}
-		{
-			dependencies: ["2E669CE987B261F6"]
-			icon: {
-				Count: 1b
-				id: "bloodmagic:soulsword"
-				tag: {
-					Damage: 0
-				}
-			}
-			id: "3DA799298A2C1E35"
-			shape: "pentagon"
-			tasks: [
-				{
-					id: "46284D9581C33FA8"
-					item: {
-						Count: 1b
-						id: "bloodmagic:soulsword"
-						tag: {
-							Damage: 0
-						}
-					}
-					type: "item"
-				}
-				{
-					id: "1F5738292DE7E9AD"
-					item: {
-						Count: 1b
-						id: "bloodmagic:soulgempetty"
-						tag: {
-							souls: 64.0d
-						}
-					}
-					type: "item"
-				}
-			]
 			title: "Harnessing Will"
 			x: 0.0d
-			y: 5.5d
+			y: 3.5d
 		}
 		{
 			dependencies: ["5189D7F09DCEA09B"]
+			description: ["With the formation of a Tier II &4Blood Altar&r, you are now able to store enough blood to imbue blank slates with even more blood. This discovery unlocks the potential to create many new sigils as well as the ability to perform some very simplistic blood rituals."]
 			id: "7E28CB483C62627B"
+			rewards: [{
+				count: 4
+				id: "7D3B040F54532761"
+				item: "bloodmagic:blankslate"
+				type: "item"
+			}]
+			subtitle: "Help I need a subtitle! D:"
 			tasks: [{
 				id: "7E17D49D0F5F0747"
 				item: "bloodmagic:reinforcedslate"
 				type: "item"
 			}]
 			x: -1.5d
-			y: 8.5d
+			y: 5.0d
 		}
 		{
-			dependencies: [
-				"52A71B5A24ABE047"
-				"40AE7428AF9DEBB1"
+			dependencies: ["52E923A38DF4A394"]
+			description: [
+				"The &4Sanguine Scientiem&r makes mention of a type of &6crop&r, one with a hunger for blood even... As you explore the dungeon within the &3Antechamber&r, you may find &cTau Fruit&r in various chests. "
+				""
+				"As you return home, you find that planting these tau fruit in tilled soil will grow like normal, but when a creature wanders over top of these fruit while they grow (by Bone Meal, Sigil of the Green Grove, randomly, etc.), the creature gets hurt. Eventually, as the plant grows, it grows into a &6Saturated Tau&r when fed with the &cLife Essence&r of a creature throughout its growth phases."
+				"{@pagebreak}"
+				"As you look into the properties of this &6Saturated Tau&r, you find that it can be turned into a &cWeak Blood Shard&r by using a Sanguine Reverter in an ARC, thus reversing the fruit's consumption of the creature's blood into raw blood formed as Shards."
 			]
 			icon: "bloodmagic:weak_tau"
 			id: "37476053E9DE608B"
+			rewards: [{
+				count: 5
+				id: "60D41ADD25703C60"
+				item: "create:experience_nugget"
+				random_bonus: 5
+				type: "item"
+			}]
 			tasks: [
 				{
 					id: "2725110497AAA08D"
@@ -368,80 +337,103 @@
 					item: "bloodmagic:strong_tau"
 					type: "item"
 				}
+				{
+					id: "7C074DC028B6B51A"
+					item: "bloodmagic:weakbloodshard"
+					type: "item"
+				}
 			]
 			title: "Tau Fruit"
 			x: 0.0d
-			y: 11.5d
+			y: 11.0d
 		}
 		{
-			dependencies: ["37476053E9DE608B"]
-			id: "1B810F89AA924AC1"
-			shape: "pentagon"
-			tasks: [{
-				id: "331672E7FCF0D554"
-				item: "bloodmagic:weakbloodshard"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 12.5d
-		}
-		{
-			dependencies: ["40AE7428AF9DEBB1"]
-			id: "57382C8C5C44D0D2"
-			tasks: [{
-				id: "6C149BE09E78DB6C"
-				item: "bloodmagic:infusedslate"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 12.0d
-		}
-		{
-			id: "0A6E4582D557383D"
-			tasks: [{
-				id: "5EB881AEFF752F33"
-				item: "bloodmagic:demonslate"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 19.0d
-		}
-		{
-			id: "6A391606207F69AC"
-			tasks: [{
-				id: "24E5FFEAF04C0616"
-				item: "bloodmagic:rawdemonite"
-				type: "item"
-			}]
-			x: 1.5d
-			y: 19.0d
-		}
-		{
+			dependencies: ["52A71B5A24ABE047"]
+			description: [
+				"It seems that further improving your &6Blank Slate&r and &cBlood Orb&r have enabled you to create a new device capable of utilizing &oseveral&r different reagents to serve multiple purposes. The &lA&rlchemical &lR&reaction &lC&rhamber (ARC) is capable of processing &nraw ores&r using &6Cutting Fluid&r, crushing processed ingots into dusts using explosives, and so much more!"
+				""
+				"These reagents are multi-use, and take damage over time - to further their lifespan, you're able to enchant them with Unbreaking which is highly recommended! "
+			]
+			icon: "bloodmagic:alchemicalreactionchamber"
 			id: "52E923A38DF4A394"
-			tasks: [{
-				id: "3B68BF93FC04BB9D"
-				item: "bloodmagic:alchemicalreactionchamber"
-				type: "item"
-			}]
-			x: 0.0d
-			y: 15.5d
-		}
-		{
-			id: "17BEA5650586DD06"
-			tasks: [{
-				id: "317749046A4B764E"
+			rewards: [{
+				id: "34F7FC6ECC63BFF2"
 				item: {
 					Count: 1b
-					id: "bloodmagic:basiccuttingfluid"
+					id: "minecraft:enchanted_book"
 					tag: {
-						Damage: 0
+						StoredEnchantments: [{
+							id: "minecraft:unbreaking"
+							lvl: 3s
+						}]
 					}
 				}
 				type: "item"
 			}]
-			x: 1.0d
-			y: 15.5d
+			subtitle: "Improved ore processing and more!"
+			tasks: [
+				{
+					id: "3B68BF93FC04BB9D"
+					item: "bloodmagic:alchemicalreactionchamber"
+					type: "item"
+				}
+				{
+					id: "2E02FEB7712D32FB"
+					item: {
+						Count: 1b
+						id: "bloodmagic:basiccuttingfluid"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 9.0d
+		}
+		{
+			description: [
+				"My deepest apologies if you felt in the slightest bit uncomfortable with this mod and I do hope you continue playing and continue to enjoy the pack!"
+				""
+				"By clicking the &2✔&r above, you'll be granted everything you need to skip over this chapter entirely and dive straight into the arts of dwarven magitechs!"
+			]
+			id: "44D69C73A8D34FB9"
+			optional: true
+			rewards: [
+				{
+					auto: "enabled"
+					command: "/tag @p add embers"
+					elevate_perms: true
+					icon: {
+						Count: 1b
+						id: "ftbquests:custom_icon"
+						tag: {
+							Icon: "embers:item/sigil_explosion"
+						}
+					}
+					id: "143A8C4CE3735BA8"
+					silent: true
+					title: "Dive Into Embers!"
+					type: "command"
+				}
+				{
+					id: "078987617638BA42"
+					item: "embers:tinker_hammer"
+					type: "item"
+				}
+			]
+			size: 1.0E-32d
+			tasks: [{
+				id: "1053CFEFA320E0D3"
+				title: "Click me to skip this chapter!"
+				type: "checkmark"
+			}]
+			title: "Skip This Chapter"
+			x: 0.0d
+			y: 26.0d
 		}
 	]
-	title: "Dark \\& Blood"
+	subtitle: ["&cSanguine Sacrifice&r"]
+	title: "&4Blood Magic&r"
 }

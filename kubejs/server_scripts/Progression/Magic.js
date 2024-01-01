@@ -1020,18 +1020,18 @@ ServerEvents.recipes(event => {
     // Make Pewter from combining Molten Lead with Iron
     event.custom({
       type: 'embers:stamping',
+      fluid: {amount: 90, tag: 'forge:molten_lead'},
       input: {tag: 'forge:ingots/iron'},
       stamp: {item: 'embers:ingot_stamp'},
-      fluid: {amount: 90, tag: 'forge:molten_lead'},
       output: {item: 'eidolon:pewter_ingot', count: 2},
     });
 
     // ...or Molten Iron with Lead
     event.custom({
       type: 'embers:stamping',
+      fluid: {amount: 90, tag: 'forge:molten_iron'},
       input: {tag: 'forge:ingots/lead'},
       stamp: {item: 'embers:ingot_stamp'},
-      fluid: {amount: 90, tag: 'forge:molten_iron'},
       output: {item: 'eidolon:pewter_ingot', count: 2},
     });
 
