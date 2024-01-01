@@ -95,35 +95,6 @@ LootJS.modifiers(event => {
   };
 
   const modLoot = () => {
-    // [
-    //   'pneumaticcraft:capacitor',
-    //   'pneumaticcraft:compressed_iron_boots',
-    //   'pneumaticcraft:compressed_iron_chestplate',
-    //   'pneumaticcraft:compressed_iron_helmet',
-    //   'pneumaticcraft:compressed_iron_leggings',
-    //   'pneumaticcraft:compressed_stone',
-    //   'pneumaticcraft:gun_ammo_ap',
-    //   'pneumaticcraft:gun_ammo_explosive',
-    //   'pneumaticcraft:gun_ammo_freezing',
-    //   'pneumaticcraft:gun_ammo_incendiary',
-    //   'pneumaticcraft:gun_ammo_weighted',
-    //   'pneumaticcraft:gun_ammo',
-    //   'pneumaticcraft:ingot_iron_compressed',
-    //   'pneumaticcraft:logistics_core',
-    //   'pneumaticcraft:micromissiles',
-    //   'pneumaticcraft:nuke_virus',
-    //   'pneumaticcraft:pneumatic_cylinder',
-    //   'pneumaticcraft:pressure_tube',
-    //   'pneumaticcraft:programming_puzzle',
-    //   'pneumaticcraft:spawner_agitator',
-    //   'pneumaticcraft:stop_worm',
-    //   'pneumaticcraft:transistor',
-    //   'pneumaticcraft:vortex_cannon',
-    // ].forEach(x => {
-    //   // TODO: if any blocks are in this list, they *might* not drop their loot... since it's not a addBlockLootModifier call I don't actually konw
-    //   event.addLootTableModifier().removeLoot(x);
-    // });
-
     event.addLootTableModifier(/.*/).replaceLoot('bloodmagic:sulfur', 'eidolon:sulfur');
   };
 
