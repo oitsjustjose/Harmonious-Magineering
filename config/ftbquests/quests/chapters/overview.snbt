@@ -1,0 +1,223 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "overview"
+	group: "7B95A8B4604FCF48"
+	icon: {
+		Count: 1b
+		ForgeCaps: {
+			"cold_sweat:item_insulation": {
+				Insulation: [ ]
+			}
+		}
+		id: "embers:ashen_goggles"
+		tag: {
+			Damage: 0
+		}
+	}
+	id: "201F1C5C5CD9C8B4"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			id: "567FB2A71476A264"
+			shape: "pentagon"
+			size: 2.0d
+			subtitle: "Magiks through Chants, Praise, and &osome&r sacrifice.."
+			tasks: [{
+				icon: "eidolon:unholy_symbol"
+				id: "44CF9C2160840CDE"
+				item: {
+					Count: 1b
+					id: "itemfilters:or"
+					tag: {
+						items: [
+							{
+								Count: 1b
+								id: "eidolon:unholy_symbol"
+							}
+							{
+								Count: 1b
+								id: "eidolon:holy_symbol"
+							}
+						]
+					}
+				}
+				title: "Obtain a &6Holy&r or &8Unholy&r Symbol"
+				type: "item"
+			}]
+			title: "Make your way through Eidolon"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["567FB2A71476A264"]
+			id: "3AE60F0602050965"
+			shape: "rsquare"
+			size: 1.5d
+			subtitle: "Exploring the world in the sky"
+			tasks: [{
+				id: "6ADD96D5A5342BA7"
+				item: "aether:aether_portal_frame"
+				type: "item"
+			}]
+			title: "Enter &6The Aether&r"
+			x: 3.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3AE60F0602050965"]
+			icon: "aether:bronze_dungeon_key"
+			id: "0D8FF24A4869282F"
+			shape: "hexagon"
+			subtitle: "Defeat the Slider"
+			tasks: [{
+				id: "0B71D04382022F59"
+				item: "aether:carved_stone"
+				type: "item"
+			}]
+			title: "Complete a &6Bronze Dungeon&r"
+			x: 5.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3AE60F0602050965"]
+			icon: "aether:silver_dungeon_key"
+			id: "533FC213BD458E02"
+			subtitle: "Defeat the Valkyrie Queen"
+			tasks: [{
+				id: "63488F481337CCC7"
+				item: "aether:angelic_stone"
+				type: "item"
+			}]
+			title: "Complete a &3Silver Dungeon&r"
+			x: 5.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["3AE60F0602050965"]
+			icon: "aether:gold_dungeon_key"
+			id: "664D10109DB1E259"
+			subtitle: "Defeat the Sun God"
+			tasks: [{
+				id: "536365FFA0DE604E"
+				item: "aether:hellfire_stone"
+				type: "item"
+			}]
+			title: "Complete a &cGold Dungeon&r"
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0D8FF24A4869282F"]
+			id: "03A36955141874AA"
+			shape: "octagon"
+			size: 2.0d
+			subtitle: "An even darker source of power.."
+			tasks: [{
+				id: "5877E2CF40B5FE9F"
+				item: "bloodmagic:altar"
+				type: "item"
+			}]
+			title: "Begin Practicing &4Blood Magiks&r"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"03A36955141874AA"
+				"664D10109DB1E259"
+			]
+			id: "31B110D079B70B2E"
+			subtitle: "Dungeon Diving to the second degree!"
+			tasks: [{
+				id: "0F4505D13AC3D9E2"
+				item: "bloodmagic:ingot_hellforged"
+				type: "item"
+			}]
+			title: "Obtain &3Hellforged Ingots&r"
+			x: 10.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["31B110D079B70B2E"]
+			id: "213A9A712405AD8F"
+			shape: "octagon"
+			size: 2.0d
+			subtitle: "Your gateway into &6Embers&r"
+			tasks: [{
+				id: "7A66FDC011697CD1"
+				item: "embers:tinker_hammer"
+				type: "item"
+			}]
+			title: "Create a Tinker's Hammer"
+			x: 13.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["362AA5D114482B9C"]
+			id: "1C6A0F47F9FAC667"
+			shape: "octagon"
+			size: 2.0d
+			subtitle: "Enter the age of steampunky machinery!!"
+			tasks: [{
+				id: "2D6B59E722AA2590"
+				item: "create:andesite_alloy"
+				type: "item"
+			}]
+			title: "Rotational Technology"
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1C6A0F47F9FAC667"]
+			description: ["At this point I'd also suggest looking into Pretty Pipes"]
+			id: "24CCD4864E2E4BB3"
+			subtitle: "Steel \\& Compressed Iron"
+			tasks: [
+				{
+					id: "66E0EB5D89B68B37"
+					item: "pneumaticcraft:ingot_iron_compressed"
+					type: "item"
+				}
+				{
+					id: "0CE4B0C92979DFF2"
+					item: "mekanism:ingot_steel"
+					type: "item"
+				}
+			]
+			title: "Heavy Metals"
+			x: 20.5d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"213A9A712405AD8F"
+				"533FC213BD458E02"
+			]
+			id: "362AA5D114482B9C"
+			subtitle: "Let the crossover of magiks and tech commence!"
+			tasks: [
+				{
+					id: "30844AD2591BD88F"
+					item: "embers:stamp_base"
+					type: "item"
+				}
+				{
+					id: "51E7AFBDC8BC1F4C"
+					item: "embers:stamper"
+					type: "item"
+				}
+				{
+					id: "16ACBB3679006618"
+					item: "embers:ingot_stamp"
+					type: "item"
+				}
+			]
+			title: "Get to Stamping"
+			x: 15.5d
+			y: -1.5d
+		}
+	]
+	title: "Overview"
+}

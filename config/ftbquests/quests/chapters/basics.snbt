@@ -5,7 +5,7 @@
 	group: "7B95A8B4604FCF48"
 	icon: "minecraft:campfire"
 	id: "07F6AB892BB8EB3D"
-	order_index: 0
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{

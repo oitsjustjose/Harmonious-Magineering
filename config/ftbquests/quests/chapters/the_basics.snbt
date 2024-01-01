@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "the_basics"
-	group: "7B95A8B4604FCF48"
+	group: "30752BCABB2D0E90"
 	icon: "expandedstorage:diamond_mini_chest"
 	id: "3AA8337A9B046AD2"
-	order_index: 1
+	order_index: 0
 	quest_links: [ ]
 	quests: [ ]
 	title: "Simple Storage"
