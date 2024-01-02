@@ -91,6 +91,7 @@ JEIEvents.hideItems(event => {
     'modularrouters:energy_upgrade',
     'modularrouters:extruder_module_1',
     'modularrouters:extruder_module_2',
+    'pneumaticcraft:wheat_flour',
     'spawn:snail_eggs',
     'spawn:snail_shell',
     'spawn:snail_spawn_egg',

@@ -68,12 +68,40 @@ ServerEvents.recipes(event => {
     transitionalItem: {item: 'farmersdelight:pie_crust'},
   });
 
+  /* ~~Cakes:~~ Dedup the 4 different recipes */
+  event.remove({id: 'aether:moa_egg_cake'});
+  event.remove({id: 'aether:skyroot_milk_bucket_cake'});
+  event.remove({id: 'aether:skyroot_milk_bucket_moa_egg_cake'});
+  event.remove({id: 'deep_aether:cake'});
+  event.remove({id: 'deep_aether:skyroot_milk_bucket_cake'});
+  event.remove({id: 'farmersdelight:cake_from_milk_bottle'});
+  event.remove({id: 'minecraft:cake'});
+  event.remove({id: 'naturalist:cake'});
+  event.shaped('minecraft:cake', ['MMM', 'SES', 'WWW'], {
+    M: '#forge:milk',
+    S: ['minecraft:sugar', 'minecraft:honey_bottle'],
+    E: '#forge:eggs',
+    W: 'create:wheat_flour',
+  });
+
+  /* ~~Flour:~~ Unify PNC and Create's Wheat Flours */
+  event.replaceInput({}, 'pneumaticcraft:wheat_flour', 'create:wheat_flour');
+  event.replaceInput({}, '#forge:dusts/flour', 'create:wheat_flour');
+  event.remove('pneumaticcraft:pressure_chamber/wheat_flour');
+  event.custom({
+    type: 'pneumaticcraft:pressure_chamber',
+    inputs: [{tag: 'forge:crops/wheat'}],
+    pressure: 1.5,
+    results: [{count: 3, item: 'create:wheat_flour'}],
+  });
+
   /* ~~Snails:~~ Unify Spawn & Naturalist's snail shell items */
   event.replaceInput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
   event.replaceOutput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
 
   /* ~~Eggs:~~ Unify Farmer's Delight Naturalist's Cooked Egg items */
   event.remove({output: 'farmersdelight:fried_egg'});
+  event.replaceInput({}, '#aether_redux:eggs_for_blueberry_pie', '#forge:eggs');
 
   event.remove({id: 'modularrouters:guide_book'});
   event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"modularrouters:book"}'), ['minecraft:book', 'modularrouters:modular_router']);

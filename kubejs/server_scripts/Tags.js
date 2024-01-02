@@ -500,6 +500,10 @@ ServerEvents.tags('item', event => {
   /* More Obsidian Variants */
   event.add('forge:obsidian', 'minecraft:crying_obsidian');
   event.add('forge:mud', ['regions_unexplored:silt_mud', 'regions_unexplored:peat_mud', 'minecraft:mud']);
+  /* Add quail eggs to the Egg tag */
+  event.add('forge:eggs', 'aether_redux:eggs_for_blueberry_pie');
+  /* Add Skyroot Milk bucket to the milk tag */
+  event.add('forge:milk', 'aether:skyroot_milk_bucket');
 
   event.add('forge:ocean_blocks', [
     'minecraft:brain_coral_block',

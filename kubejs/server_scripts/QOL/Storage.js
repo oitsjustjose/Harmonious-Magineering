@@ -1,6 +1,5 @@
 ServerEvents.recipes(event => {
   /**
-   *
    * @param {Internal.ItemStackKJS} output
    * @param {Internal.Ingredient} backpack
    * @param {Internal.Ingredient} input
