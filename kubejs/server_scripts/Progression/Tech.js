@@ -212,12 +212,22 @@ ServerEvents.recipes(event => {
 
     event.remove({id: 'create:crafting/materials/andesite_alloy'});
     event.remove({id: 'create:crafting/materials/andesite_alloy_from_zinc'});
+
     event.custom({
       type: 'embers:stamping',
-      input: {item: 'minecraft:andesite'},
-      stamp: {item: 'embers:ingot_stamp'},
-      fluid: {amount: 90, tag: 'forge:molten_iron'},
-      output: {item: 'create:andesite_alloy', count: 1},
+      fluid: {
+        amount: 90,
+        tag: 'forge:molten_iron',
+      },
+      input: {
+        item: 'minecraft:andesite',
+      },
+      output: {
+        item: 'create:andesite_alloy',
+      },
+      stamp: {
+        item: 'embers:ingot_stamp',
+      },
     });
 
     // Make it easier to make Dawnstone once you get into Create :)

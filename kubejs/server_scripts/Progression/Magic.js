@@ -1020,19 +1020,39 @@ ServerEvents.recipes(event => {
     // Make Pewter from combining Molten Lead with Iron
     event.custom({
       type: 'embers:stamping',
-      fluid: {amount: 90, tag: 'forge:molten_lead'},
-      input: {tag: 'forge:ingots/iron'},
-      stamp: {item: 'embers:ingot_stamp'},
-      output: {item: 'eidolon:pewter_ingot', count: 2},
+      fluid: {
+        amount: 90,
+        tag: 'forge:molten_lead',
+      },
+      input: {
+        tag: 'forge:ingots/iron',
+      },
+      output: {
+        item: 'eidolon:pewter_ingot',
+        count: 2,
+      },
+      stamp: {
+        item: 'embers:ingot_stamp',
+      },
     });
 
     // ...or Molten Iron with Lead
     event.custom({
       type: 'embers:stamping',
-      fluid: {amount: 90, tag: 'forge:molten_iron'},
-      input: {tag: 'forge:ingots/lead'},
-      stamp: {item: 'embers:ingot_stamp'},
-      output: {item: 'eidolon:pewter_ingot', count: 2},
+      fluid: {
+        amount: 90,
+        tag: 'forge:molten_iron',
+      },
+      input: {
+        tag: 'forge:ingots/lead',
+      },
+      output: {
+        item: 'eidolon:pewter_ingot',
+        count: 2,
+      },
+      stamp: {
+        item: 'embers:ingot_stamp',
+      },
     });
 
     // Make Caminite Brick consume Angelic Stone

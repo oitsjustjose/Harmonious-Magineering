@@ -142,6 +142,7 @@ ServerEvents.tags('block', event => {
     'minecraft:bamboo',
     'farmersdelight:tomatoes',
     'ecologics:prickly_pear',
+    'regions_unexplored:salmonberry_bush',
   ]);
 });
 
@@ -490,7 +491,8 @@ ServerEvents.tags('item', event => {
   /* Rope Intercompat */
   event.remove('forge:rope', 'farmersdelight:rope');
   event.remove('supplementaries:ropes', 'farmersdelight:rope');
-
+  /* Sawdust Intercompat */
+  event.removeAllTagsFrom('immersiveengineering:dust_wood');
   /* Tallow / Fat Intercompat */
   event.add('forge:tallow', 'delightful:animal_fat');
   /* Plastic Intercompat */
@@ -504,6 +506,12 @@ ServerEvents.tags('item', event => {
   event.add('forge:eggs', 'aether_redux:eggs_for_blueberry_pie');
   /* Add Skyroot Milk bucket to the milk tag */
   event.add('forge:milk', 'aether:skyroot_milk_bucket');
+  /* Salmonberry compat */
+  event.add('forge:berries', 'regions_unexplored:salmonberry');
+  event.add('forge:fruits', 'regions_unexplored:salmonberry');
+  event.add('forge:fruits/berries', 'regions_unexplored:salmonberry');
+  event.add('forge:fruits/salmonberries', 'regions_unexplored:salmonberry');
+  event.add('forge:fruits/sweet', 'regions_unexplored:salmonberry');
 
   event.add('forge:ocean_blocks', [
     'minecraft:brain_coral_block',

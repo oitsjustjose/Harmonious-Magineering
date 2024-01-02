@@ -103,6 +103,24 @@ ServerEvents.recipes(event => {
   event.remove({output: 'farmersdelight:fried_egg'});
   event.replaceInput({}, '#aether_redux:eggs_for_blueberry_pie', '#forge:eggs');
 
+  /* ~~Sawdust:~~ Unify Mek & IE's sawdusts */
+  event.replaceInput({}, 'immersiveengineering:dust_wood', '#forge:sawdust');
+  event.replaceOutput({}, 'immersiveengineering:dust_wood', '#forge:sawdusts');
+  event.replaceOutput({}, '#forge:dusts/wood', '#forge:sawdusts');
+
+  /* ~~Salmonerries:~~ Unify Regions Unexplored & Delightful's Recipes */
+  event.replaceInput({}, 'regions_unexplored:salmonberry', '#forge:fruits/salmonberries');
+  event.replaceInput({}, 'delightful:salmonberries', '#forge:fruits/salmonberries');
+  event.replaceOutput({}, 'delightful:salmonberries', 'regions_unexplored:salmonberry');
+  event.custom({
+    type: 'immersiveengineering:cloche',
+    input: {item: 'regions_unexplored:salmonberry'},
+    soil: {item: 'minecraft:dirt'},
+    render: {type: 'crop', block: 'regions_unexplored:salmonberry_bush'},
+    time: 800,
+    results: [{item: 'regions_unexplored:salmonberry', count: 3}],
+  });
+
   event.remove({id: 'modularrouters:guide_book'});
   event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"modularrouters:book"}'), ['minecraft:book', 'modularrouters:modular_router']);
 

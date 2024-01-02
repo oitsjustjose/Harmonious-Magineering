@@ -124,12 +124,12 @@
 	quartz_cabinet = true
 	raw_goat = false
 	rock_candy = true
-	salmonberries = true
+	salmonberries = false
 	salmonberry_gummy = true
 	salmonberry_ice_cream = true
 	salmonberry_ice_cream_block = true
 	salmonberry_pie = true
-	salmonberry_pips = true
+	salmonberry_pips = false
 	salmonberry_sack = true
 	sinigang = true
 	smore = true
