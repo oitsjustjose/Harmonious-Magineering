@@ -3,10 +3,23 @@
 	default_quest_shape: ""
 	filename: "some_wires_required"
 	group: "7ACE386F34E81744"
-	icon: "immersiveengineering:wirecoil_copper"
+	icon: "immersiveengineering:wirecoil_electrum"
 	id: "0AA8A334E721D765"
+	images: [{
+		click: ""
+		corner: false
+		dev: false
+		height: 4.0d
+		hover: [ ]
+		image: "kubejs:textures/quest_images/chapter/ie.png"
+		rotation: 0.0d
+		width: 4.848484848484849d
+		x: 0.0d
+		y: 0.0d
+	}]
 	order_index: 2
 	quest_links: [ ]
 	quests: [ ]
-	title: "Some Wires Required"
+	subtitle: ["&6Some Wires Required&r"]
+	title: "&eImmersive Engineering&r"
 }

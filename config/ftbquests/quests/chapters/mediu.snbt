@@ -5,8 +5,21 @@
 	group: "7ACE386F34E81744"
 	icon: "pneumaticcraft:pressure_gauge"
 	id: "299E9FA46C6CDE00"
+	images: [{
+		click: ""
+		corner: false
+		dev: false
+		height: 3.0d
+		hover: [ ]
+		image: "kubejs:textures/quest_images/chapter/pnc.png"
+		rotation: 0.0d
+		width: 12.533333333333335d
+		x: 0.0d
+		y: 0.0d
+	}]
 	order_index: 1
 	quest_links: [ ]
 	quests: [ ]
-	title: "Pressurized!"
+	subtitle: ["&7Get Pressurized!&r"]
+	title: "&2Pneumaticcraft&r"
 }

@@ -29,5 +29,6 @@
 		x: 0.0d
 		y: 0.0d
 	}]
-	title: "No Voltage, No Problem!"
+	subtitle: ["&bNo Voltage, No Problem!&r"]
+	title: "&6Create&r"
 }

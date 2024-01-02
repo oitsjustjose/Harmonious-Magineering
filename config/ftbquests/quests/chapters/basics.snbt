@@ -3,9 +3,15 @@
 	default_quest_shape: ""
 	filename: "basics"
 	group: "7B95A8B4604FCF48"
-	icon: "minecraft:campfire"
+	icon: {
+		Count: 1b
+		id: "minecraft:wooden_sword"
+		tag: {
+			Damage: 0
+		}
+	}
 	id: "07F6AB892BB8EB3D"
-	order_index: 1
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
@@ -517,5 +523,6 @@
 			y: 0.0d
 		}
 	]
-	title: "Basics"
+	subtitle: ["&cT&4h&6e &eB&aa&2s&3i&9c&5s&r"]
+	title: "&fGetting Started&r"
 }

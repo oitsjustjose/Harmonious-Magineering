@@ -19,26 +19,150 @@
 	}]
 	order_index: 3
 	quest_links: [ ]
-	quests: [{
-		dependencies: [
-			"5780D21D153AF10D"
-			"44D69C73A8D34FB9"
-		]
-		dependency_requirement: "one_completed"
-		hide: true
-		id: "70FFC8521726C961"
-		shape: "diamond"
-		size: 2.0d
-		subtitle: "No bonks allowed"
-		tasks: [{
-			id: "109218C1D54D84F1"
-			item: "embers:tinker_hammer"
-			type: "item"
-		}]
-		title: "The Tinkers Hammer"
-		x: 0.0d
-		y: 0.0d
-	}]
+	quests: [
+		{
+			dependencies: [
+				"5780D21D153AF10D"
+				"44D69C73A8D34FB9"
+			]
+			dependency_requirement: "one_completed"
+			description: [
+				"As you begin to study the ways of the dwarves, whose only remnants are the &6Ancient Golems&r and the Underground Ruins you find them with, you observe that a hammer fashioned of &3Hellforged Metal&r would be capable of beginning to replicate the technology that they once harnessed."
+				""
+				"With this hammer, the &6Ancient Codex&r is now obtainable, which seems to have some old writings within... perhaps these will be able serve as a guide throughout the magic/technology hybrid that was once harnessed."
+			]
+			hide: true
+			icon: "embers:tinker_hammer"
+			id: "70FFC8521726C961"
+			rewards: [{
+				count: 8
+				id: "336E08E04FFED734"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			shape: "diamond"
+			size: 2.0d
+			subtitle: "No bonks allowed"
+			tasks: [
+				{
+					id: "109218C1D54D84F1"
+					item: "embers:tinker_hammer"
+					type: "item"
+				}
+				{
+					id: "245048EBC99D6F9D"
+					item: "embers:ancient_codex"
+					type: "item"
+				}
+			]
+			title: "Tinkering"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["70FFC8521726C961"]
+			description: [
+				"As you study the &lNatural Energy&r of the &6Ancient Codex&r, you read of the Ember Bore, a mechanical device capable of boring into the Bedrock Layer of the world to obtain Ember."
+				""
+				"When placed into the world, the Ember Bore will take up a 3wx3dx1h area, so be sure to have this much space for it before trying to form it. The Ember Bore will &oonly&r work if placed atop &2at least three blocks of Bedrock&r for it to work. In addition, this construct will require some form of &cFurnace Fuel&r - any will do. In order to insert fuel into the Ember Bore, you will need to place a mechanical core atop the center of the bore. Once placed, you can interface with the bore by means of Hopper to insert your fuels."
+				"{@pagebreak}"
+				"You may now be lead to wonder how you would retrieve the mined &6Ember&r - you cannot place a hopper on the Mechanical Core to extract, so your only option is to use &3Item Pipes&r and an &3Item Extractor&r. "
+				""
+				"The extractor can be placed against the Mechanical Core, and once powered with a redstone signal, will begin to extract to whatever storage container you have connected to it via pipes."
+			]
+			icon: "embers:ember_crystal"
+			id: "1B727E1B3A980766"
+			rewards: [{
+				count: 8
+				id: "3BD621E59170AE64"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			subtitle: "&oBoring&r, if you will"
+			tasks: [
+				{
+					id: "078589A332A71B7C"
+					item: "embers:ember_bore"
+					type: "item"
+				}
+				{
+					id: "4F4B47FFEF44FA4D"
+					item: "embers:mechanical_core"
+					type: "item"
+				}
+				{
+					id: "5F66D8B75CCAA2D6"
+					item: "embers:item_extractor"
+					type: "item"
+				}
+				{
+					id: "1D6D1E294089B0FC"
+					item: "embers:item_pipe"
+					type: "item"
+				}
+			]
+			title: "Obtaining Ember"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1B727E1B3A980766"]
+			description: [
+				"Now that you have Ember, it's time to activate it to fuel various constructs going forward. In order to do this, you'll need an &6Ember Activator&r. Like the Ember Bore, you won't be able to interface with it directly, however you'll be able to use a hopper to insert Ember Crystals or Shards."
+				""
+				"Once activated, the Ember will sit and eventually stagnate and dissipate. In order to prevent this, you'll need to move it to storage (via a &6Copper Cell&r) or use it! "
+				"{@pagebreak}"
+				"In order to extract the Ember, place an &3Ember Emitter&r on any side of the top portion of the activator. It won't go anywhere until you've placed an &3Ember Receptor&r on a device or cell. Lastly, use the Tinker's Hammer on the emitter first, then the receptor to create a link. Once you apply a &credstone signal&r to the emitter, you should begin to see Ember flow from the emitter to the receptor!"
+			]
+			icon: "embers:ember_activator"
+			id: "30FF6C44A8477F5A"
+			rewards: [{
+				count: 8
+				id: "2C6C9687BE6980DA"
+				item: "create:experience_nugget"
+				random_bonus: 4
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "Cleaner than oil!"
+			tasks: [
+				{
+					id: "1DD2E1EF35A0BFA6"
+					item: "embers:ember_activator"
+					type: "item"
+				}
+				{
+					id: "55F0CBE6065454FC"
+					item: "embers:ember_receiver"
+					type: "item"
+				}
+				{
+					id: "79BA5FBFD883D43C"
+					item: "embers:ember_emitter"
+					type: "item"
+				}
+			]
+			title: "Burning \\& Using Ember"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["30FF6C44A8477F5A"]
+			description: ["As you look at methods of using activated Ember, you discover that you can easily melt many metals, including in raw/ore form"]
+			id: "65665E7386ED8DC8"
+			subtitle: "Liquid hot &cmagma&r"
+			tasks: [{
+				id: "5676EC2F617183BB"
+				item: "embers:melter"
+				type: "item"
+			}]
+			title: "Melting Metals"
+			x: 0.0d
+			y: 6.0d
+		}
+	]
 	subtitle: ["&eDwarven Delight&r"]
 	title: "&6Embers&r"
 }
