@@ -150,8 +150,17 @@
 		}
 		{
 			dependencies: ["30FF6C44A8477F5A"]
-			description: ["As you look at methods of using activated Ember, you discover that you can easily melt many metals, including in raw/ore form"]
+			description: [
+				"As you look at methods of using activated Ember, you discover that you can easily melt many metals, including in raw/ore form! Once melted, it seems the molten metal can be used in various ways such as mixing (to form an alloy) or stamping (to form a usable end-product)."
+				""
+				"Molten Metal can be pulled from any of the four sides of the &otop&r of the &6Melter&r, and an &3Ember Recepter&r can be attached to any of the four sides of the &obottom&r of the &6Melter&r. Molten metal can be stored in a &3Fluid Vessel&r, which keeps its fluids when broken."
+			]
 			id: "65665E7386ED8DC8"
+			rewards: [{
+				id: "1AAE88CF554E4705"
+				item: "embers:fluid_vessel"
+				type: "item"
+			}]
 			subtitle: "Liquid hot &cmagma&r"
 			tasks: [{
 				id: "5676EC2F617183BB"
@@ -161,6 +170,101 @@
 			title: "Melting Metals"
 			x: 0.0d
 			y: 6.0d
+		}
+		{
+			dependencies: ["65665E7386ED8DC8"]
+			description: [
+				"The &7Ancient Codex&r has made mention of the many potential alloys you may wish to form in order to further improve your various automations and constructs that you've built using Ember. Using the Mixer Centrifuge, you are able to evenly combine two different molten metals into a single molten alloy!"
+				""
+				"To form an alloy, use &3Fluid Pipes&r to insert fluids into any two &lopposite&r sides of the &obottom&r of the &6Mixer Centrifuge&r, and insert &6Ember&r into the &otop&r of the centrifuge using an &3Ember Receptor&r. The resulting alloy can be extracted with a &3Fluid Extractor&r from any of the four sides of the top of the centrifuge."
+			]
+			id: "2A4C37E5E48F0EE8"
+			rewards: [{
+				count: 12
+				id: "12370BEDA0D5A744"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			subtitle: "Not your &oaverage&r KitchenAid Mixer!"
+			tasks: [{
+				id: "0BD6525D893F126C"
+				item: "embers:mixer_centrifuge"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["65665E7386ED8DC8"]
+			description: [
+				"As you further your research, you've found yourself left with &omolten&r metal but not any means to form it back into a usable state - until now, at least! The stamper, a two-part construction with the base on the bottom and the stamper on the top (with a one-block space in-between) runs on &6Ember&r and is capable of turning your precious molten metals into Ingots, Plates and more!"
+				""
+				"Fluid goes into any side of the the &oStamper Base&r, and Ember goes into any side of the &oStamper&r using an &3Ember Receptor&r. To apply a stamp, hold it in your hand while looking at the &obottom&r face of the Stamper itself (not the Stamper Base) and right-click!"
+			]
+			icon: "embers:ingot_stamp"
+			id: "7DB5A72D397A6F2D"
+			subtitle: "Breaking the mold!"
+			tasks: [
+				{
+					id: "43092F5C1D25F91D"
+					item: "embers:stamp_base"
+					type: "item"
+				}
+				{
+					id: "1102EE29674183BF"
+					item: "embers:stamper"
+					type: "item"
+				}
+				{
+					id: "79674F7DC1D4D003"
+					item: "embers:ingot_stamp"
+					type: "item"
+				}
+			]
+			title: "Stamping"
+			x: 1.5d
+			y: 7.5d
+		}
+		{
+			dependencies: ["7DB5A72D397A6F2D"]
+			description: ["By combining Iron with Andesite in a &6Stamper&r, you have found you're able to create a new alloy capable of a handling a significant amount of torsion without being brittle enough to break."]
+			id: "2C2E4C936FA20816"
+			rewards: [{
+				count: 16
+				id: "2E7EC97C7801EA73"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			shape: "octagon"
+			size: 1.5d
+			tasks: [{
+				id: "2804BBFC125B2904"
+				item: "create:andesite_alloy"
+				type: "item"
+			}]
+			x: 3.75d
+			y: 7.5d
+		}
+		{
+			dependencies: [
+				"2A4C37E5E48F0EE8"
+				"7DB5A72D397A6F2D"
+			]
+			description: [
+				"As you continue to discover more alloy combinations, you stumble across an alloy consisting of equal parts &6Copper&r and &eGold&r, which combined forms &3Dawnstone&r. This material is not only useful for simple tools, but it is also capable of utilizing &6Ember&r when used in the construction of new gadgets and tools!"
+				""
+				"Perhaps the &7Ancient Codex&r has more to read on with regard to the various tools that can be made using &6Dawnstone&r."
+			]
+			id: "69C3BFD20183FBB6"
+			optional: true
+			subtitle: "A durable alloy!"
+			tasks: [{
+				id: "476B381A345E4570"
+				item: "embers:dawnstone_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 9.0d
 		}
 	]
 	subtitle: ["&eDwarven Delight&r"]
