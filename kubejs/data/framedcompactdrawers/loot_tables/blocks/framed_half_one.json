@@ -1,0 +1,43 @@
+{
+  "type": "minecraft:block",
+  "functions": [
+    {
+      "function": "minecraft:copy_nbt",
+      "ops": [
+        {
+          "op": "replace",
+          "source": "MatS",
+          "target": "MatS"
+        },
+        {
+          "op": "replace",
+          "source": "MatF",
+          "target": "MatF"
+        },
+        {
+          "op": "replace",
+          "source": "MatT",
+          "target": "MatT"
+        }
+      ],
+      "source": "block_entity"
+    }
+  ],
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "framedcompactdrawers:framed_half_one"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}
