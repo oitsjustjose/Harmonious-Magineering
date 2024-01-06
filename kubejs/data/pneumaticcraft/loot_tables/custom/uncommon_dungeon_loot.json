@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:chest",
+  "pools": [],
+  "random_sequence": "pneumaticcraft:custom/uncommon_dungeon_loot"
+}
