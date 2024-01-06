@@ -1,7 +1,5 @@
-execute as @a[tag=!Curios] run function custom:player/curios
-
-execute as @a[nbt={Inventory:[{id: 'cold_sweat:soulspring_lamp'}]}] run tag @s add HasSoulspring
-execute as @a[tag=!HasSoulspring, nbt={Dimension:"minecraft:the_nether"}] run function custom:player/nether
+execute as @a[nbt={Inventory:[{id: 'cold_sweat:soulspring_lamp'}]}] run tag @s add has_soulspring
+execute as @a[tag=!has_soulspring, nbt={Dimension:"minecraft:the_nether"}] run function custom:player/nether
 
 # Gamestages
 ## Aether
