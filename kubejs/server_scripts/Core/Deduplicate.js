@@ -74,6 +74,7 @@ ServerEvents.recipes(event => {
   event.remove('aether:moa_egg_cake');
   event.remove('aether:skyroot_milk_bucket_cake');
   event.remove('aether:skyroot_milk_bucket_moa_egg_cake');
+  event.remove('create:crafting/curiosities/cake');
   event.remove('deep_aether:cake');
   event.remove('deep_aether:skyroot_milk_bucket_cake');
   event.remove('farmersdelight:cake_from_milk_bottle');

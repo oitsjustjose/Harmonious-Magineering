@@ -2,7 +2,7 @@ Platform.setModName('kubejs', 'Harmonious Magineering');
 
 // Map of packed coords vs. timestamps
 const snowRecalcs = {};
-const snowRecalcTimeout = 60000;
+const snowRecalcTimeout = 6000000;
 
 ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
   const recipes = {
