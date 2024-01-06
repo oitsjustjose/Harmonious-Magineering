@@ -92,6 +92,7 @@ ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
     'immersiveengineering:sword_steel': Ingredient.of('#forge:ingots/steel'),
     'immersiveengineering:wirecutter': Ingredient.of('#forge:ingots/steel'),
     'minecraft:bow': Ingredient.of('#forge:string'),
+    'minecraft:brush': Ingredient.of('#forge:feathers'),
     'minecraft:carrot_on_a_stick': Ingredient.of('#forge:string'),
     'minecraft:crossbow': Ingredient.of('#forge:string'),
     'minecraft:fishing_rod': Ingredient.of('#forge:string'),
