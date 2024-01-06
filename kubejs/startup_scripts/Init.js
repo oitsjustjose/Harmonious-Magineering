@@ -1,8 +1,8 @@
 Platform.setModName('kubejs', 'Harmonious Magineering');
 
 // Map of packed coords vs. timestamps
-const snowRecalcs = {};
-const snowRecalcTimeout = 6000000;
+global.snowRecalcs = {};
+global.snowRecalcTimeout = 10000; // in *game* time.
 
 ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
   const recipes = {
@@ -133,14 +133,18 @@ ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
 ForgeEvents.onEvent('net.minecraftforge.event.entity.EntityEvent$EnteringSection', event => {
   if (!event.getEntity().isPlayer()) return;
   if (!event.didChunkChange()) return;
+  if (event.getEntity().getLevel().isClientSide()) return;
 
-  let key = event.getPackedNewPos();
+  let key = `${event.getPackedNewPos()}`;
+  let now = event.getEntity().getLevel().getTime();
 
-  if (Object.keys(snowRecalcs).includes(key)) {
-    if (Date.now() - snowRecalcs[key] > snowRecalcTimeout) return;
+  if (Object.keys(global.snowRecalcs).includes(key)) {
+    if (now - global.snowRecalcs[key] < global.snowRecalcTimeout) {
+      return;
+    }
   }
 
-  snowRecalcs[key] = Date.now();
+  global.snowRecalcs[key] = now;
   event.getEntity().runCommandSilent('/snow recalculate');
 });
 
