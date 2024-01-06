@@ -1,3 +1,5 @@
+// priority: 100000
+
 const regionsUnexplored = {
   logs: [
     'regions_unexplored:stripped_baobab_log',
@@ -143,6 +145,7 @@ ServerEvents.tags('block', event => {
     'farmersdelight:tomatoes',
     'ecologics:prickly_pear',
     'regions_unexplored:salmonberry_bush',
+    'spawn:potted_sweet_berry_bush',
   ]);
 });
 
@@ -512,6 +515,11 @@ ServerEvents.tags('item', event => {
   event.add('forge:fruits/berries', 'regions_unexplored:salmonberry');
   event.add('forge:fruits/salmonberries', 'regions_unexplored:salmonberry');
   event.add('forge:fruits/sweet', 'regions_unexplored:salmonberry');
+  /* Let the Atlas go into *any* curio slot :) */
+  event.remove('curios:hands', 'map_atlases:atlas');
+  event.add('curios:curio', 'map_atlases:atlas');
+  /* Add Silt Bricks to the brick tag */
+  event.add('forge:ingots/brick', 'twigs:silt_brick');
 
   event.add('forge:ocean_blocks', [
     'minecraft:brain_coral_block',
@@ -576,7 +584,7 @@ ServerEvents.tags('item', event => {
     'regions_unexplored:yellow_bioshroom_hyphae',
   ]);
 
-  [colors, exclusions, osmium].forEach(Module => Module());
+  [colors, exclusions, osmium].forEach(module => module());
 });
 
 ServerEvents.tags('entity_type', event => {

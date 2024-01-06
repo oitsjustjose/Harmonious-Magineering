@@ -96,9 +96,11 @@ LootJS.modifiers(event => {
 
   const modLoot = () => {
     event.addLootTableModifier(/.*/).replaceLoot('bloodmagic:sulfur', 'eidolon:sulfur');
+    event.addBlockLootModifier(/.*/).replaceLoot('spawn:snail_shell', 'naturalist:snail_shell');
   };
 
   event.addEntityLootModifier('minecraft:warden').removeLoot(ItemFilter.ALWAYS_TRUE);
+  event.addEntityLootModifier('aether:mimic').replaceLoot('minecraft:chest', 'expandedstorage:wood_chest', true);
 
-  [customSilverLead, boostDeepslateLoot, boostSomeMobDrops, lootr, modLoot].forEach(Module => Module());
+  [customSilverLead, boostDeepslateLoot, boostSomeMobDrops, lootr, modLoot].forEach(module => module());
 });

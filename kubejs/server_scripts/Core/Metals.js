@@ -1,3 +1,5 @@
+// priority: 100000
+
 ServerEvents.recipes(event => {
   const nuggetsFromSmelting = () => {
     const pairs = [
@@ -51,6 +53,7 @@ ServerEvents.recipes(event => {
     });
 
     [
+      'mekanism:metallurgic_infuser',
       'mekanism:processing/osmium/clump/from_ore',
       'mekanism:processing/osmium/clump/from_raw_block',
       'mekanism:processing/osmium/clump/from_raw_ore',
@@ -84,7 +87,7 @@ ServerEvents.recipes(event => {
       'mekanism:processing/osmium/slurry/dirty/from_raw_block',
       'mekanism:processing/osmium/slurry/dirty/from_raw_ore',
       'mekanism:processing/osmium/storage_blocks/from_ingots',
-    ].forEach(id => event.remove({id: id}));
+    ].forEach(id => event.remove(id));
   };
 
   const plateCompat = () => {
@@ -135,9 +138,9 @@ ServerEvents.recipes(event => {
   };
 
   const rods = () => {
-    event.remove({id: 'immersiveengineering:crafting/stick_aluminum'});
-    event.remove({id: 'immersiveengineering:crafting/stick_iron'});
-    event.remove({id: 'immersiveengineering:crafting/stick_steel'});
+    event.remove('immersiveengineering:crafting/stick_aluminum');
+    event.remove('immersiveengineering:crafting/stick_iron');
+    event.remove('immersiveengineering:crafting/stick_steel');
   };
 
   const silverAndLead = () => {

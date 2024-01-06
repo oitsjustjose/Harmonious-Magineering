@@ -1,3 +1,5 @@
+// priority: -1
+
 ServerEvents.recipes(event => {
   /* ~~Delightful:~~ Remove the easier pie recipe */
   event.remove({output: 'minecraft:pumpkin_pie'});
@@ -69,14 +71,14 @@ ServerEvents.recipes(event => {
   });
 
   /* ~~Cakes:~~ Dedup the 4 different recipes */
-  event.remove({id: 'aether:moa_egg_cake'});
-  event.remove({id: 'aether:skyroot_milk_bucket_cake'});
-  event.remove({id: 'aether:skyroot_milk_bucket_moa_egg_cake'});
-  event.remove({id: 'deep_aether:cake'});
-  event.remove({id: 'deep_aether:skyroot_milk_bucket_cake'});
-  event.remove({id: 'farmersdelight:cake_from_milk_bottle'});
-  event.remove({id: 'minecraft:cake'});
-  event.remove({id: 'naturalist:cake'});
+  event.remove('aether:moa_egg_cake');
+  event.remove('aether:skyroot_milk_bucket_cake');
+  event.remove('aether:skyroot_milk_bucket_moa_egg_cake');
+  event.remove('deep_aether:cake');
+  event.remove('deep_aether:skyroot_milk_bucket_cake');
+  event.remove('farmersdelight:cake_from_milk_bottle');
+  event.remove('minecraft:cake');
+  event.remove('naturalist:cake');
   event.shaped('minecraft:cake', ['MMM', 'SES', 'WWW'], {
     M: '#forge:milk',
     S: ['minecraft:sugar', 'minecraft:honey_bottle'],
@@ -121,27 +123,49 @@ ServerEvents.recipes(event => {
     results: [{item: 'regions_unexplored:salmonberry', count: 3}],
   });
 
-  event.remove({id: 'modularrouters:guide_book'});
+  event.remove('modularrouters:guide_book');
   event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"modularrouters:book"}'), ['minecraft:book', 'modularrouters:modular_router']);
 
-  /* ~~Ingots:~~ Preemptive Cleanup :) */
-  event.remove({id: 'create:blasting/ingot_osmium_compat_mekanism'});
-  event.remove({id: 'create:smelting/ingot_osmium_compat_mekanism'});
-  event.remove({id: 'immersiveengineering:crafting/storage_steel_to_ingot_steel'});
-  event.remove({id: 'immersiveengineering:smelting/ingot_steel_from_dust_from_blasting'});
-  event.remove({id: 'immersiveengineering:smelting/ingot_steel_from_dust'});
-  event.remove({id: 'mekanism:processing/osmium/ingot/from_block'});
-  event.remove({id: 'mekanism:processing/osmium/ingot/from_dust_blasting'});
-  event.remove({id: 'mekanism:processing/osmium/ingot/from_dust_smelting'});
-  event.remove({id: 'mekanism:processing/osmium/ingot/from_nuggets'});
-  event.remove({id: 'mekanism:processing/osmium/ingot/from_ore_blasting'});
-  event.remove({id: 'mekanism:processing/osmium/ingot/from_ore_smelting'});
-  event.remove({id: 'mekanism:processing/osmium/ingot/from_raw_blasting'});
-  event.remove({id: 'mekanism:processing/osmium/ingot/from_raw_smelting'});
-
-  /* ~~ Dough:~~ Smol dedup! */
+  /* ~~Dough:~~ Smol dedup! */
   event.replaceInput({}, 'create:dough', 'farmersdelight:wheat_dough');
   event.replaceOutput({output: 'create:dough'}, 'create:dough', 'farmersdelight:wheat_dough');
+
+  /* ~~Candles:~~ Smol Deduplication here as well */
+  event.remove({output: 'eidolon:candle'});
+  event.remove('delightful:candle_from_animal_fat');
+  event.shaped('minecraft:candle', ['S', 'T'], {S: 'minecraft:string', T: '#forge:tallow'});
+  event.replaceInput({mod: 'eidolon'}, 'eidolon:candle', 'minecraft:candle');
+
+  /* ~~Preemptive Cleanup the right way~~ */
+  [
+    'create:blasting/ingot_osmium_compat_mekanism',
+    'create:smelting/ingot_osmium_compat_mekanism',
+    'immersiveengineering:crafting/storage_steel_to_ingot_steel',
+    'immersiveengineering:smelting/ingot_steel_from_dust_from_blasting',
+    'immersiveengineering:smelting/ingot_steel_from_dust',
+    'mekanism:gas_conversion/osmium_from_block',
+    'mekanism:gas_conversion/osmium_from_block',
+    'mekanism:processing/osmium/clump/from_ore',
+    'mekanism:processing/osmium/clump/from_raw_ore',
+    'mekanism:processing/osmium/dust/from_ore',
+    'mekanism:processing/osmium/dust/from_raw_ore',
+    'mekanism:processing/osmium/ingot/from_block',
+    'mekanism:processing/osmium/ingot/from_dust_blasting',
+    'mekanism:processing/osmium/ingot/from_dust_smelting',
+    'mekanism:processing/osmium/ingot/from_nuggets',
+    'mekanism:processing/osmium/ingot/from_ore_blasting',
+    'mekanism:processing/osmium/ingot/from_ore_smelting',
+    'mekanism:processing/osmium/ingot/from_raw_blasting',
+    'mekanism:processing/osmium/ingot/from_raw_smelting',
+    'mekanism:processing/osmium/ore/deepslate_from_raw',
+    'mekanism:processing/osmium/ore/from_raw',
+    'mekanism:processing/osmium/raw_storage_blocks/from_raw',
+    'mekanism:processing/osmium/raw/from_raw_block',
+    'mekanism:processing/osmium/shard/from_ore',
+    'mekanism:processing/osmium/shard/from_raw_ore',
+    'mekanism:processing/osmium/slurry/dirty/from_ore',
+    'mekanism:processing/osmium/slurry/dirty/from_raw_ore',
+  ].forEach(id => event.remove(id));
 
   // --BEGIN-- hacky fuckery
   // This chunk of code below is a result of replaceInput not working for tags right now
@@ -154,9 +178,6 @@ ServerEvents.recipes(event => {
     {in: 'forge:dusts/osmium', out: 'forge:dusts/steel'},
     {in: 'forge:ingots/osmium', out: 'forge:ingots/steel'},
     {in: 'forge:nuggets/osmium', out: 'forge:nuggets/steel'},
-    {in: 'forge:ores/osmium', out: 'forge:dusts/steel'},
-    {in: 'forge:raw_materials/osmium', out: 'forge:dusts/steel'},
-    {in: 'forge:storage_blocks/osmium', out: 'forge:storage_blocks/steel'},
     {in: 'mekanism:block_osmium', out: 'mekanism:block_steel'},
     {in: 'mekanism:dust_osmium', out: 'mekanism:dust_steel'},
     {in: 'mekanism:ingot_osmium', out: 'mekanism:ingot_steel'},
@@ -181,7 +202,7 @@ ServerEvents.recipes(event => {
   // Remove the old recipe by its ID - this works 100% of the time
   //  Then we'll add in the new recipe as a "custom" recipe, which is just a stringified JSON
   changes.forEach(change => {
-    event.remove({id: change.id});
+    event.remove(change.id);
     event.custom(change.str).id(change.id);
   });
 

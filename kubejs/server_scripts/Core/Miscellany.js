@@ -19,6 +19,7 @@ ServerEvents.recipes(event => {
   });
 
   event.remove({mod: 'ftbquests'});
+  event.remove({output: 'minecraft:saddle'});
 
   [coldsweat, supplementaries].forEach(module => module());
 });

@@ -1,9 +1,3 @@
-#Multiplier for all the Atlases sound float
-#Range: 0.0 ~ 10.0
-soundScalar = 1.0
-#Render atlas like normal map when in hand
-#Allowed Values: ON, NOT_LOCKED, OFF
-in_hand_renderer = "NOT_LOCKED"
 
 [minimap]
 	#Hide minimap when holding the atlas in hand
@@ -70,6 +64,7 @@ in_hand_renderer = "NOT_LOCKED"
 	smooth_panning = true
 	#Makes zooming work smoothly instead of in 2 maps increments
 	smooth_zooming = true
+	#Range: 0.0 ~ 10.0
 	zoom_scroll_speed = 1.0
 	#Global scale of the entire world map GUI. Keep at 1 for pixel perfect consistency
 	#Range: 0.0 ~ 20.0
@@ -109,4 +104,12 @@ in_hand_renderer = "NOT_LOCKED"
 	night_lightmap = true
 	#Turn on to convert Xaeros minimap waypoints. Conversion will happen on world boot. Remember to turn back off
 	convert_xaeros_waypoints = false
+
+[misc]
+	#Multiplier for all the Atlases sound float
+	#Range: 0.0 ~ 10.0
+	soundScalar = 1.0
+	#Render atlas like normal map when in hand
+	#Allowed Values: ON, NOT_LOCKED, OFF
+	in_hand_renderer = "NOT_LOCKED"
 

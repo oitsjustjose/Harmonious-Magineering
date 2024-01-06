@@ -1,3 +1,4 @@
+// priority: 999999
 ServerEvents.recipes(event => {
   const items = {
     screen: Item.of('supplementaries:crystal_display'),
@@ -10,11 +11,11 @@ ServerEvents.recipes(event => {
     event.replaceInput({mod: 'ae2'}, '#forge:ingots/iron', '#forge:ingots/steel');
     event.replaceInput({mod: 'aeinfinitybooster'}, 'minecraft:ender_eye', 'ae2:singularity');
     // By the time you get to AE, you'll have power...
-    event.remove({id: 'ae2:network/blocks/crank'});
+    event.remove('ae2:network/blocks/crank');
 
     // Silicon redux
-    event.remove({id: 'ae2:blasting/silicon_from_certus_quartz_dust'});
-    event.remove({id: 'ae2:smelting/silicon_from_certus_quartz_dust'});
+    event.remove('ae2:blasting/silicon_from_certus_quartz_dust');
+    event.remove('ae2:smelting/silicon_from_certus_quartz_dust');
     event.recipes.create.compacting(Item.of('ae2:silicon', 2), [Item.of('mekanism:dust_quartz'), Item.of('mekanism:dust_coal')]).superheated();
     event.custom({
       type: 'mekanism:metallurgic_infusing',
@@ -24,10 +25,10 @@ ServerEvents.recipes(event => {
     });
 
     // Dusts shouldn't be made in the inscriber..
-    event.remove({id: 'ae2:inscriber/certus_quartz_dust'});
-    event.remove({id: 'ae2:inscriber/ender_dust'});
-    event.remove({id: 'ae2:inscriber/fluix_dust'});
-    event.remove({id: 'ae2:inscriber/sky_stone_dust'});
+    event.remove('ae2:inscriber/certus_quartz_dust');
+    event.remove('ae2:inscriber/ender_dust');
+    event.remove('ae2:inscriber/fluix_dust');
+    event.remove('ae2:inscriber/sky_stone_dust');
 
     event.custom({type: 'mekanism:crushing', input: {ingredient: {tag: 'forge:ender_pearls'}}, output: {item: 'ae2:ender_dust'}});
 
@@ -39,7 +40,7 @@ ServerEvents.recipes(event => {
     event.replaceInput({output: 'ae2:cell_component_256k'}, '#forge:dusts', 'ae2:sky_dust');
 
     // Use Copper Wiring in processor recipes
-    event.remove({id: 'ae2:inscriber/logic_processor'});
+    event.remove('ae2:inscriber/logic_processor');
     event.custom({
       type: 'ae2:inscriber',
       mode: 'press',
@@ -51,7 +52,7 @@ ServerEvents.recipes(event => {
       result: {item: 'ae2:logic_processor'},
     });
 
-    event.remove({id: 'ae2:inscriber/engineering_processor'});
+    event.remove('ae2:inscriber/engineering_processor');
     event.custom({
       type: 'ae2:inscriber',
       mode: 'press',
@@ -63,7 +64,7 @@ ServerEvents.recipes(event => {
       result: {item: 'ae2:engineering_processor'},
     });
 
-    event.remove({id: 'ae2:inscriber/calculation_processor'});
+    event.remove('ae2:inscriber/calculation_processor');
     event.custom({
       type: 'ae2:inscriber',
       mode: 'press',
@@ -76,9 +77,9 @@ ServerEvents.recipes(event => {
     });
 
     // Use mekanism circuits for the printed circuits
-    event.remove({id: 'ae2:inscriber/calculation_processor_print'});
-    event.remove({id: 'ae2:inscriber/engineering_processor_print'});
-    event.remove({id: 'ae2:inscriber/logic_processor_print'});
+    event.remove('ae2:inscriber/calculation_processor_print');
+    event.remove('ae2:inscriber/engineering_processor_print');
+    event.remove('ae2:inscriber/logic_processor_print');
 
     // Basic Control Circuit -> Logic Processor
     event.custom({
@@ -200,35 +201,49 @@ ServerEvents.recipes(event => {
 
   const create = () => {
     // Only Andesite Casing can be made by hand - everything else should be deployed
-    event.remove({id: 'create:item_application/brass_casing_from_log'});
-    event.remove({id: 'create:item_application/brass_casing_from_wood'});
-    event.remove({id: 'create:item_application/copper_casing_from_log'});
-    event.remove({id: 'create:item_application/copper_casing_from_wood'});
-    event.remove({id: 'create:item_application/railway_casing'});
+    event.remove('create:item_application/brass_casing_from_log');
+    event.remove('create:item_application/brass_casing_from_wood');
+    event.remove('create:item_application/copper_casing_from_log');
+    event.remove('create:item_application/copper_casing_from_wood');
+    event.remove('create:item_application/railway_casing');
 
     event.recipes.create.deploying('create:copper_casing', [['#forge:stripped_logs', '#forge:stripped_wood'], '#forge:ingots/copper']);
     event.recipes.create.deploying('create:brass_casing', [['#forge:stripped_logs', '#forge:stripped_wood'], '#forge:ingots/brass']);
     event.recipes.create.deploying('create:railway_casing', ['create:brass_casing', '#forge:plates/obsidian']);
-
-    event.remove({id: 'create:crafting/materials/andesite_alloy'});
-    event.remove({id: 'create:crafting/materials/andesite_alloy_from_zinc'});
-
-    event.custom({
-      type: 'embers:stamping',
-      fluid: {
-        amount: 90,
-        tag: 'forge:molten_iron',
+    // Cross compatibility recipes for all casings in the Mekanism Combiner
+    [
+      {
+        block: Ingredient.of(['#forge:stripped_wood', '#forge:stripped_logs']),
+        item: Ingredient.of('create:andesite_alloy'),
+        result: Item.of('create:andesite_casing'),
       },
-      input: {
-        item: 'minecraft:andesite',
+      {
+        block: Ingredient.of(['#forge:stripped_wood', '#forge:stripped_logs']),
+        item: Ingredient.of('minecraft:copper_ingot'),
+        result: Item.of('create:copper_casing'),
       },
-      output: {
-        item: 'create:andesite_alloy',
+      {
+        block: Ingredient.of(['#forge:stripped_wood', '#forge:stripped_logs']),
+        item: Ingredient.of('#forge:ingots/brass'),
+        result: Item.of('create:brass_casing'),
       },
-      stamp: {
-        item: 'embers:ingot_stamp',
+      {
+        block: Ingredient.of('create:brass_casing'),
+        item: Ingredient.of('create:sturdy_sheet'),
+        result: Item.of('create:railway_casing'),
       },
+    ].forEach(recipe => {
+      event.custom({
+        type: 'mekanism:combining',
+        mainInput: {amount: 1, ingredient: recipe.block.toJson()},
+        extraInput: {ingredient: recipe.item.toJson()},
+        output: recipe.result.toJson(),
+      });
     });
+
+    // Andesite Alloy recipe is done via custom:recipes/stamping/andesite_alloy
+    event.remove('create:crafting/materials/andesite_alloy');
+    event.remove('create:crafting/materials/andesite_alloy_from_zinc');
 
     // Make it easier to make Dawnstone once you get into Create :)
     event.recipes.create
@@ -292,8 +307,8 @@ ServerEvents.recipes(event => {
       event.recipes.create.mixing('mekanism:nugget_steel', ['#forge:nuggets/iron', '#forge:dusts/ash']).superheated();
     };
 
-    event.remove({id: mod('alloysmelter/brass')});
-    event.remove({id: mod('alloysmelter/bronze')});
+    event.remove(mod('alloysmelter/brass'));
+    event.remove(mod('alloysmelter/bronze'));
     event.replaceInput({output: mod('hammer')}, '#forge:ingots/iron', '#forge:ingots/steel');
     event.replaceInput({output: mod('wirecutter')}, '#forge:ingots/iron', '#forge:ingots/steel');
     event.remove({input: mod('wirecutter'), output: '#forge:wires'});
@@ -302,7 +317,7 @@ ServerEvents.recipes(event => {
   };
 
   const mekanism = () => {
-    [Item.of('mekanism:cardboard_box')].forEach(x => event.remove({output: x}));
+    event.remove({output: 'mekanism:cardboard_box'});
 
     event.custom({
       type: 'immersiveengineering:metal_press',
@@ -310,6 +325,65 @@ ServerEvents.recipes(event => {
       input: {item: 'mekanism:hdpe_sheet'},
       mold: 'immersiveengineering:mold_rod',
       result: {base_ingredient: {item: 'mekanism:hdpe_stick'}, count: 2},
+    });
+
+    event.remove({output: 'mekanism:steel_casing'});
+    event.shaped('mekanism:steel_casing', [' S ', 'SCS', ' S '], {
+      S: '#forge:ingots/steel',
+      C: 'create:brass_casing',
+    });
+
+    event.remove('mekanism:metallurgic_infuser');
+    event.shaped('mekanism:metallurgic_infuser', ['RKR', 'ICI', 'RKR'], {
+      C: 'mekanism:steel_casing',
+      I: '#forge:ingots/compressed_iron',
+      K: 'immersiveengineering:alloybrick',
+      R: '#forge:dusts/redstone',
+    });
+
+    event.remove('mekanism:radioactive_waste_barrel');
+    event.shaped('mekanism:radioactive_waste_barrel', ['SLS', 'LBL', 'SLS'], {
+      B: 'minecraft:barrel',
+      L: '#forge:ingots/lead',
+      S: '#forge:ingots/steel',
+    });
+
+    event.remove('mekanism:energy_tablet');
+    event.shaped('mekanism:energy_tablet', ['PCP', 'ABA', 'PCP'], {
+      A: 'mekanism:alloy_infused',
+      B: 'kubejs:rf_core',
+      C: '#forge:ingots/copper',
+      P: items.plastic,
+    });
+
+    event.remove('mekanism:induction/casing');
+    event.shaped('mekanism:induction_casing', ['PSP', 'SBS', 'PSP'], {
+      P: items.plastic,
+      S: '#forge:ingots/steel',
+      B: '#forge:batteries',
+    });
+
+    event.remove('mekanismgenerators:turbine/casing');
+    event.shaped('mekanismgenerators:turbine_casing', [' S ', 'SPS', ' S '], {
+      S: '#forge:ingots/steel',
+      P: items.plastic,
+    });
+
+    event.remove('mekanism:fluid_tank/basic');
+    event.shaped('mekanism:basic_fluid_tank', ['PTP', 'T T', 'PTP'], {
+      P: items.plastic,
+      T: 'create:fluid_tank',
+    });
+    event.shaped('mekanism:basic_fluid_tank', [' P ', 'PTP', ' P '], {
+      P: items.plastic,
+      T: 'pneumaticcraft:small_tank',
+    });
+
+    event.remove('mekanism:chemical_tank/basic');
+    event.shaped('mekanism:basic_chemical_tank', ['PSP', 'STS', 'PSP'], {
+      P: items.plastic,
+      S: '#forge:ingots/steel',
+      T: 'mekanism:basic_fluid_tank',
     });
   };
 
@@ -418,18 +492,16 @@ ServerEvents.recipes(event => {
     event.shaped('xnet:antenna_dish', ['PPP', 'PPP', ' R '], {R: '#forge:rods/steel', P: '#forge:plates/steel'});
   };
 
-  [
-    ae2,
-    buildingGadgets,
-    chunkloaders,
-    create,
-    dimStorage,
-    entangled,
-    immersiveEngineering,
-    mekanism,
-    modularRouters,
-    pnc,
-    prettyPipes,
-    rfTools,
-  ].forEach(Module => Module());
+  ae2();
+  buildingGadgets();
+  chunkloaders();
+  create();
+  dimStorage();
+  entangled();
+  immersiveEngineering();
+  mekanism();
+  modularRouters();
+  pnc();
+  prettyPipes();
+  rfTools();
 });

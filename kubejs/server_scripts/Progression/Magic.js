@@ -83,60 +83,60 @@ ServerEvents.recipes(event => {
 
     [
       // Remove these -- they should all be declared in the anvil because they're vanilla-adjacent tools
-      'bow_repairing',
-      'chainmail_boots_repairing',
-      'chainmail_chestplate_repairing',
-      'chainmail_gloves_repairing',
-      'chainmail_helmet_repairing',
-      'chainmail_leggings_repairing',
-      'diamond_axe_repairing',
-      'diamond_boots_repairing',
-      'diamond_chestplate_repairing',
-      'diamond_gloves_repairing',
-      'diamond_helmet_repairing',
-      'diamond_hoe_repairing',
-      'diamond_leggings_repairing',
-      'diamond_pickaxe_repairing',
-      'diamond_shovel_repairing',
-      'diamond_sword_repairing',
-      'fishing_rod_repairing',
-      'golden_axe_repairing',
-      'golden_boots_repairing',
-      'golden_chestplate_repairing',
-      'golden_gloves_repairing',
-      'golden_helmet_repairing',
-      'golden_hoe_repairing',
-      'golden_leggings_repairing',
-      'golden_pickaxe_repairing',
-      'golden_shovel_repairing',
-      'golden_sword_repairing',
-      'iron_axe_repairing',
-      'iron_boots_repairing',
-      'iron_chestplate_repairing',
-      'iron_gloves_repairing',
-      'iron_helmet_repairing',
-      'iron_hoe_repairing',
-      'iron_leggings_repairing',
-      'iron_pickaxe_repairing',
-      'iron_shovel_repairing',
-      'iron_sword_repairing',
-      'leather_boots_repairing',
-      'leather_chestplate_repairing',
-      'leather_gloves_repairing',
-      'leather_helmet_repairing',
-      'leather_leggings_repairing',
-      'shield_repairing',
-      'stone_axe_repairing',
-      'stone_hoe_repairing',
-      'stone_pickaxe_repairing',
-      'stone_shovel_repairing',
-      'stone_sword_repairing',
-      'wooden_axe_repairing',
-      'wooden_hoe_repairing',
-      'wooden_pickaxe_repairing',
-      'wooden_shovel_repairing',
-      'wooden_sword_repairing',
-    ].forEach(x => event.remove({id: `aether:${x}`}));
+      'aether:bow_repairing',
+      'aether:chainmail_boots_repairing',
+      'aether:chainmail_chestplate_repairing',
+      'aether:chainmail_gloves_repairing',
+      'aether:chainmail_helmet_repairing',
+      'aether:chainmail_leggings_repairing',
+      'aether:diamond_axe_repairing',
+      'aether:diamond_boots_repairing',
+      'aether:diamond_chestplate_repairing',
+      'aether:diamond_gloves_repairing',
+      'aether:diamond_helmet_repairing',
+      'aether:diamond_hoe_repairing',
+      'aether:diamond_leggings_repairing',
+      'aether:diamond_pickaxe_repairing',
+      'aether:diamond_shovel_repairing',
+      'aether:diamond_sword_repairing',
+      'aether:fishing_rod_repairing',
+      'aether:golden_axe_repairing',
+      'aether:golden_boots_repairing',
+      'aether:golden_chestplate_repairing',
+      'aether:golden_gloves_repairing',
+      'aether:golden_helmet_repairing',
+      'aether:golden_hoe_repairing',
+      'aether:golden_leggings_repairing',
+      'aether:golden_pickaxe_repairing',
+      'aether:golden_shovel_repairing',
+      'aether:golden_sword_repairing',
+      'aether:iron_axe_repairing',
+      'aether:iron_boots_repairing',
+      'aether:iron_chestplate_repairing',
+      'aether:iron_gloves_repairing',
+      'aether:iron_helmet_repairing',
+      'aether:iron_hoe_repairing',
+      'aether:iron_leggings_repairing',
+      'aether:iron_pickaxe_repairing',
+      'aether:iron_shovel_repairing',
+      'aether:iron_sword_repairing',
+      'aether:leather_boots_repairing',
+      'aether:leather_chestplate_repairing',
+      'aether:leather_gloves_repairing',
+      'aether:leather_helmet_repairing',
+      'aether:leather_leggings_repairing',
+      'aether:shield_repairing',
+      'aether:stone_axe_repairing',
+      'aether:stone_hoe_repairing',
+      'aether:stone_pickaxe_repairing',
+      'aether:stone_shovel_repairing',
+      'aether:stone_sword_repairing',
+      'aether:wooden_axe_repairing',
+      'aether:wooden_hoe_repairing',
+      'aether:wooden_pickaxe_repairing',
+      'aether:wooden_shovel_repairing',
+      'aether:wooden_sword_repairing',
+    ].forEach(id => event.remove(id));
   };
 
   const bloodMagic = () => {
@@ -174,8 +174,8 @@ ServerEvents.recipes(event => {
     event.replaceInput({mod: 'bloodmagic', not: {type: 'bloodmagic:arc'}}, '#forge:nuggets/gold', '#forge:nuggets/arcane_gold');
     event.replaceInput({mod: 'bloodmagic', not: {type: 'bloodmagic:arc'}}, '#forge:ingots/gold', '#forge:ingots/arcane_gold');
     event.replaceInput({mod: 'bloodmagic', not: {type: 'bloodmagic:arc'}}, '#forge:storage_blocks/gold', '#forge:storage_blocks/arcane_gold');
-    event.remove({id: 'bloodmagic:soulforge/pettytartaricgem'});
-    event.remove({id: 'bloodmagic:soulforge/lessertartaricgem'});
+    event.remove('bloodmagic:soulforge/pettytartaricgem');
+    event.remove('bloodmagic:soulforge/lessertartaricgem');
 
     // More involved Petty Soul Gem recipe
     event.remove({output: 'bloodmagic:soulgempetty'});
@@ -240,8 +240,8 @@ ServerEvents.recipes(event => {
       event.remove({type: 'bloodmagic:arc', input: `#forge:raw_materials/${metal}`});
     });
 
-    event.remove({id: 'bloodmagic:alchemytable/sand_iron'});
-    event.remove({id: 'bloodmagic:alchemytable/sand_gold'});
+    event.remove('bloodmagic:alchemytable/sand_iron');
+    event.remove('bloodmagic:alchemytable/sand_gold');
 
     const cuttingFluid = Ingredient.of('#bloodmagic:arc/cuttingfluid');
     const explosive = Ingredient.of('#bloodmagic:arc/explosive');
@@ -264,7 +264,7 @@ ServerEvents.recipes(event => {
     });
 
     // Arcane Ashes should require Enchanted Ash from Eidolon
-    event.remove({id: 'bloodmagic:alchemytable/arcane_ash'});
+    event.remove('bloodmagic:alchemytable/arcane_ash');
     event
       .custom({
         type: 'bloodmagic:altar',
@@ -278,7 +278,7 @@ ServerEvents.recipes(event => {
       .id('bloodmagic:alchemytable/arcane_ash');
 
     // Binding Reagent should be more involved
-    event.remove({id: 'bloodmagic:alchemytable/reagent_binding'});
+    event.remove('bloodmagic:alchemytable/reagent_binding');
     event
       .custom({
         type: 'bloodmagic:alchemytable',
@@ -291,7 +291,7 @@ ServerEvents.recipes(event => {
       .id('bloodmagic:alchemytable/reagent_binding');
 
     // Blank Slates should require Aether Things as well :)
-    event.remove({id: 'bloodmagic:altar/slate'});
+    event.remove('bloodmagic:altar/slate');
     event
       .custom({
         type: 'bloodmagic:altar',
@@ -305,13 +305,13 @@ ServerEvents.recipes(event => {
       .id('bloodmagic:altar/slate');
 
     // Large Bloodstone Brick should use the Aether's Hellfire Stone (i.e. kill the level-3 boss in the Aether)
-    event.remove({id: 'bloodmagic:largebloodstonebrick'});
+    event.remove('bloodmagic:largebloodstonebrick');
     event
       .shapeless(Item.of('bloodmagic:largebloodstonebrick', 8), [Item.of('aether:hellfire_stone'), Item.of('bloodmagic:weakbloodshard')])
       .id('bloodmagic:largebloodstonebrick');
 
     // Blank Rune blocks should require Aether Stones
-    event.remove({id: 'bloodmagic:blood_rune_blank'});
+    event.remove('bloodmagic:blood_rune_blank');
     event
       .shaped(Item.of('bloodmagic:blankrune', 2), ['DSD', 'DOD', 'DDD'], {
         D: {item: 'minecraft:deepslate'},
@@ -321,11 +321,11 @@ ServerEvents.recipes(event => {
       .id('bloodmagic:blood_rune_blank');
 
     // Re-do all of the Blood Orb recipes
-    event.remove({id: 'bloodmagic:altar/weakbloodorb'});
-    event.remove({id: 'bloodmagic:altar/apprenticebloodorb'});
-    event.remove({id: 'bloodmagic:altar/magicianbloodorb'});
-    event.remove({id: 'bloodmagic:altar/masterbloodorb'});
-    event.remove({id: 'bloodmagic:altar/archmagebloodorb'});
+    event.remove('bloodmagic:altar/weakbloodorb');
+    event.remove('bloodmagic:altar/apprenticebloodorb');
+    event.remove('bloodmagic:altar/magicianbloodorb');
+    event.remove('bloodmagic:altar/masterbloodorb');
+    event.remove('bloodmagic:altar/archmagebloodorb');
 
     event
       .custom({
@@ -388,10 +388,10 @@ ServerEvents.recipes(event => {
       .id('bloodmagic:altar/archmagebloodorb');
 
     // Also applies to the reversion recipes :)
-    event.remove({id: 'bloodmagic:arc/reversion/weak_blood_orb'});
-    event.remove({id: 'bloodmagic:arc/reversion/apprentice_blood_orb'});
-    event.remove({id: 'bloodmagic:arc/reversion/magician_blood_orb'});
-    event.remove({id: 'bloodmagic:arc/reversion/master_blood_orb'});
+    event.remove('bloodmagic:arc/reversion/weak_blood_orb');
+    event.remove('bloodmagic:arc/reversion/apprentice_blood_orb');
+    event.remove('bloodmagic:arc/reversion/magician_blood_orb');
+    event.remove('bloodmagic:arc/reversion/master_blood_orb');
 
     event
       .custom({
@@ -441,7 +441,7 @@ ServerEvents.recipes(event => {
       })
       .id('bloodmagic:arc/reversion/master_blood_orb');
 
-    event.remove({id: 'bloodmagic:altar/daggerofsacrifice'});
+    event.remove('bloodmagic:altar/daggerofsacrifice');
     event
       .custom({
         type: 'bloodmagic:altar',
@@ -489,7 +489,7 @@ ServerEvents.recipes(event => {
     event.remove({type: 'minecraft:crafting_shaped', mod: 'cagedmobs'});
     event.remove({type: 'minecraft:crafting_shapeless', mod: 'cagedmobs'});
     event.remove({type: 'cagedmobs:entity_data'});
-    event.remove({id: 'cagedmobs:crafting/netherite_dna_sampler'});
+    event.remove('cagedmobs:crafting/netherite_dna_sampler');
 
     // Iron DNA Sampler
     event.custom({
@@ -527,8 +527,8 @@ ServerEvents.recipes(event => {
 
     // Environments (Pre-requisite)
     const environments = () => {
-      event.remove({id: 'cagedmobs:environments/diamond_ore'});
-      event.remove({id: 'cagedmobs:environments/deepslate_diamond_ore'});
+      event.remove('cagedmobs:environments/diamond_ore');
+      event.remove('cagedmobs:environments/deepslate_diamond_ore');
 
       event.custom({
         type: 'cagedmobs:environment_data',
@@ -985,16 +985,12 @@ ServerEvents.recipes(event => {
     };
 
     environments();
-    [aether, creeperOverhaul, ecologics, eidolon, endermanOverhaul, minecraft, naturalist, spawn].forEach(Submodule => Submodule());
+    [aether, creeperOverhaul, ecologics, eidolon, endermanOverhaul, minecraft, naturalist, spawn].forEach(module => module());
   };
 
   const eidolon = () => {
-    // Candle deduplication-ish
-    event.remove({output: 'eidolon:candle'});
-    event.remove({id: 'delightful:candle_from_animal_fat'});
-    event.shaped('minecraft:candle', ['S', 'T'], {S: 'minecraft:string', T: '#forge:tallow'});
-
-    event.replaceInput({}, 'eidolon:candle', 'minecraft:candle');
+    // Polished Planks via Create Sanding.
+    event.recipes.create.deploying('eidolon:polished_planks', ['#minecraft:planks', '#create:sandpaper'])
   };
 
   const embers = () => {
@@ -1017,46 +1013,10 @@ ServerEvents.recipes(event => {
       event.remove({output: tool});
     });
 
-    // Make Pewter from combining Molten Lead with Iron
-    event.custom({
-      type: 'embers:stamping',
-      fluid: {
-        amount: 90,
-        tag: 'forge:molten_lead',
-      },
-      input: {
-        tag: 'forge:ingots/iron',
-      },
-      output: {
-        item: 'eidolon:pewter_ingot',
-        count: 2,
-      },
-      stamp: {
-        item: 'embers:ingot_stamp',
-      },
-    });
-
-    // ...or Molten Iron with Lead
-    event.custom({
-      type: 'embers:stamping',
-      fluid: {
-        amount: 90,
-        tag: 'forge:molten_iron',
-      },
-      input: {
-        tag: 'forge:ingots/lead',
-      },
-      output: {
-        item: 'eidolon:pewter_ingot',
-        count: 2,
-      },
-      stamp: {
-        item: 'embers:ingot_stamp',
-      },
-    });
+    // More pewter recipes are done via custom:recipes/stamping/pewter_from_molten_*.json
 
     // Make Caminite Brick consume Angelic Stone
-    event.remove({id: 'embers:caminite_bricks'});
+    event.remove('embers:caminite_bricks');
     event.shaped(Item.of('embers:caminite_bricks', 2), [' C ', 'CAC', ' C '], {
       C: 'embers:caminite_brick',
       A: 'aether:angelic_stone',
@@ -1154,7 +1114,7 @@ ServerEvents.recipes(event => {
 
   event.remove({output: 'minecraft:enchanting_table'});
 
-  [aether, bloodMagic, cagedMobs, eidolon, embers, waystones].forEach(Module => Module());
+  [aether, bloodMagic, cagedMobs, eidolon, embers, waystones].forEach(module => module());
 });
 
 LootJS.modifiers(event => {

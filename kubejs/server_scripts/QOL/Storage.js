@@ -39,28 +39,28 @@ ServerEvents.recipes(event => {
   });
 
   // Backpacks
-  event.remove({id: 'sophisticatedbackpacks:iron_backpack'});
+  event.remove('sophisticatedbackpacks:iron_backpack');
   backpackSmithing(
     Item.of('sophisticatedbackpacks:iron_backpack'),
     Ingredient.of('sophisticatedbackpacks:backpack'),
     Ingredient.of('#forge:storage_blocks/iron')
   );
 
-  event.remove({id: 'sophisticatedbackpacks:gold_backpack'});
+  event.remove('sophisticatedbackpacks:gold_backpack');
   backpackSmithing(
     Item.of('sophisticatedbackpacks:gold_backpack'),
     Ingredient.of('sophisticatedbackpacks:iron_backpack'),
     Ingredient.of('#forge:storage_blocks/gold')
   );
 
-  event.remove({id: 'sophisticatedbackpacks:diamond_backpack'});
+  event.remove('sophisticatedbackpacks:diamond_backpack');
   backpackSmithing(
     Item.of('sophisticatedbackpacks:diamond_backpack'),
     Ingredient.of('sophisticatedbackpacks:gold_backpack'),
     Ingredient.of('#forge:storage_blocks/diamond')
   );
 
-  event.remove({id: 'sophisticatedbackpacks:battery_upgrade'});
+  event.remove('sophisticatedbackpacks:battery_upgrade');
   event.shaped('sophisticatedbackpacks:battery_upgrade', ['GRG', 'RBR', 'GRG'], {
     G: '#forge:ingots/gold',
     R: 'kubejs:rf_core',
@@ -68,16 +68,16 @@ ServerEvents.recipes(event => {
   });
 
   // Framed Storage Drawers
-  event.remove({id: 'framedcompactdrawers:framed_compact_drawer'});
-  event.remove({id: 'framedcompactdrawers:framed_drawer_controller'});
-  event.remove({id: 'framedcompactdrawers:framed_full_four'});
-  event.remove({id: 'framedcompactdrawers:framed_full_one'});
-  event.remove({id: 'framedcompactdrawers:framed_full_two'});
-  event.remove({id: 'framedcompactdrawers:framed_half_four'});
-  event.remove({id: 'framedcompactdrawers:framed_half_one'});
-  event.remove({id: 'framedcompactdrawers:framed_half_two'});
-  event.remove({id: 'framedcompactdrawers:framed_slave'});
-  event.remove({id: 'framedcompactdrawers:framed_trim'});
+  event.remove('framedcompactdrawers:framed_compact_drawer');
+  event.remove('framedcompactdrawers:framed_drawer_controller');
+  event.remove('framedcompactdrawers:framed_full_four');
+  event.remove('framedcompactdrawers:framed_full_one');
+  event.remove('framedcompactdrawers:framed_full_two');
+  event.remove('framedcompactdrawers:framed_half_four');
+  event.remove('framedcompactdrawers:framed_half_one');
+  event.remove('framedcompactdrawers:framed_half_two');
+  event.remove('framedcompactdrawers:framed_slave');
+  event.remove('framedcompactdrawers:framed_trim');
 
   event.shaped('framedcompactdrawers:framed_full_one', ['FFF', ' C ', 'FFF'], {
     F: 'framedblocks:framed_cube',
