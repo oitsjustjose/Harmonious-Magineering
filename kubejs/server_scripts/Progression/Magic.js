@@ -24,6 +24,9 @@ ServerEvents.recipes(event => {
       result: {item: 'aether:aether_portal_frame'},
     });
 
+    event.remove('aether:nature_staff');
+    event.shaped('aether:nature_staff', [' Z', 'S '], {Z: '#forge:gems/zanite', S: 'aether:skyroot_stick'}).id('aether:nature_staff');
+
     [
       {item: Ingredient.of('aether_redux:infused_veridium_axe'), time: 70},
       {item: Ingredient.of('aether_redux:infused_veridium_hoe'), time: 70},
@@ -990,7 +993,7 @@ ServerEvents.recipes(event => {
 
   const eidolon = () => {
     // Polished Planks via Create Sanding.
-    event.recipes.create.deploying('eidolon:polished_planks', ['#minecraft:planks', '#create:sandpaper'])
+    event.recipes.create.deploying('eidolon:polished_planks', ['#minecraft:planks', '#create:sandpaper']);
   };
 
   const embers = () => {
