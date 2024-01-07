@@ -522,6 +522,9 @@ ServerEvents.tags('item', event => {
   event.add('forge:ingots/brick', 'twigs:silt_brick');
   /* Swet Bols */
   event.add('aether:swet_balls', ['aether_redux:golden_swet_ball', 'aether_redux:vanilla_swet_ball', 'deep_aether:golden_swet_ball']);
+  /* Polishing tag */
+  event.remove('minecraft:planks', 'eidolon:polished_planks');
+  event.add('custom:polishable_planks', ['#minecraft:planks', '#aether:planks_crafting']);
 
   event.add('forge:ocean_blocks', [
     'minecraft:brain_coral_block',

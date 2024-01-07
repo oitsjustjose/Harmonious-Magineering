@@ -995,7 +995,7 @@ ServerEvents.recipes(event => {
 
   const eidolon = () => {
     // Polished Planks via Create Sanding.
-    event.recipes.create.deploying('eidolon:polished_planks', ['#minecraft:planks', '#create:sandpaper']);
+    event.recipes.create.sandpaper_polishing('eidolon:polished_planks', ['#custom:polishable_planks']);
   };
 
   const embers = () => {
