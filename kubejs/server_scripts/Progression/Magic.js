@@ -27,6 +27,8 @@ ServerEvents.recipes(event => {
     event.remove('aether:nature_staff');
     event.shaped('aether:nature_staff', [' Z', 'S '], {Z: '#forge:gems/zanite', S: 'aether:skyroot_stick'}).id('aether:nature_staff');
 
+    event.replaceOutput({id: 'aether_redux:blue_swet_jelly'}, 'aether_redux:golden_swet_jelly', 'aether_redux:blue_swet_jelly');
+
     [
       {item: Ingredient.of('aether_redux:infused_veridium_axe'), time: 70},
       {item: Ingredient.of('aether_redux:infused_veridium_hoe'), time: 70},

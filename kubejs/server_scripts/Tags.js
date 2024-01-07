@@ -520,6 +520,8 @@ ServerEvents.tags('item', event => {
   event.add('curios:curio', 'map_atlases:atlas');
   /* Add Silt Bricks to the brick tag */
   event.add('forge:ingots/brick', 'twigs:silt_brick');
+  /* Swet Bols */
+  event.add('aether:swet_balls', ['aether_redux:golden_swet_ball', 'aether_redux:vanilla_swet_ball', 'deep_aether:golden_swet_ball']);
 
   event.add('forge:ocean_blocks', [
     'minecraft:brain_coral_block',

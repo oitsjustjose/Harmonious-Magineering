@@ -127,15 +127,24 @@ ServerEvents.recipes(event => {
   event.remove('modularrouters:guide_book');
   event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"modularrouters:book"}'), ['minecraft:book', 'modularrouters:modular_router']);
 
-  /* ~~Dough:~~ Smol dedup! */
+  /* ~~Dough~~ */
   event.replaceInput({}, 'create:dough', 'farmersdelight:wheat_dough');
   event.replaceOutput({output: 'create:dough'}, 'create:dough', 'farmersdelight:wheat_dough');
 
-  /* ~~Candles:~~ Smol Deduplication here as well */
+  /* ~~Candles~~ */
   event.remove({output: 'eidolon:candle'});
   event.remove('delightful:candle_from_animal_fat');
   event.shaped('minecraft:candle', ['S', 'T'], {S: 'minecraft:string', T: '#forge:tallow'});
   event.replaceInput({mod: 'eidolon'}, 'eidolon:candle', 'minecraft:candle');
+
+  /* ~~Leads~~ */
+  event.remove('aether:swet_lead');
+  event.remove('embers:lead_adhesive');
+  event.remove('minecraft:lead');
+  event.shaped(Item.of('minecraft:lead', 2), ['SS ', 'SB ', '  S'], {
+    S: 'minecraft:string',
+    B: ['#forge:slimeballs', '#aether:swet_balls'],
+  });
 
   /* ~~Preemptive Cleanup the right way~~ */
   [

@@ -48,6 +48,7 @@ JEIEvents.hideItems(event => {
     'create:crushed_raw_osmium',
     'create:dough',
     'decorative_blocks:blockstate_copy_item',
+    'deep_aether:golden_swet_ball',
     'delightful:salmonberries',
     'dimstorage:dim_core',
     'dimstorage:dim_wall',

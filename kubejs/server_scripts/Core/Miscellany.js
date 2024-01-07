@@ -20,6 +20,7 @@ ServerEvents.recipes(event => {
 
   event.remove({mod: 'ftbquests'});
   event.remove({output: 'minecraft:saddle'});
+  event.remove('aether:swet_slime_block');
 
   [coldsweat, supplementaries].forEach(module => module());
 });
