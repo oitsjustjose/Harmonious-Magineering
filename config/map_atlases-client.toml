@@ -112,4 +112,10 @@
 	#Render atlas like normal map when in hand
 	#Allowed Values: ON, NOT_LOCKED, OFF
 	in_hand_renderer = "NOT_LOCKED"
+	#Scale multiplier for Map Markers on the atlas
+	#Range: 0.0 ~ 10.0
+	map_markers_scale = 1.0
+	#Scale multiplier for Map Markers text on the atlas
+	#Range: 0.0 ~ 10.0
+	map_markers_text_scale = 1.0
 
