@@ -60,5 +60,6 @@ ServerEvents.recipes(event => {
 
   // Supplementaries
   wash('#vtweaks:colored_candle_holder', 'supplementaries:candle_holder');
+  wash('#vtweaks:colored_gold_candle_holder', 'suppsquared:gold_candle_holder');
   wash('#vtweaks:colored_flag', 'supplementaries:flag_white');
 });

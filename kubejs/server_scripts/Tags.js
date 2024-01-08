@@ -250,6 +250,7 @@ ServerEvents.tags('item', event => {
 
     // Supplementaries
     event.add('vtweaks:colored_candle_holder', allColorsOf('supplementaries', null, 'candle_holder'));
+    event.add('vtweaks:colored_gold_candle_holder', allColorsOf('suppsquared', null, 'gold_candle_holder'));
     event.add('vtweaks:colored_flag', allButWhite('supplementaries', null, 'flag'));
   };
 

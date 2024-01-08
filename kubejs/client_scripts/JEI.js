@@ -98,7 +98,6 @@ JEIEvents.hideItems(event => {
     'spawn:snail_eggs',
     'spawn:snail_shell',
     'spawn:snail_spawn_egg',
-    'supplementaries:sack',
     'waystones:black_sharestone',
     'waystones:blue_sharestone',
     'waystones:brown_sharestone',

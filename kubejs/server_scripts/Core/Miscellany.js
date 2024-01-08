@@ -60,7 +60,35 @@ ServerEvents.recipes(event => {
   };
 
   const supplementaries = () => {
-    event.remove({output: 'supplementaries:sack'});
+    event.replaceInput({output: 'supplementaries:sack'}, 'supplementaries:flax', 'farmersdelight:canvas');
+
+    /* Fix candle holder recipe inconcistencies */
+    [
+      '',
+      'pink',
+      'magenta',
+      'purple',
+      'blue',
+      'light_blue',
+      'cyan',
+      'green',
+      'lime',
+      'yellow',
+      'orange',
+      'red',
+      'brown',
+      'black',
+      'gray',
+      'light_gray',
+      'white',
+    ].forEach(color => {
+      let candle = `supplementaries:candle_holder${color.length > 0 ? '_' : ''}${color}`;
+      event.remove({output: candle});
+      event.shaped(candle, ['C', 'I'], {
+        C: `minecraft:${color}${color.length > 0 ? '_' : ''}candle`,
+        I: '#forge:ingots/iron',
+      });
+    });
   };
 
   event.shaped('kubejs:rf_core', [' CC', 'SWC', 'SS '], {
