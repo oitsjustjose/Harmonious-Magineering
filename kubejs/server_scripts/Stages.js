@@ -120,13 +120,6 @@ ServerEvents.recipes(event => {
   event.custom({
     type: 'itemgator:mod',
     tag: 'gadgets',
-    mod: 'chunkloaders',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'gadgets',
     mod: 'dimstorage',
     substitute: {item: 'kubejs:unknown_energistic_item'},
   });

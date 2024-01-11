@@ -386,7 +386,7 @@ ServerEvents.recipes(event => {
         altarSyphon: 80000,
         consumptionRate: 50,
         drainRate: 100,
-        input: {item: 'endermanoverhaul:summoner_pearl'},
+        input: {item: 'minecraft:popped_chorus_fruit'},
         output: {item: 'bloodmagic:archmagebloodorb'},
         upgradeLevel: 4,
       })

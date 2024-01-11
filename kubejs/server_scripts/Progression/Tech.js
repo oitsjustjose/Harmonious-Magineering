@@ -181,7 +181,7 @@ ServerEvents.recipes(event => {
       'chunkloaders:single_chunk_loader',
     ]);
     event.shaped('chunkloaders:basic_chunk_loader', ['IBI', 'BEB', 'IBI'], {
-      B: '#forge:storage_blocks/compressed_iron',
+      B: '#forge:storage_blocks/iron',
       I: 'minecraft:blaze_powder',
       E: 'minecraft:respawn_anchor',
     });
@@ -408,30 +408,82 @@ ServerEvents.recipes(event => {
   };
 
   const prettyPipes = () => {
-    event.remove({output: 'prettypipes:blank_module'});
-    event.shaped(Item.of('prettypipes:blank_module', 8), [' P ', 'PUP', ' P '], {
-      P: items.plastic,
-      U: 'pneumaticcraft:upgrade_matrix',
-    });
+    const blank = 'prettypipes:blank_module';
 
-    event.remove({output: 'prettypipes:pipe'});
-    event.shaped(Item.of('prettypipes:pipe', 16), ['IGI'], {I: '#forge:ingots/compressed_iron', G: '#forge:glass/colorless'});
+    event.remove({mod: 'prettypipes'});
 
-    event.remove({output: 'prettypipes:pressurizer'});
+    /* New pipe wrench recipe */
+    event.shaped('prettypipes:wrench', [' A ', 'RRA', ' R '], {A: 'create:andesite_alloy', R: '#forge:dyes/red'});
+    /* New pipe recipe */
+    event.shaped(Item.of('prettypipes:pipe', 16), ['IGI'], {I: 'create:andesite_alloy', G: '#forge:glass/colorless'});
+    /* New blank module recipe */
+    event.recipes.create.pressing('prettypipes:blank_module', ['create:andesite_alloy']);
+    /* New pipe pressurizer recipe */
     event.smithing('prettypipes:pressurizer', 'pneumaticcraft:pressure_gauge', 'pneumaticcraft:pressure_chamber_valve', 'prettypipes:pipe');
-
-    event.remove({output: 'prettypipes:item_terminal'});
+    /* New item terminal recipe */
     event.shaped('prettypipes:item_terminal', ['DSC', 'EHR', 'CSD'], {
-      C: 'pneumaticcraft:compressed_iron_block',
+      C: 'create:brass_casing',
       D: 'minecraft:diamond',
       E: 'prettypipes:high_extraction_module',
       H: '#forge:chests/wooden',
       R: 'prettypipes:high_retrieval_module',
       S: items.screen,
     });
-
-    event.remove({output: 'prettypipes:crafting_terminal'});
+    /* New crafting terminal recipe */
     event.smithing('prettypipes:crafting_terminal', 'minecraft:crafting_table', 'prettypipes:item_terminal', 'minecraft:crafting_table');
+    /* New pipe frame recipe */
+    event.shaped('prettypipes:pipe_frame', ['SLS', 'LPL', 'SLS'], {S: '#forge:rods/wooden', L: '#forge:leather', P: 'prettypipes:pipe'});
+
+    event.shaped('prettypipes:round_robin_sorting_modifier', ['LL ', 'LBL', ' LL'], {L: '#forge:gems/lapis', B: blank});
+    event.shaped('prettypipes:stack_size_module', [' L ', 'LBL', ' L '], {L: '#forge:leather', B: blank});
+    event.shaped('prettypipes:redstone_module', [' C ', 'RBR', ' R '], {C: 'minecraft:comparator', R: '#forge:dusts/redstone', B: blank});
+    event.shaped('prettypipes:random_sorting_modifier', [' C ', 'RBR', ' R '], {C: 'minecraft:dispenser', R: '#forge:dusts/redstone', B: blank});
+    event.shaped('prettypipes:damage_filter_modifier', [' T ', 'GBG', ' G '], {T: 'ae2:tiny_tnt', G: 'minecraft:gunpowder', B: blank});
+    event.shaped('prettypipes:mod_filter_modifier', [' S ', 'NBN', ' S '], {S: '#forge:plates/obsidian', N: '#forge:nuggets/brass', B: blank});
+    event.shaped('prettypipes:nbt_filter_modifier', [' Q ', 'QBQ', ' Q '], {Q: 'minecraft:quartz', B: blank});
+    event.shaped('prettypipes:tag_filter_modifier', [' N ', 'SBS', ' S '], {N: 'minecraft:name_tag', S: 'minecraft:string', B: blank});
+    event.shaped('prettypipes:filter_increase_modifier', [' C ', 'PBP', ' P '], {
+      C: ['expandedstorage:vanilla_wood_mini_chest', 'expandedstorage:wood_mini_chest'],
+      P: 'minecraft:paper',
+      B: blank,
+    });
+
+    // Upgradable Modules
+    event.shaped('prettypipes:low_crafting_module', [' P ', 'PBP', ' P '], {P: '#minecraft:planks', B: blank});
+    event.shaped('prettypipes:low_filter_module', [' W ', 'NBN', ' W '], {W: '#minecraft:wool', N: '#forge:nuggets/iron', B: blank});
+    event.shaped('prettypipes:low_low_priority_module', [' S ', 'SBS', ' S '], {S: '#forge:rods/wooden', B: blank});
+    event.shaped('prettypipes:low_high_priority_module', ['S S', ' B ', 'S S'], {S: '#forge:rods/wooden', B: blank});
+    event.shaped('prettypipes:low_extraction_module', ['I I', 'IBI', ' I '], {I: '#forge:ingots/iron', B: blank});
+    event.shaped('prettypipes:low_retrieval_module', ['ISI', 'IBI', ' I '], {I: '#forge:ingots/iron', S: 'minecraft:sticky_piston', B: blank});
+    event.shaped('prettypipes:low_speed_module', [' S ', 'SBS', ' S '], {
+      S: ['minecraft:sugar', 'minecraft:honey_bottle', 'delightful:matcha'],
+      B: blank,
+    });
+
+    const upgradableModules = [
+      'retrieval_module',
+      'high_priority_module',
+      'low_priority_module',
+      'speed_module',
+      'filter_module',
+      'extraction_module',
+      'crafting_module',
+    ];
+
+    upgradableModules.forEach(module => {
+      event.shaped(`prettypipes:medium_${module}`, ['BRB', 'BLB', 'BBB'], {
+        L: `prettypipes:low_${module}`,
+        B: '#forge:nuggets/brass',
+        R: 'create:polished_rose_quartz',
+      });
+
+      event.shaped(`prettypipes:high_${module}`, ['NPN', 'BMB', 'NBN'], {
+        M: `prettypipes:medium_${module}`,
+        B: '#forge:plates/brass',
+        N: '#forge:nuggets/brass',
+        P: 'create:precision_mechanism',
+      });
+    });
   };
 
   const rfTools = () => {
@@ -492,16 +544,18 @@ ServerEvents.recipes(event => {
     event.shaped('xnet:antenna_dish', ['PPP', 'PPP', ' R '], {R: '#forge:rods/steel', P: '#forge:plates/steel'});
   };
 
-  ae2();
-  buildingGadgets();
-  chunkloaders();
-  create();
-  dimStorage();
-  entangled();
-  immersiveEngineering();
-  mekanism();
-  modularRouters();
-  pnc();
-  prettyPipes();
-  rfTools();
+  [
+    ae2,
+    buildingGadgets,
+    chunkloaders,
+    create,
+    dimStorage,
+    entangled,
+    immersiveEngineering,
+    mekanism,
+    modularRouters,
+    pnc,
+    prettyPipes,
+    rfTools,
+  ].forEach(module => module());
 });
