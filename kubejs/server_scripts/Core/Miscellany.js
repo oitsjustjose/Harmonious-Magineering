@@ -1,13 +1,4 @@
 ServerEvents.recipes(event => {
-  const coldsweat = () => {
-    event.remove({output: 'cold_sweat:hearth'});
-    event.shaped('cold_sweat:hearth', ['  W', 'RBR', 'RRR'], {
-      W: 'minecraft:cobblestone_wall',
-      B: 'cold_sweat:boiler',
-      R: 'twigs:rhyolite',
-    });
-  };
-
   /* Create's Waxed Copper can't be crafted into corresponding stairs/slabs, but vanilla's can... */
   const createWaxedCopper = () => {
     [
@@ -104,5 +95,5 @@ ServerEvents.recipes(event => {
   event.remove({output: 'minecraft:saddle'});
   event.remove('aether:swet_slime_block');
 
-  [coldsweat, createWaxedCopper, supplementaries].forEach(module => module());
+  [createWaxedCopper, supplementaries].forEach(module => module());
 });
