@@ -442,6 +442,7 @@ ServerEvents.tags('item', event => {
       'mekanism:block_fluorite',
       'mekanism:block_raw_tin',
       'mekanism:block_raw_uranium',
+      'mekanism:block_salt',
       'mekanism:block_steel',
       'mekanism:block_tin',
       'mekanism:block_uranium',
@@ -459,6 +460,7 @@ ServerEvents.tags('item', event => {
       'mekanism:nugget_uranium',
       'mekanism:raw_tin',
       'mekanism:raw_uranium',
+      'mekanism:salt',
       'mekanism:tin_ore',
       'mekanism:uranium_ore',
     ]);
