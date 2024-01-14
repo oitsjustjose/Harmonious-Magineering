@@ -109,25 +109,10 @@ ServerEvents.recipes(event => {
     exceptions: {tag: 'immersiveengineering:exception'},
   });
 
-  /* ~~ GADGETS ~~ */
   event.custom({
     type: 'itemgator:mod',
-    tag: 'gadgets',
+    tag: 'ie',
     mod: 'buildinggadgets2',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'gadgets',
-    mod: 'mininggadgets',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'gadgets',
-    mod: 'dimstorage',
     substitute: {item: 'kubejs:unknown_energistic_item'},
   });
 
@@ -154,10 +139,16 @@ ServerEvents.recipes(event => {
     substitute: {item: 'kubejs:unknown_electric_item'},
   });
 
-  /* ~~ RFTOOLS + Addons ~~ */
   event.custom({
     type: 'itemgator:mod',
-    tag: 'rftools',
+    tag: 'mekanism',
+    mod: 'dimstorage',
+    substitute: {item: 'kubejs:unknown_energistic_item'},
+  });
+
+  event.custom({
+    type: 'itemgator:mod',
+    tag: 'mekanism',
     mod: 'rftoolsbase',
     substitute: {item: 'kubejs:unknown_electric_item'},
     exceptions: [

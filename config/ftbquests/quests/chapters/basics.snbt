@@ -15,32 +15,6 @@
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["3025147B8EB09C0C"]
-			description: [
-				"Upon entering the world, you'll begin to notice that keeping your body temperature regulated is incredibly important; being too cold may prevent you from sleeping, or being too hot may start to blur your vision!"
-				""
-				"There are a few measures you can take to help keep your body temperature regulated, but a campfire will at least keep you warm at night!"
-			]
-			id: "19D30A4F9A99AC5D"
-			rewards: [{
-				count: 2
-				id: "7F61590C5152BB7D"
-				item: "delightful:smore"
-				random_bonus: 6
-				type: "item"
-			}]
-			shape: "hexagon"
-			subtitle: "S'mores included!"
-			tasks: [{
-				id: "0999C57FE7D7EC5A"
-				item: "minecraft:campfire"
-				type: "item"
-			}]
-			title: "Chilling Out"
-			x: 0.5d
-			y: 0.0d
-		}
-		{
 			dependencies: ["656EACDA88A244CF"]
 			description: ["Of course like most Modpacks you'll find that there's too much to carry with you as you explore, loot and more! It seems wise to make a backpack as soon as possible to make it easier to bring more around with you. You can have multiple backpacks, and while they start out small, they can be upgraded all the way to 5-rows and 4 upgrade slots!"]
 			id: "767ED700EB86700A"
@@ -58,8 +32,8 @@
 				type: "item"
 			}]
 			title: "Portable Storage"
-			x: -5.0d
-			y: 0.0d
+			x: -1.0d
+			y: 4.0d
 		}
 		{
 			dependencies: ["3025147B8EB09C0C"]
@@ -101,8 +75,8 @@
 				type: "item"
 			}]
 			title: "Maps \\& Atlases"
-			x: -2.5d
-			y: 0.0d
+			x: -1.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["3025147B8EB09C0C"]
@@ -128,8 +102,8 @@
 				type: "observation"
 			}]
 			title: "Deepslate Ores"
-			x: -1.0d
-			y: -1.5d
+			x: 0.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["3025147B8EB09C0C"]
@@ -164,8 +138,8 @@
 				type: "location"
 			}]
 			title: "Strengthened Mobs"
-			x: -1.0d
-			y: 1.5d
+			x: -2.5d
+			y: 0.0d
 		}
 		{
 			dependencies: ["56D9CB36C6FE6B1A"]
@@ -198,32 +172,6 @@
 				type: "item"
 			}]
 			title: "Primitive Ore Processing"
-			x: -1.0d
-			y: -4.0d
-		}
-		{
-			dependencies: ["19D30A4F9A99AC5D"]
-			description: [
-				"Serene Seasons integrates with Cold Sweat and will add slight variances to temperature and precipitation based on the current season. In addition to changing Biome temperature, Serene Seasons will also modify how various crops grow, causing some to grow better in some seasons than others."
-				""
-				"Craft yourself a calendar to keep up with the current season!"
-			]
-			icon: "regions_unexplored:red_maple_leaf_pile"
-			id: "7D5AC48A59C77D8A"
-			rewards: [{
-				count: 4
-				id: "05D64C2BF691F085"
-				item: "create:experience_nugget"
-				random_bonus: 4
-				type: "item"
-			}]
-			subtitle: "It's a Swinter Swonderland"
-			tasks: [{
-				id: "6E5E3B1BFAB3705D"
-				item: "sereneseasons:calendar"
-				type: "item"
-			}]
-			title: "Seasons"
 			x: 3.0d
 			y: 0.0d
 		}
@@ -244,8 +192,8 @@
 				item: "supplementaries:altimeter"
 				type: "item"
 			}]
-			x: -4.0d
-			y: 1.5d
+			x: 0.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["509A87C70B07370E"]
@@ -274,8 +222,8 @@
 				type: "item"
 			}]
 			title: "Waystones"
-			x: -2.5d
-			y: 3.0d
+			x: -4.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["56D9CB36C6FE6B1A"]
@@ -307,8 +255,8 @@
 				type: "item"
 			}]
 			title: "Anvil Forging"
-			x: 0.5d
-			y: -3.0d
+			x: 2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["56D9CB36C6FE6B1A"]
@@ -332,8 +280,8 @@
 				type: "item"
 			}]
 			title: "Gear Upgrading"
-			x: -2.5d
-			y: -3.0d
+			x: 2.0d
+			y: -1.5d
 		}
 		{
 			dependencies: ["767ED700EB86700A"]
@@ -352,8 +300,8 @@
 				item: "minecraft:bundle"
 				type: "item"
 			}]
-			x: -7.0d
-			y: 0.0d
+			x: -1.0d
+			y: 6.0d
 		}
 		{
 			dependencies: ["656EACDA88A244CF"]
@@ -379,95 +327,8 @@
 				type: "item"
 			}]
 			title: "Camping"
-			x: -4.0d
-			y: -1.5d
-		}
-		{
-			dependencies: ["19D30A4F9A99AC5D"]
-			description: [
-				"The first step to keeping yourself warm, or cool, is to insulate your armor to keep your body temperature regulated. Using a sewing table, you can insulate using a variety of materials which have different regulation effects:"
-				""
-				"- Chameleon Molt is Adaptive, meaning it can keep your body warm &oor&r cool!"
-				""
-				"- Goat Fur will keep you nice and warm in cold environments"
-				""
-				"- Rabbit \\& Hoglin Hide will keep you from overheating"
-				""
-				"- Leather will keep your body generally insulated, reducing drastic body temperature changes in either direction"
-			]
-			id: "4960FD0824F95A4A"
-			rewards: [{
-				count: 8
-				id: "3D41B2865A78B37C"
-				item: "create:experience_nugget"
-				random_bonus: 4
-				type: "item"
-			}]
-			subtitle: "Keep Yourself Warm or Cool!"
-			tasks: [{
-				id: "0024C7815267DA29"
-				item: "cold_sweat:sewing_table"
-				type: "item"
-			}]
-			title: "Armor Insulation"
-			x: 2.0d
-			y: -1.5d
-		}
-		{
-			dependencies: ["19D30A4F9A99AC5D"]
-			description: ["In addition to keeping your own body regulated (which is super important when going on various treks throughout the world), you can also keep your whole home regulated! Using &l&9Water&r&r and &l&4Lava&r&r &lBuckets&r, you can start up a Hearth which will fill your home with heating and cooling!"]
-			id: "427904E6359510A8"
-			rewards: [{
-				count: 4
-				id: "357D0467596BDC2D"
-				item: "create:experience_nugget"
-				random_bonus: 4
-				type: "item"
-			}]
-			subtitle: "Because HVAC is just too expensive"
-			tasks: [{
-				id: "3615501C0AD0E4B4"
-				item: "cold_sweat:hearth"
-				type: "item"
-			}]
-			title: "Housing Insulation"
-			x: 2.0d
-			y: 1.5d
-		}
-		{
-			dependencies: ["7D5AC48A59C77D8A"]
-			description: [
-				"As you might suspect, the Nether is going to be &l&4HOT&r! In order to help fight against this, you're going to need a Soulspring Lamp, which uses &3Soul Sprouts&r to stay lit and provides an ominous freeze to your body, almost like Soul Fire."
-				""
-				"&lKeep an eye on your Lamp.&r It will eventually run out of Soul Sprouts and will need to be refilled - you can grow more of these sprouts by planting them on &bSoul Sand&r near &4Lava&r (and this can even be in the Overworld). To refill your Lamp, pick up some Sprouts with your mouse cursor and right-click the Lamp in your inventory!"
-				""
-				"You'll also see a friendly reminder the first time you try to enter the Nether without this Lamp"
-			]
-			id: "73EBC9DF198D124A"
-			rewards: [{
-				count: 4
-				id: "014A784AAD092FCD"
-				item: "cold_sweat:soul_sprout"
-				random_bonus: 4
-				type: "item"
-			}]
-			shape: "hexagon"
-			subtitle: "Some like it hot!"
-			tasks: [{
-				id: "52D06467CE224B2F"
-				item: {
-					Count: 1b
-					id: "cold_sweat:soulspring_lamp"
-					tag: {
-						fuel: 64.0d
-						isOn: 1b
-					}
-				}
-				type: "item"
-			}]
-			title: "Nether-Proofing"
-			x: 5.0d
-			y: 0.0d
+			x: -2.5d
+			y: 3.0d
 		}
 		{
 			dependencies: ["509A87C70B07370E"]
@@ -487,8 +348,8 @@
 				type: "checkmark"
 			}]
 			title: "Peaceful Surface"
-			x: 0.5d
-			y: 3.0d
+			x: -4.0d
+			y: 1.5d
 		}
 		{
 			description: [
