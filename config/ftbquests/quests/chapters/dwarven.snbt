@@ -34,13 +34,23 @@
 			hide: true
 			icon: "embers:tinker_hammer"
 			id: "70FFC8521726C961"
-			rewards: [{
-				count: 8
-				id: "336E08E04FFED734"
-				item: "create:experience_nugget"
-				random_bonus: 8
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 8
+					id: "336E08E04FFED734"
+					item: "create:experience_nugget"
+					random_bonus: 8
+					type: "item"
+				}
+				{
+					auto: "invisible"
+					command: "/execute as @p run function custom:player/stages/embers"
+					elevate_perms: true
+					id: "7278F5307304E90E"
+					silent: true
+					type: "command"
+				}
+			]
 			shape: "diamond"
 			size: 2.0d
 			subtitle: "No bonks allowed"
@@ -203,6 +213,8 @@
 			]
 			icon: "embers:ingot_stamp"
 			id: "7DB5A72D397A6F2D"
+			shape: "octagon"
+			size: 1.25d
 			subtitle: "Breaking the mold!"
 			tasks: [
 				{
@@ -223,26 +235,6 @@
 			]
 			title: "Stamping"
 			x: 1.5d
-			y: 7.5d
-		}
-		{
-			dependencies: ["7DB5A72D397A6F2D"]
-			description: ["By combining Iron with Andesite in a &6Stamper&r, you have found you're able to create a new alloy capable of a handling a significant amount of torsion without being brittle enough to break."]
-			id: "2C2E4C936FA20816"
-			rewards: [{
-				count: 16
-				id: "2E7EC97C7801EA73"
-				item: "create:experience_nugget"
-				type: "item"
-			}]
-			shape: "octagon"
-			size: 1.5d
-			tasks: [{
-				id: "2804BBFC125B2904"
-				item: "create:andesite_alloy"
-				type: "item"
-			}]
-			x: 3.75d
 			y: 7.5d
 		}
 		{

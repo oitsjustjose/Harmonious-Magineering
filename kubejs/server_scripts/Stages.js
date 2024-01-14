@@ -84,6 +84,13 @@ ServerEvents.recipes(event => {
     substitute: {item: 'kubejs:unknown_kinetic_item'},
   });
 
+  event.custom({
+    type: 'itemgator:mod',
+    tag: 'create',
+    mod: 'prettypipes',
+    substitute: {item: 'kubejs:unknown_kinetic_item'},
+  });
+
   /* ~~ PnC + ADDONS ~~ */
   event.custom({
     type: 'itemgator:mod',

@@ -523,12 +523,22 @@
 			dependencies: ["108A316D3F4BFE38"]
 			description: ["Aside from the treasure inside the boss chamber, you have now released the rest of the dungeon from the clutches of the dreaded &1Slider&r, you find that the bricks in the walls of the dungeon can be used for deeper magiks.. you should take some with you."]
 			id: "26B018666C63C97F"
-			rewards: [{
-				count: 8
-				id: "4FAECECA73A953E2"
-				item: "create:experience_nugget"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 8
+					id: "4FAECECA73A953E2"
+					item: "create:experience_nugget"
+					type: "item"
+				}
+				{
+					auto: "invisible"
+					command: "/execute as @p run function custom:player/stages/bloodmagic"
+					elevate_perms: true
+					id: "0F28488A6C1993DC"
+					silent: true
+					type: "command"
+				}
+			]
 			shape: "octagon"
 			size: 2.0d
 			subtitle: "Imbued with a new kind of magic.."

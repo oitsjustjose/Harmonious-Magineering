@@ -20,7 +20,13 @@
 	order_index: 0
 	quest_links: [ ]
 	quests: [{
+		description: ["By combining Iron with Andesite in a &6Stamper&r, you have found you're able to create a new alloy capable of a handling a significant amount of torsion without being brittle enough to break."]
 		id: "18AFCE909FA8D0DC"
+		rewards: [{
+			command: "/execute as @p run function custom:player/stages/create"
+			id: "6DCE134EF92C96B1"
+			type: "command"
+		}]
 		tasks: [{
 			id: "02C4149843D55A1E"
 			item: "create:andesite_alloy"

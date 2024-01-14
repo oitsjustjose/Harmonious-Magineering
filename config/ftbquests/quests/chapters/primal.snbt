@@ -440,12 +440,22 @@
 			]
 			icon: "eidolon:unholy_symbol"
 			id: "259253F0B5E9952E"
-			rewards: [{
-				count: 16
-				id: "70148BD62331D46B"
-				item: "create:experience_nugget"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 16
+					id: "70148BD62331D46B"
+					item: "create:experience_nugget"
+					type: "item"
+				}
+				{
+					auto: "invisible"
+					command: "/execute as @p run function custom:player/stages/aether"
+					elevate_perms: true
+					id: "268CEA9DF2E6AEEF"
+					silent: true
+					type: "command"
+				}
+			]
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "&oNot accepted at any arcades that I know of...&r"
