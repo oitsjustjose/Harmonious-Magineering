@@ -254,6 +254,17 @@ ServerEvents.tags('item', event => {
     event.add('vtweaks:colored_flag', allButWhite('supplementaries', null, 'flag'));
   };
 
+  /* Define a set of custom curio slots */
+  const curios = () => {
+    ['minecraft:elytra', 'mekanism:hdpe_elytra'].forEach(elytra => {
+      event.remove('curios:back', elytra);
+      event.add('curios:elytra', elytra);
+    });
+
+    event.remove('curios:hands', 'map_atlases:atlas');
+    event.add('curios:atlas', 'map_atlases:atlas');
+  };
+
   /* Used to define tags that are excluded in ItemGator Gates */
   const exclusions = () => {
     event.add('create:cosmetics', [
@@ -516,9 +527,6 @@ ServerEvents.tags('item', event => {
   event.add('forge:fruits/berries', 'regions_unexplored:salmonberry');
   event.add('forge:fruits/salmonberries', 'regions_unexplored:salmonberry');
   event.add('forge:fruits/sweet', 'regions_unexplored:salmonberry');
-  /* Let the Atlas go into *any* curio slot :) */
-  event.remove('curios:hands', 'map_atlases:atlas');
-  event.add('curios:curio', 'map_atlases:atlas');
   /* Add Silt Bricks to the brick tag */
   event.add('forge:ingots/brick', 'twigs:silt_brick');
   /* Swet Bols */
@@ -590,7 +598,7 @@ ServerEvents.tags('item', event => {
     'regions_unexplored:yellow_bioshroom_hyphae',
   ]);
 
-  [colors, exclusions, osmium].forEach(module => module());
+  [colors, curios, exclusions, osmium].forEach(module => module());
 });
 
 ServerEvents.tags('entity_type', event => {
