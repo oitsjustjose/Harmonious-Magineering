@@ -260,9 +260,6 @@ ServerEvents.tags('item', event => {
       event.remove('curios:back', elytra);
       event.add('curios:elytra', elytra);
     });
-
-    event.remove('curios:hands', 'map_atlases:atlas');
-    event.add('curios:atlas', 'map_atlases:atlas');
   };
 
   /* Used to define tags that are excluded in ItemGator Gates */

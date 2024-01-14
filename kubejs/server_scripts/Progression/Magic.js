@@ -458,6 +458,19 @@ ServerEvents.recipes(event => {
         upgradeLevel: 1,
       })
       .id('bloodmagic:altar/daggerofsacrifice');
+
+    // The Air Sigil is too cheap
+    event.remove({id: 'bloodmagic:alchemytable/reagent_air'});
+    event
+      .custom({
+        type: 'bloodmagic:alchemytable',
+        input: [{item: 'minecraft:elytra'}, {item: 'minecraft:ghast_tear'}, {tag: 'forge:feathers'}],
+        output: {item: 'bloodmagic:reagentair'},
+        syphon: 2000,
+        ticks: 200,
+        upgradeLevel: 4,
+      })
+      .id('bloodmagic:alchemytable/reagent_air');
   };
 
   const cagedMobs = () => {
