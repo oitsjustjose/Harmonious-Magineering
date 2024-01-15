@@ -484,6 +484,28 @@ ServerEvents.recipes(event => {
         P: 'create:precision_mechanism',
       });
     });
+
+    // Ability to reset each module
+    [
+      'prettypipes:filter_increase_modifier',
+      'prettypipes:high_crafting_module',
+      'prettypipes:high_extraction_module',
+      'prettypipes:high_filter_module',
+      'prettypipes:high_retrieval_module',
+      'prettypipes:low_crafting_module',
+      'prettypipes:low_extraction_module',
+      'prettypipes:low_filter_module',
+      'prettypipes:low_retrieval_module',
+      'prettypipes:medium_crafting_module',
+      'prettypipes:medium_extraction_module',
+      'prettypipes:medium_filter_module',
+      'prettypipes:medium_retrieval_module',
+      'prettypipes:redstone_module',
+      'prettypipes:stack_size_module',
+      'prettypipes:tag_filter_modifier',
+    ].forEach(resettable => {
+      event.shapeless(resettable, [resettable]).id(`kubejs:resetting_${resettable.slice(resettable.indexOf(':') + 1)}`);
+    });
   };
 
   const rfTools = () => {
