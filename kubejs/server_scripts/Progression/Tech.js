@@ -200,6 +200,20 @@ ServerEvents.recipes(event => {
   };
 
   const create = () => {
+    // Cross-compat for automatically stripping modded logs & woods
+    global.RuStrippedLumber.logs
+      .concat(global.RuStrippedLumber.woods)
+      .concat(global.RuStrippedLumber.stems)
+      .concat(global.RuStrippedLumber.hyphae)
+      .forEach(stripped => {
+        let unstripped = stripped.replace('stripped_', '');
+        if (!Item.exists(unstripped)) {
+          console.warn(`Unstripped log ${unstripped} does not exist! 🥲`);
+          return;
+        }
+        event.recipes.create.cutting(stripped, [unstripped]);
+      });
+
     // Only Andesite Casing can be made by hand - everything else should be deployed
     event.remove('create:item_application/brass_casing_from_log');
     event.remove('create:item_application/brass_casing_from_wood');

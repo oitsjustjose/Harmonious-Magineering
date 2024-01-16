@@ -127,14 +127,96 @@ ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
 });
 
 ItemEvents.modification(event => {
+  const durabilityMultiplier = 2;
+  const boostBlacklist = [
+    'aether:chainmail_gloves',
+    'aether:cold_parachute',
+    'aether:golden_gloves',
+    'aether:golden_parachute',
+    'aether:holystone_axe',
+    'aether:holystone_hoe',
+    'aether:holystone_pickaxe',
+    'aether:holystone_shovel',
+    'aether:holystone_sword',
+    'aether:ice_pendant',
+    'aether:leather_gloves',
+    'bloodmagic:advancedcuttingfluid',
+    'bloodmagic:airscribetool',
+    'bloodmagic:alchemy_flask_lingering',
+    'bloodmagic:alchemy_flask_throwable',
+    'bloodmagic:alchemy_flask',
+    'bloodmagic:arcaneashes',
+    'bloodmagic:basiccuttingfluid',
+    'bloodmagic:duskscribetool',
+    'bloodmagic:earthscribetool',
+    'bloodmagic:explosivepowder',
+    'bloodmagic:firescribetool',
+    'bloodmagic:furnacecell_primitive',
+    'bloodmagic:hellforged_explosive_cell',
+    'bloodmagic:hellforged_resonator',
+    'bloodmagic:intermediatecuttingfluid',
+    'bloodmagic:primitive_crystalline_resonator',
+    'bloodmagic:primitive_explosive_cell',
+    'bloodmagic:primitive_hydration_cell',
+    'bloodmagic:resonator',
+    'bloodmagic:sanguinereverter',
+    'bloodmagic:waterscribetool',
+    'create:copper_diving_boots',
+    'create:copper_diving_helmet',
+    'ecologics:crab_claw',
+    'eidolon:reversal_pick',
+    'farmersdelight:flint_knife',
+    'farmersdelight:golden_knife',
+    'farmersdelight:skillet',
+    'minecraft:chainmail_boots',
+    'minecraft:chainmail_chestplate',
+    'minecraft:chainmail_helmet',
+    'minecraft:chainmail_leggings',
+    'minecraft:flint_and_steel',
+    'minecraft:golden_axe',
+    'minecraft:golden_boots',
+    'minecraft:golden_chestplate',
+    'minecraft:golden_helmet',
+    'minecraft:golden_hoe',
+    'minecraft:golden_leggings',
+    'minecraft:golden_pickaxe',
+    'minecraft:golden_shovel',
+    'minecraft:golden_sword',
+    'minecraft:leather_boots',
+    'minecraft:leather_chestplate',
+    'minecraft:leather_helmet',
+    'minecraft:leather_leggings',
+    'minecraft:stone_axe',
+    'minecraft:stone_hoe',
+    'minecraft:stone_pickaxe',
+    'minecraft:stone_shovel',
+    'minecraft:stone_sword',
+    'nethersdelight:golden_machete',
+    'pneumaticcraft:gun_ammo_ap',
+    'pneumaticcraft:gun_ammo_explosive',
+    'pneumaticcraft:gun_ammo_freezing',
+    'pneumaticcraft:gun_ammo_incendiary',
+    'pneumaticcraft:gun_ammo_weighted',
+    'pneumaticcraft:gun_ammo',
+    'pneumaticcraft:micromissiles',
+    'supplementaries:bubble_blower',
+    'supplementaries:rope_arrow',
+    'waystones:warp_stone',
+  ];
+
+  event.modify(Ingredient.all, item => {
+    if (boostBlacklist.includes(item.getId().toString())) return;
+
+    if (item.isDamageable(item.getDefaultInstance())) {
+      console.info(`${item.getId().toString()}: Durability ${item.maxDamage} -> ${item.maxDamage * durabilityMultiplier}`);
+      item.maxDamage *= durabilityMultiplier;
+    }
+  });
+
   ['minecraft:wooden_sword', 'minecraft:wooden_pickaxe', 'minecraft:wooden_shovel', 'minecraft:wooden_axe', 'minecraft:wooden_hoe'].forEach(tool => {
     event.modify(tool, item => {
       item.maxDamage = 16;
     });
-  });
-
-  event.modify('minecraft:elytra', item => {
-    item.maxDamage = 128;
   });
 });
 
