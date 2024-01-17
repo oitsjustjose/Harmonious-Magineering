@@ -7,6 +7,23 @@
 	id: "1ED158C2CEC130C9"
 	order_index: 2
 	quest_links: [ ]
-	quests: [ ]
+	quests: [{
+		id: "0F946D801295B7CE"
+		rewards: [{
+			auto: "invisible"
+			command: "/execute as @p run function custom:player/stages/appliedenergistics"
+			elevate_perms: true
+			id: "03FFC084BA5A7E7A"
+			silent: true
+			type: "command"
+		}]
+		tasks: [{
+			id: "4DEBD5454C169F01"
+			item: "mekanism:basic_control_circuit"
+			type: "item"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
 	title: "Energistics"
 }

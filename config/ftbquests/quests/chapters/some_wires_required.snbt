@@ -19,7 +19,24 @@
 	}]
 	order_index: 2
 	quest_links: [ ]
-	quests: [ ]
+	quests: [{
+		id: "79467E224CE42C0D"
+		rewards: [{
+			auto: "invisible"
+			command: "/execute as @p run function custom:player/stages/immersiveengineering"
+			elevate_perms: true
+			id: "57A51F86293F5235"
+			silent: true
+			type: "command"
+		}]
+		tasks: [{
+			id: "30C51BA13B4960B1"
+			item: "mekanism:nugget_steel"
+			type: "item"
+		}]
+		x: 0.0d
+		y: -0.5d
+	}]
 	subtitle: ["&6Some Wires Required&r"]
 	title: "&eImmersive Engineering&r"
 }

@@ -19,7 +19,31 @@
 	}]
 	order_index: 3
 	quest_links: [ ]
-	quests: [ ]
+	quests: [{
+		id: "66899BB398A3CDE3"
+		rewards: [{
+			auto: "invisible"
+			command: "/execute as @p run function custom:player/stages/mekanism"
+			elevate_perms: true
+			id: "400F9D7ED6442834"
+			silent: true
+			type: "command"
+		}]
+		tasks: [
+			{
+				id: "2017520B17D806B6"
+				item: "pneumaticcraft:ingot_iron_compressed"
+				type: "item"
+			}
+			{
+				id: "35FBEA4537AA92BC"
+				item: "mekanism:ingot_steel"
+				type: "item"
+			}
+		]
+		x: 0.0d
+		y: 0.0d
+	}]
 	subtitle: ["&1Futuristic Tech&r"]
 	title: "&9Mekanism&r"
 }
