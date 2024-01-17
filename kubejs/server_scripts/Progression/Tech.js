@@ -5,6 +5,8 @@ ServerEvents.recipes(event => {
     plastic: '#pneumaticcraft:plastic_sheets',
     circuitish: [Item.of('mekanism:basic_control_circuit'), Item.of('pneumaticcraft:printed_circuit_board')],
     template: Item.of('minecraft:paper'),
+    transistor: Item.of('pneumaticcraft:transistor'),
+    capacitor: Item.of('pneumaticcraft:capacitor'),
   };
 
   const ae2 = () => {
@@ -255,9 +257,15 @@ ServerEvents.recipes(event => {
       });
     });
 
-    // Andesite Alloy recipe is done via custom:recipes/stamping/andesite_alloy
     event.remove('create:crafting/materials/andesite_alloy');
     event.remove('create:crafting/materials/andesite_alloy_from_zinc');
+    event.custom({
+      type: 'embers:stamping',
+      input: {item: 'minecraft:andesite'},
+      stamp: {item: 'embers:ingot_stamp'},
+      fluid: {amount: 90, tag: 'forge:molten_iron'},
+      output: {item: 'create:andesite_alloy', count: 1},
+    });
 
     // Make it easier to make Dawnstone once you get into Create :)
     event.recipes.create
@@ -302,28 +310,63 @@ ServerEvents.recipes(event => {
       event.remove({output: mod('cokebrick')});
       event.remove({output: mod('blastbrick')});
 
-      event.recipes.create
-        .compacting(Item.of(mod('cokebrick'), 3), [
-          Item.of('minecraft:clay_ball', 4),
-          Item.of('supplementaries:ash_brick', 4),
-          Item.of(mod('component_steel'), 1),
-        ])
-        .superheated();
+      event.custom({
+        type: 'pneumaticcraft:pressure_chamber',
+        inputs: [
+          {
+            type: 'pneumaticcraft:stacked_item',
+            item: 'minecraft:clay_ball',
+            count: 4,
+          },
+          {
+            type: 'pneumaticcraft:stacked_item',
+            item: 'supplementaries:ash_brick',
+            count: 4,
+          },
+          {item: mod('component_steel')},
+        ],
+        pressure: 3.5,
+        results: [Item.of(mod('cokebrick'), 3).toJson()],
+      });
 
-      event.recipes.create
-        .compacting(Item.of(mod('blastbrick'), 3), [
-          Item.of('minecraft:nether_brick', 4),
-          Item.of('embers:ember_crystal', 4),
-          Item.of(mod('component_steel'), 1),
-        ])
-        .superheated();
+      event.custom({
+        type: 'pneumaticcraft:pressure_chamber',
+        inputs: [
+          {
+            type: 'pneumaticcraft:stacked_item',
+            item: 'minecraft:nether_brick',
+            count: 4,
+          },
+          {
+            type: 'pneumaticcraft:stacked_item',
+            item: 'embers:ember_crystal',
+            count: 4,
+          },
+          {item: mod('component_steel'), count: 1},
+        ],
+        pressure: 6.0,
+        results: [Item.of(mod('blastbrick'), 3).toJson()],
+      });
 
-      event.recipes.create.mixing('mekanism:nugget_steel', ['#forge:nuggets/iron', '#forge:dusts/ash']).superheated();
+      event.custom({
+        type: 'pneumaticcraft:thermo_plant',
+        exothermic: false,
+        fluid_input: {type: 'pneumaticcraft:fluid', amount: 10, tag: 'forge:molten_iron'},
+        item_input: {tag: 'forge:dusts/ash'},
+        item_output: {item: 'mekanism:nugget_steel'},
+        // Melting point of steel is 1371.111°C, but PnC has this weird offset of 273°C -_-
+        temperature: {min_temp: 1645},
+      });
     };
 
     event.remove(mod('alloysmelter/brass'));
     event.remove(mod('alloysmelter/bronze'));
+    event.replaceInput({output: mod('conveyor_basic')}, 'minecraft:redstone', 'create:belt_connector');
+    event.replaceInput({output: mod('dynamo')}, 'minecraft:redstone', items.capacitor);
+    event.replaceInput({output: mod('fluid_sorter')}, 'minecraft:redstone', items.circuitish);
+    event.replaceInput({output: mod('furnace_heater')}, 'minecraft:redstone', items.capacitor);
     event.replaceInput({output: mod('hammer')}, '#forge:ingots/iron', '#forge:ingots/steel');
+    event.replaceInput({output: mod('sorter')}, 'minecraft:redstone', items.circuitish);
     event.replaceInput({output: mod('wirecutter')}, '#forge:ingots/iron', '#forge:ingots/steel');
     event.remove({input: mod('wirecutter'), output: '#forge:wires'});
 
@@ -331,8 +374,10 @@ ServerEvents.recipes(event => {
   };
 
   const mekanism = () => {
+    /* Cardboard boxes are *still* broken a.f. */
     event.remove({output: 'mekanism:cardboard_box'});
 
+    /* HDPE Stick intercompat */
     event.custom({
       type: 'immersiveengineering:metal_press',
       energy: 2400,
@@ -348,11 +393,12 @@ ServerEvents.recipes(event => {
     });
 
     event.remove('mekanism:metallurgic_infuser');
-    event.shaped('mekanism:metallurgic_infuser', ['RKR', 'ICI', 'RKR'], {
+    event.shaped('mekanism:metallurgic_infuser', ['PKP', 'ICI', 'TKT'], {
       C: 'mekanism:steel_casing',
-      I: '#forge:ingots/compressed_iron',
+      I: '#forge:ingots/steel',
       K: 'immersiveengineering:alloybrick',
-      R: '#forge:dusts/redstone',
+      T: items.transistor,
+      P: items.capacitor,
     });
 
     event.remove('mekanism:radioactive_waste_barrel');
@@ -398,6 +444,92 @@ ServerEvents.recipes(event => {
       P: items.plastic,
       S: '#forge:ingots/steel',
       T: 'mekanism:basic_fluid_tank',
+    });
+
+    /* Replace 'Redstone' with actual circuit-like things :) */
+    event.replaceInput({output: 'mekanism:dosimeter'}, 'minecraft:redstone', 'kubejs:rf_core');
+    event.replaceInput({output: 'mekanism:qio_redstone_adapter'}, 'minecraft:redstone', items.circuitish);
+    event.replaceInput({output: 'mekanism:superheating_element'}, 'minecraft:redstone', 'immersiveengineering:wirecoil_steel');
+    event.replaceInput({output: 'mekanismgenerators:bio_generator'}, 'minecraft:iron_ingot', '#forge:ingots/steel');
+    event.replaceInput({output: 'mekanismgenerators:bio_generator'}, 'minecraft:redstone', items.capacitor);
+    event.replaceInput({output: 'mekanismgenerators:fission_reactor_logic_adapter'}, 'minecraft:redstone', items.circuitish);
+    event.replaceInput({output: 'mekanismgenerators:fusion_reactor_logic_adapter'}, 'minecraft:redstone', items.circuitish);
+
+    event.remove({output: 'mekanism:resistive_heater'});
+    event.shaped('mekanism:resistive_heater', ['IPI', 'TST', 'ZBZ'], {
+      B: '#forge:batteries',
+      I: '#forge:ingots/tin',
+      P: items.capacitor,
+      S: 'mekanism:steel_casing',
+      T: items.transistor,
+      Z: '#forge:ingots/steel',
+    });
+
+    event.remove({output: 'mekanism:basic_energy_cube'});
+    event.shaped('mekanism:basic_energy_cube', ['PEP', 'ISI', 'TET'], {
+      E: '#forge:batteries',
+      I: '#forge:ingots/steel',
+      P: items.capacitor,
+      S: 'mekanism:steel_casing',
+      T: items.transistor,
+    });
+
+    event.remove({output: 'mekanism:pigment_extractor'});
+    event.shaped('mekanism:pigment_extractor', ['PCP', 'FSF', 'TCT'], {
+      C: '#forge:circuits/basic',
+      F: 'minecraft:flint',
+      P: items.capacitor,
+      S: 'mekanism:steel_casing',
+      T: items.transistor,
+    });
+
+    event.remove({output: 'mekanism:electrolytic_separator'});
+    event.shaped('mekanism:electrolytic_separator', ['SPS', 'AEA', 'STS'], {
+      A: '#forge:alloys/advanced',
+      E: 'mekanism:electrolytic_core',
+      P: items.capacitor,
+      S: '#forge:ingots/steel',
+      T: items.transistor,
+    });
+
+    event.remove({output: 'mekanism:nutritional_liquifier'});
+    event.shaped('mekanism:nutritional_liquifier', ['PCP', 'BSB', 'TCT'], {
+      B: 'minecraft:bowl',
+      C: '#forge:circuits/basic',
+      P: items.capacitor,
+      S: 'mekanism:steel_casing',
+      T: items.transistor,
+    });
+
+    /* Redo all Basic Factory recipes */
+    event.remove({output: 'mekanism:basic_tier_installer'});
+    event.shaped('mekanism:basic_tier_installer', ['PCP', 'IBI', 'TCT'], {
+      B: '#minecraft:planks',
+      C: '#forge:circuits/basic',
+      I: '#forge:ingots/steel',
+      P: items.capacitor,
+      T: items.transistor,
+    });
+
+    [
+      {factory: 'mekanism:basic_combining_factory', base: 'mekanism:combiner'},
+      {factory: 'mekanism:basic_compressing_factory', base: 'mekanism:osmium_compressor'},
+      {factory: 'mekanism:basic_crushing_factory', base: 'mekanism:crusher'},
+      {factory: 'mekanism:basic_enriching_factory', base: 'mekanism:enrichment_chamber'},
+      {factory: 'mekanism:basic_infusing_factory', base: 'mekanism:metallurgic_infuser'},
+      {factory: 'mekanism:basic_injecting_factory', base: 'mekanism:chemical_injection_chamber'},
+      {factory: 'mekanism:basic_purifying_factory', base: 'mekanism:purification_chamber'},
+      {factory: 'mekanism:basic_sawing_factory', base: 'mekanism:precision_sawmill'},
+      {factory: 'mekanism:basic_smelting_factory', base: 'mekanism:energized_smelter'},
+    ].forEach(pair => {
+      event.remove({output: pair.factory});
+      event.shaped(pair.factory, ['PCP', 'IBI', 'TCT'], {
+        B: pair.base,
+        C: '#forge:circuits/basic',
+        I: '#forge:ingots/steel',
+        P: items.capacitor,
+        T: items.transistor,
+      });
     });
   };
 
