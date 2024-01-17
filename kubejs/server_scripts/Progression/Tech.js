@@ -425,7 +425,7 @@ ServerEvents.recipes(event => {
 
     event.remove('mekanism:induction/casing');
     event.shaped('mekanism:induction_casing', ['PSP', 'SBS', 'PSP'], {
-      P: items.plastic,
+      P: 'mekanism:hdpe_sheet',
       S: '#forge:ingots/steel',
       B: '#forge:batteries',
     });
@@ -433,7 +433,7 @@ ServerEvents.recipes(event => {
     event.remove('mekanismgenerators:turbine/casing');
     event.shaped('mekanismgenerators:turbine_casing', [' S ', 'SPS', ' S '], {
       S: '#forge:ingots/steel',
-      P: items.plastic,
+      P: 'mekanism:hdpe_sheet',
     });
 
     event.remove('mekanism:fluid_tank/basic');
@@ -455,12 +455,12 @@ ServerEvents.recipes(event => {
 
     /* Replace 'Redstone' with actual circuit-like things :) */
     event.replaceInput({output: 'mekanism:dosimeter'}, 'minecraft:redstone', 'kubejs:rf_core');
-    event.replaceInput({output: 'mekanism:qio_redstone_adapter'}, 'minecraft:redstone', items.circuitish);
+    event.replaceInput({output: 'mekanism:qio_redstone_adapter'}, 'minecraft:redstone', '#forge:circuits/basic');
     event.replaceInput({output: 'mekanism:superheating_element'}, 'minecraft:redstone', 'immersiveengineering:wirecoil_steel');
     event.replaceInput({output: 'mekanismgenerators:bio_generator'}, 'minecraft:iron_ingot', '#forge:ingots/steel');
     event.replaceInput({output: 'mekanismgenerators:bio_generator'}, 'minecraft:redstone', items.capacitor);
-    event.replaceInput({output: 'mekanismgenerators:fission_reactor_logic_adapter'}, 'minecraft:redstone', items.circuitish);
-    event.replaceInput({output: 'mekanismgenerators:fusion_reactor_logic_adapter'}, 'minecraft:redstone', items.circuitish);
+    event.replaceInput({output: 'mekanismgenerators:fission_reactor_logic_adapter'}, 'minecraft:redstone', '#forge:circuits/basic');
+    event.replaceInput({output: 'mekanismgenerators:fusion_reactor_logic_adapter'}, 'minecraft:redstone', '#forge:circuits/basic');
 
     event.remove({output: 'mekanism:resistive_heater'});
     event.shaped('mekanism:resistive_heater', ['IPI', 'TST', 'ZBZ'], {
@@ -484,7 +484,7 @@ ServerEvents.recipes(event => {
     event.remove({output: 'mekanism:pigment_extractor'});
     event.shaped('mekanism:pigment_extractor', ['PCP', 'FSF', 'TCT'], {
       C: '#forge:circuits/basic',
-      F: 'minecraft:flint',
+      F: 'minecraft:glass_bottle',
       P: items.capacitor,
       S: 'mekanism:steel_casing',
       T: items.transistor,
@@ -511,7 +511,7 @@ ServerEvents.recipes(event => {
     event.remove({output: 'mekanism:crusher'});
     event.shaped('mekanism:crusher', ['PCP', 'LSL', 'TCT'], {
       C: '#forge:circuits/basic',
-      L: 'create:crushing_wheel',
+      L: 'immersiveengineering:rockcutter',
       P: items.capacitor,
       S: 'mekanism:steel_casing',
       T: items.transistor,
@@ -529,7 +529,7 @@ ServerEvents.recipes(event => {
     event.remove({output: 'mekanism:enrichment_chamber'});
     event.shaped('mekanism:enrichment_chamber', ['PCP', 'LSL', 'TCT'], {
       C: '#forge:circuits/basic',
-      L: 'immersiveengineering:rockcutter',
+      L: 'create:crushing_wheel',
       P: items.capacitor,
       S: 'mekanism:steel_casing',
       T: items.transistor,
