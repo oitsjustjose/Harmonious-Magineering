@@ -331,6 +331,12 @@ ServerEvents.tags('item', event => {
       'create:weathered_copper_tiles',
     ]);
 
+    event.add('pneumaticcraft:exception', [
+      'pneumaticcraft:compressed_iron_block',
+      'pneumaticcraft:ingot_iron_compressed',
+      'pneumaticcraft:oil_bucket',
+    ]);
+
     event.add('immersiveengineering:exception', [
       '#forge:dusts',
       '#forge:gems',
@@ -384,6 +390,7 @@ ServerEvents.tags('item', event => {
       'immersiveengineering:raw_block_aluminum',
       'immersiveengineering:raw_block_nickel',
       'immersiveengineering:raw_nickel',
+      'immersiveengineering:redstone_acid_bucket',
       'immersiveengineering:seed',
       'immersiveengineering:slab_concrete_brick',
       'immersiveengineering:slab_concrete_leaded',

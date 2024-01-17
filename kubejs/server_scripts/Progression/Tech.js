@@ -370,6 +370,13 @@ ServerEvents.recipes(event => {
     event.replaceInput({output: mod('wirecutter')}, '#forge:ingots/iron', '#forge:ingots/steel');
     event.remove({input: mod('wirecutter'), output: '#forge:wires'});
 
+    event.custom({
+      type: 'create:mixing',
+      heatRequirement: 'heated',
+      ingredients: [{amount: 20, fluidTag: 'minecraft:water'}, {item: 'minecraft:redstone'}],
+      results: [{amount: 20, fluid: 'immersiveengineering:redstone_acid'}],
+    });
+
     steel();
   };
 
@@ -501,6 +508,41 @@ ServerEvents.recipes(event => {
       T: items.transistor,
     });
 
+    event.remove({output: 'mekanism:crusher'});
+    event.shaped('mekanism:crusher', ['PCP', 'LSL', 'TCT'], {
+      C: '#forge:circuits/basic',
+      L: 'create:crushing_wheel',
+      P: items.capacitor,
+      S: 'mekanism:steel_casing',
+      T: items.transistor,
+    });
+
+    event.remove({output: 'mekanism:energized_smelter'});
+    event.shaped('mekanism:energized_smelter', ['PCP', 'LSL', 'TCT'], {
+      C: '#forge:circuits/basic',
+      L: 'immersiveengineering:furnace_heater',
+      P: items.capacitor,
+      S: 'mekanism:steel_casing',
+      T: items.transistor,
+    });
+
+    event.remove({output: 'mekanism:enrichment_chamber'});
+    event.shaped('mekanism:enrichment_chamber', ['PCP', 'LSL', 'TCT'], {
+      C: '#forge:circuits/basic',
+      L: 'immersiveengineering:rockcutter',
+      P: items.capacitor,
+      S: 'mekanism:steel_casing',
+      T: items.transistor,
+    });
+
+    event.remove({output: 'mekanismgenerators:solar_panel'});
+    event.shaped('mekanismgenerators:solar_panel', ['PPP', 'TAT', 'SSS'], {
+      A: '#forge:alloys/advanced',
+      P: '#forge:glass_panes',
+      S: '#forge:ingots/steel',
+      T: items.transistor,
+    });
+
     /* Redo all Basic Factory recipes */
     event.remove({output: 'mekanism:basic_tier_installer'});
     event.shaped('mekanism:basic_tier_installer', ['PCP', 'IBI', 'TCT'], {
@@ -551,6 +593,17 @@ ServerEvents.recipes(event => {
     event.remove({type: 'pneumaticcraft:explosion_crafting'});
     event.recipes.create.compacting('pneumaticcraft:ingot_iron_compressed', ['#forge:ingots/iron', 'ae2:tiny_tnt']).superheated();
     event.recipes.create.compacting('pneumaticcraft:compressed_iron_block', ['#forge:storage_blocks/iron', 'minecraft:tnt']).superheated();
+
+    event.remove({id: 'pneumaticcraft:pressure_chamber/etching_acid'});
+    event.custom({
+      type: 'create:mixing',
+      heatRequirement: 'superheated',
+      ingredients: [
+        {amount: 500, fluidTag: 'forge:redstone_acid'},
+        {amount: 500, fluidTag: 'pneumaticcraft:plastic'},
+      ],
+      results: [{amount: 1000, fluid: 'pneumaticcraft:etching_acid'}],
+    });
   };
 
   const prettyPipes = () => {

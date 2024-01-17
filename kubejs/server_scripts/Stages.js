@@ -97,7 +97,7 @@ ServerEvents.recipes(event => {
     tag: 'pnc',
     mod: 'pneumaticcraft',
     substitute: {item: 'kubejs:unknown_pneumatic_item'},
-    exceptions: [{item: 'pneumaticcraft:oil_bucket'}],
+    exceptions: [{tag: 'pneumaticcraft:exception'}],
   });
 
   /* ~~ IE ~~ */
