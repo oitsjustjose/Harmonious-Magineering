@@ -1,6 +1,79 @@
 // priority: 100000
 
 ServerEvents.recipes(event => {
+  const dustSmelting = () => {
+    [
+      {dust: 'immersiveengineering:dust_aluminum', ingot: 'immersiveengineering:ingot_aluminum'},
+      {dust: 'immersiveengineering:dust_nickel', ingot: 'immersiveengineering:ingot_nickel'},
+      {dust: 'immersiveengineering:dust_silver', ingot: 'eidolon:silver_ingot'},
+      {dust: 'mekanism:dust_copper', ingot: 'minecraft:copper_ingot'},
+      {dust: 'mekanism:dust_gold', ingot: 'minecraft:gold_ingot'},
+      {dust: 'mekanism:dust_iron', ingot: 'minecraft:iron_ingot'},
+      {dust: 'mekanism:dust_lead', ingot: 'eidolon:lead_ingot'},
+      {dust: 'mekanism:dust_tin', ingot: 'mekanism:ingot_tin'},
+      {dust: 'mekanism:dust_uranium', ingot: 'mekanism:ingot_uranium'},
+    ].forEach(pair => {
+      const idBase = `${pair.ingot.replace(':', '_')}_from_${pair.dust.replace(':', '_')}`;
+
+      event.remove({type: 'minecraft:blasting', input: pair.dust});
+      event.remove({type: 'minecraft:blasting', output: pair.ingot});
+      event.remove({type: 'minecraft:smelting', input: pair.dust});
+      event.remove({type: 'minecraft:smelting', output: pair.ingot});
+
+      event.smelting(pair.ingot, pair.dust).xp(0.33).id(`${idBase}_smelting`);
+      event.blasting(pair.ingot, pair.dust).xp(0.33).id(`${idBase}_blasting`);
+    });
+  };
+
+  const metalSmithing = () => {
+    const materials = [
+      {
+        mat: 'aluminum',
+        ingot: 'immersiveengineering:ingot_aluminum',
+        block: 'immersiveengineering:storage_aluminum',
+        nugget: 'immersiveengineering:nugget_aluminum',
+      },
+      {mat: 'copper', ingot: 'minecraft:copper_ingot', block: 'minecraft:copper_block', nugget: 'create:copper_nugget'},
+      {mat: 'gold', ingot: 'minecraft:gold_ingot', block: 'minecraft:gold_block', nugget: 'minecraft:gold_nugget'},
+      {mat: 'iron', ingot: 'minecraft:iron_ingot', block: 'minecraft:iron_block', nugget: 'minecraft:iron_nugget'},
+      {mat: 'lead', ingot: 'eidolon:lead_ingot', block: 'eidolon:lead_block', nugget: 'eidolon:lead_nugget'},
+      {
+        mat: 'nickel',
+        ingot: 'immersiveengineering:ingot_nickel',
+        block: 'immersiveengineering:storage_nickel',
+        nugget: 'immersiveengineering:nugget_nickel',
+      },
+      {mat: 'silver', ingot: 'eidolon:silver_ingot', block: 'eidolon:silver_block', nugget: 'eidolon:silver_nugget'},
+      {mat: 'tin', ingot: 'mekanism:ingot_tin', block: 'mekanism:block_tin', nugget: 'mekanism:nugget_tin'},
+      {mat: 'uranium', ingot: 'mekanism:ingot_uranium', block: 'mekanism:block_uranium', nugget: 'mekanism:nugget_uranium'},
+    ];
+
+    materials.forEach(m => {
+      const types = ['minecraft:crafting_shapeless', 'minecraft:crafting_shaped'];
+      const tags = {
+        ingot: `#forge:ingots/${m.mat}`,
+        block: `#forge:storage_blocks/${m.mat}`,
+        nugget: `#forge:nuggets/${m.mat}`,
+      };
+
+      types.forEach(type => {
+        event.remove({type: type, input: tags.ingot, output: tags.nugget});
+        event.remove({type: type, input: tags.block, output: tags.ingot});
+        event.remove({type: type, input: tags.ingot, output: tags.block});
+        event.remove({type: type, input: tags.nugget, output: tags.ingot});
+        event.remove({type: type, input: m.ingot, output: m.nugget});
+        event.remove({type: type, input: m.block, output: m.ingot});
+        event.remove({type: type, input: m.ingot, output: m.block});
+        event.remove({type: type, input: m.nugget, output: m.ingot});
+      });
+
+      event.shaped(m.ingot, ['NNN', 'NNN', 'NNN'], {N: tags.nugget});
+      event.shaped(m.block, ['NNN', 'NNN', 'NNN'], {N: tags.ingot});
+      event.shapeless(Item.of(m.nugget, 9), [tags.ingot]);
+      event.shapeless(Item.of(m.ingot, 9), [tags.block]);
+    });
+  };
+
   const nuggetsFromSmelting = () => {
     const pairs = [
       {material: 'aluminum', nugget: 'immersiveengineering:nugget_aluminum'},
@@ -161,5 +234,5 @@ ServerEvents.recipes(event => {
     });
   };
 
-  [nuggetsFromSmelting, nukeOsmium, plateCompat, rods, silverAndLead].forEach(module => module());
+  [dustSmelting, nuggetsFromSmelting, metalSmithing, nukeOsmium, plateCompat, rods, silverAndLead].forEach(module => module());
 });
