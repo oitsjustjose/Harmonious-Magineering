@@ -38,39 +38,28 @@
 		{
 			dependencies: ["3025147B8EB09C0C"]
 			description: [
-				"You may find yourself struggling to keep up with where you've been or where you are now - in such a case, I'd recommend an Atlas! The Atlas will consume Empty Maps as you explore, and when opened, can be used to change between dimension's maps, set markers and navigate around to see the surrounding area! Additionally, it can go in one of your \"Hand\" Curios slot and can be accessed with keybinds when in said slot or your hotbar!"
-				""
-				"More Empty Maps can be added to the Atlas using Paper or Maps (up to 8) in a shapeless crafting recipe!"
-				"{@pagebreak}"
-				"This &5Eccentric Tome&r reward item is interesting - it seems to be a good way to consolidate all of the Manuals, Atlases and Guides you find along the way."
+				"This &5Eccentric Tome&r reward item is interesting - it seems to be a good way to consolidate all of the Manuals, Tomes and Guides you find along the way."
 				""
 				"You can add new books to the Tome by combining the book and Tome in a &6Crafting Grid&r. You can right-click the tome to select the book you want, then left-click in the air with the selected book to de-select the book. It seems you can remove a book from the Tome by selecting it, Crouching, and throwing the book using the &lToss Item&r keybind."
 			]
 			id: "656EACDA88A244CF"
 			rewards: [{
-				id: "0D60C2BB095D547B"
+				count: 8
+				id: "182FEBB6931CE9CA"
+				item: "create:experience_nugget"
+				random_bonus: 4
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "Three Descending Artichokes"
+			tasks: [{
+				id: "1C1377EF17F7840B"
 				item: {
 					Count: 1b
 					id: "eccentrictome:tome"
 					tag: {
 						"eccentrictome:mods": { }
 					}
-				}
-				only_one: true
-				type: "item"
-			}]
-			shape: "hexagon"
-			subtitle: "Three Descending Artichokes"
-			tasks: [{
-				id: "57368BC9305C86EF"
-				item: {
-					Count: 1b
-					ForgeCaps: {
-						Parent: {
-							maps: [I; ]
-						}
-					}
-					id: "map_atlases:atlas"
 				}
 				type: "item"
 			}]
@@ -177,7 +166,12 @@
 		}
 		{
 			dependencies: ["656EACDA88A244CF"]
-			description: ["Perhaps you've tried opening up your F3 menu to figure out how deep you are as you explore -- don't worry, it's what we all expected to see. Anyways, you'll probably notice that your coordinates are not shown in the Debug Menu anymore, so in order to know how deep you are in the world you'll want an Altimeter! Not only does its texture update as you get higher or deeper in the world, but it can also be right-clicked to tell you an exact depth!"]
+			description: [
+				"Perhaps you've tried opening up your F3 menu to figure out how deep you are as you explore -- don't worry, it's what we all expected to see. Anyways, you'll probably notice that your coordinates are not shown in the Debug Menu anymore, so in order to know how deep you are in the world you'll want an Altimeter! Not only does its texture update as you get higher or deeper in the world, but it can also be right-clicked to tell you an exact depth!"
+				"{@pagebreak}"
+				"To sort out your Latitude and Longitude (X \\& Z axes for more seasoned players), you can purchase a &3Globe&r from a Wandering Trader. Once placed, you can right-click it to determine exactly where you are in the world! In most cases, you should find that the embedded map (&cXaero's&r) should work fine, but this is another way to get more detailed info!"
+			]
+			icon: "supplementaries:altimeter"
 			id: "67F64F723F89BF0F"
 			rewards: [{
 				count: 6
@@ -186,12 +180,20 @@
 				random_bonus: 6
 				type: "item"
 			}]
-			subtitle: "Gauging your height"
-			tasks: [{
-				id: "234CFCF3489BD816"
-				item: "supplementaries:altimeter"
-				type: "item"
-			}]
+			subtitle: "Mapping your location in other ways!"
+			tasks: [
+				{
+					id: "234CFCF3489BD816"
+					item: "supplementaries:altimeter"
+					type: "item"
+				}
+				{
+					id: "2EE583154A75FCEB"
+					item: "supplementaries:globe"
+					type: "item"
+				}
+			]
+			title: "Geolocating"
 			x: 0.5d
 			y: 3.0d
 		}

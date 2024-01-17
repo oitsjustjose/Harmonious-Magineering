@@ -15,26 +15,227 @@
 		rotation: 0.0d
 		width: 2.0d
 		x: 0.0d
-		y: 0.0d
+		y: -1.0d
 	}]
 	order_index: 0
 	quest_links: [ ]
-	quests: [{
-		description: ["By combining Iron with Andesite in a &6Stamper&r, you have found you're able to create a new alloy capable of a handling a significant amount of torsion without being brittle enough to break."]
-		id: "18AFCE909FA8D0DC"
-		rewards: [{
-			command: "/execute as @p run function custom:player/stages/create"
-			id: "6DCE134EF92C96B1"
-			type: "command"
-		}]
-		tasks: [{
-			id: "02C4149843D55A1E"
-			item: "create:andesite_alloy"
-			type: "item"
-		}]
-		x: 0.0d
-		y: 0.0d
-	}]
+	quests: [
+		{
+			dependencies: ["7DB5A72D397A6F2D"]
+			description: ["By combining Iron with Andesite in a &6Stamper&r, you have found you're able to create a new alloy capable of a handling a significant amount of torsion without being brittle enough to break."]
+			id: "18AFCE909FA8D0DC"
+			rewards: [
+				{
+					command: "/execute as @p run function custom:player/stages/create"
+					id: "6DCE134EF92C96B1"
+					type: "command"
+				}
+				{
+					count: 16
+					id: "17B1F9B615C9BF94"
+					item: "create:experience_nugget"
+					random_bonus: 8
+					type: "item"
+				}
+			]
+			shape: "diamond"
+			size: 1.5d
+			subtitle: "Kinetically Capable!"
+			tasks: [{
+				id: "02C4149843D55A1E"
+				item: "create:andesite_alloy"
+				type: "item"
+			}]
+			title: "A New Alloy"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["18AFCE909FA8D0DC"]
+			id: "2329C35A3B647703"
+			subtitle: "Apply Alloy directly to the Forehead!"
+			tasks: [{
+				id: "387C1D6ED27AB736"
+				item: "create:andesite_casing"
+				type: "item"
+			}]
+			title: "Basic Casings"
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["2329C35A3B647703"]
+			id: "5A91CD7F879FA970"
+			tasks: [{
+				id: "650B787C5888F919"
+				item: "create:mechanical_press"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["5A91CD7F879FA970"]
+			id: "74C1416D615A3A49"
+			tasks: [
+				{
+					id: "3FD65F0FB522FE13"
+					item: "create:mechanical_mixer"
+					type: "item"
+				}
+				{
+					id: "0F750ECEE9F50659"
+					item: "create:basin"
+					type: "item"
+				}
+				{
+					id: "2CBDEF182ACE28DA"
+					item: "create:blaze_burner"
+					type: "item"
+				}
+			]
+			x: 0.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["74C1416D615A3A49"]
+			id: "079EAF0C11779506"
+			tasks: [{
+				id: "650198D048829C6C"
+				item: "create:brass_ingot"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 7.0d
+		}
+		{
+			dependencies: ["079EAF0C11779506"]
+			id: "49F6C827E030BB97"
+			tasks: [{
+				id: "1C38E302EF5B9DCE"
+				item: "create:deployer"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["49F6C827E030BB97"]
+			id: "6A9782D0B5B5BEC0"
+			tasks: [{
+				id: "3F155CACA604C3C5"
+				item: "create:copper_casing"
+				type: "item"
+			}]
+			x: 0.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["49F6C827E030BB97"]
+			id: "6B1F6FC73C5CD89C"
+			tasks: [{
+				id: "490E5979197CC27A"
+				item: "create:brass_casing"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 11.5d
+		}
+		{
+			dependencies: ["49F6C827E030BB97"]
+			id: "38EF1F470889D47F"
+			optional: true
+			tasks: [{
+				id: "5B04035DCD40BEB1"
+				item: "create:railway_casing"
+				type: "item"
+			}]
+			x: 2.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["4A0CCD94351B1EED"]
+			id: "1B5F1877CC1D3378"
+			tasks: [{
+				id: "38DAB58BFD156987"
+				item: "create:blaze_cake"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 11.5d
+		}
+		{
+			dependencies: ["18AFCE909FA8D0DC"]
+			id: "2D47433D3E29864E"
+			subtitle: "Cutting Corners"
+			tasks: [
+				{
+					id: "06087218E9623394"
+					item: "create:shaft"
+					type: "item"
+				}
+				{
+					id: "69F617EF34929440"
+					item: "create:cogwheel"
+					type: "item"
+				}
+				{
+					id: "6DA32B80AF61AFAD"
+					item: "create:large_cogwheel"
+					type: "item"
+				}
+				{
+					id: "1E331820B6A6F79D"
+					item: "create:belt_connector"
+					type: "item"
+				}
+				{
+					id: "4647AFF164E8B8F1"
+					item: "create:gearbox"
+					type: "item"
+				}
+			]
+			title: "Moving Rotation"
+			x: 1.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["18AFCE909FA8D0DC"]
+			description: ["In order to "]
+			id: "5F30B7878B2D8648"
+			subtitle: "Flow-tation Rotation"
+			tasks: [{
+				id: "39E5E80AB0AFF1EA"
+				item: "create:water_wheel"
+				type: "item"
+			}]
+			title: "Basic Rotation"
+			x: -1.5d
+			y: 2.0d
+		}
+		{
+			dependencies: ["66DB0B398EB02F9F"]
+			id: "4A0CCD94351B1EED"
+			tasks: [{
+				id: "570801313BE0408A"
+				item: "create:crushing_wheel"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 10.0d
+		}
+		{
+			dependencies: ["079EAF0C11779506"]
+			id: "66DB0B398EB02F9F"
+			tasks: [{
+				id: "1F7179EBCB298A66"
+				item: "create:mechanical_crafter"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 8.5d
+		}
+	]
 	subtitle: ["&bNo Voltage, No Problem!&r"]
 	title: "&6Create&r"
 }

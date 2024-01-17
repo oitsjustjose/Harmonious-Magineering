@@ -202,6 +202,7 @@ ServerEvents.recipes(event => {
   };
 
   const create = () => {
+    event.remove({output: 'create:hand_crank'});
     // Cross-compat for automatically stripping modded logs & woods
     global.RuStrippedLumber.logs
       .concat(global.RuStrippedLumber.woods)

@@ -9,17 +9,18 @@
 		click: ""
 		corner: false
 		dev: false
-		height: 3.0d
+		height: 2.0d
 		hover: [ ]
 		image: "kubejs:textures/quest_images/chapter/pnc.png"
 		rotation: 0.0d
-		width: 12.533333333333335d
+		width: 8.355555555555556d
 		x: 0.0d
-		y: 0.0d
+		y: -1.0d
 	}]
 	order_index: 1
 	quest_links: [ ]
 	quests: [{
+		dependencies: ["1B5F1877CC1D3378"]
 		id: "39D82FB07CB809D8"
 		rewards: [{
 			auto: "invisible"
@@ -29,6 +30,8 @@
 			silent: true
 			type: "command"
 		}]
+		shape: "diamond"
+		size: 1.5d
 		tasks: [{
 			id: "306D3E926ECB326E"
 			item: "pneumaticcraft:ingot_iron_compressed"

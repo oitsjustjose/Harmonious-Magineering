@@ -1,0 +1,20 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "miscellany"
+	group: "5336980E34DC09BA"
+	id: "383C8220A5C60FD5"
+	order_index: 0
+	quest_links: [ ]
+	quests: [{
+		id: "691DDA55B06B8847"
+		tasks: [{
+			id: "0A243ED948B0D72D"
+			item: "cagedmobs:mob_cage"
+			type: "item"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
+	title: "Miscellany"
+}
