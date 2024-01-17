@@ -87,6 +87,9 @@
 				chromatic = true
 				chromatic_berry = true
 
+			[general.types.leaves_type.architects_palette]
+				twisted = true
+
 		[general.types.wood_type]
 
 			[general.types.wood_type.ecologics]
@@ -143,6 +146,9 @@
 
 			[general.types.wood_type.spawn]
 				rotten = true
+
+			[general.types.wood_type.architects_palette]
+				twisted = true
 
 	[general.entries]
 
@@ -221,4 +227,11 @@
 
 			[general.entries.wood_type.twigs]
 				table = true
+
+			[general.entries.wood_type.architects_palette]
+				board_stairs = true
+				railing = true
+				boards = true
+				board_slab = true
+				board_wall = true
 
