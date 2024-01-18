@@ -22,14 +22,27 @@
 	quests: [{
 		dependencies: ["1B5F1877CC1D3378"]
 		id: "39D82FB07CB809D8"
-		rewards: [{
-			auto: "invisible"
-			command: "/execute as @p run function custom:player/stages/pneumaticcraft"
-			elevate_perms: true
-			id: "32C8145DEF3F8F71"
-			silent: true
-			type: "command"
-		}]
+		rewards: [
+			{
+				auto: "invisible"
+				command: "/execute as @p run function custom:player/stages/pneumaticcraft"
+				elevate_perms: true
+				id: "32C8145DEF3F8F71"
+				silent: true
+				type: "command"
+			}
+			{
+				id: "034E7CF883CE20ED"
+				item: {
+					Count: 1b
+					id: "patchouli:guide_book"
+					tag: {
+						"patchouli:book": "pneumaticcraft:book"
+					}
+				}
+				type: "item"
+			}
+		]
 		shape: "diamond"
 		size: 1.5d
 		tasks: [{
