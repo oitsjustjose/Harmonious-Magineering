@@ -1,7 +1,19 @@
 // priority: 999999
 
-global.RuStrippedLumber = {
+global.StrippedLumber = {
   logs: [
+    'aether_redux:stripped_blightwillow_log',
+    'aether_redux:stripped_cloudcap_stem',
+    'aether_redux:stripped_crystal_log',
+    'aether_redux:stripped_fieldsprout_log',
+    'aether_redux:stripped_glacia_log',
+    'aether:stripped_skyroot_log',
+    'deep_aether:stripped_conberry_log',
+    'deep_aether:stripped_cruderoot_log',
+    'deep_aether:stripped_roseroot_log',
+    'deep_aether:stripped_sunroot_log',
+    'deep_aether:stripped_yagroot_log',
+    'eidolon:stripped_illwood_log',
     'regions_unexplored:stripped_baobab_log',
     'regions_unexplored:stripped_blackwood_log',
     'regions_unexplored:stripped_brimwood_log',
@@ -22,6 +34,18 @@ global.RuStrippedLumber = {
     'regions_unexplored:stripped_willow_log',
   ],
   woods: [
+    'aether_redux:stripped_blightwillow_wood',
+    'aether_redux:stripped_cloudcap_hyphae',
+    'aether_redux:stripped_crystal_wood',
+    'aether_redux:stripped_fieldsprout_wood',
+    'aether_redux:stripped_glacia_wood',
+    'aether:stripped_skyroot_wood',
+    'deep_aether:stripped_conberry_wood',
+    'deep_aether:stripped_cruderoot_wood',
+    'deep_aether:stripped_roseroot_wood',
+    'deep_aether:stripped_sunroot_wood',
+    'deep_aether:stripped_yagroot_wood',
+    'eidolon:stripped_illwood_bark',
     'regions_unexplored:stripped_baobab_wood',
     'regions_unexplored:stripped_blackwood_wood',
     'regions_unexplored:stripped_brimwood_wood',

@@ -203,10 +203,10 @@ ServerEvents.recipes(event => {
 
   const create = () => {
     // Cross-compat for automatically stripping modded logs & woods
-    global.RuStrippedLumber.logs
-      .concat(global.RuStrippedLumber.woods)
-      .concat(global.RuStrippedLumber.stems)
-      .concat(global.RuStrippedLumber.hyphae)
+    global.StrippedLumber.logs
+      .concat(global.StrippedLumber.woods)
+      .concat(global.StrippedLumber.stems)
+      .concat(global.StrippedLumber.hyphae)
       .forEach(stripped => {
         let unstripped = stripped.replace('stripped_', '');
         if (!Item.exists(unstripped)) {

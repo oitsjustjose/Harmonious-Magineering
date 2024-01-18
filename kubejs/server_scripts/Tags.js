@@ -13,8 +13,8 @@ const ores = [
 ];
 
 ServerEvents.tags('block', event => {
-  global.RuStrippedLumber.logs.forEach(log => event.add('forge:stripped_logs', log));
-  global.RuStrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
+  global.StrippedLumber.logs.forEach(log => event.add('forge:stripped_logs', log));
+  global.StrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   ores.forEach(ore => event.removeAllTagsFrom(ore));
 
   event.add('snowrealmagic:containables', [
@@ -471,8 +471,8 @@ ServerEvents.tags('item', event => {
     event.removeAll(`forge:storage_blocks/raw_osmium`);
   };
 
-  global.RuStrippedLumber.logs.forEach(log => event.add('forge:stripped_logs', log));
-  global.RuStrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
+  global.StrippedLumber.logs.forEach(log => event.add('forge:stripped_logs', log));
+  global.StrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   ores.forEach(ore => event.removeAllTagsFrom(ore));
 
   /* Rope Intercompat */
