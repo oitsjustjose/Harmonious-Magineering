@@ -90,6 +90,9 @@
 			[general.types.leaves_type.architects_palette]
 				twisted = true
 
+			[general.types.leaves_type.outer_end]
+				azure = true
+
 		[general.types.wood_type]
 
 			[general.types.wood_type.ecologics]
@@ -149,6 +152,9 @@
 
 			[general.types.wood_type.architects_palette]
 				twisted = true
+
+			[general.types.wood_type.outer_end]
+				azure = true
 
 	[general.entries]
 
