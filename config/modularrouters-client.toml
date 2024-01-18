@@ -9,3 +9,8 @@
 	#When holding an Item Router, should nearby camouflaged routers be highlighted?
 	heldRouterShowsCamoRouters = true
 
+[Sound]
+	#Volume of the bleep played when various operations are done with modules/upgrades/etc. such as binding to an inventory, setting camo...
+	#Range: 0.0 ~ 2.0
+	bleepVolume = 0.5
+

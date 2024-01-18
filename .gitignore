@@ -1,7 +1,8 @@
-.vscode
 .mixin.out
+.vscode
 /backups
 /config/jei/world
+/config/spark/activity.json
 /config/xaero*
 /coremods
 /crash-reports
