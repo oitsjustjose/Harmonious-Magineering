@@ -590,6 +590,11 @@ ServerEvents.recipes(event => {
   };
 
   const pnc = () => {
+    event.remove({type: 'pneumaticcraft:pressure_chamber_disenchanting'});
+    event.remove({type: 'pneumaticcraft:pressure_chamber_enchanting'});
+    event.remove({id: 'pneumaticcraft:pressure_chamber/pressure_chamber_disenchanting'});
+    event.remove({id: 'pneumaticcraft:pressure_chamber/pressure_chamber_enchanting'});
+
     event.remove({type: 'pneumaticcraft:explosion_crafting'});
     event.recipes.create.compacting('pneumaticcraft:ingot_iron_compressed', ['#forge:ingots/iron', 'ae2:tiny_tnt']).superheated();
     event.recipes.create.compacting('pneumaticcraft:compressed_iron_block', ['#forge:storage_blocks/iron', 'minecraft:tnt']).superheated();
