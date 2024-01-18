@@ -22,7 +22,12 @@
 	quests: [
 		{
 			dependencies: ["7DB5A72D397A6F2D"]
-			description: ["By combining Iron with Andesite in a &6Stamper&r, you have found you're able to create a new alloy capable of a handling a significant amount of torsion without being brittle enough to break."]
+			description: [
+				"By combining Iron with Andesite in a &6Stamper&r, you have found you're able to create a new alloy capable of a handling a significant amount of torsion without being brittle enough to break."
+				""
+				"As you discover more uses for this alloy, you may find new constructs whose purposes or installations may not be immediately clear. In such a case, sometimes you can further &6Ponder&r on the object by hovering over it with your cursor and holding down the &8[&7W&8]&r key. Let your imagination unfold the endless potential through this mechanic, and learn as much as you possibly can!"
+			]
+			hide: true
 			id: "18AFCE909FA8D0DC"
 			rewards: [
 				{
@@ -31,10 +36,8 @@
 					type: "command"
 				}
 				{
-					count: 16
-					id: "17B1F9B615C9BF94"
-					item: "create:experience_nugget"
-					random_bonus: 8
+					id: "689B09246B252103"
+					item: "create:wrench"
 					type: "item"
 				}
 			]
@@ -52,7 +55,21 @@
 		}
 		{
 			dependencies: ["18AFCE909FA8D0DC"]
+			description: [
+				"Andesite Casings are the most primative form of casing, allowing you to create several basic constructs (such as a Mechanical Press or Mixer) using them as a foundation. "
+				""
+				"In addition to these uses through crafting and artifice, they can also be applied via &6Right-Click&r to &lCogwheels&r, &lShafts&r, &lBelts&r and more to either hide or, at the very least &otidy&r, your kinetic routing!"
+			]
+			hide: true
 			id: "2329C35A3B647703"
+			rewards: [{
+				count: 4
+				id: "337BF22146D95182"
+				item: "create:andesite_alloy"
+				random_bonus: 8
+				type: "item"
+			}]
+			shape: "pentagon"
 			subtitle: "Apply Alloy directly to the Forehead!"
 			tasks: [{
 				id: "387C1D6ED27AB736"
@@ -61,22 +78,54 @@
 			}]
 			title: "Basic Casings"
 			x: 0.0d
-			y: 2.5d
+			y: 2.0d
 		}
 		{
 			dependencies: ["2329C35A3B647703"]
+			description: [
+				"As you continue to observe the numerous ways that rotational energy might be useful, you discover one use that is &ocertainly&r going to be a massive help - the &6Mechanical Press&r. This device functions similar to the &3Tinker's Hammer&r from chapters past, but is capable of crafting more types of plates (more efficiently at that!) and even crafting other types of items!"
+				""
+				"To make using the &6Mechanical Press&r easier, I suggest placing a &6Depot&r &l2&r blocks below the press. You might even be able to craft other types of items by replacing the &6Depot&r with a &2Basin&r - and heck, even adding &4Heat&r can change your output!"
+			]
+			hide: true
+			icon: "handcrafted:hammer"
 			id: "5A91CD7F879FA970"
+			rewards: [{
+				id: "0128150428EE5673"
+				item: "create:depot"
+				type: "item"
+			}]
+			shape: "gear"
+			subtitle: "Not another MCHammer Joke"
 			tasks: [{
 				id: "650B787C5888F919"
 				item: "create:mechanical_press"
 				type: "item"
 			}]
+			title: "Automated Hammering"
 			x: 0.0d
-			y: 4.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["5A91CD7F879FA970"]
+			description: [
+				"As you are now able to create plates more efficiently and at greater speed, you begin to wonder if you can fashion some form of mixing device using these plates as the blades of a large whisk of sorts. In your experiments, you have discovered the &6Mechanical Mixer&r, which crafts using items added to a basin through a process of mixing."
+				""
+				"This construction is definitely suitable for creating &7Andesite Alloy&r through a more cost-effective means, but it also seems as though the Basin is heat-proof! Could the addition of ample heat work as a means create new materials?"
+				"{@pagebreak}"
+				"In order to create enough heat to do any serious amount of melting, you could use the help of some type of particularly &cSpicy&r enemy -- maybe a &4Nether Fortress&r will have what you need?"
+			]
+			hide: true
+			icon: "create:whisk"
 			id: "74C1416D615A3A49"
+			rewards: [{
+				count: 8
+				id: "7EAF2E157A2B5AE2"
+				item: "create:experience_nugget"
+				random_bonus: 12
+				type: "item"
+			}]
+			subtitle: "Feels like Hell's Kitchen"
 			tasks: [
 				{
 					id: "3FD65F0FB522FE13"
@@ -94,79 +143,167 @@
 					type: "item"
 				}
 			]
+			title: "Mixing like Mad"
 			x: 0.0d
-			y: 5.5d
+			y: 5.0d
 		}
 		{
 			dependencies: ["74C1416D615A3A49"]
+			description: [
+				"Congratulations, now that you've successfully set up what is essentially a KitchenAid Mixer from hell, you've found that the heat put off by the Blaze Burner is suitable enough to reach the melting point of both Zinc and Copper. Coincidentally, this combination is exactly what you need to form a new alloy - &6Brass&r. "
+				""
+				"This alloy is capable of much higher Torque and Speed than Andesite Alloy was ever able to reach, and perhaps it will prove useful in crafting more advanced machinations?"
+			]
 			id: "079EAF0C11779506"
+			rewards: [{
+				count: 16
+				id: "668C7BDA60DFA16D"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			shape: "octagon"
+			size: 1.5d
+			subtitle: "&6Mixed &7Metal &8Ingots&r not required!"
 			tasks: [{
+				count: 2L
 				id: "650198D048829C6C"
 				item: "create:brass_ingot"
 				type: "item"
 			}]
+			title: "Advanced Alloy"
 			x: 0.0d
-			y: 7.0d
+			y: 6.75d
 		}
 		{
 			dependencies: ["079EAF0C11779506"]
+			description: [
+				"Now that you have learned to create &6Brass&r relatively plentifully, you've begun research on ways it can be used. Unfortunately you've discovered that you need more than just Andesite Casing, perhaps something more advanced, but you just can't seem to craft it on your own!"
+				""
+				"A mechanical construct capable of applying materials to blocks in a similar manner to how Andesite Alloy would be great, as the strength of such a construct would be capable of applying heavier materials such as Copper or Brass. Seems as though a &6Deployer&r may be capable of doing &oexactly&r that!"
+			]
+			icon: "create:brass_hand"
 			id: "49F6C827E030BB97"
+			rewards: [{
+				count: 8
+				id: "7F0A54EAAA44E0AB"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			subtitle: "A Hands-free Device!"
 			tasks: [{
 				id: "1C38E302EF5B9DCE"
 				item: "create:deployer"
 				type: "item"
 			}]
-			x: 1.5d
+			title: "Automated Applications"
+			x: 0.0d
 			y: 8.5d
 		}
 		{
 			dependencies: ["49F6C827E030BB97"]
+			description: ["Seems that applying &6Copper&r to Stripped Wood using the Deployer makes a very water-resistant casing capable of not only creating new machines that specialize in all things &9Fluid&r, but thee casings also seem capable of acting as a cover for the various &6Pipes&r you may have routing around!"]
 			id: "6A9782D0B5B5BEC0"
+			rewards: [{
+				id: "6F8588D2569E2558"
+				item: "create:copper_casing"
+				random_bonus: 1
+				type: "item"
+			}]
+			subtitle: "Water-tight and ready to go!"
 			tasks: [{
 				id: "3F155CACA604C3C5"
 				item: "create:copper_casing"
 				type: "item"
 			}]
-			x: 0.5d
-			y: 10.0d
+			title: "Fluid-Ready Casings"
+			x: -1.5d
+			y: 8.5d
 		}
 		{
 			dependencies: ["49F6C827E030BB97"]
+			description: ["Seems you've discovered that &6Brass&r can be applied to Stripped Wood to create Brass Casings using the Deployer! This new casing type should be capable of handling significantly more Torque/Stress as well as higher speeds. Surely this new casing can be used to make some better machines?"]
 			id: "6B1F6FC73C5CD89C"
+			rewards: [{
+				id: "338ED31DE0F622B6"
+				item: "create:brass_casing"
+				random_bonus: 1
+				type: "item"
+			}]
+			shape: "gear"
+			size: 1.25d
+			subtitle: "Bigger machines, anyone?"
 			tasks: [{
 				id: "490E5979197CC27A"
 				item: "create:brass_casing"
 				type: "item"
 			}]
-			x: 1.5d
-			y: 11.5d
+			title: "Heavy-Duty Casings"
+			x: 0.0d
+			y: 10.0d
 		}
 		{
 			dependencies: ["49F6C827E030BB97"]
+			description: ["While incredibly durable, it seems that &6Brass Casings&r may not be the end-all be-all that they were made out to be. Perhaps you can handle freight-levels of weight if you just reinforced a &6Brass Casing&r with some other type of material..."]
+			hide: true
 			id: "38EF1F470889D47F"
 			optional: true
+			rewards: [{
+				id: "10B8EDB3CDF9F116"
+				item: "create:railway_casing"
+				random_bonus: 1
+				type: "item"
+			}]
+			subtitle: "All things Trains (Planes and Automobiles not included)"
 			tasks: [{
 				id: "5B04035DCD40BEB1"
 				item: "create:railway_casing"
 				type: "item"
 			}]
-			x: 2.5d
-			y: 10.0d
+			title: "Locomotive-Ready Casings"
+			x: 1.5d
+			y: 8.5d
 		}
 		{
 			dependencies: ["4A0CCD94351B1EED"]
+			description: ["By combining your knowledge of &9Fluids&r and your pair of large &6Crushing Wheels&r, you've created a new type of.. delicacy? Ok, maybe it's not so tasty to you, but with ingredients like these surely a &cBlaze Burner&r would &blove&r some type of \"pastry\" like this! Maybe you can utilize that in some way..."]
 			id: "1B5F1877CC1D3378"
+			rewards: [{
+				id: "6B6908123BA6E466"
+				item: "create:blaze_cake"
+				random_bonus: 1
+				type: "item"
+			}]
+			shape: "octagon"
+			size: 1.75d
+			subtitle: "Too bad the patisserie isn't hiring..."
 			tasks: [{
 				id: "38DAB58BFD156987"
 				item: "create:blaze_cake"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 11.5d
+			title: "Baked goods, spicy style!"
+			x: 0.0d
+			y: 14.875d
 		}
 		{
 			dependencies: ["18AFCE909FA8D0DC"]
+			description: [
+				"As you proceed through the trials and tribulations of creating and utilizing rotational kinetics, you find that you may need your rotational energy to traverse a series of turns and angles to get from your rotational source to the device you wish to use it on."
+				""
+				"&6Ponder&r upon each of these listed objects, and give them a try to see how you might be able to provide rotational energy to some of the devices you'll be making soon!"
+			]
+			hide: true
+			icon: "create_connected:parallel_gearbox"
 			id: "2D47433D3E29864E"
+			rewards: [{
+				count: 8
+				id: "5F90D59C27F76C49"
+				item: "create:experience_nugget"
+				random_bonus: 4
+				type: "item"
+			}]
 			subtitle: "Cutting Corners"
 			tasks: [
 				{
@@ -197,13 +334,24 @@
 			]
 			title: "Moving Rotation"
 			x: 1.5d
-			y: 2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["18AFCE909FA8D0DC"]
-			description: ["In order to "]
+			description: [
+				"In order to begin your kinetic journey, you need to &ocreate&r rotation in the first place! This basic water wheel will work when touching at least &l1&r &9Flowing Water Source&r (touching more will &onot&r increase the speed of the water wheel at all)."
+				""
+				"Once placed, you can also re-color the water wheel by right-clicking it with &lany plank&r to change the color palette to better match that wood material! Once it's up and running and you're happy with its placement and appearance, you can seemingly apply Shafts, Cogwheels and Belts to the water wheel's rotational output on the front and/or back of the wheel in order to harness this rotation!"
+			]
+			hide: true
 			id: "5F30B7878B2D8648"
-			subtitle: "Flow-tation Rotation"
+			rewards: [{
+				count: 2
+				id: "18FBA3147BCAA6A8"
+				item: "create:water_wheel"
+				type: "item"
+			}]
+			subtitle: "More like Flow-tation"
 			tasks: [{
 				id: "39E5E80AB0AFF1EA"
 				item: "create:water_wheel"
@@ -211,28 +359,181 @@
 			}]
 			title: "Basic Rotation"
 			x: -1.5d
-			y: 2.0d
+			y: 1.5d
 		}
 		{
 			dependencies: ["66DB0B398EB02F9F"]
+			description: ["By utilizing your &6Mechanical Crafter&r, some &7Andesite Alloy&r and a few ordinary materials, you've fashioned yourself a pair of Crushing Wheels! These wheels, when spinning opposite of each other, seem capable of processing various materials ranging from Ores to more ordinary materials like &cNetherrack&r and even &8Stone&r!"]
+			hide: false
 			id: "4A0CCD94351B1EED"
+			rewards: [{
+				id: "685C41430B24B31A"
+				item: "create:experience_block"
+				random_bonus: 2
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "Except these don't get cavities!"
 			tasks: [{
 				id: "570801313BE0408A"
 				item: "create:crushing_wheel"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 10.0d
+			title: "Every factory's molars.."
+			x: 0.0d
+			y: 13.0d
 		}
 		{
-			dependencies: ["079EAF0C11779506"]
+			dependencies: ["6B1F6FC73C5CD89C"]
+			description: ["You seem confident that you can apply similar techniques such as those of the &7Crafting Table&r in order to make a free-form, scaled-up variant that is able to make new constructs even larger than you! It seems that each &6Mechanical Crafter&r has a conveyor belt that looks to lead to the next crafter down the line, forming the recipe as it goes!"]
 			id: "66DB0B398EB02F9F"
+			rewards: [{
+				count: 2
+				id: "4CB923010369DED6"
+				item: "create:experience_block"
+				random_bonus: 1
+				type: "item"
+			}]
+			subtitle: "Larger than life, even!"
 			tasks: [{
 				id: "1F7179EBCB298A66"
 				item: "create:mechanical_crafter"
 				type: "item"
 			}]
-			x: -1.5d
+			title: "Crafting at scale!"
+			x: 0.0d
+			y: 11.5d
+		}
+		{
+			dependencies: ["38EF1F470889D47F"]
+			description: ["As you begin to plan out your next train network, you've stumbled upon the obvious question of how to mark where you'd like various train stops to be! Well, look no further -- or maybe do with a bit of &6Pondering&r, up to you!"]
+			id: "09B7E586DB56E5C3"
+			rewards: [{
+				count: 8
+				id: "21A5A0D435958F46"
+				item: "create:experience_nugget"
+				random_bonus: 12
+				type: "item"
+			}]
+			subtitle: "Or wherever you decide to put this!"
+			tasks: [{
+				id: "160606EBAF7842BC"
+				item: "create:track_station"
+				type: "item"
+			}]
+			title: "Next stop, home!"
+			x: 2.0d
+			y: 6.5d
+		}
+		{
+			dependencies: ["38EF1F470889D47F"]
+			description: [
+				"Now that you've gotten your &6Train Tracks&r and &6Stations&r all mapped out and constructed, you'd possibly start looking into the process of automatically driving and navigating the trains all around your world to move items, players, etc.. "
+				""
+				"Well, by seating an entity (any entity, really) at the controls of your train, you're able to map out and define the route the newly hired conductor will take using this &6Train Schedule&r!"
+			]
+			hide: true
+			id: "01BBA87BE37CF95B"
+			rewards: [{
+				count: 12
+				id: "4D722E24B839DE73"
+				item: "create:experience_nugget"
+				random_bonus: 4
+				type: "item"
+			}]
+			subtitle: "Definitely not going to hire a Bee to conduct this train..."
+			tasks: [{
+				id: "4F18D99A3E838AD4"
+				item: "create:schedule"
+				type: "item"
+			}]
+			title: "Conducting Business"
+			x: 2.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["38EF1F470889D47F"]
+			description: ["You read that right! Using a complex sequence of crafting steps, you've found that you're able to create Train Tracks that are capable of safely handling the weight of a free-formed train of any almost shape or size! It may take some &6Pondering&r to sort out everything, but this could be a great solution to long-range item movement!"]
+			hide: true
+			id: "4E6A8BEC77CEF212"
+			rewards: [{
+				count: 4
+				id: "0DEAE61595ED5177"
+				item: "create:track"
+				random_bonus: 4
+				type: "item"
+			}]
+			subtitle: "Rail ties, that is!"
+			tasks: [{
+				id: "612973BB5BBFAA78"
+				item: "create:track"
+				type: "item"
+			}]
+			title: "Cutting Ties"
+			x: 3.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["6A9782D0B5B5BEC0"]
+			description: ["As you've begun obtaining and moving your various fluids around, you've discovered that it could be practical to pour a controlled amount of said fluid on top or inside of certain items - such as filling a bottle with water or a bucket with milk! Seems like a &6Spout&r might be just smart enough to manage such a feat!"]
+			id: "0719EFB604B59511"
+			rewards: [{
+				count: 8
+				id: "7F8095B7AF8D7ADD"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			subtitle: "Yet another means of crafting!"
+			tasks: [{
+				id: "49FB5D10E5996F3D"
+				item: "create:spout"
+				type: "item"
+			}]
+			title: "Pouring Fluids"
+			x: -2.0d
+			y: 6.5d
+		}
+		{
+			dependencies: ["6A9782D0B5B5BEC0"]
+			description: ["As you make your way back home with an inventory full of filled buckets, you may be left wondering \"how do I empty these into my fluid systems?\". Well, the &6Item Drain&r is your answer! Just toss the bucket atop the drain, and once emptied the empty item will be tossed to the side for you to pick up with &7Conveyor Belts&r, &7Hoppers&r, etc.. The fluid drained from the item will live in the small resorvoir within the Drain until pumped out and into a new container!"]
+			id: "2076F0FEF188C000"
+			rewards: [{
+				count: 8
+				id: "16D83BD710B21D97"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			subtitle: "With a dramatic toss at the end!"
+			tasks: [{
+				id: "1C62D87B4C695C56"
+				item: "create:item_drain"
+				type: "item"
+			}]
+			title: "Draining items"
+			x: -2.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["6A9782D0B5B5BEC0"]
+			description: ["By combining a long lead of kelp-lined hosing with a copper casing, you've discovered that you can create a type of hose that, when given a slight amount of rotational energy, is capable of reaching all the way to the bottom of pools of liquid. Once it reaches the bottom, you should be able to pump these liquid sources out of the pool using any type of &9fluid pump&r!"]
+			id: "0AA4F4B904B442F8"
+			rewards: [{
+				count: 8
+				id: "7AFA95BF21D34201"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			subtitle: "Just like an elephant trunk!"
+			tasks: [{
+				id: "2125162CBEBAFCB3"
+				item: "create:hose_pulley"
+				type: "item"
+			}]
+			title: "Siphoning fluids"
+			x: -3.5d
 			y: 8.5d
 		}
 	]

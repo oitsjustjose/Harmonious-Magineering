@@ -20,6 +20,11 @@
 	order_index: 3
 	quest_links: [ ]
 	quests: [{
+		dependencies: [
+			"39D82FB07CB809D8"
+			"79467E224CE42C0D"
+		]
+		hide: true
 		id: "66899BB398A3CDE3"
 		rewards: [{
 			auto: "invisible"

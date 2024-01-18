@@ -33,6 +33,7 @@
 				""
 				"Enchanted Ash can be made by smelting down the bones of fallen foes, at which point it can be used in a number of ways.."
 			]
+			hide: true
 			icon: "eidolon:pewter_block"
 			id: "6689477876AE87CB"
 			rewards: [{
@@ -91,6 +92,7 @@
 				""
 				"Both Stone Hands must be near the &6Brazier&r, and should contain a piece of &cRedstone Dust&r in each of them. Finally, the &6Brazier&r should contain a piece of &7Bone Meal&r before being lit with a &6Flint and Steel&r."
 			]
+			hide: true
 			icon: "eidolon:brazier"
 			id: "40907AF544414A94"
 			rewards: [{
@@ -147,6 +149,7 @@
 				""
 				"Soul Shards are used in dozens of different forms of Magic, but perhaps sticking with the occult will make gathering more &5Shards&r easier going forward..."
 			]
+			hide: true
 			id: "77C8FCAD613E21D7"
 			rewards: [{
 				id: "5E776FB1C292D1C6"
@@ -169,6 +172,7 @@
 		{
 			dependencies: ["6689477876AE87CB"]
 			description: ["You've found you're hitting the limits of a standard Crafting Table, but it seems that you might be able to create a significantly better crafting experience using a Pewter Inlay. This new workbench is significantly more potent for crafting all types of supernatural items, resources and more!"]
+			hide: true
 			id: "6ECBE8D8B8A57392"
 			rewards: [{
 				count: 4
@@ -194,6 +198,7 @@
 				""
 				"It seems like an Athame can be used on &aJungle Leaves&r, &aLily Pads&r, &2Ferns&r, and any &7White Flower&r to get some of these resources. It seems like &5Illwood&r can be found in the similar environments as Dark Oak Wood too!"
 			]
+			hide: true
 			icon: "eidolon:merammer_root"
 			id: "4E5D33BEC2D528CC"
 			rewards: [{
@@ -252,6 +257,7 @@
 				"77C8FCAD613E21D7"
 			]
 			description: ["It seems like &6Merammer&r, &2Sprigs of Avenna&r, &cSildrian Seeds&r and &dFlowering Oanna&r cannot be grown in normal earth. Perhaps a planter like this one will provide a more suitable substrate for their roots to form?"]
+			hide: true
 			id: "492DB76E6A1FBACA"
 			rewards: [{
 				count: 4
@@ -273,6 +279,7 @@
 		{
 			dependencies: ["77C8FCAD613E21D7"]
 			description: ["Using a &6Crucible&r and the &5Soul Shards&r you've been gathering, you seem to be able to augment Gold Ingots with the souls of the undead to create a new metal capable of holding much more magic power than you've seen before. A new Inlay can also be made with this material"]
+			hide: true
 			id: "270AFC0FA41305D1"
 			rewards: [{
 				count: 8
@@ -302,6 +309,7 @@
 				""
 				"It also seems that this device doesn't require a large collection of texts like the Enchanting Table of yore; the enchanting power seems to be entirely unphazed by how many bookshelves you surround the &5Soul Enchanter&r with."
 			]
+			hide: true
 			id: "2732A6F56D91A7E9"
 			rewards: [{
 				count: 2
@@ -326,6 +334,7 @@
 				"2732A6F56D91A7E9"
 			]
 			description: ["With Enchanting and other occult magiks, you've found yourself in search of more Soul Shards and these rituals are getting pretty old. Fortunately, the Unholy Token seems to be a great catalyst in various recipes and &ldoes not get consumed&r when you use it in recipes, so perhaps you can fashion yourself a new weapon that can steal the souls from the undead much more easily than a ritual..."]
+			hide: true
 			id: "6C7968AB932CAFD0"
 			rewards: [{
 				count: 8
@@ -363,6 +372,7 @@
 				""
 				"{image:eidolon:textures/vfx/wicked_sign.png width:50 height:50 align:1}"
 			]
+			hide: true
 			icon: "eidolon:straw_effigy"
 			id: "1E00538EB87E83E6"
 			rewards: [{
@@ -397,6 +407,7 @@
 				""
 				"{image:eidolon:textures/vfx/sanguine_ritual.png width:50 height:50 align:1}"
 			]
+			hide: true
 			icon: "eidolon:stone_altar"
 			id: "3C0939420ECF23DE"
 			rewards: [{
@@ -438,6 +449,7 @@
 				""
 				"{image:eidolon:item/notetaking_tools width:50 height:50 align:1}"
 			]
+			hide: true
 			icon: "eidolon:unholy_symbol"
 			id: "259253F0B5E9952E"
 			rewards: [
@@ -475,6 +487,7 @@
 				""
 				"Tip: When you see a recipe that requires stirring &oafter&r a set of items are added, toss them in first and then stir immediately! If they've already mixed into the rest of your brew, then you've waited too long!"
 			]
+			hide: true
 			id: "2EFF78EBD4191993"
 			rewards: [
 				{
@@ -506,6 +519,7 @@
 				"1E00538EB87E83E6"
 			]
 			description: ["As you continue your prayers, you feel as though the crude effigy you made from scraps of Hay is no longer enough to properly respect and praise the Diety... fortunately the &8Unholy Symbol&r that you were sent to will allow you to form a closer bond to the diety and learn even more chants and types of magiks as you continue on your journey."]
+			hide: true
 			id: "0F7026A06FEB1170"
 			rewards: [{
 				count: 6
@@ -525,13 +539,9 @@
 		}
 		{
 			dependencies: ["259253F0B5E9952E"]
+			hide: true
 			icon: {
 				Count: 1b
-				ForgeCaps: {
-					"cold_sweat:item_insulation": {
-						Insulation: [ ]
-					}
-				}
 				id: "eidolon:warlock_hat"
 				tag: {
 					Damage: 0
@@ -609,13 +619,9 @@
 		}
 		{
 			dependencies: ["259253F0B5E9952E"]
+			hide: true
 			icon: {
 				Count: 1b
-				ForgeCaps: {
-					"cold_sweat:item_insulation": {
-						Insulation: [ ]
-					}
-				}
 				id: "eidolon:bonelord_helm"
 				tag: {
 					Damage: 0

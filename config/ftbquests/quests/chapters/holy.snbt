@@ -63,6 +63,7 @@
 				""
 				"Once you defeat the boss, a grand key is dropped and you find that a set of Trapdoors have revealed themselves in the middle of the boss room, covering a treasure chest."
 			]
+			hide: true
 			id: "108A316D3F4BFE38"
 			rewards: [{
 				count: 6
@@ -85,6 +86,7 @@
 		}
 		{
 			dependencies: ["2AB0349D89A4B983"]
+			hide: true
 			id: "7BF1DBC64ED535E6"
 			rewards: [{
 				count: 6
@@ -105,6 +107,7 @@
 		}
 		{
 			dependencies: ["2AB0349D89A4B983"]
+			hide: true
 			id: "583CBBEC8643FFC4"
 			rewards: [{
 				count: 6
@@ -125,13 +128,9 @@
 		}
 		{
 			dependencies: ["7BF1DBC64ED535E6"]
+			hide: true
 			icon: {
 				Count: 1b
-				ForgeCaps: {
-					"cold_sweat:item_insulation": {
-						Insulation: [ ]
-					}
-				}
 				id: "aether:valkyrie_chestplate"
 				tag: {
 					Damage: 0
@@ -230,6 +229,7 @@
 		}
 		{
 			dependencies: ["7BF1DBC64ED535E6"]
+			hide: true
 			icon: {
 				Count: 1b
 				id: "aether:valkyrie_lance"
@@ -310,13 +310,9 @@
 		}
 		{
 			dependencies: ["583CBBEC8643FFC4"]
+			hide: true
 			icon: {
 				Count: 1b
-				ForgeCaps: {
-					"cold_sweat:item_insulation": {
-						Insulation: [ ]
-					}
-				}
 				id: "aether:phoenix_chestplate"
 				tag: {
 					Damage: 0
@@ -416,13 +412,9 @@
 		{
 			dependencies: ["583CBBEC8643FFC4"]
 			description: ["(Read up on the &cPhoenix Gear&r in the &3Lore Book&r to learn more about obtaining this gear)"]
+			hide: true
 			icon: {
 				Count: 1b
-				ForgeCaps: {
-					"cold_sweat:item_insulation": {
-						Insulation: [ ]
-					}
-				}
 				id: "aether:obsidian_chestplate"
 				tag: {
 					Damage: 0
@@ -522,6 +514,7 @@
 		{
 			dependencies: ["108A316D3F4BFE38"]
 			description: ["Aside from the treasure inside the boss chamber, you have now released the rest of the dungeon from the clutches of the dreaded &1Slider&r, you find that the bricks in the walls of the dungeon can be used for deeper magiks.. you should take some with you."]
+			hide: true
 			id: "26B018666C63C97F"
 			rewards: [
 				{
@@ -555,6 +548,7 @@
 		{
 			dependencies: ["7BF1DBC64ED535E6"]
 			description: ["Now that the &eValkyrie Queen&r has fallen, you notice that the Dungeon Walls are no longer enchanted to be unbreakable. While you aren't certain what good it will be at the moment, you feel that a Stone with such Angelic properties will surely be of use in the &6future&r.."]
+			hide: true
 			id: "63DA06491D0E1269"
 			rewards: [{
 				count: 8
@@ -576,6 +570,7 @@
 		{
 			dependencies: ["583CBBEC8643FFC4"]
 			description: ["Now that the &4Sun Spirit&r has been defeated, not only has the &eAether&r has been freed from an infinite day, but the walls of the dungeon have been freed from the spirit's clutches and can be destroyed. You should bring some &cHellfire Stone&r with you as it has some very... &ointeresting&r auras coming off of it."]
+			hide: true
 			id: "561E3392FED4849A"
 			rewards: [{
 				count: 8

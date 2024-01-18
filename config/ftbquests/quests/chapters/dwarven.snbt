@@ -81,6 +81,7 @@
 				""
 				"The extractor can be placed against the Mechanical Core, and once powered with a redstone signal, will begin to extract to whatever storage container you have connected to it via pipes."
 			]
+			hide: true
 			icon: "embers:ember_crystal"
 			id: "1B727E1B3A980766"
 			rewards: [{
@@ -126,6 +127,7 @@
 				"{@pagebreak}"
 				"In order to extract the Ember, place an &3Ember Emitter&r on any side of the top portion of the activator. It won't go anywhere until you've placed an &3Ember Receptor&r on a device or cell. Lastly, use the Tinker's Hammer on the emitter first, then the receptor to create a link. Once you apply a &credstone signal&r to the emitter, you should begin to see Ember flow from the emitter to the receptor!"
 			]
+			hide: true
 			icon: "embers:ember_activator"
 			id: "30FF6C44A8477F5A"
 			rewards: [{
@@ -165,6 +167,7 @@
 				""
 				"Molten Metal can be pulled from any of the four sides of the &otop&r of the &6Melter&r, and an &3Ember Recepter&r can be attached to any of the four sides of the &obottom&r of the &6Melter&r. Molten metal can be stored in a &3Fluid Vessel&r, which keeps its fluids when broken."
 			]
+			hide: true
 			id: "65665E7386ED8DC8"
 			rewards: [{
 				id: "1AAE88CF554E4705"
@@ -188,6 +191,7 @@
 				""
 				"To form an alloy, use &3Fluid Pipes&r to insert fluids into any two &lopposite&r sides of the &obottom&r of the &6Mixer Centrifuge&r, and insert &6Ember&r into the &otop&r of the centrifuge using an &3Ember Receptor&r. The resulting alloy can be extracted with a &3Fluid Extractor&r from any of the four sides of the top of the centrifuge."
 			]
+			hide: true
 			id: "2A4C37E5E48F0EE8"
 			rewards: [{
 				count: 12
@@ -211,6 +215,7 @@
 				""
 				"Fluid goes into any side of the the &oStamper Base&r, and Ember goes into any side of the &oStamper&r using an &3Ember Receptor&r. To apply a stamp, hold it in your hand while looking at the &obottom&r face of the Stamper itself (not the Stamper Base) and right-click!"
 			]
+			hide: true
 			icon: "embers:ingot_stamp"
 			id: "7DB5A72D397A6F2D"
 			shape: "octagon"
@@ -247,6 +252,7 @@
 				""
 				"Perhaps the &7Ancient Codex&r has more to read on with regard to the various tools that can be made using &6Dawnstone&r."
 			]
+			hide: true
 			id: "69C3BFD20183FBB6"
 			optional: true
 			subtitle: "A durable alloy!"

@@ -20,6 +20,7 @@
 	order_index: 2
 	quest_links: [ ]
 	quests: [{
+		hide: true
 		id: "79467E224CE42C0D"
 		rewards: [{
 			auto: "invisible"

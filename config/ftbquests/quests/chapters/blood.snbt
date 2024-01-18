@@ -71,6 +71,7 @@
 				""
 				"As you explore and find Demonite, you begin to wonder what other uses such a durable metal has..."
 			]
+			hide: true
 			icon: "bloodmagic:ingot_hellforged"
 			id: "5780D21D153AF10D"
 			rewards: [{
@@ -105,6 +106,7 @@
 		{
 			dependencies: ["66810454B2C6116C"]
 			description: ["As you study the pool of blood stored within the &4Blood Altar&r, you realize that there's potential to turn a Crimson Gem into something much more than the sum of its parts... perhaps a primitive blood orb of sorts would unlock the ability to permanently store blood in the form of Life Essence within a type of &bSoul Network&r."]
+			hide: true
 			id: "14361626385C1CD1"
 			rewards: [{
 				count: 4
@@ -128,6 +130,7 @@
 				"0FA3C6AE8BDDED58"
 			]
 			description: ["As you've expanded your &4Blood Altar&r, you discover that Ender Pearls may serve as a means to create an improved Blood Orb. With this new Blood Orb comes the ability to use it in more complex crafting recipes, but also an increase in Life Essence storage within your &bSoul Network&r!"]
+			hide: true
 			id: "5189D7F09DCEA09B"
 			rewards: [{
 				count: 5
@@ -152,6 +155,7 @@
 				""
 				"Be warned, the Antechamber exists in a space between realms.. it's inadvisable to go mining around too much in this realm or else you may risk falling into &0The Void&r"
 			]
+			hide: true
 			icon: "bloodmagic:simplekey"
 			id: "52A71B5A24ABE047"
 			rewards: [{
@@ -176,6 +180,7 @@
 		{
 			dependencies: ["14361626385C1CD1"]
 			description: ["You've read in the &4Sanguine Scientiem&r that Blank Slates are the key to many various Blood Magiks, including a selection of sigils which seem to utilize the Life Essence stored in your &bSoul Network&r to work."]
+			hide: true
 			id: "0FA3C6AE8BDDED58"
 			rewards: [{
 				count: 8
@@ -200,6 +205,7 @@
 				""
 				"In addition to Blank Runes, you can replace these runes in any tier of &4Blood Altar&r with augmented variants of this rune to improve Life Essence yield, storage, crafting speed and more!"
 			]
+			hide: true
 			id: "0901E2EBBDA97388"
 			rewards: [{
 				count: 6
@@ -223,6 +229,7 @@
 				""
 				"Perhaps this is the answer to ending the self-sacrifice you've had to take part in until now?"
 			]
+			hide: true
 			id: "453D3762164EB3AA"
 			rewards: [{
 				count: 10
@@ -292,6 +299,7 @@
 		{
 			dependencies: ["5189D7F09DCEA09B"]
 			description: ["With the formation of a Tier II &4Blood Altar&r, you are now able to store enough blood to imbue blank slates with even more blood. This discovery unlocks the potential to create many new sigils as well as the ability to perform some very simplistic blood rituals."]
+			hide: true
 			id: "7E28CB483C62627B"
 			rewards: [{
 				count: 4
@@ -317,6 +325,7 @@
 				"{@pagebreak}"
 				"As you look into the properties of this &6Saturated Tau&r, you find that it can be turned into a &cWeak Blood Shard&r by using a Sanguine Reverter in an ARC, thus reversing the fruit's consumption of the creature's blood into raw blood formed as Shards."
 			]
+			hide: true
 			icon: "bloodmagic:weak_tau"
 			id: "37476053E9DE608B"
 			rewards: [{
@@ -354,6 +363,7 @@
 				""
 				"These reagents are multi-use, and take damage over time - to further their lifespan, you're able to enchant them with Unbreaking which is highly recommended! "
 			]
+			hide: true
 			icon: "bloodmagic:alchemicalreactionchamber"
 			id: "52E923A38DF4A394"
 			rewards: [{
