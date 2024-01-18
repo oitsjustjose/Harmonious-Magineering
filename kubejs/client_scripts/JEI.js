@@ -68,7 +68,6 @@ JEIEvents.hideItems(event => {
     'create:crushed_raw_tin',
     'create:crushed_raw_uranium',
     'create:dough',
-    'create:hand_crank',
     'create:handheld_worldshaper',
     'decorative_blocks:blockstate_copy_item',
     'deep_aether:golden_swet_ball',
