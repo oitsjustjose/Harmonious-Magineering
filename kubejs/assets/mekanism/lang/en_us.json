@@ -3,19 +3,6 @@
   "container.mekanism.osmium_compressor": "Compressor",
   "description.mekanism.osmium_compressor": "A fairly advanced machine used to compress steel into various dusts in order to create their ingot counterparts.",
   "gas.mekanism.osmium": "Steel",
-  "_block.mekanism.block_osmium": "Osmium Block",
-  "_block.mekanism.block_raw_osmium": "Raw Osmium Block",
-  "_block.mekanism.deepslate_osmium_ore": "Deepslate Osmium Ore",
-  "_block.mekanism.osmium_ore": "Osmium Ore",
-  "_description.mekanism.osmium_ore": "A strong mineral that can be found at nearly any height in the world. It is known to have many uses in the construction of machinery.",
-  "_item.mekanism.clump_osmium": "Osmium Clump",
-  "_item.mekanism.crystal_osmium": "Osmium Crystal",
-  "_item.mekanism.dirty_dust_osmium": "Dirty Osmium Dust",
-  "_item.mekanism.dust_osmium": "Osmium Dust",
-  "_item.mekanism.ingot_osmium": "Osmium Ingot",
-  "_item.mekanism.nugget_osmium": "Osmium Nugget",
-  "_item.mekanism.raw_osmium": "Raw Osmium",
-  "_item.mekanism.shard_osmium": "Osmium Shard",
-  "_slurry.mekanism.clean_osmium": "Clean Osmium Slurry",
-  "_slurry.mekanism.dirty_osmium": "Dirty Osmium Slurry"
+  "block.mekanism.deepslate_osmium_ore": "Deepslate",
+  "block.mekanism.osmium_ore": "Stone"
 }
