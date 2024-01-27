@@ -30,15 +30,15 @@
 		#[in Ticks]
 		#Lifetime of smoke particles emitted by contraptions
 		#Range: 20 ~ 1000
-		smokeLifetime = 500
+		smokeLifetime = 100
 		#.
 		#Smoke emission rate on contraptions
 		#Range: 0.0 ~ 10.0
-		smokePercentage = 0.75
+		smokePercentage = 0.5
 		#.
 		#Smoke texture quality
 		#Allowed Values: LOW, MEDIUM, HIGH, ULTRA
-		smokeQuality = "HIGH"
+		smokeQuality = "MEDIUM"
 
 	#.
 	#Journeymap Settings
