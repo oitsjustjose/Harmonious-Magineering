@@ -1,0 +1,7 @@
+
+[general]
+	#Allow crafting non-block items
+	allow_non_blocks = false
+	#Allows crafting non wood variant items (crafting table for example)
+	allow_non_variant = true
+
