@@ -271,6 +271,9 @@ ServerEvents.recipes(event => {
     event.recipes.create
       .mixing(Item.of('embers:dawnstone_ingot', 2), [Ingredient.of('#forge:ingots/copper'), Ingredient.of('#forge:ingots/gold')])
       .heated();
+
+    // Use brass plates rather than gold for Steam Engines.
+    event.replaceInput({output: 'create:steam_engine'}, '#forge:plates/gold', '#forge:plates/brass');
   };
 
   const dimStorage = () => {
