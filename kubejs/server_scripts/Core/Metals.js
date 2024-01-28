@@ -74,35 +74,33 @@ ServerEvents.recipes(event => {
     });
   };
 
-  const nuggetsFromSmelting = () => {
-    const pairs = [
-      {material: 'aluminum', nugget: 'immersiveengineering:nugget_aluminum'},
-      {material: 'copper', nugget: 'create:copper_nugget'},
-      {material: 'gold', nugget: 'minecraft:gold_nugget'},
-      {material: 'iron', nugget: 'minecraft:iron_nugget'},
-      {material: 'lead', nugget: 'eidolon:lead_nugget'},
-      {material: 'nickel', nugget: 'immersiveengineering:nugget_nickel'},
-      {material: 'silver', nugget: 'eidolon:silver_nugget'},
-      {material: 'tin', nugget: 'mekanism:nugget_tin'},
-      {material: 'uranium', nugget: 'mekanism:nugget_uranium'},
-      {material: 'zinc', nugget: 'create:zinc_nugget'},
+  const oreSmelting = () => {
+    const materials = [
+      {mat: 'aluminum', ingot: 'immersiveengineering:ingot_aluminum', nugget: 'immersiveengineering:nugget_aluminum'},
+      {mat: 'copper', ingot: 'minecraft:copper_ingot', nugget: 'create:copper_nugget'},
+      {mat: 'gold', ingot: 'minecraft:gold_ingot', nugget: 'minecraft:gold_nugget'},
+      {mat: 'iron', ingot: 'minecraft:iron_ingot', nugget: 'minecraft:iron_nugget'},
+      {mat: 'lead', ingot: 'eidolon:lead_ingot', nugget: 'eidolon:lead_nugget'},
+      {mat: 'nickel', ingot: 'immersiveengineering:ingot_nickel', nugget: 'immersiveengineering:nugget_nickel'},
+      {mat: 'silver', ingot: 'eidolon:silver_ingot', nugget: 'eidolon:silver_nugget'},
+      {mat: 'tin', ingot: 'mekanism:ingot_tin', nugget: 'mekanism:nugget_tin'},
+      {mat: 'uranium', ingot: 'mekanism:ingot_uranium', nugget: 'mekanism:nugget_uranium'},
     ];
 
-    pairs.forEach(pair => {
-      event.remove({
-        type: 'minecraft:smelting',
-        input: `#forge:raw_materials/${pair.material}`,
-        output: `#forge:ingots/${pair.material}`,
-      });
+    materials.forEach(m => {
+      // Remove raw ore -> ingot blasting/smelting
+      event.remove({type: 'minecraft:smelting', input: `#forge:raw_materials/${m.mat}`, output: `#forge:ingots/${m.mat}`});
+      event.remove({type: 'minecraft:blasting', input: `#forge:raw_materials/${m.mat}`, output: `#forge:ingots/${m.mat}`});
+      // Remove ore -> ingot blasting/smelting (just in case)
+      event.remove({type: 'minecraft:smelting', input: `#forge:ores/${m.mat}`, output: `#forge:ingots/${m.mat}`});
+      event.remove({type: 'minecraft:blasting', input: `#forge:ores/${m.mat}`, output: `#forge:ingots/${m.mat}`});
 
-      event.remove({
-        type: 'minecraft:blasting',
-        input: `#forge:raw_materials/${pair.material}`,
-        output: `#forge:ingots/${pair.material}`,
-      });
-
-      event.smelting(Item.of(pair.nugget, 3), `#forge:raw_materials/${pair.material}`).xp(0.3);
-      event.blasting(Item.of(pair.nugget, 4), `#forge:raw_materials/${pair.material}`).xp(0.4);
+      // Raw ore smelting/blasting -> 3/4 nuggets
+      event.smelting(Item.of(m.nugget, 3), `#forge:raw_materials/${m.mat}`).xp(0.3);
+      event.blasting(Item.of(m.nugget, 4), `#forge:raw_materials/${m.mat}`).xp(0.4);
+      // Whole ore smelting/blasting -> 1 ingot, always
+      event.smelting(m.ingot, `#forge:ores/${m.mat}`).xp(1.0);
+      event.blasting(m.ingot, `#forge:ores/${m.mat}`).xp(1.0);
     });
   };
 
@@ -234,5 +232,5 @@ ServerEvents.recipes(event => {
     });
   };
 
-  [dustSmelting, nuggetsFromSmelting, metalSmithing, nukeOsmium, plateCompat, rods, silverAndLead].forEach(module => module());
+  [dustSmelting, oreSmelting, metalSmithing, nukeOsmium, plateCompat, rods, silverAndLead].forEach(module => module());
 });
