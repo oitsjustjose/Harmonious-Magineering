@@ -11,6 +11,8 @@ ServerEvents.recipes(event => {
         output: Item.of(output).toJson(),
         fluid: 'minecraft:water',
       });
+
+      event.recipes.create.splashing(Item.of(output), Ingredient.of(input));
     } catch (ex) {
       console.log(ex);
       console.log(`input: ${Ingredient.of(input).toJson()}, output: ${Item.of(output).toJson()}`);
