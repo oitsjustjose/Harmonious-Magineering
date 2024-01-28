@@ -28,7 +28,10 @@ LootJS.modifiers(event => {
             .filter(x => x.location().toString() === 'forge:raw_materials').length > 0;
         if (!hasTag) return stack;
 
-        stack.setCount(stack.getCount() * 2);
+        // Only double loot 50% of the time
+        if (Math.random() < 0.5) {
+          stack.setCount(stack.getCount() * 2);
+        }
         return stack;
       });
     });
