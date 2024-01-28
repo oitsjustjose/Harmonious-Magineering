@@ -1,6 +1,17 @@
 // priority: 100000
 
 ServerEvents.recipes(event => {
+  const createAutomation = () => {
+    // Remove all infinite metal recipes from Create
+    event.remove('create:splashing/gravel');
+    event.recipes.create.splashing(Item.of('minecraft:flint').withChance(0.25), 'minecraft:gravel').id('create:splashing/gravel');
+
+    event.remove('create:splashing/red_sand');
+    event.recipes.create.splashing(Item.of('minecraft:dead_bush').withChance(0.05), 'minecraft:red_sand').id('create:splashing/red_sand');
+
+    event.remove('create:splashing/soul_sand');
+  };
+
   const dustSmelting = () => {
     [
       {dust: 'immersiveengineering:dust_aluminum', ingot: 'immersiveengineering:ingot_aluminum'},
@@ -50,25 +61,6 @@ ServerEvents.recipes(event => {
       event.shaped(metal.block, ['NNN', 'NNN', 'NNN'], {N: tags.ingot});
       event.shapeless(Item.of(metal.nugget, 9), [tags.ingot]);
       event.shapeless(Item.of(metal.ingot, 9), [tags.block]);
-    });
-  };
-
-  const oreSmelting = () => {
-    Object.keys(global.Metals).forEach(mat => {
-      let metal = global.Metals[mat];
-      // Remove raw ore -> ingot blasting/smelting
-      event.remove({type: 'minecraft:smelting', input: `#forge:raw_materials/${mat}`, output: `#forge:ingots/${mat}`});
-      event.remove({type: 'minecraft:blasting', input: `#forge:raw_materials/${mat}`, output: `#forge:ingots/${mat}`});
-      // Remove ore -> ingot blasting/smelting (just in case)
-      event.remove({type: 'minecraft:smelting', input: `#forge:ores/${mat}`, output: `#forge:ingots/${mat}`});
-      event.remove({type: 'minecraft:blasting', input: `#forge:ores/${mat}`, output: `#forge:ingots/${mat}`});
-
-      // Raw ore smelting/blasting -> 3/4 nuggets
-      event.smelting(Item.of(metal.nugget, 3), `#forge:raw_materials/${mat}`).xp(0.3);
-      event.blasting(Item.of(metal.nugget, 4), `#forge:raw_materials/${mat}`).xp(0.4);
-      // Whole ore smelting/blasting -> 1 ingot, always
-      event.smelting(metal.ingot, `#forge:ores/${mat}`).xp(1.0);
-      event.blasting(metal.ingot, `#forge:ores/${mat}`).xp(1.0);
     });
   };
 
@@ -127,6 +119,25 @@ ServerEvents.recipes(event => {
       'mekanism:processing/osmium/slurry/dirty/from_raw_ore',
       'mekanism:processing/osmium/storage_blocks/from_ingots',
     ].forEach(id => event.remove(id));
+  };
+
+  const oreSmelting = () => {
+    Object.keys(global.Metals).forEach(mat => {
+      let metal = global.Metals[mat];
+      // Remove raw ore -> ingot blasting/smelting
+      event.remove({type: 'minecraft:smelting', input: `#forge:raw_materials/${mat}`, output: `#forge:ingots/${mat}`});
+      event.remove({type: 'minecraft:blasting', input: `#forge:raw_materials/${mat}`, output: `#forge:ingots/${mat}`});
+      // Remove ore -> ingot blasting/smelting (just in case)
+      event.remove({type: 'minecraft:smelting', input: `#forge:ores/${mat}`, output: `#forge:ingots/${mat}`});
+      event.remove({type: 'minecraft:blasting', input: `#forge:ores/${mat}`, output: `#forge:ingots/${mat}`});
+
+      // Raw ore smelting/blasting -> 3/4 nuggets
+      event.smelting(Item.of(metal.nugget, 3), `#forge:raw_materials/${mat}`).xp(0.3);
+      event.blasting(Item.of(metal.nugget, 4), `#forge:raw_materials/${mat}`).xp(0.4);
+      // Whole ore smelting/blasting -> 1 ingot, always
+      event.smelting(metal.ingot, `#forge:ores/${mat}`).xp(1.0);
+      event.blasting(metal.ingot, `#forge:ores/${mat}`).xp(1.0);
+    });
   };
 
   const plateCompat = () => {
@@ -200,5 +211,5 @@ ServerEvents.recipes(event => {
     });
   };
 
-  [dustSmelting, oreSmelting, metalSmithing, nukeOsmium, plateCompat, rods, silverAndLead].forEach(module => module());
+  [createAutomation, dustSmelting, metalSmithing, nukeOsmium, oreSmelting, plateCompat, rods, silverAndLead].forEach(module => module());
 });
