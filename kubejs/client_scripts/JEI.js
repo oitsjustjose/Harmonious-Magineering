@@ -2,6 +2,10 @@ JEIEvents.removeCategories(event => {
   event.remove('waystones:warp_plate');
 });
 
+JEIEvents.hideFluids(event => {
+  event.hide('pneumaticcraft:biodiesel');
+});
+
 JEIEvents.addItems(event => {
   ['minecraft:bundle', 'sophisticatedbackpacks:backpack'].forEach(x => event.add(x));
 });
@@ -119,6 +123,7 @@ JEIEvents.hideItems(event => {
     'modularrouters:energy_upgrade',
     'modularrouters:extruder_module_1',
     'modularrouters:extruder_module_2',
+    'pneumaticcraft:biodiesel_bucket',
     'pneumaticcraft:creative_compressed_iron_block',
     'pneumaticcraft:creative_compressor',
     'pneumaticcraft:creative_upgrade',

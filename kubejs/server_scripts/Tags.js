@@ -605,6 +605,9 @@ ServerEvents.tags('fluid', event => {
   event.add('minecraft:water', 'minecraft:flowing_water');
 
   event.remove('forge:honey', 'productivebees:honey');
+
+  event.remove('forge:biodiesel', 'pneumaticcraft:biodiesel');
+  event.remove('forge:biodiesel', 'pneumaticcraft:biodiesel_flowing');
 });
 
 ServerEvents.tags('dimension_type', event => {

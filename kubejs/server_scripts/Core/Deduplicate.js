@@ -1,150 +1,174 @@
 // priority: -1
 
 ServerEvents.recipes(event => {
-  /* ~~Delightful:~~ Remove the easier pie recipe */
-  event.remove({output: 'minecraft:pumpkin_pie'});
-  event.shaped('minecraft:pumpkin_pie', ['SPE', ' C '], {
-    P: 'minecraft:pumpkin',
-    S: 'minecraft:sugar',
-    C: 'farmersdelight:pie_crust',
-    E: '#forge:eggs',
-  });
+  const fluids = () => {
+    /* ~~Biodiesel:~~ Remove PnC's Biodiesel */
+    event.remove('pneumaticcraft:fluid_mixer/biodiesel');
 
-  event.custom({
-    type: 'create:sequenced_assembly',
-    ingredient: {item: 'farmersdelight:pie_crust'},
-    loops: 1,
-    results: [{item: 'minecraft:pumpkin_pie'}],
-    sequence: [
-      {
-        type: 'create:deploying',
-        ingredients: [{item: 'farmersdelight:pie_crust'}, [{tag: 'forge:eggs'}]],
-        results: [{item: 'farmersdelight:pie_crust'}],
-      },
-      {
-        type: 'create:deploying',
-        ingredients: [{item: 'farmersdelight:pie_crust'}, [{item: 'minecraft:sugar'}]],
-        results: [{item: 'farmersdelight:pie_crust'}],
-      },
-      {
-        type: 'create:deploying',
-        ingredients: [{item: 'farmersdelight:pie_crust'}, [{item: 'minecraft:pumpkin'}]],
-        results: [{item: 'farmersdelight:pie_crust'}],
-      },
-      {
-        type: 'create:pressing',
-        ingredients: [{item: 'farmersdelight:pie_crust'}],
-        results: [{item: 'farmersdelight:pie_crust'}],
-      },
-    ],
-    transitionalItem: {item: 'farmersdelight:pie_crust'},
-  });
+    event
+      .custom({
+        type: 'pneumaticcraft:fluid_mixer',
+        fluid_output: {amount: 50, fluid: 'immersiveengineering:biodiesel'},
+        input1: {type: 'pneumaticcraft:fluid', amount: 25, tag: 'forge:plantoil'},
+        input2: {type: 'pneumaticcraft:fluid', amount: 25, tag: 'forge:ethanol'},
+        item_output: {item: 'pneumaticcraft:glycerol'},
+        pressure: 2.0,
+        time: 300,
+      })
+      .id('pneumaticcraft:fluid_mixer/biodiesel');
+  };
 
-  event.custom({
-    type: 'create:sequenced_assembly',
-    ingredient: {item: 'farmersdelight:pie_crust'},
-    loops: 1,
-    results: [{item: 'minecraft:pumpkin_pie'}],
-    sequence: [
-      {
-        type: 'create:deploying',
-        ingredients: [{item: 'farmersdelight:pie_crust'}, [{tag: 'forge:eggs'}]],
-        results: [{item: 'farmersdelight:pie_crust'}],
-      },
-      {
-        type: 'create:filling',
-        ingredients: [{item: 'farmersdelight:pie_crust'}, {amount: 100, fluid: 'create:honey', nbt: {}}],
-        results: [{item: 'farmersdelight:pie_crust'}],
-      },
-      {
-        type: 'create:deploying',
-        ingredients: [{item: 'farmersdelight:pie_crust'}, [{item: 'minecraft:pumpkin'}]],
-        results: [{item: 'farmersdelight:pie_crust'}],
-      },
-      {
-        type: 'create:pressing',
-        ingredients: [{item: 'farmersdelight:pie_crust'}],
-        results: [{item: 'farmersdelight:pie_crust'}],
-      },
-    ],
-    transitionalItem: {item: 'farmersdelight:pie_crust'},
-  });
+  const foods = () => {
+    /* ~~Delightful:~~ Remove the easier pie recipe */
+    event.remove({output: 'minecraft:pumpkin_pie'});
+    event.shaped('minecraft:pumpkin_pie', ['SPE', ' C '], {
+      P: 'minecraft:pumpkin',
+      S: 'minecraft:sugar',
+      C: 'farmersdelight:pie_crust',
+      E: '#forge:eggs',
+    });
 
-  /* ~~Cakes:~~ Dedup the 4 different recipes */
-  event.remove('aether:moa_egg_cake');
-  event.remove('aether:skyroot_milk_bucket_cake');
-  event.remove('aether:skyroot_milk_bucket_moa_egg_cake');
-  event.remove('create:crafting/curiosities/cake');
-  event.remove('deep_aether:cake');
-  event.remove('deep_aether:skyroot_milk_bucket_cake');
-  event.remove('farmersdelight:cake_from_milk_bottle');
-  event.remove('minecraft:cake');
-  event.remove('naturalist:cake');
-  event.shaped('minecraft:cake', ['MMM', 'SES', 'WWW'], {
-    M: '#forge:milk',
-    S: ['minecraft:sugar', 'minecraft:honey_bottle'],
-    E: '#forge:eggs',
-    W: 'create:wheat_flour',
-  });
+    event.custom({
+      type: 'create:sequenced_assembly',
+      ingredient: {item: 'farmersdelight:pie_crust'},
+      loops: 1,
+      results: [{item: 'minecraft:pumpkin_pie'}],
+      sequence: [
+        {
+          type: 'create:deploying',
+          ingredients: [{item: 'farmersdelight:pie_crust'}, [{tag: 'forge:eggs'}]],
+          results: [{item: 'farmersdelight:pie_crust'}],
+        },
+        {
+          type: 'create:deploying',
+          ingredients: [{item: 'farmersdelight:pie_crust'}, [{item: 'minecraft:sugar'}]],
+          results: [{item: 'farmersdelight:pie_crust'}],
+        },
+        {
+          type: 'create:deploying',
+          ingredients: [{item: 'farmersdelight:pie_crust'}, [{item: 'minecraft:pumpkin'}]],
+          results: [{item: 'farmersdelight:pie_crust'}],
+        },
+        {
+          type: 'create:pressing',
+          ingredients: [{item: 'farmersdelight:pie_crust'}],
+          results: [{item: 'farmersdelight:pie_crust'}],
+        },
+      ],
+      transitionalItem: {item: 'farmersdelight:pie_crust'},
+    });
 
-  /* ~~Flour:~~ Unify PNC and Create's Wheat Flours */
-  event.replaceInput({}, 'pneumaticcraft:wheat_flour', 'create:wheat_flour');
-  event.replaceInput({}, '#forge:dusts/flour', 'create:wheat_flour');
-  event.remove('pneumaticcraft:pressure_chamber/wheat_flour');
-  event.custom({
-    type: 'pneumaticcraft:pressure_chamber',
-    inputs: [{tag: 'forge:crops/wheat'}],
-    pressure: 1.5,
-    results: [{count: 3, item: 'create:wheat_flour'}],
-  });
+    event.custom({
+      type: 'create:sequenced_assembly',
+      ingredient: {item: 'farmersdelight:pie_crust'},
+      loops: 1,
+      results: [{item: 'minecraft:pumpkin_pie'}],
+      sequence: [
+        {
+          type: 'create:deploying',
+          ingredients: [{item: 'farmersdelight:pie_crust'}, [{tag: 'forge:eggs'}]],
+          results: [{item: 'farmersdelight:pie_crust'}],
+        },
+        {
+          type: 'create:filling',
+          ingredients: [{item: 'farmersdelight:pie_crust'}, {amount: 100, fluid: 'create:honey', nbt: {}}],
+          results: [{item: 'farmersdelight:pie_crust'}],
+        },
+        {
+          type: 'create:deploying',
+          ingredients: [{item: 'farmersdelight:pie_crust'}, [{item: 'minecraft:pumpkin'}]],
+          results: [{item: 'farmersdelight:pie_crust'}],
+        },
+        {
+          type: 'create:pressing',
+          ingredients: [{item: 'farmersdelight:pie_crust'}],
+          results: [{item: 'farmersdelight:pie_crust'}],
+        },
+      ],
+      transitionalItem: {item: 'farmersdelight:pie_crust'},
+    });
 
-  /* ~~Snails:~~ Unify Spawn & Naturalist's snail shell items */
-  event.replaceInput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
-  event.replaceOutput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
+    /* ~~Cakes:~~ Dedup the 4 different recipes */
+    event.remove('aether:moa_egg_cake');
+    event.remove('aether:skyroot_milk_bucket_cake');
+    event.remove('aether:skyroot_milk_bucket_moa_egg_cake');
+    event.remove('create:crafting/curiosities/cake');
+    event.remove('deep_aether:cake');
+    event.remove('deep_aether:skyroot_milk_bucket_cake');
+    event.remove('farmersdelight:cake_from_milk_bottle');
+    event.remove('minecraft:cake');
+    event.remove('naturalist:cake');
+    event.shaped('minecraft:cake', ['MMM', 'SES', 'WWW'], {
+      M: '#forge:milk',
+      S: ['minecraft:sugar', 'minecraft:honey_bottle'],
+      E: '#forge:eggs',
+      W: 'create:wheat_flour',
+    });
 
-  /* ~~Eggs:~~ Unify Farmer's Delight Naturalist's Cooked Egg items */
-  event.remove({output: 'farmersdelight:fried_egg'});
-  event.replaceInput({}, '#aether_redux:eggs_for_blueberry_pie', '#forge:eggs');
+    /* ~~Flour:~~ Unify PNC and Create's Wheat Flours */
+    event.replaceInput({}, 'pneumaticcraft:wheat_flour', 'create:wheat_flour');
+    event.replaceInput({}, '#forge:dusts/flour', 'create:wheat_flour');
+    event.remove('pneumaticcraft:pressure_chamber/wheat_flour');
+    event.custom({
+      type: 'pneumaticcraft:pressure_chamber',
+      inputs: [{tag: 'forge:crops/wheat'}],
+      pressure: 1.5,
+      results: [{count: 3, item: 'create:wheat_flour'}],
+    });
 
-  /* ~~Sawdust:~~ Unify Mek & IE's sawdusts */
-  event.replaceInput({}, 'immersiveengineering:dust_wood', '#forge:sawdust');
-  event.replaceOutput({}, 'immersiveengineering:dust_wood', '#forge:sawdusts');
-  event.replaceOutput({}, '#forge:dusts/wood', '#forge:sawdusts');
+    /* ~~Dough~~ */
+    event.replaceInput({}, 'create:dough', 'farmersdelight:wheat_dough');
+    event.replaceOutput({output: 'create:dough'}, 'create:dough', 'farmersdelight:wheat_dough');
 
-  /* ~~Salmonerries:~~ Unify Regions Unexplored & Delightful's Recipes */
-  event.replaceInput({}, 'regions_unexplored:salmonberry', '#forge:fruits/salmonberries');
-  event.replaceInput({}, 'delightful:salmonberries', '#forge:fruits/salmonberries');
-  event.replaceOutput({}, 'delightful:salmonberries', 'regions_unexplored:salmonberry');
-  event.custom({
-    type: 'immersiveengineering:cloche',
-    input: {item: 'regions_unexplored:salmonberry'},
-    soil: {item: 'minecraft:dirt'},
-    render: {type: 'crop', block: 'regions_unexplored:salmonberry_bush'},
-    time: 800,
-    results: [{item: 'regions_unexplored:salmonberry', count: 3}],
-  });
+    /* ~~Eggs:~~ Unify Farmer's Delight Naturalist's Cooked Egg items */
+    event.remove({output: 'farmersdelight:fried_egg'});
+    event.replaceInput({}, '#aether_redux:eggs_for_blueberry_pie', '#forge:eggs');
 
-  event.remove('modularrouters:guide_book');
-  event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"modularrouters:book"}'), ['minecraft:book', 'modularrouters:modular_router']);
+    /* ~~Salmonerries:~~ Unify Regions Unexplored & Delightful's Recipes */
+    event.replaceInput({}, 'regions_unexplored:salmonberry', '#forge:fruits/salmonberries');
+    event.replaceInput({}, 'delightful:salmonberries', '#forge:fruits/salmonberries');
+    event.replaceOutput({}, 'delightful:salmonberries', 'regions_unexplored:salmonberry');
+    event.custom({
+      type: 'immersiveengineering:cloche',
+      input: {item: 'regions_unexplored:salmonberry'},
+      soil: {item: 'minecraft:dirt'},
+      render: {type: 'crop', block: 'regions_unexplored:salmonberry_bush'},
+      time: 800,
+      results: [{item: 'regions_unexplored:salmonberry', count: 3}],
+    });
+  };
 
-  /* ~~Dough~~ */
-  event.replaceInput({}, 'create:dough', 'farmersdelight:wheat_dough');
-  event.replaceOutput({output: 'create:dough'}, 'create:dough', 'farmersdelight:wheat_dough');
+  const misc = () => {
+    /* MR Guidebook dedup */
+    event.remove('modularrouters:guide_book');
+    event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"modularrouters:book"}'), ['minecraft:book', 'modularrouters:modular_router']);
 
-  /* ~~Candles~~ */
-  event.remove({output: 'eidolon:candle'});
-  event.remove('delightful:candle_from_animal_fat');
-  event.shaped('minecraft:candle', ['S', 'T'], {S: 'minecraft:string', T: '#forge:tallow'});
-  event.replaceInput({mod: 'eidolon'}, 'eidolon:candle', 'minecraft:candle');
+    /* ~~Candles~~ */
+    event.remove({output: 'eidolon:candle'});
+    event.remove('delightful:candle_from_animal_fat');
+    event.shaped('minecraft:candle', ['S', 'T'], {S: 'minecraft:string', T: '#forge:tallow'});
+    event.replaceInput({mod: 'eidolon'}, 'eidolon:candle', 'minecraft:candle');
 
-  /* ~~Leads~~ */
-  event.remove('aether:swet_lead');
-  event.remove('embers:lead_adhesive');
-  event.remove('minecraft:lead');
-  event.shaped(Item.of('minecraft:lead', 2), ['SS ', 'SB ', '  S'], {
-    S: 'minecraft:string',
-    B: ['#forge:slimeballs', '#aether:swet_balls'],
-  });
+    /* ~~Leads~~ */
+    event.remove('aether:swet_lead');
+    event.remove('embers:lead_adhesive');
+    event.remove('minecraft:lead');
+    event.shaped(Item.of('minecraft:lead', 2), ['SS ', 'SB ', '  S'], {
+      S: 'minecraft:string',
+      B: ['#forge:slimeballs', '#aether:swet_balls'],
+    });
+
+    /* ~~Sawdust:~~ Unify Mek & IE's sawdusts */
+    event.replaceInput({}, 'immersiveengineering:dust_wood', '#forge:sawdust');
+    event.replaceOutput({}, 'immersiveengineering:dust_wood', '#forge:sawdusts');
+    event.replaceOutput({}, '#forge:dusts/wood', '#forge:sawdusts');
+
+    /* ~~Snails:~~ Unify Spawn & Naturalist's snail shell items */
+    event.replaceInput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
+    event.replaceOutput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
+  };
+
+  [fluids, foods, misc].forEach(module => module());
 
   /* ~~Preemptive Cleanup the right way~~ */
   [
