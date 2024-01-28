@@ -26,34 +26,13 @@ ServerEvents.recipes(event => {
   };
 
   const metalSmithing = () => {
-    const materials = [
-      {
-        mat: 'aluminum',
-        ingot: 'immersiveengineering:ingot_aluminum',
-        block: 'immersiveengineering:storage_aluminum',
-        nugget: 'immersiveengineering:nugget_aluminum',
-      },
-      {mat: 'copper', ingot: 'minecraft:copper_ingot', block: 'minecraft:copper_block', nugget: 'create:copper_nugget'},
-      {mat: 'gold', ingot: 'minecraft:gold_ingot', block: 'minecraft:gold_block', nugget: 'minecraft:gold_nugget'},
-      {mat: 'iron', ingot: 'minecraft:iron_ingot', block: 'minecraft:iron_block', nugget: 'minecraft:iron_nugget'},
-      {mat: 'lead', ingot: 'eidolon:lead_ingot', block: 'eidolon:lead_block', nugget: 'eidolon:lead_nugget'},
-      {
-        mat: 'nickel',
-        ingot: 'immersiveengineering:ingot_nickel',
-        block: 'immersiveengineering:storage_nickel',
-        nugget: 'immersiveengineering:nugget_nickel',
-      },
-      {mat: 'silver', ingot: 'eidolon:silver_ingot', block: 'eidolon:silver_block', nugget: 'eidolon:silver_nugget'},
-      {mat: 'tin', ingot: 'mekanism:ingot_tin', block: 'mekanism:block_tin', nugget: 'mekanism:nugget_tin'},
-      {mat: 'uranium', ingot: 'mekanism:ingot_uranium', block: 'mekanism:block_uranium', nugget: 'mekanism:nugget_uranium'},
-    ];
-
-    materials.forEach(m => {
+    Object.keys(global.Metals).forEach(mat => {
+      let metal = global.Metals[mat];
       const types = ['minecraft:crafting_shapeless', 'minecraft:crafting_shaped'];
       const tags = {
-        ingot: `#forge:ingots/${m.mat}`,
-        block: `#forge:storage_blocks/${m.mat}`,
-        nugget: `#forge:nuggets/${m.mat}`,
+        ingot: `#forge:ingots/${mat}`,
+        block: `#forge:storage_blocks/${mat}`,
+        nugget: `#forge:nuggets/${mat}`,
       };
 
       types.forEach(type => {
@@ -61,46 +40,35 @@ ServerEvents.recipes(event => {
         event.remove({type: type, input: tags.block, output: tags.ingot});
         event.remove({type: type, input: tags.ingot, output: tags.block});
         event.remove({type: type, input: tags.nugget, output: tags.ingot});
-        event.remove({type: type, input: m.ingot, output: m.nugget});
-        event.remove({type: type, input: m.block, output: m.ingot});
-        event.remove({type: type, input: m.ingot, output: m.block});
-        event.remove({type: type, input: m.nugget, output: m.ingot});
+        event.remove({type: type, input: metal.ingot, output: metal.nugget});
+        event.remove({type: type, input: metal.block, output: metal.ingot});
+        event.remove({type: type, input: metal.ingot, output: metal.block});
+        event.remove({type: type, input: metal.nugget, output: metal.ingot});
       });
 
-      event.shaped(m.ingot, ['NNN', 'NNN', 'NNN'], {N: tags.nugget});
-      event.shaped(m.block, ['NNN', 'NNN', 'NNN'], {N: tags.ingot});
-      event.shapeless(Item.of(m.nugget, 9), [tags.ingot]);
-      event.shapeless(Item.of(m.ingot, 9), [tags.block]);
+      event.shaped(metal.ingot, ['NNN', 'NNN', 'NNN'], {N: tags.nugget});
+      event.shaped(metal.block, ['NNN', 'NNN', 'NNN'], {N: tags.ingot});
+      event.shapeless(Item.of(metal.nugget, 9), [tags.ingot]);
+      event.shapeless(Item.of(metal.ingot, 9), [tags.block]);
     });
   };
 
   const oreSmelting = () => {
-    const materials = [
-      {mat: 'aluminum', ingot: 'immersiveengineering:ingot_aluminum', nugget: 'immersiveengineering:nugget_aluminum'},
-      {mat: 'copper', ingot: 'minecraft:copper_ingot', nugget: 'create:copper_nugget'},
-      {mat: 'gold', ingot: 'minecraft:gold_ingot', nugget: 'minecraft:gold_nugget'},
-      {mat: 'iron', ingot: 'minecraft:iron_ingot', nugget: 'minecraft:iron_nugget'},
-      {mat: 'lead', ingot: 'eidolon:lead_ingot', nugget: 'eidolon:lead_nugget'},
-      {mat: 'nickel', ingot: 'immersiveengineering:ingot_nickel', nugget: 'immersiveengineering:nugget_nickel'},
-      {mat: 'silver', ingot: 'eidolon:silver_ingot', nugget: 'eidolon:silver_nugget'},
-      {mat: 'tin', ingot: 'mekanism:ingot_tin', nugget: 'mekanism:nugget_tin'},
-      {mat: 'uranium', ingot: 'mekanism:ingot_uranium', nugget: 'mekanism:nugget_uranium'},
-    ];
-
-    materials.forEach(m => {
+    Object.keys(global.Metals).forEach(mat => {
+      let metal = global.Metals[mat];
       // Remove raw ore -> ingot blasting/smelting
-      event.remove({type: 'minecraft:smelting', input: `#forge:raw_materials/${m.mat}`, output: `#forge:ingots/${m.mat}`});
-      event.remove({type: 'minecraft:blasting', input: `#forge:raw_materials/${m.mat}`, output: `#forge:ingots/${m.mat}`});
+      event.remove({type: 'minecraft:smelting', input: `#forge:raw_materials/${mat}`, output: `#forge:ingots/${mat}`});
+      event.remove({type: 'minecraft:blasting', input: `#forge:raw_materials/${mat}`, output: `#forge:ingots/${mat}`});
       // Remove ore -> ingot blasting/smelting (just in case)
-      event.remove({type: 'minecraft:smelting', input: `#forge:ores/${m.mat}`, output: `#forge:ingots/${m.mat}`});
-      event.remove({type: 'minecraft:blasting', input: `#forge:ores/${m.mat}`, output: `#forge:ingots/${m.mat}`});
+      event.remove({type: 'minecraft:smelting', input: `#forge:ores/${mat}`, output: `#forge:ingots/${mat}`});
+      event.remove({type: 'minecraft:blasting', input: `#forge:ores/${mat}`, output: `#forge:ingots/${mat}`});
 
       // Raw ore smelting/blasting -> 3/4 nuggets
-      event.smelting(Item.of(m.nugget, 3), `#forge:raw_materials/${m.mat}`).xp(0.3);
-      event.blasting(Item.of(m.nugget, 4), `#forge:raw_materials/${m.mat}`).xp(0.4);
+      event.smelting(Item.of(metal.nugget, 3), `#forge:raw_materials/${mat}`).xp(0.3);
+      event.blasting(Item.of(metal.nugget, 4), `#forge:raw_materials/${mat}`).xp(0.4);
       // Whole ore smelting/blasting -> 1 ingot, always
-      event.smelting(m.ingot, `#forge:ores/${m.mat}`).xp(1.0);
-      event.blasting(m.ingot, `#forge:ores/${m.mat}`).xp(1.0);
+      event.smelting(metal.ingot, `#forge:ores/${mat}`).xp(1.0);
+      event.blasting(metal.ingot, `#forge:ores/${mat}`).xp(1.0);
     });
   };
 

@@ -78,3 +78,19 @@ global.StrippedLumber = {
     'regions_unexplored:stripped_yellow_bioshroom_hyphae',
   ],
 };
+
+global.Metals = {
+  aluminum: {
+    ingot: 'immersiveengineering:ingot_aluminum',
+    block: 'immersiveengineering:storage_aluminum',
+    nugget: 'immersiveengineering:nugget_aluminum',
+  },
+  copper: {ingot: 'minecraft:copper_ingot', block: 'minecraft:copper_block', nugget: 'create:copper_nugget'},
+  gold: {ingot: 'minecraft:gold_ingot', block: 'minecraft:gold_block', nugget: 'minecraft:gold_nugget'},
+  iron: {ingot: 'minecraft:iron_ingot', block: 'minecraft:iron_block', nugget: 'minecraft:iron_nugget'},
+  lead: {ingot: 'eidolon:lead_ingot', block: 'eidolon:lead_block', nugget: 'eidolon:lead_nugget'},
+  nickel: {ingot: 'immersiveengineering:ingot_nickel', block: 'immersiveengineering:storage_nickel', nugget: 'immersiveengineering:nugget_nickel'},
+  silver: {ingot: 'eidolon:silver_ingot', block: 'eidolon:silver_block', nugget: 'eidolon:silver_nugget'},
+  tin: {ingot: 'mekanism:ingot_tin', block: 'mekanism:block_tin', nugget: 'mekanism:nugget_tin'},
+  uranium: {ingot: 'mekanism:ingot_uranium', block: 'mekanism:block_uranium', nugget: 'mekanism:nugget_uranium'},
+};
