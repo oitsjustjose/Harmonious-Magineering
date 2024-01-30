@@ -35,6 +35,7 @@ ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
     'bloodmagic:soulscythe': Ingredient.of('#forge:ingots/iron'),
     'bloodmagic:soulshovel': Ingredient.of('#forge:ingots/iron'),
     'bloodmagic:soulsword': Ingredient.of('#forge:ingots/iron'),
+    'create:potato_cannon': Ingredient.of('#forge:ingots/copper'),
     'eidolon:athame': Ingredient.of('#forge:ingots/pewter'),
     'eidolon:bonechill_wand': Ingredient.of('eidolon:wraith_heart'),
     'eidolon:bonelord_chestplate': Ingredient.of('eidolon:imbued_bones'),
