@@ -214,6 +214,13 @@ ServerEvents.tags('item', event => {
     event.add('vtweaks:colored_sheetmetal_colored', allButWhite('immersiveengineering', null, 'sheetmetal_colored'));
     event.add('vtweaks:colored_slab_sheetmetal_colored', allButWhite('immersiveengineering', null, 'slab_sheetmetal_colored'));
 
+    // Quark
+    event.add('vtweaks:colored_framed_glass', allColorsOf('quark', 'framed_glass'));
+    event.add('vtweaks:colored_framed_glass_pane', allColorsOf('quark', 'framed_glass_pane'));
+    event.add('vtweaks:colored_shingles', allColorsOf('quark', 'shingles'));
+    event.add('vtweaks:colored_shingle_slabs', allColorsOf('quark', 'shingles_slab'));
+    event.add('vtweaks:colored_shingle_stairs', allColorsOf('quark', 'shingles_stairs'));
+
     // Supplementaries
     event.add('vtweaks:colored_candle_holder', allColorsOf('supplementaries', null, 'candle_holder'));
     event.add('vtweaks:colored_gold_candle_holder', allColorsOf('suppsquared', null, 'gold_candle_holder'));

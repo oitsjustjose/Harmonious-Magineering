@@ -60,6 +60,13 @@ ServerEvents.recipes(event => {
   wash('#vtweaks:colored_sheetmetal_colored', 'immersiveengineering:sheetmetal_colored_white');
   wash('#vtweaks:colored_slab_sheetmetal_colored', 'immersiveengineering:slab_sheetmetal_colored_white');
 
+  // Quark
+  wash('#vtweaks:colored_framed_glass', 'quark:framed_glass');
+  wash('#vtweaks:colored_framed_glass_pane', 'quark:framed_glass_pane');
+  wash('#vtweaks:colored_shingles', 'quark:shingles');
+  wash('#vtweaks:colored_shingle_slabs', 'quark:shingles_slab');
+  wash('#vtweaks:colored_shingle_stairs', 'quark:shingles_stairs');
+
   // Supplementaries
   wash('#vtweaks:colored_candle_holder', 'supplementaries:candle_holder');
   wash('#vtweaks:colored_gold_candle_holder', 'suppsquared:gold_candle_holder');
