@@ -19,40 +19,405 @@
 	}]
 	order_index: 1
 	quest_links: [ ]
-	quests: [{
-		dependencies: ["1B5F1877CC1D3378"]
-		id: "39D82FB07CB809D8"
-		rewards: [
-			{
-				auto: "invisible"
-				command: "/execute as @p run function custom:player/stages/pneumaticcraft"
-				elevate_perms: true
-				id: "32C8145DEF3F8F71"
-				silent: true
-				type: "command"
-			}
-			{
-				id: "034E7CF883CE20ED"
-				item: {
-					Count: 1b
-					id: "patchouli:guide_book"
-					tag: {
-						"patchouli:book": "pneumaticcraft:book"
-					}
+	quests: [
+		{
+			dependencies: ["1B5F1877CC1D3378"]
+			id: "39D82FB07CB809D8"
+			rewards: [
+				{
+					auto: "invisible"
+					command: "/execute as @p run function custom:player/stages/pneumaticcraft"
+					elevate_perms: true
+					id: "32C8145DEF3F8F71"
+					silent: true
+					type: "command"
 				}
+				{
+					id: "034E7CF883CE20ED"
+					item: {
+						Count: 1b
+						id: "patchouli:guide_book"
+						tag: {
+							"patchouli:book": "pneumaticcraft:book"
+						}
+					}
+					type: "item"
+				}
+			]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				id: "306D3E926ECB326E"
+				item: "pneumaticcraft:ingot_iron_compressed"
 				type: "item"
-			}
-		]
-		shape: "diamond"
-		size: 1.5d
-		tasks: [{
-			id: "306D3E926ECB326E"
-			item: "pneumaticcraft:ingot_iron_compressed"
-			type: "item"
-		}]
-		x: 0.0d
-		y: 0.0d
-	}]
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["39D82FB07CB809D8"]
+			icon: "pneumaticcraft:air_compressor"
+			id: "609C2E824F41BFA7"
+			tasks: [
+				{
+					id: "1AECD0332889FA2D"
+					item: "pneumaticcraft:air_compressor"
+					type: "item"
+				}
+				{
+					id: "48FD2785949DECD6"
+					item: "pneumaticcraft:pressure_gauge_module"
+					type: "item"
+				}
+				{
+					id: "3D6A11707F14D4E6"
+					item: "pneumaticcraft:pressure_tube"
+					type: "item"
+				}
+				{
+					id: "6EF0C86241A00454"
+					item: "pneumaticcraft:safety_tube_module"
+					type: "item"
+				}
+			]
+			title: "Basic Compression"
+			x: -2.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["39D82FB07CB809D8"]
+			icon: "pneumaticcraft:pressure_chamber_wall"
+			id: "06F3696CC3BE5780"
+			tasks: [
+				{
+					id: "684BED084BB7330F"
+					item: "pneumaticcraft:pressure_chamber_interface"
+					type: "item"
+				}
+				{
+					id: "7DB2D1A60104D4BD"
+					item: "pneumaticcraft:pressure_chamber_valve"
+					type: "item"
+				}
+				{
+					id: "6032983339C4E5DC"
+					item: "pneumaticcraft:pressure_chamber_glass"
+					type: "item"
+				}
+				{
+					id: "02F43BA6821A084F"
+					item: "pneumaticcraft:pressure_chamber_wall"
+					type: "item"
+				}
+			]
+			title: "Pressure Chamber"
+			x: 2.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["39D82FB07CB809D8"]
+			icon: "pneumaticcraft:oil_bucket"
+			id: "79FFFB4D9553599D"
+			tasks: [
+				{
+					id: "0DFA049F315C2377"
+					item: "pneumaticcraft:oil_bucket"
+					type: "item"
+				}
+				{
+					id: "76A5BDBB09CB46FD"
+					item: "pneumaticcraft:small_tank"
+					type: "item"
+				}
+				{
+					id: "64FA6CD23B92806D"
+					item: "pneumaticcraft:refinery"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "2EE42AA18854C709"
+					item: "pneumaticcraft:refinery_output"
+					type: "item"
+				}
+				{
+					id: "22BB7604D86C5A17"
+					item: "create:blaze_burner"
+					type: "item"
+				}
+			]
+			title: "Oil \\& Refining"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["79FFFB4D9553599D"]
+			id: "323C7D5E5C64C4C6"
+			subtitle: "Processing with a side of heat!"
+			tasks: [{
+				id: "758446818E510666"
+				item: "pneumaticcraft:thermopneumatic_processing_plant"
+				type: "item"
+			}]
+			title: "Thermopneumatics"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["323C7D5E5C64C4C6"]
+			icon: "pneumaticcraft:plastic"
+			id: "0CAC10FB609F4FFD"
+			tasks: [
+				{
+					id: "3A5D692255A3C570"
+					item: "pneumaticcraft:plastic_bucket"
+					type: "item"
+				}
+				{
+					id: "0C64ED521FA13D95"
+					item: "pneumaticcraft:plastic"
+					type: "item"
+				}
+			]
+			title: "Plastics"
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["0CAC10FB609F4FFD"]
+			icon: "pneumaticcraft:heat_frame"
+			id: "2E36A1E0D4DE41C0"
+			subtitle: "The power of thermals!"
+			tasks: [
+				{
+					id: "53780E41DE8008BF"
+					item: "pneumaticcraft:heat_frame"
+					type: "item"
+				}
+				{
+					id: "61F36E35010234AF"
+					item: "pneumaticcraft:vortex_tube"
+					type: "item"
+				}
+				{
+					id: "25D7B4928A31DB9C"
+					item: "pneumaticcraft:heat_sink"
+					type: "item"
+				}
+				{
+					id: "131A8F375D1ED3E9"
+					item: "pneumaticcraft:heat_pipe"
+					type: "item"
+				}
+			]
+			title: "Improved Plastic Yields"
+			x: 2.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["3B4AE45A1DCD6084"]
+			icon: "pneumaticcraft:capacitor"
+			id: "3B8805587B903541"
+			tasks: [
+				{
+					id: "23FE0FE7E4C14010"
+					item: "pneumaticcraft:capacitor"
+					type: "item"
+				}
+				{
+					id: "14A1A50F683D6C2D"
+					item: "pneumaticcraft:transistor"
+					type: "item"
+				}
+			]
+			title: "Capacitance"
+			x: -1.5d
+			y: 9.0d
+		}
+		{
+			dependencies: ["3B4AE45A1DCD6084"]
+			id: "6AA6B6BC0C97E304"
+			subtitle: "Not quite enough on its own"
+			tasks: [{
+				id: "19774B31DFA9C7E3"
+				item: "pneumaticcraft:empty_pcb"
+				type: "item"
+			}]
+			title: "Undercooked PCBs"
+			x: 1.5d
+			y: 9.0d
+		}
+		{
+			dependencies: [
+				"3B8805587B903541"
+				"6AA6B6BC0C97E304"
+			]
+			id: "68B9B4F53C673B18"
+			shape: "octagon"
+			size: 1.5d
+			tasks: [{
+				id: "15C9D09C14CD68D9"
+				item: "pneumaticcraft:printed_circuit_board"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["68B9B4F53C673B18"]
+			id: "1290B04AAD11191A"
+			tasks: [
+				{
+					id: "43B45825F0B74484"
+					item: "pneumaticcraft:assembly_controller"
+					type: "item"
+				}
+				{
+					id: "38E9FEAD9482DD7C"
+					item: "pneumaticcraft:assembly_drill"
+					type: "item"
+				}
+				{
+					id: "3F7791163E1A15D3"
+					item: "pneumaticcraft:assembly_io_unit_export"
+					type: "item"
+				}
+				{
+					id: "6B4E803652BDA73B"
+					item: "pneumaticcraft:assembly_io_unit_import"
+					type: "item"
+				}
+				{
+					id: "5FDC08E913F1D88D"
+					item: "pneumaticcraft:assembly_laser"
+					type: "item"
+				}
+				{
+					id: "57768D1D6D3AC7A7"
+					item: "pneumaticcraft:assembly_platform"
+					type: "item"
+				}
+			]
+			x: -2.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["68B9B4F53C673B18"]
+			id: "016AACD8C4A9792E"
+			tasks: [
+				{
+					id: "471A8114137B81BF"
+					item: "pneumaticcraft:assembly_program_drill"
+					type: "item"
+				}
+				{
+					id: "333449A7DBC7B135"
+					item: "pneumaticcraft:assembly_program_drill_laser"
+					type: "item"
+				}
+				{
+					id: "360809D233CC394D"
+					item: "pneumaticcraft:assembly_program_laser"
+					type: "item"
+				}
+			]
+			x: -1.5d
+			y: 12.0d
+		}
+		{
+			dependencies: ["609C2E824F41BFA7"]
+			id: "0E3D814DCE1A8C5E"
+			tasks: [{
+				id: "26A7F670BA285704"
+				item: "pneumaticcraft:liquid_compressor"
+				type: "item"
+			}]
+			title: "Liquid Fuel"
+			x: -2.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["0CAC10FB609F4FFD"]
+			id: "3B4AE45A1DCD6084"
+			tasks: [{
+				id: "1CA6FFEF3C05CD82"
+				item: "pneumaticcraft:amadron_tablet"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 8.0d
+		}
+		{
+			dependencies: ["68B9B4F53C673B18"]
+			id: "5F2BF948E7B0C618"
+			tasks: [
+				{
+					id: "4E1E1E449CA52531"
+					item: {
+						Count: 1b
+						id: "pneumaticcraft:pneumatic_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6C690747B784CC73"
+					item: {
+						Count: 1b
+						id: "pneumaticcraft:pneumatic_chestplate"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "63E3D318221E6326"
+					item: {
+						Count: 1b
+						id: "pneumaticcraft:pneumatic_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "39F17475B3D190D0"
+					item: {
+						Count: 1b
+						id: "pneumaticcraft:pneumatic_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			x: 2.0d
+			y: 10.5d
+		}
+		{
+			dependencies: ["68B9B4F53C673B18"]
+			id: "02D6E8943625DC95"
+			tasks: [
+				{
+					id: "081F4C39EE2B5366"
+					item: "pneumaticcraft:jackhammer"
+					type: "item"
+				}
+				{
+					id: "36DFFDD7E99B0D16"
+					item: "pneumaticcraft:minigun"
+					type: "item"
+				}
+			]
+			x: 1.5d
+			y: 12.0d
+		}
+	]
 	subtitle: ["&7Get Pressurized!&r"]
 	title: "&2Pneumaticcraft&r"
 }

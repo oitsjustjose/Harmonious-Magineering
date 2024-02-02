@@ -19,25 +19,59 @@
 	}]
 	order_index: 2
 	quest_links: [ ]
-	quests: [{
-		hide: true
-		id: "79467E224CE42C0D"
-		rewards: [{
-			auto: "invisible"
-			command: "/execute as @p run function custom:player/stages/immersiveengineering"
-			elevate_perms: true
-			id: "57A51F86293F5235"
-			silent: true
-			type: "command"
-		}]
-		tasks: [{
-			id: "30C51BA13B4960B1"
-			item: "mekanism:nugget_steel"
-			type: "item"
-		}]
-		x: 0.0d
-		y: -0.5d
-	}]
+	quests: [
+		{
+			hide: true
+			id: "79467E224CE42C0D"
+			rewards: [{
+				auto: "invisible"
+				command: "/execute as @p run function custom:player/stages/immersiveengineering"
+				elevate_perms: true
+				id: "57A51F86293F5235"
+				silent: true
+				type: "command"
+			}]
+			tasks: [{
+				id: "30C51BA13B4960B1"
+				item: "mekanism:nugget_steel"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -0.5d
+		}
+		{
+			id: "56B1FDDC955288EF"
+			tasks: [{
+				id: "4415B78B1E64EA44"
+				item: "immersiveengineering:component_steel"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 2.5d
+		}
+		{
+			id: "683FAB80876CA757"
+			tasks: [{
+				count: 27L
+				id: "051F43CD1120C021"
+				item: "immersiveengineering:cokebrick"
+				type: "item"
+			}]
+			x: -1.0d
+			y: 3.5d
+		}
+		{
+			id: "2A3FE379AB3CC92B"
+			tasks: [{
+				count: 27L
+				id: "510D985C2069C1F3"
+				item: "immersiveengineering:blastbrick"
+				type: "item"
+			}]
+			x: 1.0d
+			y: 3.5d
+		}
+	]
 	subtitle: ["&6Some Wires Required&r"]
 	title: "&eImmersive Engineering&r"
 }
