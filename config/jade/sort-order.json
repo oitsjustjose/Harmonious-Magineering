@@ -91,9 +91,6 @@
   "supplementaries:safe": null,
   "supplementaries:hat_stand": null,
   "minecraft:campfire": null,
-  "supplementaries:present": null,
-  "supplementaries:safe": null,
-  "supplementaries:hat_stand": null,
   "corpse:corpse": null,
   "mcjtylib:jadeaddons": null,
   "lootr:info": null,
@@ -182,5 +179,8 @@
   "ae2:part_icon": null,
   "ae2:part_tooltip": null,
   "ae2:part_mod_name": null,
+  "supplementaries:present": null,
+  "supplementaries:safe": null,
+  "supplementaries:hat_stand": null,
   "modularrouters:router": null
 }

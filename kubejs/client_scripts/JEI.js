@@ -130,6 +130,8 @@ JEIEvents.hideItems(event => {
     'pneumaticcraft:creative_upgrade',
     'pneumaticcraft:thaumcraft_upgrade',
     'pneumaticcraft:wheat_flour',
+    'quark:moss_paste',
+    'quark:tiny_potato',
     'spawn:snail_eggs',
     'spawn:snail_shell',
     'spawn:snail_spawn_egg',

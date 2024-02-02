@@ -50,6 +50,12 @@ ServerEvents.recipes(event => {
     });
   };
 
+  const quark = () => {
+    event.replaceInput({output: 'quark:bonded_leather'}, '#forge:leather', 'minecraft:leather');
+    event.replaceInput({}, 'quark:moss_paste', 'ecologics:surface_moss');
+    event.remove({output: 'quark:moss_paste'});
+  };
+
   const supplementaries = () => {
     event.replaceInput({output: 'supplementaries:sack'}, 'supplementaries:flax', 'farmersdelight:canvas');
 
@@ -95,5 +101,5 @@ ServerEvents.recipes(event => {
   event.remove({output: 'minecraft:saddle'});
   event.remove('aether:swet_slime_block');
 
-  [createWaxedCopper, supplementaries].forEach(module => module());
+  [createWaxedCopper, quark, supplementaries].forEach(module => module());
 });
