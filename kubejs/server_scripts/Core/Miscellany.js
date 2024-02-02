@@ -1,4 +1,17 @@
 ServerEvents.recipes(event => {
+  const architectsPalette = () => {
+    event.replaceInput({output: 'architects_palette:nether_brass_blend'}, 'minecraft:iron_nugget', '#forge:nuggets/zinc');
+    event.replaceInput({output: 'architects_palette:sunmetal_blend'}, 'minecraft:gold_nugget', '#forge:nuggets/arcane_gold');
+
+    event.remove({output: 'architects_palette:wardstone_blend'});
+    event.shapeless(Item.of('architects_palette:wardstone_blend', 24), [
+      '#forge:dyes/blue',
+      '#forge:dyes/blue',
+      '#forge:dyes/blue',
+      'eidolon:wraith_heart',
+    ]);
+  };
+
   /* Create's Waxed Copper can't be crafted into corresponding stairs/slabs, but vanilla's can... */
   const createWaxedCopper = () => {
     [
@@ -101,5 +114,5 @@ ServerEvents.recipes(event => {
   event.remove({output: 'minecraft:saddle'});
   event.remove('aether:swet_slime_block');
 
-  [createWaxedCopper, quark, supplementaries].forEach(module => module());
+  [architectsPalette, createWaxedCopper, quark, supplementaries].forEach(module => module());
 });
