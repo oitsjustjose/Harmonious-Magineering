@@ -33,6 +33,7 @@ JEIEvents.hideItems(event => {
     'appmek:creative_chemical_cell',
     'bloodmagic:activationcrystalcreative',
     'bloodmagic:inversion_pillar_cap',
+    'bloodmagic:saltpeter',
     'bloodmagic:spectral',
     'cagedmobs:arrow_upgrade',
     'cagedmobs:cooking_upgrade',

@@ -369,6 +369,7 @@ ServerEvents.tags('item', event => {
       'immersiveengineering:deepslate_ore_nickel',
       'immersiveengineering:dust_aluminum',
       'immersiveengineering:dust_nickel',
+      'immersiveengineering:dust_saltpeter',
       'immersiveengineering:ersatz_leather',
       'immersiveengineering:hemp_fiber',
       'immersiveengineering:hempcrete_brick_cracked',
@@ -506,6 +507,8 @@ ServerEvents.tags('item', event => {
   /* Polishing tag */
   event.remove('minecraft:planks', 'eidolon:polished_planks');
   event.add('custom:polishable_planks', ['#minecraft:planks', '#aether:planks_crafting']);
+  /* Saltpeter cleanup */
+  event.remove('forge:dusts/saltpeter', 'bloodmagic:saltpeter');
 
   event.add('forge:ocean_blocks', [
     'minecraft:brain_coral_block',

@@ -372,6 +372,20 @@ ServerEvents.recipes(event => {
     event.replaceInput({output: mod('sorter')}, 'minecraft:redstone', items.circuitish);
     event.replaceInput({output: mod('wirecutter')}, '#forge:ingots/iron', '#forge:ingots/steel');
     event.remove({input: mod('wirecutter'), output: '#forge:wires'});
+    event.remove({output: mod('component_iron')});
+    event.remove({output: mod('component_steel')});
+
+    event.shaped(mod('component_iron'), ['MMM', 'NPN', 'MMM'], {
+      M: '#forge:plates/iron',
+      N: '#forge:nuggets/copper',
+      P: 'pneumaticcraft:printed_circuit_board',
+    });
+
+    event.shaped(mod('component_steel'), ['MMM', 'NPN', 'MMM'], {
+      M: '#forge:plates/steel',
+      N: '#forge:nuggets/copper',
+      P: 'pneumaticcraft:printed_circuit_board',
+    });
 
     event.custom({
       type: 'create:mixing',
@@ -399,7 +413,22 @@ ServerEvents.recipes(event => {
     event.remove({output: 'mekanism:steel_casing'});
     event.shaped('mekanism:steel_casing', [' S ', 'SCS', ' S '], {
       S: '#forge:ingots/steel',
-      C: 'create:brass_casing',
+      C: 'immersiveengineering:duroplast',
+    });
+
+    /* Easier recipe once you get into Mek some more :) */
+    event.custom({
+      type: 'mekanism:combining',
+      mainInput: {amount: 1, ingredient: {item: 'immersiveengineering:duroplast'}},
+      extraInput: {amount: 4, ingredient: {tag: 'forge:ingots/steel'}},
+      output: {item: 'mekanism:steel_casing'},
+    });
+
+    event.custom({
+      type: 'mekanism:combining',
+      mainInput: {amount: 4, ingredient: {item: 'mekanism:hdpe_sheet'}},
+      extraInput: {amount: 4, ingredient: {tag: 'forge:ingots/steel'}},
+      output: {item: 'mekanism:steel_casing'},
     });
 
     event.remove('mekanism:metallurgic_infuser');

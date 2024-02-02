@@ -227,6 +227,8 @@ ServerEvents.recipes(event => {
     {in: 'create:crushed_raw_silver', out: 'immersiveengineering:dust_silver'},
     {in: 'create:crushed_raw_tin', out: 'mekanism:dust_tin'},
     {in: 'create:crushed_raw_uranium', out: 'mekanism:dust_uranium'},
+    /* Saltpeter / Nitrate Dust dedup */
+    {in: 'bloodmagic:saltpeter', out: 'immersiveengineering:dust_saltpeter'},
   ];
 
   // Fiddle through each recipe, checking to see if the recipe contains anything we want to modify.

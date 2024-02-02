@@ -4,4 +4,6 @@
 	allow_non_blocks = false
 	#Allows crafting non wood variant items (crafting table for example)
 	allow_non_variant = true
+	#List of Mod ids you want to completely exclude from sawmill recipes. All recipes from these mods will be ignored.For more fine control use the sawmill:blacklist item tag
+	mod_blacklist = []
 
