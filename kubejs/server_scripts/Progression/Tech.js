@@ -376,13 +376,13 @@ ServerEvents.recipes(event => {
     event.remove({output: mod('component_iron')});
     event.remove({output: mod('component_steel')});
 
-    event.shaped(mod('component_iron'), ['MMM', 'NPN', 'MMM'], {
+    event.shaped(Item.of(mod('component_iron'), 3), ['MMM', 'NPN', 'MMM'], {
       M: '#forge:plates/iron',
       N: '#forge:nuggets/copper',
       P: 'pneumaticcraft:printed_circuit_board',
     });
 
-    event.shaped(mod('component_steel'), ['MMM', 'NPN', 'MMM'], {
+    event.shaped(Item.of(mod('component_steel'), 3), ['MMM', 'NPN', 'MMM'], {
       M: '#forge:plates/steel',
       N: '#forge:nuggets/copper',
       P: 'pneumaticcraft:printed_circuit_board',
@@ -401,6 +401,18 @@ ServerEvents.recipes(event => {
   const mekanism = () => {
     /* Cardboard boxes are *still* broken a.f. */
     event.remove({output: 'mekanism:cardboard_box'});
+
+    /* Remove the lazy infuse types */
+    event.remove('mekanism:infusion_conversion/carbon/from_charcoal_block');
+    event.remove('mekanism:infusion_conversion/carbon/from_charcoal');
+    event.remove('mekanism:infusion_conversion/carbon/from_coal_block');
+    event.remove('mekanism:infusion_conversion/carbon/from_coal');
+    event.remove('mekanism:infusion_conversion/diamond/from_dust');
+    event.remove('mekanism:infusion_conversion/gold/from_dust');
+    event.remove('mekanism:infusion_conversion/redstone/from_block');
+    event.remove('mekanism:infusion_conversion/redstone/from_dust');
+    event.remove('mekanism:infusion_conversion/refined_obsidian/from_dust');
+    event.remove('mekanism:infusion_conversion/tin/from_dust');
 
     /* HDPE Stick intercompat */
     event.custom({
