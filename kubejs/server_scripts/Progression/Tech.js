@@ -375,7 +375,23 @@ ServerEvents.recipes(event => {
     event.remove({output: mod('component_iron')});
     event.remove({output: mod('component_steel')});
     event.remove({output: mod('circuit_board')});
+    event.remove({output: mod('plate_duroplast')});
     event.replaceInput({}, mod('circuit_board'), 'pneumaticcraft:printed_circuit_board');
+    event.replaceInput({}, mod('plate_duroplast'), '#pneumaticcraft:plastic_sheets');
+
+    event.remove(mod('blueprint/component_electronic_adv'));
+    event
+      .custom({
+        type: 'immersiveengineering:blueprint',
+        category: 'components',
+        inputs: [
+          {item: 'pneumaticcraft:unassembled_pcb'},
+          {base_ingredient: {item: 'immersiveengineering:electron_tube'}, count: 2},
+          {tag: 'forge:wires/aluminum'},
+        ],
+        result: {item: 'immersiveengineering:component_electronic_adv'},
+      })
+      .id(mod('blueprint/component_electronic_adv'));
 
     /* Iron Components */
     event.shaped(Item.of(mod('component_iron'), 2), ['MMM', 'NPN', 'MMM'], {
@@ -727,7 +743,7 @@ ServerEvents.recipes(event => {
       category: 'components',
       inputs: [
         {base_ingredient: {item: 'immersiveengineering:wirecoil_copper'}, count: 3},
-        {base_ingredient: [{tag: 'pneumaticcraft:plastic_sheets'}, {item: 'immersiveengineering:plate_duroplast'}], count: 1},
+        {base_ingredient: {tag: 'pneumaticcraft:plastic_sheets'}, count: 1},
       ],
       result: {item: 'pneumaticcraft:capacitor'},
     });
@@ -745,7 +761,7 @@ ServerEvents.recipes(event => {
       category: 'components',
       inputs: [
         {base_ingredient: {tag: 'forge:silicon'}, count: 2},
-        {base_ingredient: [{tag: 'pneumaticcraft:plastic_sheets'}, {item: 'immersiveengineering:plate_duroplast'}], count: 1},
+        {base_ingredient: {tag: 'pneumaticcraft:plastic_sheets'}, count: 1},
       ],
       result: {item: 'pneumaticcraft:transistor'},
     });
@@ -757,7 +773,7 @@ ServerEvents.recipes(event => {
       inputs: [
         {base_ingredient: {item: 'minecraft:redstone_torch'}, count: 2},
         {base_ingredient: {item: 'immersiveengineering:wire_copper'}, count: 3},
-        {base_ingredient: [{tag: 'pneumaticcraft:plastic_sheets'}, {item: 'immersiveengineering:plate_duroplast'}], count: 1},
+        {base_ingredient: {tag: 'pneumaticcraft:plastic_sheets'}, count: 1},
       ],
       result: {item: 'pneumaticcraft:empty_pcb', count: 3},
     });

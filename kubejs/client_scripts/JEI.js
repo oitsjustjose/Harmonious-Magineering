@@ -625,6 +625,7 @@ JEIEvents.hideItems(event => {
     'immersiveengineering:dust_wood',
     'immersiveengineering:ore_lead',
     'immersiveengineering:ore_silver',
+    'immersiveengineering:plate_duroplast',
     'kubejs:unknown_bloody_item',
     'kubejs:unknown_dwarven_item',
     'kubejs:unknown_electric_item',
