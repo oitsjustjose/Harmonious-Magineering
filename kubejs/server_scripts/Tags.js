@@ -517,6 +517,37 @@ ServerEvents.tags('item', event => {
   event.add('custom:polishable_planks', ['#minecraft:planks', '#aether:planks_crafting']);
   /* Saltpeter cleanup */
   event.remove('forge:dusts/saltpeter', 'bloodmagic:saltpeter');
+  /* Clean up Quark's messy tags -_- */
+  [
+    'quark:acacia_chest',
+    'quark:ancient_chest',
+    'quark:azalea_chest',
+    'quark:bamboo_chest',
+    'quark:birch_chest',
+    'quark:blossom_chest',
+    'quark:cherry_chest',
+    'quark:crimson_chest',
+    'quark:dark_oak_chest',
+    'quark:jungle_chest',
+    'quark:mangrove_chest',
+    'quark:oak_chest',
+    'quark:spruce_chest',
+    'quark:warped_chest',
+    'quark:acacia_trapped_chest',
+    'quark:ancient_trapped_chest',
+    'quark:azalea_trapped_chest',
+    'quark:bamboo_trapped_chest',
+    'quark:birch_trapped_chest',
+    'quark:blossom_trapped_chest',
+    'quark:cherry_trapped_chest',
+    'quark:crimson_trapped_chest',
+    'quark:dark_oak_trapped_chest',
+    'quark:jungle_trapped_chest',
+    'quark:mangrove_trapped_chest',
+    'quark:oak_trapped_chest',
+    'quark:spruce_trapped_chest',
+    'quark:warped_trapped_chest',
+  ].forEach(x => event.removeAllTagsFrom(x));
 
   event.add('forge:ocean_blocks', [
     'minecraft:brain_coral_block',

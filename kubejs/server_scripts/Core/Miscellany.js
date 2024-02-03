@@ -101,12 +101,6 @@ ServerEvents.recipes(event => {
     });
   };
 
-  event.shaped('kubejs:rf_core', [' CC', 'SWC', 'SS '], {
-    C: '#forge:plates/copper',
-    S: '#forge:plates/steel',
-    W: 'pneumaticcraft:capacitor',
-  });
-
   event.shapeless(Item.of('minecraft:bone_meal', 4), ['eidolon:imbued_bones']);
   event.shapeless(Item.of('minecraft:clay_ball', 4), ['minecraft:clay']);
 

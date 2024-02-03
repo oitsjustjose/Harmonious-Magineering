@@ -61,9 +61,10 @@ ServerEvents.recipes(event => {
   );
 
   event.remove('sophisticatedbackpacks:battery_upgrade');
-  event.shaped('sophisticatedbackpacks:battery_upgrade', ['GRG', 'RBR', 'GRG'], {
+  event.shaped('sophisticatedbackpacks:battery_upgrade', ['GCG', 'TBT', 'GCG'], {
     G: '#forge:ingots/gold',
-    R: 'kubejs:rf_core',
+    C: 'pneumaticcraft:capacitor',
+    T: 'pneumaticcraft:transistor',
     B: 'sophisticatedbackpacks:upgrade_base',
   });
 

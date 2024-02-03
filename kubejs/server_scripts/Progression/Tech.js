@@ -129,19 +129,19 @@ ServerEvents.recipes(event => {
       P: items.plastic,
       S: items.screen,
       B: 'create:extendo_grip',
-      C: 'kubejs:rf_core',
+      C: 'pneumaticcraft:capacitor',
     });
 
     event.shaped(bG('gadget_exchanging'), ['PPP', ' SP', ' CP'], {
       P: items.plastic,
       S: items.screen,
-      C: 'kubejs:rf_core',
+      C: 'pneumaticcraft:capacitor',
     });
 
     event.shaped(bG('gadget_copy_paste'), ['PSP', 'ECE', 'PGP'], {
       P: items.plastic,
       S: items.screen,
-      C: 'kubejs:rf_core',
+      C: 'pneumaticcraft:capacitor',
       E: 'create:empty_schematic',
       G: 'create:extendo_grip',
     });
@@ -149,7 +149,7 @@ ServerEvents.recipes(event => {
     event.shaped(bG('gadget_cut_paste'), ['DSD', 'ECE', 'DGD'], {
       D: '#forge:ingots/steel',
       S: items.screen,
-      C: 'kubejs:rf_core',
+      C: 'pneumaticcraft:capacitor',
       E: 'minecraft:shears',
       G: 'create:extendo_grip',
     });
@@ -157,7 +157,7 @@ ServerEvents.recipes(event => {
     event.shaped(bG('gadget_destruction'), ['DSD', 'DTD', 'DCD'], {
       D: '#forge:ingots/steel',
       S: items.screen,
-      C: 'kubejs:rf_core',
+      C: 'pneumaticcraft:capacitor',
       T: 'minecraft:tnt',
     });
 
@@ -451,7 +451,7 @@ ServerEvents.recipes(event => {
     event.remove('mekanism:energy_tablet');
     event.shaped('mekanism:energy_tablet', ['PCP', 'ABA', 'PCP'], {
       A: 'mekanism:alloy_infused',
-      B: 'kubejs:rf_core',
+      B: 'pneumaticcraft:capacitor',
       C: '#forge:ingots/copper',
       P: items.plastic,
     });
@@ -487,7 +487,7 @@ ServerEvents.recipes(event => {
     });
 
     /* Replace 'Redstone' with actual circuit-like things :) */
-    event.replaceInput({output: 'mekanism:dosimeter'}, 'minecraft:redstone', 'kubejs:rf_core');
+    event.replaceInput({output: 'mekanism:dosimeter'}, 'minecraft:redstone', 'pneumaticcraft:capacitor');
     event.replaceInput({output: 'mekanism:qio_redstone_adapter'}, 'minecraft:redstone', '#forge:circuits/basic');
     event.replaceInput({output: 'mekanism:superheating_element'}, 'minecraft:redstone', 'immersiveengineering:wirecoil_steel');
     event.replaceInput({output: 'mekanismgenerators:bio_generator'}, 'minecraft:iron_ingot', '#forge:ingots/steel');
