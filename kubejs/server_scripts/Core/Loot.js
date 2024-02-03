@@ -97,6 +97,13 @@ LootJS.modifiers(event => {
     });
   };
 
+  const metalMobDrops = () => {
+    event.addEntityLootModifier('minecraft:zombie').removeLoot('minecraft:iron_ingot');
+    event.addEntityLootModifier('minecraft:drowned').removeLoot('minecraft:copper_ingot');
+    event.addEntityLootModifier('minecraft:zombified_piglin').removeLoot('minecraft:gold_nugget');
+    event.addEntityLootModifier('minecraft:zombified_piglin').removeLoot('minecraft:gold_ingot');
+  };
+
   const modLoot = () => {
     event.addLootTableModifier(/.*/).replaceLoot('bloodmagic:sulfur', 'eidolon:sulfur');
     event.addBlockLootModifier(/.*/).replaceLoot('spawn:snail_shell', 'naturalist:snail_shell');
@@ -105,5 +112,5 @@ LootJS.modifiers(event => {
   event.addEntityLootModifier('minecraft:warden').removeLoot(ItemFilter.ALWAYS_TRUE);
   event.addEntityLootModifier('aether:mimic').replaceLoot('minecraft:chest', 'expandedstorage:wood_chest', true);
 
-  [customSilverLead, boostDeepslateLoot, boostSomeMobDrops, lootr, modLoot].forEach(module => module());
+  [customSilverLead, boostDeepslateLoot, boostSomeMobDrops, lootr, metalMobDrops, modLoot].forEach(module => module());
 });
