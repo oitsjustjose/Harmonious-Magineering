@@ -375,6 +375,7 @@
 			shape: "hexagon"
 			subtitle: "Except these don't get cavities!"
 			tasks: [{
+				count: 2L
 				id: "570801313BE0408A"
 				item: "create:crushing_wheel"
 				type: "item"

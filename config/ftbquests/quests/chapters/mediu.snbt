@@ -22,6 +22,7 @@
 	quests: [
 		{
 			dependencies: ["1B5F1877CC1D3378"]
+			description: ["It seems that compacting an &cExplosive&r with some &7Iron&r under superheated conditions has cause an endothermic reaction that hardened the Iron into &8Compressed Iron&r! This new material is much more sturdy and is capable of handling a significant amount of internal pressure without shearing or breaking."]
 			id: "39D82FB07CB809D8"
 			rewards: [
 				{
@@ -46,18 +47,35 @@
 			]
 			shape: "diamond"
 			size: 1.5d
+			subtitle: "An Explosive Alloy!"
 			tasks: [{
 				id: "306D3E926ECB326E"
 				item: "pneumaticcraft:ingot_iron_compressed"
 				type: "item"
 			}]
+			title: "Compressed Iron"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["39D82FB07CB809D8"]
+			description: [
+				"In order to begin utilizing Compressed Iron to the greatest of its ability, you may need to start by creating more pretty efficiently. While the endothermic reaction wasn't that difficult to do, it could certainly be &oeasier&r to automate. Perhaps applying a similar amount of force using &6Pressure&r would be more effective?"
+				""
+				"Well, if that's the route you're going to take, you'll need to &omake&r pressure in the first place. A solid-fuel &6Air Compressor&r will be a great place to start. You can route pressurized air around using &6Tubes&r, but be careful! If you overfill your tubes with too much pressurized air, they'll burst and might even damage some of your machinery!"
+				""
+				"To avoid this, it is strongly suggested to use a &6Pressure Gauge Tube Module&r to read the current pressure levels using Redstone and power off your compressor, and possibly even using a &6Safety Tube Module&r as a last resort to purge any excess oxygen before an explosion is triggered."
+			]
 			icon: "pneumaticcraft:air_compressor"
 			id: "609C2E824F41BFA7"
+			rewards: [{
+				count: 12
+				id: "18A090FD938A6B28"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			subtitle: "A solid [fuel] start"
 			tasks: [
 				{
 					id: "1AECD0332889FA2D"
@@ -86,10 +104,24 @@
 		}
 		{
 			dependencies: ["39D82FB07CB809D8"]
+			description: [
+				"Using some Pressurized Air, you've found yourself wondering if there's some way to apply this pressure in an isolated chamber to modify or augment various itemst o make them better or stronger - this may even be a good means of making &6Compressed Iron&r more easily!"
+				""
+				"As it happens, a Pressure Chamber would serve such a purpose as well as double as a &otype of storage&r for pressurized air. This is a multiblock structure with at least one &6Pressure Chamber Valve&r on one solid side, and at least two &6Pressure Chamber Interfaces&r one two solid sides to act as input and output."
+				""
+				"Optionally, you can replace solid-sided walls with &6Pressure Chamber Glass&r in order to see inside of the Pressure Chamber! More reading and instruction on this structure can be found in the &3PNC:R Manual&r"
+			]
 			icon: "pneumaticcraft:pressure_chamber_wall"
 			id: "06F3696CC3BE5780"
+			rewards: [{
+				id: "365C7E9575A67984"
+				item: "pneumaticcraft:pneumatic_wrench"
+				type: "item"
+			}]
+			subtitle: "Doesn't apply to peers!"
 			tasks: [
 				{
+					count: 2L
 					id: "684BED084BB7330F"
 					item: "pneumaticcraft:pressure_chamber_interface"
 					type: "item"
@@ -100,24 +132,35 @@
 					type: "item"
 				}
 				{
-					id: "6032983339C4E5DC"
-					item: "pneumaticcraft:pressure_chamber_glass"
-					type: "item"
-				}
-				{
+					count: 20L
 					id: "02F43BA6821A084F"
 					item: "pneumaticcraft:pressure_chamber_wall"
 					type: "item"
 				}
 			]
-			title: "Pressure Chamber"
+			title: "Pressurizing!"
 			x: 2.0d
 			y: 1.0d
 		}
 		{
 			dependencies: ["39D82FB07CB809D8"]
+			description: [
+				"In the world, you have surely found many pools of &0Crude Oil&r filling the lands. As it turns out, this Crude Oil can be moved around (I suggest using a &6Small Fluid Tank&r) and stored for later to be &6refined&r! "
+				""
+				"The Refining process is pretty straight forward - by providing heat (I suggest using a &bSuper-heated&r &eBlaze Burner&r) to a Refinery Controller, the Refinery will split the &0Crude Oil&r into separate parts based on how many Refinery Outputs you have placed &non top&r of the Refinery Controller. "
+				""
+				"You will need at least two in order to separate &6LPG&r and &6Diesel&r from the &0Crude Oil&r."
+			]
 			icon: "pneumaticcraft:oil_bucket"
 			id: "79FFFB4D9553599D"
+			rewards: [{
+				count: 12
+				id: "552443BCDC2477AE"
+				item: "create:experience_nugget"
+				random_bonus: 18
+				type: "item"
+			}]
+			subtitle: "Dino-cremain Refinery"
 			tasks: [
 				{
 					id: "0DFA049F315C2377"
@@ -152,7 +195,19 @@
 		}
 		{
 			dependencies: ["79FFFB4D9553599D"]
+			description: [
+				"In order to further refine various fluids or items, you may need to inter-combine Fluids, Items, Pressure and/or Heat to create a new output."
+				""
+				"The &6Thermopneumatic Processing Plant&r is capable of exactly this, taking in Pressure and Heat as well as Fluids and Items. This can be used to create &6Molten Plastic&r, which seems to be incredibly versatile!"
+			]
 			id: "323C7D5E5C64C4C6"
+			rewards: [{
+				count: 8
+				id: "3172D10BF93803AC"
+				item: "create:experience_nugget"
+				random_bonus: 4
+				type: "item"
+			}]
 			subtitle: "Processing with a side of heat!"
 			tasks: [{
 				id: "758446818E510666"
@@ -165,8 +220,21 @@
 		}
 		{
 			dependencies: ["323C7D5E5C64C4C6"]
+			description: [
+				"Now that you've created &6Molten Plastic&r in the Thermopneumatic Processing Plant using LPG and Coal, it's time to sort out how to solidify this molten plastic into a more usable state."
+				""
+				"Fortunately, it's as easy as placing the Molten Plastic in the world and waiting for it to harden into an item. This may not be the most easily automated method nor does it have the best Plastic yield, but it's sufficient to get you started!"
+			]
 			icon: "pneumaticcraft:plastic"
 			id: "0CAC10FB609F4FFD"
+			rewards: [{
+				count: 12
+				id: "03ADC7B0142FBFDC"
+				item: "create:experience_nugget"
+				random_bonus: 12
+				type: "item"
+			}]
+			subtitle: "&oPlease&r don't dump these into the sea :["
 			tasks: [
 				{
 					id: "3A5D692255A3C570"
@@ -185,8 +253,22 @@
 		}
 		{
 			dependencies: ["0CAC10FB609F4FFD"]
+			description: [
+				"Using a &6Heat Frame&r on a container such as a chest or barrel will allow you to control the temperature of that container. "
+				""
+				"In order to control the temperature within the container, a &6Vortex Tube&r can be employed to create a &4\"Hot\"&r and &1\"Cold\"&r end (indicated by the &cRed&r and &9Blue&r markers on opposite sides) at the expense of Pressure. When combined with a &6Heat Frame&r, you can create a &overy cold&r container which will solidify &6Molten Plastic&r at greater efficiency and at higher yields!"
+				""
+				"Note: To keep the &4Hot&r end from overheating, heat can be spread using a &6Heat Pipe&r and can be dispersed using multiple Heatsinks attached to the Heat Pipe or Hot-end of the Vortex Tube directly."
+			]
 			icon: "pneumaticcraft:heat_frame"
 			id: "2E36A1E0D4DE41C0"
+			rewards: [{
+				count: 12
+				id: "6E154E71C2E3299F"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
 			subtitle: "The power of thermals!"
 			tasks: [
 				{
@@ -216,8 +298,21 @@
 		}
 		{
 			dependencies: ["3B4AE45A1DCD6084"]
+			description: [
+				"Using the capabilities of the &6Pressure Chamber&r as well as plastic, it seems as though you can fashion together a crude form of &8Transistor&r and &9Capacitor&r. "
+				""
+				"Not only can these be used in some more advanced pneumatic apparatuses, but these may also pave the way forward towards new types of machinery altogether!"
+			]
 			icon: "pneumaticcraft:capacitor"
 			id: "3B8805587B903541"
+			rewards: [{
+				count: 4
+				id: "7233EBBC3104D6AE"
+				item: "create:experience_nugget"
+				random_bonus: 6
+				type: "item"
+			}]
+			subtitle: "Storing \\& Using Energy"
 			tasks: [
 				{
 					id: "23FE0FE7E4C14010"
@@ -236,14 +331,47 @@
 		}
 		{
 			dependencies: ["3B4AE45A1DCD6084"]
+			description: [
+				"Another interesting property of plastic is its ability to form a relatively crude &2Circuit Board&r. This board is still missing crucial components such as &8Transistors&r and &9Capacitors&r, but it isn't &otoo&r far from ready."
+				""
+				"Once the Empty PCB has been crafted, it'll need to be set in a &eUV Lightbox&r to finish curing the various top-level components."
+				""
+				"Lastly, the remainder of the traces will need to be etched using &aEtching Acid&r and an &2Etching Tank&r!"
+			]
+			icon: {
+				Count: 1b
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "pneumaticcraft:item/failed_pcb"
+				}
+			}
 			id: "6AA6B6BC0C97E304"
-			subtitle: "Not quite enough on its own"
-			tasks: [{
-				id: "19774B31DFA9C7E3"
-				item: "pneumaticcraft:empty_pcb"
+			rewards: [{
+				count: 4
+				id: "0C7E9A746B670655"
+				item: "create:experience_nugget"
+				random_bonus: 6
 				type: "item"
 			}]
-			title: "Undercooked PCBs"
+			subtitle: "Not quite enough on its own"
+			tasks: [
+				{
+					id: "19774B31DFA9C7E3"
+					item: "pneumaticcraft:empty_pcb"
+					type: "item"
+				}
+				{
+					id: "24A1FC34AF2018B4"
+					item: "pneumaticcraft:uv_light_box"
+					type: "item"
+				}
+				{
+					id: "251B5CACE7FAB694"
+					item: "pneumaticcraft:etching_tank"
+					type: "item"
+				}
+			]
+			title: "Cooking PCBs"
 			x: 1.5d
 			y: 9.0d
 		}
@@ -252,20 +380,48 @@
 				"3B8805587B903541"
 				"6AA6B6BC0C97E304"
 			]
+			description: [
+				"Finally - through a series of combining PCB components with &8Transistors&r and &9Capacitors&r, you've created a finished circuit board capable of doing mild computational tasks to make your day-to-day just a &olittle&r bit easier!"
+				""
+				"These PCBs are incredibly helpful and will likely be a new foundation for upcoming technological advancements!"
+			]
 			id: "68B9B4F53C673B18"
+			rewards: [{
+				count: 12
+				id: "6C8858BF15165EBB"
+				item: "create:experience_nugget"
+				random_bonus: 12
+				type: "item"
+			}]
 			shape: "octagon"
 			size: 1.5d
+			subtitle: "Ready for computation!"
 			tasks: [{
 				id: "15C9D09C14CD68D9"
 				item: "pneumaticcraft:printed_circuit_board"
 				type: "item"
 			}]
+			title: "Completed Circuits"
 			x: 0.0d
 			y: 10.5d
 		}
 		{
 			dependencies: ["68B9B4F53C673B18"]
+			description: [
+				"To ease the process of curing and etching PCBs, you can employ various Assembly Arms to perform basic storage Input and Ouput, Drill, Etch and more!"
+				""
+				"Here is listed the entire suite of assembly devices that you'll need to get fully kitted up!"
+			]
+			icon: "pneumaticcraft:assembly_drill"
 			id: "1290B04AAD11191A"
+			rewards: [{
+				count: 24
+				id: "60BB441E878946DD"
+				item: "create:experience_nugget"
+				random_bonus: 16
+				type: "item"
+			}]
+			subtitle: "Automated Fabrication"
 			tasks: [
 				{
 					id: "43B45825F0B74484"
@@ -298,12 +454,27 @@
 					type: "item"
 				}
 			]
+			title: "Assembly Lines"
 			x: -2.0d
 			y: 10.5d
 		}
 		{
 			dependencies: ["68B9B4F53C673B18"]
+			description: [
+				"In order to make a functional assembly line, you'll need to use various programs to instruct your machinery which specific devices should be used in a given recipe."
+				""
+				"These can be purchased from your &2Amadron Tablet&r :) "
+			]
+			icon: "pneumaticcraft:assembly_program_drill"
 			id: "016AACD8C4A9792E"
+			rewards: [{
+				count: 8
+				id: "28C2EA7163D492E6"
+				item: "create:experience_nugget"
+				random_bonus: 12
+				type: "item"
+			}]
+			subtitle: "Gotta catch 'em all!"
 			tasks: [
 				{
 					id: "471A8114137B81BF"
@@ -321,35 +492,75 @@
 					type: "item"
 				}
 			]
+			title: "Assembly Programs"
 			x: -1.5d
 			y: 12.0d
 		}
 		{
 			dependencies: ["609C2E824F41BFA7"]
+			description: ["As you further research how the compression mechanisms work in the Solid-Fuel Air Compressors, you've determined that any combustible fuel is also capable of working in a new kind of compressor - the &6Fluid Compressor&r - as well! If only there was some (or even, multiple) ways to get infinite &4Lava&r...."]
 			id: "0E3D814DCE1A8C5E"
+			rewards: [{
+				count: 8
+				id: "33815C2764FFAED1"
+				item: "create:experience_nugget"
+				random_bonus: 4
+				type: "item"
+			}]
+			subtitle: "Infinite Lava not included ;)"
 			tasks: [{
 				id: "26A7F670BA285704"
 				item: "pneumaticcraft:liquid_compressor"
 				type: "item"
 			}]
-			title: "Liquid Fuel"
+			title: "Slightly Better Compression"
 			x: -2.0d
 			y: 3.0d
 		}
 		{
 			dependencies: ["0CAC10FB609F4FFD"]
+			description: [
+				"As you've progressed through your pneumatic research, you're finding yourself short on a few pieces of technology that could come in handy for some more advanced automation."
+				""
+				"The Amadron Tablet is a device capable of delivering such items using a novel drone delivery system. By using GPS and Drones, not only can you purchase from a centralized inventory of goods, but you can also barter with the Amadron's special source of villagers without needing to build a trading hall!"
+			]
 			id: "3B4AE45A1DCD6084"
+			rewards: [{
+				count: 12
+				id: "24E0E111C56D36FB"
+				item: "create:experience_nugget"
+				random_bonus: 12
+				type: "item"
+			}]
+			subtitle: "Games not included"
 			tasks: [{
 				id: "1CA6FFEF3C05CD82"
 				item: "pneumaticcraft:amadron_tablet"
 				type: "item"
 			}]
+			title: "Remote Ordering"
 			x: 0.0d
 			y: 8.0d
 		}
 		{
 			dependencies: ["68B9B4F53C673B18"]
+			description: ["Looking for some type of ... &o&bModular Powersuit&r? Well look no further! The Compressed Iron armorset combined with additional oxygen tanks and a PCB to control the various modules can create quite a powerful armor set capable of augmenting your player with a built-in Elytra module, Electrolsys and more! Taking a look at the &9PNC:R Manual&r will give you a full lay of the land."]
+			icon: {
+				Count: 1b
+				id: "pneumaticcraft:pneumatic_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "5F2BF948E7B0C618"
+			rewards: [{
+				count: 24
+				id: "3724DD3457A89965"
+				item: "create:experience_nugget"
+				random_bonus: 16
+				type: "item"
+			}]
+			subtitle: "Modules may vary"
 			tasks: [
 				{
 					id: "4E1E1E449CA52531"
@@ -396,12 +607,35 @@
 					type: "item"
 				}
 			]
+			title: "A Rudimentary Powersuit"
 			x: 2.0d
 			y: 10.5d
 		}
 		{
 			dependencies: ["68B9B4F53C673B18"]
+			description: [
+				"The Pneumatic Jackhammer is a great pickaxe/shovel/axe hybrid tool capable of being augmented with &5Enchanted Books&r of &2Fortune&r or &6Silk Touch&r, as well as a variety of &nDrill Bits&r that have various properties such as Mining AOE Radius, speed and more!"
+				""
+				"Alternatively, the Minigun is exactly what it sounds like - it's a gun that consumes various types of ammo (I suggest referring to the &9PNC:R Manual&r for more) but can put down a &olot&r of hurt in a short amount of time!"
+				""
+				"Both of these can be charged at a Charging Station!"
+			]
+			icon: {
+				Count: 1b
+				id: "pneumaticcraft:jackhammer"
+				tag: {
+					"pneumaticcraft:air": 120000
+				}
+			}
 			id: "02D6E8943625DC95"
+			rewards: [{
+				count: 12
+				id: "413EDA131D19EF58"
+				item: "create:experience_nugget"
+				random_bonus: 6
+				type: "item"
+			}]
+			subtitle: "These aren't airsoft..."
 			tasks: [
 				{
 					id: "081F4C39EE2B5366"
@@ -414,6 +648,7 @@
 					type: "item"
 				}
 			]
+			title: "Pneumatic Tools"
 			x: 1.5d
 			y: 12.0d
 		}
