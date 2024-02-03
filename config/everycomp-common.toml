@@ -259,12 +259,12 @@
 				board_wall = true
 
 			[general.entries.wood_type.quark]
-				vertical_planks = true
-				chest = true
-				ladder = true
+				vertical_planks = false
+				chest = false
+				ladder = false
 				hollow_log = true
 				post = true
-				trapped_chest = true
+				trapped_chest = false
 				bookshelf = true
 				stripped_post = true
 
