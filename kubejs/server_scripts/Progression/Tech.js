@@ -9,6 +9,26 @@ ServerEvents.recipes(event => {
   };
 
   const ae2 = () => {
+    // Alternative ways to make Quartz Dust
+    event.recipes.create.crushing('mekanism:dust_quartz', ['minecraft:quartz']);
+    event.recipes.create.milling('mekanism:dust_quartz', ['minecraft:quartz']);
+    event.custom({
+      type: 'immersiveengineering:crusher',
+      energy: 3200,
+      input: {item: 'minecraft:quartz'},
+      result: {item: 'mekanism:dust_quartz'},
+      secondaries: [],
+    });
+
+    // Alternative way to make Certus Dust
+    event.custom({
+      type: 'immersiveengineering:crusher',
+      energy: 3200,
+      input: {tag: 'forge:gems/certus_quartz'},
+      result: {item: 'ae2:certus_quartz_dust'},
+      secondaries: [],
+    });
+
     event.replaceInput({mod: 'ae2'}, '#forge:ingots/iron', '#forge:ingots/steel');
     event.replaceInput({mod: 'aeinfinitybooster'}, 'minecraft:ender_eye', 'ae2:singularity');
     // By the time you get to AE, you'll have power...
