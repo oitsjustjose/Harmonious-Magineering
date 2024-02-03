@@ -619,6 +619,7 @@ JEIEvents.hideItems(event => {
     'embers:creative_ember_source',
     'farmersdelight:fried_egg',
     'immersiveengineering:capacitor_creative',
+    'immersiveengineering:circuit_board',
     'immersiveengineering:deepslate_ore_lead',
     'immersiveengineering:deepslate_ore_silver',
     'immersiveengineering:dust_wood',

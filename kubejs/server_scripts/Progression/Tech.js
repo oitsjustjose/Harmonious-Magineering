@@ -3,7 +3,6 @@ ServerEvents.recipes(event => {
   const items = {
     screen: Item.of('supplementaries:crystal_display'),
     plastic: '#pneumaticcraft:plastic_sheets',
-    circuitish: [Item.of('mekanism:basic_control_circuit'), Item.of('pneumaticcraft:printed_circuit_board')],
     template: Item.of('minecraft:paper'),
     transistor: Item.of('pneumaticcraft:transistor'),
     capacitor: Item.of('pneumaticcraft:capacitor'),
@@ -367,25 +366,54 @@ ServerEvents.recipes(event => {
     event.remove(mod('crafting/redstone_acid'));
     event.replaceInput({output: mod('conveyor_basic')}, 'minecraft:redstone', 'create:belt_connector');
     event.replaceInput({output: mod('dynamo')}, 'minecraft:redstone', items.capacitor);
-    event.replaceInput({output: mod('fluid_sorter')}, 'minecraft:redstone', items.circuitish);
+    event.replaceInput({output: mod('fluid_sorter')}, 'minecraft:redstone', 'pneumaticcraft:printed_circuit_board');
     event.replaceInput({output: mod('furnace_heater')}, 'minecraft:redstone', items.capacitor);
     event.replaceInput({output: mod('hammer')}, '#forge:ingots/iron', '#forge:ingots/steel');
-    event.replaceInput({output: mod('sorter')}, 'minecraft:redstone', items.circuitish);
+    event.replaceInput({output: mod('sorter')}, 'minecraft:redstone', 'pneumaticcraft:printed_circuit_board');
     event.replaceInput({output: mod('wirecutter')}, '#forge:ingots/iron', '#forge:ingots/steel');
     event.remove({input: mod('wirecutter'), output: '#forge:wires'});
     event.remove({output: mod('component_iron')});
     event.remove({output: mod('component_steel')});
+    event.remove({output: mod('circuit_board')});
+    event.replaceInput({}, mod('circuit_board'), 'pneumaticcraft:printed_circuit_board');
 
-    event.shaped(Item.of(mod('component_iron'), 3), ['MMM', 'NPN', 'MMM'], {
+    /* Iron Components */
+    event.shaped(Item.of(mod('component_iron'), 2), ['MMM', 'NPN', 'MMM'], {
       M: '#forge:plates/iron',
       N: '#forge:nuggets/copper',
       P: 'pneumaticcraft:printed_circuit_board',
     });
 
-    event.shaped(Item.of(mod('component_steel'), 3), ['MMM', 'NPN', 'MMM'], {
+    /* Steel Components */
+    event.shaped(Item.of(mod('component_steel'), 2), ['MMM', 'NPN', 'MMM'], {
       M: '#forge:plates/steel',
       N: '#forge:nuggets/copper',
       P: 'pneumaticcraft:printed_circuit_board',
+    });
+
+    /* Easier recipe for later-game */
+    /* Iron Components */
+    event.custom({
+      type: 'immersiveengineering:blueprint',
+      category: 'components',
+      inputs: [
+        {base_ingredient: {tag: 'forge:plates/iron'}, count: 6},
+        {base_ingredient: {item: 'immersiveengineering:wire_copper'}, count: 2},
+        {base_ingredient: {item: 'pneumaticcraft:printed_circuit_board'}, count: 1},
+      ],
+      result: {item: mod('component_iron'), count: 3},
+    });
+
+    /* Steel Components */
+    event.custom({
+      type: 'immersiveengineering:blueprint',
+      category: 'components',
+      inputs: [
+        {base_ingredient: {tag: 'forge:plates/steel'}, count: 6},
+        {base_ingredient: {item: 'immersiveengineering:wire_copper'}, count: 2},
+        {base_ingredient: {item: 'pneumaticcraft:printed_circuit_board'}, count: 1},
+      ],
+      result: {item: mod('component_steel'), count: 3},
     });
 
     event.custom({
@@ -694,12 +722,44 @@ ServerEvents.recipes(event => {
       output: {item: 'pneumaticcraft:capacitor'},
     });
 
+    event.custom({
+      type: 'immersiveengineering:blueprint',
+      category: 'components',
+      inputs: [
+        {base_ingredient: {item: 'immersiveengineering:wirecoil_copper'}, count: 3},
+        {base_ingredient: [{tag: 'pneumaticcraft:plastic_sheets'}, {item: 'immersiveengineering:plate_duroplast'}], count: 1},
+      ],
+      result: {item: 'pneumaticcraft:capacitor'},
+    });
+
     /* Transistor */
     event.custom({
       type: 'mekanism:combining',
       mainInput: {amount: 2, ingredient: {tag: 'forge:silicon'}},
       extraInput: {ingredient: {tag: 'pneumaticcraft:plastic_sheets'}},
       output: {item: 'pneumaticcraft:transistor'},
+    });
+
+    event.custom({
+      type: 'immersiveengineering:blueprint',
+      category: 'components',
+      inputs: [
+        {base_ingredient: {tag: 'forge:silicon'}, count: 2},
+        {base_ingredient: [{tag: 'pneumaticcraft:plastic_sheets'}, {item: 'immersiveengineering:plate_duroplast'}], count: 1},
+      ],
+      result: {item: 'pneumaticcraft:transistor'},
+    });
+
+    /* Empty PCB */
+    event.custom({
+      type: 'immersiveengineering:blueprint',
+      category: 'components',
+      inputs: [
+        {base_ingredient: {item: 'minecraft:redstone_torch'}, count: 2},
+        {base_ingredient: {item: 'immersiveengineering:wire_copper'}, count: 3},
+        {base_ingredient: [{tag: 'pneumaticcraft:plastic_sheets'}, {item: 'immersiveengineering:plate_duroplast'}], count: 1},
+      ],
+      result: {item: 'pneumaticcraft:empty_pcb', count: 3},
     });
   };
 
