@@ -333,7 +333,7 @@
 	"Color Runes" = false
 	"Endermosh Music Disc" = false
 	"Parrot Eggs" = false
-	"Pathfinder Maps" = true
+	"Pathfinder Maps" = false
 	Pickarang = false
 	"Seed Pouch" = false
 	"Skull Pikes" = true
@@ -1518,13 +1518,13 @@
 	"Buckets Show Inhabitants" = true
 	Camera = false
 	"Chest Searching" = false
-	"Elytra Indicator" = true
+	"Elytra Indicator" = false
 	"Greener Grass" = false
 	"Improved Tooltips" = false
 	"Long Range Pick Block" = false
 	"Microcrafting Helper" = false
 	"Soul Candles" = false
-	"Usage Ticker" = true
+	"Usage Ticker" = false
 	"Uses For Curses" = false
 	"Variant Animal Textures" = false
 	"Wool Shuts Up Minecarts" = true
