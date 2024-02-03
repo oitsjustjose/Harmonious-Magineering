@@ -461,6 +461,7 @@ ServerEvents.tags('item', event => {
       'ae2:quartz_glass',
       'ae2:quartz_pillar',
       'ae2:quartz_vibrant_glass',
+      'ae2:silicon',
       'ae2:sky_stone_block',
       'ae2:sky_stone_brick',
       'ae2:sky_stone_chest',

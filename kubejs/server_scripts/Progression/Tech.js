@@ -364,6 +364,7 @@ ServerEvents.recipes(event => {
 
     event.remove(mod('alloysmelter/brass'));
     event.remove(mod('alloysmelter/bronze'));
+    event.remove(mod('crafting/redstone_acid'));
     event.replaceInput({output: mod('conveyor_basic')}, 'minecraft:redstone', 'create:belt_connector');
     event.replaceInput({output: mod('dynamo')}, 'minecraft:redstone', items.capacitor);
     event.replaceInput({output: mod('fluid_sorter')}, 'minecraft:redstone', items.circuitish);
@@ -640,6 +641,53 @@ ServerEvents.recipes(event => {
         {amount: 500, fluidTag: 'pneumaticcraft:plastic'},
       ],
       results: [{amount: 1000, fluid: 'pneumaticcraft:etching_acid'}],
+    });
+
+    /* Capacitor */
+    event.remove('pneumaticcraft:pressure_chamber/capacitor');
+    event
+      .custom({
+        type: 'pneumaticcraft:pressure_chamber',
+        inputs: [
+          {type: 'pneumaticcraft:stacked_item', count: 2, tag: 'forge:nuggets/copper'},
+          {type: 'pneumaticcraft:stacked_item', count: 6, tag: 'forge:dusts/redstone'},
+          {tag: 'pneumaticcraft:plastic_sheets'},
+        ],
+        pressure: 1.0,
+        results: [{item: 'pneumaticcraft:capacitor'}],
+      })
+      .id('pneumaticcraft:pressure_chamber/capacitor');
+
+    /* Transistor */
+    event.remove('pneumaticcraft:pressure_chamber/transistor');
+    event
+      .custom({
+        type: 'pneumaticcraft:pressure_chamber',
+        inputs: [
+          {type: 'pneumaticcraft:stacked_item', count: 3, tag: 'forge:nuggets/copper'},
+          {type: 'pneumaticcraft:stacked_item', count: 2, tag: 'forge:silicon'},
+          {tag: 'pneumaticcraft:plastic_sheets'},
+        ],
+        pressure: 1.0,
+        results: [{item: 'pneumaticcraft:transistor'}],
+      })
+      .id('pneumaticcraft:pressure_chamber/transistor');
+
+    // Easier recipes for later
+    /* Capacitor */
+    event.custom({
+      type: 'mekanism:combining',
+      mainInput: {amount: 3, ingredient: {item: 'immersiveengineering:wirecoil_copper'}},
+      extraInput: {ingredient: {tag: 'pneumaticcraft:plastic_sheets'}},
+      output: {item: 'pneumaticcraft:capacitor'},
+    });
+
+    /* Transistor */
+    event.custom({
+      type: 'mekanism:combining',
+      mainInput: {amount: 2, ingredient: {tag: 'forge:silicon'}},
+      extraInput: {ingredient: {tag: 'pneumaticcraft:plastic_sheets'}},
+      output: {item: 'pneumaticcraft:transistor'},
     });
   };
 
