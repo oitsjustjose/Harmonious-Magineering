@@ -15,7 +15,8 @@
         "value": {
           "type": "forge:or",
           "values": [
-            "minecraft:deep_dark"
+            "minecraft:deep_dark",
+            "#minecraft:is_ocean"
           ]
         }
       }
