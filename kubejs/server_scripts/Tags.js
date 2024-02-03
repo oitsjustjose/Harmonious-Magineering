@@ -517,6 +517,9 @@ ServerEvents.tags('item', event => {
   event.add('custom:polishable_planks', ['#minecraft:planks', '#aether:planks_crafting']);
   /* Saltpeter cleanup */
   event.remove('forge:dusts/saltpeter', 'bloodmagic:saltpeter');
+  /* PNC Upgrades should use Upgrade Matrices */
+  event.remove('pneumaticcraft:upgrade_components', 'minecraft:lapis_lazuli');
+
   /* Clean up Quark's messy tags -_- */
   [
     'quark:acacia_chest',
