@@ -333,7 +333,7 @@
 	"Color Runes" = false
 	"Endermosh Music Disc" = false
 	"Parrot Eggs" = false
-	"Pathfinder Maps" = false
+	"Pathfinder Maps" = true
 	Pickarang = false
 	"Seed Pouch" = false
 	"Skull Pikes" = true
@@ -426,9 +426,9 @@
 		"Search Radius" = 6400
 		"Xp From Trade" = 5
 		"Add To Cartographer" = true
-		"Add To Wandering Trader Forced" = true
+		"Add To Wandering Trader Forced" = false
 		"Add To Wandering Trader Generic" = false
-		"Add To Wandering Trader Rare" = false
+		"Add To Wandering Trader Rare" = true
 		"Draw Hud" = true
 		"Hud On Top" = false
 
