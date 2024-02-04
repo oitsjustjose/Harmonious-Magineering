@@ -139,6 +139,30 @@ ServerEvents.recipes(event => {
   };
 
   const misc = () => {
+    /* Embers ash */
+    event.replaceInput({}, 'embers:ash', 'supplementaries:ash');
+    event.replaceOutput({}, 'embers:ash', 'supplementaries:ash');
+    event.remove('embers:stamping/ash');
+    event
+      .custom({
+        type: 'embers:stamping',
+        input: {item: 'embers:alchemical_waste'},
+        output: {count: 8, item: 'supplementaries:ash'},
+        stamp: {item: 'embers:flat_stamp'},
+      })
+      .id('embers:stamping/ash');
+
+    event.remove('embers:alchemy/soul_sand');
+    event
+      .custom({
+        type: 'embers:alchemy',
+        aspects: [{tag: 'embers:aspectus/copper'}, {tag: 'embers:aspectus/iron'}],
+        inputs: [{item: 'minecraft:sand'}, {item: 'minecraft:sand'}, {item: 'minecraft:sand'}, {item: 'minecraft:sand'}],
+        tablet: {item: 'supplementaries:ash'},
+        output: {item: 'minecraft:soul_sand', count: 4},
+      })
+      .id('embers:alchemy/soul_sand');
+
     /* MR Guidebook dedup */
     event.remove('modularrouters:guide_book');
     event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"modularrouters:book"}'), ['minecraft:book', 'modularrouters:modular_router']);

@@ -484,6 +484,9 @@ ServerEvents.tags('item', event => {
   global.StrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   ores.forEach(ore => event.removeAllTagsFrom(ore));
 
+  /* Deduplicate Ash */
+  event.remove('forge:ash', 'embers:ash');
+  event.remove('forge:dusts/ash', 'embers:ash');
   /* Rope Intercompat */
   event.remove('forge:rope', 'farmersdelight:rope');
   event.remove('supplementaries:ropes', 'farmersdelight:rope');

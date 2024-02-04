@@ -617,6 +617,7 @@ JEIEvents.hideItems(event => {
     'eidolon:lead_ore',
     'eidolon:silver_ore',
     'embers:creative_ember_source',
+    'embers:ash',
     'farmersdelight:fried_egg',
     'immersiveengineering:capacitor_creative',
     'immersiveengineering:circuit_board',
