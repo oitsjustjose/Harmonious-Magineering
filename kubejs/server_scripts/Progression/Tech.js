@@ -372,12 +372,11 @@ ServerEvents.recipes(event => {
 
       event.custom({
         type: 'pneumaticcraft:thermo_plant',
-        exothermic: false,
+        exothermic: true,
         fluid_input: {type: 'pneumaticcraft:fluid', amount: 10, tag: 'forge:molten_iron'},
         item_input: {tag: 'forge:dusts/ash'},
         item_output: {item: 'mekanism:nugget_steel'},
-        // Melting point of steel is 1371.111°C, but PnC has this weird offset of 273°C -_-
-        temperature: {min_temp: 1645},
+        temperature: {max_temp: 546},
       });
     };
 
