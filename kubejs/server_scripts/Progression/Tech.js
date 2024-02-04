@@ -397,6 +397,7 @@ ServerEvents.recipes(event => {
     event.remove({output: mod('plate_duroplast')});
     event.replaceInput({}, mod('circuit_board'), 'pneumaticcraft:printed_circuit_board');
     event.replaceInput({}, mod('plate_duroplast'), '#pneumaticcraft:plastic_sheets');
+    event.replaceInput({output: 'immersiveengineering:windmill'}, 'minecraft:iron_ingot', '#forge:ingots/steel');
 
     event.remove(mod('blueprint/component_electronic_adv'));
     event
