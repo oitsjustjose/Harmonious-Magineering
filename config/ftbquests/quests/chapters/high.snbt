@@ -34,19 +34,11 @@
 			silent: true
 			type: "command"
 		}]
-		tasks: [
-			{
-				id: "2017520B17D806B6"
-				item: "immersiveengineering:duroplast"
-				type: "item"
-			}
-			{
-				count: 4L
-				id: "35FBEA4537AA92BC"
-				item: "mekanism:ingot_steel"
-				type: "item"
-			}
-		]
+		tasks: [{
+			id: "7777396943782020"
+			item: "mekanism:steel_casing"
+			type: "item"
+		}]
 		x: 0.0d
 		y: 0.0d
 	}]

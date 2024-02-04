@@ -15,61 +15,235 @@
 		rotation: 0.0d
 		width: 4.848484848484849d
 		x: 0.0d
-		y: 0.0d
+		y: -3.5d
 	}]
 	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: [
+				"323C7D5E5C64C4C6"
+				"68B9B4F53C673B18"
+			]
+			description: [
+				"As you continue to ponder your available resources, you've dawned on the fact that the &6Thermopneumatic Processing Plant&r is capable of &cexothermic reactions&r which &bcool&r the contents within."
+				""
+				"Perhaps by combining &4Molten Iron&r with &7Ash&r, you would be able to form a primitive steel that can then be cooled into nuggets..."
+			]
 			hide: true
+			icon: "mekanism:ingot_steel"
 			id: "79467E224CE42C0D"
 			rewards: [{
-				auto: "invisible"
-				command: "/execute as @p run function custom:player/stages/immersiveengineering"
-				elevate_perms: true
-				id: "57A51F86293F5235"
-				silent: true
-				type: "command"
-			}]
-			tasks: [{
-				id: "30C51BA13B4960B1"
-				item: "mekanism:nugget_steel"
+				count: 12
+				id: "1931CC5D99A526CB"
+				item: "create:experience_nugget"
+				random_bonus: 6
 				type: "item"
 			}]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "Carboniforous Iron "
+			tasks: [
+				{
+					id: "4E7B012930F90718"
+					item: "mekanism:nugget_steel"
+					type: "item"
+				}
+				{
+					id: "7AB32AB36E60955A"
+					item: "mekanism:ingot_steel"
+					type: "item"
+				}
+			]
+			title: "Entering the Steel Age"
 			x: 0.0d
-			y: -0.5d
+			y: -0.75d
 		}
 		{
+			dependencies: ["6C74ABE8E49CEF5D"]
+			icon: "immersiveengineering:component_steel"
 			id: "56B1FDDC955288EF"
+			rewards: [{
+				count: 12
+				id: "521952F22DD35B00"
+				item: "create:experience_nugget"
+				random_bonus: 4
+				type: "item"
+			}]
+			subtitle: "Heavy Machine Fundamentals"
+			tasks: [
+				{
+					id: "4415B78B1E64EA44"
+					item: "immersiveengineering:component_iron"
+					type: "item"
+				}
+				{
+					id: "29EAC1274F225CDF"
+					item: "immersiveengineering:component_steel"
+					type: "item"
+				}
+			]
+			title: "Metal Mechanisms"
+			x: 0.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["56B1FDDC955288EF"]
+			icon: "immersiveengineering:coke_oven"
+			id: "683FAB80876CA757"
+			subtitle: "Creosote Galore!"
+			tasks: [
+				{
+					count: 27L
+					id: "051F43CD1120C021"
+					item: "immersiveengineering:cokebrick"
+					type: "item"
+				}
+				{
+					icon: "immersiveengineering:coke_oven"
+					id: "5BF8E461EADB696A"
+					observe_type: 4
+					timer: 0L
+					title: "Form a Coke Oven"
+					to_observe: "immersiveengineering:coke_oven_dummy"
+					type: "observation"
+				}
+			]
+			title: "Coke Oven \\& Coal Coke"
+			x: -1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["56B1FDDC955288EF"]
+			icon: "immersiveengineering:blast_furnace"
+			id: "2A3FE379AB3CC92B"
+			subtitle: "Non-explosive blasting 💥"
+			tasks: [
+				{
+					count: 27L
+					id: "510D985C2069C1F3"
+					item: "immersiveengineering:blastbrick"
+					type: "item"
+				}
+				{
+					icon: "immersiveengineering:blast_furnace"
+					id: "6DC4676D9EC88AAC"
+					observe_type: 4
+					timer: 0L
+					title: "Form a Blast Furnace"
+					to_observe: "immersiveengineering:blast_furnace_dummy"
+					type: "observation"
+				}
+			]
+			title: "Blast Furnace \\& Faster Steel"
+			x: 1.5d
+			y: 4.0d
+		}
+		{
+			id: "2972E4B82723A69E"
+			rewards: [
+				{
+					id: "1276FA472BD76340"
+					item: "create:experience_nugget"
+					type: "item"
+				}
+				{
+					auto: "invisible"
+					command: "/execute as @p run function custom:player/stages/mekanism"
+					elevate_perms: true
+					id: "4B7E25AF690023BB"
+					silent: true
+					type: "command"
+				}
+			]
+			shape: "octagon"
 			tasks: [{
-				id: "4415B78B1E64EA44"
-				item: "immersiveengineering:component_steel"
+				id: "42FD08CD980CD59E"
+				item: "immersiveengineering:duroplast"
 				type: "item"
 			}]
 			x: 0.0d
-			y: 2.5d
+			y: 11.0d
 		}
 		{
-			id: "683FAB80876CA757"
-			tasks: [{
-				count: 27L
-				id: "051F43CD1120C021"
-				item: "immersiveengineering:cokebrick"
+			dependencies: ["79467E224CE42C0D"]
+			description: [
+				"Every engineer needs their tools - no doubt you have likely already put together a large collection of various tools."
+				""
+				"Well, it seems as though these larger and more complicated types of machinery \\& wires require a new coupling of tools - a new &6Hammer&r, and a pair of &6Wire Cutters&r."
+			]
+			id: "6C74ABE8E49CEF5D"
+			rewards: [{
+				id: "709E2FB6928C909D"
+				item: "immersiveengineering:manual"
 				type: "item"
 			}]
-			x: -1.0d
-			y: 3.5d
+			subtitle: "Time for a toolbox, eh?"
+			tasks: [
+				{
+					id: "6DF36351A40728A3"
+					item: {
+						Count: 1b
+						id: "immersiveengineering:hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1FA8DAAB93E791C6"
+					item: {
+						Count: 1b
+						id: "immersiveengineering:wirecutter"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "An Engineer's Tools"
+			x: 0.0d
+			y: 1.5d
 		}
 		{
-			id: "2A3FE379AB3CC92B"
-			tasks: [{
-				count: 27L
-				id: "510D985C2069C1F3"
-				item: "immersiveengineering:blastbrick"
+			dependencies: ["2A3FE379AB3CC92B"]
+			id: "2B75A71C63C2DB97"
+			rewards: [{
+				id: "2BA36FD7A093CFF6"
+				item: "create:experience_nugget"
 				type: "item"
 			}]
-			x: 1.0d
-			y: 3.5d
+			tasks: [
+				{
+					id: "2AE8403CFBB3F720"
+					item: "immersiveengineering:watermill"
+					type: "item"
+				}
+				{
+					id: "003CFD5A7B8F5D4F"
+					item: "immersiveengineering:windmill"
+					type: "item"
+				}
+			]
+			title: "Basic Energy Production"
+			x: 1.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["683FAB80876CA757"]
+			id: "455DEE3DC3465DEB"
+			subtitle: "Sealed \\& Weatherproof"
+			tasks: [{
+				count: 8L
+				id: "296BEAC9D067ADC3"
+				item: "immersiveengineering:treated_wood_horizontal"
+				type: "item"
+			}]
+			title: "Treated Wood"
+			x: -1.5d
+			y: 6.0d
 		}
 	]
 	subtitle: ["&6Some Wires Required&r"]
