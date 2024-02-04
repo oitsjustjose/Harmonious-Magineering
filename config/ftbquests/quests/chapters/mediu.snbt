@@ -386,13 +386,23 @@
 				"These PCBs are incredibly helpful and will likely be a new foundation for upcoming technological advancements!"
 			]
 			id: "68B9B4F53C673B18"
-			rewards: [{
-				count: 12
-				id: "6C8858BF15165EBB"
-				item: "create:experience_nugget"
-				random_bonus: 12
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 12
+					id: "6C8858BF15165EBB"
+					item: "create:experience_nugget"
+					random_bonus: 12
+					type: "item"
+				}
+				{
+					auto: "invisible"
+					command: "/execute as @p run function custom:player/stages/immersiveengineering"
+					elevate_perms: true
+					id: "6307ABE90318A285"
+					silent: true
+					type: "command"
+				}
+			]
 			shape: "octagon"
 			size: 1.5d
 			subtitle: "Ready for computation!"

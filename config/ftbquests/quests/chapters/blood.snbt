@@ -403,6 +403,7 @@
 			y: 9.0d
 		}
 		{
+			dependencies: ["26B018666C63C97F"]
 			description: [
 				"My deepest apologies if you felt in the slightest bit uncomfortable with this mod and I do hope you continue playing and continue to enjoy the pack!"
 				""
