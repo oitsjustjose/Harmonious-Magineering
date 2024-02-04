@@ -107,6 +107,7 @@ LootJS.modifiers(event => {
   const modLoot = () => {
     event.addLootTableModifier(/.*/).replaceLoot('bloodmagic:sulfur', 'eidolon:sulfur');
     event.addBlockLootModifier(/.*/).replaceLoot('spawn:snail_shell', 'naturalist:snail_shell');
+    event.addLootTableModifier(/.*/).removeLoot(['immersiveengineering:component_iron', 'immersiveengineering:component_steel']);
   };
 
   event.addEntityLootModifier('minecraft:warden').removeLoot(ItemFilter.ALWAYS_TRUE);
