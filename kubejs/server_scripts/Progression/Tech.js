@@ -708,6 +708,8 @@ ServerEvents.recipes(event => {
     event.recipes.create.compacting('pneumaticcraft:ingot_iron_compressed', ['#forge:ingots/iron', 'ae2:tiny_tnt']).superheated();
     event.recipes.create.compacting('pneumaticcraft:compressed_iron_block', ['#forge:storage_blocks/iron', 'minecraft:tnt']).superheated();
 
+    event.replaceInput({output: 'pneumaticcraft:assembly_laser'}, 'minecraft:red_stained_glass', 'regions_unexplored:redstone_bulb');
+
     event.remove({id: 'pneumaticcraft:pressure_chamber/etching_acid'});
     event.custom({
       type: 'create:mixing',
