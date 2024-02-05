@@ -9,30 +9,26 @@
 		click: ""
 		corner: false
 		dev: false
-		height: 4.0d
+		height: 1.9331158238172919d
 		hover: [ ]
 		image: "kubejs:textures/quest_images/chapter/mek.png"
 		rotation: 0.0d
-		width: 10.345991561181435d
+		width: 5.0d
 		x: 0.0d
-		y: 0.0d
+		y: -1.5d
 	}]
 	order_index: 3
 	quest_links: [ ]
 	quests: [{
-		dependencies: [
-			"39D82FB07CB809D8"
-			"79467E224CE42C0D"
-		]
+		dependencies: ["2972E4B82723A69E"]
 		hide: true
 		id: "66899BB398A3CDE3"
 		rewards: [{
-			auto: "invisible"
-			command: "/execute as @p run function custom:player/stages/mekanism"
-			elevate_perms: true
-			id: "400F9D7ED6442834"
-			silent: true
-			type: "command"
+			count: 12
+			id: "08E2B9E7461B83B9"
+			item: "create:experience_nugget"
+			random_bonus: 8
+			type: "item"
 		}]
 		tasks: [{
 			id: "7777396943782020"
