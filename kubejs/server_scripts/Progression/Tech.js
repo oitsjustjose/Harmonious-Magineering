@@ -345,7 +345,7 @@ ServerEvents.recipes(event => {
             item: 'supplementaries:ash_brick',
             count: 4,
           },
-          {item: mod('component_steel')},
+          {item: mod('component_iron')},
         ],
         pressure: 3.5,
         results: [Item.of(mod('cokebrick'), 3).toJson()],
