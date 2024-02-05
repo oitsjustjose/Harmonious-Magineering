@@ -57,7 +57,7 @@
 			]
 			title: "Entering the Steel Age"
 			x: 0.0d
-			y: -0.75d
+			y: -4.0d
 		}
 		{
 			dependencies: ["6C74ABE8E49CEF5D"]
@@ -70,6 +70,7 @@
 				""
 				"Both of these will be seen incredibly often as you venture through your own &3Age of Industry&r."
 			]
+			hide: true
 			icon: "immersiveengineering:component_steel"
 			id: "56B1FDDC955288EF"
 			rewards: [{
@@ -94,12 +95,29 @@
 			]
 			title: "Metal Mechanisms"
 			x: 0.0d
-			y: 3.5d
+			y: 0.25d
 		}
 		{
 			dependencies: ["56B1FDDC955288EF"]
+			description: [
+				"As you continue to pursue better means of creating &6Steel&r, you discover that you can extrude the various oils from Coal through a process known as &6Coking&r, which leaves you with two outputs."
+				""
+				"Creosote Oil is the first of these two outputs, which can be used to finish and treat wooden planks to make them more weather-proof and able to withstand greater wear and tear."
+				""
+				"Coal Coke is the second output, which is quite similar to its former self except burns at a significantly higher heat and for a longer duration - this makes it both useful as a standard furnace fuel (now for twice as long!) or, more importantly, as a suitable fuel for a &6Blast Furnace&r."
+				"{@pagebreak}"
+				"To form a Coke Oven, place all 27 &lCoke Bricks&r in a &n3 x 3 x 3&r, then use your Engineer's Hammer on the Front and Center of the structure to finish setting it up."
+			]
+			hide: true
 			icon: "immersiveengineering:coke_oven"
 			id: "683FAB80876CA757"
+			rewards: [{
+				count: 12
+				id: "1DD6F28607C074FD"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
 			subtitle: "Creosote Galore!"
 			tasks: [
 				{
@@ -120,12 +138,29 @@
 			]
 			title: "Coke Oven \\& Coal Coke"
 			x: -1.5d
-			y: 4.0d
+			y: 0.75d
 		}
 		{
 			dependencies: ["56B1FDDC955288EF"]
+			description: [
+				"Blasting is a process by which the &8Carbon&r in &6Coal Coke&r is infused with Iron to reinforce and harden the metal into its much superior &8Steel&r form. "
+				""
+				"Unfortunately, in the process of burning the Coal Coke at such high heat, some of the excess impurities in both the Iron and Coal Coke have to be siphoned out into what is called &2Slag&r. "
+				""
+				"&2Slag&r has various uses later down the line, but should be considered when doing your routine maintenance."
+				"{@pagebreak}"
+				"To form a Blast Furnace, place all 27 &lBlast Bricks&r in a &n3 x 3 x 3&r, then use your Engineer's Hammer on the Front and Center of the structure to finish setting it up."
+			]
+			hide: true
 			icon: "immersiveengineering:blast_furnace"
 			id: "2A3FE379AB3CC92B"
+			rewards: [{
+				count: 12
+				id: "16485A5801783186"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
 			subtitle: "Non-explosive blasting 💥"
 			tasks: [
 				{
@@ -146,14 +181,36 @@
 			]
 			title: "Blast Furnace \\& Faster Steel"
 			x: 1.5d
-			y: 4.0d
+			y: 0.75d
 		}
 		{
+			dependencies: [
+				"455DEE3DC3465DEB"
+				"2B75A71C63C2DB97"
+			]
+			description: [
+				"As you read further into your &6Engineer's Manual&r, you've read about a material called &lDuroplast&r."
+				""
+				"This material seems to be the key to unlocking significantly more compact and powerful machinery, but making it will require nearly an entire factory to accomplish!"
+				"{@pagebreak}"
+				"1. You'll need to begin by creating a plentiful supply of Fruits or Vegetables - this can be done in a variety of ways, but a &6Cloche&r will work in a pinch!"
+				""
+				"2. Using an &6Industrial Fermenter&r, ferment your produce into a substance called &7Ethanol&r."
+				""
+				"3. Further processing the &7Ethanol&r in a &6Refinery&r will yield &7Acetaldehyde&r."
+				""
+				"4. Refining your &7Acetaldehyde&r with &6Creosote Oil&r will yield &ePhenolic Resin&r."
+				""
+				"5. Finally, you can process your &ePhenolic Resin&r in a &6Bottler&r with a &n2x2 Mold&r to create a block of Duroplast"
+			]
+			hide: true
 			id: "2972E4B82723A69E"
 			rewards: [
 				{
+					count: 24
 					id: "1276FA472BD76340"
 					item: "create:experience_nugget"
+					random_bonus: 8
 					type: "item"
 				}
 				{
@@ -166,13 +223,16 @@
 				}
 			]
 			shape: "octagon"
+			size: 1.5d
+			subtitle: "Cresote-based plastics"
 			tasks: [{
 				id: "42FD08CD980CD59E"
 				item: "immersiveengineering:duroplast"
 				type: "item"
 			}]
+			title: "Duroplast"
 			x: 0.0d
-			y: 11.0d
+			y: 3.5d
 		}
 		{
 			dependencies: ["79467E224CE42C0D"]
@@ -181,12 +241,39 @@
 				""
 				"Well, it seems as though these larger and more complicated types of machinery \\& wires require a new coupling of tools - a new &6Hammer&r, and a pair of &6Wire Cutters&r."
 			]
+			hide: true
+			icon: {
+				Count: 1b
+				ForgeCaps: {
+					Parent: {
+						Items: [ ]
+						Size: 23
+					}
+				}
+				id: "immersiveengineering:toolbox"
+			}
 			id: "6C74ABE8E49CEF5D"
-			rewards: [{
-				id: "709E2FB6928C909D"
-				item: "immersiveengineering:manual"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "709E2FB6928C909D"
+					item: "immersiveengineering:manual"
+					type: "item"
+				}
+				{
+					id: "03D5AD3611584377"
+					item: {
+						Count: 1b
+						ForgeCaps: {
+							Parent: {
+								Items: [ ]
+								Size: 23
+							}
+						}
+						id: "immersiveengineering:toolbox"
+					}
+					type: "item"
+				}
+			]
 			subtitle: "Time for a toolbox, eh?"
 			tasks: [
 				{
@@ -214,16 +301,30 @@
 			]
 			title: "An Engineer's Tools"
 			x: 0.0d
-			y: 1.5d
+			y: -1.75d
 		}
 		{
 			dependencies: ["2A3FE379AB3CC92B"]
+			description: [
+				"By combining the rigidity and durability of &8Steel&r with the pliability of &6Treated Wood&r, you've discovered that you can fashion together either a &nWind Mill&r or a &nWater Wheel&r, either of which will produce rotational energy that can be harnessed through a &6Kinetic Dynamo&r to produce &lFlux&r. "
+				""
+				"&lFlux&r (often referred to as &nRedstone Flux&r or &nRF&r) is a form of electricity that is used to power all types of machinery from this point on, ranging from Light- and Heavy-Duty Machines, Mekanisms and more."
+				""
+				"It is suggested to refer to the corresponding Engineer's Manual chapters to see how to configure these two devices to provide optimal Flux."
+				""
+				"See the &l&m&n&o&1{&2T&3O&4D&5O&6}}&r chapter to learn more on how to interconnect power sources from energy providers to energy consumers."
+			]
+			hide: true
+			icon: "immersiveengineering:dynamo"
 			id: "2B75A71C63C2DB97"
 			rewards: [{
+				count: 12
 				id: "2BA36FD7A093CFF6"
 				item: "create:experience_nugget"
+				random_bonus: 12
 				type: "item"
 			}]
+			subtitle: "Humble Beginnings"
 			tasks: [
 				{
 					icon: "immersiveengineering:watermill"
@@ -255,11 +356,20 @@
 			]
 			title: "Basic Energy Production"
 			x: 1.5d
-			y: 6.0d
+			y: 2.75d
 		}
 		{
 			dependencies: ["683FAB80876CA757"]
+			description: ["As previously brought up, the &6Creosote Oil&r made as a byproduct during the coking process can be used to treat and finish wooden planks to make them more durable, weather-resistant and capable of use in many light and heavy duty machines."]
+			hide: true
 			id: "455DEE3DC3465DEB"
+			rewards: [{
+				count: 4
+				id: "627B5BFD72F390A9"
+				item: "create:experience_nugget"
+				random_bonus: 4
+				type: "item"
+			}]
 			subtitle: "Sealed \\& Weatherproof"
 			tasks: [{
 				count: 8L
@@ -269,7 +379,7 @@
 			}]
 			title: "Treated Wood"
 			x: -1.5d
-			y: 6.0d
+			y: 2.75d
 		}
 	]
 	subtitle: ["&6Some Wires Required&r"]
