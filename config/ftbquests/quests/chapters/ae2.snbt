@@ -1,7 +1,7 @@
 {
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
-	filename: "energistics"
+	filename: "ae2"
 	group: "30752BCABB2D0E90"
 	icon: "ae2:purple_smart_dense_cable"
 	id: "1ED158C2CEC130C9"

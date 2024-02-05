@@ -1,7 +1,7 @@
 {
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
-	filename: "some_wires_required"
+	filename: "immersiveengineering"
 	group: "7ACE386F34E81744"
 	icon: "immersiveengineering:wirecoil_electrum"
 	id: "0AA8A334E721D765"
@@ -61,6 +61,15 @@
 		}
 		{
 			dependencies: ["6C74ABE8E49CEF5D"]
+			description: [
+				"You have discovered that many Light- and Heavy-Duty Machines require cores of varying types that are capable of handling the necessary &2computations&r in order to keep the machine running \\& healthy."
+				""
+				"For lighter-duty machines, the &6Iron Mechanical Component&r has sufficient processing power and a sturdy enough casing to survive most use-casees."
+				""
+				"For the heavier-duty machinery you may dive into at a later point, the &6Steel Mechanical Component&r features the same processing power as the &6Iron Mechanical Component&r but in a much more durable enclosure."
+				""
+				"Both of these will be seen incredibly often as you venture through your own &3Age of Industry&r."
+			]
 			icon: "immersiveengineering:component_steel"
 			id: "56B1FDDC955288EF"
 			rewards: [{
@@ -217,13 +226,30 @@
 			}]
 			tasks: [
 				{
-					id: "2AE8403CFBB3F720"
-					item: "immersiveengineering:watermill"
+					icon: "immersiveengineering:watermill"
+					id: "4AE516316E94AA55"
+					item: {
+						Count: 1b
+						id: "itemfilters:or"
+						tag: {
+							items: [
+								{
+									Count: 1b
+									id: "immersiveengineering:windmill"
+								}
+								{
+									Count: 1b
+									id: "immersiveengineering:watermill"
+								}
+							]
+						}
+					}
+					title: "Water Wheel or Wind Mill"
 					type: "item"
 				}
 				{
-					id: "003CFD5A7B8F5D4F"
-					item: "immersiveengineering:windmill"
+					id: "319E0E08C7382351"
+					item: "immersiveengineering:dynamo"
 					type: "item"
 				}
 			]

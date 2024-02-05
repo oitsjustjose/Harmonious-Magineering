@@ -1,7 +1,7 @@
 {
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
-	filename: "low"
+	filename: "create"
 	group: "7ACE386F34E81744"
 	icon: "create:large_cogwheel"
 	id: "03799584BC804083"
