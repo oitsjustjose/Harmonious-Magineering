@@ -1,8 +1,8 @@
 {
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
-	filename: "holy"
-	group: "aether"
+	filename: "aether"
+	group: "237E59D678B7F5E1"
 	icon: "aether:aether_portal_frame"
 	id: "4937E45FC8A05024"
 	images: [{
