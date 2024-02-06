@@ -366,7 +366,7 @@ ServerEvents.recipes(event => {
           },
           {item: mod('component_steel'), count: 1},
         ],
-        pressure: 6.0,
+        pressure: 4.0,
         results: [Item.of(mod('blastbrick'), 3).toJson()],
       });
 
@@ -390,7 +390,6 @@ ServerEvents.recipes(event => {
     event.replaceInput({output: mod('hammer')}, '#forge:ingots/iron', '#forge:ingots/steel');
     event.replaceInput({output: mod('sorter')}, 'minecraft:redstone', 'pneumaticcraft:printed_circuit_board');
     event.replaceInput({output: mod('wirecutter')}, '#forge:ingots/iron', '#forge:ingots/steel');
-    event.remove({input: mod('wirecutter'), output: '#forge:wires'});
     event.remove({output: mod('component_iron')});
     event.remove({output: mod('component_steel')});
     event.remove({output: mod('circuit_board')});
@@ -398,6 +397,11 @@ ServerEvents.recipes(event => {
     event.replaceInput({}, mod('circuit_board'), 'pneumaticcraft:printed_circuit_board');
     event.replaceInput({}, mod('plate_duroplast'), '#pneumaticcraft:plastic_sheets');
     event.replaceInput({output: 'immersiveengineering:windmill'}, 'minecraft:iron_ingot', '#forge:ingots/steel');
+
+    /* Wirecutters should only work for softer metals */
+    event.remove({input: mod('wirecutter'), output: '#forge:wires'});
+    event.shapeless(mod('wire_copper'), [mod('wirecutter'), '#forge:plates/copper']);
+    event.shapeless(mod('wire_aluminum'), [mod('wirecutter'), '#forge:plates/aluminum']);
 
     event.remove(mod('blueprint/component_electronic_adv'));
     event
