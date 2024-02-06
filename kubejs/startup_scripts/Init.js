@@ -102,6 +102,10 @@ ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
     'nethersdelight:golden_machete': Ingredient.of('#forge:ingots/gold'),
     'nethersdelight:iron_machete': Ingredient.of('#forge:ingots/iron'),
     'nethersdelight:netherite_machete': Ingredient.of('#forge:ingots/netherite'),
+    'pneumaticcraft:pneumatic_boots': Ingredient.of('#forge:ingots/compressed_iron'),
+    'pneumaticcraft:pneumatic_chestplate': Ingredient.of('#forge:ingots/compressed_iron'),
+    'pneumaticcraft:pneumatic_helmet': Ingredient.of('#forge:ingots/compressed_iron'),
+    'pneumaticcraft:pneumatic_leggings': Ingredient.of('#forge:ingots/compressed_iron'),
     'supplementaries:wrench': Ingredient.of('#forge:ingots/copper'),
   };
 
@@ -199,6 +203,10 @@ ItemEvents.modification(event => {
     'pneumaticcraft:gun_ammo_incendiary',
     'pneumaticcraft:gun_ammo_weighted',
     'pneumaticcraft:gun_ammo',
+    'pneumaticcraft:pneumatic_boots',
+    'pneumaticcraft:pneumatic_chestplate',
+    'pneumaticcraft:pneumatic_helmet',
+    'pneumaticcraft:pneumatic_leggings',
     'pneumaticcraft:micromissiles',
     'supplementaries:bubble_blower',
     'supplementaries:rope_arrow',
@@ -214,11 +222,26 @@ ItemEvents.modification(event => {
     }
   });
 
-  ['minecraft:wooden_sword', 'minecraft:wooden_pickaxe', 'minecraft:wooden_shovel', 'minecraft:wooden_axe', 'minecraft:wooden_hoe'].forEach(tool => {
-    event.modify(tool, item => {
-      item.maxDamage = 16;
+  /* Pneumatic Armor doesn't have enough durability considering once you break it, all your upgrades disappear 😢 */
+  [
+    'pneumaticcraft:pneumatic_chestplate',
+    'pneumaticcraft:pneumatic_leggings',
+    'pneumaticcraft:pneumatic_helmet',
+    'pneumaticcraft:pneumatic_boots',
+  ].forEach(armor => {
+    event.modify(armor, item => {
+      console.info(`${item.getId().toString()}: Durability ${item.maxDamage} -> ${item.maxDamage * 4}`);
+      armor.maxDamage *= 4;
     });
   });
+
+  [('minecraft:wooden_sword', 'minecraft:wooden_pickaxe', 'minecraft:wooden_shovel', 'minecraft:wooden_axe', 'minecraft:wooden_hoe')].forEach(
+    tool => {
+      event.modify(tool, item => {
+        item.maxDamage = 16;
+      });
+    }
+  );
 });
 
 StartupEvents.registry('minecraft:item', event => {
