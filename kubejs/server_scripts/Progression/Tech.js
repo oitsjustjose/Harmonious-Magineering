@@ -403,6 +403,16 @@ ServerEvents.recipes(event => {
     event.shapeless(mod('wire_copper'), [mod('wirecutter'), '#forge:plates/copper']);
     event.shapeless(mod('wire_aluminum'), [mod('wirecutter'), '#forge:plates/aluminum']);
 
+    /* Treated wood via Create Spout */
+    event.recipes.create.filling(mod('treated_wood_horizontal'), [Fluid.of('immersiveengineering:creosote', 125), '#minecraft:planks']);
+    /* And via IE bottling */
+    event.custom({
+      type: 'immersiveengineering:bottling_machine',
+      fluid: {amount: 125, tag: 'forge:creosote'},
+      input: {tag: 'minecraft:planks'},
+      results: [{item: mod('treated_wood_horizontal')}],
+    });
+
     event.remove(mod('blueprint/component_electronic_adv'));
     event
       .custom({
