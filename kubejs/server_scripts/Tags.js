@@ -17,6 +17,21 @@ ServerEvents.tags('block', event => {
   global.StrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   ores.forEach(ore => event.removeAllTagsFrom(ore));
 
+  event.add('minecraft:planks', [
+    'aether_redux:blightwillow_planks',
+    'aether_redux:cloudcap_planks',
+    'aether_redux:crystal_planks',
+    'aether_redux:fieldsprout_planks',
+    'aether_redux:glacia_planks',
+    'aether_redux:springshroom_planks',
+    'aether:skyroot_planks',
+    'deep_aether:conberry_planks',
+    'deep_aether:cruderoot_planks',
+    'deep_aether:roseroot_planks',
+    'deep_aether:sunroot_planks',
+    'deep_aether:yagroot_planks',
+  ]);
+
   event.add('snowrealmagic:containables', [
     'aether:berry_bush_stem',
     'regions_unexplored:alpha_dandelion',
@@ -483,6 +498,21 @@ ServerEvents.tags('item', event => {
   global.StrippedLumber.logs.forEach(log => event.add('forge:stripped_logs', log));
   global.StrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   ores.forEach(ore => event.removeAllTagsFrom(ore));
+
+  event.add('minecraft:planks', [
+    'aether_redux:blightwillow_planks',
+    'aether_redux:cloudcap_planks',
+    'aether_redux:crystal_planks',
+    'aether_redux:fieldsprout_planks',
+    'aether_redux:glacia_planks',
+    'aether_redux:springshroom_planks',
+    'aether:skyroot_planks',
+    'deep_aether:conberry_planks',
+    'deep_aether:cruderoot_planks',
+    'deep_aether:roseroot_planks',
+    'deep_aether:sunroot_planks',
+    'deep_aether:yagroot_planks',
+  ]);
 
   /* Deduplicate Ash */
   event.remove('forge:ash', 'embers:ash');
