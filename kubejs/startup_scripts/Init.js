@@ -132,7 +132,15 @@ ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
 });
 
 ItemEvents.modification(event => {
-  const durabilityMultiplier = 2;
+  const baseMultiplier = 2;
+  const exceptions = {
+    /* cases where we want more than a *2 multiplier */
+    'pneumaticcraft:pneumatic_chestplate': 4,
+    'pneumaticcraft:pneumatic_leggings': 4,
+    'pneumaticcraft:pneumatic_helmet': 4,
+    'pneumaticcraft:pneumatic_boots': 4,
+  };
+
   const boostBlacklist = [
     'aether:chainmail_gloves',
     'aether:cold_parachute',
@@ -203,10 +211,6 @@ ItemEvents.modification(event => {
     'pneumaticcraft:gun_ammo_incendiary',
     'pneumaticcraft:gun_ammo_weighted',
     'pneumaticcraft:gun_ammo',
-    'pneumaticcraft:pneumatic_boots',
-    'pneumaticcraft:pneumatic_chestplate',
-    'pneumaticcraft:pneumatic_helmet',
-    'pneumaticcraft:pneumatic_leggings',
     'pneumaticcraft:micromissiles',
     'supplementaries:bubble_blower',
     'supplementaries:rope_arrow',
@@ -214,25 +218,14 @@ ItemEvents.modification(event => {
   ];
 
   event.modify(Ingredient.all, item => {
-    if (boostBlacklist.includes(item.getId().toString())) return;
+    let itemId = item.getId().toString();
+    if (boostBlacklist.includes(itemId)) return;
 
     if (item.isDamageable(item.getDefaultInstance())) {
-      console.info(`${item.getId().toString()}: Durability ${item.maxDamage} -> ${item.maxDamage * durabilityMultiplier}`);
-      item.maxDamage *= durabilityMultiplier;
+      const multiplier = Object.keys(exceptions).includes(itemId) ? exceptions[itemId] : baseMultiplier;
+      console.info(`${itemId}: Durability ${item.maxDamage} -> ${item.maxDamage * multiplier}`);
+      item.maxDamage *= multiplier;
     }
-  });
-
-  /* Pneumatic Armor doesn't have enough durability considering once you break it, all your upgrades disappear 😢 */
-  [
-    'pneumaticcraft:pneumatic_chestplate',
-    'pneumaticcraft:pneumatic_leggings',
-    'pneumaticcraft:pneumatic_helmet',
-    'pneumaticcraft:pneumatic_boots',
-  ].forEach(armor => {
-    event.modify(armor, item => {
-      console.info(`${item.getId().toString()}: Durability ${item.maxDamage} -> ${item.maxDamage * 4}`);
-      armor.maxDamage *= 4;
-    });
   });
 
   [('minecraft:wooden_sword', 'minecraft:wooden_pickaxe', 'minecraft:wooden_shovel', 'minecraft:wooden_axe', 'minecraft:wooden_hoe')].forEach(
