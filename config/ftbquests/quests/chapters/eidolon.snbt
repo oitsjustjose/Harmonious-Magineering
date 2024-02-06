@@ -697,6 +697,6 @@
 			y: 15.5d
 		}
 	]
-	subtitle: ["&dDiety or Demon?&r"]
-	title: "&5Eidolon&r"
+	subtitle: ["&dEidolon&r"]
+	title: "&5Diety or Demon?&r"
 }

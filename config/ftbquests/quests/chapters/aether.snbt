@@ -590,6 +590,6 @@
 			y: 1.5d
 		}
 	]
-	subtitle: ["&bCumulus Calamity&r"]
-	title: "&3The Aether&r"
+	subtitle: ["&bThe Aether&r"]
+	title: "&3Cumulus Calamity&r"
 }

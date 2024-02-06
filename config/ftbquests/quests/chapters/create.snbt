@@ -538,6 +538,6 @@
 			y: 8.5d
 		}
 	]
-	subtitle: ["&bNo Voltage, No Problem!&r"]
-	title: "&6Create&r"
+	subtitle: ["&bCreate&r"]
+	title: "&6No Voltage, No Problem!&r"
 }

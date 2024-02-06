@@ -663,6 +663,6 @@
 			y: 12.0d
 		}
 	]
-	subtitle: ["&7Get Pressurized!&r"]
-	title: "&2Pneumaticcraft&r"
+	subtitle: ["&aPneumaticcraft&r"]
+	title: "&2Get Pressurized!&r"
 }

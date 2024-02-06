@@ -382,6 +382,6 @@
 			y: 2.75d
 		}
 	]
-	subtitle: ["&6Some Wires Required&r"]
-	title: "&eImmersive Engineering&r"
+	subtitle: ["&6Immersive Engineering&r"]
+	title: "&eSome Wires Required&r"
 }
