@@ -514,6 +514,14 @@ ServerEvents.tags('item', event => {
     'deep_aether:yagroot_planks',
   ]);
 
+  event.add('forge:tools/wrench', [
+    'mcwbridges:pliers',
+    'prettypipes:wrench',
+    'storagedrawers:drawer_key',
+    'storagedrawers:quantify_key',
+    'storagedrawers:shroud_key',
+  ]);
+
   /* Deduplicate Ash */
   event.remove('forge:ash', 'embers:ash');
   event.remove('forge:dusts/ash', 'embers:ash');
