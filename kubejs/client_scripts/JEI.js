@@ -658,6 +658,7 @@ JEIEvents.hideItems(event => {
     'modularrouters:energy_upgrade',
     'modularrouters:extruder_module_1',
     'modularrouters:extruder_module_2',
+    'pneumaticcraft:air_conditioning_upgrade',
     'pneumaticcraft:biodiesel_bucket',
     'pneumaticcraft:creative_compressed_iron_block',
     'pneumaticcraft:creative_compressor',
