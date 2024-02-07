@@ -67,6 +67,9 @@ ServerEvents.recipes(event => {
     event.replaceInput({output: 'quark:bonded_leather'}, '#forge:leather', 'minecraft:leather');
     event.replaceInput({}, 'quark:moss_paste', 'ecologics:surface_moss');
     event.remove({output: 'quark:moss_paste'});
+
+    event.remove('quark:building/crafting/framed_glass');
+    event.shaped(Item.of('quark:framed_glass', 4), ['NGN', 'GNG', 'NGN'], {G: '#forge:glass/colorless', N: '#forge:nuggets/iron'});
   };
 
   const supplementaries = () => {
