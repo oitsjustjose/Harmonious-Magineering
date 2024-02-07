@@ -1520,7 +1520,7 @@
 	"Chest Searching" = false
 	"Elytra Indicator" = false
 	"Greener Grass" = false
-	"Improved Tooltips" = false
+	"Improved Tooltips" = true
 	"Long Range Pick Block" = false
 	"Microcrafting Helper" = false
 	"Soul Candles" = false
@@ -1569,18 +1569,18 @@
 
 	[client.improved_tooltips]
 		"Attribute Tooltips" = true
-		"Food Tooltips" = true
+		"Food Tooltips" = false
 		"Shulker Tooltips" = true
 		"Map Tooltips" = true
 		"Enchanting Tooltips" = true
-		"Fuel Time Tooltips" = true
+		"Fuel Time Tooltips" = false
 		"Shulker Box Use Colors" = true
-		"Shulker Box Require Shift" = false
-		"Map Require Shift" = false
+		"Shulker Box Require Shift" = true
+		"Map Require Shift" = true
 		#The value of each shank of food.
 		#Tweak this when using mods like Hardcore Hunger which change that value.
 		"Food Divisor" = 2
-		"Show Saturation" = true
+		"Show Saturation" = false
 		"Food Compression Threshold" = 4
 		"Fuel Time Divisor" = 200
 		#Should item attributes be colored relative to your current equipped item?

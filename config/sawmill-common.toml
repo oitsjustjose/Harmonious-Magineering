@@ -6,4 +6,19 @@
 	allow_non_variant = true
 	#List of Mod ids you want to completely exclude from sawmill recipes. All recipes from these mods will be ignored.For more fine control use the sawmill:blacklist item tag
 	mod_blacklist = []
+	#Determines if GUI will have search bar or not. Automatic only enables the bar statically when you have enough mods that add wood recipes. Dynamic changes the gui dynamically depending on how many recipe its displaying
+	#Allowed Values: OFF, ON, AUTOMATIC, DYNAMIC
+	search_bar_mode = "AUTOMATIC"
+	#At how many recipes the search bar should appear
+	#Range: 0 ~ 200
+	search_bar_threshold = 32
+
+	[general.special_costs]
+		#If you would need more of these contact me and I'll make them data driven
+		#Cost of a stick in planks. Set to -1 to disable this override
+		#Range: -1.0 ~ 10.0
+		sticks_cost = 0.4
+		#Cost of a stair block in planks. Set to -1 to disable this override
+		#Range: -1.0 ~ 10.0
+		stairs_cost = 1.0
 
