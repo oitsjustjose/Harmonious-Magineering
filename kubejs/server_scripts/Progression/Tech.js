@@ -507,6 +507,13 @@ ServerEvents.recipes(event => {
       C: 'immersiveengineering:duroplast',
     });
 
+    /* Coal dust intercompat - why are you like this -_- */
+    event.remove('create:milling/coal');
+    event.recipes.create.crushing(
+      [Item.of('mekanism:dust_coal').withChance(1.0), Item.of('minecraft:black_dye').withChance(0.1)],
+      ['minecraft:coal']
+    );
+
     /* Easier recipe once you get into Mek some more :) */
     event.custom({
       type: 'mekanism:combining',
@@ -769,7 +776,7 @@ ServerEvents.recipes(event => {
     /* Capacitor */
     event.custom({
       type: 'mekanism:combining',
-      mainInput: {amount: 3, ingredient: {item: 'immersiveengineering:wirecoil_copper'}},
+      mainInput: {amount: 2, ingredient: {item: 'immersiveengineering:wirecoil_copper'}},
       extraInput: {ingredient: {tag: 'pneumaticcraft:plastic_sheets'}},
       output: {item: 'pneumaticcraft:capacitor'},
     });
@@ -778,7 +785,7 @@ ServerEvents.recipes(event => {
       type: 'immersiveengineering:blueprint',
       category: 'components',
       inputs: [
-        {base_ingredient: {item: 'immersiveengineering:wirecoil_copper'}, count: 3},
+        {base_ingredient: {item: 'immersiveengineering:wirecoil_copper'}, count: 2},
         {base_ingredient: {tag: 'pneumaticcraft:plastic_sheets'}, count: 1},
       ],
       result: {item: 'pneumaticcraft:capacitor'},
