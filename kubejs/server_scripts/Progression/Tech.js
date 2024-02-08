@@ -875,17 +875,7 @@ ServerEvents.recipes(event => {
       B: blank,
     });
 
-    const upgradableModules = [
-      'retrieval_module',
-      'high_priority_module',
-      'low_priority_module',
-      'speed_module',
-      'filter_module',
-      'extraction_module',
-      'crafting_module',
-    ];
-
-    upgradableModules.forEach(module => {
+    ['retrieval_module', 'speed_module', 'filter_module', 'extraction_module', 'crafting_module'].forEach(module => {
       event.shaped(`prettypipes:medium_${module}`, ['BRB', 'BLB', 'BBB'], {
         L: `prettypipes:low_${module}`,
         B: '#forge:nuggets/brass',
@@ -897,6 +887,20 @@ ServerEvents.recipes(event => {
         B: '#forge:plates/brass',
         N: '#forge:nuggets/brass',
         P: 'create:precision_mechanism',
+      });
+    });
+
+    ['high_priority_module', 'low_priority_module'].forEach(module => {
+      event.shaped(`prettypipes:medium_${module}`, ['BRB', 'BLB', 'BBB'], {
+        L: `prettypipes:low_${module}`,
+        B: '#forge:rods/wooden',
+        R: 'minecraft:redstone',
+      });
+
+      event.shaped(`prettypipes:high_${module}`, ['BRB', 'BMB', 'BBB'], {
+        M: `prettypipes:medium_${module}`,
+        B: '#forge:rods/wooden',
+        R: '#forge:nuggets/brass',
       });
     });
 
