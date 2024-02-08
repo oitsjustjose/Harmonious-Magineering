@@ -70,6 +70,13 @@ ServerEvents.recipes(event => {
 
     event.remove('quark:building/crafting/framed_glass');
     event.shaped(Item.of('quark:framed_glass', 4), ['NGN', 'GNG', 'NGN'], {G: '#forge:glass/colorless', N: '#forge:nuggets/iron'});
+
+    /* Re-do branch stick crafting */
+    event.remove({output: 'minecraft:stick', input: '#regions_unexplored:branches'});
+    event.shaped(Item.of('minecraft:stick', 9), ['L', 'L'], {L: '#regions_unexplored:branches'});
+
+    event.shaped(Item.of('minecraft:stick', 16), ['L', 'L'], {L: '#forge:lumber/vanilla'});
+    event.shaped(Item.of('aether:skyroot_stick', 16), ['L', 'L'], {L: '#forge:lumber/aether'});
   };
 
   const supplementaries = () => {
