@@ -21,6 +21,9 @@ ServerEvents.recipes(event => {
 
   const dustSmelting = () => {
     Object.keys(global.Metals).forEach(mat => {
+      // Zinc doesn't have a dust really. Skip it.
+      if (mat == 'zinc') return;
+
       const entry = global.Metals[mat];
       const idBase = `${entry.ingot.replace(':', '_')}_from_${entry.dust.replace(':', '_')}`;
 
@@ -120,6 +123,9 @@ ServerEvents.recipes(event => {
   };
 
   const oreSmelting = () => {
+    event.remove('create:smelting/zinc_ingot_from_crushed');
+    event.remove('create:blasting/zinc_ingot_from_crushed');
+
     Object.keys(global.Metals).forEach(mat => {
       let metal = global.Metals[mat];
       // Remove raw ore -> ingot blasting/smelting
@@ -135,7 +141,48 @@ ServerEvents.recipes(event => {
       // Whole ore smelting/blasting -> 1 ingot, always
       event.smelting(metal.ingot, `#forge:ores/${mat}`).xp(1.0);
       event.blasting(metal.ingot, `#forge:ores/${mat}`).xp(1.0);
+      // Crushed Ore Smelting
+      event.smelting(metal.ingot, metal.crushed).xp(0.3);
+      event.blasting(metal.ingot, metal.crushed).xp(0.3);
     });
+  };
+
+  /* Some crushed metals don't have a "complement" item when washed. Let's fix that :) */
+  const oreWashing = () => {
+    /* Uranium devolves into Lead, so let's make it output some lead */
+    event.remove({type: 'create:splashing', input: 'create:crushed_raw_uranium'});
+    event.recipes.create.splashing(
+      [Item.of('mekanism:nugget_uranium', 9), Item.of('eidolon:lead_nugget').withChance(0.1)],
+      'create:crushed_raw_uranium'
+    );
+
+    /* Silver & Lead often form as Galena, so they can have a chance of providing each other */
+    event.remove({type: 'create:splashing', input: 'create:crushed_raw_lead'});
+    event.remove({type: 'create:splashing', input: 'create:crushed_raw_silver'});
+
+    event.recipes.create.splashing([Item.of('eidolon:lead_nugget', 9), Item.of('eidolon:silver_nugget').withChance(0.05)], 'create:crushed_raw_lead');
+    event.recipes.create.splashing(
+      [Item.of('eidolon:silver_nugget', 9), Item.of('eidolon:lead_nugget').withChance(0.05)],
+      'create:crushed_raw_silver'
+    );
+
+    /* Nickel often forms as Limonite, so it can have trace amounts of Iron */
+    event.remove({type: 'create:splashing', input: 'create:crushed_raw_nickel'});
+    event.recipes.create.splashing(
+      [Item.of('immersiveengineering:nugget_nickel', 9), Item.of('minecraft:iron_nugget').withChance(0.1)],
+      'create:crushed_raw_nickel'
+    );
+
+    /* Tin often forms in veins with Fluorite, so that works here */
+    event.remove({type: 'create:splashing', input: 'create:crushed_raw_tin'});
+    event.recipes.create.splashing([Item.of('mekanism:nugget_tin', 9), Item.of('mekanism:fluorite_gem').withChance(0.1)], 'create:crushed_raw_tin');
+
+    /* Aluminum often forms with Clay, Salt & Silicon, so that works too :) */
+    event.remove({type: 'create:splashing', input: 'create:crushed_raw_aluminum'});
+    event.recipes.create.splashing(
+      [Item.of('immersiveengineering:nugget_aluminum', 9), Item.of('mekanism:salt').withChance(0.1)],
+      'create:crushed_raw_aluminum'
+    );
   };
 
   const plateCompat = () => {
@@ -209,5 +256,5 @@ ServerEvents.recipes(event => {
     });
   };
 
-  [createAutomation, dustSmelting, metalSmithing, nukeOsmium, oreSmelting, plateCompat, rods, silverAndLead].forEach(module => module());
+  [createAutomation, dustSmelting, metalSmithing, nukeOsmium, oreSmelting, oreWashing, plateCompat, rods, silverAndLead].forEach(module => module());
 });
