@@ -2,14 +2,21 @@
 
 ServerEvents.recipes(event => {
   const createAutomation = () => {
-    // Remove all infinite metal recipes from Create
+    /* Remove all infinite metal recipes from Create */
     event.remove('create:splashing/gravel');
     event.recipes.create.splashing(Item.of('minecraft:flint').withChance(0.25), 'minecraft:gravel').id('create:splashing/gravel');
 
     event.remove('create:splashing/red_sand');
     event.recipes.create.splashing(Item.of('minecraft:dead_bush').withChance(0.05), 'minecraft:red_sand').id('create:splashing/red_sand');
 
+    /* Soul sand shouldn't have "value" like this */
     event.remove('create:splashing/soul_sand');
+
+    /* Remove the ability to process stones into crushed ore */
+    ['asurine', 'crimsite', 'diorite', 'ochrum', 'tuff', 'veridium'].forEach(mat => {
+      event.remove(`create:crushing/${mat}`);
+      event.remove(`create:crushing/${mat}_recycling`);
+    });
   };
 
   const dustSmelting = () => {
