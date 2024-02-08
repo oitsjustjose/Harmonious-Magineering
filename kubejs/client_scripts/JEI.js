@@ -663,6 +663,7 @@ JEIEvents.hideItems(event => {
     'spawn:snail_spawn_egg',
     'storagedrawers:creative_storage_upgrade',
     'storagedrawers:creative_vending_upgrade',
+    'supplementaries:rope',
     'waystones:black_sharestone',
     'waystones:blue_sharestone',
     'waystones:brown_sharestone',

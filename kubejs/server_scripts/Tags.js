@@ -242,14 +242,6 @@ ServerEvents.tags('item', event => {
     event.add('vtweaks:colored_flag', allButWhite('supplementaries', null, 'flag'));
   };
 
-  /* Define a set of custom curio slots */
-  const curios = () => {
-    ['minecraft:elytra', 'mekanism:hdpe_elytra'].forEach(elytra => {
-      event.remove('curios:back', elytra);
-      event.add('curios:elytra', elytra);
-    });
-  };
-
   /* Used to define tags that are excluded in ItemGator Gates */
   const exclusions = () => {
     event.add('create:exception', [
@@ -501,6 +493,143 @@ ServerEvents.tags('item', event => {
     ]);
   };
 
+  /* Custom environments for Caged Mobs' mobs */
+  const environments = () => {
+    event.add('forge:ocean_blocks', [
+      'minecraft:brain_coral_block',
+      'minecraft:bubble_coral_block',
+      'minecraft:dead_brain_coral_block',
+      'minecraft:dead_bubble_coral_block',
+      'minecraft:dead_fire_coral_block',
+      'minecraft:dead_horn_coral_block',
+      'minecraft:dead_tube_coral_block',
+      'minecraft:fire_coral_block',
+      'minecraft:gravel',
+      'minecraft:horn_coral_block',
+      'minecraft:sand',
+      'minecraft:tube_coral_block',
+    ]);
+
+    event.add('forge:actual_underground_stones', [
+      'create:asurine',
+      'create:crimsite',
+      'create:limestone',
+      'create:scorchia',
+      'create:scoria',
+      'create:veridium',
+      'minecraft:andesite',
+      'minecraft:deepslate',
+      'minecraft:dripstone_block',
+      'minecraft:diorite',
+      'minecraft:granite',
+      'minecraft:tuff',
+      'minecraft:calcite',
+      'minecraft:calcite',
+      'regions_unexplored:argillite',
+      'regions_unexplored:chalk',
+      'regions_unexplored:mossy_stone',
+    ]);
+
+    event.add('forge:podzol', [
+      'regions_unexplored:silt_podzol',
+      'minecraft:podzol',
+      'regions_unexplored:peat_farmland',
+      'regions_unexplored:peat_podzol',
+      'regions_unexplored:peat_coarse_dirt',
+      'regions_unexplored:peat_dirt',
+      'regions_unexplored:peat_grass_block',
+    ]);
+
+    event.add('minecraft:mushroom_hyphae', [
+      'aether_redux:cloudcap_hyphae',
+      'aether_redux:springshroom_hyphae',
+      'aether_redux:stripped_cloudcap_hyphae',
+      'minecraft:crimson_hyphae',
+      'minecraft:stripped_crimson_hyphae',
+      'minecraft:stripped_warped_hyphae',
+      'minecraft:warped_hyphae',
+      'regions_unexplored:blue_bioshroom_hyphae',
+      'regions_unexplored:green_bioshroom_hyphae',
+      'regions_unexplored:pink_bioshroom_hyphae',
+      'regions_unexplored:stripped_blue_bioshroom_hyphae',
+      'regions_unexplored:stripped_green_bioshroom_hyphae',
+      'regions_unexplored:stripped_pink_bioshroom_hyphae',
+      'regions_unexplored:stripped_yellow_bioshroom_hyphae',
+      'regions_unexplored:yellow_bioshroom_hyphae',
+    ]);
+  };
+
+  /* Clean up various food things */
+  const foods = () => {
+    /* Add quail eggs to the Egg tag */
+    event.add('forge:eggs', 'aether_redux:eggs_for_blueberry_pie');
+    /* Add Skyroot Milk bucket to the milk tag */
+    event.add('forge:milk', 'aether:skyroot_milk_bucket');
+    /* Salmonberry compat */
+    event.add('forge:berries', 'regions_unexplored:salmonberry');
+    event.add('forge:fruits', 'regions_unexplored:salmonberry');
+    event.add('forge:fruits/berries', 'regions_unexplored:salmonberry');
+    event.add('forge:fruits/salmonberries', 'regions_unexplored:salmonberry');
+    event.add('forge:fruits/sweet', 'regions_unexplored:salmonberry');
+  };
+
+  /* Lumber variants and cleanup */
+  const lumber = () => {
+    global.StrippedLumber.logs.forEach(log => event.add('forge:stripped_logs', log));
+    global.StrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
+
+    /* Polishing tag */
+    event.remove('minecraft:planks', 'eidolon:polished_planks');
+    event.add('custom:polishable_planks', ['#minecraft:planks', '#aether:planks_crafting']);
+
+    /* Sawdust Intercompat */
+    event.removeAllTagsFrom('immersiveengineering:dust_wood');
+
+    /* Vanilla-adjacent set of logs for 16x stick crafting */
+    event.add('forge:lumber/vanilla', [
+      '#ecologics:azalea_logs',
+      '#ecologics:coconut_logs',
+      '#ecologics:flowering_azalea_logs',
+      '#ecologics:walnut_logs',
+      '#eidolon:illwood_logs',
+      '#minecraft:acacia_logs',
+      '#minecraft:birch_logs',
+      '#minecraft:cherry_logs',
+      '#minecraft:dark_oak_logs',
+      '#minecraft:jungle_logs',
+      '#minecraft:mangrove_logs',
+      '#minecraft:oak_logs',
+      '#minecraft:spruce_logs',
+      '#regions_unexplored:baobab_logs',
+      '#regions_unexplored:blackwood_logs',
+      '#regions_unexplored:cypress_logs',
+      '#regions_unexplored:eucalyptus_logs',
+      '#regions_unexplored:joshua_logs',
+      '#regions_unexplored:kapok_logs',
+      '#regions_unexplored:larch_logs',
+      '#regions_unexplored:magnolia_logs',
+      '#regions_unexplored:maple_logs',
+      '#regions_unexplored:mauve_logs',
+      '#regions_unexplored:palm_logs',
+      '#regions_unexplored:pine_logs',
+      '#regions_unexplored:redwood_logs',
+      '#regions_unexplored:socotra_logs',
+      '#regions_unexplored:willow_logs',
+      '#spawn:rotten_logs',
+    ]);
+
+    /* Aether-adjacent set of logs for 16x skyroot stick crafting */
+    event.add('forge:lumber/aether', [
+      '#aether:golden_oak_logs',
+      '#aether:skyroot_logs',
+      '#deep_aether:conberry_logs',
+      '#deep_aether:cruderoot_logs',
+      '#deep_aether:roseroot_logs',
+      '#deep_aether:sunroot_logs',
+      '#deep_aether:yagroot_logs',
+    ]);
+  };
+
   /* Osmium just isn't in our pack at all and should gets removed here */
   const osmium = () => {
     ['ingots', 'dusts', 'storage_blocks', 'raw_materials', 'ores', 'nuggets'].forEach(type => event.removeAll(`forge:${type}/osmium`));
@@ -508,41 +637,16 @@ ServerEvents.tags('item', event => {
     event.removeAll(`forge:storage_blocks/raw_osmium`);
   };
 
-  global.StrippedLumber.logs.forEach(log => event.add('forge:stripped_logs', log));
-  global.StrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
+  /* Remove all tags from unused ore variants */
   ores.forEach(ore => event.removeAllTagsFrom(ore));
-
-  event.add('minecraft:planks', [
-    'aether_redux:blightwillow_planks',
-    'aether_redux:cloudcap_planks',
-    'aether_redux:crystal_planks',
-    'aether_redux:fieldsprout_planks',
-    'aether_redux:glacia_planks',
-    'aether_redux:springshroom_planks',
-    'aether:skyroot_planks',
-    'deep_aether:conberry_planks',
-    'deep_aether:cruderoot_planks',
-    'deep_aether:roseroot_planks',
-    'deep_aether:sunroot_planks',
-    'deep_aether:yagroot_planks',
-  ]);
-
-  event.add('forge:tools/wrench', [
-    'mcwbridges:pliers',
-    'prettypipes:wrench',
-    'storagedrawers:drawer_key',
-    'storagedrawers:quantify_key',
-    'storagedrawers:shroud_key',
-  ]);
-
+  /* Add other wrench-adjacent items to the wrench tag */
+  event.add('forge:tools/wrench', ['mcwbridges:pliers', 'prettypipes:wrench']);
   /* Deduplicate Ash */
   event.remove('forge:ash', 'embers:ash');
   event.remove('forge:dusts/ash', 'embers:ash');
   /* Rope Intercompat */
-  event.remove('forge:rope', 'farmersdelight:rope');
-  event.remove('supplementaries:ropes', 'farmersdelight:rope');
-  /* Sawdust Intercompat */
-  event.removeAllTagsFrom('immersiveengineering:dust_wood');
+  event.remove('forge:rope', 'supplementaries:rope');
+  event.remove('supplementaries:ropes', 'supplementaries:rope');
   /* Tallow / Fat Intercompat */
   event.add('forge:tallow', 'delightful:animal_fat');
   /* Plastic Intercompat */
@@ -552,23 +656,10 @@ ServerEvents.tags('item', event => {
   /* More Obsidian Variants */
   event.add('forge:obsidian', 'minecraft:crying_obsidian');
   event.add('forge:mud', ['regions_unexplored:silt_mud', 'regions_unexplored:peat_mud', 'minecraft:mud']);
-  /* Add quail eggs to the Egg tag */
-  event.add('forge:eggs', 'aether_redux:eggs_for_blueberry_pie');
-  /* Add Skyroot Milk bucket to the milk tag */
-  event.add('forge:milk', 'aether:skyroot_milk_bucket');
-  /* Salmonberry compat */
-  event.add('forge:berries', 'regions_unexplored:salmonberry');
-  event.add('forge:fruits', 'regions_unexplored:salmonberry');
-  event.add('forge:fruits/berries', 'regions_unexplored:salmonberry');
-  event.add('forge:fruits/salmonberries', 'regions_unexplored:salmonberry');
-  event.add('forge:fruits/sweet', 'regions_unexplored:salmonberry');
   /* Add Silt Bricks to the brick tag */
   event.add('forge:ingots/brick', 'twigs:silt_brick');
   /* Swet Bols */
   event.add('aether:swet_balls', ['aether_redux:golden_swet_ball', 'aether_redux:vanilla_swet_ball', 'deep_aether:golden_swet_ball']);
-  /* Polishing tag */
-  event.remove('minecraft:planks', 'eidolon:polished_planks');
-  event.add('custom:polishable_planks', ['#minecraft:planks', '#aether:planks_crafting']);
   /* Saltpeter cleanup */
   event.remove('forge:dusts/saltpeter', 'bloodmagic:saltpeter');
   /* PNC Upgrades should use Upgrade Matrices */
@@ -606,70 +697,7 @@ ServerEvents.tags('item', event => {
     'quark:warped_trapped_chest',
   ].forEach(x => event.removeAllTagsFrom(x));
 
-  event.add('forge:ocean_blocks', [
-    'minecraft:brain_coral_block',
-    'minecraft:bubble_coral_block',
-    'minecraft:dead_brain_coral_block',
-    'minecraft:dead_bubble_coral_block',
-    'minecraft:dead_fire_coral_block',
-    'minecraft:dead_horn_coral_block',
-    'minecraft:dead_tube_coral_block',
-    'minecraft:fire_coral_block',
-    'minecraft:gravel',
-    'minecraft:horn_coral_block',
-    'minecraft:sand',
-    'minecraft:tube_coral_block',
-  ]);
-
-  event.add('forge:actual_underground_stones', [
-    'create:asurine',
-    'create:crimsite',
-    'create:limestone',
-    'create:scorchia',
-    'create:scoria',
-    'create:veridium',
-    'minecraft:andesite',
-    'minecraft:deepslate',
-    'minecraft:dripstone_block',
-    'minecraft:diorite',
-    'minecraft:granite',
-    'minecraft:tuff',
-    'minecraft:calcite',
-    'minecraft:calcite',
-    'regions_unexplored:argillite',
-    'regions_unexplored:chalk',
-    'regions_unexplored:mossy_stone',
-  ]);
-
-  event.add('forge:podzol', [
-    'regions_unexplored:silt_podzol',
-    'minecraft:podzol',
-    'regions_unexplored:peat_farmland',
-    'regions_unexplored:peat_podzol',
-    'regions_unexplored:peat_coarse_dirt',
-    'regions_unexplored:peat_dirt',
-    'regions_unexplored:peat_grass_block',
-  ]);
-
-  event.add('minecraft:mushroom_hyphae', [
-    'aether_redux:cloudcap_hyphae',
-    'aether_redux:springshroom_hyphae',
-    'aether_redux:stripped_cloudcap_hyphae',
-    'minecraft:crimson_hyphae',
-    'minecraft:stripped_crimson_hyphae',
-    'minecraft:stripped_warped_hyphae',
-    'minecraft:warped_hyphae',
-    'regions_unexplored:blue_bioshroom_hyphae',
-    'regions_unexplored:green_bioshroom_hyphae',
-    'regions_unexplored:pink_bioshroom_hyphae',
-    'regions_unexplored:stripped_blue_bioshroom_hyphae',
-    'regions_unexplored:stripped_green_bioshroom_hyphae',
-    'regions_unexplored:stripped_pink_bioshroom_hyphae',
-    'regions_unexplored:stripped_yellow_bioshroom_hyphae',
-    'regions_unexplored:yellow_bioshroom_hyphae',
-  ]);
-
-  [colors, curios, exclusions, osmium].forEach(module => module());
+  [colors, environments, exclusions, foods, lumber, osmium].forEach(module => module());
 });
 
 ServerEvents.tags('entity_type', event => {
