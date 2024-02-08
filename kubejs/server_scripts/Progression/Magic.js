@@ -250,22 +250,13 @@ ServerEvents.recipes(event => {
 
     const cuttingFluid = Ingredient.of('#bloodmagic:arc/cuttingfluid');
     const explosive = Ingredient.of('#bloodmagic:arc/explosive');
-    [
-      {material: 'iron', dust: 'mekanism:dust_iron'},
-      {material: 'gold', dust: 'mekanism:dust_gold'},
-      {material: 'copper', dust: 'mekanism:dust_copper'},
-      {material: 'aluminum', dust: 'immersiveengineering:dust_aluminum'},
-      {material: 'lead', dust: 'mekanism:dust_lead'},
-      {material: 'nickel', dust: 'immersiveengineering:dust_nickel'},
-      {material: 'silver', dust: 'immersiveengineering:dust_silver'},
-      {material: 'tin', dust: 'mekanism:dust_tin'},
-      {material: 'uranium', dust: 'mekanism:dust_uranium'},
-      {material: 'zinc', dust: 'create:crushed_raw_zinc'},
-    ].forEach(x => {
-      const dust = Item.of(x.dust);
-      ARC(dust.withCount(2), Ingredient.of(`#forge:ores/${x.material}`), cuttingFluid, true);
-      ARC(dust, Ingredient.of(`#forge:ingots/${x.material}`), explosive);
-      ARC(dust, Ingredient.of(`#forge:raw_materials/${x.material}`), cuttingFluid, false);
+    Object.keys(global.Metals).forEach(material => {
+      const entry = global.Metals[material];
+      const dust = Item.of(entry.crushed);
+
+      ARC(dust.withCount(2), Ingredient.of(`#forge:ores/${material}`), cuttingFluid, true);
+      ARC(dust, Ingredient.of(`#forge:ingots/${material}`), explosive);
+      ARC(dust, Ingredient.of(`#forge:raw_materials/${material}`), cuttingFluid, false);
     });
 
     // Arcane Ashes should require Enchanted Ash from Eidolon

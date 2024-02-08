@@ -252,12 +252,8 @@ ServerEvents.tags('item', event => {
 
   /* Used to define tags that are excluded in ItemGator Gates */
   const exclusions = () => {
-    event.add('create:cosmetics', [
-      '#forge:dusts',
-      '#forge:gems',
-      '#forge:ingots',
-      '#forge:raw_materials',
-      '#forge:storage_blocks',
+    event.add('create:exception', [
+      '#create:crushed_raw_materials',
       '#create:stone_types/andesite',
       '#create:stone_types/asurine',
       '#create:stone_types/calcite',
@@ -272,6 +268,11 @@ ServerEvents.tags('item', event => {
       '#create:stone_types/scoria',
       '#create:stone_types/tuff',
       '#create:stone_types/veridium',
+      '#forge:dusts',
+      '#forge:gems',
+      '#forge:ingots',
+      '#forge:raw_materials',
+      '#forge:storage_blocks',
       'create:acacia_window_pane',
       'create:acacia_window',
       'create:birch_window_pane',
@@ -283,10 +284,14 @@ ServerEvents.tags('item', event => {
       'create:copper_tile_slab',
       'create:copper_tile_stairs',
       'create:copper_tiles',
+      'create:crafting_blueprint',
       'create:crimson_window_pane',
       'create:crimson_window',
+      'create:crushed_raw_zinc',
       'create:dark_oak_window_pane',
       'create:dark_oak_window',
+      'create:deepslate_zinc_ore',
+      'create:dough',
       'create:exposed_copper_shingle_slab',
       'create:exposed_copper_shingle_stairs',
       'create:exposed_copper_shingles',
@@ -313,6 +318,9 @@ ServerEvents.tags('item', event => {
       'create:oxidized_copper_tile_slab',
       'create:oxidized_copper_tile_stairs',
       'create:oxidized_copper_tiles',
+      'create:powered_latch',
+      'create:raw_zinc_block',
+      'create:raw_zinc',
       'create:spruce_window_pane',
       'create:spruce_window',
       'create:tiled_glass_pane',
@@ -351,6 +359,11 @@ ServerEvents.tags('item', event => {
       'create:weathered_copper_tile_slab',
       'create:weathered_copper_tile_stairs',
       'create:weathered_copper_tiles',
+      'create:wheat_flour',
+      'create:zinc_block',
+      'create:zinc_ingot',
+      'create:zinc_nugget',
+      'create:zinc_ore',
     ]);
 
     event.add('pneumaticcraft:exception', [

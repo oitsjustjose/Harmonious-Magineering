@@ -52,22 +52,7 @@ ServerEvents.recipes(event => {
     tag: 'create',
     mod: 'create',
     substitute: {item: 'kubejs:unknown_kinetic_item'},
-    exceptions: [
-      {item: 'create:crafting_blueprint'},
-      {item: 'create:crushed_raw_zinc'},
-      {item: 'create:deepslate_zinc_ore'},
-      {item: 'create:dough'},
-      {item: 'create:powered_latch'},
-      {item: 'create:raw_zinc_block'},
-      {item: 'create:raw_zinc_block'},
-      {item: 'create:raw_zinc'},
-      {item: 'create:wheat_flour'},
-      {item: 'create:zinc_block'},
-      {item: 'create:zinc_ingot'},
-      {item: 'create:zinc_nugget'},
-      {item: 'create:zinc_ore'},
-      {tag: 'create:cosmetics'},
-    ],
+    exceptions: [{tag: 'create:exception'}],
   });
 
   event.custom({

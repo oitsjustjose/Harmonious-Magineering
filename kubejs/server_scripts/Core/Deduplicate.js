@@ -241,16 +241,6 @@ ServerEvents.recipes(event => {
     {in: 'mekanism:ingot_osmium', out: 'mekanism:ingot_steel'},
     {in: 'mekanism:nugget_osmium', out: 'mekanism:nugget_steel'},
     {in: 'mekanism:nugget_osmium', out: 'mekanism:nugget_steel'},
-    /* Replace dusts with Create crushed ore */
-    {in: 'create:crushed_raw_aluminum', out: 'immersiveengineering:dust_aluminum'},
-    {in: 'create:crushed_raw_copper', out: 'mekanism:dust_copper'},
-    {in: 'create:crushed_raw_gold', out: 'mekanism:dust_gold'},
-    {in: 'create:crushed_raw_iron', out: 'mekanism:dust_iron'},
-    {in: 'create:crushed_raw_lead', out: 'mekanism:dust_lead'},
-    {in: 'create:crushed_raw_nickel', out: 'immersiveengineering:dust_nickel'},
-    {in: 'create:crushed_raw_silver', out: 'immersiveengineering:dust_silver'},
-    {in: 'create:crushed_raw_tin', out: 'mekanism:dust_tin'},
-    {in: 'create:crushed_raw_uranium', out: 'mekanism:dust_uranium'},
     /* Saltpeter / Nitrate Dust dedup */
     {in: 'bloodmagic:saltpeter', out: 'immersiveengineering:dust_saltpeter'},
   ];
