@@ -90,9 +90,6 @@
 			[general.types.leaves_type.architects_palette]
 				twisted = true
 
-			[general.types.leaves_type.outer_end]
-				azure = true
-
 			[general.types.leaves_type.quark]
 				ancient = true
 				blue_blossom = true
@@ -100,6 +97,9 @@
 				orange_blossom = true
 				yellow_blossom = true
 				red_blossom = true
+
+			[general.types.leaves_type.outer_end]
+				azure = true
 
 		[general.types.wood_type]
 
@@ -161,13 +161,13 @@
 			[general.types.wood_type.architects_palette]
 				twisted = true
 
-			[general.types.wood_type.outer_end]
-				azure = true
-
 			[general.types.wood_type.quark]
 				azalea = true
 				ancient = true
 				blossom = true
+
+			[general.types.wood_type.outer_end]
+				azure = true
 
 	[general.entries]
 

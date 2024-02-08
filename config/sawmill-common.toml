@@ -12,13 +12,13 @@
 	#At how many recipes the search bar should appear
 	#Range: 0 ~ 200
 	search_bar_threshold = 32
+	#Makes so planks recipes can only craft items with 1 input plank. Disable to allow more recipes
+	limit_planks_input_to_one = true
+	#Maximum discount that sawmill will given when converting recipes. Unit is percentage of input item
+	#Range: 0.0 ~ 1.0
+	max_discount = 0.35
 
-	[general.special_costs]
-		#If you would need more of these contact me and I'll make them data driven
-		#Cost of a stick in planks. Set to -1 to disable this override
-		#Range: -1.0 ~ 10.0
-		sticks_cost = 0.4
-		#Cost of a stair block in planks. Set to -1 to disable this override
-		#Range: -1.0 ~ 10.0
-		stairs_cost = 1.0
+	#This is a map of wood object type to its cost in planks. Its used to add some discount to some special blocks.Change this if say you want all fences to cost 1 plank. Not all keys will work here bt you can try modded ones if you hae Every Compat
+	[general.special_recipe_costs]
+		stairs = 1.0
 
