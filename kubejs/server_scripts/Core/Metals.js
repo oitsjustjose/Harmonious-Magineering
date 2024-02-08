@@ -20,26 +20,17 @@ ServerEvents.recipes(event => {
   };
 
   const dustSmelting = () => {
-    [
-      {dust: 'immersiveengineering:dust_aluminum', ingot: 'immersiveengineering:ingot_aluminum'},
-      {dust: 'immersiveengineering:dust_nickel', ingot: 'immersiveengineering:ingot_nickel'},
-      {dust: 'immersiveengineering:dust_silver', ingot: 'eidolon:silver_ingot'},
-      {dust: 'mekanism:dust_copper', ingot: 'minecraft:copper_ingot'},
-      {dust: 'mekanism:dust_gold', ingot: 'minecraft:gold_ingot'},
-      {dust: 'mekanism:dust_iron', ingot: 'minecraft:iron_ingot'},
-      {dust: 'mekanism:dust_lead', ingot: 'eidolon:lead_ingot'},
-      {dust: 'mekanism:dust_tin', ingot: 'mekanism:ingot_tin'},
-      {dust: 'mekanism:dust_uranium', ingot: 'mekanism:ingot_uranium'},
-    ].forEach(pair => {
-      const idBase = `${pair.ingot.replace(':', '_')}_from_${pair.dust.replace(':', '_')}`;
+    Object.keys(global.Metals).forEach(mat => {
+      const entry = global.Metals[mat];
+      const idBase = `${entry.ingot.replace(':', '_')}_from_${entry.dust.replace(':', '_')}`;
 
-      event.remove({type: 'minecraft:blasting', input: pair.dust});
-      event.remove({type: 'minecraft:blasting', output: pair.ingot});
-      event.remove({type: 'minecraft:smelting', input: pair.dust});
-      event.remove({type: 'minecraft:smelting', output: pair.ingot});
+      event.remove({type: 'minecraft:blasting', input: entry.dust});
+      event.remove({type: 'minecraft:blasting', output: entry.ingot});
+      event.remove({type: 'minecraft:smelting', input: entry.dust});
+      event.remove({type: 'minecraft:smelting', output: entry.ingot});
 
-      event.smelting(pair.ingot, pair.dust).xp(0.33).id(`${idBase}_smelting`);
-      event.blasting(pair.ingot, pair.dust).xp(0.33).id(`${idBase}_blasting`);
+      event.smelting(entry.ingot, entry.dust).xp(0.33).id(`${idBase}_smelting`);
+      event.blasting(entry.ingot, entry.dust).xp(0.33).id(`${idBase}_blasting`);
     });
   };
 
