@@ -243,6 +243,20 @@ ServerEvents.recipes(event => {
       event.remove({type: 'bloodmagic:arc', input: `#forge:ingots/${metal}`});
       event.remove({type: 'bloodmagic:arc', input: `#forge:ores/${metal}`});
       event.remove({type: 'bloodmagic:arc', input: `#forge:raw_materials/${metal}`});
+
+      /* I want actual *dust* to be only obtainable via IE or above */
+      event.remove(`bloodmagic:arc/dustsfrom_gravel_${metal}`);
+      event
+        .custom({
+          type: 'bloodmagic:arc',
+          tool: {tag: 'bloodmagic:arc/cuttingfluid'},
+          input: {tag: `bloodmagic:gravels/${metal}`},
+          inputsize: 1,
+          mainoutputchance: 0.0,
+          consumeingredient: false,
+          output: {item: global.Metals[metal].crushed},
+        })
+        .id(`bloodmagic:arc/dustsfrom_gravel_${metal}`);
     });
 
     event.remove('bloodmagic:alchemytable/sand_iron');
