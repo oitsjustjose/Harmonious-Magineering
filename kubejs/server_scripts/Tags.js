@@ -378,6 +378,7 @@ ServerEvents.tags('item', event => {
       'immersiveengineering:bannerpattern_wolf_l',
       'immersiveengineering:bannerpattern_wolf_r',
       'immersiveengineering:bannerpattern_wolf',
+      'immersiveengineering:biodiesel_bucket',
       'immersiveengineering:coal_coke',
       'immersiveengineering:coke',
       'immersiveengineering:concrete_brick_cracked',
@@ -398,6 +399,7 @@ ServerEvents.tags('item', event => {
       'immersiveengineering:dust_nickel',
       'immersiveengineering:dust_saltpeter',
       'immersiveengineering:ersatz_leather',
+      'immersiveengineering:ethanol_bucket',
       'immersiveengineering:hemp_fiber',
       'immersiveengineering:hempcrete_brick_cracked',
       'immersiveengineering:hempcrete_brick',
@@ -735,6 +737,9 @@ ServerEvents.tags('fluid', event => {
 
   event.remove('forge:biodiesel', 'pneumaticcraft:biodiesel');
   event.remove('forge:biodiesel', 'pneumaticcraft:biodiesel_flowing');
+
+  event.remove('forge:ethanol', 'pneumaticcraft:ethanol');
+  event.remove('forge:ethanol', 'pneumaticcraft:ethanol_flowing');
 });
 
 ServerEvents.tags('dimension_type', event => {

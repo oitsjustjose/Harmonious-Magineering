@@ -4,6 +4,7 @@ JEIEvents.removeCategories(event => {
 
 JEIEvents.hideFluids(event => {
   event.hide('pneumaticcraft:biodiesel');
+  event.hide('pneumaticcraft:ethanol');
 });
 
 JEIEvents.addItems(event => {
@@ -654,6 +655,7 @@ JEIEvents.hideItems(event => {
     'pneumaticcraft:creative_compressed_iron_block',
     'pneumaticcraft:creative_compressor',
     'pneumaticcraft:creative_upgrade',
+    'pneumaticcraft:ethanol_bucket',
     'pneumaticcraft:thaumcraft_upgrade',
     'pneumaticcraft:wheat_flour',
     'quark:moss_paste',
