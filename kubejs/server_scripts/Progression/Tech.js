@@ -466,12 +466,11 @@ ServerEvents.recipes(event => {
       result: {item: mod('component_steel'), count: 3},
     });
 
-    event.custom({
-      type: 'create:mixing',
-      heatRequirement: 'heated',
-      ingredients: [{amount: 20, fluidTag: 'minecraft:water'}, {item: 'minecraft:redstone'}],
-      results: [{amount: 20, fluid: 'immersiveengineering:redstone_acid'}],
-    });
+    event.recipes.create.mixing(Fluid.of(mod('redstone_acid'), 20), [Fluid.of('minecraft:water', 20), Item.of('minecraft:redstone')]).heated();
+
+    // Make the scaffolding variants craftable via Create so that you can make steel scaffolding (for a metal  press) without the super cheesy "metal stick" rod recipes
+    event.recipes.create.deploying(mod('steel_scaffolding_standard'), ['minecraft:scaffolding', '#forge:ingots/steel']);
+    event.recipes.create.deploying(mod('alu_scaffolding_standard'), ['minecraft:scaffolding', '#forge:ingots/aluminum']);
 
     steel();
   };
