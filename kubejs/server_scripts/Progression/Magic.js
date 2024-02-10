@@ -263,15 +263,89 @@ ServerEvents.recipes(event => {
     event.remove('bloodmagic:alchemytable/sand_gold');
 
     const cuttingFluid = Ingredient.of('#bloodmagic:arc/cuttingfluid');
-    const explosive = Ingredient.of('#bloodmagic:arc/explosive');
     Object.keys(global.Metals).forEach(material => {
       const entry = global.Metals[material];
-      const dust = Item.of(entry.crushed);
-
-      ARC(dust.withCount(2), Ingredient.of(`#forge:ores/${material}`), cuttingFluid, true);
-      ARC(dust, Ingredient.of(`#forge:ingots/${material}`), explosive);
-      ARC(dust, Ingredient.of(`#forge:raw_materials/${material}`), cuttingFluid, false);
+      const crushed = Item.of(entry.crushed);
+      ARC(crushed.withCount(2), Ingredient.of(`#forge:ores/${material}`), cuttingFluid, true);
+      ARC(crushed, Ingredient.of(`#forge:raw_materials/${material}`), cuttingFluid, false);
     });
+
+    // Some Bloodmagic Recipes use *dust*, but we want to gate dusts for IE or later
+    //  Let's use BM gravels instead!
+    event.remove('bloodmagic:alchemytable/strengthened_catalyst');
+    event
+      .custom({
+        type: 'bloodmagic:alchemytable',
+        input: [
+          {item: 'bloodmagic:simplecatalyst'},
+          {tag: 'bloodmagic:gravels/copper'},
+          {item: 'minecraft:glow_berries'},
+          {item: 'minecraft:cobbled_deepslate'},
+        ],
+        output: {item: 'bloodmagic:strengthenedcatalyst'},
+        syphon: 1000,
+        ticks: 100,
+        upgradeLevel: 4,
+      })
+      .id('bloodmagic:alchemytable/strengthened_catalyst');
+
+    event.remove('bloodmagic:alchemytable/curios_upgrade');
+    event
+      .custom({
+        type: 'bloodmagic:alchemytable',
+        input: [{item: 'minecraft:paper'}, {item: 'bloodmagic:soulsnare'}, {tag: 'bloodmagic:gravels/iron'}, {tag: 'forge:ingots/gold'}],
+        output: {item: 'bloodmagic:upgradetome', nbt: '{livingStats: {maxPoints: 10, upgrades: [{exp: 1.0d, key: "bloodmagic:curios_socket"}]}}'},
+        syphon: 2000,
+        ticks: 200,
+        upgradeLevel: 3,
+      })
+      .id('bloodmagic:alchemytable/curios_upgrade');
+
+    event.remove('bloodmagic:alchemytable/weapon_repair_anointment');
+    event
+      .custom({
+        type: 'bloodmagic:alchemytable',
+        input: [{item: 'bloodmagic:slate_vial'}, {tag: 'forge:crops/nether_wart'}, {tag: 'forge:ingots/copper'}, {tag: 'bloodmagic:gravels/gold'}],
+        output: {item: 'bloodmagic:weapon_repair_anointment'},
+        syphon: 500,
+        ticks: 100,
+        upgradeLevel: 1,
+      })
+      .id('bloodmagic:alchemytable/weapon_repair_anointment');
+
+    event.remove('bloodmagic:alchemytable/weapon_repair_anointment_2');
+    event
+      .custom({
+        type: 'bloodmagic:alchemytable',
+        input: [
+          {item: 'bloodmagic:weapon_repair_anointment'},
+          {item: 'bloodmagic:strong_tau'},
+          {tag: 'forge:ingots/copper'},
+          {tag: 'bloodmagic:gravels/gold'},
+        ],
+        output: {item: 'bloodmagic:weapon_repair_anointment_2'},
+        syphon: 1000,
+        ticks: 100,
+        upgradeLevel: 3,
+      })
+      .id('bloodmagic:alchemytable/weapon_repair_anointment_2');
+
+    event.remove('bloodmagic:alchemytable/weapon_repair_anointment_l');
+    event
+      .custom({
+        type: 'bloodmagic:alchemytable',
+        input: [
+          {item: 'bloodmagic:weapon_repair_anointment'},
+          {item: 'bloodmagic:tauoil'},
+          {tag: 'forge:ingots/copper'},
+          {tag: 'bloodmagic:gravels/gold'},
+        ],
+        output: {item: 'bloodmagic:weapon_repair_anointment_l'},
+        syphon: 1000,
+        ticks: 100,
+        upgradeLevel: 3,
+      })
+      .id('bloodmagic:alchemytable/weapon_repair_anointment_l');
 
     // Arcane Ashes should require Enchanted Ash from Eidolon
     event.remove('bloodmagic:alchemytable/arcane_ash');
