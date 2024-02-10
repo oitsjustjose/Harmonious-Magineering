@@ -151,3 +151,53 @@ global.Metals = {
     crushed: 'create:crushed_raw_zinc',
   },
 };
+
+global.Stages = {
+  aether: {
+    mods: ['aether', 'aether_redux', 'deep_aether'],
+    substitute: Item.of('kubejs:unknown_holy_item'),
+    exceptions: Ingredient.of([
+      'aether:leather_gloves',
+      'aether:chainmail_gloves',
+      'aether:iron_gloves',
+      'aether:golden_gloves',
+      'aether:diamond_gloves',
+      'aether:netherite_gloves',
+    ]),
+  },
+  bloodmagic: {
+    mods: ['bloodmagic'],
+    substitute: Item.of('kubejs:unknown_bloody_item'),
+    exceptions: null,
+  },
+  embers: {
+    mods: ['embers'],
+    substitute: Item.of('kubejs:unknown_dwarven_item'),
+    exceptions: Ingredient.of(['#forge:ores/lead', '#forge:ores/silver', '#forge:ingots/archaic_brick', 'embers:tinker_hammer']),
+  },
+  create: {
+    mods: ['create', 'railways', 'create_power_loader', 'prettypipes'],
+    substitute: Item.of('kubejs:unknown_kinetic_item'),
+    exceptions: Ingredient.of('#create:exception'),
+  },
+  pnc: {
+    mods: ['pneumaticcraft'],
+    substitute: Item.of('kubejs:unknown_pneumatic_item'),
+    exceptions: Ingredient.of('#pneumaticcraft:exception'),
+  },
+  ie: {
+    mods: ['immersiveengineering', 'buildinggadgets2'],
+    substitute: Item.of('kubejs:unknown_engineering_item'),
+    exceptions: Ingredient.of('#immersiveengineering:exception'),
+  },
+  mekanism: {
+    mods: ['mekanism', 'mekanismgenerators', 'mekaweapons', 'dimstorage', 'rftoolsbase', 'xnet'],
+    substitute: Item.of('kubejs:unknown_electric_item'),
+    exceptions: Ingredient.of('#mekanism:exception'),
+  },
+  ae2: {
+    mods: ['ae2', 'appmek', 'more_immersive_wires', 'specialized_cells', 'ae2wtlib', 'aeinfinitybooster', 'merequester', 'entangled'],
+    substitute: Item.of('kubejs:unknown_energistic_item'),
+    exceptions: Ingredient.of('#ae2:exception'),
+  },
+};

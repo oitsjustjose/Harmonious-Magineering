@@ -1,176 +1,30 @@
 ServerEvents.recipes(event => {
-  /* ~~ AETHER + ADDONS ~~ */
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'aether',
-    mod: 'aether',
-    substitute: {item: 'kubejs:unknown_holy_item'},
-    exceptions: [
-      {item: 'aether:leather_gloves'},
-      {item: 'aether:chainmail_gloves'},
-      {item: 'aether:iron_gloves'},
-      {item: 'aether:golden_gloves'},
-      {item: 'aether:diamond_gloves'},
-      {item: 'aether:netherite_gloves'},
-    ],
-  });
+  Object.keys(global.Stages).forEach(tag => {
+    let config = global.Stages[tag];
 
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'aether',
-    mod: 'aether_redux',
-    substitute: {item: 'kubejs:unknown_holy_item'},
-  });
+    config.mods.forEach(mod => {
+      const recipe = {
+        type: 'itemgator:mod',
+        tag: tag,
+        mod: mod,
+        substitute: config.substitute.toJson(),
+      };
 
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'aether',
-    mod: 'deep_aether',
-    substitute: {item: 'kubejs:unknown_holy_item'},
-  });
+      // Exceptions are an optional field
+      if (config.exceptions !== null) {
+        recipe.exceptions = config.exceptions.toJson();
+      }
 
-  /* ~~ BLOODMAGIC ~~ */
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'bloodmagic',
-    mod: 'bloodmagic',
-    substitute: {item: 'kubejs:unknown_bloody_item'},
-  });
-
-  /* ~~ EMBERS ~~ */
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'embers',
-    mod: 'embers',
-    substitute: {item: 'kubejs:unknown_dwarven_item'},
-    exceptions: [{tag: 'forge:ores/lead'}, {tag: 'forge:ores/silver'}, {tag: 'forge:ingots/archaic_brick'}, {item: 'embers:tinker_hammer'}],
-  });
-
-  /* ~~ CREATE + ADDONS ~~ */
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'create',
-    mod: 'create',
-    substitute: {item: 'kubejs:unknown_kinetic_item'},
-    exceptions: [{tag: 'create:exception'}],
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'create',
-    mod: 'railways',
-    substitute: {item: 'kubejs:unknown_kinetic_item'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'create',
-    mod: 'create_power_loader',
-    substitute: {item: 'kubejs:unknown_kinetic_item'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'create',
-    mod: 'prettypipes',
-    substitute: {item: 'kubejs:unknown_kinetic_item'},
-  });
-
-  /* ~~ PnC + ADDONS ~~ */
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'pnc',
-    mod: 'pneumaticcraft',
-    substitute: {item: 'kubejs:unknown_pneumatic_item'},
-    exceptions: [{tag: 'pneumaticcraft:exception'}],
-  });
-
-  /* ~~ IE ~~ */
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'ie',
-    mod: 'immersiveengineering',
-    substitute: {item: 'kubejs:unknown_engineering_item'},
-    exceptions: {tag: 'immersiveengineering:exception'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'ie',
-    mod: 'buildinggadgets2',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
-  });
-
-  /* ~~ MEKANISM + ADDONS ~~ */
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'mekanism',
-    mod: 'mekanism',
-    substitute: {item: 'kubejs:unknown_electric_item'},
-    exceptions: {tag: 'mekanism:exception'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'mekanism',
-    mod: 'mekanismgenerators',
-    substitute: {item: 'kubejs:unknown_electric_item'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'mekanism',
-    mod: 'mekaweapons',
-    substitute: {item: 'kubejs:unknown_electric_item'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'mekanism',
-    mod: 'dimstorage',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'mekanism',
-    mod: 'rftoolsbase',
-    substitute: {item: 'kubejs:unknown_electric_item'},
-    exceptions: [
-      {item: 'rftoolsbase:dimensionalshard'},
-      {item: 'rftoolsbase:dimensionalshard_overworld'},
-      {item: 'rftoolsbase:dimensionalshard_nether'},
-      {item: 'rftoolsbase:dimensionalshard_end'},
-    ],
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'mekanism',
-    mod: 'xnet',
-    substitute: {item: 'kubejs:unknown_electric_item'},
-  });
-
-  /* ~~ AE2 + ADDONS ~~ */
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'ae2',
-    mod: 'ae2',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
-    exceptions: {tag: 'ae2:exception'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'ae2',
-    mod: 'appmek',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
-  });
-
-  event.custom({
-    type: 'itemgator:mod',
-    tag: 'ae2',
-    mod: 'more_immersive_wires',
-    substitute: {item: 'kubejs:unknown_energistic_item'},
+      event.custom(recipe);
+      console.log(recipe);
+    });
   });
 });
+
+//   event.custom({
+//     type: 'itemgator:mod',
+//     tag: 'pnc',
+//     mod: 'pneumaticcraft',
+//     substitute: {item: 'kubejs:unknown_pneumatic_item'},
+//     exceptions: [{tag: 'pneumaticcraft:exception'}],
+//   });
