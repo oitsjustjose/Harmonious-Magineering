@@ -8,9 +8,6 @@ ItemEvents.tooltip(event => {
     for (const tag of Object.keys(global.Stages)) {
       // Fetch the server player only when needed
       if (cachedServerPlayer === null || Date.now() - lastCacheRefresh > cacheRefreshFrequencySeconds * 1000) {
-        if (lastCacheRefresh > 0) {
-          console.log('Refreshing Cache');
-        }
         lastCacheRefresh = Date.now();
         Utils.server.getPlayers().forEach(player => {
           if (player.getUuid() === Client.player.getUuid()) {
