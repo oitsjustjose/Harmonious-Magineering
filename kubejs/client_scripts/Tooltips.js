@@ -85,9 +85,9 @@ ItemEvents.tooltip(event => {
       }
     }
 
-    for (const tag of Object.keys(stages)) {
-      let config = stages[tag];
-      if (!isItemException) {
+    if (!isItemException) {
+      for (const tag of Object.keys(stages)) {
+        let config = stages[tag];
         if (config.mods.includes(stack.getMod())) {
           if (!cachedServerPlayerRef.getTags() || !cachedServerPlayerRef.getTags().contains(tag)) {
             tooltips.add(Text.darkRed(Text.translate('tooltip.kubejs.gated')).underlined());
