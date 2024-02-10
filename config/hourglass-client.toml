@@ -2,7 +2,7 @@
 [gui]
 	#Sets the screen alignment of the bed clock.
 	#Allowed Values: TOP_LEFT, TOP_CENTER, TOP_RIGHT, CENTER_LEFT, CENTER_CENTER, CENTER_RIGHT, BOTTOM_LEFT, BOTTOM_CENTER, BOTTOM_RIGHT
-	clockAlignment = "BOTTOM_CENTER"
+	clockAlignment = "TOP_CENTER"
 	#Sets the scale of the bed clock.
 	#Range: > 1
 	clockScale = 24
