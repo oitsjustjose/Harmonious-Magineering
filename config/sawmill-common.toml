@@ -17,6 +17,8 @@
 	#Maximum discount that sawmill will given when converting recipes. Unit is percentage of input item
 	#Range: 0.0 ~ 1.0
 	max_discount = 0.35
+	#Makes Sawmill GUI slightly wider
+	wider_gui = true
 
 	#This is a map of wood object type to its cost in planks. Its used to add some discount to some special blocks.Change this if say you want all fences to cost 1 plank. Not all keys will work here bt you can try modded ones if you hae Every Compat
 	[general.special_recipe_costs]
