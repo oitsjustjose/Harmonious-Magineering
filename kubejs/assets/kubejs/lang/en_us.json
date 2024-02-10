@@ -5,7 +5,6 @@
   "tooltip.kubejs.enchanting_disabled": "Vanilla Enchanting is Disabled! See the Soul Enchanter.",
   "tooltip.kubejs.pretty_pipes_module": "Will only work on a Pipe",
   "tooltip.kubejs.modular_routers_module": "Will only work in a Modular Router",
-  "tooltip.kubejs.artifact": "You don't seem to understand what this does at the moment..",
   "tooltip.kubejs.can_be_dyed": "Can be dyed",
   "tooltip.kubejs.gated": "You aren't sure how this item works",
   "item.kubejs.unknown_holy_item": "Blessed Artifact",
