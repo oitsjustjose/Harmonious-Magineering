@@ -90,7 +90,14 @@ ItemEvents.tooltip(event => {
         let config = stages[tag];
         if (config.mods.includes(stack.getMod())) {
           if (!cachedServerPlayerRef.getTags() || !cachedServerPlayerRef.getTags().contains(tag)) {
+            // Just setting the name on the client-side. Doesn't actually rename the item permanently
+            stack.setHoverName(Text.white(stack.id).obfuscated());
+            // Add the tooltip explaining you have no idea what this is
             tooltips.add(Text.darkRed(Text.translate('tooltip.kubejs.gated')).underlined());
+            // RETURN here so that we don't add the mod to the tooltip like below:
+            return;
+          } else {
+            stack.resetHoverName();
           }
         }
       }

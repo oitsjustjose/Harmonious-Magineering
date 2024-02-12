@@ -6,7 +6,7 @@
   "tooltip.kubejs.pretty_pipes_module": "Will only work on a Pipe",
   "tooltip.kubejs.modular_routers_module": "Will only work in a Modular Router",
   "tooltip.kubejs.can_be_dyed": "Can be dyed",
-  "tooltip.kubejs.gated": "You aren't sure how this item works",
+  "tooltip.kubejs.gated": "<shake>You aren't sure what this is...</shake>",
   "item.kubejs.unknown_holy_item": "Blessed Artifact",
   "item.kubejs.unknown_bloody_item": "Bloody Artifact",
   "item.kubejs.unknown_dwarven_item": "Dwarven Artifact",
