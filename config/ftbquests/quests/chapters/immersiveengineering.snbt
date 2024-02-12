@@ -57,7 +57,7 @@
 			]
 			title: "Entering the Steel Age"
 			x: 0.0d
-			y: -4.0d
+			y: -3.75d
 		}
 		{
 			dependencies: ["6C74ABE8E49CEF5D"]
@@ -95,7 +95,7 @@
 			]
 			title: "Metal Mechanisms"
 			x: 0.0d
-			y: 0.25d
+			y: 0.5d
 		}
 		{
 			dependencies: ["56B1FDDC955288EF"]
@@ -138,7 +138,7 @@
 			]
 			title: "Coke Oven \\& Coal Coke"
 			x: -1.5d
-			y: 0.75d
+			y: 1.0d
 		}
 		{
 			dependencies: ["56B1FDDC955288EF"]
@@ -181,7 +181,7 @@
 			]
 			title: "Blast Furnace \\& Faster Steel"
 			x: 1.5d
-			y: 0.75d
+			y: 1.0d
 		}
 		{
 			dependencies: [
@@ -192,6 +192,8 @@
 				"As you read further into your &6Engineer's Manual&r, you've read about a material called &lDuroplast&r."
 				""
 				"This material seems to be the key to unlocking significantly more compact and powerful machinery, but making it will require nearly an entire factory to accomplish!"
+				""
+				"(<rainb>Meta Time</rainb>): You may notice that this quest comes pretty early compared to a lot of other machines -- this is largely because you will likely want to get this started sooner than later, but feel free to take whatever route you desire!"
 				"{@pagebreak}"
 				"1. You'll need to begin by creating a plentiful supply of Fruits or Vegetables - this can be done in a variety of ways, but a &6Cloche&r will work in a pinch!"
 				""
@@ -224,13 +226,13 @@
 			]
 			shape: "octagon"
 			size: 1.5d
-			subtitle: "Cresote-based plastics"
+			subtitle: "Much more durable!"
 			tasks: [{
 				id: "42FD08CD980CD59E"
 				item: "immersiveengineering:duroplast"
 				type: "item"
 			}]
-			title: "Duroplast"
+			title: "Creosote-based plastics"
 			x: 0.0d
 			y: 3.5d
 		}
@@ -301,7 +303,7 @@
 			]
 			title: "An Engineer's Tools"
 			x: 0.0d
-			y: -1.75d
+			y: -1.5d
 		}
 		{
 			dependencies: ["2A3FE379AB3CC92B"]
@@ -312,7 +314,7 @@
 				""
 				"It is suggested to refer to the corresponding Engineer's Manual chapters to see how to configure these two devices to provide optimal Flux."
 				""
-				"See the &l&m&n&o&1{&2T&3O&4D&5O&6}}&r chapter to learn more on how to interconnect power sources from energy providers to energy consumers."
+				"See the &o<rainb>\\{\\{TODO\\}\\}</rainb>&r chapter to learn more on how to interconnect power sources from energy providers to energy consumers."
 			]
 			hide: true
 			icon: "immersiveengineering:dynamo"
@@ -356,7 +358,7 @@
 			]
 			title: "Basic Energy Production"
 			x: 1.5d
-			y: 2.75d
+			y: 3.0d
 		}
 		{
 			dependencies: ["683FAB80876CA757"]
@@ -379,7 +381,263 @@
 			}]
 			title: "Treated Wood"
 			x: -1.5d
-			y: 2.75d
+			y: 3.0d
+		}
+		{
+			dependencies: ["2B75A71C63C2DB97"]
+			description: [
+				"As you begin to dive into &6Duroplast Production&r, you quickly realize that these &8Heavy Machines&r you're building are going to require much more power than you're currently able to &oeffectively&r produce using just Water Wheels or Windmills. While you can continue down this route and simply scale up how many you have, there are much better ways to go forward with power production."
+				""
+				"One such way is by harnessing a special property of &cConstantan&r to form a &6Thermoelectric Generator&r. This property causes the metal to respond to drastic differences in &bTemperature&r by pulsating, which can be harnessed to produce a much more significant source of power."
+				"{@pagebreak}"
+				"While not necessarily &osafe&r, it seems that &aUranium&r produces a &olot&r of heat, and &bPacked Ice&r seems to be the coolest thing around."
+				""
+				"It seems the most efficient way to set this generator up is by placing a &cheat&r source against two sides of the generator, as well as placing a &bcold&r source against the other two sides. Energy can then be extracted out of the top."
+				""
+				"<rainb>Pro Tip:</rainb> Thermoelectric Generators will gladly share these &cheat&r/&bcold&r sources!"
+			]
+			id: "5B8C0CA01FF3D521"
+			optional: true
+			rewards: [{
+				id: "4357C23B6892893C"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			subtitle: "Harnessing Temperature Differentials"
+			tasks: [{
+				id: "34EB752BF08D1351"
+				item: "immersiveengineering:thermoelectric_generator"
+				type: "item"
+			}]
+			title: "Improved Energy Production"
+			x: 3.0d
+			y: 3.5d
+		}
+		{
+			dependencies: [
+				"2972E4B82723A69E"
+				"5B8C0CA01FF3D521"
+			]
+			hide: true
+			hide_dependency_lines: true
+			id: "748C1A6FF92D761A"
+			optional: true
+			shape: "gear"
+			size: 1.25d
+			subtitle: "Watch your CO2 Emissions!"
+			tasks: [{
+				icon: "immersiveengineering:diesel_generator"
+				id: "1206C7BB4361D07B"
+				observe_type: 4
+				timer: 0L
+				title: "Form a Diesel Generator"
+				to_observe: "immersiveengineering:diesel_generator_dummy"
+				type: "observation"
+			}]
+			title: "Diesel Power!"
+			x: 0.0d
+			y: 8.75d
+		}
+		{
+			dependencies: ["6C74ABE8E49CEF5D"]
+			icon: "immersiveengineering:alloy_smelter"
+			id: "7A8FC7BF709E3154"
+			optional: true
+			subtitle: "This kiln isn't for painted clay!"
+			tasks: [
+				{
+					count: 8L
+					id: "3EA0D2A9F9312F42"
+					item: "immersiveengineering:alloybrick"
+					type: "item"
+				}
+				{
+					icon: "immersiveengineering:alloy_smelter"
+					id: "2FF6E8D008D66E91"
+					observe_type: 4
+					timer: 0L
+					title: "Form a Kiln"
+					to_observe: "immersiveengineering:alloy_smelter_dummy"
+					type: "observation"
+				}
+			]
+			title: "Alloyed Blasting"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["2B75A71C63C2DB97"]
+			description: [
+				"As you've started to form more and more industrial-grade machines, you're starting to discover that you need even more refined metal pressing than the &6Mechanical Press&r you created previously."
+				""
+				"The &6Metal Press&r is a construct that allows you to change out molds. This quality of the Metal Press makes it incredibly helpful as you continue to make higher-quality &nMetal Rods&r, &nWires&r and even &nGears&r!"
+				""
+				"The various molds can be made in an &6Engineer's Workbench&r out of &8Steel Plates&r using the provided (or craftable) &9Mold Blueprint&r."
+			]
+			hide: true
+			hide_dependency_lines: true
+			id: "109895DF947B85D4"
+			optional: true
+			rewards: [{
+				id: "17ACFD346522B2D6"
+				item: {
+					Count: 1b
+					id: "immersiveengineering:blueprint"
+					tag: {
+						blueprint: "molds"
+					}
+				}
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Please don't break the molds"
+			tasks: [{
+				icon: "immersiveengineering:metal_press"
+				id: "720D48684246E06E"
+				observe_type: 4
+				timer: 0L
+				title: "Form a Metal Press"
+				to_observe: "immersiveengineering:metal_press_dummy"
+				type: "observation"
+			}]
+			title: "Moldable Pressing"
+			x: 1.875d
+			y: 5.625d
+		}
+		{
+			dependencies: ["2B75A71C63C2DB97"]
+			hide: true
+			hide_dependency_lines: true
+			id: "5834E9ABEF88CFF6"
+			optional: true
+			rewards: [{
+				id: "79A1B12217A9B69D"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			shape: "octagon"
+			size: 1.25d
+			tasks: [{
+				icon: "immersiveengineering:crusher"
+				id: "2B9F6FB99C2B7EBB"
+				observe_type: 4
+				timer: 0L
+				title: "Form a Crusher"
+				to_observe: "immersiveengineering:crusher_dummy"
+				type: "observation"
+			}]
+			x: 1.875d
+			y: 8.125d
+		}
+		{
+			dependencies: ["2B75A71C63C2DB97"]
+			description: ["As you continue to study the &6Engineer's Manual&r, you discover that many different seed types can be squeezed to create Seed Oil. This material seems to be interesting - somewhat capable of "]
+			hide: true
+			hide_dependency_lines: true
+			id: "6B3893E1251475E1"
+			optional: true
+			rewards: [{
+				id: "1EFB703E1865FCE1"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Squeezing at industrial-scale"
+			tasks: [{
+				icon: "immersiveengineering:squeezer"
+				id: "65EB98E1456BD626"
+				observe_type: 4
+				timer: 0L
+				title: "Form an Industrial Squeezer"
+				to_observe: "immersiveengineering:squeezer_dummy"
+				type: "observation"
+			}]
+			title: "The Big Squish"
+			x: -1.875d
+			y: 5.625d
+		}
+		{
+			dependencies: ["6B3893E1251475E1"]
+			hide: true
+			id: "2E539203D5D31F1D"
+			optional: true
+			rewards: [{
+				id: "66CA42C99113C38F"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			shape: "octagon"
+			size: 1.25d
+			tasks: [{
+				icon: "immersiveengineering:arc_furnace"
+				id: "1A578541E479BF8B"
+				observe_type: 4
+				timer: 0L
+				title: "Form an Arc Furnace"
+				to_observe: "immersiveengineering:arc_furnace_dummy"
+				type: "observation"
+			}]
+			x: -1.875d
+			y: 8.125d
+		}
+		{
+			dependencies: ["2B75A71C63C2DB97"]
+			description: ["The &8Sawmill&r is similar to the &6Mechanical Saw&r in its ability to produce a higher yield of planks from a single log, but it also comes with the benefit of being more easily automatable, being capable of recycling other wooden blocks (such as Bookshelves into Books &oand&r Planks), and most importantly, produces &6Sawdust&r on most operations."]
+			hide: true
+			hide_dependency_lines: true
+			id: "5D7A2ED3B2662233"
+			optional: true
+			rewards: [{
+				id: "17EE24FF723C37C3"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Now with Sawdust!"
+			tasks: [{
+				icon: "immersiveengineering:sawmill"
+				id: "7B1CF4E5D1148003"
+				observe_type: 4
+				timer: 0L
+				title: "Form a Sawmill"
+				to_observe: "immersiveengineering:sawmill_dummy"
+				type: "observation"
+			}]
+			title: "Advanced Lumbering"
+			x: 0.0d
+			y: 6.25d
+		}
+		{
+			dependencies: [
+				"2B75A71C63C2DB97"
+				"748C1A6FF92D761A"
+			]
+			description: ["You will almost definitely want to set up a significantly more powerful source of energy by this point."]
+			hide: true
+			hide_dependency_lines: true
+			id: "7E7F1C668F84DFAA"
+			optional: true
+			rewards: [{
+				id: "07B3A770B3E4C4FC"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			shape: "octagon"
+			size: 1.25d
+			tasks: [{
+				icon: "immersiveengineering:excavator"
+				id: "66E1BD0E0B376F42"
+				observe_type: 4
+				timer: 0L
+				title: "Form an Excavator"
+				to_observe: "immersiveengineering:excavator_dummy"
+				type: "observation"
+			}]
+			x: 0.0d
+			y: 11.25d
 		}
 	]
 	subtitle: ["&6Immersive Engineering&r"]

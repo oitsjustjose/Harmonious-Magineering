@@ -19,25 +19,49 @@
 	}]
 	order_index: 3
 	quest_links: [ ]
-	quests: [{
-		dependencies: ["2972E4B82723A69E"]
-		hide: true
-		id: "66899BB398A3CDE3"
-		rewards: [{
-			count: 12
-			id: "08E2B9E7461B83B9"
-			item: "create:experience_nugget"
-			random_bonus: 8
-			type: "item"
-		}]
-		tasks: [{
-			id: "7777396943782020"
-			item: "mekanism:steel_casing"
-			type: "item"
-		}]
-		x: 0.0d
-		y: 0.0d
-	}]
+	quests: [
+		{
+			dependencies: ["2972E4B82723A69E"]
+			hide: true
+			id: "66899BB398A3CDE3"
+			rewards: [{
+				count: 12
+				id: "08E2B9E7461B83B9"
+				item: "create:experience_nugget"
+				random_bonus: 8
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "7777396943782020"
+				item: "mekanism:steel_casing"
+				type: "item"
+			}]
+			x: 0.0d
+			y: -0.5d
+		}
+		{
+			id: "335D1067665D6682"
+			tasks: [{
+				id: "1A1DAF21DB7366BC"
+				item: "mekanism:enrichment_chamber"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 1.0d
+		}
+		{
+			id: "47B024D85AAF78F2"
+			tasks: [{
+				id: "6F296366663E8989"
+				item: "mekanism:metallurgic_infuser"
+				type: "item"
+			}]
+			x: 1.5d
+			y: 1.0d
+		}
+	]
 	subtitle: ["&1Mekanism&r"]
 	title: "&9Futuristic Tech&r"
 }
