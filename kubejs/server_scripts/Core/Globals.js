@@ -196,7 +196,7 @@ global.Stages = {
     exceptions: Ingredient.of('#mekanism:exception'),
   },
   ae2: {
-    mods: ['ae2', 'appmek', 'more_immersive_wires', 'specialized_cells', 'ae2wtlib', 'aeinfinitybooster', 'merequester', 'entangled'],
+    mods: ['ae2', 'appmek', 'more_immersive_wires', 'specialised_cells', 'ae2wtlib', 'aeinfinitybooster', 'merequester', 'entangled'],
     substitute: Item.of('kubejs:unknown_energistic_item'),
     exceptions: Ingredient.of('#ae2:exception'),
   },

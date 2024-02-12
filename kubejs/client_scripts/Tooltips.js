@@ -45,7 +45,7 @@ const stages = {
     exceptions: Ingredient.of('#mekanism:exception'),
   },
   ae2: {
-    mods: ['ae2', 'appmek', 'more_immersive_wires', 'specialized_cells', 'ae2wtlib', 'aeinfinitybooster', 'merequester', 'entangled'],
+    mods: ['ae2', 'appmek', 'more_immersive_wires', 'specialised_cells', 'ae2wtlib', 'aeinfinitybooster', 'merequester', 'entangled'],
     substitute: Item.of('kubejs:unknown_energistic_item'),
     exceptions: Ingredient.of('#ae2:exception'),
   },
@@ -92,6 +92,10 @@ ItemEvents.tooltip(event => {
           if (!cachedServerPlayerRef.getTags() || !cachedServerPlayerRef.getTags().contains(tag)) {
             // Just setting the name on the client-side. Doesn't actually rename the item permanently
             stack.setHoverName(Text.white(stack.id).obfuscated());
+            // We don't want to give the player any additional info on this item...
+            for (let i = 1; i < tooltips.length; i++) {
+              tooltips.remove(i);
+            }
             // Add the tooltip explaining you have no idea what this is
             tooltips.add(Text.darkRed(Text.translate('tooltip.kubejs.gated')).underlined());
             // RETURN here so that we don't add the mod to the tooltip like below:
