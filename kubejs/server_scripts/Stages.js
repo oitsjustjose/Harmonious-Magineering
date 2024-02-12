@@ -16,15 +16,6 @@ ServerEvents.recipes(event => {
       }
 
       event.custom(recipe);
-      console.log(recipe);
     });
   });
 });
-
-//   event.custom({
-//     type: 'itemgator:mod',
-//     tag: 'pnc',
-//     mod: 'pneumaticcraft',
-//     substitute: {item: 'kubejs:unknown_pneumatic_item'},
-//     exceptions: [{tag: 'pneumaticcraft:exception'}],
-//   });
