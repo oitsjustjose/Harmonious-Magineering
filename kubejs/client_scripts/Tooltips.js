@@ -54,6 +54,7 @@ const stages = {
 const cacheRefreshFrequencySeconds = 5;
 let cachedServerPlayerRef = null;
 let lastCacheRefresh = 0;
+let lastHovNameRefresh = 0;
 
 ItemEvents.tooltip(event => {
   event.addAdvanced(Ingredient.all, (stack, _, tooltips) => {
@@ -91,7 +92,10 @@ ItemEvents.tooltip(event => {
         if (config.mods.includes(stack.getMod())) {
           if (!cachedServerPlayerRef.getTags() || !cachedServerPlayerRef.getTags().contains(tag)) {
             // Just setting the name on the client-side. Doesn't actually rename the item permanently
-            stack.setHoverName(Text.white(stack.id).obfuscated());
+            if (Date.now() - lastHovNameRefresh > 1000) {
+              stack.setHoverName(Text.white(stack.id).obfuscated());
+              lastHovNameRefresh = Date.now();
+            }
             // We don't want to give the player any additional info on this item...
             for (let i = 1; i < tooltips.length; i++) {
               tooltips.remove(i);
@@ -101,7 +105,10 @@ ItemEvents.tooltip(event => {
             // RETURN here so that we don't add the mod to the tooltip like below:
             return;
           } else {
-            stack.resetHoverName();
+            if (Date.now() - lastHovNameRefresh > 1000) {
+              stack.resetHoverName();
+              lastHovNameRefresh = Date.now();
+            }
           }
         }
       }
