@@ -51,7 +51,7 @@
 				type: "item"
 			}]
 			shape: "hexagon"
-			subtitle: "Three Descending Artichokes"
+			subtitle: "A library in your pocket!"
 			tasks: [{
 				id: "1C1377EF17F7840B"
 				item: {
@@ -63,7 +63,7 @@
 				}
 				type: "item"
 			}]
-			title: "Maps \\& Atlases"
+			title: "Not-so-Akashic Tomes"
 			x: -1.0d
 			y: 1.5d
 		}
@@ -387,5 +387,5 @@
 		}
 	]
 	subtitle: ["&fGetting Started in Harmonious Magineering&r"]
-	title: "&cT&4h&6e &eB&aa&2s&3i&9c&5s&r"
+	title: "<rainb>The Basics</rainb>"
 }
