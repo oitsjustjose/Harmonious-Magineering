@@ -1,3 +1,5 @@
+// priority: 100000
+// we want this script to run before Tooltips.js renames some items via obfuscation
 JEIEvents.removeCategories(event => {
   event.remove('waystones:warp_plate');
 });
@@ -544,6 +546,7 @@ JEIEvents.addItems(event => {
 
 JEIEvents.hideItems(event => {
   [
+    '/ae2:facade/',
     '/embers:silver_axe/',
     '/embers:silver_hoe/',
     '/embers:silver_pickaxe/',
