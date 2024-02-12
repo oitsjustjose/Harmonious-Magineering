@@ -123,7 +123,6 @@ ServerEvents.recipes(event => {
 
     ingredient.getStacks().forEach(x => {
       if (!x.id.includes('stripped')) {
-        console.log(x.id);
         stacks.push(x);
       }
     });
@@ -140,7 +139,6 @@ ServerEvents.recipes(event => {
 
     ingredient.getStacks().forEach(x => {
       if (x.id.includes('stripped')) {
-        console.log(x.id);
         stacks.push(x);
       }
     });
