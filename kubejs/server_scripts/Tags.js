@@ -711,6 +711,8 @@ ServerEvents.tags('item', event => {
   event.remove('forge:dusts/saltpeter', 'bloodmagic:saltpeter');
   /* PNC Upgrades should use Upgrade Matrices */
   event.remove('pneumaticcraft:upgrade_components', 'minecraft:lapis_lazuli');
+  /* Add custom Zinc Dust to its corresponding tag */
+  event.add('forge:dusts/zinc', 'kubejs:zinc_dust');
 
   /* Clean up Quark's messy tags -_- */
   [

@@ -21,9 +21,6 @@ ServerEvents.recipes(event => {
 
   const dustSmelting = () => {
     Object.keys(global.Metals).forEach(mat => {
-      // Zinc doesn't have a dust really. Skip it.
-      if (mat == 'zinc') return;
-
       const entry = global.Metals[mat];
       const idBase = `${entry.ingot.replace(':', '_')}_from_${entry.dust.replace(':', '_')}`;
 
@@ -123,9 +120,6 @@ ServerEvents.recipes(event => {
   };
 
   const oreSmelting = () => {
-    event.remove('create:smelting/zinc_ingot_from_crushed');
-    event.remove('create:blasting/zinc_ingot_from_crushed');
-
     Object.keys(global.Metals).forEach(mat => {
       let metal = global.Metals[mat];
       // Remove raw ore -> ingot blasting/smelting

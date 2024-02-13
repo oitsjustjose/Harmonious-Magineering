@@ -147,7 +147,7 @@ global.Metals = {
     ingot: 'create:zinc_ingot',
     block: 'create:zinc_block',
     nugget: 'create:zinc_nugget',
-    dust: 'create:crushed_raw_zinc',
+    dust: 'kubejs:zinc_dust',
     crushed: 'create:crushed_raw_zinc',
   },
 };
