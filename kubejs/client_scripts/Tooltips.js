@@ -92,8 +92,9 @@ ItemEvents.tooltip(event => {
         if (config.mods.includes(stack.getMod())) {
           if (!cachedServerPlayerRef.getTags() || !cachedServerPlayerRef.getTags().contains(tag)) {
             // Just setting the name on the client-side. Doesn't actually rename the item permanently
-            if (Date.now() - lastHovNameRefresh > 1000) {
-              stack.setHoverName(Text.white(stack.id).obfuscated());
+            if (Date.now() - lastHovNameRefresh > 500) {
+              // Add ABCDE as 'noise' to prevent the word (alt) from showing up next to the obfuscated text
+              stack.setHoverName(Text.white(`abcde_${stack.id}`).obfuscated());
               lastHovNameRefresh = Date.now();
             }
             // We don't want to give the player any additional info on this item...
@@ -105,7 +106,7 @@ ItemEvents.tooltip(event => {
             // RETURN here so that we don't add the mod to the tooltip like below:
             return;
           } else {
-            if (Date.now() - lastHovNameRefresh > 1000) {
+            if (Date.now() - lastHovNameRefresh > 500) {
               stack.resetHoverName();
               lastHovNameRefresh = Date.now();
             }
