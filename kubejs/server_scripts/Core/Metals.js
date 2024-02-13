@@ -1,7 +1,7 @@
-// priority: 100000
+// priority: 99999
 
 ServerEvents.recipes(event => {
-  const createAutomation = () => {
+  const automationCompat = () => {
     /* Remove all infinite metal recipes from Create */
     event.remove('create:splashing/gravel');
     event.recipes.create.splashing(Item.of('minecraft:flint').withChance(0.25), 'minecraft:gravel').id('create:splashing/gravel');
@@ -17,6 +17,32 @@ ServerEvents.recipes(event => {
       event.remove(`create:crushing/${mat}`);
       event.remove(`create:crushing/${mat}_recycling`);
     });
+
+    /* These ores aren't processable in Mekanism -- let's fix that */
+    ['aluminum', 'nickel', 'silver', 'zinc'].forEach(metal => {
+      const metalData = global.Metals[metal];
+
+      /* Enrich 1x Ore into 2x Dust */
+      event.custom({type: 'mekanism:enriching', input: {ingredient: {tag: `forge:ores/${metal}`}}, output: {item: metalData.dust, count: 2}});
+      /* Crush 1x Ingot into 1x Dust */
+      event.custom({type: 'mekanism:crushing', input: {ingredient: {item: metalData.ingot}}, output: {item: metalData.dust}});
+      /* Enrich 1x Raw Ore Block into 12x Dust */
+      event.custom({
+        type: 'mekanism:enriching',
+        input: {ingredient: {tag: `forge:storage_blocks/raw_${metal}`}},
+        output: {item: metalData.dust, count: 12},
+      });
+      /* Enrich 3x Raw Ore into 4x Dust */
+      event.custom({
+        type: 'mekanism:enriching',
+        input: {ingredient: {tag: `forge:raw_materials/${metal}`}, amount: 3},
+        output: {item: metalData.dust, count: 4},
+      });
+    });
+
+    /* Remove illegitimate methods of getting Zinc Dust >_> */
+    event.remove('immersiveengineering:crafting/raw_hammercrushing_zinc');
+    event.remove('immersiveengineering:crafting/hammercrushing_zinc');
   };
 
   const dustSmelting = () => {
@@ -250,24 +276,5 @@ ServerEvents.recipes(event => {
     });
   };
 
-  const zinc = () => {
-    const zincMetal = global.Metals['zinc'];
-
-    event.custom({type: 'mekanism:enriching', input: {ingredient: {tag: 'forge:ores/zinc'}}, output: {count: 2, item: zincMetal.dust}});
-    event.custom({type: 'mekanism:crushing', input: {ingredient: {item: zinc.ingot}}, output: {item: zincMetal.dust}});
-    event.custom({
-      type: 'mekanism:enriching',
-      input: {ingredient: {tag: 'forge:storage_blocks/raw_zinc'}},
-      output: {count: 12, item: zincMetal.dust},
-    });
-    event.custom({
-      type: 'mekanism:enriching',
-      input: {amount: 3, ingredient: {tag: 'forge:raw_materials/zinc'}},
-      output: {count: 4, item: zincMetal.dust},
-    });
-  };
-
-  [createAutomation, dustSmelting, metalSmithing, nukeOsmium, oreSmelting, oreWashing, plateCompat, rods, silverAndLead, zinc].forEach(module =>
-    module()
-  );
+  [automationCompat, dustSmelting, metalSmithing, nukeOsmium, oreSmelting, oreWashing, plateCompat, rods, silverAndLead].forEach(module => module());
 });
