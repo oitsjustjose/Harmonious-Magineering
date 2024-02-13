@@ -250,5 +250,24 @@ ServerEvents.recipes(event => {
     });
   };
 
-  [createAutomation, dustSmelting, metalSmithing, nukeOsmium, oreSmelting, oreWashing, plateCompat, rods, silverAndLead].forEach(module => module());
+  const zinc = () => {
+    const zincMetal = global.Metals['zinc'];
+
+    event.custom({type: 'mekanism:enriching', input: {ingredient: {tag: 'forge:ores/zinc'}}, output: {count: 2, item: zincMetal.dust}});
+    event.custom({type: 'mekanism:crushing', input: {ingredient: {item: zinc.ingot}}, output: {item: zincMetal.dust}});
+    event.custom({
+      type: 'mekanism:enriching',
+      input: {ingredient: {tag: 'forge:storage_blocks/raw_zinc'}},
+      output: {count: 12, item: zincMetal.dust},
+    });
+    event.custom({
+      type: 'mekanism:enriching',
+      input: {amount: 3, ingredient: {tag: 'forge:raw_materials/zinc'}},
+      output: {count: 4, item: zincMetal.dust},
+    });
+  };
+
+  [createAutomation, dustSmelting, metalSmithing, nukeOsmium, oreSmelting, oreWashing, plateCompat, rods, silverAndLead, zinc].forEach(module =>
+    module()
+  );
 });
