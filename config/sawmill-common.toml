@@ -19,6 +19,8 @@
 	max_discount = 0.35
 	#Makes Sawmill GUI slightly wider
 	wider_gui = true
+	#Sort recipes following cretive tab order. Could cause issue in the case when, for whatever reason, creative other would differ from server to client.
+	sort_recipes = true
 
 	#This is a map of wood object type to its cost in planks. Its used to add some discount to some special blocks.Change this if say you want all fences to cost 1 plank. Not all keys will work here bt you can try modded ones if you hae Every Compat
 	[general.special_recipe_costs]
