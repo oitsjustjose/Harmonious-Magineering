@@ -857,7 +857,7 @@ ServerEvents.recipes(event => {
     event.shaped('prettypipes:nbt_filter_modifier', [' Q ', 'QBQ', ' Q '], {Q: 'minecraft:quartz', B: blank});
     event.shaped('prettypipes:tag_filter_modifier', [' N ', 'SBS', ' S '], {N: 'minecraft:name_tag', S: 'minecraft:string', B: blank});
     event.shaped('prettypipes:filter_increase_modifier', [' C ', 'PBP', ' P '], {
-      C: ['expandedstorage:vanilla_wood_mini_chest', 'expandedstorage:wood_mini_chest'],
+      C: 'ironchests:blank_chest_upgrade',
       P: 'minecraft:paper',
       B: blank,
     });

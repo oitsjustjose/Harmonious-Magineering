@@ -90,12 +90,6 @@ LootJS.modifiers(event => {
     });
   };
 
-  const lootr = () => {
-    // Replace the Lootr chest drop with Expanded Storage's
-    ['lootr:lootr_chest', 'lootr:lootr_inventory', 'lootr:lootr_trapped_chest'].forEach(l => {
-      event.addBlockLootModifier(l).replaceLoot('minecraft:chest', 'expandedstorage:wood_chest', true);
-    });
-  };
 
   const metalMobDrops = () => {
     event.addEntityLootModifier('minecraft:zombie').removeLoot('minecraft:iron_ingot');
@@ -111,7 +105,6 @@ LootJS.modifiers(event => {
   };
 
   event.addEntityLootModifier('minecraft:warden').removeLoot(ItemFilter.ALWAYS_TRUE);
-  event.addEntityLootModifier('aether:mimic').replaceLoot('minecraft:chest', 'expandedstorage:wood_chest', true);
 
-  [customSilverLead, boostDeepslateLoot, boostSomeMobDrops, lootr, metalMobDrops, modLoot].forEach(module => module());
+  [customSilverLead, boostDeepslateLoot, boostSomeMobDrops,  metalMobDrops, modLoot].forEach(module => module());
 });

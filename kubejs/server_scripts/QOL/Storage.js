@@ -14,23 +14,8 @@ ServerEvents.recipes(event => {
     });
   };
 
-  // Replace minecraft:chest with tags
-  event.replaceInput({}, 'minecraft:chest', '#forge:chests/wooden');
-  event.replaceOutput({}, 'minecraft:chest', 'expandedstorage:wood_chest');
-
-  // Remove the recipe for the vanilla chest, replace w/ a swap recipe
-  event.remove({output: 'minecraft:chest'});
-  event.shapeless('minecraft:chest', ['expandedstorage:wood_chest']);
-
-  // Better recipe for the Full-block wooden chest
-  event.remove({output: 'expandedstorage:old_wood_chest'});
-  event.shaped('expandedstorage:old_wood_chest', ['PPP', 'PCP', 'PPP'], {
-    P: '#minecraft:planks',
-    C: 'expandedstorage:wood_chest',
-  });
-
   // 4 chests from logs
-  event.shaped('4x expandedstorage:wood_chest', ['LLL', 'L L', 'LLL'], {L: '#minecraft:logs'});
+  event.shaped('4x minecraft:chest', ['LLL', 'L L', 'LLL'], {L: '#minecraft:logs'});
 
   // Bundles!
   event.shaped('minecraft:bundle', [' S ', 'L L', ' L '], {
@@ -190,4 +175,10 @@ ServerEvents.recipes(event => {
 
   event.remove({output: 'storagedrawers:void_upgrade'});
   event.shapeless('storagedrawers:void_upgrade', ['trashcans:item_trash_can', 'storagedrawers:upgrade_template']);
+
+  /* Make Netherite storage craftable */
+  
+  event.smithing('ironchests:netherite_chest_upgrade', 'minecraft:netherite_upgrade_smithing_template', 'ironchests:blank_chest_upgrade', 'minecraft:netherite_ingot')
+  event.smithing('ironchests:netherite_chest', 'minecraft:netherite_upgrade_smithing_template', 'ironchests:diamond_chest', 'minecraft:netherite_ingot')
+  event.smithing('ironchests:netherite_barrel', 'minecraft:netherite_upgrade_smithing_template', 'ironchests:diamond_barrel', 'minecraft:netherite_ingot')
 });
