@@ -1,5 +1,6 @@
 .mixin.out
 .vscode
+.DS_Store
 /backups
 /config/jei/world
 /config/spark/activity.json
@@ -13,12 +14,11 @@
 /map_atlases
 /mod_data
 /modernfix
-/mods
+/mods/.index
 /options.txt
 /options.txt.bak
 /patchouli_data.json
 /prettypipesprefs
-/resourcepacks
 /rhino.local.properties
 /saves
 /screenshots
