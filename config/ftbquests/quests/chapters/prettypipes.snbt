@@ -5,7 +5,7 @@
 	group: "30752BCABB2D0E90"
 	icon: "prettypipes:wrench"
 	id: "17FC4536FE25C1AB"
-	order_index: 1
+	order_index: 0
 	quest_links: [ ]
 	quests: [ ]
 	title: "Tidy Tubes"

@@ -5,7 +5,7 @@
 	group: "30752BCABB2D0E90"
 	icon: "ae2:purple_smart_dense_cable"
 	id: "1ED158C2CEC130C9"
-	order_index: 2
+	order_index: 1
 	quest_links: [ ]
 	quests: [{
 		id: "0F946D801295B7CE"

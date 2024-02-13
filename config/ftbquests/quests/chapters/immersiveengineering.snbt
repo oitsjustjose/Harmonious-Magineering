@@ -143,7 +143,7 @@
 		{
 			dependencies: ["56B1FDDC955288EF"]
 			description: [
-				"Blasting is a process by which the &8Carbon&r in &6Coal Coke&r is infused with Iron to reinforce and harden the metal into its much superior &8Steel&r form. "
+				"Blasting is a process by which the &7Carbon&r in &6Coal Coke&r is infused with Iron to reinforce and harden the metal into its much superior &7Steel&r form. "
 				""
 				"Unfortunately, in the process of burning the Coal Coke at such high heat, some of the excess impurities in both the Iron and Coal Coke have to be siphoned out into what is called &2Slag&r. "
 				""
@@ -308,7 +308,7 @@
 		{
 			dependencies: ["2A3FE379AB3CC92B"]
 			description: [
-				"By combining the rigidity and durability of &8Steel&r with the pliability of &6Treated Wood&r, you've discovered that you can fashion together either a &nWind Mill&r or a &nWater Wheel&r, either of which will produce rotational energy that can be harnessed through a &6Kinetic Dynamo&r to produce &lFlux&r. "
+				"By combining the rigidity and durability of &7Steel&r with the pliability of &6Treated Wood&r, you've discovered that you can fashion together either a &nWind Mill&r or a &nWater Wheel&r, either of which will produce rotational energy that can be harnessed through a &6Kinetic Dynamo&r to produce &lFlux&r. "
 				""
 				"&lFlux&r (often referred to as &nRedstone Flux&r or &nRF&r) is a form of electricity that is used to power all types of machinery from this point on, ranging from Light- and Heavy-Duty Machines, Mekanisms and more."
 				""
@@ -386,7 +386,7 @@
 		{
 			dependencies: ["2B75A71C63C2DB97"]
 			description: [
-				"As you begin to dive into &6Duroplast Production&r, you quickly realize that these &8Heavy Machines&r you're building are going to require much more power than you're currently able to &oeffectively&r produce using just Water Wheels or Windmills. While you can continue down this route and simply scale up how many you have, there are much better ways to go forward with power production."
+				"As you begin to dive into &6Duroplast Production&r, you quickly realize that these &7Heavy Machines&r you're building are going to require much more power than you're currently able to &oeffectively&r produce using just Water Wheels or Windmills. While you can continue down this route and simply scale up how many you have, there are much better ways to go forward with power production."
 				""
 				"One such way is by harnessing a special property of &cConstantan&r to form a &6Thermoelectric Generator&r. This property causes the metal to respond to drastic differences in &bTemperature&r by pulsating, which can be harnessed to produce a much more significant source of power."
 				"{@pagebreak}"
@@ -417,11 +417,22 @@
 			dependencies: [
 				"2972E4B82723A69E"
 				"5B8C0CA01FF3D521"
+				"6B3893E1251475E1"
+			]
+			description: [
+				"As you've wrapped up your &6Duroplast&r production pipeline and have gained more experience with the &7Industrial Squeezer&r, you've discovered the potential for an interesting new fuel you can make in the Refinery -- &nBiodiesel&r. This fuel seems highly combustible which can surely be utilized in some form of engine, but you'll need to keep the engine cool as well."
+				""
+				"A &7Diesel Generator&r would be a highly-efficient form of exactly thisl; its large radiators will be more than sufficient to keep the combustion engine cool, and it seems as though keeping one of these fueld with Biodiesel will yield roughly &64k RF/t&r. Impressive!!"
 			]
 			hide: true
 			hide_dependency_lines: true
 			id: "748C1A6FF92D761A"
 			optional: true
+			rewards: [{
+				id: "72A2704F3DC9FB91"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			shape: "gear"
 			size: 1.25d
 			subtitle: "Watch your CO2 Emissions!"
@@ -436,7 +447,7 @@
 			}]
 			title: "Diesel Power!"
 			x: 0.0d
-			y: 8.75d
+			y: 11.25d
 		}
 		{
 			dependencies: ["6C74ABE8E49CEF5D"]
@@ -472,7 +483,7 @@
 				""
 				"The &6Metal Press&r is a construct that allows you to change out molds. This quality of the Metal Press makes it incredibly helpful as you continue to make higher-quality &nMetal Rods&r, &nWires&r and even &nGears&r!"
 				""
-				"The various molds can be made in an &6Engineer's Workbench&r out of &8Steel Plates&r using the provided (or craftable) &9Mold Blueprint&r."
+				"The various molds can be made in an &6Engineer's Workbench&r out of &7Steel Plates&r using the provided (or craftable) &9Mold Blueprint&r."
 			]
 			hide: true
 			hide_dependency_lines: true
@@ -571,6 +582,13 @@
 		}
 		{
 			dependencies: ["6B3893E1251475E1"]
+			description: [
+				"At this point you've become more and more familiar with the way energy flows throughout machines and wires -- you might've even &e⚡ zapped ⚡&r yourself a few times by now ;)"
+				""
+				"Throughout your work, you've started to ponder the possibility of harnessing &8Graphite&r's ability to produce large amounts of heat when electrified to melt various materials &oingcredibly&r efficiently. "
+				""
+				"Perhaps an &7Arc Furnace&r would be capable of handling such high heat and energy production. It seems you can also form a spout that can pour the molten alloy into ingot form automatically for you! It seems there's some additional reading in the &6Engineer's Manual&r on this topic."
+			]
 			hide: true
 			id: "2E539203D5D31F1D"
 			optional: true
@@ -581,6 +599,7 @@
 			}]
 			shape: "octagon"
 			size: 1.25d
+			subtitle: "Alloying with ⚡ Energy ⚡"
 			tasks: [{
 				icon: "immersiveengineering:arc_furnace"
 				id: "1A578541E479BF8B"
@@ -590,12 +609,13 @@
 				to_observe: "immersiveengineering:arc_furnace_dummy"
 				type: "observation"
 			}]
+			title: "The best alloyer"
 			x: -1.875d
 			y: 8.125d
 		}
 		{
 			dependencies: ["2B75A71C63C2DB97"]
-			description: ["The &8Sawmill&r is similar to the &6Mechanical Saw&r in its ability to produce a higher yield of planks from a single log, but it also comes with the benefit of being more easily automatable, being capable of recycling other wooden blocks (such as Bookshelves into Books &oand&r Planks), and most importantly, produces &6Sawdust&r on most operations."]
+			description: ["The &7Sawmill&r is similar to the &6Mechanical Saw&r in its ability to produce a higher yield of planks from a single log, but it also comes with the benefit of being more easily automatable, being capable of recycling other wooden blocks (such as Bookshelves into Books &oand&r Planks), and most importantly, produces &6Sawdust&r on most operations."]
 			hide: true
 			hide_dependency_lines: true
 			id: "5D7A2ED3B2662233"
@@ -622,11 +642,16 @@
 			y: 6.25d
 		}
 		{
-			dependencies: [
-				"2B75A71C63C2DB97"
-				"748C1A6FF92D761A"
+			dependencies: ["2B75A71C63C2DB97"]
+			description: [
+				"Flipping through the &6Engineer's Manual&r, you've passed a chapter on the &7Excavator&r a few times now. Curious to learn more (and finally starting to feel capable of building &oreally&r heavy machinery), you've started to do some reading. "
+				""
+				"It seems as though all throughout your world, there have been &odozens&r of very deep and obscured minerals that you've been passing up on this whole time! Using a &6&lCore Sample Drill&r, you're able to locate these minerals in your world. As you come across minerals you need, you can form an &7Excavator&r in that area and get to digging!"
+				""
+				"Doing so should leave you with a &olarge&r amount of that material that should surely last you a good while."
+				"{@pagebreak}"
+				"<rainb>Pro Tip</rainb>: You almost &odefinitely&r want to set up multiple Diesel Generators by this point or, optionally, explore other energy production solutions in the &onext&r chapter!"
 			]
-			description: ["You will almost definitely want to set up a significantly more powerful source of energy by this point."]
 			hide: true
 			hide_dependency_lines: true
 			id: "7E7F1C668F84DFAA"
@@ -638,6 +663,7 @@
 			}]
 			shape: "octagon"
 			size: 1.25d
+			subtitle: "A Ferris Wheel for ore gravel!"
 			tasks: [{
 				icon: "immersiveengineering:excavator"
 				id: "66E1BD0E0B376F42"
@@ -647,8 +673,9 @@
 				to_observe: "immersiveengineering:excavator_dummy"
 				type: "observation"
 			}]
+			title: "Minerals in Bulk"
 			x: 0.0d
-			y: 11.25d
+			y: 8.75d
 		}
 	]
 	subtitle: ["&6Immersive Engineering&r"]
