@@ -24,10 +24,18 @@ ServerEvents.recipes(event => {
   });
 
   // Backpacks
+  event.remove('sophisticatedbackpacks:copper_backpack');
+  backpackSmithing(
+    Item.of('sophisticatedbackpacks:copper_backpack'),
+    Ingredient.of('sophisticatedbackpacks:backpack'),
+    Ingredient.of('#forge:storage_blocks/copper')
+  );
+
   event.remove('sophisticatedbackpacks:iron_backpack');
+  event.remove('sophisticatedbackpacks:iron_backpack_from_copper');
   backpackSmithing(
     Item.of('sophisticatedbackpacks:iron_backpack'),
-    Ingredient.of('sophisticatedbackpacks:backpack'),
+    Ingredient.of('sophisticatedbackpacks:copper_backpack'),
     Ingredient.of('#forge:storage_blocks/iron')
   );
 
@@ -177,8 +185,23 @@ ServerEvents.recipes(event => {
   event.shapeless('storagedrawers:void_upgrade', ['trashcans:item_trash_can', 'storagedrawers:upgrade_template']);
 
   /* Make Netherite storage craftable */
-  
-  event.smithing('ironchests:netherite_chest_upgrade', 'minecraft:netherite_upgrade_smithing_template', 'ironchests:blank_chest_upgrade', 'minecraft:netherite_ingot')
-  event.smithing('ironchests:netherite_chest', 'minecraft:netherite_upgrade_smithing_template', 'ironchests:diamond_chest', 'minecraft:netherite_ingot')
-  event.smithing('ironchests:netherite_barrel', 'minecraft:netherite_upgrade_smithing_template', 'ironchests:diamond_barrel', 'minecraft:netherite_ingot')
+
+  event.smithing(
+    'ironchests:netherite_chest_upgrade',
+    'minecraft:netherite_upgrade_smithing_template',
+    'ironchests:blank_chest_upgrade',
+    'minecraft:netherite_ingot'
+  );
+  event.smithing(
+    'ironchests:netherite_chest',
+    'minecraft:netherite_upgrade_smithing_template',
+    'ironchests:diamond_chest',
+    'minecraft:netherite_ingot'
+  );
+  event.smithing(
+    'ironchests:netherite_barrel',
+    'minecraft:netherite_upgrade_smithing_template',
+    'ironchests:diamond_barrel',
+    'minecraft:netherite_ingot'
+  );
 });

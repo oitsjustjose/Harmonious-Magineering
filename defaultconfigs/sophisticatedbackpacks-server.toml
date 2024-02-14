@@ -19,6 +19,8 @@
 	tickDedupeLogicDisabled = false
 	#Determines if backpacks can be placed in container items (those that check for return value of canFitInsideContainerItems)
 	canBePlacedInContainerItems = false
+	#Maximum number of upgrades of type per backpack in format of "UpgradeRegistryName[or UpgradeGroup]|MaxNumber"
+	maxUpgradesPerStorage = ["furnace_upgrades|1", "stack_upgrades|3", "jukebox_upgrade|1"]
 
 	#Leather Backpack Settings
 	[server.leatherBackpack]
@@ -29,8 +31,9 @@
 		#Range: 0 ~ 10
 		upgradeSlotCount = 0
 
-	#Iron Backpack Settings
-	[server.ironBackpack]
+        
+	#Copper Backpack Settings
+	[server.copperBackpack]
 		#Number of inventory slots in the backpack
 		#Range: 1 ~ 144
 		inventorySlotCount = 18
@@ -38,8 +41,8 @@
 		#Range: 0 ~ 10
 		upgradeSlotCount = 1
 
-	#Gold Backpack Settings
-	[server.goldBackpack]
+	#Iron Backpack Settings
+	[server.ironBackpack]
 		#Number of inventory slots in the backpack
 		#Range: 1 ~ 144
 		inventorySlotCount = 27
@@ -47,8 +50,8 @@
 		#Range: 0 ~ 10
 		upgradeSlotCount = 2
 
-	#Diamond Backpack Settings
-	[server.diamondBackpack]
+	#Gold Backpack Settings
+	[server.goldBackpack]
 		#Number of inventory slots in the backpack
 		#Range: 1 ~ 144
 		inventorySlotCount = 36
@@ -56,14 +59,23 @@
 		#Range: 0 ~ 10
 		upgradeSlotCount = 3
 
-	#Netherite Backpack Settings
-	[server.netheriteBackpack]
+	#Diamond Backpack Settings
+	[server.diamondBackpack]
 		#Number of inventory slots in the backpack
 		#Range: 1 ~ 144
 		inventorySlotCount = 45
 		#Number of upgrade slots in the backpack
 		#Range: 0 ~ 10
 		upgradeSlotCount = 4
+
+	#Netherite Backpack Settings
+	[server.netheriteBackpack]
+		#Number of inventory slots in the backpack
+		#Range: 1 ~ 144
+		inventorySlotCount = 54
+		#Number of upgrade slots in the backpack
+		#Range: 0 ~ 10
+		upgradeSlotCount = 5
 
 	#Compacting Upgrade Settings
 	[server.compactingUpgrade]
@@ -425,4 +437,5 @@
 		slownessLevelsPerAdditionalBackpack = 1.0
 		#Determines if active upgrades will only work in the backpack that's worn by the player. Active upgrades are for example magnet, pickup, cooking, feeding upgrades.
 		onlyWornBackpackTriggersUpgrades = false
+
 
