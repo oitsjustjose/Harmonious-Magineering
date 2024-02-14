@@ -266,6 +266,7 @@ ServerEvents.tags('item', event => {
       '#forge:dusts',
       '#forge:gems',
       '#forge:ingots',
+      '#forge:nuggets',
       '#forge:raw_materials',
       '#forge:storage_blocks',
       'create:acacia_window_pane',
