@@ -1,0 +1,30 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "nuclear_science"
+	group: "7ACE386F34E81744"
+	icon: "mekanism:pellet_polonium"
+	id: "71B469BB148A69FE"
+	order_index: 5
+	quest_links: [ ]
+	quests: [{
+		dependencies: ["38657673289A3650"]
+		description: [
+			"Yeah I've never wanted to make a nuclear reactor myself, so I've decided to motivate players with a handy guide"
+			""
+			"One that I haven't written yet."
+			""
+			"Sorry not sorry."
+		]
+		id: "4DA2445C079F458F"
+		tasks: [{
+			id: "6B3E8E670B80D6A3"
+			title: "Eyo, this chapter is INCOMPLETE"
+			type: "checkmark"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
+	subtitle: ["&1Even More Mekanism&r"]
+	title: "&aNuclear Science&r"
+}

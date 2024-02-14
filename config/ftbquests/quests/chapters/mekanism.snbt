@@ -22,6 +22,11 @@
 	quests: [
 		{
 			dependencies: ["2972E4B82723A69E"]
+			description: [
+				"As you begin to observe the uniquely durable properties of &6Duroplast&r, you realize that combining it with &7Steel&r would yield a durable chassis capable of handling much more energy and could even fit some circuitry and conduit within!"
+				""
+				"This new casing has revealed an entirely new and much more modular type of technology that should be able to help you progress as an engineer."
+			]
 			hide: true
 			id: "66899BB398A3CDE3"
 			rewards: [{
@@ -33,33 +38,316 @@
 			}]
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Harnessing Duroplast"
 			tasks: [{
 				id: "7777396943782020"
 				item: "mekanism:steel_casing"
 				type: "item"
 			}]
+			title: "A New Chassis"
 			x: 0.0d
 			y: -0.5d
 		}
 		{
+			dependencies: ["66899BB398A3CDE3"]
+			description: [
+				"While the &aEnrichment Chamber&r may appear to be capable of extracting dust from raw ore much more efficiently, there's so much more to this machine. "
+				""
+				"Most important of all is its ability to process simple materials like &0Coal&r, &4Redstone&r and &bDiamonds&r into a more mineral-dense, enriched state. This form can then be used in a few dozen recipes in another type of machine that can infuse items with this enriched form."
+			]
 			id: "335D1067665D6682"
+			rewards: [{
+				id: "7A74F744FBB35B1C"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			subtitle: "Better than ore processing!"
 			tasks: [{
 				id: "1A1DAF21DB7366BC"
 				item: "mekanism:enrichment_chamber"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 1.0d
+			title: "Alternative Mineral Processing"
+			x: 0.0d
+			y: 1.5d
 		}
 		{
+			dependencies: ["335D1067665D6682"]
+			description: [
+				"As you've discovered before, many materials can be &6Enriched&r into a more mineral-dense form of themselves. These enriched materials can be used as an &7Infuse Type&r in the &aMetallurgic Infuser&r."
+				""
+				"Once an Infuse Type is provided to the infuser, a material (usually a Metal, hence the name) can be inserted and infused with the enriched mineral you loaded it with. This can allow you to form a new type of &acircuit&r, make &7Steel&r much more quickly and easily, and even create all new &cAlloys&r!"
+			]
 			id: "47B024D85AAF78F2"
+			rewards: [{
+				id: "1C0A5CB24DF3F739"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			subtitle: "Kinda just alloying with extra steps?"
 			tasks: [{
 				id: "6F296366663E8989"
 				item: "mekanism:metallurgic_infuser"
 				type: "item"
 			}]
+			title: "Getting into Infusing"
+			x: 0.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["47B024D85AAF78F2"]
+			description: [
+				"By using &bReniforced Alloy&r's inherent ability to intelligently count and route items, you've been able to create a &aCombiner&r. This is a machine that uses a set number of given inputs combined with each other to create a handful of new and familiar ingredients!"
+				""
+				"This should make &8Transistor&r and &9Capacitor&r crafting much more easy and convenient going forward.."
+			]
+			id: "072CC9482CA4ED25"
+			subtitle: "More recipes are now a breeze!"
+			tasks: [{
+				id: "2613F5B5C76D8CBD"
+				item: "mekanism:combiner"
+				type: "item"
+			}]
+			title: "Getting Combinatorial!"
+			x: 0.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["7E854274F8FC5700"]
+			id: "5AE9D8A2F5F27390"
+			optional: true
+			rewards: [{
+				count: 3
+				id: "1AA8EA005F6CC80A"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			shape: "gear"
+			subtitle: "3x Your Machine Processing!"
+			tasks: [{
+				id: "0B085335F2E57722"
+				item: "mekanism:basic_tier_installer"
+				type: "item"
+			}]
+			title: "Tripling is the ticket!"
+			x: 3.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["4AFE0C1A3DF59343"]
+			id: "335B7468AC64D28B"
+			optional: true
+			rewards: [{
+				count: 5
+				id: "2EB9B5355B9EB3EF"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			shape: "gear"
+			subtitle: "5x Your Machine Processing!"
+			tasks: [{
+				id: "0820F92EB976B485"
+				item: "mekanism:advanced_tier_installer"
+				type: "item"
+			}]
+			title: "Quintupling is Quintessential!"
+			x: 3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["43C0EDF2ADEF9211"]
+			id: "07B944DEE0720BCE"
+			optional: true
+			rewards: [{
+				count: 7
+				id: "3E9CE06A16D59F52"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			shape: "gear"
+			subtitle: "7x Your Machine Processing!"
+			tasks: [{
+				id: "1442F39D40232F14"
+				item: "mekanism:elite_tier_installer"
+				type: "item"
+			}]
+			title: "Elite, but not Obsolete!"
+			x: 3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["12F006D9AE949371"]
+			id: "4BC256309F1DCE00"
+			optional: true
+			rewards: [{
+				count: 9
+				id: "58C25AFD1DDD0A9D"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			shape: "gear"
+			subtitle: "9x Your Machine Processing!"
+			tasks: [{
+				id: "78A1DB7F9CA7DB72"
+				item: "mekanism:ultimate_tier_installer"
+				type: "item"
+			}]
+			x: 3.0d
+			y: 9.0d
+		}
+		{
+			dependencies: ["7E854274F8FC5700"]
+			description: ["It seems as though combining &cInfused Alloy&r with a &aBasic Control Circuit&r augments the circcuit to support even more advanced procedures. Perhaps this can serve as some sort of use to you?"]
+			icon: "mekanism:advanced_control_circuit"
+			id: "4AFE0C1A3DF59343"
+			rewards: [{
+				count: 10
+				id: "768D6C8E2B02A4FB"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			subtitle: "This isn't just any alloy, it's an &oadvanced&r alloy"
+			tasks: [
+				{
+					id: "4458ECB0234AC01E"
+					item: "mekanism:alloy_infused"
+					type: "item"
+				}
+				{
+					id: "64ECA69A763F543C"
+					item: "mekanism:advanced_control_circuit"
+					type: "item"
+				}
+			]
+			title: "Marginally Advanced"
 			x: 1.5d
-			y: 1.0d
+			y: 5.5d
+		}
+		{
+			dependencies: ["4AFE0C1A3DF59343"]
+			description: [
+				"Interesting.. &bEnriched Diamond&r creates a whole new &bAlloy&r that you can use in several different ways, but more interesting is the ability to further augment the Control Circuit with this new alloy. "
+				""
+				"This improved control circuit seems to be a principle component of some more advanced routing capabilites seen in some other machines and a new type of cable!"
+			]
+			icon: "mekanism:elite_control_circuit"
+			id: "43C0EDF2ADEF9211"
+			rewards: [{
+				count: 10
+				id: "2E6976891DE60600"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			subtitle: "Advanced Routing for Dummies!"
+			tasks: [
+				{
+					id: "068E1093D76CF3B6"
+					item: "mekanism:alloy_reinforced"
+					type: "item"
+				}
+				{
+					id: "10B1C94BF30C957C"
+					item: "mekanism:elite_control_circuit"
+					type: "item"
+				}
+			]
+			title: "Reinforcements Galore"
+			x: 1.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["43C0EDF2ADEF9211"]
+			description: ["&5Refined Obsidian&r seems to have created what can only be described as the &nUltimate Alloy&r - this new alloy not only contains the ability to maximally augment machines, but unlocks a significant amount of technology required for advanced &aNuclear Technology&r and &aWaste Processing&r!"]
+			icon: "mekanism:ultimate_control_circuit"
+			id: "12F006D9AE949371"
+			rewards: [{
+				count: 10
+				id: "25517F97F44BF272"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			subtitle: "Going Nuclear"
+			tasks: [
+				{
+					id: "0EE62343C390297B"
+					item: "mekanism:alloy_atomic"
+					type: "item"
+				}
+				{
+					id: "38657673289A3650"
+					item: "mekanism:ultimate_control_circuit"
+					type: "item"
+				}
+			]
+			title: "Atomically Refined"
+			x: 1.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["47B024D85AAF78F2"]
+			description: [
+				"This &aBasic Control Circuit&r seems more than suitable to replace &aFinished PCBs&r in a lot of machine crafting. Not only that, but they seem to be crucial creating other &amachines&r, &aupgrades&r and even &afactory augments&r!"
+				""
+				"Not only that, these control circuits seem to be relatively modular; they can be upgraded as you discover and create improved alloys and materials made through the &aMetallurgic Infuser&r."
+			]
+			id: "7E854274F8FC5700"
+			rewards: [{
+				count: 10
+				id: "35859BD4D564AB7B"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			subtitle: "Optimized for controlling machinery!"
+			tasks: [{
+				id: "370429215692D01A"
+				item: "mekanism:basic_control_circuit"
+				type: "item"
+			}]
+			title: "Simple Circuits"
+			x: 1.5d
+			y: 4.0d
+		}
+		{
+			id: "72137F826B6F1587"
+			tasks: [{
+				id: "1414D0A946446346"
+				item: "mekanism:energized_smelter"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 4.0d
+		}
+		{
+			id: "3A76CB8F9B41653C"
+			tasks: [{
+				id: "055D4BB52DDBB7DD"
+				item: "mekanism:crusher"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 7.0d
+		}
+		{
+			id: "231AE7322D85F528"
+			tasks: [{
+				id: "1459B3FDEC7BA83D"
+				item: "mekanism:osmium_compressor"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 5.5d
+		}
+		{
+			id: "4B94E4339EF61FB6"
+			shape: "octagon"
+			size: 1.25d
+			tasks: [{
+				id: "754701A9B7DD42DD"
+				item: "mekanism:digital_miner"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 10.0d
 		}
 	]
 	subtitle: ["&1Mekanism&r"]

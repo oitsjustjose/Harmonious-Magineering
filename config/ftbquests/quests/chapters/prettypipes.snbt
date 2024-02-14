@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "prettypipes"
-	group: "30752BCABB2D0E90"
+	group: "5336980E34DC09BA"
 	icon: "prettypipes:wrench"
 	id: "17FC4536FE25C1AB"
-	order_index: 0
+	order_index: 1
 	quest_links: [ ]
 	quests: [ ]
 	title: "Tidy Tubes"

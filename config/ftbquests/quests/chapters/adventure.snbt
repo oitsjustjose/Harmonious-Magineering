@@ -1,0 +1,32 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "adventure"
+	group: "7B95A8B4604FCF48"
+	icon: {
+		Count: 1b
+		id: "ftbquests:custom_icon"
+		tag: {
+			Icon: "supplementaries:item/cartographers_quill"
+		}
+	}
+	id: "0EC0BEA916B596A5"
+	order_index: 1
+	quest_links: [ ]
+	quests: [{
+		description: [
+			"Yeah I realized this chapter category needed &omore&r, but I didn't want to deal with propagating it with quests, witty titles/subtitles, and descriptions right this moment :("
+			""
+			"- <rainb>oitsjustjose</rainb>"
+		]
+		id: "3A6AE78F5C246F5F"
+		tasks: [{
+			id: "51953856445DBE24"
+			title: "This chapter is undercooked"
+			type: "checkmark"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
+	title: "Adventure!"
+}
