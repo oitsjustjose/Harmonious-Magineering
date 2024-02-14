@@ -499,7 +499,7 @@
 	"Automatic Recipe Unlock" = false
 	"Better Elytra Rocket" = false
 	"Campfires Boost Elytra" = false
-	"Compasses Work Everywhere" = true
+	"Compasses Work Everywhere" = false
 	"Coral On Cactus" = false
 	"Diamond Repair" = false
 	"Double Door Opening" = true
@@ -1526,7 +1526,7 @@
 	"Soul Candles" = false
 	"Usage Ticker" = false
 	"Uses For Curses" = false
-	"Variant Animal Textures" = false
+	"Variant Animal Textures" = true
 	"Wool Shuts Up Minecarts" = true
 
 	[client.auto_walk_keybind]
