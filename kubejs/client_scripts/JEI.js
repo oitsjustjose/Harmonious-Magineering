@@ -631,6 +631,10 @@ JEIEvents.hideItems(event => {
     'kubejs:unknown_holy_item',
     'kubejs:unknown_kinetic_item',
     'kubejs:unknown_pneumatic_item',
+    'mekanism:advanced_compressing_factory',
+    'mekanism:advanced_sawing_factory',
+    'mekanism:basic_compressing_factory',
+    'mekanism:basic_sawing_factory',
     'mekanism:block_osmium',
     'mekanism:block_raw_osmium',
     'mekanism:cardboard_box',
@@ -641,12 +645,18 @@ JEIEvents.hideItems(event => {
     'mekanism:deepslate_osmium_ore',
     'mekanism:dirty_dust_osmium',
     'mekanism:dust_osmium',
+    'mekanism:elite_compressing_factory',
+    'mekanism:elite_sawing_factory',
     'mekanism:ingot_osmium',
     'mekanism:lead_ore',
     'mekanism:nugget_osmium',
+    'mekanism:osmium_compressor',
     'mekanism:osmium_ore',
+    'mekanism:precision_sawmill',
     'mekanism:raw_osmium',
     'mekanism:shard_osmium',
+    'mekanism:ultimate_compressing_factory',
+    'mekanism:ultimate_sawing_factory',
     'minecraft:enchanting_table',
     'modularrouters:breaker_module',
     'modularrouters:energy_distributor_module',
@@ -690,4 +700,36 @@ JEIEvents.hideItems(event => {
     'waystones:white_sharestone',
     'waystones:yellow_sharestone',
   ].forEach(x => event.hide(x));
+});
+
+JEIEvents.hideCustom(event => {
+  // Load in the Java classes so we can get the Ingredient Types
+  const ChemicalType = Java.loadClass('mekanism.api.chemical.ChemicalType');
+  const MekanismJEI = Java.loadClass('mekanism.client.jei.MekanismJEI');
+
+  const SLURRY = MekanismJEI.getIngredientType(ChemicalType.SLURRY);
+  const GAS = MekanismJEI.getIngredientType(ChemicalType.GAS);
+
+  // Unfortunately, we can't hide *quickly* using 'modid:value' -- we have to find them
+  const slurriesToRemove = ['mekanism:clean_osmium', 'mekanism:dirty_osmium'];
+  // Go through every slurry in the ingredient list -- if it's in our remove list, remove it
+  const Slurries = event.get(SLURRY);
+  Slurries.allIngredients.forEach(x => {
+    slurriesToRemove.forEach(toRm => {
+      if (`${x}`.includes(toRm)) {
+        Slurries.hide(x);
+      }
+    });
+  });
+
+  // Repeat the same as above but for gas
+  const gassesToRemove = ['mekanism:osmium'];
+  const Gasses = event.get(GAS);
+  Gasses.allIngredients.forEach(x => {
+    gassesToRemove.forEach(toRm => {
+      if (`${x}`.includes(toRm)) {
+        Gasses.hide(x);
+      }
+    });
+  });
 });
