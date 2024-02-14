@@ -1,8 +1,0 @@
-{
-  "logModelCreationData": false,
-  "renderModeChoice": "NORMAL",
-  "vanillaModelHologramRenderMode": "Off",
-  "attemptRevertingEntityModelsAlteredByAnotherMod": true,
-  "logUnknownOrModdedEntityModels": "NONE",
-  "attemptPhysicsModPatch_2": "CUSTOM"
-}
