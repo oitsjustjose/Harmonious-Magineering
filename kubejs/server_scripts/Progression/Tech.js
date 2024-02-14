@@ -657,7 +657,7 @@ ServerEvents.recipes(event => {
 
     event.remove({output: 'mekanism:enrichment_chamber'});
     event.shaped('mekanism:enrichment_chamber', ['PCP', 'LSL', 'TCT'], {
-      C: '#forge:circuits/basic',
+      C: ['#forge:circuits/basic', 'pneumaticcraft:printed_circuit_board'],
       L: 'create:crushing_wheel',
       P: items.capacitor,
       S: 'mekanism:steel_casing',
@@ -672,6 +672,33 @@ ServerEvents.recipes(event => {
       T: items.transistor,
     });
 
+    /* Get rid of the Osmium Compressor -- we don't need it at all tbh */
+    event.remove({type: 'mekanism:compressing'});
+    event.remove({output: 'mekanism:osmium_compressor'});
+    event.remove({output: 'mekanism:basic_compressing_factory'});
+    event.remove({output: 'mekanism:advanced_compressing_factory'});
+    event.remove({output: 'mekanism:elite_compressing_factory'});
+    event.remove({output: 'mekanism:ultimate_compressing_factory'});
+
+    event.remove({id: 'mekanism:gas_conversion/osmium_from_ingot'});
+    event.remove({id: 'mekanism:gas_conversion/osmium_from_block'});
+
+    /* Substitute compressor recipes here */
+    event.custom({
+      type: 'mekanism:combining',
+      mainInput: {ingredient: {tag: 'forge:ingots/steel'}},
+      extraInput: {ingredient: {item: 'mekanism:dust_refined_obsidian'}},
+      output: {item: 'mekanism:ingot_refined_obsidian'},
+    });
+
+    /* Get rid of the Sawmill -- intercompat would be a nightmare here :/ */
+    event.remove({type: 'mekanism:sawing'});
+    event.remove({output: 'mekanism:precision_sawmill'});
+    event.remove({output: 'mekanism:basic_sawing_factory'});
+    event.remove({output: 'mekanism:advanced_sawing_factory'});
+    event.remove({output: 'mekanism:elite_sawing_factory'});
+    event.remove({output: 'mekanism:ultimate_sawing_factory'});
+
     /* Redo all Basic Factory recipes */
     event.remove({output: 'mekanism:basic_tier_installer'});
     event.shaped('mekanism:basic_tier_installer', ['PCP', 'IBI', 'TCT'], {
@@ -684,13 +711,11 @@ ServerEvents.recipes(event => {
 
     [
       {factory: 'mekanism:basic_combining_factory', base: 'mekanism:combiner'},
-      {factory: 'mekanism:basic_compressing_factory', base: 'mekanism:osmium_compressor'},
       {factory: 'mekanism:basic_crushing_factory', base: 'mekanism:crusher'},
       {factory: 'mekanism:basic_enriching_factory', base: 'mekanism:enrichment_chamber'},
       {factory: 'mekanism:basic_infusing_factory', base: 'mekanism:metallurgic_infuser'},
       {factory: 'mekanism:basic_injecting_factory', base: 'mekanism:chemical_injection_chamber'},
       {factory: 'mekanism:basic_purifying_factory', base: 'mekanism:purification_chamber'},
-      {factory: 'mekanism:basic_sawing_factory', base: 'mekanism:precision_sawmill'},
       {factory: 'mekanism:basic_smelting_factory', base: 'mekanism:energized_smelter'},
     ].forEach(pair => {
       event.remove({output: pair.factory});
@@ -701,6 +726,34 @@ ServerEvents.recipes(event => {
         P: items.capacitor,
         T: items.transistor,
       });
+    });
+
+    /* Re-work Teleporter Frame recipe */
+    event.remove({output: 'mekanism:teleporter_frame'});
+    event.shaped(Item.of('mekanism:teleporter_frame', 3), ['SRS', 'TFT', 'SRS'], {
+      F: 'ae2:fluix_pearl',
+      T: 'mekanism:energy_tablet',
+      S: '#forge:ingots/steel',
+      R: '#forge:ingots/refined_obsidian',
+    });
+
+    /* Re-work the Ore Units for the Mekatool */
+    event.remove('mekanism:module_fortune_unit');
+    event.shaped('mekanism:module_fortune_unit', ['ABA', 'DMD', 'PPP'], {
+      A: '#forge:alloys/elite',
+      B: Item.of('minecraft:enchanted_book').enchant('minecraft:fortune', 3).strongNBT(),
+      D: 'minecraft:diamond_block',
+      M: 'mekanism:module_base',
+      P: 'mekanism:pellet_polonium',
+    });
+
+    event.remove('mekanism:module_silk_touch_unit');
+    event.shaped('mekanism:module_silk_touch_unit', ['ABA', 'DMD', 'PPP'], {
+      A: '#forge:alloys/elite',
+      B: Item.of('minecraft:enchanted_book').enchant('silk_touch', 1).strongNBT(),
+      D: 'pneumaticcraft:drill_bit_diamond',
+      M: 'mekanism:module_base',
+      P: 'mekanism:pellet_polonium',
     });
   };
 

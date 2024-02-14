@@ -145,6 +145,12 @@ ServerEvents.recipes(event => {
     ].forEach(id => event.remove(id));
   };
 
+  const nukeRefinedGlowstone = () => {
+    event.remove({output: 'mekanism:nugget_refined_glowstone'});
+    event.remove({output: 'mekanism:block_refined_glowstone'});
+    event.remove({output: 'mekanism:ingot_refined_glowstone'});
+  };
+
   const oreSmelting = () => {
     Object.keys(global.Metals).forEach(mat => {
       let metal = global.Metals[mat];
@@ -276,5 +282,16 @@ ServerEvents.recipes(event => {
     });
   };
 
-  [automationCompat, dustSmelting, metalSmithing, nukeOsmium, oreSmelting, oreWashing, plateCompat, rods, silverAndLead].forEach(module => module());
+  [
+    automationCompat,
+    dustSmelting,
+    metalSmithing,
+    nukeOsmium,
+    nukeRefinedGlowstone,
+    oreSmelting,
+    oreWashing,
+    plateCompat,
+    rods,
+    silverAndLead,
+  ].forEach(module => module());
 });

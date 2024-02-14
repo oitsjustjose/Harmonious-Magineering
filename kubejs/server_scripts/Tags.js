@@ -17,6 +17,9 @@ ServerEvents.tags('block', event => {
   global.StrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   ores.forEach(ore => event.removeAllTagsFrom(ore));
 
+  /* Refined Glowstone is primarily useless >_> */
+  event.removeAllTagsFrom('mekanism:block_refined_glowstone');
+
   event.add('minecraft:planks', [
     'aether_redux:blightwillow_planks',
     'aether_redux:cloudcap_planks',
@@ -713,6 +716,10 @@ ServerEvents.tags('item', event => {
   event.remove('pneumaticcraft:upgrade_components', 'minecraft:lapis_lazuli');
   /* Add custom Zinc Dust to its corresponding tag */
   event.add('forge:dusts/zinc', 'kubejs:zinc_dust');
+  /* Refined Glowstone is primarily useless >_> */
+  event.removeAllTagsFrom('mekanism:nugget_refined_glowstone');
+  event.removeAllTagsFrom('mekanism:ingot_refined_glowstone');
+  event.removeAllTagsFrom('mekanism:block_refined_glowstone');
 
   /* Clean up Quark's messy tags -_- */
   [
