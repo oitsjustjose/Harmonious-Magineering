@@ -1,8 +1,0 @@
-{
-  "block.mekanism.osmium_compressor": "Compressor",
-  "container.mekanism.osmium_compressor": "Compressor",
-  "description.mekanism.osmium_compressor": "A fairly advanced machine used to compress steel into various dusts in order to create their ingot counterparts.",
-  "gas.mekanism.osmium": "Steel",
-  "block.mekanism.deepslate_osmium_ore": "Deepslate",
-  "block.mekanism.osmium_ore": "Stone"
-}
