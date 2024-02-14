@@ -8,6 +8,7 @@
 	order_index: 4
 	quest_links: [ ]
 	quests: [{
+		dependencies: ["7E854274F8FC5700"]
 		id: "0F946D801295B7CE"
 		rewards: [{
 			auto: "invisible"

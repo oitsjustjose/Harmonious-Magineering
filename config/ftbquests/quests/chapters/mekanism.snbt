@@ -55,6 +55,7 @@
 				""
 				"Most important of all is its ability to process simple materials like &0Coal&r, &4Redstone&r and &bDiamonds&r into a more mineral-dense, enriched state. This form can then be used in a few dozen recipes in another type of machine that can infuse items with this enriched form."
 			]
+			hide: true
 			id: "335D1067665D6682"
 			rewards: [{
 				id: "7A74F744FBB35B1C"
@@ -78,6 +79,7 @@
 				""
 				"Once an Infuse Type is provided to the infuser, a material (usually a Metal, hence the name) can be inserted and infused with the enriched mineral you loaded it with. This can allow you to form a new type of &acircuit&r, make &7Steel&r much more quickly and easily, and even create all new &cAlloys&r!"
 			]
+			hide: true
 			id: "47B024D85AAF78F2"
 			rewards: [{
 				id: "1C0A5CB24DF3F739"
@@ -101,6 +103,7 @@
 				""
 				"This should make &8Transistor&r and &9Capacitor&r crafting much more easy and convenient going forward.."
 			]
+			hide: true
 			id: "072CC9482CA4ED25"
 			subtitle: "More recipes are now a breeze!"
 			tasks: [{
@@ -114,6 +117,7 @@
 		}
 		{
 			dependencies: ["7E854274F8FC5700"]
+			hide: true
 			id: "5AE9D8A2F5F27390"
 			optional: true
 			rewards: [{
@@ -135,6 +139,7 @@
 		}
 		{
 			dependencies: ["4AFE0C1A3DF59343"]
+			hide: true
 			id: "335B7468AC64D28B"
 			optional: true
 			rewards: [{
@@ -156,6 +161,7 @@
 		}
 		{
 			dependencies: ["43C0EDF2ADEF9211"]
+			hide: true
 			id: "07B944DEE0720BCE"
 			optional: true
 			rewards: [{
@@ -177,6 +183,7 @@
 		}
 		{
 			dependencies: ["12F006D9AE949371"]
+			hide: true
 			id: "4BC256309F1DCE00"
 			optional: true
 			rewards: [{
@@ -198,6 +205,7 @@
 		{
 			dependencies: ["7E854274F8FC5700"]
 			description: ["It seems as though combining &cInfused Alloy&r with a &aBasic Control Circuit&r augments the circcuit to support even more advanced procedures. Perhaps this can serve as some sort of use to you?"]
+			hide: true
 			icon: "mekanism:advanced_control_circuit"
 			id: "4AFE0C1A3DF59343"
 			rewards: [{
@@ -230,6 +238,7 @@
 				""
 				"This improved control circuit seems to be a principle component of some more advanced routing capabilites seen in some other machines and a new type of cable!"
 			]
+			hide: true
 			icon: "mekanism:elite_control_circuit"
 			id: "43C0EDF2ADEF9211"
 			rewards: [{
@@ -258,6 +267,7 @@
 		{
 			dependencies: ["43C0EDF2ADEF9211"]
 			description: ["&5Refined Obsidian&r seems to have created what can only be described as the &nUltimate Alloy&r - this new alloy not only contains the ability to maximally augment machines, but unlocks a significant amount of technology required for advanced &aNuclear Technology&r and &aWaste Processing&r!"]
+			hide: true
 			icon: "mekanism:ultimate_control_circuit"
 			id: "12F006D9AE949371"
 			rewards: [{
@@ -290,6 +300,7 @@
 				""
 				"Not only that, these control circuits seem to be relatively modular; they can be upgraded as you discover and create improved alloys and materials made through the &aMetallurgic Infuser&r."
 			]
+			hide: true
 			id: "7E854274F8FC5700"
 			rewards: [{
 				count: 10
@@ -308,46 +319,106 @@
 			y: 4.0d
 		}
 		{
+			dependencies: ["47B024D85AAF78F2"]
+			hide: true
 			id: "72137F826B6F1587"
 			tasks: [{
 				id: "1414D0A946446346"
 				item: "mekanism:energized_smelter"
 				type: "item"
 			}]
-			x: -1.5d
-			y: 4.0d
+			x: 0.0d
+			y: 8.5d
 		}
 		{
+			dependencies: ["47B024D85AAF78F2"]
+			hide: true
 			id: "3A76CB8F9B41653C"
 			tasks: [{
 				id: "055D4BB52DDBB7DD"
 				item: "mekanism:crusher"
 				type: "item"
 			}]
-			x: -1.5d
+			x: 0.0d
 			y: 7.0d
 		}
 		{
-			id: "231AE7322D85F528"
-			tasks: [{
-				id: "1459B3FDEC7BA83D"
-				item: "mekanism:osmium_compressor"
-				type: "item"
-			}]
-			x: -1.5d
-			y: 5.5d
-		}
-		{
+			dependencies: [
+				"12F006D9AE949371"
+				"47B024D85AAF78F2"
+			]
+			hide: true
+			hide_dependency_lines: true
 			id: "4B94E4339EF61FB6"
 			shape: "octagon"
-			size: 1.25d
+			size: 2.0d
 			tasks: [{
 				id: "754701A9B7DD42DD"
 				item: "mekanism:digital_miner"
 				type: "item"
 			}]
+			title: "Large-Scale Mining"
 			x: 0.0d
-			y: 10.0d
+			y: 11.0d
+		}
+		{
+			dependencies: ["47B024D85AAF78F2"]
+			hide: true
+			id: "11418B9160A31659"
+			tasks: [{
+				id: "04B8D138C945FB6F"
+				item: {
+					Count: 1b
+					id: "mekanism:energy_tablet"
+					tag: {
+						mekData: {
+							EnergyContainers: [{
+								Container: 0b
+								stored: "1000000"
+							}]
+						}
+					}
+				}
+				type: "item"
+			}]
+			x: -1.5d
+			y: 4.0d
+		}
+		{
+			dependencies: ["180D657687E66D9D"]
+			hide: true
+			id: "6CDECE27684E4215"
+			tasks: [{
+				id: "57A416EFCBEEE020"
+				item: "mekanismgenerators:advanced_solar_generator"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 7.0d
+		}
+		{
+			dependencies: ["11418B9160A31659"]
+			hide: true
+			id: "64BECFD9A4687D4E"
+			tasks: [{
+				id: "1D6DF3CC2A4EDBB6"
+				item: "mekanismgenerators:wind_generator"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["11418B9160A31659"]
+			hide: true
+			id: "180D657687E66D9D"
+			tasks: [{
+				id: "5E627D018E844E46"
+				item: "mekanismgenerators:solar_generator"
+				type: "item"
+			}]
+			x: -1.5d
+			y: 5.5d
 		}
 	]
 	subtitle: ["&1Mekanism&r"]
