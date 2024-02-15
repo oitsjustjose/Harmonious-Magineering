@@ -105,6 +105,11 @@
 			]
 			hide: true
 			id: "072CC9482CA4ED25"
+			rewards: [{
+				id: "5A4B5DA2E737FE4F"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "More recipes are now a breeze!"
 			tasks: [{
 				id: "2613F5B5C76D8CBD"
@@ -320,25 +325,49 @@
 		}
 		{
 			dependencies: ["47B024D85AAF78F2"]
+			description: [
+				"As you continued work with the &7Arc Furnace&r, you've become more comfortable with the flow of electricity that makes it &otick&r. It seems as though you can fashion together an &aEnergized Smelter&r using some &7External Heaters&r and some &7HOP Graphite&r. "
+				""
+				"Fortunately this new design doesn't consume or wear away at the graphite source at all!"
+			]
 			hide: true
 			id: "72137F826B6F1587"
+			rewards: [{
+				id: "1BB780489AE7B6BF"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			subtitle: "Powered by HOP Graphite!"
 			tasks: [{
 				id: "1414D0A946446346"
 				item: "mekanism:energized_smelter"
 				type: "item"
 			}]
+			title: "Electric Smelting"
 			x: 0.0d
 			y: 8.5d
 		}
 		{
 			dependencies: ["47B024D85AAF78F2"]
+			description: [
+				"As you've seen before, crushing things is quintessential to the hi-tech machining world. As you progress to more compact factories, you've begun to discover that the &aEnrichment Chamber&r is too specialized of a machine to handle crushing various blocks into their cracked variants, or ingots back into their respective dusts."
+				""
+				"In comes the &aCrusher&r - this machine is capable of doing exactly that, and in some cases is more efficient than some of the former machines you've set up (both in space and speed!)."
+			]
 			hide: true
 			id: "3A76CB8F9B41653C"
+			rewards: [{
+				id: "1BF622ACB9A9C114"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			subtitle: "Degredating blocks, one crack at a time"
 			tasks: [{
 				id: "055D4BB52DDBB7DD"
 				item: "mekanism:crusher"
 				type: "item"
 			}]
+			title: "Getting into the nitty gritty"
 			x: 0.0d
 			y: 7.0d
 		}
@@ -347,11 +376,23 @@
 				"12F006D9AE949371"
 				"47B024D85AAF78F2"
 			]
+			description: [
+				"As you've discovered the &aRobit&r, a fascinating robot companion capable of doing much of your bidding for you, you've started to ponder the capability of such a powerful logic processor when applied to the realm of &6Mining&r. "
+				""
+				"You continue to tinker throughout the days and nights until it dawns on you that &aLogistical Sorters&r and &5Teleportation Cores&r a would be more than enough to augment the &aRobit&r to be able to go and mine a configurable set of blocks in a &olarge&r area for you -- this can easily be configured to mine only certain (or all) ores, only stone, or practically anything!"
+			]
 			hide: true
 			hide_dependency_lines: true
 			id: "4B94E4339EF61FB6"
+			rewards: [{
+				count: 2
+				id: "097EA85A951693C7"
+				item: "dimstorage:dimensional_chest"
+				type: "item"
+			}]
 			shape: "octagon"
 			size: 2.0d
+			subtitle: "Configurable and all!"
 			tasks: [{
 				id: "754701A9B7DD42DD"
 				item: "mekanism:digital_miner"
@@ -363,8 +404,19 @@
 		}
 		{
 			dependencies: ["47B024D85AAF78F2"]
+			description: [
+				"Fascinating, by combining a &9Capacitor&r with &cAdvanced Alloy&r, you've found that you can create an &aEnergy Tablet&r that acts &overy&r similarly to a battery and can even be used to store Energy just like one too!"
+				""
+				"This opens quite a few new routes for not only creating new energy storage devices, but even attaching energy storage to existing devices to make various &aFlux-Powered Tools and Gear&r!"
+			]
 			hide: true
 			id: "11418B9160A31659"
+			rewards: [{
+				id: "2C73B0A29B5E45E2"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			subtitle: "kWh not yet known!"
 			tasks: [{
 				id: "04B8D138C945FB6F"
 				item: {
@@ -381,44 +433,194 @@
 				}
 				type: "item"
 			}]
+			title: "Portable Power"
 			x: -1.5d
 			y: 4.0d
 		}
 		{
 			dependencies: ["180D657687E66D9D"]
+			description: [
+				"&oYou read the quest title, right?&r As it says, you've found a way to save on space and optimize power efficiency / reduce energy loss by combining four &aSolar Generators&r into a larger array called an &aAdvanced Solar Generator&r!"
+				""
+				"These have a slightly different footprint, but you should be able to figure that out pretty quickly!"
+			]
 			hide: true
 			id: "6CDECE27684E4215"
+			rewards: [{
+				id: "5BADFE93A722CACD"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			subtitle: "A tale of consolidating solar gens.."
 			tasks: [{
 				id: "57A416EFCBEEE020"
 				item: "mekanismgenerators:advanced_solar_generator"
 				type: "item"
 			}]
+			title: "Same as before, times four!"
 			x: -1.5d
 			y: 7.0d
 		}
 		{
 			dependencies: ["11418B9160A31659"]
+			description: [
+				"By observing various types of Windmills (both those that create &6Torque&r, and those that produce energy through a &7Kinetic Dynamo&r), you've noticed that a few optimizations can be applied as well as an internal energy buffer to prevent unnecessary energy loss."
+				""
+				"This new &aWind Generator&r you've created seems to produce more energy when placed at higher altitudes as well.."
+			]
 			hide: true
 			id: "64BECFD9A4687D4E"
+			rewards: [{
+				id: "53762260617F83BE"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			subtitle: "Not sped up by the new 1.21 Breeze"
 			tasks: [{
 				id: "1D6DF3CC2A4EDBB6"
 				item: "mekanismgenerators:wind_generator"
 				type: "item"
 			}]
+			title: "'Round and 'round"
 			x: -1.5d
 			y: 8.5d
 		}
 		{
 			dependencies: ["11418B9160A31659"]
+			description: [
+				"It seems you've finally discovered how to create what is essentially a &9Photovoltaic Cell&r, which is capable of harnessing the photons from the sun into energy. "
+				""
+				"With three of these, you can form a basic &aSolar Generator&r capable of outputting the energy stored in its internal &aEnergy Tablet&r for later use or improved storage!"
+			]
 			hide: true
 			id: "180D657687E66D9D"
+			rewards: [{
+				id: "4A3F9D3CA815BBCE"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			subtitle: "Photosynthesized Energy Production!"
 			tasks: [{
 				id: "5E627D018E844E46"
 				item: "mekanismgenerators:solar_generator"
 				type: "item"
 			}]
+			title: "Now you're thinking with Photons!"
 			x: -1.5d
 			y: 5.5d
+		}
+		{
+			dependencies: ["2D3BBC07C1280046"]
+			description: [
+				"By combining multiple &aEnergy Tablets&r together in a configuration with a &7Steel Chassis&r, you've created a larger energy buffer called an &aEnergy Cube&r (real creative name, we know)."
+				""
+				"The &aEnergy Cube&r can be connected to &7Wire Connectors&r or &aUniversal Cables&r and will store a significant amount of energy. Additionally, when right-clicking it and viewing its interface, you can charge/discharge various powered items for your convenience!"
+			]
+			hide: true
+			id: "3992062B7F8BC849"
+			rewards: [{
+				id: "438AF8503CC8DEBF"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			subtitle: "Accumulators but they're <wave>Fancy</wave>"
+			tasks: [{
+				id: "12BC90648C453758"
+				item: "mekanism:basic_energy_cube"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["47B024D85AAF78F2"]
+			description: [
+				"Finally you've mastered energy transmission enough to feel comfortable with making a more compact and efficient method by means of &aBasic Universal Cables&r. As the name implies, these are intelligent enough to work with any other machinery regardless of Wattage/Voltage."
+				""
+				"As a cherry on top, they're even smaller and easier to set up than &7Relays&r, &7Connectors&r and &7Wires&r were!"
+				"{@pagebreak}"
+				"One fascinating thing about &oall&r of the cables, tubes and pipes (&aEnergy&r, &9Fluid&r, &7Gas&r, &cHeat&r and &dItem&r) is that they can all be upgraded 8-at-a-time by applying the next-tier alloy (i.e. an &cAdvanced Alloy&r would be the right item if working with a &aBasic&r cable/tube/pipe) on the pipe itself -- give it a try sometime!"
+			]
+			hide: true
+			id: "2D3BBC07C1280046"
+			rewards: [{
+				count: 16
+				id: "74FCE716258D83AC"
+				item: "mekanism:basic_universal_cable"
+				type: "item"
+			}]
+			subtitle: "LV/MV/HV wires with half the steps!"
+			tasks: [{
+				id: "4B2E0FF43B7BC2AE"
+				item: "mekanism:basic_universal_cable"
+				type: "item"
+			}]
+			x: -3.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["3992062B7F8BC849"]
+			description: [
+				"The &aInduction Matrix&r is a free-form (as long as it's a rectangular prism) multi-block structure capable of sending, receiving and storing large amounts of energy. The amount of energy it stores is directly proportional to the number and tier of &aCells&r you place inside the matrix. Likewise, the rate of energy transmission is directly proportional to the number and tier of &aProviders&r you place inside!"
+				""
+				"We strongly suggest you view the uses for any of the Induction Matrix components in JEI to get a good idea of what proportions of blocks you may be aiming for and how many supplies you'll end up needing :)"
+			]
+			hide: true
+			icon: "mekanism:upgrade_energy"
+			id: "3328A9FEDC3EB4AB"
+			rewards: [{
+				id: "44F52010F936438B"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			subtitle: "Dynamically allocated energy buffers"
+			tasks: [
+				{
+					id: "565A5E6BD06D32FB"
+					item: "mekanism:induction_casing"
+					type: "item"
+				}
+				{
+					id: "2E5FA91D1F69EF07"
+					item: "mekanism:induction_port"
+					type: "item"
+				}
+			]
+			title: "Multi-block Battery"
+			x: -3.0d
+			y: 7.5d
+		}
+		{
+			dependencies: ["3992062B7F8BC849"]
+			description: [
+				"By observing the various uses for bio-matter, you've discovered a potentially excellent fuel for the &aGas-Burning Generator&r - &dEthylene&r. "
+				""
+				"By combining &9Water&r, &7Hydrogen&r and Bio Fuel in a &aPressurized Reaction Chamber&r, you'll be able to produce &dEthylene&r. Fortunately, you've been able to sort out how to separate Oxygen and Hydrogen from &9Water&r so that shouldn't  too difficult, but something must be done with all this extra &6Substrate&r.."
+			]
+			hide: true
+			icon: "mekanism:ethene_bucket"
+			id: "3083B76ECA077B31"
+			rewards: [{
+				id: "7B69B65329CE9F51"
+				item: "create:experience_block"
+				type: "item"
+			}]
+			subtitle: "It takes energy to make energy"
+			tasks: [
+				{
+					id: "496DB525381EF313"
+					item: "mekanismgenerators:gas_burning_generator"
+					type: "item"
+				}
+				{
+					id: "21871C536DAF550E"
+					item: "mekanism:substrate"
+					type: "item"
+				}
+			]
+			title: "Ethylene Energy"
+			x: -3.0d
+			y: 9.0d
 		}
 	]
 	subtitle: ["&1Mekanism&r"]
