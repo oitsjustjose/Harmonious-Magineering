@@ -1,0 +1,1 @@
+infoDisplay:coords:false:15:-1
