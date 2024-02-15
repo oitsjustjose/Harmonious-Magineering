@@ -29,6 +29,15 @@ ServerEvents.recipes(event => {
       secondaries: [],
     });
 
+    // Inter-mod compat recipe for Fluix Dust
+    event.custom({
+      type: 'immersiveengineering:crusher',
+      energy: 3200,
+      input: {tag: 'forge:gems/fluix'},
+      result: {item: 'ae2:fluix_dust'},
+      secondaries: [],
+    });
+
     event.replaceInput({mod: 'ae2'}, '#forge:ingots/iron', '#forge:ingots/steel');
     event.replaceInput({mod: 'aeinfinitybooster'}, 'minecraft:ender_eye', 'ae2:singularity');
     // By the time you get to AE, you'll have power...
