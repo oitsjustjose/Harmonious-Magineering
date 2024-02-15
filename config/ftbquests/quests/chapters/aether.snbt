@@ -22,7 +22,7 @@
 	quests: [
 		{
 			dependencies: ["259253F0B5E9952E"]
-			description: ["The Diety has told you of a paradise locked away entirely behind a Portal of Glowstone, but all attempts to form this portal yourself have been entirely fruitless. Perhaps you the Diety's need help in order to proceed.."]
+			description: ["The Deity has told you of a paradise locked away entirely behind a Portal of Glowstone, but all attempts to form this portal yourself have been entirely fruitless. Perhaps you the Deity's need help in order to proceed.."]
 			hide: true
 			id: "2AB0349D89A4B983"
 			rewards: [

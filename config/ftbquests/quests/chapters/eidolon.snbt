@@ -364,7 +364,7 @@
 			description: [
 				"As you step further into the occult, you can't help but hear a voice from beyond beckoning out to you... perhaps demanding a sacrifice? That's odd..."
 				""
-				"You feel as though you might be able to reach back out to this diety by praying at an Altar once every so often, but what should you pray &oto&r? A crude &6Straw Effigy&r is the best you're able to fashion up for now - perhaps you should try chanting a &l&5Dark Prayer&r&r at this effigy."
+				"You feel as though you might be able to reach back out to this Deity by praying at an Altar once every so often, but what should you pray &oto&r? A crude &6Straw Effigy&r is the best you're able to fashion up for now - perhaps you should try chanting a &l&5Dark Prayer&r&r at this effigy."
 				""
 				""
 				"Maybe your altar could use some more supernatural additions like Skulls and a Chalice..."
@@ -380,7 +380,7 @@
 				item: "minecraft:skeleton_skull"
 				type: "item"
 			}]
-			subtitle: "Are we sure it's a &okind&r diety?"
+			subtitle: "Are we sure it's a &okind&r Deity?"
 			tasks: [
 				{
 					id: "0E5487995C8FFD37"
@@ -393,14 +393,14 @@
 					type: "item"
 				}
 			]
-			title: "Praying to a... &odiety&r?"
+			title: "Praying to a... &oDeity&r?"
 			x: -2.0d
 			y: 8.5d
 		}
 		{
 			dependencies: ["270AFC0FA41305D1"]
 			description: [
-				"You've been told by the diety you continue to pray to that it &ldemands&r a &4blood&r sacrifice.... good thing it doesn't have to be &oyour&r blood I suppose. You'll need somewhere to store the blood in, but a goblet can be fashioned from &6Arcane Gold&r and should be perfectly suitable for the time being. You can also improve your altar by upgrading it from a crude wooden one to a nicer Stone one made with &5Soul Shards&r."
+				"You've been told by the Deity you continue to pray to that it &ldemands&r a &4blood&r sacrifice.... good thing it doesn't have to be &oyour&r blood I suppose. You'll need somewhere to store the blood in, but a goblet can be fashioned from &6Arcane Gold&r and should be perfectly suitable for the time being. You can also improve your altar by upgrading it from a crude wooden one to a nicer Stone one made with &5Soul Shards&r."
 				""
 				"Try starting off with the blood of &nany animal&r using the &lSacrifice Animal&r chant - though this chant can only be used &nonce a day&r."
 				""
@@ -437,9 +437,9 @@
 		{
 			dependencies: ["3C0939420ECF23DE"]
 			description: [
-				"The Diety has told you about all of its ways and all of its magical tools and artifice, but you aren't able to make any of these things as a mere mortal.."
+				"The Deity has told you about all of its ways and all of its magical tools and artifice, but you aren't able to make any of these things as a mere mortal.."
 				""
-				"Fortunately, the Diety has shown you how to create a symbol of its likeness to create some more potent things - all you need is to chant a &lTouch of Darkness&r towards a &6Pewter Inlay&r that has been placed on your &lAltar&r "
+				"Fortunately, the Deity has shown you how to create a symbol of its likeness to create some more potent things - all you need is to chant a &lTouch of Darkness&r towards a &6Pewter Inlay&r that has been placed on your &lAltar&r "
 				""
 				"{image:eidolon:textures/vfx/soul_sign.png width:50 height:50 align:1}"
 				"{@pagebreak}"
@@ -518,7 +518,7 @@
 				"259253F0B5E9952E"
 				"1E00538EB87E83E6"
 			]
-			description: ["As you continue your prayers, you feel as though the crude effigy you made from scraps of Hay is no longer enough to properly respect and praise the Diety... fortunately the &8Unholy Symbol&r that you were sent to will allow you to form a closer bond to the diety and learn even more chants and types of magiks as you continue on your journey."]
+			description: ["As you continue your prayers, you feel as though the crude effigy you made from scraps of Hay is no longer enough to properly respect and praise the Deity... fortunately the &8Unholy Symbol&r that you were sent to will allow you to form a closer bond to the Deity and learn even more chants and types of magiks as you continue on your journey."]
 			hide: true
 			id: "0F7026A06FEB1170"
 			rewards: [{
@@ -698,5 +698,5 @@
 		}
 	]
 	subtitle: ["&dEidolon&r"]
-	title: "&5Diety or Demon?&r"
+	title: "&5Deity or Demon?&r"
 }
