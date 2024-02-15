@@ -647,8 +647,9 @@ ServerEvents.recipes(event => {
     });
 
     event.remove({output: 'mekanism:energized_smelter'});
-    event.shaped('mekanism:energized_smelter', ['PCP', 'LSL', 'TCT'], {
+    event.shaped('mekanism:energized_smelter', ['PHP', 'LSL', 'TCT'], {
       C: '#forge:circuits/basic',
+      H: '#forge:ingots/hop_graphite',
       L: 'immersiveengineering:furnace_heater',
       P: items.capacitor,
       S: 'mekanism:steel_casing',
