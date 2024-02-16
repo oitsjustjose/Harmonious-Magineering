@@ -1090,9 +1090,41 @@ ServerEvents.recipes(event => {
     event.recipes.create.sandpaper_polishing('eidolon:polished_planks', ['#custom:polishable_planks']);
     // Pewter Blend should actually be a blend, not just two ingots slapped together willy nilly
     event.remove('eidolon:pewter_blend');
-    event.shapeless(Item.of('eidolon:pewter_blend', 2), ['#forge:nuggets/tin', 'minecraft:clay_ball', 'minecraft:clay_ball', '#forge:nuggets/lead']);
+    event.shapeless(Item.of('eidolon:pewter_blend', 2), ['#forge:ingots/tin', 'minecraft:clay_ball', 'minecraft:clay_ball', '#forge:nuggets/lead']);
     // The new pewter blend texture looks like it would need to be *blasted* -- remove smelting recipe
     event.remove('eidolon:smelt_pewter_blend');
+
+    // Easier recipes for later on
+    /* Embers Melting */
+    event.custom({
+      type: 'embers:stamping',
+      input: {tag: 'forge:nuggets/lead'},
+      stamp: {item: 'embers:ingot_stamp'},
+      fluid: {amount: 90, tag: 'forge:molten_tin'},
+      output: {item: 'eidolon:pewter_ingot'},
+    });
+
+    /* Create Mixing */
+    event.recipes.create.mixing('eidolon:pewter_ingot', ['#forge:ingots/tin', '#forge:nuggets/lead']).heated();
+
+    /* Kiln */
+    event.custom({
+      type: 'immersiveengineering:alloy',
+      input0: {tag: 'forge:ingots/tin'},
+      input1: {tag: 'forge:nuggets/lead'},
+      result: {base_ingredient: {tag: 'forge:ingots/pewter'}},
+      time: 200,
+    });
+
+    /* Arc Furnace */
+    event.custom({
+      type: 'immersiveengineering:arc_furnace',
+      energy: 6400,
+      time: 200,
+      input: {tag: 'forge:ingots/tin'},
+      additives: [{tag: 'forge:nuggets/lead'}],
+      results: [{base_ingredient: {tag: 'forge:ingots/pewter'}}],
+    });
   };
 
   const embers = () => {
