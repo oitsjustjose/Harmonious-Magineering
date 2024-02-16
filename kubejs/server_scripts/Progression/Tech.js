@@ -9,6 +9,30 @@ ServerEvents.recipes(event => {
   };
 
   const ae2 = () => {
+    // Controller recipe redux
+    event.remove('ae2:network/blocks/controller');
+    event
+      .shaped('ae2:controller', ['AFA', 'SES', 'PFP'], {
+        A: 'mekanism:alloy_atomic',
+        E: ['ae2:energy_acceptor', 'ae2:cable_energy_acceptor'],
+        F: 'ae2:fluix_crystal',
+        P: 'ae2:engineering_processor',
+        S: 'ae2:smooth_sky_stone_block',
+      })
+      .id('ae2:network/blocks/controller');
+
+    // Better Energy Acceptor Recipe
+    event.remove('ae2:network/blocks/energy_energy_acceptor');
+    event
+      .shaped('ae2:energy_acceptor', ['CFC', 'QSQ', 'TFT'], {
+        C: items.capacitor,
+        F: 'ae2:fluix_crystal',
+        Q: 'ae2:quartz_glass',
+        S: 'mekanism:steel_casing',
+        T: items.transistor,
+      })
+      .id('ae2:network/blocks/energy_energy_acceptor');
+
     // Alternative ways to make Quartz Dust
     event.recipes.create.crushing('mekanism:dust_quartz', ['minecraft:quartz']);
     event.recipes.create.milling('mekanism:dust_quartz', ['minecraft:quartz']);
