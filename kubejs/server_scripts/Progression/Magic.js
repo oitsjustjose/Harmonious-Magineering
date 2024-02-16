@@ -1088,6 +1088,11 @@ ServerEvents.recipes(event => {
   const eidolon = () => {
     // Polished Planks via Create Sanding.
     event.recipes.create.sandpaper_polishing('eidolon:polished_planks', ['#custom:polishable_planks']);
+    // Pewter Blend should actually be a blend, not just two ingots slapped together willy nilly
+    event.remove('eidolon:pewter_blend');
+    event.shapeless(Item.of('eidolon:pewter_blend', 2), ['#forge:nuggets/tin', 'minecraft:clay_ball', 'minecraft:clay_ball', '#forge:nuggets/lead']);
+    // The new pewter blend texture looks like it would need to be *blasted* -- remove smelting recipe
+    event.remove('eidolon:smelt_pewter_blend');
   };
 
   const embers = () => {
