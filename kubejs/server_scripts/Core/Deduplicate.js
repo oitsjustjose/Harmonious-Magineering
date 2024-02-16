@@ -268,6 +268,10 @@ ServerEvents.recipes(event => {
     /* ~~Snails:~~ Unify Spawn & Naturalist's snail shell items */
     event.replaceInput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
     event.replaceOutput({}, 'spawn:snail_shell', 'naturalist:snail_shell');
+
+    /* ~~Obsidian Dust:~~ Unify Create Powdered Obsidian w/ Mekanism Obsidian Dust */
+    event.replaceInput({}, 'create:powdered_obsidian', 'mekanism:dust_obsidian');
+    event.replaceOutput({}, 'create:powdered_obsidian', 'mekanism:dust_obsidian');
   };
 
   [fluids, foods, misc].forEach(module => module());
