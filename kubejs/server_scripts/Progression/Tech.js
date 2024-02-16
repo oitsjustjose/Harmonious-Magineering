@@ -512,6 +512,9 @@ ServerEvents.recipes(event => {
     /* Cardboard boxes are *still* broken a.f. */
     event.remove({output: 'mekanism:cardboard_box'});
 
+    /* The muffling upgrade uses steel dust, which has replaced Osmium Dust, so we need to re-work the recipe */
+    event.replaceInput({output: 'mekanism:upgrade_muffling'}, '#forge:dusts/steel', '#minecraft:wool');
+
     /* Remove the lazy infuse types */
     event.remove('mekanism:infusion_conversion/carbon/from_charcoal_block');
     event.remove('mekanism:infusion_conversion/carbon/from_charcoal');
