@@ -314,7 +314,7 @@
 				""
 				"It is suggested to refer to the corresponding Engineer's Manual chapters to see how to configure these two devices to provide optimal Flux."
 				""
-				"See the &o<rainb>\\{\\{TODO\\}\\}</rainb>&r chapter to learn more on how to interconnect power sources from energy providers to energy consumers."
+				"See the &l&6Basic Wiring&r chapter in the Engineer's Manual to learn more on how to interconnect power sources from energy providers to energy consumers."
 			]
 			hide: true
 			icon: "immersiveengineering:dynamo"
