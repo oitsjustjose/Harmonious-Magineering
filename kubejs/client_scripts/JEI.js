@@ -601,6 +601,7 @@ JEIEvents.hideItems(event => {
     'create:dough',
     'create:handheld_worldshaper',
     'create:powdered_obsidian',
+    'create_connected:control_chip',
     'decorative_blocks:blockstate_copy_item',
     'deep_aether:golden_swet_ball',
     'delightful:salmonberries',
