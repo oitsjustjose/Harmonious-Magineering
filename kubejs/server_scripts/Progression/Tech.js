@@ -33,6 +33,9 @@ ServerEvents.recipes(event => {
       })
       .id('ae2:network/blocks/energy_energy_acceptor');
 
+    // Re-use facades to restore the cable anchors they cost
+    event.shapeless('ae2:cable_anchor', ['ae2:facade']);
+
     // Alternative ways to make Quartz Dust
     event.recipes.create.crushing('mekanism:dust_quartz', ['minecraft:quartz']);
     event.recipes.create.milling('mekanism:dust_quartz', ['minecraft:quartz']);
