@@ -1,0 +1,34 @@
+{
+  "parent": "custom:root",
+  "display": {
+    "icon": {
+      "item": "immersiveengineering:windmill"
+    },
+    "title": "Make a Water Wheel or Windmill",
+    "description": "",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "obtain_windmill_or_waterwheel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "immersiveengineering:watermill"
+          },
+          {
+            "item": "immersiveengineering:windmill"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtain_windmill_or_waterwheel"
+    ]
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "parent": "custom:root",
+  "display": {
+    "icon": {
+      "item": "comforts:sleeping_bag_red"
+    },
+    "title": "Make a Sleeping Bag",
+    "description": "Create any sleeping bag and so you can pass the night without resetting your spawn!",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "craft_sleeping_bag": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "comforts:sleeping_bags"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "craft_sleeping_bag"
+    ]
+  ]
+}

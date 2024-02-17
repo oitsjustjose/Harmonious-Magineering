@@ -329,31 +329,15 @@
 			subtitle: "Humble Beginnings"
 			tasks: [
 				{
-					icon: "immersiveengineering:watermill"
-					id: "4AE516316E94AA55"
-					item: {
-						Count: 1b
-						id: "itemfilters:or"
-						tag: {
-							items: [
-								{
-									Count: 1b
-									id: "immersiveengineering:windmill"
-								}
-								{
-									Count: 1b
-									id: "immersiveengineering:watermill"
-								}
-							]
-						}
-					}
-					title: "Water Wheel or Wind Mill"
-					type: "item"
-				}
-				{
 					id: "319E0E08C7382351"
 					item: "immersiveengineering:dynamo"
 					type: "item"
+				}
+				{
+					advancement: "custom:quests/ie_passives"
+					criterion: ""
+					id: "710C21C06092685E"
+					type: "advancement"
 				}
 			]
 			title: "Basic Energy Production"

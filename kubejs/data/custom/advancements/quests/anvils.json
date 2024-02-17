@@ -1,0 +1,31 @@
+{
+  "parent": "custom:root",
+  "display": {
+    "icon": {
+      "item": "minecraft:anvil"
+    },
+    "title": "Find (or make) an Anvil",
+    "description": "",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "obtain_any_anvil": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "minecraft:anvil"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtain_any_anvil"
+    ]
+  ]
+}

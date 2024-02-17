@@ -148,17 +148,10 @@
 			}]
 			subtitle: "It ain't much, but it's honest"
 			tasks: [{
-				icon: "eidolon:pewter_nugget"
-				id: "3DA4EEBF397AF138"
-				item: {
-					Count: 1b
-					id: "itemfilters:tag"
-					tag: {
-						value: "forge:nuggets"
-					}
-				}
-				title: "Any Nugget"
-				type: "item"
+				advancement: "custom:quests/nuggets"
+				criterion: ""
+				id: "7162B4A908F2938C"
+				type: "advancement"
 			}]
 			title: "Primitive Ore Processing"
 			x: 3.0d
@@ -211,17 +204,10 @@
 			}]
 			subtitle: "Quick travel, but not the cheapest.."
 			tasks: [{
-				icon: "waystones:mossy_waystone"
-				id: "03B87FA6D20C14A9"
-				item: {
-					Count: 1b
-					id: "itemfilters:tag"
-					tag: {
-						value: "waystones:waystones"
-					}
-				}
-				title: "Any Waystone"
-				type: "item"
+				advancement: "custom:quests/waystones"
+				criterion: ""
+				id: "7162B4A908F2938B"
+				type: "advancement"
 			}]
 			title: "Waystones"
 			x: -4.0d
@@ -244,17 +230,10 @@
 			}]
 			subtitle: "Mending? Never heard of it.."
 			tasks: [{
-				icon: "minecraft:anvil"
-				id: "529E6C42E7331DF7"
-				item: {
-					Count: 1b
-					id: "itemfilters:tag"
-					tag: {
-						value: "minecraft:anvil"
-					}
-				}
-				title: "An Anvil"
-				type: "item"
+				advancement: "custom:quests/anvils"
+				criterion: ""
+				id: "7162B4A908F2938D"
+				type: "advancement"
 			}]
 			title: "Anvil Forging"
 			x: 2.0d
@@ -316,17 +295,10 @@
 			}]
 			subtitle: "Sleeping on Solid Ground"
 			tasks: [{
-				icon: "comforts:sleeping_bag_gray"
-				id: "3E1041941E8EA738"
-				item: {
-					Count: 1b
-					id: "itemfilters:tag"
-					tag: {
-						value: "comforts:sleeping_bags"
-					}
-				}
-				title: "Any Sleeping Bag"
-				type: "item"
+				advancement: "custom:quests/sleeping_bags"
+				criterion: ""
+				id: "7162B4A908F2938E"
+				type: "advancement"
 			}]
 			title: "Camping"
 			x: -2.5d

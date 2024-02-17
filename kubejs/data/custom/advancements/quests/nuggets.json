@@ -1,0 +1,31 @@
+{
+  "parent": "custom:root",
+  "display": {
+    "icon": {
+      "item": "eidolon:pewter_nugget"
+    },
+    "title": "Obtain any nugget",
+    "description": "",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "obtain_any_nugget": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:nuggets"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtain_any_nugget"
+    ]
+  ]
+}
