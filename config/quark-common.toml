@@ -37,7 +37,7 @@
 	world = true
 	mobs = true
 	client = true
-	experimental = true
+	experimental = false
 	oddities = false
 
 [automation]
@@ -272,7 +272,7 @@
 		"Enable Pillar" = true
 
 [management]
-	"Automatic Tool Restock" = false
+	"Automatic Tool Restock" = true
 	"Easy Transfering" = true
 	"Expanded Item Interactions" = true
 	"Hotbar Changer" = true
@@ -284,7 +284,7 @@
 		#Enchantments deemed important enough to have special priority when finding a replacement
 		"Important Enchantments" = ["minecraft:silk_touch", "minecraft:fortune", "minecraft:infinity", "minecraft:luck_of_the_sea", "minecraft:looting"]
 		#Enable replacing your tools with tools of the same type but not the same item
-		"Enable Loose Matching" = true
+		"Enable Loose Matching" = false
 		#Enable comparing enchantments to find a replacement
 		"Enable Enchant Matching" = true
 		#Allow pulling items from one hotbar slot to another
