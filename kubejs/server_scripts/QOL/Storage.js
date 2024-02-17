@@ -184,20 +184,33 @@ ServerEvents.recipes(event => {
   event.remove({output: 'storagedrawers:void_upgrade'});
   event.shapeless('storagedrawers:void_upgrade', ['trashcans:item_trash_can', 'storagedrawers:upgrade_template']);
 
-  /* Make Netherite storage craftable */
-
-  event.smithing(
-    'ironchests:netherite_chest_upgrade',
-    'minecraft:netherite_upgrade_smithing_template',
+  /* Remove the Iron Chests upgrades since they don't work on Barrels. */
+  [
     'ironchests:blank_chest_upgrade',
-    'minecraft:netherite_ingot'
-  );
+    'ironchests:copper_chest_upgrade',
+    'ironchests:crystal_chest_upgrade',
+    'ironchests:diamond_chest_upgrade',
+    'ironchests:diamond_dolly',
+    'ironchests:gold_chest_upgrade',
+    'ironchests:iron_chest_upgrade',
+    'ironchests:iron_dolly',
+    'ironchests:key_ring',
+    'ironchests:key',
+    'ironchests:lock',
+    'ironchests:netherite_chest_upgrade',
+    'ironchests:obsidian_chest_upgrade',
+  ].forEach(x => {
+    event.remove({output: x});
+  });
+
+  /* Make Netherite storage craftable */
   event.smithing(
     'ironchests:netherite_chest',
     'minecraft:netherite_upgrade_smithing_template',
     'ironchests:diamond_chest',
     'minecraft:netherite_ingot'
   );
+
   event.smithing(
     'ironchests:netherite_barrel',
     'minecraft:netherite_upgrade_smithing_template',
