@@ -1,0 +1,11 @@
+type = slideshow
+
+slideshow-meta {
+    name = playtest_background
+    width = 3440
+    height = 1440
+    duration = 10.0
+    x = 0
+    y = 0
+    fadespeed = 12.0
+}
