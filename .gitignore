@@ -2,6 +2,7 @@
 .vscode
 .DS_Store
 /backups
+/config/jei/jei-client.ini
 /config/jei/world
 /config/spark/activity.json
 /config/xaerominimap_entities.json
