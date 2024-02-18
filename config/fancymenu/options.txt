@@ -23,11 +23,11 @@ B:game_intro_fade_out = 'true';
 
 ##[window]
 
-B:show_custom_window_icon = 'true';
+B:show_custom_window_icon = 'false';
 S:custom_window_icon_macos = '/config/fancymenu/assets/icons/hm_mini.icns';
-S:custom_window_icon_32 = '/config/fancymenu/assets/icons/hm_mini_32.png';
+S:custom_window_icon_32 = '';
 S:custom_window_title = 'Harmonious Magineering';
-S:custom_window_icon_16 = '/config/fancymenu/assets/icons/hm_mini_16.png';
+S:custom_window_icon_16 = '';
 
 
 ##[multiplayer_screen]
