@@ -282,6 +282,12 @@ ServerEvents.recipes(event => {
     event.remove('create_connected:sequenced_assembly/control_chip');
     event.replaceInput({input: 'create_connected:control_chip'}, 'create_connected:control_chip', 'pneumaticcraft:printed_circuit_board');
 
+    // Custom recipe to wash Cobalt Obsidian into Obsidian + chance of Nickel Nugget
+    event.recipes.create.splashing(
+      ['minecraft:obsidian', Item.of('immersiveengineering:nugget_nickel').withChance(0.01)],
+      'regions_unexplored:cobalt_obsidian'
+    );
+
     event.recipes.create.deploying('create:copper_casing', [['#forge:stripped_logs', '#forge:stripped_wood'], '#forge:ingots/copper']);
     event.recipes.create.deploying('create:brass_casing', [['#forge:stripped_logs', '#forge:stripped_wood'], '#forge:ingots/brass']);
     event.recipes.create.deploying('create:railway_casing', ['create:brass_casing', '#forge:plates/obsidian']);
