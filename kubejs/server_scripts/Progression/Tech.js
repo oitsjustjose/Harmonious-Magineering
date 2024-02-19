@@ -522,6 +522,27 @@ ServerEvents.recipes(event => {
     /* The muffling upgrade uses steel dust, which has replaced Osmium Dust, so we need to re-work the recipe */
     event.replaceInput({output: 'mekanism:upgrade_muffling'}, '#forge:dusts/steel', '#minecraft:wool');
 
+    /* Additional carbon compatibilities */
+    event.remove('mekanism:enriching/enriched/carbon');
+
+    event.custom({
+      type: 'mekanism:enriching',
+      input: {ingredient: [{item: 'minecraft:coal'}, {item: 'minecraft:charcoal'}]},
+      output: {item: 'mekanism:enriched_carbon'},
+    });
+
+    event.custom({
+      type: 'mekanism:enriching',
+      input: {amount: 2, ingredient: {item: 'supplementaries:ash'}},
+      output: {item: 'mekanism:enriched_carbon'},
+    });
+
+    event.custom({
+      type: 'mekanism:enriching',
+      input: {ingredient: {item: 'immersiveengineering:coal_coke'}},
+      output: {item: 'mekanism:enriched_carbon', count: 2},
+    });
+
     /* Remove the lazy infuse types */
     event.remove('mekanism:infusion_conversion/carbon/from_charcoal_block');
     event.remove('mekanism:infusion_conversion/carbon/from_charcoal');
