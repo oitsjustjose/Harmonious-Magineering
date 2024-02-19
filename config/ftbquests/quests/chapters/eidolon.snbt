@@ -364,11 +364,11 @@
 			description: [
 				"As you step further into the occult, you can't help but hear a voice from beyond beckoning out to you... perhaps demanding a sacrifice? That's odd..."
 				""
-				"You feel as though you might be able to reach back out to this Deity by praying at an Altar once every so often, but what should you pray &oto&r? A crude &6Straw Effigy&r is the best you're able to fashion up for now - perhaps you should try chanting a &l&5Dark Prayer&r&r at this effigy."
+				"After consulting the local &l&dWitches&r and &nshowing them your &5Ars Ecclesia&r, they've shown you a new way to pray through &dChanting&r. You feel as though you might be able to reach back out to this Deity by chanting at an Altar once every so often, but what should you chant &oto&r? "
 				""
-				""
+				"A crude &6Straw Effigy&r is the best you're able to fashion up for now - perhaps you should try chanting a &l&5Dark Prayer&r&r at this effigy."
+				"{@pagebreak}"
 				"Maybe your altar could use some more supernatural additions like Skulls and a Chalice..."
-				""
 				""
 				"{image:eidolon:textures/vfx/wicked_sign.png width:50 height:50 align:1}"
 			]
