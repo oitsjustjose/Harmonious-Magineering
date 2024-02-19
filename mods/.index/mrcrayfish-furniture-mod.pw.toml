@@ -1,0 +1,13 @@
+filename = 'cfm-forge-1.20.1-7.0.0-pre36.jar'
+name = "MrCrayfish's Furniture Mod"
+side = 'both'
+
+[download]
+hash = '66d0ac56f3f6f1efbd6ed7b3cb4a48824d0585c0'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 4602980
+project-id = 55438

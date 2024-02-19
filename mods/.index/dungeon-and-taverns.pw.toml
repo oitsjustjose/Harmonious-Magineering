@@ -1,0 +1,13 @@
+filename = 'dungeons-and-taverns-3.0.3 [Forge].jar'
+name = 'Dungeons and Taverns'
+side = 'both'
+
+[download]
+hash = 'd5de9ada085a6af59c0475fa56ed08934358e08b'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 4788268
+project-id = 853794

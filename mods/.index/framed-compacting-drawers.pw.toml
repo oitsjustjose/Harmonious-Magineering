@@ -1,0 +1,13 @@
+filename = 'framedcompactdrawers-1.20-6.0.0.jar'
+name = 'Framed Compacting Drawers'
+side = 'both'
+
+[download]
+hash = '52d0a475e1036c82738aa228a8054504198e0028'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 4777556
+project-id = 376351

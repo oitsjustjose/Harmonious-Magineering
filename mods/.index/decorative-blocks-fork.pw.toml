@@ -1,0 +1,13 @@
+filename = 'Decorative Blocks-forge-1.20.1-4.0.2.jar'
+name = 'Decorative Blocks (Fork)'
+side = 'both'
+
+[download]
+hash = '83f77bebf41aa736e0da90c028b6f0876050b732'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 4708768
+project-id = 892002

@@ -1,0 +1,13 @@
+filename = 'Wabi-Sabi-Structures-2.0.0-1.20-Forge.jar'
+name = 'Wabi-Sabi Structures (Forge)'
+side = 'both'
+
+[download]
+hash = 'c66e3ba74bfea5bc221a30dad0a4b4216e0ca2a6'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 4688299
+project-id = 686097

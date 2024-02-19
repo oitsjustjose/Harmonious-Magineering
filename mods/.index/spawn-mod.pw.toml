@@ -1,0 +1,13 @@
+filename = 'spawn-1.0.2-forge.jar'
+name = 'Spawn'
+side = 'both'
+
+[download]
+hash = '4a9ffc09b6bad80bfe21f241bc1f222b4ad7e550'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 4860439
+project-id = 935694

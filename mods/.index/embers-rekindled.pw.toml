@@ -1,0 +1,13 @@
+filename = 'embersrekindled-1.20.1-1.0.3.jar'
+name = 'Embers Rekindled'
+side = 'both'
+
+[download]
+hash = '533548feefdcdd39f4ba72ca7251fdc1e21e6e27'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 4897329
+project-id = 300777

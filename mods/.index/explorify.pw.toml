@@ -1,0 +1,13 @@
+filename = 'explorify-v1.3.0-mc1.20.jar'
+name = 'Explorify – Dungeons & Structures'
+side = 'both'
+
+[download]
+hash = '01b221413273cdf373a92499b8f0295dec1cd324'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 4827227
+project-id = 698309

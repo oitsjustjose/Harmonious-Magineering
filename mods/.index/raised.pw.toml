@@ -1,0 +1,13 @@
+filename = 'raised-forge-1.20.1-3.1.1.jar'
+name = 'Raised'
+side = 'both'
+
+[download]
+hash = 'b5ad4a4deb776856c1fbe22375342538241e8f36'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5027560
+project-id = 570368

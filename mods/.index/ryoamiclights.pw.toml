@@ -1,0 +1,13 @@
+filename = 'Ryoamiclights-0.1.7+1.20.1.jar'
+name = 'RyoamicLights'
+side = 'both'
+
+[download]
+hash = '3f89958e01b88a4d7d9a1b12497f5a7ab181764e'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 4970387
+project-id = 913587

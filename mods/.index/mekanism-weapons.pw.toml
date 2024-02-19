@@ -1,0 +1,13 @@
+filename = 'MekanismWeapons-1.20.1-1.4.jar'
+name = 'Mekanism: Weapons'
+side = 'both'
+
+[download]
+hash = 'e0e9710b688125d2559ccd30cc60bec8b83fcfc6'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5116341
+project-id = 929829

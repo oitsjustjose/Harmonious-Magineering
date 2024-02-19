@@ -1,0 +1,13 @@
+filename = 'ironchests-5.0.2-forge.jar'
+name = 'Iron Chests: Restocked'
+side = 'both'
+
+[download]
+hash = '610aa09a1d83253db6bf32f6b12c84d446fa99b6'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 4638051
+project-id = 498794

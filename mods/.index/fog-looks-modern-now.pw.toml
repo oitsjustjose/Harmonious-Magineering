@@ -1,0 +1,13 @@
+filename = 'foglooksmodernnow-1.2.1.jar'
+name = 'Fog Looks Modern Now'
+side = 'client'
+
+[download]
+hash = '06fd4175696190f04e708617676a6aac1d903effbc629614c3b1a533f504a65877e6e9002de0fd353f4a1190adb4f388229f90a8533cb549ab9bbee88a4248d7'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/3jtC58cg/versions/Xi8khBA6/foglooksmodernnow-1.2.1.jar'
+
+[update.modrinth]
+mod-id = '3jtC58cg'
+version = 'Xi8khBA6'

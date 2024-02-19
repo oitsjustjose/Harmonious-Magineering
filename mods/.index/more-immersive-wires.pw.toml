@@ -1,0 +1,13 @@
+filename = 'more-immersive-wires-1.20.1-1.1.3.jar'
+name = 'More Immersive Wires'
+side = 'both'
+
+[download]
+hash = '79e5d026340c2a908fd5ee01acc49b932928048d'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5002290
+project-id = 850891

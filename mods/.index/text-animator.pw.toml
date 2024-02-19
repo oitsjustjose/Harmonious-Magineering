@@ -1,0 +1,13 @@
+filename = 'TextAnimator-1.20.1-forge-2.1.1.jar'
+name = 'Text Animator'
+side = 'both'
+
+[download]
+hash = '00730a915157cfc0ef42c5baa4606a3f2b4c958f'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5060794
+project-id = 881778

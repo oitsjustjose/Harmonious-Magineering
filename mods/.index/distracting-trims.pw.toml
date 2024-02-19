@@ -1,0 +1,13 @@
+filename = 'DistractingTrims-Forge-1.20.1-2.0.3.jar'
+name = 'Distracting Trims'
+side = 'both'
+
+[download]
+hash = '20a60f15bad1be08c5fac4cd60076b69b6aca1a7'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 4714752
+project-id = 862201

@@ -1,0 +1,13 @@
+filename = 'tectonic-mod-1.19.3-v2.2.jar'
+name = 'Tectonic'
+side = 'both'
+
+[download]
+hash = '02071212d273a62841506c019fd6b86469e8a67b'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5028766
+project-id = 686836
