@@ -63,6 +63,30 @@ ServerEvents.recipes(event => {
     });
   };
 
+  const outerEnd = () => {
+    event.recipes.create.crushing(Item.of('mekanism:salt', 4), ['outer_end:halite']);
+    event.recipes.create.crushing(Item.of('mekanism:salt', 1), ['outer_end:halite_crystal']);
+
+    event.custom({
+      type: 'immersiveengineering:crusher',
+      energy: 1600,
+      input: {item: 'outer_end:halite'},
+      result: {item: 'mekanism:salt', count: 4},
+      secondaries: [],
+    });
+
+    event.custom({
+      type: 'immersiveengineering:crusher',
+      energy: 1600,
+      input: {item: 'outer_end:halite_crystal'},
+      result: {item: 'mekanism:salt', count: 1},
+      secondaries: [],
+    });
+
+    event.custom({type: 'mekanism:crushing', input: {ingredient: {item: 'outer_end:halite'}}, output: {item: 'mekanism:salt', count: 4}});
+    event.custom({type: 'mekanism:crushing', input: {ingredient: {item: 'outer_end:halite_crystal'}}, output: {item: 'mekanism:salt'}});
+  };
+
   const quark = () => {
     event.replaceInput({output: 'quark:bonded_leather'}, '#forge:leather', 'minecraft:leather');
     event.replaceInput({}, 'quark:moss_paste', 'ecologics:surface_moss');
@@ -118,5 +142,5 @@ ServerEvents.recipes(event => {
   event.remove({output: 'minecraft:saddle'});
   event.remove('aether:swet_slime_block');
 
-  [architectsPalette, createWaxedCopper, quark, supplementaries].forEach(module => module());
+  [architectsPalette, createWaxedCopper, outerEnd, quark, supplementaries].forEach(module => module());
 });
