@@ -272,6 +272,14 @@ ServerEvents.recipes(event => {
     /* ~~Obsidian Dust:~~ Unify Create Powdered Obsidian w/ Mekanism Obsidian Dust */
     event.replaceInput({}, 'create:powdered_obsidian', 'mekanism:dust_obsidian');
     event.replaceOutput({}, 'create:powdered_obsidian', 'mekanism:dust_obsidian');
+
+    /* ~~Bonus Blocks:~~ Unify Quark & Twigs bonus blocks like Calcite & Tuff Slabs */
+    event.remove({output: 'twigs:calcite_slab'});
+    event.remove({output: 'twigs:calcite_stairs'});
+    event.remove({output: 'twigs:calcite_wall'});
+    event.remove({output: 'twigs:tuff_slab'});
+    event.remove({output: 'twigs:tuff_stairs'});
+    event.remove({output: 'twigs:tuff_wall'});
   };
 
   [fluids, foods, misc].forEach(module => module());
