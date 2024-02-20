@@ -2,6 +2,7 @@
 .vscode
 .DS_Store
 /backups
+/config/ae2/client.json
 /config/jei/jei-client.ini
 /config/jei/world
 /config/spark/activity.json
@@ -10,11 +11,11 @@
 /config/xaeropatreon.txt
 /config/xaeroworldmap-common.txt
 /config/xaeroworldmap.txt
-/config/ae2/client.json
 /coremods
 /crash-reports
 /data
 /ESM
+/fancymenu_data
 /local
 /logs
 /map_atlases
