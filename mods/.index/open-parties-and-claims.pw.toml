@@ -1,0 +1,13 @@
+filename = 'open-parties-and-claims-forge-1.20.1-0.20.4.jar'
+name = 'Open Parties and Claims'
+side = 'both'
+
+[download]
+hash = '35e713dd7f9a58e140887a0dd4ebe846660c6cebc6d0625b2eb8958429841768c6896a600a6b350419603d1205bd78abe0229863be477161ea9e5971b09677d9'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/gF3BGWvG/versions/WXnfadur/open-parties-and-claims-forge-1.20.1-0.20.4.jar'
+
+[update.modrinth]
+mod-id = 'gF3BGWvG'
+version = 'WXnfadur'
