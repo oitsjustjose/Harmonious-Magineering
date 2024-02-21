@@ -8,6 +8,8 @@
 	save_debug_resources = false
 	#Don't touch unless you are told to
 	debug_packet = false
+	#Sends a packet to verify all dependencies mod versions are the same on connect. DIsable if it causes issues
+	mod_version_check_packet = true
 
 	[general.tooltips]
 		#Enabled tooltips showing which mod an EC item is from
@@ -17,6 +19,7 @@
 		#Enabled tooltips showing which block type an EC item is made from
 		block_type_enabled = true
 
+	#Disables certain types
 	[general.types]
 
 		[general.types.leaves_type]
@@ -169,6 +172,7 @@
 			[general.types.wood_type.outer_end]
 				azure = true
 
+	#Disables specific entries
 	[general.entries]
 
 		[general.entries.leaves_type]
