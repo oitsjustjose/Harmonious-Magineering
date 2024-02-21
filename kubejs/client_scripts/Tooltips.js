@@ -56,24 +56,24 @@ let cachedServerPlayerRef = null;
 let lastCacheRefresh = 0;
 let lastHovNameRefresh = 0;
 
-ItemEvents.tooltip(event => {
-  event.addAdvanced(Ingredient.all, (stack, _, tooltips) => {
-    // Fetch the server player only when needed
-    if (cachedServerPlayerRef === null || Date.now() - lastCacheRefresh > cacheRefreshFrequencySeconds * 1000) {
-      lastCacheRefresh = Date.now();
-      Utils.server.getPlayers().forEach(player => {
-        if (player.getUuid() === Client.player.getUuid()) {
-          cachedServerPlayerRef = player;
-          return;
-        }
-      });
+/**
+ * Adds a "You don't know this item" tooltip & obfuscates the tooltip for items you don't have the corresponding stage unlocked for
+ * @param {Internal.ItemStack} stack
+ * @param {Internal.List<any>} tooltips
+ */
+const stageTooltip = (stack, tooltips) => {
+  // Fetch the server player only when needed
+  if (cachedServerPlayerRef === null || Date.now() - lastCacheRefresh > cacheRefreshFrequencySeconds * 1000) {
+    lastCacheRefresh = Date.now();
+    for (const player of Utils.server.getPlayers()) {
+      if (player.getUuid() === Client.player.getUuid()) {
+        cachedServerPlayerRef = player;
+        break;
+      }
     }
+  }
 
-    if (cachedServerPlayerRef === null) {
-      console.error('SERVER PLAYER IS STILL NULL :(');
-      return;
-    }
-
+  if (cachedServerPlayerRef !== null) {
     // Determine if the current stack is an exception in ANY config
     let isItemException = false;
     for (const tag of Object.keys(stages)) {
@@ -113,6 +113,14 @@ ItemEvents.tooltip(event => {
           }
         }
       }
+    }
+  }
+};
+
+ItemEvents.tooltip(event => {
+  event.addAdvanced(Ingredient.all, (stack, _, tooltips) => {
+    if (Utils.server !== null && !Utils.server.isDedicated()) {
+      stageTooltip(stack, tooltips);
     }
 
     if (event.isShift()) {
