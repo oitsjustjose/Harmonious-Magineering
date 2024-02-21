@@ -1,5 +1,10 @@
 # Harmonious Magineering Changelog
 
+## v1.0.0-BETA4:
+
+- Updated ItemGator to include a critical fix
+- Updated NeoForge to v100
+
 ## v1.0.0-BETA3:
 
 - Added Open Parties & Claims
