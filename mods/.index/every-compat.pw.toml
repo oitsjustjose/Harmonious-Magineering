@@ -1,13 +1,13 @@
-filename = 'everycomp-1.20-2.6.29.jar'
-name = 'Every Compat (Wood Good)'
+filename = 'everycomp-1.20-2.6.34.jar'
+name = 'Every Compat'
 side = 'both'
 
 [download]
-hash = '806b0d6d56c15479ecf4c798063a2a33bdfc01fd'
+hash = 'ffef9e3fa2db5d9a93ec2bd1ad78b72d7d4551d5'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5076713
+file-id = 5125032
 project-id = 628539
