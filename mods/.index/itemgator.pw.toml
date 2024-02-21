@@ -1,13 +1,13 @@
-filename = 'ItemGator-1.20.1-1.0.1.jar'
+filename = 'ItemGator-1.20.1-1.0.2.jar'
 name = 'ItemGator'
 side = 'both'
 
 [download]
-hash = 'ad01a793f789a16019dfaa892cb9ca378e276a50bf943d328d284d5859e7242ec2f0e474d8a98d7f333f9aa548cbfd5443fada39ada437af74fc042ed8fc143e'
+hash = 'b111b4783cb77c722c53f07b8391865e47e4e6e572a827c55e05f004ecba4dceb2b96ff43007763a21144cb0bd7ffd0d2ce8cc77c9b215288e33ded26d946dbd'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/2A2XjoYK/versions/8sGqAeS8/ItemGator-1.20.1-1.0.1.jar'
+url = 'https://cdn.modrinth.com/data/2A2XjoYK/versions/CgezDXaL/ItemGator-1.20.1-1.0.2.jar'
 
 [update.modrinth]
 mod-id = '2A2XjoYK'
-version = '8sGqAeS8'
+version = 'CgezDXaL'
