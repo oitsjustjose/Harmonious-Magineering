@@ -2,7 +2,7 @@ version:3465
 autoJump:false
 darkMojangStudiosBackground:true
 biomeBlendRadius:7
-resourcePacks:["vanilla","mod_resources","builtin/overrides_pack","builtin/DAGoldenSwetBallFixClient","builtin/deep_aether_additional_assets","Forgery","Forgery grayscale","Moonlight Mods Dynamic Assets","file/eatinganimations++1.10.zip","file/Brush-Up-1.7.zip","file/Brush-Up!++ v1.0.1.zip","file/Sully\u0027s Peeves.zip","file/Lopys-Creates-Copper-Coating.zip"]
+resourcePacks:["vanilla","mod_resources","builtin/overrides_pack","builtin/DAGoldenSwetBallFixClient","builtin/deep_aether_additional_assets","Forgery","Forgery grayscale","Moonlight Mods Dynamic Assets","file/eatinganimations++1.10.zip","file/Brush-Up-1.7.zip","file/Brush-Up!++ v1.0.2.zip","file/Sully\u0027s Peeves.zip","file/Lopys-Creates-Copper-Coating.zip"]
 incompatibleResourcePacks:["builtin/DAGoldenSwetBallFixClient","builtin/deep_aether_additional_assets","file/eatinganimations++1.10.zip","file/Brush-Up-1.7.zip","file/Sully\u0027s Peeves.zip","file/Lopys-Creates-Copper-Coating.zip"]
 mipmapLevels:0
 hideBundleTutorial:false
