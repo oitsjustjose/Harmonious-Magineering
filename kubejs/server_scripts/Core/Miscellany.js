@@ -142,5 +142,12 @@ ServerEvents.recipes(event => {
   event.remove({output: 'minecraft:saddle'});
   event.remove('aether:swet_slime_block');
 
-  [architectsPalette, createWaxedCopper, outerEnd, quark, supplementaries].forEach(module => module());
+  event.remove({output: 'cfm:post_box'});
+  event.shaped('cfm:post_box', ['BTB', 'BCB', 'B B'], {
+    B: 'minecraft:blue_concrete',
+    T: 'minecraft:iron_trapdoor',
+    C: '#forge:chests/wooden',
+  });
+
+  [(architectsPalette, createWaxedCopper, outerEnd, quark, supplementaries)].forEach(module => module());
 });
