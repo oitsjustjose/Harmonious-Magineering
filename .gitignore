@@ -6,11 +6,7 @@
 /config/jei/jei-client.ini
 /config/jei/world
 /config/spark/activity.json
-/config/xaerominimap_entities.json
-/config/xaerominimap-common.txt
-/config/xaeropatreon.txt
-/config/xaeroworldmap-common.txt
-/config/xaeroworldmap.txt
+/config/xaero*
 /coremods
 /crash-reports
 /data
