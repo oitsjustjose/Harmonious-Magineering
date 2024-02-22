@@ -61,7 +61,7 @@ let lastHovNameRefresh = 0;
  * @param {Internal.ItemStack} stack
  * @param {Internal.List<any>} tooltips
  */
-const stageTooltip = (stack, tooltips) => {
+const modifyStackForStageProgress = (stack, tooltips) => {
   // Fetch the server player only when needed
   if (cachedServerPlayerRef === null || Date.now() - lastCacheRefresh > cacheRefreshFrequencySeconds * 1000) {
     lastCacheRefresh = Date.now();
@@ -120,7 +120,7 @@ const stageTooltip = (stack, tooltips) => {
 ItemEvents.tooltip(event => {
   event.addAdvanced(Ingredient.all, (stack, _, tooltips) => {
     if (Utils.server !== null && !Utils.server.isDedicated()) {
-      stageTooltip(stack, tooltips);
+      modifyStackForStageProgress(stack, tooltips);
     }
 
     if (event.isShift()) {
