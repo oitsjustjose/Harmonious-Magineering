@@ -1,40 +1,4 @@
 {
-  "block.netherrack.break": {
-    "replace": true,
-    "sounds": [
-      "dig/coral1",
-      "dig/coral2",
-      "dig/coral3",
-      "dig/coral4"
-    ]
-  },
-  "block.netherrack.hit": {
-    "replace": true,
-    "sounds": [
-      "dig/coral1",
-      "dig/coral2",
-      "dig/coral3",
-      "dig/coral4"
-    ]
-  },
-  "block.netherrack.place": {
-    "replace": true,
-    "sounds": [
-      "dig/coral1",
-      "dig/coral2",
-      "dig/coral3",
-      "dig/coral4"
-    ]
-  },
-  "block.netherrack.step": {
-    "replace": true,
-    "sounds": [
-      "dig/coral1",
-      "dig/coral2",
-      "dig/coral3",
-      "dig/coral4"
-    ]
-  },
   "block.deepslate.break": {
     "replace": true,
     "sounds": [
