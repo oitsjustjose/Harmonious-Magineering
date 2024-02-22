@@ -142,12 +142,19 @@ ServerEvents.recipes(event => {
   event.remove({output: 'minecraft:saddle'});
   event.remove('aether:swet_slime_block');
 
+  /* make post boxes cheaper */
   event.remove({output: 'cfm:post_box'});
   event.shaped('cfm:post_box', ['BTB', 'BCB', 'B B'], {
     B: 'minecraft:blue_concrete',
     T: 'minecraft:iron_trapdoor',
     C: '#forge:chests/wooden',
   });
+
+  /* Fix barley being insanely op */
+  event.remove({input: 'regions_unexplored:barley', output: 'minecraft:bread'});
+  let flour = Item.of('create:wheat_flour')
+  flour.setNbt({display: {Name: '[{"translate":"item.kubejs.generic_flour","italic":false}]'}});
+  event.recipes.create.milling(flour.withChance(0.15), 'regions_unexplored:barley');
 
   [(architectsPalette, createWaxedCopper, outerEnd, quark, supplementaries)].forEach(module => module());
 });

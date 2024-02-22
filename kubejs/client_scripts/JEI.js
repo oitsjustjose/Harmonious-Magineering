@@ -539,6 +539,7 @@ JEIEvents.addItems(event => {
     'architects_palette:withered_osseous_bricks',
     'architects_palette:withered_osseous_pillar',
     'architects_palette:withered_osseous_skull',
+    'create:wheat_flour',
     'minecraft:bundle',
     'sophisticatedbackpacks:backpack',
   ].forEach(x => event.add(x));
