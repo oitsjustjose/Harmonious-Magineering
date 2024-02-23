@@ -96,7 +96,7 @@
 		max_y = 24
 		#The number of veins attempted to be generated per chunk
 		#Range: > 0
-		attempts_per_chunk = 7
+		attempts_per_chunk = 3
 		#Set this to true to allow retro-generation of nickel Ore.
 		retrogen_enable = false
 
