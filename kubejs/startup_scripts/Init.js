@@ -1,7 +1,5 @@
 Platform.setModName('kubejs', 'Harmonious Magineering');
 
-let xaeroSettingChanged = false;
-
 ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
   const recipes = {
     'ae2:certus_quartz_axe': Ingredient.of('#forge:gems/certus_quartz'),
@@ -131,17 +129,6 @@ ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
     console.log(ex);
     console.log(event);
   }
-});
-
-ForgeEvents.onEvent('net.minecraftforge.event.TickEvent$ClientTickEvent', () => {
-  if (xaeroSettingChanged) return;
-
-  // Disable the Minimap Coords by default
-  const XaeroMinimap = Java.loadClass('xaero.minimap.XaeroMinimap');
-  const xaeroMinimap = XaeroMinimap.instance;
-
-  xaeroMinimap.getInterfaces().getMinimapInterface().getInfoDisplayManager().get('coords').setState(false);
-  xaeroSettingChanged = true;
 });
 
 ItemEvents.modification(event => {
