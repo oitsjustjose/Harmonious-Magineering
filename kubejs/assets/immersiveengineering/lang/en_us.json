@@ -9,5 +9,13 @@
   "item.immersiveengineering.dust_electrum": "Electrum Dust",
   "item.immersiveengineering.dust_steel": "Steel Dust",
   "item.immersiveengineering.dust_iron": "Iron Dust",
-  "item.immersiveengineering.dust_gold": "Gold Dust"
+  "item.immersiveengineering.dust_gold": "Gold Dust",
+  "item.immersiveengineering.armor_steel_chestplate": "Steel Chestplate",
+  "item.immersiveengineering.armor_steel_boots": "Steel Boots",
+  "item.immersiveengineering.armor_steel_helmet": "Steel Helmet",
+  "item.immersiveengineering.armor_steel_leggings": "Steel Leggings",
+  "item.immersiveengineering.armor_faraday_chestplate": "Faraday Chestplate",
+  "item.immersiveengineering.armor_faraday_boots": "Faraday Boots",
+  "item.immersiveengineering.armor_faraday_helmet": "Faraday Helmet",
+  "item.immersiveengineering.armor_faraday_leggings": "Faraday Leggings"
 }
