@@ -3,11 +3,11 @@ name = 'Supplementaries'
 side = 'both'
 
 [download]
-hash = '92c34e75208a6da7f70f29e198012d9050f56eed'
+hash = '26613681aebf3a4a169180966dfedbbc11b00cd1'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5126646
+file-id = 5130597
 project-id = 412082

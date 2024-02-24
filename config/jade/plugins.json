@@ -120,7 +120,11 @@
     "tooltip_renderer": true
   },
   "delightful": {
-    "crop_progress": true
+    "crop_progress": true,
+    "pie_icons": true
+  },
+  "supplementaries": {
+    "hat_stand": true
   },
   "create": {
     "filter": true,
@@ -132,9 +136,6 @@
     "crafting_blueprint": true,
     "goggles.detailed": false,
     "placard": true
-  },
-  "supplementaries": {
-    "hat_stand": true
   },
   "waystones": {
     "waystone": true
