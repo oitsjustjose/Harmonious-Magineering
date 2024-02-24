@@ -187,8 +187,8 @@
 
 	[building.leaf_carpet]
 		#This feature disables itself if any of the following mods are loaded:
-		# - immersive_weathering
 		# - woodworks
+		# - immersive_weathering
 		#This is done to prevent content overlap.
 		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
 		"Ignore Anti Overlap" = false
@@ -222,8 +222,8 @@
 		#Allowed values: [0,1]
 		"Fall Damage Multiplier" = 0.5
 		#This feature disables itself if any of the following mods are loaded:
-		# - environmental
 		# - goated
+		# - environmental
 		#This is done to prevent content overlap.
 		#You can turn this on to force the feature to be loaded even if the above mods are also loaded.
 		"Ignore Anti Overlap" = false
@@ -526,7 +526,7 @@
 	"Replace Scaffolding" = false
 	"Safer Creatures" = false
 	"Shulker Packing" = true
-	"Simple Harvest" = false
+	"Simple Harvest" = true
 	"Slabs To Blocks" = true
 	"Slimes To Magma Cubes" = false
 	"Snow Golem Player Heads" = false
@@ -685,7 +685,7 @@
 		#Can players harvest crops with empty hand clicks?
 		"Empty Hand Harvest" = true
 		#Does harvesting crops with a hoe cost durability?
-		"Harvesting Costs Durability" = false
+		"Harvesting Costs Durability" = true
 		#Should Quark look for(nonvanilla) crops, and handle them?
 		"Do Harvesting Search" = true
 		#Should villagers use simple harvest instead of breaking crops?
