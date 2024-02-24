@@ -1,5 +1,21 @@
 # Harmonious Magineering Changelog
 
+## v1.0.0-BETA6:
+
+### Updated:
+
+- Amendments
+- Delightful
+- Embeddium
+- PacketFixer
+- Supplementaries
+- Supplementaries²
+- Text Animator
+
+### Removed:
+
+- NoChatReports (Incompatible with NeoForge)
+
 ## v1.0.0-BETA5:
 
 ### Added
