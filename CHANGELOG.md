@@ -16,6 +16,15 @@
 
 - NoChatReports (Incompatible with NeoForge)
 
+### Fixed:
+
+- Quest chapters being centered oddly (this was very apparent with the BloodMagic quest)
+
+### Changed:
+
+- For the backpack quest, any type of backpack will now be accepted
+- Now using Quark's easy harvesting feature instead of V-Tweaks's
+
 ## v1.0.0-BETA5:
 
 ### Added
