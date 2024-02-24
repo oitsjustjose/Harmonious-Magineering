@@ -1,0 +1,46 @@
+{
+  "parent": "custom:root",
+  "display": {
+    "icon": {
+      "item": "sophisticatedbackpacks:backpack"
+    },
+    "title": "Make Any Backpack",
+    "description": "",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "obtain_any_backpack": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "sophisticatedbackpacks:backpack"
+          },
+          {
+            "item": "sophisticatedbackpacks:copper_backpack"
+          },
+          {
+            "item": "sophisticatedbackpacks:diamond_backpack"
+          },
+          {
+            "item": "sophisticatedbackpacks:gold_backpack"
+          },
+          {
+            "item": "sophisticatedbackpacks:iron_backpack"
+          },
+          {
+            "item": "sophisticatedbackpacks:netherite_backpack"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "obtain_any_backpack"
+    ]
+  ]
+}

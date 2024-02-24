@@ -28,9 +28,12 @@
 			}]
 			subtitle: "Too much stuff, not enough space?"
 			tasks: [{
-				id: "73E5C061A1447BF6"
-				item: "sophisticatedbackpacks:backpack"
-				type: "item"
+				advancement: "custom:quests/backpacks"
+				criterion: ""
+				icon: "sophisticatedbackpacks:backpack"
+				id: "4E6C2CA15C3EE86D"
+				title: "Create (or find) any Backpack"
+				type: "advancement"
 			}]
 			title: "Portable Storage"
 			x: -1.0d
