@@ -124,6 +124,11 @@ ItemEvents.tooltip(event => {
     }
 
     if (event.isShift()) {
+      /* Aether loot hint */
+      if (stack.rarity.name() === 'aether.loot') {
+        tooltips.add(Text.translate('tooltip.kubejs.aether_loot_hint'));
+      }
+
       let modName = Platform.getMods()[stack.getMod()].getName();
       tooltips.add(Text.blue(Text.translate('tooltip.kubejs.modid', modName)));
     }

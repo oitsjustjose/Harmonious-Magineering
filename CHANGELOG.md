@@ -1,5 +1,20 @@
 # Harmonious Magineering Changelog
 
+## v1.0.0-BETA7:
+
+### Added:
+- Helpful tooltip to explain that some Aether tooltips are dungeon loot only
+
+### Changed:
+- Farmer's Delight milk bottle recipe now yields 3 instead of 4 bottles. This is because _canonically_ a bottle of {fluid} is a **third** of a bucket, not a **fourth**. (Thanks Ellpeck for pointing this out - I couldn't unsee it)
+
+### Fixed:
+
+- Hopefully fixed the Xaero Coords not being disabled automatically - in my testing, this has been fixed...
+- Changed T2 Blood Orb recipe to avoid conflicts
+- None of my Miscellany recipes working (thanks auto-formatter for adding parentheses >_>)
+- Quark's Framed Glass being able to be used in the recipe for Quark's Framed Glass (and JEI wanting to use it in making itself, causing an infinite and Iron-expensive loop)
+
 ## v1.0.0-BETA6:
 
 ### Updated:
