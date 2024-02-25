@@ -19,6 +19,7 @@ ServerEvents.tags('block', event => {
 
   /* Iron Chest's barrels aren't tagged for Pickaxe breakage */
   event.add('minecraft:mineable/pickaxe', [
+    'cfm:post_box',
     'ironchests:copper_barrel',
     'ironchests:crystal_barrel',
     'ironchests:diamond_barrel',
