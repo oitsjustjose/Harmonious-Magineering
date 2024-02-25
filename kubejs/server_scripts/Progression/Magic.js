@@ -429,7 +429,7 @@ ServerEvents.recipes(event => {
         altarSyphon: 5000,
         consumptionRate: 5,
         drainRate: 5,
-        input: {item: 'minecraft:ender_pearl'},
+        input: {item: 'minecraft:ender_eye'},
         output: {item: 'bloodmagic:apprenticebloodorb'},
         upgradeLevel: 1,
       })
@@ -496,7 +496,7 @@ ServerEvents.recipes(event => {
         input: {item: 'bloodmagic:apprenticebloodorb'},
         inputsize: 1,
         mainoutputchance: 0.0,
-        output: {item: 'minecraft:ender_pearl'},
+        output: {item: 'minecraft:ender_eye'},
         tool: {tag: 'bloodmagic:arc/reverter'},
       })
       .id('bloodmagic:arc/reversion/apprentice_blood_orb');
