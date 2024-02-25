@@ -6,6 +6,7 @@
 - Helpful tooltip to explain that some Aether tooltips are dungeon loot only
 
 ### Changed:
+- Downgraded to NeoForge 47.1.99 so CurseForge support would be easier on me
 - Farmer's Delight milk bottle recipe now yields 3 instead of 4 bottles. This is because _canonically_ a bottle of {fluid} is a **third** of a bucket, not a **fourth**. (Thanks Ellpeck for pointing this out - I couldn't unsee it)
 
 ### Fixed:
