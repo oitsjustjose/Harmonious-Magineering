@@ -1,6 +1,6 @@
 let lastXaeroChange = 0;
 
-ForgeEvents.onEvent('net.minecraftforge.event.TickEvent$ClientTickEvent', () => {
+PlayerEvents.tick(() => {
   if (Date.now() - lastXaeroChange < 5000) return;
 
   // Disable the Minimap Coords by default
