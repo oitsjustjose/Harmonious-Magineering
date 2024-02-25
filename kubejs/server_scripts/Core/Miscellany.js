@@ -63,6 +63,25 @@ ServerEvents.recipes(event => {
     });
   };
 
+  const foodstuffs = () => {
+    /* Fix barley being insanely op */
+    event.remove({input: 'regions_unexplored:barley', output: 'minecraft:bread'});
+    let flour = Item.of('create:wheat_flour');
+    flour.setNbt({display: {Name: '[{"translate":"item.kubejs.generic_flour","italic":false}]'}});
+    event.recipes.create.milling(flour.withChance(0.15), 'regions_unexplored:barley');
+
+    /* Canonically, 1 bottle = 1/3 of a bucket, not 1/4 - fix for milk */
+    event.remove({output: 'farmersdelight:milk_bottle'});
+    event.shapeless(Item.of('farmersdelight:milk_bottle', 3), [
+      'minecraft:milk_bucket',
+      'minecraft:glass_bottle',
+      'minecraft:glass_bottle',
+      'minecraft:glass_bottle',
+    ]);
+    // Update spout filling recipe too
+    event.recipes.create.filling('farmersdelight:milk_bottle', [Item.of('minecraft:glass_bottle'), Fluid.of('minecraft:milk', 333)]);
+  };
+
   const outerEnd = () => {
     event.recipes.create.crushing(Item.of('mekanism:salt', 4), ['outer_end:halite']);
     event.recipes.create.crushing(Item.of('mekanism:salt', 1), ['outer_end:halite_crystal']);
@@ -89,11 +108,27 @@ ServerEvents.recipes(event => {
 
   const quark = () => {
     event.replaceInput({output: 'quark:bonded_leather'}, '#forge:leather', 'minecraft:leather');
-    event.replaceInput({}, 'quark:moss_paste', 'ecologics:surface_moss');
+
+    /* Moss things */
+    event.remove({output: 'ecologics:surface_moss'});
     event.remove({output: 'quark:moss_paste'});
+    event.smelting(Item.of('ecologics:surface_moss', 8), 'minecraft:moss_block');
+    event.replaceInput({}, 'quark:moss_paste', 'ecologics:surface_moss');
 
     event.remove('quark:building/crafting/framed_glass');
-    event.shaped(Item.of('quark:framed_glass', 4), ['NGN', 'GNG', 'NGN'], {G: '#forge:glass/colorless', N: '#forge:nuggets/iron'});
+    event.shaped(Item.of('quark:framed_glass', 4), ['NGN', 'GNG', 'NGN'], {
+      G: [
+        'connectedglass:borderless_glass',
+        'connectedglass:clear_glass',
+        'connectedglass:scratched_glass',
+        'create:framed_glass',
+        'create:horizontal_framed_glass',
+        'create:tiled_glass',
+        'create:vertical_framed_glass',
+        'minecraft:glass',
+      ],
+      N: '#forge:nuggets/iron',
+    });
 
     /* Re-do branch stick crafting */
     event.remove({output: 'minecraft:stick', input: '#regions_unexplored:branches'});
@@ -150,11 +185,5 @@ ServerEvents.recipes(event => {
     C: '#forge:chests/wooden',
   });
 
-  /* Fix barley being insanely op */
-  event.remove({input: 'regions_unexplored:barley', output: 'minecraft:bread'});
-  let flour = Item.of('create:wheat_flour')
-  flour.setNbt({display: {Name: '[{"translate":"item.kubejs.generic_flour","italic":false}]'}});
-  event.recipes.create.milling(flour.withChance(0.15), 'regions_unexplored:barley');
-
-  [(architectsPalette, createWaxedCopper, outerEnd, quark, supplementaries)].forEach(module => module());
+  [architectsPalette, createWaxedCopper, foodstuffs, outerEnd, quark, supplementaries].forEach(module => module());
 });
