@@ -35,6 +35,13 @@ ServerEvents.recipes(event => {
   wash('#vtweaks:colored_smart_cable', 'ae2:fluix_smart_cable');
   wash('#vtweaks:colored_smart_dense_cable', 'ae2:fluix_smart_dense_cable');
 
+  // Bloodmagic - wash the blood off of your orb to reset the owner
+  wash('bloodmagic:apprenticebloodorb', 'bloodmagic:apprenticebloodorb');
+  wash('bloodmagic:archmagebloodorb', 'bloodmagic:archmagebloodorb');
+  wash('bloodmagic:magicianbloodorb', 'bloodmagic:magicianbloodorb');
+  wash('bloodmagic:masterbloodorb', 'bloodmagic:masterbloodorb');
+  wash('bloodmagic:weakbloodorb', 'bloodmagic:weakbloodorb');
+
   // Comforts
   wash('#vtweaks:colored_hammock', 'comforts:hammock_white');
   wash('#vtweaks:colored_sleeping_bag', 'comforts:sleeping_bag_white');
