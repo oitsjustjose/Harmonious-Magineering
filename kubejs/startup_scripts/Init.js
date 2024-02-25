@@ -131,6 +131,14 @@ ForgeEvents.onEvent('net.minecraftforge.event.AnvilUpdateEvent', event => {
   }
 });
 
+StartupEvents.postInit(() => {
+  // Disable the Minimap Coords by default
+  const XaeroMinimap = Java.loadClass('xaero.minimap.XaeroMinimap');
+  const xaeroMinimap = XaeroMinimap.instance;
+
+  xaeroMinimap.getInterfaces().getMinimapInterface().getInfoDisplayManager().get('coords').setState(false);
+});
+
 ItemEvents.modification(event => {
   const baseMultiplier = 2;
   const exceptions = {
