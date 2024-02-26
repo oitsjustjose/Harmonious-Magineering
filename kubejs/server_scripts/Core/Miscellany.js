@@ -185,7 +185,8 @@ ServerEvents.recipes(event => {
   event.shapeless(Item.of('twigs:silt_ball', 4), ['twigs:silt']);
 
   /* Fix beam recipe conflict - use a sawmill */
-  event.remove({output: '#decorative_blocks:beams', type: ['minecraft:crafting_shaped', 'minecraft:crafting_shapeless']});
+  event.remove({output: '#decorative_blocks:beams', type: 'minecraft:crafting_shaped'});
+  event.remove({output: '#decorative_blocks:beams', type: 'minecraft:crafting_shapeless'});
 
   event.remove({mod: 'ftbquests'});
   event.remove({output: 'minecraft:saddle'});
