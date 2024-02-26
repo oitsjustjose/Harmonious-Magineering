@@ -131,13 +131,13 @@ ServerEvents.recipes(event => {
 
   // Storage drawer upgrades
   event.remove({output: 'storagedrawers:drawer_key'});
-  event.smithing('storagedrawers:drawer_key', '#forge:plates/gold', 'supplementaries:key', 'storagedrawers:upgrade_template');
+  event.smithing('storagedrawers:drawer_key', '#forge:ingots/gold', 'supplementaries:key', 'storagedrawers:upgrade_template');
 
   event.remove({output: 'storagedrawers:quantify_key'});
-  event.smithing('storagedrawers:quantify_key', '#forge:plates/gold', 'supplementaries:key', 'supplementaries:crystal_display');
+  event.smithing('storagedrawers:quantify_key', '#forge:ingots/gold', 'supplementaries:key', 'supplementaries:crystal_display');
 
   event.remove({output: 'storagedrawers:shroud_key'});
-  event.smithing('storagedrawers:shroud_key', '#forge:plates/gold', 'supplementaries:key', 'minecraft:ender_eye');
+  event.smithing('storagedrawers:shroud_key', '#forge:ingots/gold', 'supplementaries:key', 'minecraft:ender_eye');
 
   event.remove({output: 'storagedrawers:obsidian_storage_upgrade'});
   event.shaped('storagedrawers:obsidian_storage_upgrade', ['MMM', 'LCL', 'MMM'], {
