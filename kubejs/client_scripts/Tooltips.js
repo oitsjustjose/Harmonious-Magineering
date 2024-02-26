@@ -90,11 +90,12 @@ const modifyStackForStageProgress = (stack, tooltips) => {
       for (const tag of Object.keys(stages)) {
         let config = stages[tag];
         if (config.mods.includes(stack.getMod())) {
+          let obfName = Text.white(`abcde_${stack.id}`).obfuscated();
           if (!cachedServerPlayerRef.getTags() || !cachedServerPlayerRef.getTags().contains(tag)) {
             // Just setting the name on the client-side. Doesn't actually rename the item permanently
-            if (Date.now() - lastHovNameRefresh > 500) {
+            if (Date.now() - lastHovNameRefresh > 500 && stack.getHoverName() !== obfName) {
               // Add ABCDE as 'noise' to prevent the word (alt) from showing up next to the obfuscated text
-              stack.setHoverName(Text.white(`abcde_${stack.id}`).obfuscated());
+              stack.setHoverName(obfName);
               lastHovNameRefresh = Date.now();
             }
             // We don't want to give the player any additional info on this item...
@@ -105,11 +106,9 @@ const modifyStackForStageProgress = (stack, tooltips) => {
             tooltips.add(Text.darkRed(Text.translate('tooltip.kubejs.gated')).underlined());
             // RETURN here so that we don't add the mod to the tooltip like below:
             return;
-          } else {
-            if (Date.now() - lastHovNameRefresh > 500) {
-              stack.resetHoverName();
-              lastHovNameRefresh = Date.now();
-            }
+          } else if (Date.now() - lastHovNameRefresh > 500 && stack.getHoverName() === obfName) {
+            stack.resetHoverName();
+            lastHovNameRefresh = Date.now();
           }
         }
       }
