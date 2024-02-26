@@ -37,7 +37,7 @@
 	world = true
 	mobs = true
 	client = true
-	experimental = false
+	experimental = true
 	oddities = false
 
 [automation]
@@ -330,7 +330,7 @@
 	"Ancient Tomes" = false
 	"Beacon Redirection" = true
 	"Bottled Cloud" = true
-	"Color Runes" = false
+	"Color Runes" = true
 	"Endermosh Music Disc" = false
 	"Parrot Eggs" = false
 	"Pathfinder Maps" = false
@@ -1633,7 +1633,7 @@
 	#is added to 'Items to Change', then a predicate named 'quark_has_enchant_minecraft_silk_touch' will be available
 	#to the netherite_pickaxe.json item model, whose value will be the enchantment level.
 	"Enchantment Predicates" = false
-	"Enchantments Begone" = false
+	"Enchantments Begone" = true
 	"Game Nerfs" = false
 	"Narrator Readout" = false
 	"Overlay Shader" = false
@@ -1677,7 +1677,7 @@
 		"Enchantments To Register" = []
 
 	[experimental.enchantments_begone]
-		"Enchantments To Begone" = []
+		"Enchantments To Begone" = ["minecraft:mending"]
 
 	[experimental.game_nerfs]
 		#Makes Mending act like the Unmending mod
