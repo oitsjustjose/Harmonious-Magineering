@@ -140,7 +140,6 @@ ServerEvents.recipes(event => {
 
   const supplementaries = () => {
     event.replaceInput({output: 'supplementaries:sack'}, 'supplementaries:flax', 'farmersdelight:canvas');
-
     /* Fix candle holder recipe inconcistencies */
     [
       '',
@@ -172,6 +171,10 @@ ServerEvents.recipes(event => {
 
   event.shapeless(Item.of('minecraft:bone_meal', 4), ['eidolon:imbued_bones']);
   event.shapeless(Item.of('minecraft:clay_ball', 4), ['minecraft:clay']);
+  event.shapeless(Item.of('twigs:silt_ball', 4), ['twigs:silt']);
+
+  /* Fix beam recipe conflict - use a sawmill */
+  event.remove({output: '#decorative_blocks:beams', type: ['minecraft:crafting_shaped', 'minecraft:crafting_shapeless']});
 
   event.remove({mod: 'ftbquests'});
   event.remove({output: 'minecraft:saddle'});
@@ -183,6 +186,13 @@ ServerEvents.recipes(event => {
     B: 'minecraft:blue_concrete',
     T: 'minecraft:iron_trapdoor',
     C: '#forge:chests/wooden',
+  });
+
+  /* Easier dispensers */
+  event.shaped('minecraft:dispenser', [' RS', 'RDS', ' RS'], {
+    R: '#forge:rods/wooden',
+    S: 'minecraft:string',
+    D: 'minecraft:dropper',
   });
 
   [architectsPalette, createWaxedCopper, foodstuffs, outerEnd, quark, supplementaries].forEach(module => module());
