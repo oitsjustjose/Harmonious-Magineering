@@ -25,4 +25,6 @@ integration:
   accumulationWinterOnly: false
 debug:
   weatherTickSlowness: 16
+  preventWorldgenLogSpam: true
   mobSpawningCommand: false
+  skipSnowLoggingMushroom: true
