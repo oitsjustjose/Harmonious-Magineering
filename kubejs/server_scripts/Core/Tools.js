@@ -1,3 +1,29 @@
+/* Nuke Mending completely hardcore-style */
+
+/**
+ * @param {Internal.ItemStack} stack
+ */
+const wipeEnchantsIfMendingPresent = stack => {
+  if (!stack.isEnchanted()) return;
+
+  stack.getAllEnchantments().forEach(ench => {
+    if (ench.getDescriptionId() === 'enchantment.minecraft.mending') {
+      stack.enchantmentTags.clear();
+      return;
+    }
+  });
+};
+
+PlayerEvents.inventoryChanged(event => {
+  const stack = event.getPlayer().getInventory().getStackInSlot(event.getSlot());
+  wipeEnchantsIfMendingPresent(stack);
+});
+
+ItemEvents.firstLeftClicked(event => {
+  const stack = event.getItem();
+  wipeEnchantsIfMendingPresent(stack);
+});
+
 ServerEvents.recipes(event => {
   /* Gearset Order: Sword, Pick, Shovel, Axe, Hoe */
   const baseTools = [
@@ -305,5 +331,3 @@ ServerEvents.recipes(event => {
 
   [baseTools, armor, gloves, knives, machetes].forEach(processSet);
 });
-
-
