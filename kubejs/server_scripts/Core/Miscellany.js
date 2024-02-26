@@ -82,6 +82,16 @@ ServerEvents.recipes(event => {
     event.recipes.create.filling('farmersdelight:milk_bottle', [Item.of('minecraft:glass_bottle'), Fluid.of('minecraft:milk', 333)]);
   };
 
+  const glass = () => {
+    event.forEachRecipe({output: '#forge:glass', type: 'minecraft:smelting'}, x => {
+      event.remove(x.getId());
+      event.blasting(x.get('result'), x.get('ingredient')).id(x.getId());
+    });
+
+    event.remove('immersiveengineering:smelting/slag_glass');
+    event.blasting('immersiveengineering:slag_glass', '#forge:slag').id('immersiveengineering:smelting/slag_glass');
+  };
+
   const outerEnd = () => {
     event.recipes.create.crushing(Item.of('mekanism:salt', 4), ['outer_end:halite']);
     event.recipes.create.crushing(Item.of('mekanism:salt', 1), ['outer_end:halite_crystal']);
@@ -192,5 +202,5 @@ ServerEvents.recipes(event => {
     D: 'minecraft:dropper',
   });
 
-  [architectsPalette, createWaxedCopper, foodstuffs, outerEnd, quark, supplementaries].forEach(module => module());
+  [architectsPalette, createWaxedCopper, foodstuffs, glass, outerEnd, quark, supplementaries].forEach(module => module());
 });
