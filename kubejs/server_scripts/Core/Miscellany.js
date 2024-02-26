@@ -1,3 +1,14 @@
+PlayerEvents.inventoryChanged(event => {
+  // if (event.getItem().hasEnchantment('mending')) {
+  //   const stack = event.getPlayer().getInventory().getStackInSlot(event.getSlot);
+  //   const tag = stack.getOrCreateTag();
+  //   if (tag.contains('Enchantments')) {
+  //     tag.remove('Enchantments');
+  //   }
+  //   stack.setNbt(tag);
+  // }
+});
+
 ServerEvents.recipes(event => {
   const architectsPalette = () => {
     event.replaceInput({output: 'architects_palette:nether_brass_blend'}, 'minecraft:iron_nugget', '#forge:nuggets/zinc');
