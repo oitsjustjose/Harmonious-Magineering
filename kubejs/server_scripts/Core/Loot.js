@@ -106,6 +106,7 @@ LootJS.modifiers(event => {
   };
 
   event.addEntityLootModifier('minecraft:warden').removeLoot(ItemFilter.ALWAYS_TRUE);
+  event.addEntityLootModifier('minecraft:piglin').removeLoot('minecraft:arrow')
 
   [customSilverLead, boostDeepslateLoot, boostSomeMobDrops, metalMobDrops, modLoot].forEach(module => module());
 });
