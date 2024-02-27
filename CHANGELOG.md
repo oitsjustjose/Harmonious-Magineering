@@ -22,6 +22,7 @@
 - Drawer Keys being gated _way_ too late in the game (sorry)
 - Piglins should no longer drop arrows (I _did_ forget to test this to verify, but it should be fixed..)
 - Mending _sometimes_ being obtainable from certain chest loot tables (specifically in the End as far as I can tell?). Now if you get it on a tool, the tool's enchantments will be wiped, and even if you somehow counteract that, Mending actually won't do anything to repair the tool anyways.
+- XP Tank Backpack Upgrade having arrows that are _definitively_ pointing the WRONG DIRECTION >:v
 
 ### Updated:
 
