@@ -16,6 +16,7 @@
 
 ### Fixed:
 
+- Xaero Coordinate fix causing server log spam (and not working -- it _definitely_ works now)
 - Sodium Shader Incompatibility warning at each startup
 - Beams are now craftable (as a result, 16 sticks can no longer be created from stripped logs)
 - Stack names being reset when they shouldn't be (not usually applicable)
