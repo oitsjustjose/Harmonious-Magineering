@@ -80,6 +80,10 @@ ServerEvents.recipes(event => {
     ]);
     // Update spout filling recipe too
     event.recipes.create.filling('farmersdelight:milk_bottle', [Item.of('minecraft:glass_bottle'), Fluid.of('minecraft:milk', 333)]);
+
+    /* Fried egg recipe somehow broke??? */
+    event.campfireCooking('naturalist:cooked_egg', 'minecraft:egg');
+    event.smoking('naturalist:cooked_egg', 'minecraft:egg');
   };
 
   const glass = () => {
