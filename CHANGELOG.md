@@ -1,5 +1,35 @@
 # Harmonious Magineering Changelog
 
+## v1.0.0-BETA8
+
+### Added:
+
+- Paxi
+- New Framing Saw item textures
+- New Sawmill item textures
+- Silt -> 4x Silt Ball recipe
+
+### Changed:
+
+- Glass now requires a **Blast Furnace** rather than a _Normal Furnace_.
+- Resource Packs are now being loaded by Paxi, meaning I no longer need to worry about file names changing, etc. and can more specifically control the resource pack loading order to have custom pack-specific resources take precedence over top of Brush-Up! and Brush-Up!++, etc..
+
+### Fixed:
+
+- Sodium Shader Incompatibility warning at each startup
+- Beams are now craftable (as a result, 16 sticks can no longer be created from stripped logs)
+- Stack names being reset when they shouldn't be (not usually applicable)
+- Drawer Keys being gated _way_ too late in the game (sorry)
+- Piglins should no longer drop arrows (I _did_ forget to test this to verify, but it should be fixed..)
+- Mending _sometimes_ being obtainable from certain chest loot tables (specifically in the End as far as I can tell?). Now if you get it on a tool, the tool's enchantments will be wiped, and even if you somehow counteract that, Mending actually won't do anything to repair the tool anyways.
+
+### Updated:
+
+- Amendments
+- Snow Real Magic
+- Structure Essentals
+- Many uninteresting library mods
+
 ## v1.0.0-BETA7:
 
 ### Added:
