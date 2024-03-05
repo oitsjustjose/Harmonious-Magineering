@@ -81,6 +81,9 @@ ServerEvents.tags('block', event => {
   global.StrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   ores.forEach(ore => event.removeAllTagsFrom(ore));
 
+  /* Fix CFM Pickaxe Minability */
+  event.add('minecraft:mineable/pickaxe', ['cfm:post_box']);
+
   /* Refined Glowstone is primarily useless >_> */
   event.removeAllTagsFrom('mekanism:block_refined_glowstone');
 
