@@ -4,8 +4,6 @@
 	allow_non_blocks = false
 	#Allows crafting non wood variant items (crafting table for example)
 	allow_non_variant = true
-	#List of Mod ids you want to completely exclude from sawmill recipes. All recipes from these mods will be ignored.For more fine control use the sawmill:blacklist item tag
-	mod_blacklist = []
 	#Determines if GUI will have search bar or not. Automatic only enables the bar statically when you have enough mods that add wood recipes. Dynamic changes the gui dynamically depending on how many recipe its displaying
 	#Allowed Values: OFF, ON, AUTOMATIC, DYNAMIC
 	search_bar_mode = "AUTOMATIC"
@@ -21,6 +19,8 @@
 	wider_gui = true
 	#Sort recipes following cretive tab order. Could cause issue in the case when, for whatever reason, creative other would differ from server to client.Additionally Neoforge has a bug where this stuff won't work on servers. Use Forge instead!
 	sort_recipes = true
+	#List of Mod ids you want to completely exclude from sawmill recipes. All recipes from these mods will be ignored. Use to remove mods with many recipes as sawmill can display at most 255 at onceFor more fine control use the sawmill:blacklist item tag
+	mods_blacklist = ["framedblocks"]
 
 	#This is a map of wood object type to its cost in planks. Its used to add some discount to some special blocks.Change this if say you want all fences to cost 1 plank. Not all keys will work here bt you can try modded ones if you hae Every Compat
 	[general.special_recipe_costs]

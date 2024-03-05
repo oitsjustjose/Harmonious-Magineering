@@ -1,5 +1,60 @@
 # Harmonious Magineering Changelog
 
+## v1.0.0-BETA9
+
+### Added:
+
+- Custom textures for Expanded Storage Minecarts
+- Expanded Storage and brought back all my prior recipes and changes.
+- Recipes for using PneumaticCraft explosion crafting to scrap gear you don't need
+  - This mechanic is also introduced with the new Embers update, but Exploding the gear will have a 50% chance to fail whereas the Embers method will
+    not have a chance to fail.
+
+### Updated:
+
+- Amendments
+- Corpse
+- Delightful
+- Easy Anvils
+- Embeddium
+- Embers
+- Every Compat
+- Fancy Menu
+- Framed Blocks
+- Quark
+- Raised
+- Regions Unexplored
+- Sawmill
+- Snow! Real Magic!
+- Sophisticated Backpacks
+- Storage Drawers
+- Supplementaries
+- Zeta
+- [Library] AlmostUnified
+- [Library] Balm
+- [Library] Cupboard
+- [Library] Iceberg
+- [Library] Selene
+- [Library] Sophisticated Core
+- [Library] Yung's API
+
+### Fixed:
+
+- Fixed a few server-side log-spam inducing bugs
+- Improved InventoryChanged error state handling
+- Mimic's having wrong lootr chest texture
+- Re-fixed backpack XP upgrade iconography
+- Somehow the Fried Egg recipe broke?!?
+- Teleposer Foci having a recipe conflict
+
+### Removed:
+
+- Obfuscated names for unknown items has been disabled for now. Will be revisited eventually when I can make it more performant in ItemGator itself
+- **IronChests: Restocked WILL BE REMOVED NEXT UPDATE**
+  - Due to a large number of minor gripes I've had with this mod, I'm glad to replace it with Expanded Storage now that the dev of said mod has stated
+    they'll no longer be unpublishing the mod - it truly is a superior mod. Right now you'll get a chat message letting you know that next update Iron
+    Chests be going away and that if you right-click any "Iron Chests" chest, it'll automatically convert & move your items over :)
+
 ## v1.0.0-BETA8
 
 ### Added:
@@ -12,7 +67,8 @@
 ### Changed:
 
 - Glass now requires a **Blast Furnace** rather than a _Normal Furnace_.
-- Resource Packs are now being loaded by Paxi, meaning I no longer need to worry about file names changing, etc. and can more specifically control the resource pack loading order to have custom pack-specific resources take precedence over top of Brush-Up! and Brush-Up!++, etc..
+- Resource Packs are now being loaded by Paxi, meaning I no longer need to worry about file names changing, etc. and can more specifically control the
+  resource pack loading order to have custom pack-specific resources take precedence over top of Brush-Up! and Brush-Up!++, etc..
 
 ### Fixed:
 
@@ -22,7 +78,8 @@
 - Stack names being reset when they shouldn't be (not usually applicable)
 - Drawer Keys being gated _way_ too late in the game (sorry)
 - Piglins should no longer drop arrows (I _did_ forget to test this to verify, but it should be fixed..)
-- Mending _sometimes_ being obtainable from certain chest loot tables (specifically in the End as far as I can tell?). Now if you get it on a tool, the tool's enchantments will be wiped, and even if you somehow counteract that, Mending actually won't do anything to repair the tool anyways.
+- Mending _sometimes_ being obtainable from certain chest loot tables (specifically in the End as far as I can tell?). Now if you get it on a tool,
+  the tool's enchantments will be wiped, and even if you somehow counteract that, Mending actually won't do anything to repair the tool anyways.
 - XP Tank Backpack Upgrade having arrows that are _definitively_ pointing the WRONG DIRECTION >:v
 
 ### Updated:
@@ -35,18 +92,22 @@
 ## v1.0.0-BETA7:
 
 ### Added:
+
 - Helpful tooltip to explain that some Aether tooltips are dungeon loot only
 
 ### Changed:
+
 - Downgraded to NeoForge 47.1.99 so CurseForge support would be easier on me
-- Farmer's Delight milk bottle recipe now yields 3 instead of 4 bottles. This is because _canonically_ a bottle of {fluid} is a **third** of a bucket, not a **fourth**. (Thanks Ellpeck for pointing this out - I couldn't unsee it)
+- Farmer's Delight milk bottle recipe now yields 3 instead of 4 bottles. This is because _canonically_ a bottle of {fluid} is a **third** of a bucket,
+  not a **fourth**. (Thanks Ellpeck for pointing this out - I couldn't unsee it)
 
 ### Fixed:
 
 - Hopefully fixed the Xaero Coords not being disabled automatically - in my testing, this has been fixed...
 - Changed T2 Blood Orb recipe to avoid conflicts
-- None of my Miscellany recipes working (thanks auto-formatter for adding parentheses >_>)
-- Quark's Framed Glass being able to be used in the recipe for Quark's Framed Glass (and JEI wanting to use it in making itself, causing an infinite and Iron-expensive loop)
+- None of my Miscellany recipes working (thanks auto-formatter for adding parentheses >\_>)
+- Quark's Framed Glass being able to be used in the recipe for Quark's Framed Glass (and JEI wanting to use it in making itself, causing an infinite
+  and Iron-expensive loop)
 
 ## v1.0.0-BETA6:
 
@@ -96,20 +157,22 @@
 - Updated Mekanism Weapons
 - Updated Regions Unexplored
 - Updated Supplementaries
-- Updated Brush-Up!++ Resource Pack 
-    - Adds lovely new Diamond & Gold Barrel textures
-    - Adds sculk-themed background + sculk-themed tabs when creating a new world, etc.
+- Updated Brush-Up!++ Resource Pack
+  - Adds lovely new Diamond & Gold Barrel textures
+  - Adds sculk-themed background + sculk-themed tabs when creating a new world, etc.
 
 ### Changed
 
-- Allowed Quark's inventory management buttons to appear in all containers -- please report any containers that _shouldn't_ have these buttons to me on the Discord or as a GitHub issue
+- Allowed Quark's inventory management buttons to appear in all containers -- please report any containers that _shouldn't_ have these buttons to me
+  on the Discord or as a GitHub issue
 - Changed Barley actually balanced
 - Cleaned up tooltips, possibly fixed the modname tooltip not working on servers 🤞
 - Made Post Boxes much easier to craft
 - Removed main menu icons in the four corners
 - Reverted changes to the Netherrack break/place sound (you're welcome Ellpeck)
 - Created script to automatically disable Xaero's coordinate info display
-    - This means your minimap settings won't reset each update anymore, but you'll be unable to use Xaero's Coordinate Display under the minimap (which is how I always intended the modpack to be played 😉)
+  - This means your minimap settings won't reset each update anymore, but you'll be unable to use Xaero's Coordinate Display under the minimap (which
+    is how I always intended the modpack to be played 😉)
 
 ## v1.0.0-BETA4:
 

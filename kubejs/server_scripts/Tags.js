@@ -81,17 +81,8 @@ ServerEvents.tags('block', event => {
   global.StrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   ores.forEach(ore => event.removeAllTagsFrom(ore));
 
-  /* Iron Chest's barrels aren't tagged for Pickaxe breakage */
-  event.add('minecraft:mineable/pickaxe', [
-    'cfm:post_box',
-    'ironchests:copper_barrel',
-    'ironchests:crystal_barrel',
-    'ironchests:diamond_barrel',
-    'ironchests:gold_barrel',
-    'ironchests:iron_barrel',
-    'ironchests:netherite_barrel',
-    'ironchests:obsidian_barrel',
-  ]);
+  /* Fix CFM Pickaxe Minability */
+  event.add('minecraft:mineable/pickaxe', ['cfm:post_box']);
 
   /* Refined Glowstone is primarily useless >_> */
   event.removeAllTagsFrom('mekanism:block_refined_glowstone');

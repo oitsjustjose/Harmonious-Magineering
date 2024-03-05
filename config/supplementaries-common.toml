@@ -93,7 +93,7 @@
 	hourglass = true
 
 	[functional.rope]
-		#So you came here to disable supp rope not because they are bad but because they are the easiest to disable, despite them doing all the stuff other ropes can do. Well too bad, this config doesnt do anything. Learn how to use datapacks to disable stuff, like its normally done
+		#So you came here to disable supp rope not because they are bad but because they are the easiest to disable, despite them doing all the stuff other ropes can do. Well too bad, this config doesnt do anything :P. Learn how to use datapacks to disable stuff, like its normally done
 		enabled = true
 		#Allows ropes to be supported & attached to solid block sides
 		block_side_attachment = true
@@ -203,7 +203,6 @@
 	blackstone_tile = true
 	sconce = true
 	sconce_lever = true
-	sconce_green = false
 	pancake = true
 	netherite_door = true
 	netherite_trapdoor = true

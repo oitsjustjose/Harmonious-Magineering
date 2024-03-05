@@ -1,13 +1,13 @@
-filename = 'embersrekindled-1.20.1-1.0.3.jar'
+filename = 'embersrekindled-1.20.1-1.1.1.jar'
 name = 'Embers Rekindled'
 side = 'both'
 
 [download]
-hash = '533548feefdcdd39f4ba72ca7251fdc1e21e6e27'
+hash = '18383b66ac214c8efb114e370e310e9b63a74510'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 4897329
+file-id = 5031242
 project-id = 300777

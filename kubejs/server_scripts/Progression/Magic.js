@@ -404,6 +404,18 @@ ServerEvents.recipes(event => {
       })
       .id('bloodmagic:blood_rune_blank');
 
+    // Teleposition Focus requires specifically a _normal_ ender pearl
+    event.remove('bloodmagic:altar/teleposer_focus');
+    event.custom({
+        type: 'bloodmagic:altar',
+        altarSyphon: 2000,
+        consumptionRate: 5,
+        drainRate: 1,
+        input: {item: 'minecraft:ender_pearl'},
+        output: {item: 'bloodmagic:teleposerfocus'},
+        upgradeLevel: 3,
+    }).id('bloodmagic:altar/teleposer_focus');
+
     // Re-do all of the Blood Orb recipes
     event.remove('bloodmagic:altar/weakbloodorb');
     event.remove('bloodmagic:altar/apprenticebloodorb');

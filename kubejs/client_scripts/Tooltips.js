@@ -22,7 +22,16 @@ const stages = {
   embers: {
     mods: ['embers'],
     substitute: Item.of('kubejs:unknown_dwarven_item'),
-    exceptions: Ingredient.of(['#forge:ores/lead', '#forge:ores/silver', '#forge:ingots/archaic_brick', 'embers:tinker_hammer']),
+    exceptions: Ingredient.of([
+      '#forge:ingots/archaic_brick',
+      '#forge:ores/lead',
+      '#forge:ores/silver',
+      'embers:lead_axe',
+      'embers:lead_hoe',
+      'embers:lead_pickaxe',
+      'embers:lead_shovel',
+      'embers:lead_sword'
+    ]),
   },
   create: {
     mods: ['create', 'railways', 'create_power_loader', 'prettypipes'],
@@ -90,14 +99,7 @@ const modifyStackForStageProgress = (stack, tooltips) => {
       for (const tag of Object.keys(stages)) {
         let config = stages[tag];
         if (config.mods.includes(stack.getMod())) {
-          let obfName = Text.white(`abcde_${stack.id}`).obfuscated();
           if (!cachedServerPlayerRef.getTags() || !cachedServerPlayerRef.getTags().contains(tag)) {
-            // Just setting the name on the client-side. Doesn't actually rename the item permanently
-            if (Date.now() - lastHovNameRefresh > 500 && stack.getHoverName() !== obfName) {
-              // Add ABCDE as 'noise' to prevent the word (alt) from showing up next to the obfuscated text
-              stack.setHoverName(obfName);
-              lastHovNameRefresh = Date.now();
-            }
             // We don't want to give the player any additional info on this item...
             for (let i = 1; i < tooltips.length; i++) {
               tooltips.remove(i);
