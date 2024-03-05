@@ -75,13 +75,24 @@
 			hide: true
 			icon: "bloodmagic:ingot_hellforged"
 			id: "5780D21D153AF10D"
-			rewards: [{
-				count: 12
-				id: "3E5355DA5E767C2A"
-				item: "create:experience_nugget"
-				random_bonus: 12
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 12
+					id: "3E5355DA5E767C2A"
+					item: "create:experience_nugget"
+					random_bonus: 12
+					type: "item"
+				}
+				{
+					auto: "invisible"
+					command: "/execute as @p run function custom:player/stages/embers"
+					elevate_perms: true
+					id: "234FCA76181EAA79"
+					silent: true
+					team_reward: true
+					type: "command"
+				}
+			]
 			shape: "octagon"
 			size: 2.0d
 			tasks: [
