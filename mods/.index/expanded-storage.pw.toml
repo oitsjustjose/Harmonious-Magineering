@@ -1,0 +1,13 @@
+filename = 'expandedstorage-10.2.2+1.20.1-forge.jar'
+name = 'Expanded Storage'
+side = 'both'
+
+[download]
+hash = 'ac9560f93e7de34a7fa2f3f5a3a82011126fad71'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5145367
+project-id = 978068

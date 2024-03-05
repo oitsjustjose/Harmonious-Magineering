@@ -9,13 +9,13 @@ ServerEvents.recipes(event => {
       type: 'sophisticatedbackpacks:smithing_backpack_upgrade',
       base: backpack.toJson(),
       addition: input.toJson(),
-      template: {tag: 'forge:leather'},
+      template: { tag: 'forge:leather' },
       result: output.toJson(),
     });
   };
 
   // 4 chests from logs
-  event.shaped('4x minecraft:chest', ['LLL', 'L L', 'LLL'], {L: '#minecraft:logs'});
+  event.shaped('4x minecraft:chest', ['LLL', 'L L', 'LLL'], { L: '#minecraft:logs' });
 
   // Bundles!
   event.shaped('minecraft:bundle', [' S ', 'L L', ' L '], {
@@ -130,91 +130,57 @@ ServerEvents.recipes(event => {
   });
 
   // Storage drawer upgrades
-  event.remove({output: 'storagedrawers:drawer_key'});
+  event.remove({ output: 'storagedrawers:drawer_key' });
   event.smithing('storagedrawers:drawer_key', '#forge:ingots/gold', 'supplementaries:key', 'storagedrawers:upgrade_template');
 
-  event.remove({output: 'storagedrawers:quantify_key'});
+  event.remove({ output: 'storagedrawers:quantify_key' });
   event.smithing('storagedrawers:quantify_key', '#forge:ingots/gold', 'supplementaries:key', 'supplementaries:crystal_display');
 
-  event.remove({output: 'storagedrawers:shroud_key'});
+  event.remove({ output: 'storagedrawers:shroud_key' });
   event.smithing('storagedrawers:shroud_key', '#forge:ingots/gold', 'supplementaries:key', 'minecraft:ender_eye');
 
-  event.remove({output: 'storagedrawers:obsidian_storage_upgrade'});
+  event.remove({ output: 'storagedrawers:obsidian_storage_upgrade' });
   event.shaped('storagedrawers:obsidian_storage_upgrade', ['MMM', 'LCL', 'MMM'], {
     M: '#forge:ingots/pewter',
     L: '#minecraft:logs',
     C: 'storagedrawers:upgrade_template',
   });
 
-  event.remove({output: 'storagedrawers:iron_storage_upgrade'});
+  event.remove({ output: 'storagedrawers:iron_storage_upgrade' });
   event.shaped('storagedrawers:iron_storage_upgrade', ['MMM', 'LCL', 'MMM'], {
     M: '#forge:ingots/veridium',
     L: '#minecraft:logs',
     C: 'storagedrawers:upgrade_template',
   });
 
-  event.remove({output: 'storagedrawers:gold_storage_upgrade'});
+  event.remove({ output: 'storagedrawers:gold_storage_upgrade' });
   event.shaped('storagedrawers:gold_storage_upgrade', ['MMM', 'LCL', 'MMM'], {
     M: '#forge:ingots/dawnstone',
     L: '#minecraft:logs',
     C: 'storagedrawers:upgrade_template',
   });
 
-  event.remove({output: 'storagedrawers:diamond_storage_upgrade'});
+  event.remove({ output: 'storagedrawers:diamond_storage_upgrade' });
   event.shaped('storagedrawers:diamond_storage_upgrade', ['MMM', 'LCL', 'MMM'], {
     M: '#forge:ingots/steel',
     L: '#minecraft:logs',
     C: 'storagedrawers:upgrade_template',
   });
 
-  event.remove({output: 'storagedrawers:emerald_storage_upgrade'});
+  event.remove({ output: 'storagedrawers:emerald_storage_upgrade' });
   event.shaped('storagedrawers:emerald_storage_upgrade', ['MMM', 'LCL', 'MMM'], {
     M: '#forge:ingots/refined_obsidian',
     L: '#minecraft:logs',
     C: 'storagedrawers:upgrade_template',
   });
 
-  event.remove({output: 'storagedrawers:one_stack_upgrade'});
+  event.remove({ output: 'storagedrawers:one_stack_upgrade' });
   event.shaped('storagedrawers:one_stack_upgrade', ['MMM', 'LCL', 'MMM'], {
     M: 'minecraft:flint',
     L: '#minecraft:logs',
     C: 'storagedrawers:upgrade_template',
   });
 
-  event.remove({output: 'storagedrawers:void_upgrade'});
+  event.remove({ output: 'storagedrawers:void_upgrade' });
   event.shapeless('storagedrawers:void_upgrade', ['trashcans:item_trash_can', 'storagedrawers:upgrade_template']);
-
-  /* Remove the Iron Chests upgrades since they don't work on Barrels. */
-  [
-    'ironchests:blank_chest_upgrade',
-    'ironchests:copper_chest_upgrade',
-    'ironchests:crystal_chest_upgrade',
-    'ironchests:diamond_chest_upgrade',
-    'ironchests:diamond_dolly',
-    'ironchests:gold_chest_upgrade',
-    'ironchests:iron_chest_upgrade',
-    'ironchests:iron_dolly',
-    'ironchests:key_ring',
-    'ironchests:key',
-    'ironchests:lock',
-    'ironchests:netherite_chest_upgrade',
-    'ironchests:obsidian_chest_upgrade',
-  ].forEach(x => {
-    event.remove({output: x});
-  });
-
-  /* Make Netherite storage craftable */
-  event.smithing(
-    'ironchests:netherite_chest',
-    'minecraft:netherite_upgrade_smithing_template',
-    'ironchests:diamond_chest',
-    'minecraft:netherite_ingot'
-  );
-
-  event.smithing(
-    'ironchests:netherite_barrel',
-    'minecraft:netherite_upgrade_smithing_template',
-    'ironchests:diamond_barrel',
-    'minecraft:netherite_ingot'
-  );
 });
