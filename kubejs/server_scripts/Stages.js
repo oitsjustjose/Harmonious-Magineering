@@ -3,13 +3,18 @@ ServerEvents.recipes(event => {
     let config = global.Stages[tag];
 
     config.mods.forEach(mod => {
-      event.custom({
+      const recipe = {
         type: 'itemgator:mod',
         tag: tag,
         mod: mod,
         substitute: Item.of(config.substitute).toJson(),
-        exceptions: Ingredient.of(config.exceptions).toJson(),
-      });
+      };
+
+      if (config.exceptions.length > 0) {
+        recipe.exceptions = Ingredient.of(config.exceptions).toJson();
+      }
+
+      event.custom(recipe);
     });
   });
 });
