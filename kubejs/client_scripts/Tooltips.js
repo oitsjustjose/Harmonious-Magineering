@@ -30,18 +30,16 @@ const modifyStackForStageProgress = (stack, tooltips) => {
     let isItemException = false;
     for (const tag of Object.keys(stages)) {
       let config = stages[tag];
-      if (config.exceptions !== null) {
-        if (config.exceptions.test(stack.item.id)) {
-          isItemException = true;
-          break;
-        }
+      if (Ingredient.of(config.exceptions).test(stack.item.id)) {
+        isItemException = true;
+        break;
       }
     }
 
     if (!isItemException) {
       for (const tag of Object.keys(stages)) {
         let config = stages[tag];
-        if (config.mods.includes(stack.getMod())) {
+        if (config.mods.contains(stack.getMod())) {
           if (!cachedServerPlayerRef.getTags() || !cachedServerPlayerRef.getTags().contains(tag)) {
             // We don't want to give the player any additional info on this item...
             for (let i = 1; i < tooltips.length; i++) {
