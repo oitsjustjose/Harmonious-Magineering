@@ -438,7 +438,6 @@
 				""
 				"Well, by seating an entity (any entity, really) at the controls of your train, you're able to map out and define the route the newly hired conductor will take using this &6Train Schedule&r!"
 			]
-			hide: true
 			id: "01BBA87BE37CF95B"
 			rewards: [{
 				count: 12
@@ -460,7 +459,7 @@
 		{
 			dependencies: ["38EF1F470889D47F"]
 			description: ["You read that right! Using a complex sequence of crafting steps, you've found that you're able to create Train Tracks that are capable of safely handling the weight of a free-formed train of any almost shape or size! It may take some &6Pondering&r to sort out everything, but this could be a great solution to long-range item movement!"]
-			hide: true
+			hide: false
 			id: "4E6A8BEC77CEF212"
 			rewards: [{
 				count: 4
