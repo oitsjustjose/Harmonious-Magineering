@@ -208,6 +208,7 @@
 		{
 			dependencies: ["49F6C827E030BB97"]
 			description: ["Seems that applying &6Copper&r to Stripped Wood using the Deployer makes a very water-resistant casing capable of not only creating new machines that specialize in all things &9Fluid&r, but thee casings also seem capable of acting as a cover for the various &6Pipes&r you may have routing around!"]
+			hide: true
 			id: "6A9782D0B5B5BEC0"
 			rewards: [{
 				id: "6F8588D2569E2558"
