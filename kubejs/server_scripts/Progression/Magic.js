@@ -406,7 +406,8 @@ ServerEvents.recipes(event => {
 
     // Teleposition Focus requires specifically a _normal_ ender pearl
     event.remove('bloodmagic:altar/teleposer_focus');
-    event.custom({
+    event
+      .custom({
         type: 'bloodmagic:altar',
         altarSyphon: 2000,
         consumptionRate: 5,
@@ -414,7 +415,8 @@ ServerEvents.recipes(event => {
         input: {item: 'minecraft:ender_pearl'},
         output: {item: 'bloodmagic:teleposerfocus'},
         upgradeLevel: 3,
-    }).id('bloodmagic:altar/teleposer_focus');
+      })
+      .id('bloodmagic:altar/teleposer_focus');
 
     // Re-do all of the Blood Orb recipes
     event.remove('bloodmagic:altar/weakbloodorb');
@@ -1167,6 +1169,26 @@ ServerEvents.recipes(event => {
       C: 'embers:caminite_brick',
       A: 'aether:angelic_stone',
     });
+
+    // I swear to god the alchemy mechanic in Embers is straight crap...
+    event.findRecipes({type: 'embers:alchemy'}).forEach(recipe => {
+      // parse from GSON json to JS object
+      let j = JSON.parse(recipe.json.toString());
+
+      recipe.remove();
+      event
+        .custom({
+          type: 'eidolon:ritual_brazier_crafting',
+          focusItems: Ingredient.of(j.aspects).toJson(),
+          pedestalItems: Ingredient.of(j.inputs).toJson(),
+          reagent: [j.tablet],
+          output: Item.of(j.output).toJson(),
+        })
+        .id(recipe.getId());
+    });
+
+    event.remove({output: 'embers:alchemy_pedestal'});
+    event.remove({output: 'embers:alchemy_tablet'});
   };
 
   const waystones = () => {

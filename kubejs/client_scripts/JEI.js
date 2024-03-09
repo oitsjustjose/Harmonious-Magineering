@@ -2,6 +2,7 @@
 // we want this script to run before Tooltips.js renames some items via obfuscation
 JEIEvents.removeCategories(event => {
   event.remove('waystones:warp_plate');
+  event.remove('embers:alchemy');
 });
 
 JEIEvents.hideFluids(event => {
@@ -670,6 +671,8 @@ JEIEvents.hideItems(event => {
     'eidolon:deep_silver_ore',
     'eidolon:lead_ore',
     'eidolon:silver_ore',
+    'embers:alchemy_pedestal',
+    'embers:alchemy_tablet',
     'embers:ash',
     'embers:creative_ember_source',
     'farmersdelight:fried_egg',
