@@ -1,0 +1,92 @@
+{
+  "aether": {
+    "mods": [
+      "aether",
+      "aether_redux",
+      "deep_aether"
+    ],
+    "substitute": "kubejs:unknown_holy_item",
+    "exceptions": [
+      "aether:leather_gloves",
+      "aether:chainmail_gloves",
+      "aether:iron_gloves",
+      "aether:golden_gloves",
+      "aether:diamond_gloves",
+      "aether:netherite_gloves"
+    ]
+  },
+  "bloodmagic": {
+    "mods": [
+      "bloodmagic"
+    ],
+    "substitute": "kubejs:unknown_bloody_item",
+    "exceptions": []
+  },
+  "embers": {
+    "mods": [
+      "embers"
+    ],
+    "substitute": "kubejs:unknown_dwarven_item",
+    "exceptions": [
+      "#forge:ingots/archaic_brick",
+      "#forge:ores/lead",
+      "#forge:ores/silver",
+      "embers:lead_axe",
+      "embers:lead_hoe",
+      "embers:lead_pickaxe",
+      "embers:lead_shovel",
+      "embers:lead_sword"
+    ]
+  },
+  "create": {
+    "mods": [
+      "create",
+      "railways",
+      "create_power_loader",
+      "prettypipes"
+    ],
+    "substitute": "kubejs:unknown_kinetic_item",
+    "exceptions": "#create:exception"
+  },
+  "pnc": {
+    "mods": [
+      "pneumaticcraft"
+    ],
+    "substitute": "kubejs:unknown_pneumatic_item",
+    "exceptions": "#pneumaticcraft:exception"
+  },
+  "ie": {
+    "mods": [
+      "immersiveengineering",
+      "buildinggadgets2"
+    ],
+    "substitute": "kubejs:unknown_engineering_item",
+    "exceptions": "#immersiveengineering:exception"
+  },
+  "mekanism": {
+    "mods": [
+      "mekanism",
+      "mekanismgenerators",
+      "mekaweapons",
+      "dimstorage",
+      "rftoolsbase",
+      "xnet"
+    ],
+    "substitute": "kubejs:unknown_electric_item",
+    "exceptions": "#mekanism:exception"
+  },
+  "ae2": {
+    "mods": [
+      "ae2",
+      "appmek",
+      "more_immersive_wires",
+      "specialised_cells",
+      "ae2wtlib",
+      "aeinfinitybooster",
+      "merequester",
+      "entangled"
+    ],
+    "substitute": "kubejs:unknown_energistic_item",
+    "exceptions": "#ae2:exception"
+  }
+}
