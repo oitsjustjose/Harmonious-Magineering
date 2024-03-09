@@ -69,6 +69,7 @@
 	certus_quartz_knife = true
 	fluix_knife = true
 	nether_quartz_knife = true
+	valkyrum_knife = true
 
 ["Pie Overhauls"]
 	blueberry_pie_slice = true

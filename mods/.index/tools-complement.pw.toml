@@ -1,0 +1,13 @@
+filename = 'tools_complement-1.20.1-4.0.0.25.jar'
+name = "Tool's Complement"
+side = 'both'
+
+[download]
+hash = '083e323411683d975f23f2f7f4da54a19317df6b0063a2ac101298651f7ab4890ae9a87949b7aa3a9d35a408279cba8f3edd9ebc69f10c3da753d39f7c391ce2'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/zTaQC7Hx/versions/TV9lXElz/tools_complement-1.20.1-4.0.0.25.jar'
+
+[update.modrinth]
+mod-id = 'zTaQC7Hx'
+version = 'TV9lXElz'

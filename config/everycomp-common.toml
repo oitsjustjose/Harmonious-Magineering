@@ -87,8 +87,7 @@
 				glacia = true
 				gilded_oak = true
 				blighted_skyroot = true
-				chromatic = true
-				chromatic_berry = true
+				purple_glacia = true
 
 			[general.types.leaves_type.architects_palette]
 				twisted = true
@@ -126,12 +125,12 @@
 				yagroot = true
 
 			[general.types.wood_type.aether_redux]
-				fieldsprout = true
 				blightwillow = true
 				cloudcap = true
-				springshroom = true
 				crystal = true
 				glacia = true
+				fieldsproot = true
+				jellyshroom = true
 
 			[general.types.wood_type.regions_unexplored]
 				alpha = true
