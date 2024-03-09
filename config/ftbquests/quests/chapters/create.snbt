@@ -32,8 +32,11 @@
 			id: "18AFCE909FA8D0DC"
 			rewards: [
 				{
+					auto: "invisible"
 					command: "/execute as @p run function custom:player/stages/create"
+					elevate_perms: true
 					id: "6DCE134EF92C96B1"
+					silent: true
 					type: "command"
 				}
 				{
