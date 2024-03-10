@@ -43,7 +43,8 @@
       "create",
       "railways",
       "create_power_loader",
-      "prettypipes"
+      "prettypipes",
+      "ppfluids"
     ],
     "substitute": "kubejs:unknown_kinetic_item",
     "exceptions": "#create:exception"
