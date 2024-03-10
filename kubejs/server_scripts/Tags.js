@@ -1,4 +1,4 @@
-// priority: 1
+// priority: 100
 const ores = [
   'eidolon:deep_lead_ore',
   'eidolon:deep_silver_ore',
