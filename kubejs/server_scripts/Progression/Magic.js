@@ -1,4 +1,4 @@
-// priority: 1
+// priority: 0
 
 ServerEvents.recipes(event => {
   const aether = () => {
@@ -37,13 +37,14 @@ ServerEvents.recipes(event => {
       {item: Ingredient.of('aether_redux:infused_veridium_pickaxe'), time: 70},
       {item: Ingredient.of('aether_redux:infused_veridium_shovel'), time: 70},
       {item: Ingredient.of('aether_redux:infused_veridium_sword'), time: 70},
-      {item: Ingredient.of('aether_redux:spectral_dart_shooter'), time: 90},
+      {item: Ingredient.of('aether_redux:infused_veridium_dart_shooter'), time: 70},
       {item: Ingredient.of('aether_redux:subzero_crossbow'), time: 45},
       {item: Ingredient.of('aether_redux:veridium_axe'), time: 35},
       {item: Ingredient.of('aether_redux:veridium_hoe'), time: 35},
       {item: Ingredient.of('aether_redux:veridium_pickaxe'), time: 35},
       {item: Ingredient.of('aether_redux:veridium_shovel'), time: 35},
       {item: Ingredient.of('aether_redux:veridium_sword'), time: 35},
+      {item: Ingredient.of('aether_redux:veridium_dart_shooter'), time: 35},
       {item: Ingredient.of('aether:candy_cane_sword'), time: 20},
       {item: Ingredient.of('aether:cloud_staff'), time: 90},
       {item: Ingredient.of('aether:flaming_sword'), time: 90},
@@ -368,7 +369,7 @@ ServerEvents.recipes(event => {
     event
       .custom({
         type: 'bloodmagic:alchemytable',
-        input: [{item: 'aether:regeneration_stone'}, {item: 'eidolon:enchanted_ash'}, {item: 'aether_redux:purified_luxbuds'}],
+        input: [{item: 'aether:regeneration_stone'}, {item: 'eidolon:enchanted_ash'}, {item: 'minecraft:glowstone_dust'}],
         output: {item: 'bloodmagic:reagentbinding', count: 2},
         syphon: 1000,
         ticks: 200,

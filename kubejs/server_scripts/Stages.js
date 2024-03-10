@@ -1,4 +1,4 @@
-// priority: 1
+// priority: 0
 
 ServerEvents.recipes(event => {
   Object.keys(global.Stages).forEach(tag => {

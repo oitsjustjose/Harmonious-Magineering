@@ -1,4 +1,4 @@
-// priority: 1
+// priority: 0
 
 ServerEvents.recipes(event => {
   const items = {
@@ -266,7 +266,6 @@ ServerEvents.recipes(event => {
       .forEach(stripped => {
         let unstripped = stripped.replace('stripped_', '');
         if (!Item.exists(unstripped)) {
-          console.warn(`Unstripped log ${unstripped} does not exist! 🥲`);
           return;
         }
         event.recipes.create.cutting(stripped, [unstripped]);

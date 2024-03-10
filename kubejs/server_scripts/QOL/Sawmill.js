@@ -187,22 +187,13 @@ ServerEvents.recipes(event => {
       const logTag = Ingredient.of(`#${mod}:${wood}_logs`);
       sawmillPlanking(Item.of(plank, 6), justUnstripped(logTag), justStripped(logTag));
     } else {
-      console.warn(`Plank for mod=${mod}, wood=${wood} was not found :(`);
       return;
     }
 
     const slab = findSlab(variant.mod, variant.wood);
-    if (slab) {
-      sawmillSlabbing(Item.of(slab, 2), Item.of(plank));
-    } else {
-      console.warn(`Slab for mod=${mod}, wood=${wood} was not found :(`);
-    }
+    if (slab) sawmillSlabbing(Item.of(slab, 2), Item.of(plank));
 
     const shelf = findShelf(variant.mod, variant.wood);
-    if (shelf) {
-      sawmillShelving(Item.of(plank, 4), Item.of(shelf));
-    } else {
-      console.warn(`Bookshelf for mod=${mod}, wood=${wood} was not found :(`);
-    }
+    if (shelf) sawmillShelving(Item.of(plank, 4), Item.of(shelf));
   });
 });
