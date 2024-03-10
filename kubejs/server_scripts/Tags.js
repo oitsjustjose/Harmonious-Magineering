@@ -1,4 +1,4 @@
-// priority: 100000
+// priority: 1
 const ores = [
   'eidolon:deep_lead_ore',
   'eidolon:deep_silver_ore',
@@ -689,6 +689,7 @@ ServerEvents.tags('item', event => {
     event.add('forge:fruits/berries', 'regions_unexplored:salmonberry');
     event.add('forge:fruits/salmonberries', 'regions_unexplored:salmonberry');
     event.add('forge:fruits/sweet', 'regions_unexplored:salmonberry');
+    event.removeAllTagsFrom('delightful:salmonberries');
   };
 
   /* Lumber variants and cleanup */
@@ -749,6 +750,10 @@ ServerEvents.tags('item', event => {
   event.removeAllTagsFrom('mekanism:nugget_refined_glowstone');
   event.removeAllTagsFrom('mekanism:ingot_refined_glowstone');
   event.removeAllTagsFrom('mekanism:block_refined_glowstone');
+  /* Farmer's Delight eggs */
+  event.removeAllTagsFrom('farmersdelight:fried_egg');
+  /* Create dough */
+  event.removeAllTagsFrom('create:dough');
 
   /* Clean up Quark's messy tags -_- */
   [

@@ -1,3 +1,5 @@
+// priority: 1
+
 ServerEvents.recipes(event => {
   [
     {sheet: 'handcrafted:black_sheet', bed: 'minecraft:black_bed', hammock: 'comforts:hammock_black', sleepingBag: 'comforts:sleeping_bag_black'},

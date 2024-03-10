@@ -1,3 +1,5 @@
+// priority: 1
+
 ServerEvents.recipes(event => {
   const aether = () => {
     /**
@@ -1150,17 +1152,6 @@ ServerEvents.recipes(event => {
       S: '#forge:rods/wooden',
     });
 
-    [
-      Item.of('embers:silver_hoe'),
-      Item.of('embers:silver_axe'),
-      Item.of('embers:silver_pickaxe'),
-      Item.of('embers:silver_shovel'),
-      Item.of('embers:silver_sword'),
-    ].forEach(tool => {
-      event.remove({input: tool});
-      event.remove({output: tool});
-    });
-
     // More pewter recipes are done via custom:recipes/stamping/pewter_from_molten_*.json
 
     // Make Caminite Brick consume Angelic Stone
@@ -1186,11 +1177,6 @@ ServerEvents.recipes(event => {
         })
         .id(recipe.getId());
     });
-
-    event.remove({output: 'embers:alchemy_pedestal'});
-    event.remove({output: 'embers:alchemy_tablet'});
-    event.remove({output: 'embers:gear_stamp'});
-    event.remove({output: 'embers:raw_gear_stamp'});
   };
 
   const waystones = () => {
@@ -1281,8 +1267,6 @@ ServerEvents.recipes(event => {
       event.shapeless(`waystones:${color}_sharestone`, [`#forge:dyes/${color}`, '#waystones:sharestones']);
     });
   };
-
-  event.remove({output: 'minecraft:enchanting_table'});
 
   [aether, bloodMagic, cagedMobs, eidolon, embers, waystones].forEach(module => module());
 });

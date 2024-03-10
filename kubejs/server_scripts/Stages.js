@@ -1,3 +1,5 @@
+// priority: 1
+
 ServerEvents.recipes(event => {
   Object.keys(global.Stages).forEach(tag => {
     let config = global.Stages[tag];

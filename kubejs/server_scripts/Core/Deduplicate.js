@@ -1,4 +1,4 @@
-// priority: -1
+// priority: 1
 
 ServerEvents.recipes(event => {
   const fluids = () => {
@@ -199,8 +199,9 @@ ServerEvents.recipes(event => {
     event.replaceOutput({output: 'create:dough'}, 'create:dough', 'farmersdelight:wheat_dough');
 
     /* ~~Eggs:~~ Unify Farmer's Delight Naturalist's Cooked Egg items */
-    event.remove({output: 'farmersdelight:fried_egg'});
     event.replaceInput({}, '#aether_redux:eggs_for_blueberry_pie', '#forge:eggs');
+    event.replaceInput({}, 'farmersdelight:fried_egg', 'naturalist:cooked_egg');
+    event.replaceOutput({}, 'farmersdelight:fried_egg', 'naturalist:cooked_egg');
 
     /* ~~Salmonerries:~~ Unify Regions Unexplored & Delightful's Recipes */
     event.replaceInput({}, 'regions_unexplored:salmonberry', '#forge:fruits/salmonberries');
@@ -272,14 +273,6 @@ ServerEvents.recipes(event => {
     /* ~~Obsidian Dust:~~ Unify Create Powdered Obsidian w/ Mekanism Obsidian Dust */
     event.replaceInput({}, 'create:powdered_obsidian', 'mekanism:dust_obsidian');
     event.replaceOutput({}, 'create:powdered_obsidian', 'mekanism:dust_obsidian');
-
-    /* ~~Bonus Blocks:~~ Unify Quark & Twigs bonus blocks like Calcite & Tuff Slabs */
-    event.remove({output: 'twigs:calcite_slab'});
-    event.remove({output: 'twigs:calcite_stairs'});
-    event.remove({output: 'twigs:calcite_wall'});
-    event.remove({output: 'twigs:tuff_slab'});
-    event.remove({output: 'twigs:tuff_stairs'});
-    event.remove({output: 'twigs:tuff_wall'});
   };
 
   [fluids, foods, misc].forEach(module => module());

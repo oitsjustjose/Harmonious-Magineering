@@ -1,3 +1,5 @@
+// priority: 1
+
 // These stages are copied DIRECTLY from Globals -- if you don't copy these,
 //  you'll run into issues where the Ingredients defined as an exception
 //  won't be consistent/correct.

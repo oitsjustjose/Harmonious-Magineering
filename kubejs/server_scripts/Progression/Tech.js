@@ -1,4 +1,5 @@
-// priority: 999999
+// priority: 1
+
 ServerEvents.recipes(event => {
   const items = {
     screen: Item.of('supplementaries:crystal_display'),
@@ -522,9 +523,6 @@ ServerEvents.recipes(event => {
   };
 
   const mekanism = () => {
-    /* Cardboard boxes are *still* broken a.f. */
-    event.remove({output: 'mekanism:cardboard_box'});
-
     /* The muffling upgrade uses steel dust, which has replaced Osmium Dust, so we need to re-work the recipe */
     event.replaceInput({output: 'mekanism:upgrade_muffling'}, '#forge:dusts/steel', '#minecraft:wool');
 
@@ -743,14 +741,6 @@ ServerEvents.recipes(event => {
       T: items.transistor,
     });
 
-    /* Get rid of the Osmium Compressor -- we don't need it at all tbh */
-    event.remove({type: 'mekanism:compressing'});
-    event.remove({output: 'mekanism:osmium_compressor'});
-    event.remove({output: 'mekanism:basic_compressing_factory'});
-    event.remove({output: 'mekanism:advanced_compressing_factory'});
-    event.remove({output: 'mekanism:elite_compressing_factory'});
-    event.remove({output: 'mekanism:ultimate_compressing_factory'});
-
     event.remove({id: 'mekanism:gas_conversion/osmium_from_ingot'});
     event.remove({id: 'mekanism:gas_conversion/osmium_from_block'});
 
@@ -764,11 +754,8 @@ ServerEvents.recipes(event => {
 
     /* Get rid of the Sawmill -- intercompat would be a nightmare here :/ */
     event.remove({type: 'mekanism:sawing'});
-    event.remove({output: 'mekanism:precision_sawmill'});
-    event.remove({output: 'mekanism:basic_sawing_factory'});
-    event.remove({output: 'mekanism:advanced_sawing_factory'});
-    event.remove({output: 'mekanism:elite_sawing_factory'});
-    event.remove({output: 'mekanism:ultimate_sawing_factory'});
+    /* Get rid of the Osmium Compressor -- we don't need it at all tbh */
+    event.remove({type: 'mekanism:compressing'});
 
     /* Redo all Basic Factory recipes */
     event.remove({output: 'mekanism:basic_tier_installer'});
@@ -836,10 +823,6 @@ ServerEvents.recipes(event => {
       E: '#forge:ender_pearls',
       C: 'pneumaticcraft:compressed_iron_block',
     });
-
-    event.remove({output: '/modularrouters:extruder_module_2/'});
-    event.remove({output: '/modularrouters:extruder_module_1/'});
-    event.remove({output: '/modularrouters:breaker_module/'});
   };
 
   const pnc = () => {

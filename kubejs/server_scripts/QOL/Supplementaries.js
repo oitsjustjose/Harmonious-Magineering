@@ -1,3 +1,5 @@
+// priority: 1
+
 LootJS.modifiers(event => {
   event.addLootTableModifier(/.*/).replaceLoot('supplementaries:rope', 'farmersdelight:rope', true);
 });

@@ -1,3 +1,5 @@
+// priority: 1
+
 ServerEvents.recipes(event => {
   /**
    * @param {Internal.ItemStack} plank

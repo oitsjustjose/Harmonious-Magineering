@@ -1,3 +1,5 @@
+// priority: 1
+
 LootJS.modifiers(event => {
   const customSilverLead = () => {
     event.addBlockLootModifier('embers:lead_ore').replaceLoot('embers:raw_lead', 'eidolon:raw_lead', true);

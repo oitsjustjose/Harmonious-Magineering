@@ -1,3 +1,5 @@
+// priority: 1
+
 PlayerEvents.loggedIn(event => {
   if (event.player.stages.has('IronChestsMigration')) return;
 

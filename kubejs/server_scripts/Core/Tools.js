@@ -1,3 +1,5 @@
+// priority: 1
+
 /**
  * @param {Internal.ItemStack} stack
  */

@@ -1,4 +1,4 @@
-// priority: 99999
+// priority: 1
 
 ServerEvents.recipes(event => {
   const automationCompat = () => {
@@ -90,24 +90,6 @@ ServerEvents.recipes(event => {
 
   const nukeOsmium = () => {
     [
-      'mekanism:block_raw_osmium',
-      'mekanism:nugget_osmium',
-      'mekanism:raw_osmium',
-      'mekanism:ingot_osmium',
-      'mekanism:clump_osmium',
-      'mekanism:dirty_dust_osmium',
-      'mekanism:dust_osmium',
-      'mekanism:crystal_osmium',
-      'mekanism:shard_osmium',
-      'mekanism:deepslate_osmium_ore',
-      'mekanism:osmium_ore',
-      'mekanism:block_osmium',
-      'create:crushed_raw_osmium',
-    ].forEach(osm => {
-      event.remove({output: osm});
-    });
-
-    [
       'mekanism:metallurgic_infuser',
       'mekanism:processing/osmium/clump/from_ore',
       'mekanism:processing/osmium/clump/from_raw_block',
@@ -143,12 +125,6 @@ ServerEvents.recipes(event => {
       'mekanism:processing/osmium/slurry/dirty/from_raw_ore',
       'mekanism:processing/osmium/storage_blocks/from_ingots',
     ].forEach(id => event.remove(id));
-  };
-
-  const nukeRefinedGlowstone = () => {
-    event.remove({output: 'mekanism:nugget_refined_glowstone'});
-    event.remove({output: 'mekanism:block_refined_glowstone'});
-    event.remove({output: 'mekanism:ingot_refined_glowstone'});
   };
 
   const oreSmelting = () => {
@@ -282,16 +258,5 @@ ServerEvents.recipes(event => {
     });
   };
 
-  [
-    automationCompat,
-    dustSmelting,
-    metalSmithing,
-    nukeOsmium,
-    nukeRefinedGlowstone,
-    oreSmelting,
-    oreWashing,
-    plateCompat,
-    rods,
-    silverAndLead,
-  ].forEach(module => module());
+  [automationCompat, dustSmelting, metalSmithing, nukeOsmium, oreSmelting, oreWashing, plateCompat, rods, silverAndLead].forEach(module => module());
 });
