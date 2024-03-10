@@ -47,14 +47,18 @@
       "ppfluids"
     ],
     "substitute": "kubejs:unknown_kinetic_item",
-    "exceptions": "#create:exception"
+    "exceptions": [
+      "#create:exception"
+    ]
   },
   "pnc": {
     "mods": [
       "pneumaticcraft"
     ],
     "substitute": "kubejs:unknown_pneumatic_item",
-    "exceptions": "#pneumaticcraft:exception"
+    "exceptions": [
+      "#pneumaticcraft:exception"
+    ]
   },
   "ie": {
     "mods": [
@@ -62,7 +66,9 @@
       "buildinggadgets2"
     ],
     "substitute": "kubejs:unknown_engineering_item",
-    "exceptions": "#immersiveengineering:exception"
+    "exceptions": [
+      "#immersiveengineering:exception"
+    ]
   },
   "mekanism": {
     "mods": [
@@ -74,7 +80,9 @@
       "xnet"
     ],
     "substitute": "kubejs:unknown_electric_item",
-    "exceptions": "#mekanism:exception"
+    "exceptions": [
+      "#mekanism:exception"
+    ]
   },
   "ae2": {
     "mods": [
@@ -88,6 +96,8 @@
       "entangled"
     ],
     "substitute": "kubejs:unknown_energistic_item",
-    "exceptions": "#ae2:exception"
+    "exceptions": [
+      "#ae2:exception"
+    ]
   }
 }
