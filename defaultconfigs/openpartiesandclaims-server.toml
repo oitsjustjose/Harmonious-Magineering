@@ -228,7 +228,7 @@
 			#Make sure to always test that claim edges are protected from outside interaction by fake players that you add to this list.
 			#Wondering where to get the UUIDs or usernames of specific fake players? You can check the source code of the mods that use them or politely ask the mod authors.
 			#For example ["41C82C87-7AfB-4024-BB57-13D2C99CAE77", "FakePlayerName"]
-			staticFakePlayers = ["[IntegratedTunnels]"]
+			staticFakePlayers = ["[IntegratedTunnels]", "[Modular Routers]"]
 			#A list of Java classes of fake players that should be excluded from claim protection exceptions given to fake players with the "staticFakePlayers" option
 			#or built-in fake player support, like in the case of Create mod deployers.
 			#This option is meant for fake players similar to ComputerCraft's turtles, which take the UUID of the player that places them. It becomes a problem when a turtle takes
