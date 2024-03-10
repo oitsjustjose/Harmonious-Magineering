@@ -24,6 +24,7 @@
 		{
 			dependencies: ["1B5F1877CC1D3378"]
 			description: ["It seems that compacting an &cExplosive&r with some &7Iron&r under superheated conditions has cause an endothermic reaction that hardened the Iron into &8Compressed Iron&r! This new material is much more sturdy and is capable of handling a significant amount of internal pressure without shearing or breaking."]
+			hide: true
 			id: "39D82FB07CB809D8"
 			rewards: [
 				{
@@ -67,6 +68,7 @@
 				""
 				"To avoid this, it is strongly suggested to use a &6Pressure Gauge Tube Module&r to read the current pressure levels using Redstone and power off your compressor, and possibly even using a &6Safety Tube Module&r as a last resort to purge any excess oxygen before an explosion is triggered."
 			]
+			hide: true
 			icon: "pneumaticcraft:air_compressor"
 			id: "609C2E824F41BFA7"
 			rewards: [{
@@ -112,6 +114,7 @@
 				""
 				"Optionally, you can replace solid-sided walls with &6Pressure Chamber Glass&r in order to see inside of the Pressure Chamber! More reading and instruction on this structure can be found in the &3PNC:R Manual&r"
 			]
+			hide: true
 			icon: "pneumaticcraft:pressure_chamber_wall"
 			id: "06F3696CC3BE5780"
 			rewards: [{
@@ -152,6 +155,7 @@
 				""
 				"You will need at least two in order to separate &6LPG&r and &6Diesel&r from the &0Crude Oil&r."
 			]
+			hide: true
 			icon: "pneumaticcraft:oil_bucket"
 			id: "79FFFB4D9553599D"
 			rewards: [{
@@ -201,6 +205,7 @@
 				""
 				"The &6Thermopneumatic Processing Plant&r is capable of exactly this, taking in Pressure and Heat as well as Fluids and Items. This can be used to create &6Molten Plastic&r, which seems to be incredibly versatile!"
 			]
+			hide: true
 			id: "323C7D5E5C64C4C6"
 			rewards: [{
 				count: 8
@@ -226,6 +231,7 @@
 				""
 				"Fortunately, it's as easy as placing the Molten Plastic in the world and waiting for it to harden into an item. This may not be the most easily automated method nor does it have the best Plastic yield, but it's sufficient to get you started!"
 			]
+			hide: true
 			icon: "pneumaticcraft:plastic"
 			id: "0CAC10FB609F4FFD"
 			rewards: [{
@@ -261,6 +267,7 @@
 				""
 				"Note: To keep the &4Hot&r end from overheating, heat can be spread using a &6Heat Pipe&r and can be dispersed using multiple Heatsinks attached to the Heat Pipe or Hot-end of the Vortex Tube directly."
 			]
+			hide: true
 			icon: "pneumaticcraft:heat_frame"
 			id: "2E36A1E0D4DE41C0"
 			rewards: [{
@@ -304,6 +311,7 @@
 				""
 				"Not only can these be used in some more advanced pneumatic apparatuses, but these may also pave the way forward towards new types of machinery altogether!"
 			]
+			hide: true
 			icon: "pneumaticcraft:capacitor"
 			id: "3B8805587B903541"
 			rewards: [{
@@ -339,6 +347,7 @@
 				""
 				"Lastly, the remainder of the traces will need to be etched using &aEtching Acid&r and an &2Etching Tank&r!"
 			]
+			hide: true
 			icon: {
 				Count: 1b
 				id: "ftbquests:custom_icon"
@@ -386,6 +395,7 @@
 				""
 				"These PCBs are incredibly helpful and will likely be a new foundation for upcoming technological advancements!"
 			]
+			hide: true
 			id: "68B9B4F53C673B18"
 			rewards: [
 				{
@@ -423,6 +433,7 @@
 				""
 				"Here is listed the entire suite of assembly devices that you'll need to get fully kitted up!"
 			]
+			hide: true
 			icon: "pneumaticcraft:assembly_drill"
 			id: "1290B04AAD11191A"
 			rewards: [{
@@ -476,6 +487,7 @@
 				""
 				"These can be purchased from your &2Amadron Tablet&r :) "
 			]
+			hide: true
 			icon: "pneumaticcraft:assembly_program_drill"
 			id: "016AACD8C4A9792E"
 			rewards: [{
@@ -510,6 +522,7 @@
 		{
 			dependencies: ["609C2E824F41BFA7"]
 			description: ["As you further research how the compression mechanisms work in the Solid-Fuel Air Compressors, you've determined that any combustible fuel is also capable of working in a new kind of compressor - the &6Fluid Compressor&r - as well! If only there was some (or even, multiple) ways to get infinite &4Lava&r...."]
+			hide: true
 			id: "0E3D814DCE1A8C5E"
 			rewards: [{
 				count: 8
@@ -535,6 +548,7 @@
 				""
 				"The Amadron Tablet is a device capable of delivering such items using a novel drone delivery system. By using GPS and Drones, not only can you purchase from a centralized inventory of goods, but you can also barter with the Amadron's special source of villagers without needing to build a trading hall!"
 			]
+			hide: true
 			id: "3B4AE45A1DCD6084"
 			rewards: [{
 				count: 12
@@ -631,6 +645,7 @@
 				""
 				"Both of these can be charged at a Charging Station!"
 			]
+			hide: true
 			icon: {
 				Count: 1b
 				id: "pneumaticcraft:jackhammer"

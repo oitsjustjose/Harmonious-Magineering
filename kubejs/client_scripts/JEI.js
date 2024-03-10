@@ -1,8 +1,9 @@
 // priority: 100000
 // we want this script to run before Tooltips.js renames some items via obfuscation
 JEIEvents.removeCategories(event => {
-  event.remove('waystones:warp_plate');
-  event.remove('embers:alchemy');
+  ['create:automatic_shaped', 'create:automatic_shapeless', 'embers:alchemy', 'embers:dawnstone_anvil', 'waystones:warp_plate'].forEach(category =>
+    event.remove(category)
+  );
 });
 
 JEIEvents.hideFluids(event => {
