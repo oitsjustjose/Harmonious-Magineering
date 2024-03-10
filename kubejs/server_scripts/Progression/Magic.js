@@ -1189,6 +1189,8 @@ ServerEvents.recipes(event => {
 
     event.remove({output: 'embers:alchemy_pedestal'});
     event.remove({output: 'embers:alchemy_tablet'});
+    event.remove({output: 'embers:gear_stamp'});
+    event.remove({output: 'embers:raw_gear_stamp'});
   };
 
   const waystones = () => {
