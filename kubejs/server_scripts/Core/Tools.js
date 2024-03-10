@@ -5,7 +5,6 @@
 const ArmorItemCls = Java.loadClass('net.minecraft.world.item.ArmorItem');
 const TieredItemCls = Java.loadClass('net.minecraft.world.item.TieredItem');
 
-
 const wipeEnchantsIfMendingPresent = stack => {
   if (!stack.isEnchanted()) return;
 
@@ -37,10 +36,10 @@ ServerEvents.recipes(event => {
       const stack = tmp.isEmpty() ? output : tmp;
 
       event.custom({
-        "type": "pneumaticcraft:explosion_crafting",
-        "input": input.toJson(),
-        "loss_rate": 50,
-        "results": [stack.toJson()]
+        type: 'pneumaticcraft:explosion_crafting',
+        input: input.toJson(),
+        loss_rate: 50,
+        results: [stack.toJson()],
       });
     };
 
@@ -58,7 +57,7 @@ ServerEvents.recipes(event => {
       let repairItems = null;
       if (stack.getItem() instanceof TieredItemCls) {
         repairItems = Ingredient.of(stack.getItem().getTier().getRepairIngredient());
-      } else if (/*stack.getItem() instanceof ArmorItemCls || */stack.getItem().getMaterial !== undefined) {
+      } else if (/*stack.getItem() instanceof ArmorItemCls || */ stack.getItem().getMaterial !== undefined) {
         repairItems = Ingredient.of(stack.getItem().getMaterial().getRepairIngredient());
       }
 
