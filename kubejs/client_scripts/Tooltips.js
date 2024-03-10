@@ -25,6 +25,8 @@ const modifyStackForStageProgress = (stack, tooltips) => {
     }
   }
 
+  if (cachedServerPlayerRef.isCreative()) return;
+
   if (cachedServerPlayerRef !== null) {
     // Determine if the current stack is an exception in ANY config
     let isItemException = false;
