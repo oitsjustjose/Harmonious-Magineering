@@ -1,5 +1,33 @@
 # Harmonious Magineering Changelog
 
+## v1.0.0-BETA10
+
+### Added:
+- Pretty Pipes: Fluids
+- [Resource Pack] Smooth Drawers
+
+### Fixed:
+
+- Certain Create & PNC chapter quests not being hidden correctly
+- Modular Routers not being able to work in a chunk claimed with OPAC
+- Stage tooltips will no longer appear when in Creative Mode since the stage conversions won't occur while in creative.
+
+### Changed:
+
+- All of Embers' Alchemy Recipes are now done via the Eidolon Brazier because the codex and randomness of the crafting recipes are total nonsense. I wasted tons of resources trying to get anything to work and it never did, and it's all seed-based so you can't look it up >_>
+
+### Updated:
+- Aeroblender
+- Aether Redux (You **will** lose some items/accessories - this is unavoidable)
+- Amendments
+- Applied Energistics 2
+- BadMobs
+- Cupboard
+- Delightful
+- Every Compat
+- Framed Blocks
+- Moonlight
+
 ## v1.0.0-BETA9
 
 ### Added:
