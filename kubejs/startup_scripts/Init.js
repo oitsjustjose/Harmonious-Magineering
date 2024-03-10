@@ -234,7 +234,6 @@ ItemEvents.modification(event => {
 
     if (item.isDamageable(item.getDefaultInstance())) {
       const multiplier = Object.keys(exceptions).includes(itemId) ? exceptions[itemId] : baseMultiplier;
-      console.info(`${itemId}: Durability ${item.maxDamage} -> ${item.maxDamage * multiplier}`);
       item.maxDamage *= multiplier;
     }
   });
