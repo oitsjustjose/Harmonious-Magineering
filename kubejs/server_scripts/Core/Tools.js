@@ -31,7 +31,6 @@ ItemEvents.firstLeftClicked(event => {
 });
 
 ServerEvents.recipes(event => {
-
   const explosiveScrapping = () => {
     const __scrap = (output, input) => {
       const tmp = AlmostUnified.getReplacementForItem(output);
