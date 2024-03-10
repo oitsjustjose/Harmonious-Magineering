@@ -198,6 +198,12 @@ ServerEvents.tags('block', event => {
     'regions_unexplored:salmonberry_bush',
     'spawn:potted_sweet_berry_bush',
   ]);
+
+  // Make all blocks un-gravititable -- sending blocks to the sky is entirely unhelpful..
+  event.add(
+    'aether:gravitite_ability_blacklist',
+    Utils.getRegistryIds(new ResourceLocation('minecraft', 'block')).map(x => `${x.getNamespace()}:${x.getPath()}`)
+  );
 });
 
 ServerEvents.tags('item', event => {
@@ -814,6 +820,12 @@ ServerEvents.tags('entity_type', event => {
   event.add('forge:endermen', 'endermanoverhaul:swamp_enderman');
   event.add('forge:endermen', 'endermanoverhaul:warped_forest_enderman');
   event.add('forge:endermen', 'endermanoverhaul:windswept_hills_enderman');
+
+  // Make all entities unlaunchable -- this is a workaround because the ability to yeet mobs in the air is more annoying than helpful...
+  event.add(
+    'aether:unlaunchable',
+    Utils.getRegistryIds(new ResourceLocation('minecraft', 'entity_type')).map(x => `${x.getNamespace()}:${x.getPath()}`)
+  );
 });
 
 ServerEvents.tags('fluid', event => {
