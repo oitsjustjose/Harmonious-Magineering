@@ -961,6 +961,7 @@ ServerEvents.recipes(event => {
 
     /* New pipe recipe */
     event.shaped(Item.of('prettypipes:pipe', 16), ['IGI'], {I: 'create:andesite_alloy', G: '#forge:glass/colorless'});
+    event.recipes.create.sandpaper_polishing('prettypipes:pipe', 'ppfluids:fluid_pipe');
     event.custom({
       type: 'create:deploying',
       ingredients: [{item: 'prettypipes:pipe'}, {item: 'minecraft:honeycomb_block'}],
