@@ -953,6 +953,18 @@ ServerEvents.recipes(event => {
       ],
       result: {item: 'pneumaticcraft:empty_pcb', count: 3},
     });
+
+    /* Compressed Iron Gear */
+    event.remove('pneumaticcraft:compressed_iron_gear');
+    event
+      .custom({
+        type: 'immersiveengineering:metal_press',
+        energy: 2400,
+        input: {base_ingredient: {tag: 'forge:ingots/compressed_iron'}, count: 4},
+        mold: 'immersiveengineering:mold_gear',
+        result: {item: 'pneumaticcraft:compressed_iron_gear'},
+      })
+      .id('pneumaticcraft:compressed_iron_gear');
   };
 
   const prettyPipes = () => {
