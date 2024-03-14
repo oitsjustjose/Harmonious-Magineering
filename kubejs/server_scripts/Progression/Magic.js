@@ -1178,6 +1178,9 @@ ServerEvents.recipes(event => {
         })
         .id(recipe.getId());
     });
+
+    // Remove the Embers Fluid Vessel b/c of dupe bug I wasn't able to figure out -- TODO: was it possible this was PPF?
+    event.remove({output: 'embers:fluid_vessel'});
   };
 
   const waystones = () => {

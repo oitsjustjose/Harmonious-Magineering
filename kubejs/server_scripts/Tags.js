@@ -366,6 +366,8 @@ ServerEvents.tags('item', event => {
       'create:exposed_copper_shingles',
       'create:exposed_copper_tile_slab',
       'create:exposed_copper_tile_stairs',
+      // Unlocked during embers so you have a way to store fluids w/o fluid vessels
+      'create:fluid_tank',
       'create:framed_glass_door',
       'create:framed_glass_pane',
       'create:framed_glass_trapdoor',
