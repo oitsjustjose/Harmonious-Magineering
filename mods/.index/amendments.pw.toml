@@ -3,11 +3,11 @@ name = 'Amendments'
 side = 'both'
 
 [download]
-hash = 'f3fe25fde9bc829bba9324bf1b714e6c6858147a'
+hash = 'a60639c3fd1d2435d1896885516c12700a64e3cf'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5170450
+file-id = 5176182
 project-id = 896746

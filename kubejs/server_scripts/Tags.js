@@ -801,25 +801,29 @@ ServerEvents.tags('entity_type', event => {
   event.add('forge:creepers', '#creeperoverhaul:creepers');
 
   // Endermen don't have a similar tag though :D
-  event.add('forge:endermen', 'minecraft:enderman');
-  event.add('forge:endermen', 'endermanoverhaul:badlands_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:cave_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:crimson_forest_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:dark_oak_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:desert_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:end_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:end_islands_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:flower_fields_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:ice_spikes_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:mushroom_fields_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:nether_wastes_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:ocean_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:savanna_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:snowy_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:soulsand_valley_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:swamp_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:warped_forest_enderman');
-  event.add('forge:endermen', 'endermanoverhaul:windswept_hills_enderman');
+  event.add('forge:endermen', [
+    'minecraft:enderman',
+    'endermanoverhaul:badlands_enderman',
+    'endermanoverhaul:cave_enderman',
+    'endermanoverhaul:crimson_forest_enderman',
+    'endermanoverhaul:dark_oak_enderman',
+    'endermanoverhaul:desert_enderman',
+    'endermanoverhaul:end_enderman',
+    'endermanoverhaul:end_islands_enderman',
+    'endermanoverhaul:flower_fields_enderman',
+    'endermanoverhaul:ice_spikes_enderman',
+    'endermanoverhaul:mushroom_fields_enderman',
+    'endermanoverhaul:nether_wastes_enderman',
+    'endermanoverhaul:ocean_enderman',
+    'endermanoverhaul:savanna_enderman',
+    'endermanoverhaul:snowy_enderman',
+    'endermanoverhaul:soulsand_valley_enderman',
+    'endermanoverhaul:swamp_enderman',
+    'endermanoverhaul:warped_forest_enderman',
+    'endermanoverhaul:windswept_hills_enderman',
+  ]);
+
+  event.add('minecraft:zombies', ['minecraft:drowned', 'minecraft:husk', 'minecraft:zombie', 'minecraft:zombie_villager']);
 
   // Make all entities unlaunchable -- this is a workaround because the ability to yeet mobs in the air is more annoying than helpful...
   event.add(

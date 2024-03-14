@@ -22,20 +22,7 @@ LootJS.modifiers(event => {
       'minecraft:deepslate_gold_ore',
       'minecraft:deepslate_iron_ore',
     ].forEach(ore => {
-      event.addBlockLootModifier(ore).modifyLoot(ItemFilter.ALWAYS_TRUE, stack => {
-        const hasTag =
-          stack
-            .getTags()
-            .toArray()
-            .filter(x => x.location().toString() === 'forge:raw_materials').length > 0;
-        if (!hasTag) return stack;
-
-        // Only double loot 50% of the time
-        if (Math.random() < 0.5) {
-          stack.setCount(stack.getCount() * 2);
-        }
-        return stack;
-      });
+      event.addBlockLootModifier(ore).modifyLoot(Ingredient.of('#forge:raw_materials'), stack => stack.withCount(stack.getCount() * 2));
     });
   };
 
@@ -49,12 +36,7 @@ LootJS.modifiers(event => {
       'minecraft:llama',
       'minecraft:trader_llama',
     ].forEach(mob => {
-      event.addEntityLootModifier(mob).modifyLoot(ItemFilter.ALWAYS_TRUE, stack => {
-        if (stack.getId() === 'minecraft:leather') {
-          stack.setCount(stack.getCount() * 2);
-        }
-        return stack;
-      });
+      event.addEntityLootModifier(mob).modifyLoot(Item.of('minecraft:leather'), stack => stack.withCount(stack.getCount() * 2));
     });
 
     [
@@ -78,17 +60,11 @@ LootJS.modifiers(event => {
       'endermanoverhaul:warped_forest_enderman',
       'endermanoverhaul:windswept_hills_enderman',
     ].forEach(mob => {
-      event.addEntityLootModifier(mob).modifyLoot(ItemFilter.ALWAYS_TRUE, stack => {
-        const hasTag =
-          stack
-            .getTags()
-            .toArray()
-            .filter(x => x.location().toString() === 'forge:ender_pearls').length > 0;
-        if (!hasTag) return stack;
+      event.addEntityLootModifier(mob).modifyLoot(Ingredient.of('#forge:ender_pearls'), stack => stack.withCount(stack.getCount() + 1));
+    });
 
-        stack.setCount(stack.getCount() + 1);
-        return stack;
-      });
+    event.addEntityLootModifier('minecraft:wither_skeleton').modifyLoot(Item.of('minecraft:wither_skeleton_skull'), stack => {
+      return stack.withChance(0.075);
     });
   };
 
@@ -105,6 +81,18 @@ LootJS.modifiers(event => {
     event.addLootTableModifier(/.*/).replaceLoot('bloodmagic:sulfur', 'eidolon:sulfur');
     event.addBlockLootModifier(/.*/).replaceLoot('spawn:snail_shell', 'naturalist:snail_shell');
     event.addLootTableModifier(/.*/).removeLoot(['immersiveengineering:component_iron', 'immersiveengineering:component_steel']);
+
+    // Add zombie hearts to all zombie types
+    event
+      .addLootTypeModifier([LootType.ENTITY])
+      .matchEntity(entity => entity.anyType('#minecraft:zombies'))
+      .addLoot(Item.of('eidolon:zombie_heart').withChance(0.1));
+
+    // Add imbued bones to all skeleton types
+    event
+      .addLootTypeModifier([LootType.ENTITY])
+      .matchEntity(entity => entity.anyType('#minecraft:skeletons'))
+      .addLoot(Item.of('eidolon:imbued_bones').withChance(0.15));
   };
 
   event.addEntityLootModifier('minecraft:warden').removeLoot(ItemFilter.ALWAYS_TRUE);

@@ -1,13 +1,13 @@
-filename = 'tectonic-mod-1.19.3-v2.2.jar'
+filename = 'tectonic-mod-1.19.3-v2.2.1.jar'
 name = 'Tectonic'
 side = 'both'
 
 [download]
-hash = '02071212d273a62841506c019fd6b86469e8a67b'
+hash = 'acea849476ac4300f7e174e3f0de76979c90c40f'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5028766
+file-id = 5178775
 project-id = 686836
