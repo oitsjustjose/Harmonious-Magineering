@@ -12,20 +12,13 @@
     "hidden": true
   },
   "criteria": {
-    "obtain_any_anvil": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "tag": "minecraft:anvil"
-          }
-        ]
-      }
+    "impossible": {
+      "trigger": "minecraft:impossible"
     }
   },
   "requirements": [
     [
-      "obtain_any_anvil"
+      "impossible"
     ]
   ]
 }

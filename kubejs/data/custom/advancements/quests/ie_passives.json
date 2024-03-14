@@ -12,23 +12,13 @@
     "hidden": true
   },
   "criteria": {
-    "obtain_windmill_or_waterwheel": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "immersiveengineering:watermill"
-          },
-          {
-            "item": "immersiveengineering:windmill"
-          }
-        ]
-      }
+    "impossible": {
+      "trigger": "minecraft:impossible"
     }
   },
   "requirements": [
     [
-      "obtain_windmill_or_waterwheel"
+      "impossible"
     ]
   ]
 }

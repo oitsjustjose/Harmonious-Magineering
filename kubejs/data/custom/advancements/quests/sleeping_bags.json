@@ -12,20 +12,13 @@
     "hidden": true
   },
   "criteria": {
-    "craft_sleeping_bag": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "tag": "comforts:sleeping_bags"
-          }
-        ]
-      }
+    "impossible": {
+      "trigger": "minecraft:impossible"
     }
   },
   "requirements": [
     [
-      "craft_sleeping_bag"
+      "impossible"
     ]
   ]
 }

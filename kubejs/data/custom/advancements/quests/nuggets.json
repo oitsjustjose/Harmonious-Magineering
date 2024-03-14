@@ -12,20 +12,13 @@
     "hidden": true
   },
   "criteria": {
-    "obtain_any_nugget": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "tag": "forge:nuggets"
-          }
-        ]
-      }
+    "impossible": {
+      "trigger": "minecraft:impossible"
     }
   },
   "requirements": [
     [
-      "obtain_any_nugget"
+      "impossible"
     ]
   ]
 }

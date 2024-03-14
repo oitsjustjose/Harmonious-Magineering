@@ -12,35 +12,13 @@
     "hidden": true
   },
   "criteria": {
-    "obtain_any_backpack": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "item": "sophisticatedbackpacks:backpack"
-          },
-          {
-            "item": "sophisticatedbackpacks:copper_backpack"
-          },
-          {
-            "item": "sophisticatedbackpacks:diamond_backpack"
-          },
-          {
-            "item": "sophisticatedbackpacks:gold_backpack"
-          },
-          {
-            "item": "sophisticatedbackpacks:iron_backpack"
-          },
-          {
-            "item": "sophisticatedbackpacks:netherite_backpack"
-          }
-        ]
-      }
+    "impossible": {
+      "trigger": "minecraft:impossible"
     }
   },
   "requirements": [
     [
-      "obtain_any_backpack"
+      "impossible"
     ]
   ]
 }
