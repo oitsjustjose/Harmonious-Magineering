@@ -249,6 +249,7 @@ ItemEvents.modification(event => {
 
 StartupEvents.registry('minecraft:item', event => {
   [
+    'oil_droplet',
     'unknown_holy_item',
     'unknown_bloody_item',
     'unknown_dwarven_item',
