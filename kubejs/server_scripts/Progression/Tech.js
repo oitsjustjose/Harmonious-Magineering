@@ -1,4 +1,4 @@
-// priority: 0
+// priority: 2
 
 ServerEvents.recipes(event => {
   const items = {
@@ -89,6 +89,13 @@ ServerEvents.recipes(event => {
     event.remove('ae2:inscriber/sky_stone_dust');
 
     event.custom({type: 'mekanism:crushing', input: {ingredient: {tag: 'forge:ender_pearls'}}, output: {item: 'ae2:ender_dust'}});
+    event.custom({
+      type: 'immersiveengineering:crusher',
+      energy: 3000,
+      input: {item: 'ae2:sky_stone_block'},
+      result: {item: 'ae2:sky_dust'},
+      secondaries: [],
+    });
 
     // Use Skystone Dust in more recipes - it's massively under-utilized :/
     event.replaceInput({output: 'ae2:cell_component_1k'}, '#forge:dusts', 'ae2:sky_dust');
@@ -947,6 +954,41 @@ ServerEvents.recipes(event => {
         result: {item: 'pneumaticcraft:compressed_iron_gear'},
       })
       .id('pneumaticcraft:compressed_iron_gear');
+
+    /* Make an IE mineral deposit for Oil Droplets */
+    event
+      .custom({
+        type: 'immersiveengineering:mineral_mix',
+        dimensions: ['minecraft:overworld'],
+        fail_chance: 0.025,
+        sample_background: 'minecraft:sand',
+        ores: [{chance: 1.0, output: {item: 'kubejs:oil_droplet'}}],
+        spoils: [
+          {chance: 0.8, output: {item: 'minecraft:sand'}},
+          {chance: 0.2, output: {item: 'minecraft:gravel'}},
+        ],
+        weight: 40,
+      })
+      .id('kubejs:oil');
+
+    // Press oil out of oil droplets
+    event.recipes.create.compacting(Fluid.of('pneumaticcraft:oil', 125), ['kubejs:oil_droplet']);
+    
+    event.custom({
+      type: 'immersiveengineering:squeezer',
+      energy: 6400,
+      input: {item: 'kubejs:oil_droplet'},
+      fluid: {fluid: 'pneumaticcraft:oil', amount: 125},
+    });
+
+    event.custom({
+      type: 'pneumaticcraft:thermo_plant',
+      speed: 0.5,
+      pressure: 2.0,
+      exothermic: false,
+      item_input: {item: 'kubejs:oil_droplet'},
+      fluid_output: {fluid: 'pneumaticcraft:oil', amount: 125},
+    });
   };
 
   const prettyPipes = () => {
