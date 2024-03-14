@@ -63,9 +63,11 @@ LootJS.modifiers(event => {
       event.addEntityLootModifier(mob).modifyLoot(Ingredient.of('#forge:ender_pearls'), stack => stack.withCount(stack.getCount() + 1));
     });
 
-    event.addEntityLootModifier('minecraft:wither_skeleton').modifyLoot(Item.of('minecraft:wither_skeleton_skull'), stack => {
-      return stack.withChance(0.075);
-    });
+    // Incrase wither skeleton skull drop rates.
+    event.addEntityLootModifier('minecraft:wither_skeleton').removeLoot(Item.of('minecraft:wither_skeleton_skull'));
+    event
+      .addEntityLootModifier('minecraft:wither_skeleton')
+      .addLoot(LootEntry.of('minecraft:wither_skeleton_skull').when(c => c.randomChanceWithLooting(0.075, 0.05)));
   };
 
   const metalMobDrops = () => {
@@ -86,13 +88,13 @@ LootJS.modifiers(event => {
     event
       .addLootTypeModifier([LootType.ENTITY])
       .matchEntity(entity => entity.anyType('#minecraft:zombies'))
-      .addLoot(Item.of('eidolon:zombie_heart').withChance(0.1));
+      .addLoot(LootEntry.of('eidolon:zombie_heart').when(c => c.randomChanceWithLooting(0.025, 0.05)));
 
     // Add imbued bones to all skeleton types
     event
       .addLootTypeModifier([LootType.ENTITY])
       .matchEntity(entity => entity.anyType('#minecraft:skeletons'))
-      .addLoot(Item.of('eidolon:imbued_bones').withChance(0.15));
+      .addLoot(LootEntry.of('eidolon:imbued_bones').when(c => c.randomChanceWithLooting(0.025, 0.05)));
   };
 
   event.addEntityLootModifier('minecraft:warden').removeLoot(ItemFilter.ALWAYS_TRUE);
