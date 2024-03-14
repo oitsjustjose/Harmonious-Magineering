@@ -47,5 +47,5 @@
 	#Internal value to decide if it is the first startup. DO NOT EDIT THIS VALUE, unless you want things to break!
 	"First Startup?" = false
 	#Value used to track the version of the Aether: Redux most recently used.
-	"Version ID" = "2.0.5"
+	"Version ID" = "2.0.6"
 
