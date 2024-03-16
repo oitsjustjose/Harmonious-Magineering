@@ -64,6 +64,7 @@
 				wraith = true
 				slimy_slug = true
 				raven = true
+				necromancer = true
 
 			[light_sources.settings.entities.naturalist]
 				sparrow = true
@@ -92,4 +93,7 @@
 			[light_sources.settings.entities.creeperoverhaul]
 				cave_creeper = true
 				dripstone_creeper = true
+
+			[light_sources.settings.entities.ecologics]
+				squirrel = true
 
