@@ -45,6 +45,9 @@
 				frog = true
 				item_frame = true
 				armor_stand = true
+				arrow = true
+				wandering_trader = true
+				trader_llama = true
 
 			[light_sources.settings.entities.endermanoverhaul]
 				end_enderman = true
