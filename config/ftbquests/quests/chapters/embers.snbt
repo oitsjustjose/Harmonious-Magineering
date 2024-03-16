@@ -156,13 +156,13 @@
 			description: [
 				"As you look at methods of using activated Ember, you discover that you can easily melt many metals, including in raw/ore form! Once melted, it seems the molten metal can be used in various ways such as mixing (to form an alloy) or stamping (to form a usable end-product)."
 				""
-				"Molten Metal can be pulled from any of the four sides of the &otop&r of the &6Melter&r, and an &3Ember Recepter&r can be attached to any of the four sides of the &obottom&r of the &6Melter&r. Molten metal can be stored in a &3Fluid Vessel&r, which keeps its fluids when broken."
+				"Molten Metal can be pulled from any of the four sides of the &otop&r of the &6Melter&r, and an &3Ember Recepter&r can be attached to any of the four sides of the &obottom&r of the &6Melter&r. Molten metal can be stored in a &3Fluid Tank&r."
 			]
 			hide: true
 			id: "65665E7386ED8DC8"
 			rewards: [{
 				id: "1AAE88CF554E4705"
-				item: "embers:fluid_vessel"
+				item: "create:fluid_tank"
 				type: "item"
 			}]
 			subtitle: "Liquid hot &cmagma&r"
