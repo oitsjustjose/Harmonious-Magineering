@@ -971,9 +971,63 @@ ServerEvents.recipes(event => {
       })
       .id('kubejs:oil');
 
+    /* Add fluorite to the existing Beryl deposits */
+    event.remove('immersiveengineering:mineral/beryl');
+    event
+      .custom({
+        type: 'immersiveengineering:mineral_mix',
+        dimensions: ['minecraft:overworld'],
+        fail_chance: 0.2,
+        ores: [
+          {chance: 0.3, output: {tag: 'forge:ores/emerald'}},
+          {chance: 0.3, output: {tag: 'forge:ores/fluorite'}},
+          {chance: 0.7, output: {item: 'minecraft:prismarine'}},
+        ],
+        spoils: [
+          {chance: 0.2, output: {item: 'minecraft:gravel'}},
+          {chance: 0.5, output: {item: 'minecraft:cobblestone'}},
+          {chance: 0.3, output: {item: 'minecraft:cobbled_deepslate'}},
+        ],
+        weight: 5,
+      })
+      .id('immersiveengineering:mineral/beryl');
+
+    /* More IE deposits, because why not! */
+    event
+      .custom({
+        type: 'immersiveengineering:mineral_mix',
+        dimensions: ['minecraft:overworld'],
+        fail_chance: 0.44,
+        ores: [{chance: 1.0, output: {tag: 'forge:ores/zinc'}}],
+        spoils: [
+          {chance: 0.2, output: {item: 'minecraft:gravel'}},
+          {chance: 0.5, output: {item: 'minecraft:cobblestone'}},
+          {chance: 0.3, output: {item: 'minecraft:cobbled_deepslate'}},
+        ],
+        weight: 5,
+      })
+      .id('kubejs:sphalerite');
+
+    event
+      .custom({
+        type: 'immersiveengineering:mineral_mix',
+        dimensions: ['bloodmagic:dungeon'],
+        fail_chance: 0.8,
+        ores: [
+          {chance: 0.3, output: {tag: 'forge:ores/hellforged'}},
+          {chance: 0.7, output: {tag: 'forge:ores/diamond'}},
+        ],
+        spoils: [
+          {chance: 0.75, output: {item: 'bloodmagic:dungeon_stone'}},
+          {chance: 0.15, output: {item: 'immersiveengineering:dust_saltpeter'}},
+          {chance: 0.1, output: {item: 'eidolon:sulfur'}},
+        ],
+        weight: 5,
+      })
+      .id('kubejs:demonite');
+
     // Press oil out of oil droplets
     event.recipes.create.compacting(Fluid.of('pneumaticcraft:oil', 125), ['kubejs:oil_droplet']);
-    
     event.custom({
       type: 'immersiveengineering:squeezer',
       energy: 6400,

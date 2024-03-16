@@ -22,5 +22,7 @@
   "item.kubejs.oil_droplet": "Oil Droplet",
   "item.kubejs.oil_droplet.info": "Found using Mineral Survey Tools and only obtained via the §6Excavator§r. A Core Sample Drill will also be a great deal of help in locating the deposit.",
   "desc.immersiveengineering.info.mineral.oil": "Oil",
+  "desc.immersiveengineering.info.mineral.sphalerite": "Sphalerite",
+  "desc.immersiveengineering.info.mineral.demonite": "Dungeon Digsite",
   "curios.identifier.elytra": "Elytra"
 }
