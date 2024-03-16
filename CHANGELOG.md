@@ -1,5 +1,64 @@
 # Harmonious Magineering Changelog
 
+## v1.0.0-BETA11
+
+### ⚠️IMPORTANT⚠️
+
+This update has two potentially breaking changes. Before proceeding, if you choose not to read further, at the _very_ least make a world backup before updating in case you lose _everything_ (because that's actually possible with this update. Two factors cause the one-time instability in this update:
+
+#### Iron Chests: Restocked
+
+This mod has been removed in this update. v1.0.0-BETA9 talks all about this and how you can migrate to Expanded Storage without having to re-craft anything or even move your items manually! It's all automatically handled so please go read that changelog if you haven't already.
+
+#### Tectonic/Lithostiched
+
+Tectonic has now recommended adding the "[Lithostitched](https://www.curseforge.com/minecraft/mc-mods/lithostitched)" mod, which allows for more refined control over biome modifiers, surface rules & temperature overall. This allows Tectonic to reduce the amount of inappropriately placed snow, which I want, so I added this mod. Like any mod that modified world gen at a low level, there's a chance this will bring about unsavory visible chunk borders that cannot be fixed in any other way aside from not updating to this version or not using Lithostitched at all. I have tested locally and have not been able to find any cases of large chunk borders/walls in my testing world of 4 months, but YMMV.
+
+### Added:
+
+- Added new **Oil Droplet** item as well as a corresponding IE Mineral Mix that allows the player to harvest PnC Oil in _item_ form using the Excavator.
+- Recipe for crushing AE2 Skystone into Skystone Dust 
+- [Mod] Create Train Perspective
+- [Mod] Inventory Profiles: Next
+- [Mod] LithoStitched
+
+### Removed:
+
+- [Mod] Iron Chests: Restocked (see v1.0.0-BETA9 Changelog)
+- [Mod] Inventory Sorter (Incompatible with AE2)
+- [Mod] [Library] Collective (entirely unused)
+- Gravitite tools no longer have the block/entity yeeting property. When hitting a mob, you'll no longer throw them into the sky, and when right-clicking any block you'll no longer send it floating into the sky.
+
+### Changed:
+
+- Embers' fluid vessels have been disabled due to a fluid dupe glitch - in the meantime, Create's tanks have been made accessible as soon as you're able to make 
+- Improved Wither Skeleton Skull drop rate somewhat
+- [Internal] Converted loot table modifications to only use LootJS
+
+### Fixed:
+
+- Advancement-based quests (for tag quests) no longer always mark themselves as completed all the time.
+- Overall script priority issues, such as the Mekanism Steel Casing recipe having its old revision _and_ its new one 😤
+- Leftover logging that I totally didn't forget to remove 😉
+
+### Updated:
+
+- [Library] Almost Unified
+- [Library] Blueprint
+- [Library] Curios
+- [Library] Moonlight
+- [Library] Obsidian UI
+- Aether Redux
+- Amendments
+- Embeddium
+- FTB Mods
+- Lootr
+- Moonlight
+- Raised
+- Ryoamic Lights
+- Sophisticated Backpacks
+- Tectonic
+
 ## v1.0.0-BETA10
 
 ### Added:
