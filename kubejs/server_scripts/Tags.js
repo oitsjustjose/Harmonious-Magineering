@@ -6,8 +6,10 @@ const ores = [
   'eidolon:silver_ore',
   'immersiveengineering:deepslate_ore_lead',
   'immersiveengineering:deepslate_ore_silver',
+  'immersiveengineering:deepslate_ore_uranium',
   'immersiveengineering:ore_lead',
   'immersiveengineering:ore_silver',
+  'immersiveengineering:ore_uranium',
   'mekanism:deepslate_lead_ore',
   'mekanism:lead_ore',
 ];
