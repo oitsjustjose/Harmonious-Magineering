@@ -12,7 +12,84 @@
 			[light_sources.settings.entities.minecraft]
 				player = true
 				enderman = true
+				chicken = true
+				sheep = true
+				zombie = true
+				donkey = true
+				creeper = true
+				item = true
+				spider = true
+				skeleton = true
+				rabbit = true
+				bat = true
+				horse = true
+				cow = true
+				bee = true
+				zombie_villager = true
+				wolf = true
+				villager = true
+				pig = true
+				fox = true
+				squid = true
+				axolotl = true
+				salmon = true
+				goat = true
+				pillager = true
+				vindicator = true
+				painting = true
+				iron_golem = true
+				slime = true
+				witch = true
+				glow_squid = true
+				cave_spider = true
+				frog = true
+				item_frame = true
+				armor_stand = true
 
 			[light_sources.settings.entities.endermanoverhaul]
 				end_enderman = true
+				mushroom_fields_enderman = true
+
+			[light_sources.settings.entities.labels]
+				label = true
+
+			[light_sources.settings.entities.bloodmagic]
+				bloodlight = true
+
+			[light_sources.settings.entities.create]
+				super_glue = true
+				crafting_blueprint = true
+
+			[light_sources.settings.entities.eidolon]
+				wraith = true
+				slimy_slug = true
+				raven = true
+
+			[light_sources.settings.entities.naturalist]
+				sparrow = true
+				deer = true
+				lizard = true
+				bear = true
+				finch = true
+				robin = true
+				firefly = true
+				snail = true
+				butterfly = true
+				cardinal = true
+				bluejay = true
+				bass = true
+				snake = true
+				canary = true
+				coral_snake = true
+				duck = true
+
+			[light_sources.settings.entities.embers]
+				ancient_golem = true
+
+			[light_sources.settings.entities.lootr]
+				lootr_minecart = true
+
+			[light_sources.settings.entities.creeperoverhaul]
+				cave_creeper = true
+				dripstone_creeper = true
 
