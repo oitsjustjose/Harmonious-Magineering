@@ -19,5 +19,8 @@
   "item.kubejs.unknown_engineering_item": "Engineering Artifact",
   "item.kubejs.zinc_dust": "Zinc Dust",
   "item.kubejs.generic_flour": "Flour",
+  "item.kubejs.oil_droplet": "Oil Droplet",
+  "item.kubejs.oil_droplet.info": "Found using Mineral Survey Tools and only obtained via the §6Excavator§r. A Core Sample Drill will also be a great deal of help in locating the deposit.",
+  "desc.immersiveengineering.info.mineral.oil": "Oil",
   "curios.identifier.elytra": "Elytra"
 }

@@ -11,6 +11,10 @@ JEIEvents.hideFluids(event => {
   event.hide('pneumaticcraft:ethanol');
 });
 
+JEIEvents.information(event => {
+  event.addItem('kubejs:oil_droplet', Text.translate('item.kubejs.oil_droplet.info'));
+});
+
 JEIEvents.addItems(event => {
   [
     'architects_palette:abyssaline_brick_slab',
