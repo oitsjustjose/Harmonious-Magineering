@@ -17,6 +17,7 @@ Tectonic has now recommended adding the "[Lithostitched](https://www.curseforge.
 ### Added:
 
 - Added new **Oil Droplet** item as well as a corresponding IE Mineral Mix that allows the player to harvest PnC Oil in _item_ form using the Excavator.
+- Mineral deposits for Sphalerite (Zinc), Dungeon Digsite (Hellforged Ore & Diamond), and added Fluorite to the Beryl deposit
 - Recipe for crushing AE2 Skystone into Skystone Dust 
 - [Mod] Create Train Perspective
 - [Mod] Inventory Profiles: Next
