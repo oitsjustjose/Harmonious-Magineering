@@ -7,25 +7,204 @@
 	id: "1ED158C2CEC130C9"
 	order_index: 4
 	quest_links: [ ]
-	quests: [{
-		dependencies: ["7E854274F8FC5700"]
-		id: "0F946D801295B7CE"
-		rewards: [{
-			auto: "invisible"
-			command: "/execute as @p run function custom:player/stages/appliedenergistics"
-			elevate_perms: true
-			id: "03FFC084BA5A7E7A"
-			silent: true
-			type: "command"
-		}]
-		tasks: [{
-			id: "4DEBD5454C169F01"
-			item: "mekanism:basic_control_circuit"
-			type: "item"
-		}]
-		x: 0.0d
-		y: 0.0d
-	}]
+	quests: [
+		{
+			dependencies: ["7E854274F8FC5700"]
+			description: [
+				"As you begin to gain a better understanding of the inner workings of &3Control Circuits&r, you begin to notice that the potential for &bCertus Quartz&r to be used in a lot of these inner-workings."
+				""
+				"Certus Quartz seems to form at the core of &3Metorties&r that can be found all over the world. They form in geodes atop buds just like &5Amethyst&r, but you'll also find something really pretty and strange. Breaking this will yield four different Press Molds, which will be of great use later."
+				"{@pagebreak}"
+				"Once you've found a Meteorite, it is &ohighly&r recommended to pick up as many &7Sky Stone Blocks&r as you possibly can manage - these blocks are used in many different ways as you continue to setup and configure your new network!"
+				""
+				"<rainb>Meta Time!</rainb>: A note for those new to AE2 - this quest chapter is more for those with &osome&r experience rather than none at all, but the guide that you are gifted as a result of this quest will more thoroughly (and graphically) walk you through the mod!"
+				""
+				"Struggling to find a Meteorite? Try crafting a Meteorite Compass!"
+			]
+			icon: "ae2:mysterious_cube"
+			id: "0F946D801295B7CE"
+			rewards: [{
+				id: "1F0FD1C548A42E17"
+				item: "ae2:guide"
+				type: "item"
+			}]
+			shape: "hexagon"
+			size: 1.25d
+			subtitle: "Enter the era of digitized storage!"
+			tasks: [
+				{
+					id: "50FFE66B892DCB3D"
+					item: "ae2:certus_quartz_crystal"
+					type: "item"
+				}
+				{
+					icon: "ae2:mysterious_cube"
+					id: "41D7C146E9D40079"
+					observe_type: 0
+					timer: 0L
+					title: "Find a Mysterious Cube"
+					to_observe: "ae2:mysterious_cube"
+					type: "observation"
+				}
+				{
+					id: "74CE7C4726A3F23C"
+					item: "ae2:calculation_processor_press"
+					type: "item"
+				}
+				{
+					id: "09728318E78F4CFE"
+					item: "ae2:engineering_processor_press"
+					type: "item"
+				}
+				{
+					id: "45353A8D7EFEFB1C"
+					item: "ae2:logic_processor_press"
+					type: "item"
+				}
+				{
+					id: "7B9E9DDBC5705F7E"
+					item: "ae2:silicon_press"
+					type: "item"
+				}
+			]
+			title: "Applying your Energistics"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			id: "68AD3ED744DA8C1E"
+			tasks: [
+				{
+					id: "3DA50F3A6C52302A"
+					item: "ae2:inscriber"
+					type: "item"
+				}
+				{
+					id: "4137189D04417163"
+					item: "ae2:charger"
+					type: "item"
+				}
+			]
+			x: 2.5d
+			y: 4.0d
+		}
+		{
+			description: [
+				"By default, _any_ cable that is receiving energy (be it through &6Quartz Fiber&r or an &5Energy Acceptor&r) can be considered to be adhoc network (which can be used as a &osub&rnetwork once you &oreally&r get into AE!)."
+				""
+				"Fortunately for you, that's exactly enough to get yourself started with a really primitive setup that allows you to view your current stash of items really conveniently. Unfortunately, adhoc networks are limited to &oonly&r 8 channels. "
+				""
+				"There are a few other things you'll need before you can hook into your existing storage and actually &oaccess&r those items, so don't just stop here!!"
+				""
+				"Additionally, the <rainb>Guide</rainb> thoroughly details what a channel is and how they are used and I strongly recommend reading through it to get the best and most detailed walkthrough, as channels are a fundamental concept to networking."
+			]
+			icon: {
+				Count: 1b
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "ae2:block/controller_column_lights"
+				}
+			}
+			id: "12B1112119E5DE47"
+			subtitle: "This quest definitely wasn't adhoc... ;)"
+			tasks: [
+				{
+					id: "360D10AA0EE2765C"
+					item: "ae2:energy_acceptor"
+					type: "item"
+				}
+				{
+					id: "47E65436ED33ED96"
+					item: "ae2:fluix_glass_cable"
+					type: "item"
+				}
+			]
+			title: "Primitive Networking"
+			x: 0.0d
+			y: 1.5d
+		}
+		{
+			id: "40886E5EE684C540"
+			tasks: [{
+				id: "6ABD5BDBA611DA16"
+				item: "ae2:controller"
+				type: "item"
+			}]
+			title: "Expanding your reach"
+			x: -2.5d
+			y: 5.0d
+		}
+		{
+			id: "672F5115D6C826B3"
+			tasks: [
+				{
+					id: "4CDB35DF40CB47F2"
+					item: "ae2:crafting_accelerator"
+					type: "item"
+				}
+				{
+					advancement: "custom:quests/crafting_storage"
+					criterion: ""
+					icon: "ae2:1k_crafting_storage"
+					id: "7B904431E3B4A480"
+					title: "Any size Crafting Storage"
+					type: "advancement"
+				}
+			]
+			title: "Autonomous Crafting"
+			x: -2.5d
+			y: 6.0d
+		}
+		{
+			description: [
+				"Sure, hooking up your acceptor to an RF supply is a plenty great start, but there's still more you need to do before you can get on-par with a <rainb>Pretty Pipes</rainb> setup!"
+				""
+				"The &5ME Terminal&r is an access point to the items stored within your network. This basic terminal can only view and insert/extract your items, but you can upgrade it to a &5Crafting Terminal&r to integrate smoothly with JEI and make performing normal crafting recipes &omuch&r easier going forward! "
+			]
+			id: "72B9CEC17208ED15"
+			subtitle: "A window into the digital universe"
+			tasks: [{
+				id: "5FB51288132DCB1E"
+				item: "ae2:terminal"
+				type: "item"
+			}]
+			title: "Accessing your goods"
+			x: 0.0d
+			y: 3.0d
+		}
+		{
+			description: [
+				"Busses are a means to extend a cable's abilities to perform specific actions, most of which have to do with stored items or fluids!"
+				""
+				"The Storage Bus can be attached against an item storage unit (such as a Drawer Controller or a chest, vault, silo, etc..), but it can &oalso&r be attached to fluid storage as well (such as Fluid Tanks from Create, Pneumaticcraft or Immersive Engineering)."
+				""
+				"Meanwhile, the Import and Export bus are means to automatically move items in and out of your existing storage units. The &6Import bus&r &oimports&r items or fluids into your existing storage system from an external source. Conversely, the &6Export bus&r &oexports&r items or fluids form your existing storage system to an external source."
+			]
+			icon: "ae2:storage_bus"
+			id: "232BC0729B673EFB"
+			subtitle: "Don't forget your ticket!"
+			tasks: [
+				{
+					id: "5AEFF3D8DC1C5BB3"
+					item: "ae2:storage_bus"
+					type: "item"
+				}
+				{
+					id: "3B585F5BFA32142B"
+					item: "ae2:import_bus"
+					type: "item"
+				}
+				{
+					id: "51003BF5EBB22A13"
+					item: "ae2:export_bus"
+					type: "item"
+				}
+			]
+			title: "🚌 Busses 🚌"
+			x: 0.0d
+			y: 4.5d
+		}
+	]
 	subtitle: ["<rainb>Applied Energistics</rainb>"]
 	title: "&7Digital Storage&r"
 }

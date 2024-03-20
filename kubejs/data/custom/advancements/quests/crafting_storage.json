@@ -1,0 +1,20 @@
+{
+  "parent": "custom:root",
+  "display": {
+    "icon": {
+      "item": "ae2:crafting_unit"
+    },
+    "title": "Create any size Crafting Storage",
+    "description": "",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [["impossible"]]
+}
