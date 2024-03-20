@@ -53,11 +53,17 @@ advancement grant @a[advancements={custom:quests/nuggets=false}, nbt={Inventory:
 advancement grant @a[advancements={custom:quests/nuggets=false}, nbt={Inventory:[{id:"minecraft:iron_nugget"}]}] only custom:quests/nuggets
 
 # Crafting storage
-advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:256k_crafting_storage"}]}] only custom:quests/crafting_storage
-advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:16k_crafting_storage"}]}] only custom:quests/crafting_storage
-advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:4k_crafting_storage"}]}] only custom:quests/crafting_storage
-advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:64k_crafting_storage"}]}] only custom:quests/crafting_storage
 advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:1k_crafting_storage"}]}] only custom:quests/crafting_storage
+advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:4k_crafting_storage"}]}] only custom:quests/crafting_storage
+advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:16k_crafting_storage"}]}] only custom:quests/crafting_storage
+advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:64k_crafting_storage"}]}] only custom:quests/crafting_storage
+advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:256k_crafting_storage"}]}] only custom:quests/crafting_storage
 
+# ME Item Cells
+advancement grant @a[advancements={custom:quests/me_storage_cells=false}, nbt={Inventory:[{id:"ae2:item_storage_cell_1k"}]}] only custom:quests/me_storage_cells
+advancement grant @a[advancements={custom:quests/me_storage_cells=false}, nbt={Inventory:[{id:"ae2:item_storage_cell_4k"}]}] only custom:quests/me_storage_cells
+advancement grant @a[advancements={custom:quests/me_storage_cells=false}, nbt={Inventory:[{id:"ae2:item_storage_cell_16k"}]}] only custom:quests/me_storage_cells
+advancement grant @a[advancements={custom:quests/me_storage_cells=false}, nbt={Inventory:[{id:"ae2:item_storage_cell_64k"}]}] only custom:quests/me_storage_cells
+advancement grant @a[advancements={custom:quests/me_storage_cells=false}, nbt={Inventory:[{id:"ae2:item_storage_cell_256k"}]}] only custom:quests/me_storage_cells
 
 schedule function custom:clocks/quests 20t replace

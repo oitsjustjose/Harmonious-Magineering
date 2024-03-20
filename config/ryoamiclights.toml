@@ -52,6 +52,7 @@
 			[light_sources.settings.entities.endermanoverhaul]
 				end_enderman = true
 				mushroom_fields_enderman = true
+				end_islands_enderman = true
 
 			[light_sources.settings.entities.labels]
 				label = true
@@ -99,4 +100,8 @@
 
 			[light_sources.settings.entities.ecologics]
 				squirrel = true
+
+			[light_sources.settings.entities.outer_end]
+				sinker = true
+				stalker = true
 

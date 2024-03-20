@@ -5,6 +5,18 @@
 	group: "7ACE386F34E81744"
 	icon: "ae2:white_smart_dense_cable"
 	id: "1ED158C2CEC130C9"
+	images: [{
+		click: ""
+		corner: false
+		dev: false
+		height: 3.050147492625369d
+		hover: [ ]
+		image: "kubejs:textures/quest_images/chapter/ae2.png"
+		rotation: 0.0d
+		width: 6.0d
+		x: 0.0d
+		y: -1.0d
+	}]
 	order_index: 4
 	quest_links: [ ]
 	quests: [
@@ -21,6 +33,7 @@
 				""
 				"Struggling to find a Meteorite? Try crafting a Meteorite Compass!"
 			]
+			hide: true
 			icon: "ae2:mysterious_cube"
 			id: "0F946D801295B7CE"
 			rewards: [{
@@ -72,7 +85,18 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["0F946D801295B7CE"]
+			description: [
+				"In order to get started with a basic network, you'll need some special components that can only be obtained using some particularly specific machinery."
+				""
+				"The &6Inscriber&r is capable of pressing with &oincredibly&r high force. This will allow you to create new &6Circuits&r out of some of the existing &5Control Circuits&r you've been able to make in the Metallurgic Infuser. Additionally, you're able to press Silicon which can then be used as a backplane for the new circuitry. Lastly, you'll be able to create &6Processors&r using Printed Silicon, Printed Circuits \\& Copper Wiring in the Inscriber."
+				""
+				"The &6Charger&r is a machine that can be used to charge your &bCertus Quartz&r. Once charged, the Certus Quartz will become incredibly reactive with other materials, &oespecially in water&r. This property is particularly useful when attempting to craft &5Fluix Crystals&r, another critical crafting component for your networking needs."
+			]
+			hide: true
+			icon: "ae2:inscriber"
 			id: "68AD3ED744DA8C1E"
+			subtitle: "Reactive Certus \\& Processor Crafting"
 			tasks: [
 				{
 					id: "3DA50F3A6C52302A"
@@ -85,12 +109,14 @@
 					type: "item"
 				}
 			]
-			x: 2.5d
-			y: 4.0d
+			title: "Simple Machinery"
+			x: 0.0d
+			y: 1.5d
 		}
 		{
+			dependencies: ["68AD3ED744DA8C1E"]
 			description: [
-				"By default, _any_ cable that is receiving energy (be it through &6Quartz Fiber&r or an &5Energy Acceptor&r) can be considered to be adhoc network (which can be used as a &osub&rnetwork once you &oreally&r get into AE!)."
+				"By default, _any_ cable that is receiving energy (be it through &6Quartz Fiber&r or an &5Energy Acceptor&r) can be considered to be adhoc network (which can be used as a &osub&rnetwork once you &oreally&r dive into AE!)."
 				""
 				"Fortunately for you, that's exactly enough to get yourself started with a really primitive setup that allows you to view your current stash of items really conveniently. Unfortunately, adhoc networks are limited to &oonly&r 8 channels. "
 				""
@@ -98,6 +124,7 @@
 				""
 				"Additionally, the <rainb>Guide</rainb> thoroughly details what a channel is and how they are used and I strongly recommend reading through it to get the best and most detailed walkthrough, as channels are a fundamental concept to networking."
 			]
+			hide: true
 			icon: {
 				Count: 1b
 				id: "ftbquests:custom_icon"
@@ -121,20 +148,31 @@
 			]
 			title: "Primitive Networking"
 			x: 0.0d
-			y: 1.5d
+			y: 3.0d
 		}
 		{
+			dependencies: ["12B1112119E5DE47"]
+			description: [
+				"As you continue to explore the potential of your new network, you may be starting to bump up against the &l8 Channel&r limit that an adhoc network has. While you can make additional adhoc networks, they won't be able to inter-connect and would require moving from terminal to terminal - instead, a dedicated <rainb>Controller</rainb> with its built-in optimized routing processor can greatly increase your networking potential!"
+				""
+				"The <rainb>Controller</rainb> is a somewhat free-form multi-block formation - you can connect them in almost any shape so long as any given controller is touching &lno more than four other controllers&r on its six sides."
+				""
+				"Each of the six faces of a given <rainb>Controller</rainb> block can provide up to 8 Channels if using standard Fluix Cable, or up to 32 channels if using ME Dense Cable!"
+			]
+			hide: true
 			id: "40886E5EE684C540"
+			subtitle: "More channels, but no HBO or Showtime!"
 			tasks: [{
 				id: "6ABD5BDBA611DA16"
 				item: "ae2:controller"
 				type: "item"
 			}]
-			title: "Expanding your reach"
-			x: -2.5d
+			title: "<rainb>Expanding your reach</rainb>"
+			x: -1.5d
 			y: 5.0d
 		}
 		{
+			dependencies: ["12B1112119E5DE47"]
 			id: "672F5115D6C826B3"
 			tasks: [
 				{
@@ -152,15 +190,17 @@
 				}
 			]
 			title: "Autonomous Crafting"
-			x: -2.5d
+			x: 0.0d
 			y: 6.0d
 		}
 		{
+			dependencies: ["12B1112119E5DE47"]
 			description: [
 				"Sure, hooking up your acceptor to an RF supply is a plenty great start, but there's still more you need to do before you can get on-par with a <rainb>Pretty Pipes</rainb> setup!"
 				""
 				"The &5ME Terminal&r is an access point to the items stored within your network. This basic terminal can only view and insert/extract your items, but you can upgrade it to a &5Crafting Terminal&r to integrate smoothly with JEI and make performing normal crafting recipes &omuch&r easier going forward! "
 			]
+			hide: true
 			id: "72B9CEC17208ED15"
 			subtitle: "A window into the digital universe"
 			tasks: [{
@@ -169,10 +209,11 @@
 				type: "item"
 			}]
 			title: "Accessing your goods"
-			x: 0.0d
+			x: -1.5d
 			y: 3.0d
 		}
 		{
+			dependencies: ["12B1112119E5DE47"]
 			description: [
 				"Busses are a means to extend a cable's abilities to perform specific actions, most of which have to do with stored items or fluids!"
 				""
@@ -180,6 +221,7 @@
 				""
 				"Meanwhile, the Import and Export bus are means to automatically move items in and out of your existing storage units. The &6Import bus&r &oimports&r items or fluids into your existing storage system from an external source. Conversely, the &6Export bus&r &oexports&r items or fluids form your existing storage system to an external source."
 			]
+			hide: true
 			icon: "ae2:storage_bus"
 			id: "232BC0729B673EFB"
 			subtitle: "Don't forget your ticket!"
@@ -201,8 +243,38 @@
 				}
 			]
 			title: "🚌 Busses 🚌"
-			x: 0.0d
-			y: 4.5d
+			x: 1.5d
+			y: 3.0d
+		}
+		{
+			dependencies: ["12B1112119E5DE47"]
+			description: [
+				"Rather than use ME Storage Busses to access your original storage (which still isn't a bad idea when it comes to a Storage Drawer or other bulk storage solutions), you can alternatively move your items to a fully digitized solution using an &6ME Drive&r, which stores 10 &6ME Item Storage Cells&r."
+				""
+				"As nice as this might sound, there are some limitations! Each storage cell can only store &l63&r different types of items. This means you can have up to 63 different items, whose quantity sums up to 1, 4, 16, 64, or 256 thousand. This means that, especially early game before you start getting large amounts of bulk, you might want to start off with smaller cells like 1k or 4k."
+				"{@pagebreak}"
+				"To optimize your disk usage, you may want to store your armor, tools and enchanted books somewhere else... As you progress, you'll find that there are other types of item cells just for this! If you add a &bTool&r, &eArmory&r or &5Enchanted Book&r Cell to your ME Drive, any items that you store in your network that meet these types will automatically go into their corresponding cells rather than consuming one of your precious Types!"
+			]
+			icon: "specialised_cells:enchanted_book_cell_housing"
+			id: "5EC862E9A28F5DC3"
+			subtitle: "Bigger on the inside"
+			tasks: [
+				{
+					id: "067C6CC4752D4924"
+					item: "ae2:drive"
+					type: "item"
+				}
+				{
+					advancement: "custom:quests/me_storage_cells"
+					criterion: ""
+					id: "6B39BED492F086B2"
+					title: "Any size Item Storage Cell"
+					type: "advancement"
+				}
+			]
+			title: "Fully Digitized Storage"
+			x: 1.5d
+			y: 5.0d
 		}
 	]
 	subtitle: ["<rainb>Applied Energistics</rainb>"]
