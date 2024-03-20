@@ -52,4 +52,12 @@ advancement grant @a[advancements={custom:quests/nuggets=false}, nbt={Inventory:
 advancement grant @a[advancements={custom:quests/nuggets=false}, nbt={Inventory:[{id:"minecraft:gold_nugget"}]}] only custom:quests/nuggets
 advancement grant @a[advancements={custom:quests/nuggets=false}, nbt={Inventory:[{id:"minecraft:iron_nugget"}]}] only custom:quests/nuggets
 
+# Crafting storage
+advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:256k_crafting_storage"}]}] only custom:quests/crafting_storage
+advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:16k_crafting_storage"}]}] only custom:quests/crafting_storage
+advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:4k_crafting_storage"}]}] only custom:quests/crafting_storage
+advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:64k_crafting_storage"}]}] only custom:quests/crafting_storage
+advancement grant @a[advancements={custom:quests/crafting_storage=false}, nbt={Inventory:[{id:"ae2:1k_crafting_storage"}]}] only custom:quests/crafting_storage
+
+
 schedule function custom:clocks/quests 20t replace

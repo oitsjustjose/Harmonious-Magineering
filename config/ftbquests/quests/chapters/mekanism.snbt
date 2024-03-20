@@ -308,12 +308,22 @@
 			]
 			hide: true
 			id: "7E854274F8FC5700"
-			rewards: [{
-				count: 10
-				id: "35859BD4D564AB7B"
-				item: "create:experience_nugget"
-				type: "item"
-			}]
+			rewards: [
+				{
+					count: 10
+					id: "35859BD4D564AB7B"
+					item: "create:experience_nugget"
+					type: "item"
+				}
+				{
+					auto: "invisible"
+					command: "/execute as @p run function custom:player/stages/appliedenergistics"
+					elevate_perms: true
+					id: "1F62D6431807361A"
+					silent: true
+					type: "command"
+				}
+			]
 			subtitle: "Optimized for controlling machinery!"
 			tasks: [{
 				id: "370429215692D01A"
