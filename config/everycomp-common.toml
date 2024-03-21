@@ -88,6 +88,9 @@
 				gilded_oak = true
 				blighted_skyroot = true
 				purple_glacia = true
+				prismatic_fieldsproot = true
+				spectral_fieldsproot = true
+				azure_fieldsproot = true
 
 			[general.types.leaves_type.architects_palette]
 				twisted = true

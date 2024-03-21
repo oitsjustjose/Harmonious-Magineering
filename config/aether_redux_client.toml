@@ -42,10 +42,14 @@
 [Audio]
 	#Enables a slamming sound for mimics when using the new model. Disable if it gets too annoying XD
 	"Mimic Slam Sound Effect" = true
+	#Gives sounds to the other clouds for the Aether: Genesis when it is installed
+	"Aercloud Ability Sounds" = true
 
 [Internal]
-	#Internal value to decide if it is the first startup. DO NOT EDIT THIS VALUE, unless you want things to break!
-	"First Startup?" = false
 	#Value used to track the version of the Aether: Redux most recently used.
-	"Version ID" = "2.0.6"
+	"Version ID" = "2.0.7c"
+	#Internal value to do menu changes. Set this to false in modpacks if you want to use your own menu.
+	"First Startup - Menu Setup" = false
+	#Internal value to change an Aether config, giving a nicer lightmap in the dimension.
+	"First Startup - Lightmap Change" = false
 

@@ -42,10 +42,6 @@
 		#Makes blockstate conversion sounds (ambrosium, swet ball) better
 		"Better Conversion Sounds" = true
 
-["Datapack Application"]
-	#Whether or not to automatically add the Cloud Layer datapack.
-	"Cloud Layer Datapack" = true
-
 [Worldgen]
 
 	[Worldgen."Additional Features"]
@@ -57,14 +53,18 @@
 		"Wall Roots on Blightwillows and Large Cloudcaps" = true
 		#Uses an alternate Gilded Oak shape, more like vanilla Oak trees and Skyroots, for the Gilded biomes.
 		"Alternate Gilded Trees" = false
+		#Makes the Skyfields into an upgraded version of their older variant from before Redux's version 1.3.
+		"Classic Skyfields" = false
 
-	[Worldgen."Cloud Layer"]
-		#Minimum value for the cloud layer's noise threshold
-		#Range: -4.0 ~ 4.0
-		"Cloud Layer Threshold Min" = 0.0
-		#Maximum value for the cloud layer's noise threshold
-		#Range: -4.0 ~ 4.0
-		"Cloud Layer Threshold Max" = 1.0
+		[Worldgen."Additional Features"."Cloud Layer"]
+			#Replaces the Aether's large cloud features with a new and improved noise-based cloud layer.
+			"Cloud Layer Generation" = true
+			#Minimum value for the cloud layer's noise threshold
+			#Range: -4.0 ~ 4.0
+			"Cloud Layer Threshold Min" = 0.0
+			#Maximum value for the cloud layer's noise threshold
+			#Range: -4.0 ~ 4.0
+			"Cloud Layer Threshold Max" = 1.0
 
 	[Worldgen."Bronze Dungeon"]
 		#Adds dungeon mobs from the Aether: Genesis to the spawners added to the Bronze Dungeon if it is installed
@@ -101,4 +101,8 @@
 		"Enable Skyroot Shrublands" = true
 		#Uses Enchanted Aether Grass for the ground in the Gilded Groves. May require a Minecraft restart.
 		"Enchanted Gilded Grass" = true
+
+[Internal]
+	#Internal value, used to decide if the Aeroblender configs should be changed
+	"First Startup - Aeroblender Setup" = true
 
