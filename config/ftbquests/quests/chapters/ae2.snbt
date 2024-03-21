@@ -5,18 +5,36 @@
 	group: "7ACE386F34E81744"
 	icon: "ae2:white_smart_dense_cable"
 	id: "1ED158C2CEC130C9"
-	images: [{
-		click: ""
-		corner: false
-		dev: false
-		height: 3.050147492625369d
-		hover: [ ]
-		image: "kubejs:textures/quest_images/chapter/ae2.png"
-		rotation: 0.0d
-		width: 6.0d
-		x: 0.0d
-		y: -1.0d
-	}]
+	images: [
+		{
+			click: ""
+			corner: false
+			dependency: "40886E5EE684C540"
+			dev: false
+			height: 8.0d
+			hover: [ ]
+			image: "kubejs:textures/quest_images/chapter/controller.png"
+			order: -1
+			rotation: 0.0d
+			width: 8.0d
+			x: 7.0d
+			y: 2.5d
+		}
+		{
+			click: ""
+			corner: false
+			dependency: "40886E5EE684C540"
+			dev: false
+			height: 8.0d
+			hover: [ ]
+			image: "kubejs:textures/quest_images/chapter/controller.png"
+			order: -1
+			rotation: -180.0d
+			width: 8.0d
+			x: -6.5d
+			y: 2.5d
+		}
+	]
 	order_index: 4
 	quest_links: [ ]
 	quests: [
@@ -275,6 +293,225 @@
 			title: "Fully Digitized Storage"
 			x: 1.5d
 			y: 5.0d
+		}
+		{
+			dependencies: ["40886E5EE684C540"]
+			hide: true
+			hide_dependency_lines: true
+			id: "2241F99D3A2C7451"
+			shape: "octagon"
+			size: 1.5d
+			subtitle: "Like LinkedIn, but good"
+			tasks: [{
+				id: "7BFCF96A01D6574E"
+				item: "ae2:me_p2p_tunnel"
+				type: "item"
+			}]
+			title: "Peer-to-Peer Networking"
+			x: 7.0d
+			y: 2.5d
+		}
+		{
+			dependencies: ["40886E5EE684C540"]
+			hide: true
+			hide_dependency_lines: true
+			id: "3A4A56DAC8965864"
+			subtitle: "Networked Block Placement"
+			tasks: [{
+				id: "107747AAB84501BF"
+				item: "ae2:formation_plane"
+				type: "item"
+			}]
+			title: "Formation Planes"
+			x: 5.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["40886E5EE684C540"]
+			hide: true
+			hide_dependency_lines: true
+			id: "12946C53B27E3B2D"
+			subtitle: "Certus Farm Time!"
+			tasks: [{
+				id: "62321DF7BD4E48F7"
+				item: "ae2:annihilation_plane"
+				type: "item"
+			}]
+			title: "Annihilation Planes"
+			x: 9.0d
+			y: 0.5d
+		}
+		{
+			dependencies: ["40886E5EE684C540"]
+			hide: true
+			hide_dependency_lines: true
+			icon: {
+				Count: 1b
+				id: "ae2:facade"
+				tag: {
+					item: "minecraft:stone"
+				}
+			}
+			id: "2F916B2818C478DA"
+			subtitle: "10/10 network aesthetics"
+			tasks: [
+				{
+					id: "204C04F66197F6A4"
+					item: "ae2:cable_anchor"
+					type: "item"
+				}
+				{
+					id: "2DDF982FEB7E923E"
+					item: {
+						Count: 1b
+						id: "ae2:facade"
+						tag: {
+							item: "minecraft:stone"
+						}
+					}
+					title: "Any Facade"
+					type: "item"
+				}
+			]
+			title: "Pretty Pi--wait no, cables"
+			x: 5.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["40886E5EE684C540"]
+			hide: true
+			hide_dependency_lines: true
+			id: "6DEB69D45BE5CA24"
+			subtitle: "It's basically tick acceleration..."
+			tasks: [{
+				id: "454E0DDA6CB84EA1"
+				item: "ae2:growth_accelerator"
+				type: "item"
+			}]
+			title: "Crystal Growth Acceleration"
+			x: 9.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["40886E5EE684C540"]
+			hide: true
+			hide_dependency_lines: true
+			icon: "ae2:quantum_entangled_singularity"
+			id: "36D352E8C1C17225"
+			size: 1.0d
+			subtitle: "Working from home, anywhere!"
+			tasks: [
+				{
+					count: 2L
+					id: "2767E69141612E01"
+					item: "ae2:quantum_entangled_singularity"
+					type: "item"
+				}
+				{
+					count: 16L
+					id: "503366D2D75514C7"
+					item: "ae2:quantum_ring"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "5CA210564F249B2C"
+					item: "ae2:quantum_link"
+					type: "item"
+				}
+			]
+			title: "Remote Networking"
+			x: -4.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["40886E5EE684C540"]
+			hide: true
+			hide_dependency_lines: true
+			icon: "ae2:wireless_terminal"
+			id: "4D8B1492A43DE545"
+			subtitle: "WiFi 6 Ready!"
+			tasks: [
+				{
+					id: "7C89D7AD25BAF5CF"
+					item: "ae2:wireless_access_point"
+					type: "item"
+				}
+				{
+					id: "28A3CC2D349E3692"
+					item: "ae2:wireless_terminal"
+					type: "item"
+				}
+			]
+			title: "Wireless Network Access"
+			x: -8.5d
+			y: 0.5d
+		}
+		{
+			dependencies: ["4D8B1492A43DE545"]
+			hide: true
+			hide_dependency_lines: true
+			id: "033286BD187094D6"
+			subtitle: "Limited but convenient"
+			tasks: [{
+				id: "6B1FCB205D403AF3"
+				item: "aeinfinitybooster:infinity_card"
+				type: "item"
+			}]
+			title: "Infinite Network Access"
+			x: -8.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["033286BD187094D6"]
+			hide: true
+			hide_dependency_lines: true
+			id: "228A7B57A43956CC"
+			subtitle: "The greatest booster that ever lived!"
+			tasks: [{
+				id: "368BDDBF77E1D54E"
+				item: "aeinfinitybooster:dimension_card"
+				type: "item"
+			}]
+			title: "Interdimensional &mTelevision&r Access"
+			x: -4.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["40886E5EE684C540"]
+			hide: true
+			hide_dependency_lines: true
+			icon: "ae2:spatial_pylon"
+			id: "2FB0B1C028C526DC"
+			shape: "octagon"
+			size: 1.5d
+			subtitle: "Storing the world in digital space"
+			tasks: [
+				{
+					id: "7B7FBD576956A988"
+					item: "ae2:spatial_storage_cell_2"
+					title: "TODO: Advancement this"
+					type: "item"
+				}
+				{
+					id: "234DF71AF299BEFF"
+					item: "ae2:spatial_anchor"
+					type: "item"
+				}
+				{
+					id: "02CA3788A8656939"
+					item: "ae2:spatial_io_port"
+					type: "item"
+				}
+				{
+					id: "6715B4A8EAA9CA71"
+					item: "ae2:spatial_pylon"
+					type: "item"
+				}
+			]
+			title: "Spatial Storage"
+			x: -6.5d
+			y: 2.5d
 		}
 	]
 	subtitle: ["<rainb>Applied Energistics</rainb>"]
