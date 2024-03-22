@@ -6,7 +6,7 @@
 	#Disable to make the anchor upgrade not do anything.
 	allowChunkloading = true
 	#Enable this to allow dragging items from JEI into the target slot of Digital Miner filters.
-	easyMinerFilters = false
+	easyMinerFilters = true
 	#How many ticks must pass until a block's active state is synced with the client, if it has been rapidly changing.
 	#Range: 0 ~ 1200
 	blockDeactivationDelay = 60
@@ -90,7 +90,7 @@
 	#Radiation Settings
 	[general.radiation]
 		#Enable worldwide radiation effects. Don't be a downer and disable this.
-		radiationEnabled = true
+		radiationEnabled = false
 		#The radius of chunks checked when running radiation calculations. The algorithm is efficient, but don't abuse it by making this crazy high.
 		#Range: 1 ~ 100
 		chunkCheckRadius = 5
@@ -120,7 +120,7 @@
 		silkMultiplier = 12
 		#Maximum radius in blocks that the Digital Miner can reach. (Increasing this may have negative effects on stability and/or performance. We strongly recommend you leave it at the default value).
 		#Range: > 1
-		maxRadius = 32
+		maxRadius = 512
 		#Number of ticks required to mine a single block with a Digital Miner (without any upgrades).
 		#Range: > 1
 		ticksPerMine = 80
