@@ -204,5 +204,30 @@ ServerEvents.recipes(event => {
     D: 'minecraft:dropper',
   });
 
+  const _makeFirework = (lvl, count) => {
+    const ret = Item.of('minecraft:firework_rocket', count);
+
+    // Make a new NBT tag for both the base tag, and the subtag
+    const fireworkTag = Item.of('minecraft:stone').copyAndClear().getOrCreateTag();
+    const flightSubtag = Item.of('minecraft:stone').copyAndClear().getOrCreateTag();
+
+    // Populate the Subtag
+    flightSubtag.putByte('Flight', lvl);
+    // Then put the subtag as a CompoundTag child of the main tag
+    fireworkTag.put('Fireworks', flightSubtag);
+    // Finally build the output >_>
+    return Item.of('minecraft:firework_rocket', count, fireworkTag);
+  };
+
+  // Fireworks are really fucking broken because of a VANILLA mechanic... yikes.
+  event.remove('minecraft:firework_rocket');
+  event.remove('minecraft:firework_rocket_simple');
+  event.remove('minecraft:firework_star');
+  event.remove('minecraft:firework_star_fade');
+
+  event.shapeless(_makeFirework(1, 3), ['minecraft:paper', 'minecraft:gunpowder']);
+  event.shapeless(_makeFirework(2, 3), ['minecraft:paper', 'minecraft:gunpowder', 'minecraft:gunpowder']);
+  event.shapeless(_makeFirework(3, 3), ['minecraft:paper', 'minecraft:gunpowder', 'minecraft:gunpowder', 'minecraft:gunpowder']);
+
   [architectsPalette, createWaxedCopper, foodstuffs, glass, outerEnd, quark, supplementaries].forEach(module => module());
 });
