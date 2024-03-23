@@ -27,6 +27,7 @@ const modifyStackForStageProgress = (stack, tooltips) => {
     }
   }
 
+  if (!cachedServerPlayerRef) return;
   if (cachedServerPlayerRef.isCreative()) return;
 
   if (cachedServerPlayerRef !== null) {
