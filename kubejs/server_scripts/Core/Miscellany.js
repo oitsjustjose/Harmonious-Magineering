@@ -205,8 +205,6 @@ ServerEvents.recipes(event => {
   });
 
   const _makeFirework = (lvl, count) => {
-    const ret = Item.of('minecraft:firework_rocket', count);
-
     // Make a new NBT tag for both the base tag, and the subtag
     const fireworkTag = Item.of('minecraft:stone').copyAndClear().getOrCreateTag();
     const flightSubtag = Item.of('minecraft:stone').copyAndClear().getOrCreateTag();
