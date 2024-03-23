@@ -13,20 +13,90 @@
 	id: "0EC0BEA916B596A5"
 	order_index: 1
 	quest_links: [ ]
-	quests: [{
-		description: [
-			"Yeah I realized this chapter category needed &omore&r, but I didn't want to deal with propagating it with quests, witty titles/subtitles, and descriptions right this moment :("
-			""
-			"- <rainb>oitsjustjose</rainb>"
-		]
-		id: "3A6AE78F5C246F5F"
-		tasks: [{
-			id: "51953856445DBE24"
-			title: "This chapter is undercooked"
-			type: "checkmark"
-		}]
-		x: 0.0d
-		y: 0.0d
-	}]
+	quests: [
+		{
+			id: "1A93B0BD5A5378D8"
+			tasks: [{
+				id: "50D975E0F0F57D29"
+				structure: "aether:bronze_dungeon"
+				title: "Bronze Dungeon"
+				type: "structure"
+			}]
+			x: 0.5d
+			y: 0.5d
+		}
+		{
+			id: "2DFF506FD403A39F"
+			tasks: [{
+				id: "45F85424DD18FC67"
+				structure: "aether:gold_dungeon"
+				type: "structure"
+			}]
+			x: 2.5d
+			y: 0.5d
+		}
+		{
+			id: "5CDAA7BE357C16FC"
+			tasks: [{
+				id: "6880F110823553CA"
+				structure: "aether:silver_dungeon"
+				type: "structure"
+			}]
+			x: 1.5d
+			y: 0.5d
+		}
+		{
+			id: "3BB9CF2F140C31AE"
+			tasks: [{
+				advancement: "nova_structures:adventure/find_tavern"
+				criterion: ""
+				id: "7E2A25402AC104FE"
+				type: "advancement"
+			}]
+			title: "Discover a Tavern"
+			x: 0.5d
+			y: 2.0d
+		}
+		{
+			id: "6556753EFF8AC3AF"
+			tasks: [{
+				id: "43137F9ECC9B6451"
+				structure: "eidolon:stray_tower"
+				type: "structure"
+			}]
+			x: 1.5d
+			y: 2.0d
+		}
+		{
+			id: "09A0F4BA66E913E3"
+			tasks: [{
+				id: "61EC5661B98E879B"
+				structure: "#minecraft:end_city"
+				type: "structure"
+			}]
+			x: 2.5d
+			y: 2.0d
+		}
+		{
+			id: "6D04F71E2F284DF0"
+			tasks: [{
+				id: "4BEC82E0365B19E9"
+				structure: "#betteroceanmonuments:better_ocean_monuments"
+				type: "structure"
+			}]
+			x: 0.5d
+			y: 3.0d
+		}
+		{
+			id: "336FC4B49C2ED86B"
+			tasks: [{
+				id: "1AEF878595E6D073"
+				structure: "#betterjungletemples:better_jungle_temples"
+				type: "structure"
+			}]
+			x: 1.5d
+			y: 3.0d
+		}
+	]
 	title: "Adventure!"
 }

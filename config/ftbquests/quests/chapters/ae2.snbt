@@ -191,7 +191,14 @@
 		}
 		{
 			dependencies: ["12B1112119E5DE47"]
+			description: [
+				"Surely by now you've started to get an eye for automation in all the little places, but what if you could automate any and all recipe possible? That seems more than possible using your ME Controller, but the memory and computation requirements to manage these crafting tasks would require a co-processor and some storage..."
+				""
+				"Perhaps some further reading of the guidebook would get you ready for the huge tasks ahead..."
+			]
+			icon: "mekanism:crafting_formula"
 			id: "672F5115D6C826B3"
+			subtitle: "Completely Hands-free!"
 			tasks: [
 				{
 					id: "4CDB35DF40CB47F2"
@@ -296,6 +303,20 @@
 		}
 		{
 			dependencies: ["40886E5EE684C540"]
+			description: [
+				"P2P is a complicated concept that you've begun to dip your toes into - as you've read, it seems like they're capable of moving &6Items&r, &9Fluids&r, &cRedstone&r, &4RF&r, &eLight&r, and even &o<rainb>Channels</rainb>&r around in an incredibly efficient way."
+				""
+				"A standard P2P tunnel comes out of the crafting table only able to work on Channels, but can easily be converted to the other variants mentioned above by right-clicking the P2P Tunnel with the following:"
+				""
+				"• &6Items&r: Chest or Hopper"
+				"• &9Fluids&r: Bucket or Bottle"
+				"• &cRedstone&r: Any Redstone component"
+				"• &4RF:&r Any energy-containing item (like an Accumulator)"
+				"• &eLight&r: Torch or Glowstone"
+				"• <rainb>Channels:</rainb> Any cable"
+				""
+				"It is &ohighly&r recommended that you read the documentation to further familiarize yourself to the remainder of P2P and the large amount of cable-spaghetti you can avoid by utilizing them properly."
+			]
 			hide: true
 			hide_dependency_lines: true
 			id: "2241F99D3A2C7451"
@@ -313,6 +334,11 @@
 		}
 		{
 			dependencies: ["40886E5EE684C540"]
+			description: [
+				"As you begin to advance your network's capabilities, you may find it helpful to learn of the &6Formation Plane&r. This device is capable of placing blocks in front of it (based on the directio it's facing), but it can also &ldrop items&r as well! "
+				""
+				"This is incredibly useful for creating automatic Fluix crafting and more!"
+			]
 			hide: true
 			hide_dependency_lines: true
 			id: "3A4A56DAC8965864"
@@ -328,6 +354,13 @@
 		}
 		{
 			dependencies: ["40886E5EE684C540"]
+			description: [
+				"As you may have noticed, the &3Breaker Module&r from Modular Routers is nowhere to be found - no one you speak with has heard of it, and very little of the documentation you've read has even made mention of it in this pack. That's all well and good, because here comes the &6Annihilation Plane&r!"
+				""
+				"The Annihilation Plane has &lno filter&r, but using a Subnet with filtered storage you can specify what kind of blocks it breaks based on those blocks' drops! This, along with their ability to be <rainb>Enchanted with Fortune</rainb>, makes them particularly useful in making a productive Certus Quartz farm!"
+				"{@pagebreak}"
+				"Pro-tip with the Certus Quartz Farms by the way - the guide may make mention of needing Spatial Storage to move around a &oFlawless&r Budding Certus Quartz, but don't forget a Create Cart Contraption can also move things!"
+			]
 			hide: true
 			hide_dependency_lines: true
 			id: "12946C53B27E3B2D"
@@ -343,6 +376,11 @@
 		}
 		{
 			dependencies: ["40886E5EE684C540"]
+			description: [
+				"Looking around your network, you may have started to notice some spots that you wish you could clean up both visually and functionally. Cable Anchors can be placed as a sub-part of a cable, and will separate that cable from the connection on the other side of the anchor - this is a great way to split up two cables and prevent them from connecting."
+				""
+				"Additionally, facades can be made using these cable anchors, allowing you to cover up your cables and make them look &omuch&r nicer! Cables will pass through facades just fine, so don't worry about having to hollow them out to make room for the cable to come through!"
+			]
 			hide: true
 			hide_dependency_lines: true
 			icon: {
@@ -379,6 +417,11 @@
 		}
 		{
 			dependencies: ["40886E5EE684C540"]
+			description: [
+				"As you begin looking into the process of automating Certus Quartz production and possibly even starting some primitive farming, it's come to your attention that Certus Quartz Buds can grow &oreally&r slowly."
+				""
+				"In comes the &6Crystal Growth Accelerator&r - when powered by your ME Cables and placed facing towards your bud, it will accelerate the rate at which new crystals form!"
+			]
 			hide: true
 			hide_dependency_lines: true
 			id: "6DEB69D45BE5CA24"
@@ -394,6 +437,15 @@
 		}
 		{
 			dependencies: ["40886E5EE684C540"]
+			description: [
+				"Perhaps you've stumbled to the point where you need &omore&r than access to your Items/Fluids via a terminal - perhaps you wish to set up automation somewhere else in the world, or even in an entirely different dimension. In such a case, binding your network using a Quantum Ring and a pair of Entangled Singularities would be the best means by which to do so."
+				""
+				"Crafting the Entangled Singularity will take some additional research, but it's not the most complex to create!"
+				"{@pagebreak}"
+				"You'll need two of these structures, one on each end of your connection. One end will connect to your existing ME Network, and the other end will be wherever you want it! Here is what that structure will look like - you can also lay it flat on the ground:"
+				""
+				"{image:kubejs:textures/quest_images/me_link_chamber.png width:150 height:150 align:1 fit:true}"
+			]
 			hide: true
 			hide_dependency_lines: true
 			icon: "ae2:quantum_entangled_singularity"
@@ -426,6 +478,13 @@
 		}
 		{
 			dependencies: ["40886E5EE684C540"]
+			description: [
+				"It's quite common to forget things as you're working on relatively complicated builds and machinery. Sometimes it gets incredibly tedious running back and forth to and from your Terminal to access your items - it would be much more convenient if the terminal could come with you..."
+				""
+				"As you read through the guide, you discover &6Wireless Access Points&r (WAPs) and the &6Wireless Terminal&r. The terminal is a handheld device powered by RF which connects to your network through the nearest WAP connected to your network (you can have multiple!)."
+				""
+				"The standard WAP doesn't have much range, but it accepts &6Wireless Boosters&r to increase its reach. There are also much more powerful (and power-hungry) alternatives..."
+			]
 			hide: true
 			hide_dependency_lines: true
 			icon: "ae2:wireless_terminal"
