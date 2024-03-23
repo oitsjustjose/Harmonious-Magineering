@@ -23,10 +23,6 @@
 			#Allowed Values: toes, talons
 			"Moa Foot Type" = "toes"
 
-	[Rendering."Shader FX"]
-		#Enables a post processing effect for the Shroom Ring's adrenaline ability. Only works with Fabulous graphics, and will cause issues when underwater (even when the ability is not active)
-		"Enable Adrenaline Post Processing Effect" = false
-
 	[Rendering.GUI]
 		#Cycles between Redux's menus.
 		"Cycle Menu" = true
@@ -34,6 +30,10 @@
 	[Rendering.Particles]
 		#Improves the leaf particles for Golden Oaks, Gilded Oaks, and Crystal Trees, based on Minecraft 1.20's new cherry tree particles.
 		"Better Leaf Particles" = true
+
+	[Rendering."Shader FX"]
+		#Enables a post processing effect for the Shroom Ring's adrenaline ability. Only works with Fabulous graphics, and will cause issues when underwater (even when the ability is not active)
+		"Enable Adrenaline Post Processing Effect" = false
 
 [Fixes]
 	#Fixes a forge/neoforge bug causing biome modifiers to not be able to change grass colors, so Redux can have vanilla grass use vanilla colors in the Aether

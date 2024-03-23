@@ -1,13 +1,13 @@
-filename = 'lootr-1.20-0.7.32.79.jar'
+filename = 'lootr-1.20-0.7.32.80.jar'
 name = 'Lootr'
 side = 'both'
 
 [download]
-hash = 'fd059cc7b1cd70d404f0b9d74d0c55c0da9123a9'
+hash = 'c8371395b22bf9ee5ec846acfcc5f2cb6145f403'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5173339
+file-id = 5202050
 project-id = 361276
