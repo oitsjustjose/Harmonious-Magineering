@@ -54,11 +54,18 @@
 			hide: true
 			icon: "ae2:mysterious_cube"
 			id: "0F946D801295B7CE"
-			rewards: [{
-				id: "1F0FD1C548A42E17"
-				item: "ae2:guide"
-				type: "item"
-			}]
+			rewards: [
+				{
+					id: "1F0FD1C548A42E17"
+					item: "ae2:guide"
+					type: "item"
+				}
+				{
+					id: "5395E33D774619ED"
+					item: "create:experience_block"
+					type: "item"
+				}
+			]
 			shape: "hexagon"
 			size: 1.25d
 			subtitle: "Enter the era of digitized storage!"
@@ -114,6 +121,11 @@
 			hide: true
 			icon: "ae2:inscriber"
 			id: "68AD3ED744DA8C1E"
+			rewards: [{
+				id: "5104CBB009CD6C7D"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "Reactive Certus \\& Processor Crafting"
 			tasks: [
 				{
@@ -151,6 +163,11 @@
 				}
 			}
 			id: "12B1112119E5DE47"
+			rewards: [{
+				id: "4ACBFCF66D78D2C5"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "This quest definitely wasn't adhoc... ;)"
 			tasks: [
 				{
@@ -179,6 +196,11 @@
 			]
 			hide: true
 			id: "40886E5EE684C540"
+			rewards: [{
+				id: "4E3B5630BABDF5A2"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "More channels, but no HBO or Showtime!"
 			tasks: [{
 				id: "6ABD5BDBA611DA16"
@@ -198,6 +220,11 @@
 			]
 			icon: "mekanism:crafting_formula"
 			id: "672F5115D6C826B3"
+			rewards: [{
+				id: "72A82076BB7DFE87"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "Completely Hands-free!"
 			tasks: [
 				{
@@ -227,6 +254,11 @@
 			]
 			hide: true
 			id: "72B9CEC17208ED15"
+			rewards: [{
+				id: "4F7423335ABAAFD0"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "A window into the digital universe"
 			tasks: [{
 				id: "5FB51288132DCB1E"
@@ -249,6 +281,11 @@
 			hide: true
 			icon: "ae2:storage_bus"
 			id: "232BC0729B673EFB"
+			rewards: [{
+				id: "73087161BB0F3B05"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "Don't forget your ticket!"
 			tasks: [
 				{
@@ -282,6 +319,11 @@
 			]
 			icon: "specialised_cells:enchanted_book_cell_housing"
 			id: "5EC862E9A28F5DC3"
+			rewards: [{
+				id: "5FCA8C1005D41BE6"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "Bigger on the inside"
 			tasks: [
 				{
@@ -320,6 +362,11 @@
 			hide: true
 			hide_dependency_lines: true
 			id: "2241F99D3A2C7451"
+			rewards: [{
+				id: "038FFB2AF08B7901"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			shape: "octagon"
 			size: 1.5d
 			subtitle: "Like LinkedIn, but good"
@@ -342,6 +389,11 @@
 			hide: true
 			hide_dependency_lines: true
 			id: "3A4A56DAC8965864"
+			rewards: [{
+				id: "145574F9F674170A"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "Networked Block Placement"
 			tasks: [{
 				id: "107747AAB84501BF"
@@ -364,6 +416,11 @@
 			hide: true
 			hide_dependency_lines: true
 			id: "12946C53B27E3B2D"
+			rewards: [{
+				id: "2D4894A85CF0802D"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "Certus Farm Time!"
 			tasks: [{
 				id: "62321DF7BD4E48F7"
@@ -391,6 +448,11 @@
 				}
 			}
 			id: "2F916B2818C478DA"
+			rewards: [{
+				id: "03B535668CEDD705"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "10/10 network aesthetics"
 			tasks: [
 				{
@@ -425,6 +487,11 @@
 			hide: true
 			hide_dependency_lines: true
 			id: "6DEB69D45BE5CA24"
+			rewards: [{
+				id: "1973845A17D5C163"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "It's basically tick acceleration..."
 			tasks: [{
 				id: "454E0DDA6CB84EA1"
@@ -450,6 +517,11 @@
 			hide_dependency_lines: true
 			icon: "ae2:quantum_entangled_singularity"
 			id: "36D352E8C1C17225"
+			rewards: [{
+				id: "53A5BB94D12741F7"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			size: 1.0d
 			subtitle: "Working from home, anywhere!"
 			tasks: [
@@ -489,6 +561,11 @@
 			hide_dependency_lines: true
 			icon: "ae2:wireless_terminal"
 			id: "4D8B1492A43DE545"
+			rewards: [{
+				id: "790E9C9CC9A79158"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "WiFi 6 Ready!"
 			tasks: [
 				{
@@ -508,9 +585,19 @@
 		}
 		{
 			dependencies: ["4D8B1492A43DE545"]
+			description: [
+				"Annoyed by the base limitations of the standard Wireless Booster, you've started researching how &9Singularities&r can inter-react when forced in close proximity. It seems as though two singularities, since they haven't been Quantum Entangled yet, have a polarization effect that greatly boosts incoming signals. "
+				""
+				"This can be harnessed to create an <rainb>Infinite Booster</rainb> capable of reaching anywhere in the same dimension as the &6Wireless Transmitter&r it's installed in, but it's only capable of working in that single dimension.."
+			]
 			hide: true
 			hide_dependency_lines: true
 			id: "033286BD187094D6"
+			rewards: [{
+				id: "3B4251040923E600"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "Limited but convenient"
 			tasks: [{
 				id: "6B1FCB205D403AF3"
@@ -523,9 +610,19 @@
 		}
 		{
 			dependencies: ["033286BD187094D6"]
+			description: [
+				"Ah, interesting - having 9 unentangled &9Singularities&r seems to be capable of spanning &oacross dimensions&r - looks like you can finally reach your network wirelessly across <wave>all dimensions</wave> since these poor singularities are just bouncing off of each other aimlessly."
+				""
+				"That's fine though, the reward and satisfaction are totally worth it.."
+			]
 			hide: true
 			hide_dependency_lines: true
 			id: "228A7B57A43956CC"
+			rewards: [{
+				id: "4419EB226F7B0175"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			subtitle: "The greatest booster that ever lived!"
 			tasks: [{
 				id: "368BDDBF77E1D54E"
@@ -538,25 +635,26 @@
 		}
 		{
 			dependencies: ["40886E5EE684C540"]
+			description: [
+				"As you continue to flip through the guide pages and learn more and more about the capabilities of your controller, you come across something &oparticularly&r interesting: the ability to store &oblocks in the world&r!"
+				""
+				"By laying out &dSpatial Pylons&r along the 3 Axes of any construct you build, you can begin to encapsulate said construct by inserting your &5Spatial Cell&r into the &6Spatial IO Port&r. Once you apply a &cRedstone Signal&r to the &6Spatial IO Port&r, your construct will disappear and will be populated within the cell!"
+				""
+				"You can then re-place the construct in the world by placing the now-populated &5Cell&r into back into the Spatial IO Port and applying another &cRedstone Signal&r to the &6IO Port&r."
+			]
 			hide: true
 			hide_dependency_lines: true
 			icon: "ae2:spatial_pylon"
 			id: "2FB0B1C028C526DC"
+			rewards: [{
+				id: "4D688E3A053A2C45"
+				item: "create:experience_block"
+				type: "item"
+			}]
 			shape: "octagon"
 			size: 1.5d
 			subtitle: "Storing the world in digital space"
 			tasks: [
-				{
-					id: "7B7FBD576956A988"
-					item: "ae2:spatial_storage_cell_2"
-					title: "TODO: Advancement this"
-					type: "item"
-				}
-				{
-					id: "234DF71AF299BEFF"
-					item: "ae2:spatial_anchor"
-					type: "item"
-				}
 				{
 					id: "02CA3788A8656939"
 					item: "ae2:spatial_io_port"
@@ -566,6 +664,13 @@
 					id: "6715B4A8EAA9CA71"
 					item: "ae2:spatial_pylon"
 					type: "item"
+				}
+				{
+					advancement: "custom:quests/spatial_storage"
+					criterion: ""
+					id: "462E5F27D039D119"
+					title: "Any Spatial Storage Cell"
+					type: "advancement"
 				}
 			]
 			title: "Spatial Storage"

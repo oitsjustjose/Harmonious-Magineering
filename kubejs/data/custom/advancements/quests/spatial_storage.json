@@ -1,0 +1,20 @@
+{
+  "parent": "custom:root",
+  "display": {
+    "icon": {
+      "item": "ae2:spatial_storage_cell_128"
+    },
+    "title": "Create any size Spatial Storage Cell",
+    "description": "",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [["impossible"]]
+}

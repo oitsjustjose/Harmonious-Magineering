@@ -66,4 +66,9 @@ advancement grant @a[advancements={custom:quests/me_storage_cells=false}, nbt={I
 advancement grant @a[advancements={custom:quests/me_storage_cells=false}, nbt={Inventory:[{id:"ae2:item_storage_cell_64k"}]}] only custom:quests/me_storage_cells
 advancement grant @a[advancements={custom:quests/me_storage_cells=false}, nbt={Inventory:[{id:"ae2:item_storage_cell_256k"}]}] only custom:quests/me_storage_cells
 
+# ME Spatial Storage Cells
+advancement grant @a[advancements={custom:quests/spatial_storage=false}, nbt={Inventory:[{id:"ae2:spatial_storage_cell_2"}]}] only custom:quests/spatial_storage
+advancement grant @a[advancements={custom:quests/spatial_storage=false}, nbt={Inventory:[{id:"ae2:spatial_storage_cell_16"}]}] only custom:quests/spatial_storage
+advancement grant @a[advancements={custom:quests/spatial_storage=false}, nbt={Inventory:[{id:"ae2:spatial_storage_cell_128"}]}] only custom:quests/spatial_storage
+
 schedule function custom:clocks/quests 20t replace
