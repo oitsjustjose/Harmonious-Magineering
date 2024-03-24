@@ -1,13 +1,13 @@
-filename = 'everycomp-1.20-2.6.37.jar'
+filename = 'everycomp-1.20-2.6.38.jar'
 name = 'Every Compat'
 side = 'both'
 
 [download]
-hash = '5ded75681413c2cef57c1182f5b463a5c533273b'
+hash = '3c77127beff2c34d0bd490025492a81950b65035'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5194237
+file-id = 5207191
 project-id = 628539

@@ -31,10 +31,6 @@
 		#Improves the leaf particles for Golden Oaks, Gilded Oaks, and Crystal Trees, based on Minecraft 1.20's new cherry tree particles.
 		"Better Leaf Particles" = true
 
-	[Rendering."Shader FX"]
-		#Enables a post processing effect for the Shroom Ring's adrenaline ability. Only works with Fabulous graphics, and will cause issues when underwater (even when the ability is not active)
-		"Enable Adrenaline Post Processing Effect" = false
-
 [Fixes]
 	#Fixes a forge/neoforge bug causing biome modifiers to not be able to change grass colors, so Redux can have vanilla grass use vanilla colors in the Aether
 	"Fix Biome Modifier Grass Bug" = true
@@ -47,7 +43,7 @@
 
 [Internal]
 	#Value used to track the version of the Aether: Redux most recently used.
-	"Version ID" = "2.0.7c"
+	"Version ID" = "2.0.7d"
 	#Internal value to do menu changes. Set this to false in modpacks if you want to use your own menu.
 	"First Startup - Menu Setup" = false
 	#Internal value to change an Aether config, giving a nicer lightmap in the dimension.
