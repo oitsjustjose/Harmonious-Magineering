@@ -6,7 +6,7 @@ delay = 10
 cost = 20
 #Cooldown for this prayer spell
 #Range: > 21000
-cooldown = 0
+cooldown = 21000
 #Base reputation gained from this prayer spell
 #Range: > 0
 base_rep = 10
