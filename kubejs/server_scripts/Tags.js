@@ -764,6 +764,8 @@ ServerEvents.tags('item', event => {
   event.removeAllTagsFrom('farmersdelight:fried_egg');
   /* Create dough */
   event.removeAllTagsFrom('create:dough');
+  /* IE Circuit Backplanes */
+  event.add('immersiveengineering:circuits/pcb', 'pneumaticcraft:unassembled_pcb');
 
   /* Clean up Quark's messy tags -_- */
   [
