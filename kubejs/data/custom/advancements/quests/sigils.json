@@ -1,0 +1,24 @@
+{
+  "parent": "custom:root",
+  "display": {
+    "icon": {
+      "item": "bloodmagic:sigilofsuppression"
+    },
+    "title": "Create any (Non-divination) Sigil",
+    "description": "",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "requirements": [
+    [
+      "impossible"
+    ]
+  ]
+}
