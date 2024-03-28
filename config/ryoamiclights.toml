@@ -52,6 +52,7 @@
 				spider = true
 				creeper = true
 				enderman = true
+				llama_spit = true
 
 			[light_sources.settings.entities.outer_end]
 				stalker = true
@@ -70,6 +71,7 @@
 				slimy_slug = true
 				raven = true
 				necromancer = true
+				necromancer_spell = true
 
 			[light_sources.settings.entities.embers]
 				ancient_golem = true
