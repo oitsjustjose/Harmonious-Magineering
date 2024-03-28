@@ -13,11 +13,11 @@
 
 	[general.tooltips]
 		#Enabled tooltips showing which mod an EC item is from
-		mod_origin_enabled = true
+		mod_origin_enabled = false
 		#Only show on advanced settings
 		show_on_advanced_tooltips = false
 		#Enabled tooltips showing which block type an EC item is made from
-		block_type_enabled = true
+		block_type_enabled = false
 
 	#Disables certain types
 	[general.types]
@@ -96,7 +96,7 @@
 				twisted = true
 
 			[general.types.leaves_type.quark]
-				ancient = true
+				ancient = false
 				blue_blossom = true
 				lavender_blossom = true
 				orange_blossom = true
@@ -167,9 +167,9 @@
 				twisted = true
 
 			[general.types.wood_type.quark]
-				azalea = true
-				ancient = true
-				blossom = true
+				azalea = false
+				ancient = false
+				blossom = false
 
 			[general.types.wood_type.outer_end]
 				azure = true
