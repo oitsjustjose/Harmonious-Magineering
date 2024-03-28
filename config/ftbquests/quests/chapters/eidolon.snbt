@@ -697,6 +697,31 @@
 			x: 1.0d
 			y: 15.5d
 		}
+		{
+			dependencies: ["259253F0B5E9952E"]
+			description: [
+				"As you study the nearby Ravens (perhaps a bit too invasively if you have any of their feathers...), you realize that you can replicate their lofty nature using their feathers, a &6Gravity Belt&r and some &9Wicked Weave&r."
+				""
+				"You're left with something very similar to &7Elytra&r, but just like a Raven, you're able to propel yourself quite a bit using the &7[Space]&r key."
+			]
+			hide: true
+			id: "42B0912CB9F47DBB"
+			optional: true
+			rewards: [{
+				count: 6
+				id: "0BD8869C0747B9D4"
+				item: "supplementaries:candy"
+				random_bonus: 6
+				type: "item"
+			}]
+			tasks: [{
+				id: "63540072994375EE"
+				item: "eidolon:raven_cloak"
+				type: "item"
+			}]
+			x: 0.0d
+			y: 17.0d
+		}
 	]
 	subtitle: ["&dEidolon&r"]
 	title: "&5Deity or Demon?&r"
