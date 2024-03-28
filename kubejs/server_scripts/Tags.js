@@ -14,70 +14,6 @@ const ores = [
   'mekanism:lead_ore',
 ];
 
-const buildVanillaLumberSet = () => {
-  const ret = [];
-  const allLumber = Ingredient.of([
-    '#ecologics:azalea_logs',
-    '#ecologics:coconut_logs',
-    '#ecologics:flowering_azalea_logs',
-    '#ecologics:walnut_logs',
-    '#eidolon:illwood_logs',
-    '#minecraft:acacia_logs',
-    '#minecraft:birch_logs',
-    '#minecraft:cherry_logs',
-    '#minecraft:dark_oak_logs',
-    '#minecraft:jungle_logs',
-    '#minecraft:mangrove_logs',
-    '#minecraft:oak_logs',
-    '#minecraft:spruce_logs',
-    '#regions_unexplored:baobab_logs',
-    '#regions_unexplored:blackwood_logs',
-    '#regions_unexplored:cypress_logs',
-    '#regions_unexplored:eucalyptus_logs',
-    '#regions_unexplored:joshua_logs',
-    '#regions_unexplored:kapok_logs',
-    '#regions_unexplored:larch_logs',
-    '#regions_unexplored:magnolia_logs',
-    '#regions_unexplored:maple_logs',
-    '#regions_unexplored:mauve_logs',
-    '#regions_unexplored:palm_logs',
-    '#regions_unexplored:pine_logs',
-    '#regions_unexplored:redwood_logs',
-    '#regions_unexplored:socotra_logs',
-    '#regions_unexplored:willow_logs',
-    '#spawn:rotten_logs',
-  ]);
-
-  allLumber.getStacks().forEach(stack => {
-    if (!stack.getId().includes('stripped')) {
-      ret.push(stack.getId());
-    }
-  });
-
-  return ret;
-};
-
-const buildAetherLumberSet = () => {
-  const ret = [];
-  const allLumber = Ingredient.of([
-    '#aether:golden_oak_logs',
-    '#aether:skyroot_logs',
-    '#deep_aether:conberry_logs',
-    '#deep_aether:cruderoot_logs',
-    '#deep_aether:roseroot_logs',
-    '#deep_aether:sunroot_logs',
-    '#deep_aether:yagroot_logs',
-  ]);
-
-  allLumber.getStacks().forEach(stack => {
-    if (!stack.getId().includes('stripped')) {
-      ret.push(stack.getId());
-    }
-  });
-
-  return ret;
-};
-
 ServerEvents.tags('block', event => {
   global.StrippedLumber.logs.forEach(log => event.add('forge:stripped_logs', log));
   global.StrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
@@ -714,10 +650,9 @@ ServerEvents.tags('item', event => {
     /* Sawdust Intercompat */
     event.removeAllTagsFrom('immersiveengineering:dust_wood');
 
-    /* Vanilla-adjacent set of logs for 16x stick crafting */
-    event.add('forge:lumber/vanilla', buildVanillaLumberSet());
-    /* Aether-adjacent set of logs for 16x skyroot stick crafting */
-    event.add('forge:lumber/aether', buildAetherLumberSet());
+    /* Everycomp beams aren't tagged as logs - let's fix that */
+    event.add('minecraft:logs', '#decorative_blocks:beams');
+    event.add('minecraft:logs_that_burn', '#decorative_blocks:beams_that_burn');
   };
 
   /* Osmium just isn't in our pack at all and should gets removed here */

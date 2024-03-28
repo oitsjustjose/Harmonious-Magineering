@@ -145,9 +145,6 @@ ServerEvents.recipes(event => {
     /* Re-do branch stick crafting */
     event.remove({output: 'minecraft:stick', input: '#regions_unexplored:branches'});
     event.shaped(Item.of('minecraft:stick', 9), ['L', 'L'], {L: '#regions_unexplored:branches'});
-
-    event.shaped(Item.of('minecraft:stick', 16), ['L', 'L'], {L: '#forge:lumber/vanilla'});
-    event.shaped(Item.of('aether:skyroot_stick', 16), ['L', 'L'], {L: '#forge:lumber/aether'});
   };
 
   const supplementaries = () => {
