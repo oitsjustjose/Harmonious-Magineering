@@ -1,8 +1,10 @@
 {
+	autofocus_id: "3BB9CF2F140C31AE"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "adventure"
 	group: "7B95A8B4604FCF48"
+	hide_quest_until_deps_visible: true
 	icon: {
 		Count: 1b
 		id: "ftbquests:custom_icon"
@@ -11,91 +13,271 @@
 		}
 	}
 	id: "0EC0BEA916B596A5"
+	images: [
+		{
+			click: ""
+			color: 11184810
+			corner: false
+			dev: false
+			height: 6.0d
+			hover: [ ]
+			image: "portfolio:textures/painting/alpha.png"
+			order: -1
+			rotation: 0.0d
+			width: 6.0d
+			x: 0.0d
+			y: 1.5d
+		}
+		{
+			click: ""
+			color: 11184810
+			corner: false
+			dependency: "2AB0349D89A4B983"
+			dev: false
+			height: 2.0d
+			hover: [ ]
+			image: "mcwpaintings:textures/painting/skyblock.png"
+			rotation: 0.0d
+			width: 6.0d
+			x: 0.0d
+			y: -2.5d
+		}
+	]
 	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["2AB0349D89A4B983"]
+			description: ["Welcome to the Bronze Dungeon - this maze-like structure is the home of the &9Slider&r. Let's just say if you haven't geared up in &5Zanite&r yet, you should get on it... and maybe enchant some."]
+			hide: false
 			id: "1A93B0BD5A5378D8"
+			optional: true
+			rewards: [{
+				id: "4345FBEC518952C0"
+				item: "waystones:waystone"
+				type: "item"
+			}]
+			shape: "square"
 			tasks: [{
+				icon: {
+					Count: 1b
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "aether:item/miscellaneous/bronze_dungeon_key"
+					}
+				}
 				id: "50D975E0F0F57D29"
 				structure: "aether:bronze_dungeon"
-				title: "Bronze Dungeon"
+				title: "Locate a Bronze Dungeon"
 				type: "structure"
 			}]
-			x: 0.5d
-			y: 0.5d
+			x: -1.5d
+			y: -2.5d
 		}
 		{
+			dependencies: ["2AB0349D89A4B983"]
+			description: [
+				"You come across a spheroid structure that seems quite regular, but what really made you notice it was the large collection of &6Golden Oak Trees&r scattered across its surface."
+				""
+				"As you peruse the exterior of this rather orb-like island, you notice a perfectly rectangular entrance carved into the side of the island. Inside is the &6Sun God&r - there is no exploration here, just hand-to-hand combat."
+				""
+				"Interacting with the &6Sun God&r, it introduces itself to you - but after enough repeat interactions, it quickly becomes impatient and warns you that you're about to engage in combat.... good thing &cFire Resistance&r potions work here!"
+			]
+			hide: false
 			id: "2DFF506FD403A39F"
+			optional: true
+			rewards: [{
+				id: "5C9B53372892DE2F"
+				item: "waystones:waystone"
+				type: "item"
+			}]
+			shape: "square"
 			tasks: [{
+				icon: "aether:gold_dungeon_key"
 				id: "45F85424DD18FC67"
 				structure: "aether:gold_dungeon"
-				type: "structure"
-			}]
-			x: 2.5d
-			y: 0.5d
-		}
-		{
-			id: "5CDAA7BE357C16FC"
-			tasks: [{
-				id: "6880F110823553CA"
-				structure: "aether:silver_dungeon"
+				title: "Locate a Gold Dungeon"
 				type: "structure"
 			}]
 			x: 1.5d
-			y: 0.5d
+			y: -2.5d
 		}
 		{
+			dependencies: ["2AB0349D89A4B983"]
+			description: [
+				"In your adventures through the heavenly &6Aether&r, you've no doubt seen these large Parthenon-like temples floating on a bed of clouds. As you enter, you're greeted to a smaller maze setup but filled with a lot of chests, and &otraps&r."
+				""
+				"These traps seem to alert the nearby Valkyrie, summoning one to your location each time you trigger a trap. While unprovoked, they seem to want no trouble, but if you throw the first punch they will show you what's what..."
+				""
+				"After dispatching enough of these Valkyrie, you've found yourself with quite a collection of &6Medallions&r.. perhaps with enough armor and medallions you can finally confront the &eValkyrie Queen&r."
+			]
+			hide: false
+			id: "5CDAA7BE357C16FC"
+			optional: true
+			rewards: [{
+				id: "2BB39A13222DADD0"
+				item: "waystones:waystone"
+				type: "item"
+			}]
+			shape: "square"
+			tasks: [{
+				icon: "aether:silver_dungeon_key"
+				id: "6880F110823553CA"
+				structure: "aether:silver_dungeon"
+				title: "Locate a Silver Dungeon"
+				type: "structure"
+			}]
+			x: 0.0d
+			y: -2.5d
+		}
+		{
+			description: [
+				"All throughout this world, you'll find different Taverns all set up. These delightful (though occasionaly dangerous) little abodes have several rooms you can stay in, as well as a great spot to grab breakfast, lunch, or dinner!"
+				""
+				"Don't forget to check the attic, sometimes you'll find maps to some other really neat structures!"
+				"{@pagebreak}"
+				"As you further investigate this &5Waystone&r, you place it down and name it to mark this tavern (or heck, anything, I don't care). You go to use it to hop a few blocks, heck even a thousand or two, away -- but wait, the cost has gone up the closer you get?"
+				""
+				"What you're seeing here is correct - the cost of &5Waystone&r travel seems to be significantly higher as two &5Waystones&r grow closer together... perhaps you should invest in a quality Horse or some Minecart Tracks!"
+			]
+			icon: "handcrafted:terracotta_cup"
 			id: "3BB9CF2F140C31AE"
+			rewards: [{
+				id: "66DF117B31897FAC"
+				item: "waystones:waystone"
+				type: "item"
+			}]
+			shape: "hexagon"
 			tasks: [{
 				advancement: "nova_structures:adventure/find_tavern"
 				criterion: ""
+				icon: "handcrafted:terracotta_cup"
 				id: "7E2A25402AC104FE"
+				title: "Discover a Tavern"
 				type: "advancement"
 			}]
 			title: "Discover a Tavern"
-			x: 0.5d
-			y: 2.0d
+			x: 0.0d
+			y: 0.0d
 		}
 		{
+			dependencies: ["1E00538EB87E83E6"]
+			description: ["Ah, it seems you're finally on the hunt for a &5Witch&r to show you the dark ways. Perhaps you've come here to see if there's any guidance on finding them -- there isn't really, but if you explore snowy peaks, you'll sometimes find rather primitive looking towers with &bStray Archers&r atop its roof. Once you dispatch these archers, you may notice an odd (and particularly unhelpful) &lFletching Table&r..."]
+			hide: true
 			id: "6556753EFF8AC3AF"
+			rewards: [{
+				id: "5C5FAF63B565C816"
+				item: "waystones:waystone"
+				type: "item"
+			}]
+			shape: "hexagon"
 			tasks: [{
+				icon: {
+					Count: 1b
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "moonlight:textures/map_marker/generic_structure.png"
+					}
+				}
 				id: "43137F9ECC9B6451"
 				structure: "eidolon:stray_tower"
+				title: "Locate a Stray Tower"
 				type: "structure"
 			}]
-			x: 1.5d
-			y: 2.0d
+			x: -1.5d
+			y: 1.0d
 		}
 		{
+			description: [
+				"Now that you've slain the &5Ender Dragon&r, you've found gateways to the distant End Islands. As you run about, bridging from one floating island to the next, you've found this odd structure.."
+				""
+				"It seems to have a floating airship as well - from your memory, there should be an &nItem Frame&r inside with an &6Elytra&r, but instead you've found a per-player chest in its place to more fairly distribute the supply of &6Elytra&r to other players."
+				""
+				"While you're here, you may want to take advantage of the storage capabilities that the &dShulkers&r contain.."
+			]
+			icon: {
+				Count: 1b
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "supplementaries:textures/map_marker/end_city.png"
+				}
+			}
 			id: "09A0F4BA66E913E3"
+			rewards: [{
+				id: "3861BC40F413573B"
+				item: "waystones:waystone"
+				type: "item"
+			}]
+			shape: "hexagon"
 			tasks: [{
+				icon: {
+					Count: 1b
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "supplementaries:textures/map_marker/end_city.png"
+					}
+				}
 				id: "61EC5661B98E879B"
 				structure: "#minecraft:end_city"
+				title: "Locate an End City"
 				type: "structure"
 			}]
-			x: 2.5d
-			y: 2.0d
-		}
-		{
-			id: "6D04F71E2F284DF0"
-			tasks: [{
-				id: "4BEC82E0365B19E9"
-				structure: "#betteroceanmonuments:better_ocean_monuments"
-				type: "structure"
-			}]
-			x: 0.5d
+			x: 1.0d
 			y: 3.0d
 		}
 		{
-			id: "336FC4B49C2ED86B"
+			description: [
+				"As you go sailing through the open waters, you see a dome peaking out of the surface of the ocean - &owhat is that&o?"
+				""
+				"As you near, you discover that this &3Ocean Monument&r, and you recall reading that these have been designed to house a &6Trident&r within some of them (assuming it hasn't been &otoo&r ruined)..."
+			]
+			id: "6D04F71E2F284DF0"
+			rewards: [{
+				id: "320DC3AD3E0B17D8"
+				item: "waystones:waystone"
+				type: "item"
+			}]
+			shape: "hexagon"
 			tasks: [{
+				icon: {
+					Count: 1b
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "supplementaries:textures/map_marker/ocean_ruin.png"
+					}
+				}
+				id: "4BEC82E0365B19E9"
+				structure: "#betteroceanmonuments:better_ocean_monuments"
+				title: "Locate an Ocean Monument"
+				type: "structure"
+			}]
+			x: -1.0d
+			y: 3.0d
+		}
+		{
+			description: ["As you trudge through the leafy underlayer of the &2Jungle&r, you've found some incredibly large structure that pre-dates you and most of the trees that surround it. Perhaps there's something valuable inside, and let's just say there are more than 2 dispenser traps ;)"]
+			id: "336FC4B49C2ED86B"
+			rewards: [{
+				id: "597930AB3D5E4312"
+				item: "waystones:waystone"
+				type: "item"
+			}]
+			shape: "hexagon"
+			tasks: [{
+				icon: {
+					Count: 1b
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "supplementaries:textures/map_marker/jungle_temple.png"
+					}
+				}
 				id: "1AEF878595E6D073"
 				structure: "#betterjungletemples:better_jungle_temples"
+				title: "Locate a Jungle Temple"
 				type: "structure"
 			}]
 			x: 1.5d
-			y: 3.0d
+			y: 1.0d
 		}
 	]
 	title: "Adventure!"
