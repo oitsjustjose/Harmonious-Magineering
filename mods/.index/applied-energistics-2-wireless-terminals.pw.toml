@@ -1,13 +1,13 @@
-filename = 'ae2wtlib-15.2.2-forge.jar'
+filename = 'ae2wtlib-15.2.3-forge.jar'
 name = 'AE2WTLib'
 side = 'both'
 
 [download]
-hash = '13ec42170a85bdccae3a22bc4ea3fcc9ac53eea0'
+hash = '9a35bc25ba2daade63db76ff4012eb68b0392b08'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5162352
+file-id = 5217955
 project-id = 459929
