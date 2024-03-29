@@ -541,6 +541,122 @@
 			x: -3.5d
 			y: 8.5d
 		}
+		{
+			dependencies: ["5A91CD7F879FA970"]
+			description: [
+				"By Hammering an Andesite Alloy, you're able to form it into an extensible platform for augmenting pipes. This Blank Pipe Module unlocks &oseveral&r item transportation capabilities that are much easier to route and use, unlike Belts (though those have their place!)."
+				""
+				"Taking a look at the various uses of the Blank Module, you find dozens of different variations. They mostly work in a way that directly correlates to their name, but be sure to read up on the fundamentals of Pipes!"
+				"{@pagebreak}"
+				"Alongside the pipe itself, there are a few Module mechanics to be aware of:"
+				""
+				"• A pipe will only accept modules when connected to a container. When the container is broken, the modules will fall out."
+				""
+				"• A pipe can &lonly&r accept, at most, 3 modules. Some modules, such as the &6Mod Filter Modifier&r, is a modifier for a &6Filter Module&r, thus both must be present within the pipe."
+				""
+				"• When a pipe is connected to multiple containers at a single point, most modules will offer a choice as to which side (North, South, East, West, Up \\& Down) it applies to."
+			]
+			hide: true
+			id: "56ADEE18A12BC916"
+			optional: true
+			rewards: [{
+				count: 4
+				id: "08A503315207BCA4"
+				item: "prettypipes:blank_module"
+				random_bonus: 4
+				type: "item"
+			}]
+			subtitle: "Making those pipes useful!"
+			tasks: [{
+				id: "1313A2EF8635B257"
+				item: "prettypipes:blank_module"
+				type: "item"
+			}]
+			title: "Pipe Modules"
+			x: 2.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["5A91CD7F879FA970"]
+			description: [
+				"&6Pipes&r are basic channels by which items can be transported - they can be compared to a Graph with Nodes and Edges where a \"Node\" is a Pipe that connects to a [source or target] container, and an \"Edge\" is any pipe that is between two nodes. They have several fundamental rules that are helpful to keep in mind:"
+				""
+				"• A pipe cannot both insert and extract - if an extraction module is added to the pipe, you cannot insert / retrieve into it."
+				""
+				"• Pipes can be <rainb>covered</rainb> with almost any block by holding said block in your off-hand and using a &cPipe Wrench&r against the pipe."
+			]
+			hide: true
+			id: "2320832C28990773"
+			optional: true
+			rewards: [{
+				id: "1DBF83391FB35173"
+				item: "prettypipes:wrench"
+				type: "item"
+			}]
+			subtitle: "Ellpeck please don't hate this quest"
+			tasks: [{
+				id: "648331CA31FF7BC1"
+				item: "prettypipes:pipe"
+				type: "item"
+			}]
+			title: "<rainb>Pretty</rainb> &m<rainb>Patties</rainb>&r <rainb>Pipes</rainb>"
+			x: -2.0d
+			y: 4.5d
+		}
+		{
+			dependencies: ["4E6A8BEC77CEF212"]
+			description: [
+				"As you may recall while reading the Loading quest in the introduction of this pack, the standard &5Chunk Loader&r (which, FYI, you can upgrade with your current set of tech!) isn't capable of loading &6Create Contraptions&r. This &oAndesite Chunk Loader&r, however, is! Too bad it requires some sort of mysterious conversion... "
+				""
+				"(hint on next page)"
+				"{@pagebreak}"
+				"The empty andesitic cube of a \"chunk loader\" hungers for a &7Ghast&r"
+			]
+			hide: true
+			id: "4C925917423AA512"
+			optional: true
+			rewards: [{
+				count: 24
+				id: "3AFE959F6628E5BB"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			subtitle: "Haven't exploited enough creatures?"
+			tasks: [{
+				id: "29AC47ED21E1238E"
+				item: "create_power_loader:andesite_chunk_loader"
+				type: "item"
+			}]
+			title: "Contraption Chunk Loading"
+			x: 5.5d
+			y: 8.5d
+		}
+		{
+			dependencies: ["6A9782D0B5B5BEC0"]
+			description: [
+				"As you continue to study the various ways by which fluids can be moved and manipulated, you realize that surely there's some way to apply a sealant to your other pipes to introduce the functionality of Pretty Pipes, but to fluids. "
+				""
+				"You find that the wax in a &6Block of Honeycomb&r is capable of sealing a pipe (the Honeycomb is not consumed in the process). Unfortunately, your existing Extraction, Retrieval and Filter modules will not work since you're in the realm of &9Fluids&r now. This means you'll need to create new ones, but they'll be much more suited for the world of fluids."
+			]
+			hide: true
+			id: "1EFB3D211AE9D0EA"
+			optional: true
+			rewards: [{
+				count: 16
+				id: "3884A7AFF60FE4B9"
+				item: "ppfluids:fluid_pipe"
+				type: "item"
+			}]
+			subtitle: "Pretty Pipes: Fluid Edition"
+			tasks: [{
+				id: "52A52165621FB38D"
+				item: "ppfluids:fluid_pipe"
+				type: "item"
+			}]
+			title: "Sealed Pipes"
+			x: -5.5d
+			y: 8.5d
+		}
 	]
 	subtitle: ["&bCreate&r"]
 	title: "&6No Voltage, No Problem!&r"

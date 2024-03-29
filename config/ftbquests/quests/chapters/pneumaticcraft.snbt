@@ -678,6 +678,58 @@
 			x: 1.5d
 			y: 12.0d
 		}
+		{
+			dependencies: ["0CAC10FB609F4FFD"]
+			description: [
+				"Both Plastic and Compressed Iron Blocks make a for a decent machine casing - Plastic is a fundamental material for making most enclosures, but Compressed Iron has its heat absorption and dissipation properties, allowing for some pretty crazy applications!"
+				""
+				"The Modular Router is one such application, using Ender Pearls to \"Wirelessly\" interact with players, blocks, items, fluids and more!"
+			]
+			hide: true
+			id: "6FC4FC38C18D4383"
+			optional: true
+			rewards: [{
+				id: "15C5D93C75BB0722"
+				item: {
+					Count: 1b
+					id: "patchouli:guide_book"
+					tag: {
+						"patchouli:book": "modularrouters:book"
+					}
+				}
+				type: "item"
+			}]
+			tasks: [{
+				id: "3BAB4C32F144A5DB"
+				item: "modularrouters:modular_router"
+				type: "item"
+			}]
+			x: -2.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["5F2BF948E7B0C618"]
+			description: [
+				"Now that you have a full Pneumatic armorset, you're probably realizing how tiresome getting it re-charged is going to get. As you continue to learn more about the properties of Tubes and Nether Stars, you're starting to realize you might be able to make a new device capable of tracking you and keeping you topped up on pressure, items, energy and more: the &6Aerial Interface&r."
+				""
+				"The &6Aerial Interface&r requires pressure itself, but can accept items that go into the player's inventory (or their &5Ender Chest&r inventory, which can be used to make a quick transportation system between two distant points). If you wish to charge yourself with Pressure, you'll need a Charging Module. If you wish to keep yourself topped up on Energy (once you get to that point), it can be hooked up to any tier wire!"
+			]
+			hide: true
+			id: "5A3D2C165F831548"
+			optional: true
+			rewards: [{
+				id: "574162A2AD25060A"
+				item: "pneumaticcraft:charging_module"
+				type: "item"
+			}]
+			tasks: [{
+				id: "40E310C500D3AD66"
+				item: "pneumaticcraft:aerial_interface"
+				type: "item"
+			}]
+			x: 4.0d
+			y: 10.5d
+		}
 	]
 	subtitle: ["&aPneumaticcraft&r"]
 	title: "&2Get Pressurized!&r"

@@ -18,6 +18,7 @@
 		{
 			dependencies: ["656EACDA88A244CF"]
 			description: ["Of course like most Modpacks you'll find that there's too much to carry with you as you explore, loot and more! It seems wise to make a backpack as soon as possible to make it easier to bring more around with you. You can have multiple backpacks, and while they start out small, they can be upgraded all the way to 5-rows and 4 upgrade slots!"]
+			hide: true
 			id: "767ED700EB86700A"
 			rewards: [{
 				count: 6
@@ -46,6 +47,7 @@
 				""
 				"You can add new books to the Tome by combining the book and Tome in a &6Crafting Grid&r. You can right-click the tome to select the book you want, then left-click in the air with the selected book to de-select the book. It seems you can remove a book from the Tome by selecting it, Crouching, and throwing the book using the &lToss Item&r keybind."
 			]
+			hide: true
 			id: "656EACDA88A244CF"
 			rewards: [{
 				count: 8
@@ -74,6 +76,7 @@
 		{
 			dependencies: ["3025147B8EB09C0C"]
 			description: ["As you delve deeper underground, you've noticed that these &8Deepslate Ore Variants&r are yielding more Raw Ore than the Stone Variants! While the creatures this deep in the ground are significantly tougher to stave off, it seems worth it for the improved Raw Ore yields at the very least.."]
+			hide: true
 			icon: "minecraft:deepslate_iron_ore"
 			id: "56D9CB36C6FE6B1A"
 			rewards: [{
@@ -101,6 +104,7 @@
 		{
 			dependencies: ["3025147B8EB09C0C"]
 			description: ["As you explore the deepest depths of the world, you'll start to find these creatures are better and better prepared for combat - what the heck?!? Well, it'd probably be best to gear up and be ready!"]
+			hide: true
 			icon: "minecraft:zombie_head"
 			id: "509A87C70B07370E"
 			rewards: [{
@@ -141,6 +145,7 @@
 				""
 				"Perhaps someday Ore Processing can be optimized for improved output and processing speed!"
 			]
+			hide: true
 			icon: "minecraft:blast_furnace"
 			id: "460CB64A1D17F1E0"
 			rewards: [{
@@ -168,6 +173,7 @@
 				"{@pagebreak}"
 				"To sort out your Latitude and Longitude (X \\& Z axes for more seasoned players), you can purchase a &3Globe&r from a Wandering Trader. Once placed, you can right-click it to determine exactly where you are in the world! In most cases, you should find that the embedded map (&cXaero's&r) should work fine, but this is another way to get more detailed info!"
 			]
+			hide: true
 			icon: "supplementaries:altimeter"
 			id: "67F64F723F89BF0F"
 			rewards: [{
@@ -197,6 +203,7 @@
 		{
 			dependencies: ["509A87C70B07370E"]
 			description: ["You may find in your exploration these odd little pylon-looking structures called \"&5Waystones&r\". They seem to remember where they've been activated and allow you to quickly travel between them, but it comes at a cost of &aExperience&r. The further two Waystones are, the &ocheaper&r the cost will be - perhaps instead of using Waystones you should explore other options like Rails, Trains, Teleposers or other modes of transportation!"]
+			hide: true
 			icon: "waystones:waystone"
 			id: "576FF66D4CC88795"
 			rewards: [{
@@ -224,6 +231,7 @@
 				""
 				"Additionally, nearly anything can be repaired in this Anvil using the predominant material (i.e. &7Shears&r require &7Iron&r, a &6Bow&r requires &7String&r, &bPewter Tools&r require &bPewter Ingots&r, etc.)"
 			]
+			hide: true
 			id: "4CB200B926639C59"
 			rewards: [{
 				count: 6
@@ -250,6 +258,7 @@
 				""
 				"{image:kubejs:textures/quest_images/smithing_upgrading.png width:527 height:249 align:1 fit:true}"
 			]
+			hide: true
 			id: "0633F2071EF79273"
 			rewards: [{
 				count: 6
@@ -271,6 +280,7 @@
 		{
 			dependencies: ["767ED700EB86700A"]
 			description: ["Another issue you'll likely run into is having a small amount of many items - this happens to everyone! Not a problem - Minecraft's Bundles are enabled in this pack, and can be crafted with some Rabbit Hide and String. You can also put these in backpacks!! &4&oDon't try putting bundles in bundles though, things can break that way...&r&r"]
+			hide: true
 			id: "2A76157BAB25E4B7"
 			rewards: [{
 				count: 6
@@ -291,6 +301,7 @@
 		{
 			dependencies: ["656EACDA88A244CF"]
 			description: ["This pack is oriented around a &olot&r of exploration and discovery in the world - as such, you'll likely find it &overy&r annoying having to wait out the night every night. Fortunately for you, &1Sleeping Bags&r exist and can be used to pass the night without resetting your spawn point! Make yourself one of these for the peak exploration and discovery experience :)"]
+			hide: true
 			id: "2CBEE3863FAE834A"
 			rewards: [{
 				id: "781313F4EDC88222"
@@ -311,6 +322,7 @@
 		{
 			dependencies: ["509A87C70B07370E"]
 			description: ["It seems that as long as the moon is &orelatively&r full, there aren't any monsters coming out at night on the surface!"]
+			hide: true
 			icon: {
 				Count: 1b
 				id: "ftbquests:custom_icon"
@@ -341,7 +353,7 @@
 				"{@pagebreak}"
 				"Anyways, enjoy your progression through Magiks, Technology, and a mix in-between!"
 				""
-				"&o- oitsjustjose&r"
+				"&o- <rainb>oitsjustjose&r"
 			]
 			icon: "bloodmagic:hellforgedparts"
 			id: "3025147B8EB09C0C"
@@ -351,7 +363,7 @@
 				type: "item"
 			}]
 			shape: "octagon"
-			subtitle: "Welcome to Harmonious Magineering!"
+			subtitle: "Yes, this pack's name is lame. Not sorry."
 			tasks: [{
 				id: "3DD6B824CBE0D9F4"
 				title: "Click Me :)"
@@ -360,6 +372,36 @@
 			title: "Getting Started"
 			x: -1.0d
 			y: 0.0d
+		}
+		{
+			dependencies: ["3025147B8EB09C0C"]
+			description: [
+				"As you progress through this pack, no doubt you'll have a desire for some things to stay loaded (&oespecially&r on a Multiplayer Server where the world is loaded most of the time) whenever you're not around. This could be a farm, barn, &4infinite blood sacrifice chamber.....&r you get it."
+				" "
+				"To keep an area loaded, you can create a basic Chunk Loader like this one. This chunk loader, once placed, can be activated to display the region around you. Clicking on each of the chunks will allow you to select whether they're loaded or not. "
+				""
+				"In general, it's preferred by server hosts and world owners alike to keep as few chunks loaded as possible, so maybe use this sparingly?"
+				""
+				"Also, these don't work on &6Create&r contraptions at all, so don't get any ideas.... but also, there's a different type of loader for that ;)"
+			]
+			hide: true
+			id: "09C2979957B3C6FC"
+			rewards: [{
+				count: 4
+				id: "2D0DA7E819E6F194"
+				item: "chunkloaders:single_chunk_loader"
+				type: "item"
+			}]
+			shape: "diamond"
+			subtitle: "Please Wait.... or don't."
+			tasks: [{
+				id: "0B94CE6567C0BC2A"
+				item: "chunkloaders:basic_chunk_loader"
+				type: "item"
+			}]
+			title: "<wave>Loading...</wave>"
+			x: -1.0d
+			y: -2.0d
 		}
 	]
 	subtitle: ["&fGetting Started in Harmonious Magineering&r"]

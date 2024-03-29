@@ -246,14 +246,41 @@
 			hide: true
 			id: "69C3BFD20183FBB6"
 			optional: true
-			subtitle: "A durable alloy!"
+			subtitle: "&oDawn Stone?&r It contains neither Dawn nor Stone..."
 			tasks: [{
 				id: "476B381A345E4570"
 				item: "embers:dawnstone_ingot"
 				type: "item"
 			}]
+			title: "A durable alloy!"
 			x: 0.0d
 			y: 9.0d
+		}
+		{
+			dependencies: ["69C3BFD20183FBB6"]
+			description: [
+				"Breaking the fourth wall a bit, normally players are, at this point, eager to get into Create and stop doing magic things. I'll also add that I, as a game-design oriented player, find the remainder of Embers to be quite frustrating."
+				""
+				"A few measures have been taken to help ease that frustration. For one, all of the Alchemy recipes have been replaced with Brazier Rituals from Eidolon."
+				""
+				"The remaining bits and pieces are mostly gear, which I find to be very underwhelming and rather visually cumbersome, so they aren't required."
+				""
+				"As insisted at the introduction of this pack, if you want to do more, do more! Use JEI and the Ancient Codex, and do as much in &6Embers&r as much as you want!"
+			]
+			hide: true
+			icon: "eidolon:research_notes"
+			id: "3A06250332EB7B73"
+			optional: true
+			shape: "hexagon"
+			subtitle: "A slightly Meta Quest. Oh wait..."
+			tasks: [{
+				id: "099107DDC3A65715"
+				title: "Further Reading"
+				type: "checkmark"
+			}]
+			title: "Further Reading"
+			x: 0.0d
+			y: 11.0d
 		}
 	]
 	subtitle: ["&eEmbers&r"]
