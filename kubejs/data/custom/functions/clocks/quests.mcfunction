@@ -72,17 +72,24 @@ advancement grant @a[advancements={custom:quests/spatial_storage=false}, nbt={In
 advancement grant @a[advancements={custom:quests/spatial_storage=false}, nbt={Inventory:[{id:"ae2:spatial_storage_cell_128"}]}] only custom:quests/spatial_storage
 
 # Sigils
-advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id: "bloodmagic:airsigil"}]}] only custom:quests/sigils
-advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id: "bloodmagic:bloodlightsigil"}]}] only custom:quests/sigils
-advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id: "bloodmagic:growthsigil"}]}] only custom:quests/sigils
-advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id: "bloodmagic:icesigil"}]}] only custom:quests/sigils
-advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id: "bloodmagic:lavasigil"}]}] only custom:quests/sigils
-advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id: "bloodmagic:miningsigil"}]}] only custom:quests/sigils
-advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id: "bloodmagic:seersigil"}]}] only custom:quests/sigils
-advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id: "bloodmagic:sigilofmagnetism"}]}] only custom:quests/sigils
-advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id: "bloodmagic:sigilofsuppression"}]}] only custom:quests/sigils
-advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id: "bloodmagic:telepositionsigil"}]}] only custom:quests/sigils
-advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id: "bloodmagic:voidsigil"}]}] only custom:quests/sigils
-advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id: "bloodmagic:watersigil"}]}] only custom:quests/sigils
+advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id:"bloodmagic:airsigil"}]}] only custom:quests/sigils
+advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id:"bloodmagic:bloodlightsigil"}]}] only custom:quests/sigils
+advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id:"bloodmagic:growthsigil"}]}] only custom:quests/sigils
+advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id:"bloodmagic:icesigil"}]}] only custom:quests/sigils
+advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id:"bloodmagic:lavasigil"}]}] only custom:quests/sigils
+advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id:"bloodmagic:miningsigil"}]}] only custom:quests/sigils
+advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id:"bloodmagic:seersigil"}]}] only custom:quests/sigils
+advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id:"bloodmagic:sigilofmagnetism"}]}] only custom:quests/sigils
+advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id:"bloodmagic:sigilofsuppression"}]}] only custom:quests/sigils
+advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id:"bloodmagic:telepositionsigil"}]}] only custom:quests/sigils
+advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id:"bloodmagic:voidsigil"}]}] only custom:quests/sigils
+advancement grant @a[advancements={custom:quests/sigils=false}, nbt={Inventory:[{id:"bloodmagic:watersigil"}]}] only custom:quests/sigils
+
+# Building Gadgets
+advancement grant @a[advancements={custom:quests/gadgets=false}, nbt={Inventory:[{id:"buildinggadgets2:gadget_destruction"}]}] only custom:quests/gadgets
+advancement grant @a[advancements={custom:quests/gadgets=false}, nbt={Inventory:[{id:"buildinggadgets2:gadget_cut_paste"}]}] only custom:quests/gadgets
+advancement grant @a[advancements={custom:quests/gadgets=false}, nbt={Inventory:[{id:"buildinggadgets2:gadget_exchanging"}]}] only custom:quests/gadgets
+advancement grant @a[advancements={custom:quests/gadgets=false}, nbt={Inventory:[{id:"buildinggadgets2:gadget_copy_paste"}]}] only custom:quests/gadgets
+advancement grant @a[advancements={custom:quests/gadgets=false}, nbt={Inventory:[{id:"buildinggadgets2:gadget_building"}]}] only custom:quests/gadgets
 
 schedule function custom:clocks/quests 20t replace
