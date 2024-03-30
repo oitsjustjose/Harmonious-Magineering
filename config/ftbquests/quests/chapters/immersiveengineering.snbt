@@ -381,6 +381,8 @@
 				""
 				"<rainb>Pro Tip:</rainb> Thermoelectric Generators will gladly share these &cheat&r/&bcold&r sources!"
 			]
+			hide: true
+			hide_dependency_lines: true
 			id: "5B8C0CA01FF3D521"
 			optional: true
 			rewards: [{
@@ -388,6 +390,7 @@
 				item: "create:experience_block"
 				type: "item"
 			}]
+			shape: "hexagon"
 			subtitle: "Harnessing Temperature Differentials"
 			tasks: [{
 				id: "34EB752BF08D1351"
@@ -395,8 +398,8 @@
 				type: "item"
 			}]
 			title: "Improved Energy Production"
-			x: 3.0d
-			y: 3.5d
+			x: 1.0d
+			y: 5.0d
 		}
 		{
 			dependencies: [
@@ -432,7 +435,7 @@
 			}]
 			title: "Diesel Power!"
 			x: 0.0d
-			y: 11.25d
+			y: 11.875d
 		}
 		{
 			dependencies: ["6C74ABE8E49CEF5D"]
@@ -499,7 +502,7 @@
 			}]
 			title: "Moldable Pressing"
 			x: 1.875d
-			y: 5.625d
+			y: 6.25d
 		}
 		{
 			dependencies: ["2B75A71C63C2DB97"]
@@ -535,7 +538,7 @@
 			}]
 			title: "Mega-Crushing"
 			x: 1.875d
-			y: 8.125d
+			y: 8.75d
 		}
 		{
 			dependencies: ["2B75A71C63C2DB97"]
@@ -563,7 +566,7 @@
 			}]
 			title: "The Big Squish"
 			x: -1.875d
-			y: 5.625d
+			y: 6.25d
 		}
 		{
 			dependencies: ["6B3893E1251475E1"]
@@ -596,7 +599,7 @@
 			}]
 			title: "The best alloyer"
 			x: -1.875d
-			y: 8.125d
+			y: 8.75d
 		}
 		{
 			dependencies: ["2B75A71C63C2DB97"]
@@ -624,7 +627,7 @@
 			}]
 			title: "Advanced Lumbering"
 			x: 0.0d
-			y: 6.25d
+			y: 6.875d
 		}
 		{
 			dependencies: ["2B75A71C63C2DB97"]
@@ -660,7 +663,40 @@
 			}]
 			title: "Minerals in Bulk"
 			x: 0.0d
-			y: 8.75d
+			y: 9.375d
+		}
+		{
+			dependencies: ["2B75A71C63C2DB97"]
+			description: [
+				"You might be building larger and larger structures to enclose your machinery and keep it safe from the elements. If so, I can almost guarantee you'll enjoy these gadgets!"
+				""
+				"There are a few different Building Gadget varieties, but the most convenient one for building in positive space is the standard &6Building Gadget&r. These run off of RF, so you'll need to charge them using a &6Charging Station&r for RF."
+			]
+			hide: true
+			hide_dependency_lines: true
+			id: "7DE249E6F6A56575"
+			optional: true
+			rewards: [{
+				id: "408932CAA54EBC1D"
+				item: {
+					Count: 1b
+					id: "patchouli:guide_book"
+					tag: {
+						"patchouli:book": "buildinggadgets2:buildinggadgets2book"
+					}
+				}
+				type: "item"
+			}]
+			shape: "hexagon"
+			tasks: [{
+				advancement: "custom:quests/gadgets"
+				criterion: ""
+				id: "0364990E3D2123D0"
+				title: "Create Any Building Gadget"
+				type: "advancement"
+			}]
+			x: -1.0d
+			y: 5.0d
 		}
 	]
 	subtitle: ["&6Immersive Engineering&r"]
