@@ -120,7 +120,7 @@
 		silkMultiplier = 12
 		#Maximum radius in blocks that the Digital Miner can reach. (Increasing this may have negative effects on stability and/or performance. We strongly recommend you leave it at the default value).
 		#Range: > 1
-		maxRadius = 192
+		maxRadius = 512
 		#Number of ticks required to mine a single block with a Digital Miner (without any upgrades).
 		#Range: > 1
 		ticksPerMine = 80

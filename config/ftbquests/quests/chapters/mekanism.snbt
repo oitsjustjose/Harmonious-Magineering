@@ -391,6 +391,10 @@
 				"As you've discovered the &aRobit&r, a fascinating robot companion capable of doing much of your bidding for you, you've started to ponder the capability of such a powerful logic processor when applied to the realm of &6Mining&r. "
 				""
 				"You continue to tinker throughout the days and nights until it dawns on you that &aLogistical Sorters&r and &5Teleportation Cores&r a would be more than enough to augment the &aRobit&r to be able to go and mine a configurable set of blocks in a &olarge&r area for you -- this can easily be configured to mine only certain (or all) ores, only stone, or practically anything!"
+				"{@pagebreak}"
+				""
+				"The Dimensional Chest you get here allows you to easily transfer items from point to point without needing pipes, belts or Logistical Transporters. You can read more about how the Channel ID system works "
+				"{ \"color\": \"blue\", \"text\": \"here.\", \"underlined\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"69D41F2A696A24E8\" } }"
 			]
 			hide: true
 			hide_dependency_lines: true
@@ -632,6 +636,58 @@
 			title: "Ethylene Energy"
 			x: -3.0d
 			y: 9.0d
+		}
+		{
+			dependencies: ["43C0EDF2ADEF9211"]
+			description: [
+				"Using &bElite Control Circuits&r, you're able to upgrade an existing tank into a &6Dimensional Tank&r. Once placed, you can configure this tank to be Public (accessible by anyone if on a server/LAN world) or Private (accessible to only you), as well as set a &lNumeric&r &6Channel ID&r. "
+				""
+				"This Channel ID how two or more tanks know to sync up with each other, so be sure to use a unique Channel ID for each type of fluid you wish to transport! Perhaps a Clipboard will be helpful for tracking whow your channels are being utilized."
+			]
+			hide: true
+			hide_dependency_lines: true
+			id: "69D41F2A696A24E8"
+			optional: true
+			rewards: [{
+				id: "5FDEAC6A0C6C8ACE"
+				item: "dimstorage:dimensional_tank"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "Pipeless &oand&r Fast Fluid Transfer"
+			tasks: [{
+				id: "4F7F4759AAABC996"
+				item: "dimstorage:dimensional_tank"
+				type: "item"
+			}]
+			title: "Dimensional Fluid Storage"
+			x: -2.0d
+			y: 10.0d
+		}
+		{
+			dependencies: ["43C0EDF2ADEF9211"]
+			description: ["If you need to be able to remotely deposit items into an existing Dimensional Chest, you can create a &bDimensional Tablet&r! By using the tablet on an existing Dimensional Chest &nwhile sneaking&r, you can configure what channel to deposit items into."]
+			hide: true
+			hide_dependency_lines: true
+			id: "480D167F28B421F2"
+			optional: true
+			rewards: [{
+				count: 10
+				id: "642638BC30E95B02"
+				item: "create:experience_nugget"
+				random_bonus: 10
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "No games on this tablet"
+			tasks: [{
+				id: "1F288426117B7FA0"
+				item: "dimstorage:dimensional_tablet"
+				type: "item"
+			}]
+			title: "Remote Dim Storage Access"
+			x: 2.0d
+			y: 10.0d
 		}
 	]
 	subtitle: ["&1Mekanism&r"]

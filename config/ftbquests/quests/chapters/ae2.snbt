@@ -505,7 +505,10 @@
 		{
 			dependencies: ["40886E5EE684C540"]
 			description: [
-				"Perhaps you've stumbled to the point where you need &omore&r than access to your Items/Fluids via a terminal - perhaps you wish to set up automation somewhere else in the world, or even in an entirely different dimension. In such a case, binding your network using a Quantum Ring and a pair of Entangled Singularities would be the best means by which to do so."
+				"Before you go this far, if you're just looking to wire up your ME Network a few &ohundred&r blocks away rather than thousands or across-dimensions, I'd suggest you take a look at &5ME Cable Coils&r. "
+				"{image:more_immersive_wires:item/ae_coil width:16 height:16 align:0}"
+				""
+				"But hey, perhaps you've stumbled to the point where you need &omore&r than access to your Items/Fluids via a terminal - perhaps you wish to set up automation somewhere else in the world, or even in an entirely different dimension. In such a case, binding your network using a Quantum Ring and a pair of Entangled Singularities would be the best means by which to do so."
 				""
 				"Crafting the Entangled Singularity will take some additional research, but it's not the most complex to create!"
 				"{@pagebreak}"
@@ -676,6 +679,36 @@
 			title: "Spatial Storage"
 			x: -6.5d
 			y: 2.5d
+		}
+		{
+			dependencies: ["2767E69141612E01"]
+			description: [
+				"Ever find yourself trying to configure a machine or automation setup with a limited amount of space, and wishing there was some way to access some side of a given block even though another block is in the way?"
+				""
+				"The <rainb>Entangled Block</rainb> solves this problem &operfectly&r, allowing you to use the &6Entangled Binder&r to select which block it binds to. You can place the Entangled Block anywhere within 16 blocks of the original block you're trying to bind to, and once bound you can treat the sides of the Entangled Blocks the same as the sides of the original block itself!"
+			]
+			hide: true
+			id: "4BD7B33603CAAA92"
+			optional: true
+			rewards: [{
+				id: "564458674A4DF8D4"
+				item: "entangled:item"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "When more than 6 sides are needed"
+			tasks: [{
+				id: "4F60A9876BDA3FCF"
+				item: {
+					Count: 1b
+					id: "entangled:block"
+					tag: { }
+				}
+				type: "item"
+			}]
+			title: "Entangling Blocks"
+			x: 0.0d
+			y: 8.0d
 		}
 	]
 	subtitle: ["<rainb>Applied Energistics</rainb>"]
