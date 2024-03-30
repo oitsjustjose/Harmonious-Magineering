@@ -1,5 +1,64 @@
 # Harmonious Magineering Changelog
 
+## v1.0.0-BETA12
+
+### Added:
+
+- [Mod] Create Picky Wheels
+- [Quests] Questline for AE2 is now fully written & finished!
+- [Quests] Questline for Adventuring is now fully finished!
+    - Includes documentation about the change in mechanics to Waystones
+- [Quests] A handful of smaller QOL mods that are gated by other technology have been noted in quests
+
+### Updated:
+
+- Aether Redux
+- Amendments
+- Dungeons & Taverns
+- Eidolon
+- EveryCompat
+- Lootr
+- Model Stitch Fix
+- ModernFix
+- Quark
+- Snow! Real Magic!
+
+### Removed:
+
+- CuriousElytra (Players seemed to want to choose to keep their backpacks on their back, which is a reasonable choice)
+- DrawersTooltip (Doesn't seem to be working at all??? I've never gotten it to work on 1.20...)
+- Formations (Unused library mod)
+- Recipe for 16x sticks from logs due to the variety of different log tags
+    - Stripped logs can't be used because that same recipe using _stripped_ logs crafts Beams
+    - Aether logs can' tbe used because they should be used for Skyroot Sticks
+
+### Changed:
+
+- **Now using Forge 47.2 since it's 1:1 compatible with NeoForge**
+    - You can stick with Neo if you want, I'm moving to Forge so CurseForge will freaking accept my files once we're out of beta 🙄
+    - NeoForge clients can still connect to the server if it's on Forge, and vice-versa. They truly are 100% intercompatible in 1.20.1
+- Eidolon's Crucible is now turn-based (courtesy of yours truly)
+    - Once you complete an **entire step**, you can take a break and refer to the recipe, grab items you forget, etc.. 
+    - If you leave a step uncomplete, it will still expire (i.e. fizzle out & evaporate) in the same window of time.
+- General Mekanism playability changes (since Mekanism is intended to be the end-game goal of the pack):
+    - Digital Miner filters can now be dragged from JEI
+    - Digital Miner now has a max range of 192 (32 was the default)
+    - Radiation is entirely disabled
+    - Reactors will no longer melt down
+
+### Fixed:
+
+- Firework Rockets **for Flight** sometimes crafting rockets with no duration
+    - How the f**k does this even happen? Apparently this is because of **Vanilla**, which relies on load order to ensure the flight duration recipe gets loaded after the no-flight-duration one.
+    - I was able to repro this with just Forge, so something in Forge likely optimizes the load order of all recipes because Modded can have _so many recipes_
+    - Fixed by removing aesthetic Rocket & Charge recipes - no more creeper rockets for you. These were also used by basically no one?? (Sorry Ellpeck, I'm sure AA had the Firework Box for _some_ reason...)
+- Tooltip script throwing errors on world load sometimes
+- Inventory Profiles will no longer try to sort Backpacks that don't have a stack upgrade in them
+    - Those with stack upgrades in them were already being skipped
+- Unassembled PCBs from PnC can now be used as a "Backplane" in the IE Circuit Table - the tooltip for the Backplane slot has been adjusted accordingly.
+- JEI buttons looking a bit off
+- Dense & Normal ME **Wire Coils** not matching the general theme
+
 ## v1.0.0-BETA11
 
 ### ⚠️IMPORTANT⚠️
