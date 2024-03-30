@@ -89,6 +89,15 @@
 				zombie_horse = true
 				zombie_villager = true
 				zombified_piglin = true
+				player = true
+				item = true
+				item_frame = true
+				armor_stand = true
+				experience_orb = true
+				arrow = true
+				painting = true
+				glow_item_frame = true
+				lightning_bolt = true
 
 			[light_sources.settings.entities.ae2]
 				tiny_tnt_primed = true
@@ -463,3 +472,4 @@
 				diamond_chest_minecart = true
 				obsidian_chest_minecart = true
 				netherite_chest_minecart = true
+
