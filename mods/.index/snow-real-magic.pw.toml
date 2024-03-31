@@ -1,13 +1,13 @@
-filename = 'SnowRealMagic-1.20.1-forge-10.4.1.jar'
+filename = 'SnowRealMagic-1.20.1-forge-10.4.2.jar'
 name = 'Snow! Real Magic!'
 side = 'both'
 
 [download]
-hash = 'c2eeae3502d87ac3d803c1f28ccce3afec56731a'
+hash = '79aa1f935946d13ed4e73236b7efaef4b87905d3'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5204225
+file-id = 5223194
 project-id = 308663
