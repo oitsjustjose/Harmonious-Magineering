@@ -1,5 +1,21 @@
 # Harmonious Magineering Changelog
 
+## v1.0.0-BETA13
+
+### Added:
+
+- [Mod] Better Compatibility Checker
+
+### Updated:
+
+- Immersive Engineering
+- Snow! Real Magic!
+- Supplementaries
+
+### Downgraded:
+
+- Lootr (to fix mimic chests having broken textures)
+
 ## v1.0.0-BETA12
 
 ### Added:
