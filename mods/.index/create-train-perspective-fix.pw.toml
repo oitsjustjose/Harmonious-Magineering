@@ -1,0 +1,13 @@
+filename = 'trainperspectivefix-1.0.0-universal.jar'
+name = 'Create: Train Perspective Fix'
+side = 'both'
+
+[download]
+hash = 'ee75c6551a3fef1a26fa7c404d61b062f7e9338f'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5187339
+project-id = 988047
