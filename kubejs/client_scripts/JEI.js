@@ -618,6 +618,7 @@ JEIEvents.hideCustom(event => {
 
   // Unfortunately, we can't hide *quickly* using 'modid:value' -- we have to find them
   // Go through every slurry in the ingredient list -- if it's in our remove list, remove it
+  const slurriesToRemove = ['mekanism:dirty_osmium', 'mekanism:clean_osmium'];
   const Slurries = event.get(SLURRY);
   Slurries.allIngredients.forEach(x => {
     slurriesToRemove.forEach(toRm => {
