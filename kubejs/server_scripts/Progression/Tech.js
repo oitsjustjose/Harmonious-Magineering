@@ -176,6 +176,16 @@ ServerEvents.recipes(event => {
       },
       result: {item: 'ae2:printed_engineering_processor'},
     });
+
+    // Flawless Budding Quartz recipe
+    event.custom({
+      type: 'mekanism:reaction',
+      duration: 100,
+      fluidInput: {amount: 150, tag: 'forge:redstone_acid'},
+      gasInput: {amount: 1000, gas: 'mekanism:water_vapor'},
+      itemInput: {amount: 4, ingredient: {item: 'ae2:flawed_budding_quartz'}},
+      itemOutput: {item: 'ae2:flawless_budding_quartz'},
+    });
   };
 
   const buildingGadgets = () => {
