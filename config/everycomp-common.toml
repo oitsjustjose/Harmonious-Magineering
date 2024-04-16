@@ -274,3 +274,6 @@
 				bookshelf = true
 				stripped_post = true
 
+			[general.entries.wood_type.regions_unexplored]
+				branch = true
+

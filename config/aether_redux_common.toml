@@ -101,6 +101,8 @@
 		"Enable Skyroot Shrublands" = true
 		#Uses Enchanted Aether Grass for the ground in the Gilded Groves. May require a Minecraft restart.
 		"Enchanted Gilded Grass" = true
+		#Changes the Aether's sky color to one slightly more consistent with the overworld, making the fog lighter than the rest of the sky
+		"Alternate Sky Color" = false
 
 [Internal]
 	#Internal value, used to decide if the Aeroblender configs should be changed
