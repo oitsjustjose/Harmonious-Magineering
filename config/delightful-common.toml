@@ -56,7 +56,6 @@
 	soul_steel_knife = false
 	steel_knife = true
 	steeleaf_knife = false
-	stellium_knife = false
 	stratus_knife = true
 	terra_knife = false
 	thyrium_knife = false
@@ -138,7 +137,7 @@
 	sinigang = true
 	smore = true
 	venison_chops = true
-	wild_salmonberries = true
+	wild_salmonberries = false
 	#Allow cooking milk from nuts
 	nut_milk = true
 	#Allow cooking honey from honey and clovers
@@ -153,4 +152,10 @@
 	stuffed_cantaloupe = true
 	stuffed_cantaloupe_block = true
 	wrapped_cantaloupe = true
+	bastion_fruit_crate = true
+	bombegranate_crate = true
+	frostaya_crate = true
+	matcha_milkshake = true
+	mendosteen_crate = true
+	salmonberry_milkshake = true
 
