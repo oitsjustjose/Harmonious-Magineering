@@ -1,13 +1,13 @@
-filename = 'RyoamicLights-forge-0.2.1+mc1.20.1.jar'
+filename = 'RyoamicLights-forge-0.2.3+mc1.20.1.jar'
 name = 'RyoamicLights'
 side = 'both'
 
 [download]
-hash = '5321bd5bffe2ec714170bb3ef2ca859998859e62'
+hash = '1850d6b47b39ed439c8e9f85caf6cbe88df817c3'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5168814
+file-id = 5353333
 project-id = 913587
