@@ -1,4 +1,5 @@
 {
+	autofocus_id: "74F9F6DD7BF6A951"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "nuclear_science"
@@ -7,25 +8,450 @@
 	id: "71B469BB148A69FE"
 	order_index: 5
 	quest_links: [ ]
-	quests: [{
-		dependencies: ["38657673289A3650"]
-		description: [
-			"Yeah I've never wanted to make a nuclear reactor myself, so I've decided to motivate players with a handy guide"
-			""
-			"One that I haven't written yet."
-			""
-			"Sorry not sorry."
-		]
-		hide: true
-		id: "4DA2445C079F458F"
-		tasks: [{
-			id: "6B3E8E670B80D6A3"
-			title: "Eyo, this chapter is INCOMPLETE"
-			type: "checkmark"
-		}]
-		x: 0.0d
-		y: 0.0d
-	}]
+	quests: [
+		{
+			dependencies: ["259DB4D0792AF7F8"]
+			description: [
+				"By Enriching the stockpile of &2Uranium Ingots&r you've &ohopefully&r been keeping (if not, time to break out that Digital Miner!), you can create &eYellow Cake Uranium&r. "
+				""
+				"When oxidized in the Chemical Oxidizer, this &eYellow Cake Uranium&r becomes &2Uranium Oxide&r which can be moved using &6Tubes&r or auto-output into the destination machine you'll need in a few steps if they're adjacent to each other."
+			]
+			hide: true
+			icon: "mekanism:yellow_cake_uranium"
+			id: "22C55DA11FEFF1EF"
+			optional: true
+			rewards: [{
+				count: 12
+				id: "1CB4BA6437FFE775"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			shape: "circle"
+			subtitle: "You'll need that Uranium too..."
+			tasks: [
+				{
+					id: "15BC00B9ED6DF412"
+					item: "mekanism:chemical_oxidizer"
+					type: "item"
+				}
+				{
+					id: "6C53F5B2B1526328"
+					item: "mekanism:yellow_cake_uranium"
+					type: "item"
+				}
+			]
+			title: "Uranium Oxide"
+			x: 0.75d
+			y: 1.5d
+		}
+		{
+			dependencies: ["74F9F6DD7BF6A951"]
+			description: [
+				"Stepping onto the long path to create and run a &aFission Reactor&r, you'll need Uranium Hexafluoride. "
+				""
+				"Starting down that process, you'll need Hydrofluoride which can be created in the Chemical Dissolution Chamber using Sulfur and Fluoride. Sulfur can be inserted into the lower-left slot with the Minus sign (and a &6Yellow Border&r for those able to see within that spectrum)."
+				""
+				"The resulting gas can be moved using &6Tubes&r or auto-output into the destination machine you'll need in a few steps if they're adjacent to each other."
+			]
+			hide: true
+			icon: "mekanism:fluorite_gem"
+			id: "259DB4D0792AF7F8"
+			optional: true
+			rewards: [
+				{
+					count: 64
+					id: "5598B4320C076781"
+					item: "mekanism:fluorite_gem"
+					type: "item"
+				}
+				{
+					count: 12
+					id: "25AB6E08B0C5A32C"
+					item: "create:experience_nugget"
+					type: "item"
+				}
+			]
+			shape: "circle"
+			subtitle: "I hope you've been saving your Fluorite!"
+			tasks: [
+				{
+					id: "3CFC526B47BA194B"
+					item: "mekanism:chemical_dissolution_chamber"
+					type: "item"
+				}
+				{
+					id: "22D0326883FFE0F3"
+					item: "eidolon:sulfur"
+					type: "item"
+				}
+				{
+					id: "50E61E0061611CA2"
+					item: "mekanism:fluorite_gem"
+					type: "item"
+				}
+			]
+			title: "Hydrofluoric Acid"
+			x: -0.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["22C55DA11FEFF1EF"]
+			description: [
+				"Through combining your &2Uranium Oxide&r with your &6Hydrofluoric Acid&r in the Chemical Infuser, you'll form Uranium Hexafluoride."
+				""
+				"This is &onearly&r the last thing you'll need to fuel a reactor, but you've got one more step in the processing chain to go!"
+				""
+				"Once again, this gas can be moved using &6Tubes&r or auto-output into the destination machine you'll need in a few steps if they're adjacent to each other."
+			]
+			hide: true
+			icon: "mekanism:uranium_hexafluoride_bucket"
+			id: "3BC24191FBC09FE9"
+			optional: true
+			rewards: [{
+				count: 18
+				id: "713D049461CD6698"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			shape: "hexagon"
+			subtitle: "Like a cursed PB\\&J"
+			tasks: [{
+				id: "09DFE2EE21D7FB4C"
+				item: "mekanism:chemical_infuser"
+				type: "item"
+			}]
+			title: "Uranium Hexafluoride"
+			x: 2.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["3BC24191FBC09FE9"]
+			description: [
+				"Using the Isotopic Centrifuge, you can produce Fissile Fuel from your &2Uranium Hexafluoride&r. "
+				""
+				"And you guessed it... this gas can be moved using &6Tubes&r to get to the Fission Reactor you'll (probably?) build shortly."
+			]
+			hide: true
+			icon: "mekanism:reprocessed_fissile_fragment"
+			id: "54BECB7FFFD4FB21"
+			optional: true
+			rewards: [{
+				count: 24
+				id: "0E483AF5FD460226"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
+			subtitle: "Food for your Reactor"
+			tasks: [{
+				id: "1D7E51B4CDBA0932"
+				item: "mekanism:isotopic_centrifuge"
+				type: "item"
+			}]
+			title: "Fissile Fuel"
+			x: 2.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["54BECB7FFFD4FB21"]
+			description: [
+				"A &aFission Reactor&r is a multiblock that can be as small as 3x4x3 and as large as 18x18x18. Each reactor requires:"
+				""
+				"  • One Coolant Input"
+				"  • One Coolant Output"
+				"  • One Fissile Fuel Input"
+				"  • One Waste Output"
+				""
+				"&aFission reactors&r require a &llot&r of coolant (either &7Sodium&r or &9Water&r) and can require a lot of care and attention to guarantee a care-free experience for the long-run. These reactors also produce a significant amount of &8Nuclear Waste&r, so be ready to handle that before you start your reactor for a long run."
+				""
+				"You can use JEI to configure what size Fission Reactor you wish to build based on your required output, or vice versa if you're tight on materials."
+			]
+			hide: true
+			id: "4C5720A58CB0D11D"
+			optional: true
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [
+				{
+					count: 24L
+					id: "48A6816065C6C201"
+					item: "mekanismgenerators:fission_reactor_casing"
+					type: "item"
+				}
+				{
+					id: "22172AFF773FEF37"
+					item: "mekanismgenerators:fission_fuel_assembly"
+					type: "item"
+				}
+				{
+					id: "4EC68B03A322AEE4"
+					item: "mekanismgenerators:control_rod_assembly"
+					type: "item"
+				}
+				{
+					id: "5D5F95C2A7D3D5C3"
+					item: "mekanismgenerators:fission_reactor_logic_adapter"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "2AAA61337C4969CF"
+					item: "mekanismgenerators:fission_reactor_port"
+					type: "item"
+				}
+				{
+					id: "182FF753BC5D7432"
+					item: "mekanismgenerators:reactor_glass"
+					type: "item"
+				}
+			]
+			title: "Fission Reaction"
+			x: 0.75d
+			y: 3.0d
+		}
+		{
+			dependencies: ["4C5720A58CB0D11D"]
+			description: ["This device will convert your Nuclear Waste output into Polonium which is the core of the Antimatter you so desire."]
+			hide: true
+			icon: "mekanism:pellet_polonium"
+			id: "2E49A23E06D1505D"
+			optional: true
+			tasks: [{
+				id: "44D9D75DAB464EDC"
+				item: "mekanism:solar_neutron_activator"
+				type: "item"
+			}]
+			title: "Polonium"
+			x: 0.75d
+			y: 4.5d
+		}
+		{
+			dependencies: ["4C5720A58CB0D11D"]
+			description: ["You'll only need 1 Plutonium Pellet to continue in this quest line, but to make it you'll need another Isotopic Centrifuge."]
+			hide: true
+			icon: "mekanism:pellet_plutonium"
+			id: "2437A899DE646229"
+			optional: true
+			tasks: [{
+				id: "41E0023C957691D7"
+				item: "mekanism:isotopic_centrifuge"
+				type: "item"
+			}]
+			title: "Plutonium"
+			x: -0.5d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"2437A899DE646229"
+				"2E49A23E06D1505D"
+			]
+			description: [
+				"The Supercritical Phase Shifter (SPS) is how you'll convert your Polonium into Antimatter. Each casing requires 50K Nuclear Waste to be processed, you might want to get started. From the Wiki:"
+				""
+				"\"The frame of the Supercritical Phase Shifter must consist of SPS Casings. The sides, bottom and top can consist of either SPS Casings, Reactor Glass or SPS Ports. In order to insert energy through a port a Supercharged Coil has to be attached to the SPS Port on the inside of the construct. Each side, the bottom and the top will look like:\""
+				""
+				"        o o o "
+				"      o x x x o"
+				"    o x x x x x o"
+				"    o x x x x x o"
+				"    o x x x x x o"
+				"      o x x x o"
+				"        o o o "
+				""
+				"Where O is a frame, and X is a side (with Glass or a Port)"
+			]
+			hide: true
+			id: "5DD10F6124B9B58A"
+			optional: true
+			shape: "hexagon"
+			tasks: [
+				{
+					count: 60L
+					id: "2C5D5093816F0DB1"
+					item: "mekanism:sps_casing"
+					type: "item"
+				}
+				{
+					count: 3L
+					id: "4087B9262618B462"
+					item: "mekanism:sps_port"
+					type: "item"
+				}
+				{
+					count: 123L
+					id: "7CBAFB496412FA84"
+					item: "mekanismgenerators:reactor_glass"
+					type: "item"
+				}
+				{
+					id: "43EAEBFD88919B51"
+					item: "mekanism:supercharged_coil"
+					type: "item"
+				}
+			]
+			title: "Supercritical Phase Shifter"
+			x: -0.5d
+			y: 4.5d
+		}
+		{
+			dependencies: ["5DD10F6124B9B58A"]
+			description: ["Congratulations, you've made it. These babies are pretty useful for most of the end-game Mekanism that you can possibly envision, but what you *really* want to save up on is the Fluid version of this."]
+			hide: true
+			id: "74E40BBF58EA712D"
+			optional: true
+			shape: "hexagon"
+			tasks: [{
+				id: "701A9080B60B6667"
+				item: "mekanism:pellet_antimatter"
+				type: "item"
+			}]
+			x: -0.5d
+			y: 6.0d
+		}
+		{
+			dependencies: ["74E40BBF58EA712D"]
+			description: [
+				"The Antiprotonic Synthesizer will allow you to convert many resource types into better versions (like Coal to Diamonds) by use of Antimatter."
+				""
+				"You'll need this to progress into Draconic Evolution.."
+			]
+			hide: true
+			id: "1CB98DB1EF80834D"
+			optional: true
+			shape: "octagon"
+			size: 1.5d
+			tasks: [{
+				id: "60E96B37BC2CFA75"
+				item: "mekanism:antiprotonic_nucleosynthesizer"
+				type: "item"
+			}]
+			x: 0.75d
+			y: 6.0d
+		}
+		{
+			dependencies: ["2E49A23E06D1505D"]
+			description: [
+				"Mekasuit armor has been much easier to make, because honestly there aren't many other good electrical armor sets out there in the modding scene. As such, they're still meant to be a bit of a grind, but I hope that you enjoy having access to them sooner than later!"
+				""
+				"To manage Modules for this set, you'll need a Modification Table"
+			]
+			hide: true
+			hide_dependency_lines: false
+			id: "2F7F0D0DB3F4FDD2"
+			optional: true
+			shape: "octagon"
+			size: 1.5d
+			tasks: [
+				{
+					id: "498083347940AEBF"
+					item: {
+						Count: 1b
+						id: "mekanism:mekasuit_helmet"
+						tag: {
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "0165157E1F10EC2B"
+					item: {
+						Count: 1b
+						id: "mekanism:mekasuit_bodyarmor"
+						tag: {
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "5D15803FC7F963B5"
+					item: {
+						Count: 1b
+						id: "mekanism:mekasuit_pants"
+						tag: {
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "48F328F3879DEAC5"
+					item: {
+						Count: 1b
+						id: "mekanism:mekasuit_boots"
+						tag: {
+							HideFlags: 2
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "Mekasuit Armor"
+			x: 2.0d
+			y: 5.0d
+		}
+		{
+			dependencies: ["4C5720A58CB0D11D"]
+			description: [
+				"As one might expect, there is a decent likelihood that baby's first reactor (fusion and/or fission) may have a total meltdown and cause complete irradiation of the entire area around you (not to mention the danger to yourself from the exposure). "
+				""
+				"To prevent making this chapter any harder (and as a result of a nasty interaction with tick-accelerated naps), radiation and meltdowns have &oboth&r been disabled."
+			]
+			hide: true
+			hide_dependency_lines: true
+			id: "31398C49E0945148"
+			optional: true
+			shape: "rsquare"
+			size: 1.15d
+			subtitle: "A little less to worry about"
+			tasks: [{
+				icon: {
+					Count: 1b
+					id: "mekanism:hazmat_mask"
+					tag: {
+						HideFlags: 2
+					}
+				}
+				id: "79139F1D160EDDCD"
+				title: "Hazmat Cleanup"
+				type: "checkmark"
+			}]
+			x: 1.5d
+			y: 0.0d
+		}
+		{
+			dependencies: ["12F006D9AE949371"]
+			description: [
+				"As you may have guessed, Nuclear Science is &onot&r easy to wrap your head around. As the pack developer, I always hate making these chapters because I have absolutely &ono&r idea what's going on here since I have absolutely no Physics or Chemistry experience or understanding whatsoever."
+				""
+				"That said, just know this entire chapter is considered &noptional&r, but the amount of energy you'll generate will solve all of your Flux needs, and you'll unlock the ability to make some of the coolest armor this modpack has for you to obtain."
+				""
+				"Just remember this modpack was made to be enjoyed and there aren't any bragging rights here!"
+			]
+			hide: true
+			icon: {
+				Count: 1b
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "minecraft:block/fire_0"
+				}
+			}
+			icon_scale: 1.3d
+			id: "74F9F6DD7BF6A951"
+			optional: true
+			shape: "rsquare"
+			size: 1.15d
+			subtitle: "This is a rough chapter!"
+			tasks: [{
+				id: "32D218A02E0BCA90"
+				title: "Head's Up"
+				type: "checkmark"
+			}]
+			x: 0.0d
+			y: 0.0d
+		}
+	]
 	subtitle: ["&1Even More Mekanism&r"]
 	title: "&aNuclear Science&r"
 }

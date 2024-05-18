@@ -7,11 +7,7 @@
 	icon: "create:large_cogwheel"
 	id: "03799584BC804083"
 	images: [{
-		click: ""
-		corner: false
-		dev: false
 		height: 2.0d
-		hover: [ ]
 		image: "kubejs:textures/quest_images/chapter/create.png"
 		rotation: 0.0d
 		width: 2.0d

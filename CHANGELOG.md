@@ -1,5 +1,45 @@
 # Harmonious Magineering Changelog
 
+## v1.0.0-BETA14
+
+### Updated:
+
+- AE2
+- Aether
+- Aether Redux
+- Amendments
+- Blueprint
+- Curios
+- Eidolon
+- Embeddium
+- Embers
+- EveryComp
+- Expanded Storage
+- ExtraSounds
+- Macaw's Bridges
+- ModernFix
+- Moog's Voyager Structures
+- OPAC
+- Quark
+- Snow! Real Magic!
+- Sophisticated Backpacks
+- Tectonic
+- The Outer End
+- Xaero's World Map
+
+### Added:
+
+- [Mod] Remove Reloading Screen
+- [Recipe] PRC recipe to create Flawless Budding Certus Quartz
+
+### Removed:
+
+- Create: Picky Wheels
+
+### Fixed:
+
+- JEI not hiding all Osmium things
+
 ## v1.0.0-BETA13
 
 ### Added:
@@ -23,7 +63,7 @@
 - [Mod] Create Picky Wheels
 - [Quests] Questline for AE2 is now fully written & finished!
 - [Quests] Questline for Adventuring is now fully finished!
-    - Includes documentation about the change in mechanics to Waystones
+  - Includes documentation about the change in mechanics to Waystones
 - [Quests] A handful of smaller QOL mods that are gated by other technology have been noted in quests
 
 ### Updated:
@@ -45,33 +85,37 @@
 - DrawersTooltip (Doesn't seem to be working at all??? I've never gotten it to work on 1.20...)
 - Formations (Unused library mod)
 - Recipe for 16x sticks from logs due to the variety of different log tags
-    - Stripped logs can't be used because that same recipe using _stripped_ logs crafts Beams
-    - Aether logs can' tbe used because they should be used for Skyroot Sticks
+  - Stripped logs can't be used because that same recipe using _stripped_ logs crafts Beams
+  - Aether logs can' tbe used because they should be used for Skyroot Sticks
 
 ### Changed:
 
 - **Now using Forge 47.2 since it's 1:1 compatible with NeoForge**
-    - You can stick with Neo if you want, I'm moving to Forge so CurseForge will freaking accept my files once we're out of beta 🙄
-    - NeoForge clients can still connect to the server if it's on Forge, and vice-versa. They truly are 100% intercompatible in 1.20.1
+  - You can stick with Neo if you want, I'm moving to Forge so CurseForge will freaking accept my files once we're out of beta 🙄
+  - NeoForge clients can still connect to the server if it's on Forge, and vice-versa. They truly are 100% intercompatible in 1.20.1
 - Eidolon's Crucible is now turn-based (courtesy of yours truly)
-    - Once you complete an **entire step**, you can take a break and refer to the recipe, grab items you forget, etc.. 
-    - If you leave a step uncomplete, it will still expire (i.e. fizzle out & evaporate) in the same window of time.
+  - Once you complete an **entire step**, you can take a break and refer to the recipe, grab items you forget, etc..
+  - If you leave a step uncomplete, it will still expire (i.e. fizzle out & evaporate) in the same window of time.
 - General Mekanism playability changes (since Mekanism is intended to be the end-game goal of the pack):
-    - Digital Miner filters can now be dragged from JEI
-    - Digital Miner now has a max range of 192 (32 was the default)
-    - Radiation is entirely disabled
-    - Reactors will no longer melt down
+  - Digital Miner filters can now be dragged from JEI
+  - Digital Miner now has a max range of 192 (32 was the default)
+  - Radiation is entirely disabled
+  - Reactors will no longer melt down
 
 ### Fixed:
 
 - Firework Rockets **for Flight** sometimes crafting rockets with no duration
-    - How the f**k does this even happen? Apparently this is because of **Vanilla**, which relies on load order to ensure the flight duration recipe gets loaded after the no-flight-duration one.
-    - I was able to repro this with just Forge, so something in Forge likely optimizes the load order of all recipes because Modded can have _so many recipes_
-    - Fixed by removing aesthetic Rocket & Charge recipes - no more creeper rockets for you. These were also used by basically no one?? (Sorry Ellpeck, I'm sure AA had the Firework Box for _some_ reason...)
+  - How the f**k does this even happen? Apparently this is because of **Vanilla\*\*, which relies on load order to ensure the flight duration recipe
+    gets loaded after the no-flight-duration one.
+  - I was able to repro this with just Forge, so something in Forge likely optimizes the load order of all recipes because Modded can have _so many
+    recipes_
+  - Fixed by removing aesthetic Rocket & Charge recipes - no more creeper rockets for you. These were also used by basically no one?? (Sorry Ellpeck,
+    I'm sure AA had the Firework Box for _some_ reason...)
 - Tooltip script throwing errors on world load sometimes
 - Inventory Profiles will no longer try to sort Backpacks that don't have a stack upgrade in them
-    - Those with stack upgrades in them were already being skipped
-- Unassembled PCBs from PnC can now be used as a "Backplane" in the IE Circuit Table - the tooltip for the Backplane slot has been adjusted accordingly.
+  - Those with stack upgrades in them were already being skipped
+- Unassembled PCBs from PnC can now be used as a "Backplane" in the IE Circuit Table - the tooltip for the Backplane slot has been adjusted
+  accordingly.
 - JEI buttons looking a bit off
 - Dense & Normal ME **Wire Coils** not matching the general theme
 
@@ -79,21 +123,28 @@
 
 ### ⚠️IMPORTANT⚠️
 
-This update has two potentially breaking changes. Before proceeding, if you choose not to read further, at the _very_ least make a world backup before updating in case you lose _everything_ (because that's actually possible with this update. Two factors cause the one-time instability in this update:
+This update has two potentially breaking changes. Before proceeding, if you choose not to read further, at the _very_ least make a world backup before
+updating in case you lose _everything_ (because that's actually possible with this update. Two factors cause the one-time instability in this update:
 
 #### Iron Chests: Restocked
 
-This mod has been removed in this update. v1.0.0-BETA9 talks all about this and how you can migrate to Expanded Storage without having to re-craft anything or even move your items manually! It's all automatically handled so please go read that changelog if you haven't already.
+This mod has been removed in this update. v1.0.0-BETA9 talks all about this and how you can migrate to Expanded Storage without having to re-craft
+anything or even move your items manually! It's all automatically handled so please go read that changelog if you haven't already.
 
 #### Tectonic/Lithostiched
 
-Tectonic has now recommended adding the "[Lithostitched](https://www.curseforge.com/minecraft/mc-mods/lithostitched)" mod, which allows for more refined control over biome modifiers, surface rules & temperature overall. This allows Tectonic to reduce the amount of inappropriately placed snow, which I want, so I added this mod. Like any mod that modified world gen at a low level, there's a chance this will bring about unsavory visible chunk borders that cannot be fixed in any other way aside from not updating to this version or not using Lithostitched at all. I have tested locally and have not been able to find any cases of large chunk borders/walls in my testing world of 4 months, but YMMV.
+Tectonic has now recommended adding the "[Lithostitched](https://www.curseforge.com/minecraft/mc-mods/lithostitched)" mod, which allows for more
+refined control over biome modifiers, surface rules & temperature overall. This allows Tectonic to reduce the amount of inappropriately placed snow,
+which I want, so I added this mod. Like any mod that modified world gen at a low level, there's a chance this will bring about unsavory visible chunk
+borders that cannot be fixed in any other way aside from not updating to this version or not using Lithostitched at all. I have tested locally and
+have not been able to find any cases of large chunk borders/walls in my testing world of 4 months, but YMMV.
 
 ### Added:
 
-- Added new **Oil Droplet** item as well as a corresponding IE Mineral Mix that allows the player to harvest PnC Oil in _item_ form using the Excavator.
+- Added new **Oil Droplet** item as well as a corresponding IE Mineral Mix that allows the player to harvest PnC Oil in _item_ form using the
+  Excavator.
 - Mineral deposits for Sphalerite (Zinc), Dungeon Digsite (Hellforged Ore & Diamond), and added Fluorite to the Beryl deposit
-- Recipe for crushing AE2 Skystone into Skystone Dust 
+- Recipe for crushing AE2 Skystone into Skystone Dust
 - [Mod] Create Train Perspective
 - [Mod] Inventory Profiles: Next
 - [Mod] LithoStitched
@@ -103,11 +154,13 @@ Tectonic has now recommended adding the "[Lithostitched](https://www.curseforge.
 - [Mod] Iron Chests: Restocked (see v1.0.0-BETA9 Changelog)
 - [Mod] Inventory Sorter (Incompatible with AE2)
 - [Mod] [Library] Collective (entirely unused)
-- Gravitite tools no longer have the block/entity yeeting property. When hitting a mob, you'll no longer throw them into the sky, and when right-clicking any block you'll no longer send it floating into the sky.
+- Gravitite tools no longer have the block/entity yeeting property. When hitting a mob, you'll no longer throw them into the sky, and when
+  right-clicking any block you'll no longer send it floating into the sky.
 
 ### Changed:
 
-- Embers' fluid vessels have been disabled due to a fluid dupe glitch - in the meantime, Create's tanks have been made accessible as soon as you're able to make 
+- Embers' fluid vessels have been disabled due to a fluid dupe glitch - in the meantime, Create's tanks have been made accessible as soon as you're
+  able to make
 - Improved Wither Skeleton Skull drop rate somewhat
 - [Internal] Converted loot table modifications to only use LootJS
 
@@ -138,6 +191,7 @@ Tectonic has now recommended adding the "[Lithostitched](https://www.curseforge.
 ## v1.0.0-BETA10
 
 ### Added:
+
 - Pretty Pipes: Fluids
 - [Resource Pack] Smooth Drawers
 
@@ -149,9 +203,11 @@ Tectonic has now recommended adding the "[Lithostitched](https://www.curseforge.
 
 ### Changed:
 
-- All of Embers' Alchemy Recipes are now done via the Eidolon Brazier because the codex and randomness of the crafting recipes are total nonsense. I wasted tons of resources trying to get anything to work and it never did, and it's all seed-based so you can't look it up >_>
+- All of Embers' Alchemy Recipes are now done via the Eidolon Brazier because the codex and randomness of the crafting recipes are total nonsense. I
+  wasted tons of resources trying to get anything to work and it never did, and it's all seed-based so you can't look it up >\_>
 
 ### Updated:
+
 - Aeroblender
 - Aether Redux (You **will** lose some items/accessories - this is unavoidable)
 - Amendments

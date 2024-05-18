@@ -7,12 +7,8 @@
 	id: "1ED158C2CEC130C9"
 	images: [
 		{
-			click: ""
-			corner: false
 			dependency: "40886E5EE684C540"
-			dev: false
 			height: 8.0d
-			hover: [ ]
 			image: "kubejs:textures/quest_images/chapter/controller.png"
 			order: -1
 			rotation: 0.0d
@@ -21,12 +17,8 @@
 			y: 2.5d
 		}
 		{
-			click: ""
-			corner: false
 			dependency: "40886E5EE684C540"
-			dev: false
 			height: 8.0d
-			hover: [ ]
 			image: "kubejs:textures/quest_images/chapter/controller.png"
 			order: -1
 			rotation: -180.0d

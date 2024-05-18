@@ -7,11 +7,7 @@
 	icon: "mekanism:elite_control_circuit"
 	id: "568F407CA2EA96C6"
 	images: [{
-		click: ""
-		corner: false
-		dev: false
 		height: 1.9331158238172919d
-		hover: [ ]
 		image: "kubejs:textures/quest_images/chapter/mek.png"
 		rotation: 0.0d
 		width: 5.0d

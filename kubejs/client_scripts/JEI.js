@@ -16,7 +16,6 @@ JEIEvents.information(event => {
 });
 
 JEIEvents.addItems(event => {
-
   const candidates = [];
   Ingredient.all.getStacks().forEach(x => {
     if (x.getMod() !== 'architects_palette') return;
@@ -24,12 +23,7 @@ JEIEvents.addItems(event => {
   });
 
   candidates.sort((a, b) => a.getDisplayName() > b.getDisplayName()).forEach(x => event.add(x));
-
-  [
-    'create:wheat_flour',
-    'minecraft:bundle',
-    'sophisticatedbackpacks:backpack',
-  ].forEach(x => event.add(x));
+  ['create:wheat_flour', 'minecraft:bundle', 'sophisticatedbackpacks:backpack'].forEach(x => event.add(x));
 });
 
 JEIEvents.hideItems(event => {

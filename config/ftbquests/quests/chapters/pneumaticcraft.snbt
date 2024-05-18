@@ -7,11 +7,7 @@
 	icon: "pneumaticcraft:pressure_gauge"
 	id: "299E9FA46C6CDE00"
 	images: [{
-		click: ""
-		corner: false
-		dev: false
 		height: 2.0d
-		hover: [ ]
 		image: "kubejs:textures/quest_images/chapter/pnc.png"
 		rotation: 0.0d
 		width: 8.355555555555556d

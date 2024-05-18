@@ -13,11 +13,7 @@
 	}
 	id: "5B03A2714E94DB16"
 	images: [{
-		click: ""
-		corner: false
-		dev: false
 		height: 4.0d
-		hover: [ ]
 		image: "kubejs:textures/quest_images/chapter/eidolon.png"
 		rotation: 0.0d
 		width: 5.2d

@@ -7,11 +7,7 @@
 	icon: "aether:aether_portal_frame"
 	id: "4937E45FC8A05024"
 	images: [{
-		click: ""
-		corner: false
-		dev: false
 		height: 1.0d
-		hover: [ ]
 		image: "aether:textures/gui/title/aether.png"
 		rotation: 0.0d
 		width: 4.605263157894737d

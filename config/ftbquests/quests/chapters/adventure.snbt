@@ -15,12 +15,8 @@
 	id: "0EC0BEA916B596A5"
 	images: [
 		{
-			click: ""
 			color: 11184810
-			corner: false
-			dev: false
 			height: 6.0d
-			hover: [ ]
 			image: "portfolio:textures/painting/alpha.png"
 			order: -1
 			rotation: 0.0d
@@ -29,13 +25,9 @@
 			y: 1.5d
 		}
 		{
-			click: ""
 			color: 11184810
-			corner: false
 			dependency: "2AB0349D89A4B983"
-			dev: false
 			height: 2.0d
-			hover: [ ]
 			image: "mcwpaintings:textures/painting/skyblock.png"
 			rotation: 0.0d
 			width: 6.0d

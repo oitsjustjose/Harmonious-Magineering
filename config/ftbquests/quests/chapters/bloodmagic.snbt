@@ -7,11 +7,7 @@
 	icon: "bloodmagic:weakbloodshard"
 	id: "1A293DCDB8B8E8B7"
 	images: [{
-		click: ""
-		corner: false
-		dev: false
 		height: 4.0d
-		hover: [ ]
 		image: "kubejs:textures/quest_images/chapter/bloodmagic.png"
 		rotation: 0.0d
 		width: 8.0d
