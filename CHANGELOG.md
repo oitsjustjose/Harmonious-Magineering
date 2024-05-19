@@ -1,6 +1,8 @@
 # Harmonious Magineering Changelog
 
-## v1.0.0-BETA14
+## v1.0.0-FINAL
+
+This is the first formal release of this pack! All quests and recipes are more or less complete, but I'll probably have a tweak or two from here!
 
 ### Updated:
 
@@ -31,6 +33,8 @@
 
 - [Mod] Remove Reloading Screen
 - [Recipe] PRC recipe to create Flawless Budding Certus Quartz
+- [Recipe] Several Antiprotonic Nucleosynthesizer recipes ;)
+- [Quests] Quest chapter for Nuclear Science is done!
 
 ### Removed:
 
