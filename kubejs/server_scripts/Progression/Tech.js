@@ -183,7 +183,7 @@ ServerEvents.recipes(event => {
       duration: 100,
       fluidInput: {amount: 150, tag: 'forge:redstone_acid'},
       gasInput: {amount: 1000, gas: 'mekanism:water_vapor'},
-      itemInput: {amount: 4, ingredient: {item: 'ae2:flawed_budding_quartz'}},
+      itemInput: {amount: 48, ingredient: {item: 'ae2:flawed_budding_quartz'}},
       itemOutput: {item: 'ae2:flawless_budding_quartz'},
     });
   };
@@ -539,6 +539,22 @@ ServerEvents.recipes(event => {
   };
 
   const mekanism = () => {
+    /**
+     * @param {Internal.ItemStack} output
+     * @param {Internal.Ingredient} input
+     * @param {Number} amountMb
+     * @param {Number} duration
+     */
+    const nucleosynthesizing = (output, input, amountMb, duration) => {
+      event.custom({
+        type: 'mekanism:nucleosynthesizing',
+        duration: duration == null ? 500 : duration,
+        gasInput: {amount: amountMb == null ? 2 : amountMb, gas: 'mekanism:antimatter'},
+        itemInput: {ingredient: input.toJson()},
+        output: output.toJson(),
+      });
+    };
+
     /* The muffling upgrade uses steel dust, which has replaced Osmium Dust, so we need to re-work the recipe */
     event.replaceInput({output: 'mekanism:upgrade_muffling'}, '#forge:dusts/steel', '#minecraft:wool');
 
@@ -829,6 +845,54 @@ ServerEvents.recipes(event => {
       M: 'mekanism:module_base',
       P: 'mekanism:pellet_polonium',
     });
+
+    // Music Discs
+    nucleosynthesizing(Item.of('aether_redux:slider_music_disc'), Ingredient.of('aether:carved_slab'), 1);
+    nucleosynthesizing(Item.of('aether:music_disc_ascending_dawn'), Ingredient.of('aether_redux:golden_swet_ball'), 1);
+    nucleosynthesizing(Item.of('create_connected:music_disc_elevator'), Ingredient.of('create:empty_schematic'), 1);
+    nucleosynthesizing(Item.of('create_connected:music_disc_interlude'), Ingredient.of('create:experience_nugget'), 1);
+    nucleosynthesizing(Item.of('ecologics:music_disc_coconut'), Ingredient.of('ecologics:coconut'), 1);
+    nucleosynthesizing(Item.of('eidolon:music_disc_parousia'), Ingredient.of('eidolon:shadow_gem'), 1);
+    nucleosynthesizing(Item.of('embers:music_disc_7f_patterns'), Ingredient.of('embers:ember_grit'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_11'), Ingredient.of('minecraft:cracked_polished_blackstone_bricks'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_13'), Ingredient.of('minecraft:yellow_dye'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_5'), Ingredient.of('minecraft:echo_shard'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_blocks'), Ingredient.of('minecraft:orange_dye'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_cat'), Ingredient.of('minecraft:lime_dye'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_chirp'), Ingredient.of('minecraft:red_dye'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_far'), Ingredient.of('minecraft:green_dye'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_mall'), Ingredient.of('minecraft:blue_dye'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_mellohi'), Ingredient.of('minecraft:purple_dye'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_otherside'), Ingredient.of('minecraft:cyan_dye'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_pigstep'), Ingredient.of('minecraft:gold_nugget'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_relic'), Ingredient.of('minecraft:brush'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_stal'), Ingredient.of('minecraft:black_dye'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_strad'), Ingredient.of('minecraft:white_dye'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_wait'), Ingredient.of('minecraft:light_blue_dye'), 1);
+    nucleosynthesizing(Item.of('minecraft:music_disc_ward'), Ingredient.of('minecraft:ender_eye'), 1);
+    nucleosynthesizing(Item.of('outer_end:music_disc_galactic_wave'), Ingredient.of('outer_end:cobalt_crystalline_berries'), 1);
+    nucleosynthesizing(Item.of('outer_end:music_disc_unknown_frontier'), Ingredient.of('outer_end:rose_crystalline_berries'), 1);
+    nucleosynthesizing(Item.of('spawn:music_disc_rot'), Ingredient.of('minecraft:rotten_flesh'), 1);
+    // Shader Bags
+    nucleosynthesizing(Item.of('immersiveengineering:shader_bag_common'), Ingredient.of('expandedstorage:iron_mini_chest'), 3 * 1, 200 * 1);
+    nucleosynthesizing(Item.of('immersiveengineering:shader_bag_uncommon'), Ingredient.of('expandedstorage:gold_mini_chest'), 3 * 2, 200 * 2);
+    nucleosynthesizing(Item.of('immersiveengineering:shader_bag_rare'), Ingredient.of('expandedstorage:diamond_mini_chest'), 3 * 3, 200 * 3);
+    nucleosynthesizing(Item.of('immersiveengineering:shader_bag_epic'), Ingredient.of('expandedstorage:obsidian_mini_chest'), 3 * 4, 200 * 4);
+    nucleosynthesizing(
+      Item.of('immersiveengineering:shader_bag_ie_masterwork'),
+      Ingredient.of('expandedstorage:netherite_mini_chest'),
+      3 * 5,
+      200 * 5
+    );
+    // Upgrade Smithing Templates
+    nucleosynthesizing(Item.of('ae2:fluix_upgrade_smithing_template', 2), Ingredient.of('ae2:fluix_upgrade_smithing_template'));
+    nucleosynthesizing(Item.of('minecraft:netherite_upgrade_smithing_template', 2), Ingredient.of('minecraft:netherite_upgrade_smithing_template'));
+    nucleosynthesizing(Item.of('outer_end:cobalt_upgrade_template', 2), Ingredient.of('outer_end:cobalt_upgrade_template'));
+    nucleosynthesizing(Item.of('outer_end:mint_upgrade_template', 2), Ingredient.of('outer_end:mint_upgrade_template'));
+    nucleosynthesizing(Item.of('outer_end:rose_upgrade_template', 2), Ingredient.of('outer_end:rose_upgrade_template'));
+    // Misc
+    nucleosynthesizing(Item.of('mekanism:cardboard_box'), Ingredient.of('#forge:sawdust'));
+    nucleosynthesizing(Item.of('ae2:flawless_budding_quartz'), Ingredient.of('ae2:flawed_budding_quartz'), 4);
   };
 
   const modularRouters = () => {
@@ -858,7 +922,6 @@ ServerEvents.recipes(event => {
       results: [{item: 'create:wheat_flour'}],
     });
 
-    event.recipes.create.compacting('pneumaticcraft:ingot_iron_compressed', ['#forge:ingots/iron', 'ae2:tiny_tnt']).superheated();
     event.recipes.create.compacting('pneumaticcraft:compressed_iron_block', ['#forge:storage_blocks/iron', 'minecraft:tnt']).superheated();
 
     event.replaceInput({output: 'pneumaticcraft:assembly_laser'}, 'minecraft:red_stained_glass', 'regions_unexplored:redstone_bulb');

@@ -1,5 +1,5 @@
 {
-	autofocus_id: "74F9F6DD7BF6A951"
+	autofocus_id: "4C5720A58CB0D11D"
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "nuclear_science"
@@ -166,10 +166,24 @@
 				"You can use JEI to configure what size Fission Reactor you wish to build based on your required output, or vice versa if you're tight on materials."
 			]
 			hide: true
+			icon: {
+				Count: 1b
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "bloodmagic:textures/entities/explosionprojectile.png"
+				}
+			}
 			id: "4C5720A58CB0D11D"
 			optional: true
+			rewards: [{
+				count: 48
+				id: "6F8F473B560A2034"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "Not a full guide, but it's better than nothing!"
 			tasks: [
 				{
 					count: 24L
@@ -204,39 +218,74 @@
 					type: "item"
 				}
 			]
-			title: "Fission Reaction"
+			title: "Fission Blueprints \\& Info"
 			x: 0.75d
 			y: 3.0d
 		}
 		{
 			dependencies: ["4C5720A58CB0D11D"]
-			description: ["This device will convert your Nuclear Waste output into Polonium which is the core of the Antimatter you so desire."]
+			description: [
+				"[ \"Now that your reactor is running and producing an absolute ton of energy, you're bound to notice a build-up of Nuclear Waste. While you could use it to make \", { \"text\": \"Plutonium\", \"underlined\": \"true\", \"bold\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2437A899DE646229\" }, \"color\": \"#7cd1d9\" },  \" to dive into anti-matter, Polonium will yield some incredibly powerful gear for your own player to use!\"] "
+				""
+				"Making Polonium requires processing your Nuclear Waste in a &6Solar Neutron Activator&r. To crystallize this gas into a pellet, you can further process the Polonium gas with &9Water&r and &bFluorite Dust&r in a &6Pressurized Reaction Chamber&r."
+				""
+				"Just like Plutonium, this crystalization process will yeild &7Spent Nuclear Waste&r. To safely and responsibly dispose of this waste, you'll need to transfer it in a &6Radioactive Waste Barrel&r using Gas Tubes, which will slowly reduce the waste to nothing over a long period of time."
+			]
 			hide: true
 			icon: "mekanism:pellet_polonium"
 			id: "2E49A23E06D1505D"
 			optional: true
-			tasks: [{
-				id: "44D9D75DAB464EDC"
-				item: "mekanism:solar_neutron_activator"
+			rewards: [{
+				count: 4
+				id: "29C6CE9DCF210717"
+				item: "mekanism:pellet_polonium"
+				random_bonus: 4
 				type: "item"
 			}]
-			title: "Polonium"
-			x: 0.75d
+			subtitle: "Onwards to Energy-Bound Gear!!"
+			tasks: [
+				{
+					id: "44D9D75DAB464EDC"
+					item: "mekanism:solar_neutron_activator"
+					type: "item"
+				}
+				{
+					id: "6B05C09B0337C4C5"
+					item: "mekanism:pellet_polonium"
+					type: "item"
+				}
+			]
+			title: "Making Polonium"
+			x: 2.0d
 			y: 4.5d
 		}
 		{
 			dependencies: ["4C5720A58CB0D11D"]
-			description: ["You'll only need 1 Plutonium Pellet to continue in this quest line, but to make it you'll need another Isotopic Centrifuge."]
+			description: [
+				"[ \"Now that your reactor is running and producing an absolute ton of energy, you're bound to notice a build-up of Nuclear Waste. While you could use it to make \", { \"text\": \"Polonium\", \"underlined\": \"true\", \"bold\": \"true\", \"clickEvent\": { \"action\": \"change_page\", \"value\": \"2E49A23E06D1505D\" }, \"color\": \"#77cf9e\" },  \" (especially for that MekaSuit!), Plutonium will offer you a way forward into all new crafting mechanisms and recipes.\"] "
+				""
+				"Making Plutonium will require processing your Nuclear Waste in an &6Isotopic Centrifuge&r. To crystallize this gas into a pellet, you can further process the Plutonium gas with &9Water&r and &bFluorite Dust&r in a &6Pressurized Reaction Chamber&r."
+				""
+				"The crystalization process will yeild &7Spent Nuclear Waste&r. To safely and responsibly dispose of this waste, you'll need to transfer it in a &6Radioactive Waste Barrel&r using Gas Tubes, which will slowly reduce the waste to nothing over a long period of time."
+			]
 			hide: true
 			icon: "mekanism:pellet_plutonium"
 			id: "2437A899DE646229"
 			optional: true
-			tasks: [{
-				id: "41E0023C957691D7"
-				item: "mekanism:isotopic_centrifuge"
+			rewards: [{
+				count: 4
+				id: "54ED05A0F5FB8075"
+				item: "mekanism:pellet_plutonium"
+				random_bonus: 4
 				type: "item"
 			}]
-			title: "Plutonium"
+			subtitle: "Onwards to Antimatter!!"
+			tasks: [{
+				id: "6A4F8CB907A9793C"
+				item: "mekanism:pellet_plutonium"
+				type: "item"
+			}]
+			title: "Making Plutonium"
 			x: -0.5d
 			y: 3.0d
 		}
@@ -246,24 +295,25 @@
 				"2E49A23E06D1505D"
 			]
 			description: [
-				"The Supercritical Phase Shifter (SPS) is how you'll convert your Polonium into Antimatter. Each casing requires 50K Nuclear Waste to be processed, you might want to get started. From the Wiki:"
+				"The &6Supercritical Phase Shifter (SPS)&r is another large machine that will take large amounts of energy and Polonium into Antimatter. Each casing requires 50K Nuclear Waste to be processed, so you might want to get started once you get yourself setup with Gear!"
 				""
-				"\"The frame of the Supercritical Phase Shifter must consist of SPS Casings. The sides, bottom and top can consist of either SPS Casings, Reactor Glass or SPS Ports. In order to insert energy through a port a Supercharged Coil has to be attached to the SPS Port on the inside of the construct. Each side, the bottom and the top will look like:\""
+				"Just like the Fission Reactor, JEI offers a guide to show a bill of materials for the SPS based on how many ports you need, and will offer a preview of the resulting &5Antimatter&r and the related costs."
+				"{@pagebreak}"
+				"[\"Here are some structure blueprints to build your SPS by, but if you need additional help you should read more on the \", {\"text\": \"Wiki.\", \"bold\": \"true\", \"underline\": \"true\", \"color\": \"blue\", \"clickEvent\": {\"action\": \"open_url\", \"value\": \"https://wiki.aidancbrady.com/wiki/Supercritical_Phase_Shifter\"}}]"
 				""
-				"        o o o "
-				"      o x x x o"
-				"    o x x x x x o"
-				"    o x x x x x o"
-				"    o x x x x x o"
-				"      o x x x o"
-				"        o o o "
 				""
-				"Where O is a frame, and X is a side (with Glass or a Port)"
+				"{image:kubejs:textures/quest_images/sps_1.png width:133 height:100 align:1 fit:true}"
+				"{@pagebreak}"
+				"{image:kubejs:textures/quest_images/sps_2.png width:133 height:100 align:1 fit:true}"
+				"{@pagebreak}"
+				"{image:kubejs:textures/quest_images/sps_3.png width:133 height:100 align:1 fit:true}"
 			]
 			hide: true
+			icon: "mekanism:supercharged_coil"
 			id: "5DD10F6124B9B58A"
 			optional: true
 			shape: "hexagon"
+			subtitle: "Another link in the radiated chain"
 			tasks: [
 				{
 					count: 60L
@@ -289,58 +339,64 @@
 					type: "item"
 				}
 			]
-			title: "Supercritical Phase Shifter"
+			title: "&5Antimatter&r Generation"
 			x: -0.5d
 			y: 4.5d
 		}
 		{
 			dependencies: ["5DD10F6124B9B58A"]
-			description: ["Congratulations, you've made it. These babies are pretty useful for most of the end-game Mekanism that you can possibly envision, but what you *really* want to save up on is the Fluid version of this."]
-			hide: true
-			id: "74E40BBF58EA712D"
-			optional: true
-			shape: "hexagon"
-			tasks: [{
-				id: "701A9080B60B6667"
-				item: "mekanism:pellet_antimatter"
-				type: "item"
-			}]
-			x: -0.5d
-			y: 6.0d
-		}
-		{
-			dependencies: ["74E40BBF58EA712D"]
 			description: [
-				"The Antiprotonic Synthesizer will allow you to convert many resource types into better versions (like Coal to Diamonds) by use of Antimatter."
+				"In order to utilize the &5Antimatter&r that you've started producing, you'll need to create a Antiprotonic Nucleosynthesizer. Making this device will require &5Antimatter &dPellets&r, but once it's been created you will be able to create many types of usually-difficult-to-obtain items at the cost of a much simpler item and some &5Antimatter&r."
 				""
-				"You'll need this to progress into Draconic Evolution.."
+				"[\"Some custom recipes have been added, but if you find yourself wishing others were added, reach out on \", {\"text\": \"The Discord!\", \"bold\": \"true\", \"underline\": \"true\", \"color\": \"#7289DA\", \"clickEvent\": {\"action\": \"open_url\", \"value\": \"https://discord.oitsjustjose.com\"}}]"
 			]
 			hide: true
 			id: "1CB98DB1EF80834D"
 			optional: true
+			rewards: [{
+				count: 256
+				id: "77FB120BB65CCE28"
+				item: "create:experience_nugget"
+				type: "item"
+			}]
 			shape: "octagon"
-			size: 1.5d
+			size: 1.75d
+			subtitle: "The end goal!"
 			tasks: [{
 				id: "60E96B37BC2CFA75"
 				item: "mekanism:antiprotonic_nucleosynthesizer"
 				type: "item"
 			}]
-			x: 0.75d
-			y: 6.0d
+			title: "&5Antimatter&r Utilization"
+			x: -0.5d
+			y: 6.5d
 		}
 		{
 			dependencies: ["2E49A23E06D1505D"]
 			description: [
-				"Mekasuit armor has been much easier to make, because honestly there aren't many other good electrical armor sets out there in the modding scene. As such, they're still meant to be a bit of a grind, but I hope that you enjoy having access to them sooner than later!"
+				"Utilizing the Polonium you've been able to create, you can make the most powerful armor and gear that this world has to offer! All of these will require the &6Modification Station&r to insert any of the myriad of upgrade modules into each piece!"
 				""
-				"To manage Modules for this set, you'll need a Modification Table"
+				"&lThe Mekasuit set&r is an energy-based set of armor capable of absorbing as much damage as possible assuming you're able to continue feeding it energy quickly enough,"
+				""
+				"&lThe Mekatool&r is a type of multi-tool which is capable of taking in dozens of augments to fit almost any role,"
+				""
+				"&lThe Mekatana&r is an energized sword that is happy to take in augments to improve its damage, and "
+				""
+				"&lThe Mekabow&r is an augmentable bow capable of rapid fire and emitting highly-energized or gravity-defying projectiles!"
 			]
 			hide: true
 			hide_dependency_lines: false
+			icon: "minecraft:armor_stand"
 			id: "2F7F0D0DB3F4FDD2"
 			optional: true
+			rewards: [{
+				id: "1CB2B1A3591497C3"
+				item: "mekanism:modification_station"
+				type: "item"
+			}]
 			shape: "octagon"
-			size: 1.5d
+			size: 1.75d
+			subtitle: "Anyone else remember Modular Powersuits?"
 			tasks: [
 				{
 					id: "498083347940AEBF"
@@ -386,10 +442,25 @@
 					}
 					type: "item"
 				}
+				{
+					id: "3CDA0309A33876A9"
+					item: "mekaweapons:mekatana"
+					type: "item"
+				}
+				{
+					id: "578642AC7DF9613E"
+					item: "mekaweapons:mekabow"
+					type: "item"
+				}
+				{
+					id: "191CE3AFBC50ACCB"
+					item: "mekanism:meka_tool"
+					type: "item"
+				}
 			]
-			title: "Mekasuit Armor"
+			title: "MekaSuit Armory"
 			x: 2.0d
-			y: 5.0d
+			y: 6.5d
 		}
 		{
 			dependencies: ["4C5720A58CB0D11D"]
@@ -450,6 +521,53 @@
 			}]
 			x: 0.0d
 			y: 0.0d
+		}
+		{
+			description: [
+				"If you made it this far, thank you so much for playing this pack and I really hope you enjoyed it!"
+				""
+				"  -- oitsjustjose"
+			]
+			icon: {
+				Count: 1b
+				id: "minecraft:firework_rocket"
+				tag: {
+					Fireworks: {
+						Flight: 1b
+					}
+				}
+			}
+			id: "357D6AF13915B951"
+			rewards: [{
+				auto: "invisible"
+				command: "/execute as @p run function custom:player/stages/__done"
+				elevate_perms: true
+				id: "43927E19065DEC15"
+				silent: true
+				team_reward: true
+				type: "command"
+			}]
+			shape: "gear"
+			size: 3.0d
+			tasks: [
+				{
+					icon: "mekanism:pellet_antimatter"
+					id: "36BE5CD856D26957"
+					stage: "meka-antimatter"
+					title: "Antimatter"
+					type: "gamestage"
+				}
+				{
+					icon: "mekaweapons:mekatana"
+					id: "78959D7F80D3E871"
+					stage: "meka-gear"
+					title: "Full Meka Gear Set"
+					type: "gamestage"
+				}
+			]
+			title: "<rainb>Congratulations!</rainb>"
+			x: 0.75d
+			y: 9.0d
 		}
 	]
 	subtitle: ["&1Even More Mekanism&r"]
