@@ -523,11 +523,17 @@
 			y: 0.0d
 		}
 		{
+			dependencies: [
+				"2E49A23E06D1505D"
+				"2437A899DE646229"
+			]
 			description: [
 				"If you made it this far, thank you so much for playing this pack and I really hope you enjoyed it!"
 				""
 				"  -- oitsjustjose"
 			]
+			hide: true
+			hide_dependency_lines: true
 			icon: {
 				Count: 1b
 				id: "minecraft:firework_rocket"
@@ -538,6 +544,7 @@
 				}
 			}
 			id: "357D6AF13915B951"
+			invisible: true
 			rewards: [{
 				auto: "invisible"
 				command: "/execute as @p run function custom:player/stages/__done"

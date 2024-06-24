@@ -1,13 +1,13 @@
-filename = 'explorify-v1.4.0.jar'
+filename = 'Explorify v1.5.0 f10-48.jar'
 name = 'Explorify'
 side = 'both'
 
 [download]
-hash = 'dd28a037daff1ba5785a482cd714fffa4fa40765'
+hash = 'b2d8cc76e1df215141f09bca40291c54661ffa0b'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5277999
+file-id = 5438065
 project-id = 698309

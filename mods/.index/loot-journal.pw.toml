@@ -1,0 +1,13 @@
+filename = 'loot_journal-3.1.1.jar'
+name = 'Loot Journal'
+side = 'both'
+
+[download]
+hash = '988cfa575677d2f38ec1a13b8e6343944e091ba6'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5321391
+project-id = 700723

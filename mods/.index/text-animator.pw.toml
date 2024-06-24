@@ -1,13 +1,13 @@
-filename = 'TextAnimator-1.20.1-forge-2.3.2.jar'
+filename = 'TextAnimator-1.20.1-forge-2.3.3.jar'
 name = 'Text Animator'
 side = 'both'
 
 [download]
-hash = '08fa8da1e819dde9a8d933370fe36b4e5d7c9819'
+hash = '41ce240e817e47293503bfb5bd384c7d19b03db3'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5347492
+file-id = 5375352
 project-id = 881778

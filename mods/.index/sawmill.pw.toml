@@ -1,13 +1,13 @@
-filename = 'sawmill-1.20-1.3.13.jar'
+filename = 'sawmill-1.20-1.4.2.jar'
 name = 'Universal Sawmill'
 side = 'both'
 
 [download]
-hash = 'b3f5c7159bc161969841e4e10eb4d8135d0842db'
+hash = 'ac5c6068677c5506d271da84cb1c672608d6c6a9'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5311117
+file-id = 5415282
 project-id = 964817

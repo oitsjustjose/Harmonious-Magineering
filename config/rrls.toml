@@ -1,8 +1,26 @@
-enabled = true
+#text.autoconfig.rrls.option.rgbProgress.@Tooltip
 rgbProgress = false
-loadingScreenHide = false
-showIn = "ALL"
+#Allowed Values: PROGRESS, TEXT
 type = "PROGRESS"
 reloadText = ""
 resetResources = false
+#text.autoconfig.rrls.option.reInitScreen.@Tooltip
 reInitScreen = true
+#Allowed Values: ALL, LOADING, RELOADING, NONE
+hideType = "RELOADING"
+#text.autoconfig.rrls.option.forceClose.@Tooltip
+forceClose = false
+#text.autoconfig.rrls.option.blockOverlay.@Tooltip
+blockOverlay = false
+miniRender = true
+#text.autoconfig.rrls.option.removeOverlayAtEnd.@Tooltip
+removeOverlayAtEnd = true
+#text.autoconfig.rrls.option.earlyPackStatusSend.@Tooltip[0]
+#text.autoconfig.rrls.option.earlyPackStatusSend.@Tooltip[1]
+earlyPackStatusSend = false
+#Allowed Values: FORCE_LOAD, LOAD, NONE
+doubleLoad = "FORCE_LOAD"
+#text.autoconfig.rrls.option.animationSpeed.@Tooltip
+animationSpeed = 1000.0
+skipForgeOverlay = false
+
