@@ -22,8 +22,10 @@ PlayerEvents.inventoryChanged(event => {
   if (event.getPlayer() === null) return;
   if (event.getPlayer().getInventory() === null) return;
 
-  const stack = event.getPlayer().getInventory().getStackInSlot(event.getSlot());
-  wipeEnchantsIfMendingPresent(stack);
+  try {
+    const stack = event.getPlayer().getInventory().getStackInSlot(event.getSlot());
+    wipeEnchantsIfMendingPresent(stack);
+  } catch (exception) { /* NO OP */ }
 });
 
 ItemEvents.firstLeftClicked(event => {
