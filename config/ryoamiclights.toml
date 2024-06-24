@@ -99,6 +99,14 @@
 				glow_item_frame = true
 				lightning_bolt = true
 				firework_rocket = true
+				snowball = true
+				leash_knot = true
+				boat = true
+				minecart = true
+				egg = true
+				small_fireball = true
+				llama_spit = true
+				fireball = true
 
 			[light_sources.settings.entities.ae2]
 				tiny_tnt_primed = true
