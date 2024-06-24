@@ -3,6 +3,9 @@
 // These stages are copied DIRECTLY from Globals -- if you don't copy these,
 //  you'll run into issues where the Ingredients defined as an exception
 //  won't be consistent/correct.
+
+const FEATURE_FLAG_RENAME_ITEM_CLIENTSIDE = true;
+
 const stages = JsonIO.read('kubejs/globals/stages.json');
 
 const cacheRefreshFrequencySeconds = 5;
@@ -45,7 +48,17 @@ const modifyStackForStageProgress = (stack, tooltips) => {
       for (const tag of Object.keys(stages)) {
         let config = stages[tag];
         if (config.mods.contains(stack.getMod())) {
+          let obfName = Text.white(`abcde_${stack.id}`).obfuscated();
           if (!cachedServerPlayerRef.getTags() || !cachedServerPlayerRef.getTags().contains(tag)) {
+            if (FEATURE_FLAG_RENAME_ITEM_CLIENTSIDE) {
+              // Just setting the name on the client-side. Doesn't actually rename the item permanently
+              if (stack.getHoverName() !== obfName && Date.now() - lastHovNameRefresh > 100) {
+                // Add ABCDE as 'noise' to prevent the word (alt) from showing up next to the obfuscated text
+                stack.setHoverName(obfName);
+                lastHovNameRefresh = Date.now();
+              }
+            }
+
             // We don't want to give the player any additional info on this item...
             for (let i = 1; i < tooltips.length; i++) {
               tooltips.remove(i);
