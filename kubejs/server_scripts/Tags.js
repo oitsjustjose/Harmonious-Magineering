@@ -19,6 +19,9 @@ ServerEvents.tags('block', event => {
   global.StrippedLumber.woods.forEach(wood => event.add('forge:stripped_wood', wood));
   ores.forEach(ore => event.removeAllTagsFrom(ore));
 
+  /* Add Mangrove Roots to HT's Treechop to make them more bareable */
+  event.add('treechop:choppables', 'minecraft:mangrove_roots');
+
   /* Fix CFM Pickaxe Minability */
   event.add('minecraft:mineable/pickaxe', ['cfm:post_box']);
 
