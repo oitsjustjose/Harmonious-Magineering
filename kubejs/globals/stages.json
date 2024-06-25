@@ -53,7 +53,8 @@
   },
   "pnc": {
     "mods": [
-      "pneumaticcraft"
+      "pneumaticcraft",
+      "modularrouters"
     ],
     "substitute": "kubejs:unknown_pneumatic_item",
     "exceptions": [
