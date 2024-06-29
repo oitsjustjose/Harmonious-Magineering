@@ -52,6 +52,20 @@
 			holiday = true
 			decorated_holiday = true
 
+		[types.leaves_type.architects_palette]
+			twisted = true
+
+		[types.leaves_type.outer_end]
+			azure = true
+
+		[types.leaves_type.quark]
+			ancient = false
+			blue_blossom = true
+			lavender_blossom = true
+			orange_blossom = true
+			yellow_blossom = true
+			red_blossom = true
+
 		[types.leaves_type.deep_aether]
 			roseroot = true
 			flowering_roseroot = true
@@ -68,23 +82,6 @@
 			purple_glacia = true
 			gilded_oak = true
 			blighted_skyroot = true
-			prismatic_fieldsproot = true
-			spectral_fieldsproot = true
-			azure_fieldsproot = true
-
-		[types.leaves_type.architects_palette]
-			twisted = true
-
-		[types.leaves_type.outer_end]
-			azure = true
-
-		[types.leaves_type.quark]
-			ancient = false
-			blue_blossom = true
-			lavender_blossom = true
-			orange_blossom = true
-			yellow_blossom = true
-			red_blossom = true
 
 	[types.wood_type]
 
@@ -104,21 +101,6 @@
 
 		[types.wood_type.aether]
 			skyroot = true
-
-		[types.wood_type.deep_aether]
-			roseroot = true
-			yagroot = true
-			cruderoot = true
-			conberry = true
-			sunroot = true
-
-		[types.wood_type.aether_redux]
-			fieldsproot = true
-			blightwillow = true
-			cloudcap = true
-			jellyshroom = true
-			crystal = true
-			glacia = true
 
 		[types.wood_type.architects_palette]
 			twisted = true
@@ -153,6 +135,21 @@
 
 		[types.wood_type.spawn]
 			rotten = true
+
+		[types.wood_type.deep_aether]
+			roseroot = true
+			yagroot = true
+			cruderoot = true
+			conberry = true
+			sunroot = true
+
+		[types.wood_type.aether_redux]
+			fieldsproot = true
+			blightwillow = true
+			cloudcap = true
+			jellyshroom = true
+			crystal = true
+			glacia = true
 
 #Disables specific entries
 [entries]
@@ -256,4 +253,21 @@
 
 		[entries.wood_type.twigs]
 			table = true
+
+		[entries.wood_type.handcrafted]
+			counter = true
+			corner_trim = true
+			fancy_bed = true
+			desk = true
+			shelf = true
+			cupboard = true
+			dining_bench = true
+			bench = true
+			drawer = true
+			pillar_trim = true
+			side_table = true
+			nightstand = true
+			couch = true
+			table = true
+			chair = true
 

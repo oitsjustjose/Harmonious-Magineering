@@ -8,7 +8,7 @@
 		"Sentry Model Upgrade" = true
 		#Whether or not to use the upgraded Mimic model. Note that unless you use sync_with_server, there may be hitbox differences.
 		#Allowed Values: sync_with_server, modern_override, classic_override
-		"Mimic Model Upgrade" = "sync_with_server"
+		"Mimic Model Upgrade" = "modern_override"
 		#Gives the Sheepuff's model some touchups and improvements
 		"Sheepuff Model Upgrade" = true
 		#Gives the Phyg's model some touchups and improvements
@@ -44,7 +44,7 @@
 
 [Internal]
 	#Value used to track the version of the Aether: Redux most recently used.
-	"Version ID" = "2.0.13"
+	"Version ID" = "2.0.16c"
 	#Internal value to do menu changes. Set this to false in modpacks if you want to use your own menu.
 	"First Startup - Menu Setup" = false
 	#Internal value to change an Aether config, giving a nicer lightmap in the dimension.
