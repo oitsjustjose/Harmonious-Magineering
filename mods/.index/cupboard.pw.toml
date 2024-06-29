@@ -1,13 +1,13 @@
-filename = 'cupboard-1.20.1-2.6.jar'
+filename = 'cupboard-1.20.1-2.7.jar'
 name = 'Cupboard utilities'
 side = 'both'
 
 [download]
-hash = '9371c91104799702e31b482f6790a2e39c63505f'
+hash = '204bc8aa83e8a685f64311b72d55505ab2eca867'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 5170315
+file-id = 5470032
 project-id = 326652
