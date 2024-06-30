@@ -1,5 +1,92 @@
 # Harmonious Magineering Changelog
 
+## v1.0.1
+
+Small tweaks, changes but mostly fixes!!
+
+### Added:
+
+**Resource Packs:**
+
+- [Comforts Modernized Resource Pack](https://www.curseforge.com/minecraft/texture-packs/comforts-modernized)
+- [Font Reimagined](https://www.curseforge.com/minecraft/texture-packs/font-reimagined)
+
+**Features:**
+
+- **[Singleplayer-Only]** Names of items that are gated will now be illegible. This feature does not work on Multiplayer Servers.
+- Mangrove Roots are now considered part of the Mangrove Tree for treechop
+
+**Mods:**
+
+- SimpleBackups
+
+### Updated:
+
+- **[Library]** Balm
+- **[Library]** Bookshelf
+- **[Library]** Cupboard
+- **[Library]** Curios
+- **[Library]** FTB Library
+- **[Library]** GeckoLib
+- **[Library]** Kiwi
+- **[Library]** Kotlin for Forge
+- **[Library]** Litho Stitched
+- **[Library]** Moonlight
+- **[Library]** Placebo
+- **[Library]** Puzzle's Lib
+- **[Library]** Resourceful Lib
+- **[Library]** RF-Tools Base
+- **[Library]** Structure Essentials
+- **[Library]** TerraBlender
+- **[Library]** Zeta
+- AE2
+- Aether Redux
+- Amendments
+- Create Connected
+- Create Power Loader
+- Deep Aether
+- Delightful
+- Distracting Trims
+- Embeddium
+- Embers Rekindled
+- Every Compat
+- Explorify
+- Forgery
+- Framed Blocks
+- FTB Quests
+- Immediately Fast
+- Jade
+- JEI
+- KubeJS
+- LootJS
+- Mekanism
+- Mekanism Generators
+- ModernFix
+- More Overlays
+- Packet Fixer
+- Quark
+- Structory
+- Supplementaries
+- Tectonic
+- TextAnimator
+- Universal Sawmill
+- X-Net
+- Xaero's World Map
+
+### Downgraded:
+
+- Lootr: fixes Mimics being obvious in the Aether. **If you've explored in the outer End Islands** you may want to regenerate them to avoid finding Elytra Lootr Chests with no loot and no Elytra on an item frame..
+
+### Fixed:
+
+- Occasional logged errors when player inventory is changed
+- Items being missing from `#minecraft:stairs` and `#minecraft:slabs`
+- Modular Routers not being properly gated behind PneumaticCraft
+
+### Changed:
+
+- Items like Maps, Food & Weapons can now be used while mounted (such as on a boat, horse, pig, etc.)
+
 ## v1.0.0-FINAL
 
 This is the first formal release of this pack! All quests and recipes are more or less complete, but I'll probably have a tweak or two from here!
