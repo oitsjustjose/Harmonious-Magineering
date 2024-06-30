@@ -747,6 +747,8 @@ ServerEvents.tags('item', event => {
   event.removeAllTagsFrom('create:dough');
   /* IE Circuit Backplanes */
   event.add('immersiveengineering:circuits/pcb', 'pneumaticcraft:unassembled_pcb');
+  /* Remove the unused Enchanted Gravitite Block as a proper repair material */
+  event.remove('aether:gravitite_repairing', 'aether:enchanted_gravitite');
 
   /* Clean up Quark's messy tags -_- */
   [

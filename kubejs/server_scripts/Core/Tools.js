@@ -25,7 +25,9 @@ PlayerEvents.inventoryChanged(event => {
   try {
     const stack = event.getPlayer().getInventory().getStackInSlot(event.getSlot());
     wipeEnchantsIfMendingPresent(stack);
-  } catch (exception) { /* NO OP */ }
+  } catch (exception) {
+    /* NO OP */
+  }
 });
 
 ItemEvents.firstLeftClicked(event => {
@@ -35,6 +37,10 @@ ItemEvents.firstLeftClicked(event => {
 
 ServerEvents.recipes(event => {
   const explosiveScrapping = () => {
+    /**
+     * @param {Internal.ItemStack} output
+     * @param {Internal.ItemStack} input
+     */
     const __scrap = (output, input) => {
       const tmp = AlmostUnified.getReplacementForItem(output);
       const stack = tmp.isEmpty() ? output : tmp;
@@ -61,7 +67,7 @@ ServerEvents.recipes(event => {
       let repairItems = null;
       if (stack.getItem() instanceof TieredItemCls) {
         repairItems = Ingredient.of(stack.getItem().getTier().getRepairIngredient());
-      } else if (/*stack.getItem() instanceof ArmorItemCls || */ stack.getItem().getMaterial !== undefined) {
+      } else if (stack.getItem().getMaterial !== undefined) {
         repairItems = Ingredient.of(stack.getItem().getMaterial().getRepairIngredient());
       }
 
