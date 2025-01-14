@@ -47,9 +47,6 @@
 		"Valkyrie Ring" = true
 
 [Worldgen]
-	#Uses an alternative island noise for the Aether. By default, this is disabled with the Ancient Aether mod installed.
-	#Allowed Values: TRUE, FALSE, WITHOUT_AA
-	"Redux Noise" = "without_aa"
 
 	[Worldgen."Additional Features"]
 		#Enables Mossy Holystone as an ore. Configurable so that if you disable it, it's easier to tell if you've come across a dungeon.
@@ -58,8 +55,8 @@
 		"Enable Enchanted and Gilded Vines" = true
 		#Enables roots made of logs and log walls on the sides of Large Cloudcap mushrooms and Blightwillow trees.
 		"Wall Roots on Blightwillows and Large Cloudcaps" = true
-		#Uses the legacy design for the gilded groves, instead of the new one added in 2.0.17 that is an inbetween of 2.0 and 2.1's designs
-		"Legacy Gilded Groves Design" = false
+		#Uses an alternate Gilded Oak shape, more like vanilla Oak trees and Skyroots, for the Gilded biomes.
+		"Alternate Gilded Trees" = false
 
 		[Worldgen."Additional Features"."Cloud Layer"]
 			#Replaces the Aether's large cloud features with a new and improved noise-based cloud layer.
