@@ -1,0 +1,16 @@
+filename = 'sawmill-1.20-1.4.4.jar'
+name = 'Sawmill'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '80b59ca68a83acc96e0168d0b8854c9e30a92e3f993f296eba69b98a520c2ac6c139c480dd3044853aad101b410546d33126eb89f507c1878042151303525711'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/WRaRZdTd/versions/PLj15z89/sawmill-1.20-1.4.4.jar'
+
+[update.modrinth]
+mod-id = 'WRaRZdTd'
+version = 'PLj15z89'

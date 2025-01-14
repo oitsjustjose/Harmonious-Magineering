@@ -1,0 +1,16 @@
+filename = 'SnowRealMagic-1.20.1-Forge-10.5.2.jar'
+name = 'Snow! Real Magic! ⛄'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'e54b3fbfa7909f2cb028a8f5ded81ec32d73627b0a44115331b7ee949550cc03d8fd7140f9450e64d363d54bd00ba2ee436b66b9b084c11906a33632564cf11b'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/iJNje1E8/versions/Z5A25ipN/SnowRealMagic-1.20.1-Forge-10.5.2.jar'
+
+[update.modrinth]
+mod-id = 'iJNje1E8'
+version = 'Z5A25ipN'

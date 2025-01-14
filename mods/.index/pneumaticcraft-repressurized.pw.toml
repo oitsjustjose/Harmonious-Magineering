@@ -1,0 +1,16 @@
+filename = 'pneumaticcraft-repressurized-6.0.18+mc1.20.1.jar'
+name = 'PneumaticCraft: Repressurized'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'c06744e2c32a7838ba1299cb73886ee8cc999fc6be12a41487024513b634c89b3d4b83c54676b6211e5f5c5e0da170977477753375ff2c75001b778450142020'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/ncAcdgk7/versions/4zFDhXRf/pneumaticcraft-repressurized-6.0.18%2Bmc1.20.1.jar'
+
+[update.modrinth]
+mod-id = 'ncAcdgk7'
+version = '4zFDhXRf'

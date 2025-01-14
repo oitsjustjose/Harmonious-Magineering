@@ -1,0 +1,16 @@
+filename = 'Guide-API-VP-1.20.1-2.2.6.jar'
+name = 'Guide-API VP'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'ee1c26111f11aa76862a2cb0e0d023f4d5413c7645c5a3e8bee6b32d671ad21257846d3c8ebf9cb53a78bf9055e864a9dd5b5fd877b29ce009374350e0f3d472'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/w5L2PHJU/versions/WTkTrt4T/Guide-API-VP-1.20.1-2.2.6.jar'
+
+[update.modrinth]
+mod-id = 'w5L2PHJU'
+version = 'WTkTrt4T'

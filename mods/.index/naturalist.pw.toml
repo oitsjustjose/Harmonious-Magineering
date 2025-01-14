@@ -1,0 +1,16 @@
+filename = 'naturalist-forge-4.0.3-1.20.1.jar'
+name = 'Naturalist'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'c808f30ba302f8f2404506088d2d54f33a4fecd67c6c1f325d99773c2c99d1c0c74c0b94be58ab0e6a95953330245d6ca5bbd18f9b5418428e85b702f431567f'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/F8BQNPWX/versions/fapHaClR/naturalist-forge-4.0.3-1.20.1.jar'
+
+[update.modrinth]
+mod-id = 'F8BQNPWX'
+version = 'fapHaClR'

@@ -1,0 +1,16 @@
+filename = 'DimStorage-1.20.1-8.0.1.jar'
+name = 'DimStorage'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '99bba8966296de3d781c9651136ec7e73a3965f03de20fe2bcc6f5cf72a618ce123be9c232df24625ce650244b8269c0600287f5af18d7b735be4860f3b0c254'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/8lnmIJH7/versions/zTdvqYPN/DimStorage-1.20.1-8.0.1.jar'
+
+[update.modrinth]
+mod-id = '8lnmIJH7'
+version = 'zTdvqYPN'

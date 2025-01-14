@@ -1,0 +1,16 @@
+filename = 'labels-1.20-1.20.1.jar'
+name = 'Storage Labels'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '3133da9537f9d8a2231c845dd794bb16676d84522b25067cca151553291029c314a174b685a3d255d8e14802e73c0cf01c4e1582873e08bc9bb0ebec60951edd'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/x6r7yhfi/versions/ra0opL4S/labels-1.20-1.20.1.jar'
+
+[update.modrinth]
+mod-id = 'x6r7yhfi'
+version = 'ra0opL4S'

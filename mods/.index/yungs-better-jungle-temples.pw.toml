@@ -1,0 +1,16 @@
+filename = 'YungsBetterJungleTemples-1.20-Forge-2.0.5.jar'
+name = "YUNG's Better Jungle Temples"
+side = 'server'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '433d84ca6a8f223376bc8e30c7ca2407294876c2fe8ef51fec9f12358b5b4f84c76031abba74a256eec12146817690224b141668890ebba99decd411d6b37b9c'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/z9Ve58Ih/versions/CXQc6EnZ/YungsBetterJungleTemples-1.20-Forge-2.0.5.jar'
+
+[update.modrinth]
+mod-id = 'z9Ve58Ih'
+version = 'CXQc6EnZ'

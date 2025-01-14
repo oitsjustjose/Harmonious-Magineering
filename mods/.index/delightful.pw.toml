@@ -1,0 +1,16 @@
+filename = 'Delightful-1.20.1-3.5.6.jar'
+name = 'Delightful'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '2c65d3762ee6e99e24e44ac0470db63fa7a89aa1df6ba8d96f3e67279eb59874e7186b84aa45fdd4f4bb7bc410356a9df7c779daa04b88ce8231b030dbc9ef97'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/JtSnhtNJ/versions/ozSPgWCd/Delightful-1.20.1-3.5.6.jar'
+
+[update.modrinth]
+mod-id = 'JtSnhtNJ'
+version = 'ozSPgWCd'

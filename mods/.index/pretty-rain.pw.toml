@@ -1,0 +1,16 @@
+filename = 'particlerain-1.20.1-Forge-1.0.5.jar'
+name = 'Pretty Rain'
+side = 'client'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'ec12a9e1f51acfbc5199596f8e4d888cc3dbae5b8dda886194b0a62db92392d49f7c35d4284f709ab6004e3fba9b3432a03b22d7139c5a92edf3d00235879556'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/IhZuHxkl/versions/ryswbfS9/particlerain-1.20.1-Forge-1.0.5.jar'
+
+[update.modrinth]
+mod-id = 'IhZuHxkl'
+version = 'ryswbfS9'

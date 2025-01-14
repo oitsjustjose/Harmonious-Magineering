@@ -1,0 +1,16 @@
+filename = 'Architects-Palette-1.20.1-1.3.6.1.jar'
+name = "Architect's Palette"
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'beta'
+
+[download]
+hash = '13bbbe62cd4707123ffbfb925ddc852211cecfc3cc1343a2f8b49e77ea6068d114ce641bb4f15bf0c70b52625a2dc8237b5cff717ea720a9dd277c592d9ae94d'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/vt0VyseM/versions/bZg21BDb/Architects-Palette-1.20.1-1.3.6.1.jar'
+
+[update.modrinth]
+mod-id = 'vt0VyseM'
+version = 'bZg21BDb'

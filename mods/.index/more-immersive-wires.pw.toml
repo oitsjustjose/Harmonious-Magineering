@@ -1,0 +1,16 @@
+filename = 'more-immersive-wires-1.20.1-1.1.4.jar'
+name = 'More Immersive Wires'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '4a3f12e19b8fdeaf74cc99aff5a926179f61866e88802eacaa21478b7fd88dfafde013dfb2fbb93c1728f876fcab0d3132aa421877de7d8d4a5c459a02c3fcbd'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/ekzqyEZL/versions/rOtPDeCT/more-immersive-wires-1.20.1-1.1.4.jar'
+
+[update.modrinth]
+mod-id = 'ekzqyEZL'
+version = 'rOtPDeCT'

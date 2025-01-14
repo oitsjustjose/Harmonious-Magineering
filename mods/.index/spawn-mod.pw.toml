@@ -1,0 +1,16 @@
+filename = 'spawn-1.0.2-forge.jar'
+name = 'Spawn'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '624d4d1392e8888d12dc34cc8d4c22e96ad665c4574633877dc1ed6790210a17df12c60ea2f68ffb500cebfc1c419c3c53e12ad9772fd61ce1d23a5c4623bb4a'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/rex9wwpz/versions/RXKJiHaV/spawn-1.0.2-forge.jar'
+
+[update.modrinth]
+mod-id = 'rex9wwpz'
+version = 'RXKJiHaV'

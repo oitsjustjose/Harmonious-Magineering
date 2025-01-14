@@ -1,0 +1,16 @@
+filename = 'Wabi-Sabi-Structures-2.0.0-1.20-Forge.jar'
+name = 'Wabi-Sabi Structures'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1', '1.20.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '2ec1f9042d8ded24341dda34025c45880ecb2b175d28e8a95706780009c2930b63f9ac87c539260189865f8bd01f1697cb65634027b385166b47a283787bfd29'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/Vr3O6THr/versions/QaxpEa5y/Wabi-Sabi-Structures-2.0.0-1.20-Forge.jar'
+
+[update.modrinth]
+mod-id = 'Vr3O6THr'
+version = 'QaxpEa5y'

@@ -1,0 +1,16 @@
+filename = 'TextAnimator-1.20.1-forge-2.4.0.jar'
+name = 'Text Animator'
+side = 'client'
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1' ]
+x-prismlauncher-release-type = 'beta'
+
+[download]
+hash = '5f1a64bd1d9a3b4bfc5db5ebc4d2061fa9b004e38ad9907feb84e7704bb288c4ecdcec9f60336fed353e69dcad114faa39cdb3b119d2015b37dffd09613b70c8'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/HBIG5nRf/versions/F9Hjh5Di/TextAnimator-1.20.1-forge-2.4.0.jar'
+
+[update.modrinth]
+mod-id = 'HBIG5nRf'
+version = 'F9Hjh5Di'

@@ -1,0 +1,16 @@
+filename = 'storagedrawers-1.20.1-12.0.3.jar'
+name = 'Storage Drawers'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '294f171c77478a91f009b83fb8f93ebf21ced13d6df2589e5ee45bb86aebb1fd137198feb91c00dbba28309fe4832398bfe4b51870310a8e5f701c99a603af6b'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/guitPqEi/versions/HxmL9PcX/storagedrawers-1.20.1-12.0.3.jar'
+
+[update.modrinth]
+mod-id = 'guitPqEi'
+version = 'HxmL9PcX'

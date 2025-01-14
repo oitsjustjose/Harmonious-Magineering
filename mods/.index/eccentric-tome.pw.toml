@@ -1,0 +1,16 @@
+filename = 'eccentrictome-1.20.1-1.10.3.jar'
+name = 'Eccentric Tome'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '06f8a505c1a78cadebbe454d905963e2a6654c3e7533098154291bcb5a5669dfb4d75078bb08763941d7172a061636d1336e450dd6e9604bc7a1948a7dc7339d'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/ZtdULK5c/versions/2MZNRPks/eccentrictome-1.20.1-1.10.3.jar'
+
+[update.modrinth]
+mod-id = 'ZtdULK5c'
+version = '2MZNRPks'

@@ -1,0 +1,16 @@
+filename = 'MekanismGenerators-1.20.1-10.4.13.69.jar'
+name = 'Mekanism Generators'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '08e0cc733858cce02dc6ba5d7853251ada6da357789233810edb3cb5054f0920483fe9eaf64510fddd1e09b58504328c4a82a5f2b8cf2ac5d8d508a49a54cd68'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/OFVYKsAk/versions/8IUpADYB/MekanismGenerators-1.20.1-10.4.13.69.jar'
+
+[update.modrinth]
+mod-id = 'OFVYKsAk'
+version = '8IUpADYB'

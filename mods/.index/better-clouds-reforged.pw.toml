@@ -1,0 +1,16 @@
+filename = 'BetterClouds-1.1.jar'
+name = 'Better Clouds Reforged'
+side = 'client'
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1', '1.20.2', '1.20.3', '1.20.4' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '172289d960977eef7db83d31dd05835d171b3ef6'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5538311
+project-id = 983284

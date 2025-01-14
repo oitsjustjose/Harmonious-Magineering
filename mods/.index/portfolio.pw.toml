@@ -1,0 +1,16 @@
+filename = 'portfolio-1.20.1-1.4.0-forge.jar'
+name = 'Portfolio'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1', '1.20.2', '1.20.3', '1.20.4', '1.20.5', '1.20.6' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '1eb5e4437f1633ccde7c38d5c0d506ef8d6a17604bfd53fb1d4bdb1984ee236757082a05c278dd6769a72992c4bc8ec84e299d60c98fb32b2bbccc76d8c857fe'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/2k6aLirX/versions/apOmeZ8h/portfolio-1.20.1-1.4.0-forge.jar'
+
+[update.modrinth]
+mod-id = '2k6aLirX'
+version = 'apOmeZ8h'

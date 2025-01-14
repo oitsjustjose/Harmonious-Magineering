@@ -1,0 +1,16 @@
+filename = 'appliedenergistics2-forge-15.3.2-beta.jar'
+name = 'Applied Energistics 2'
+side = 'both'
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'beta'
+
+[download]
+hash = '2cf9841964c06971d807efc046e73085084b16e14c5daa9875235ed80d6868a5227d2ae7a0b3aa5278e670116f8bac1bfecfaff01230ec8d607bda11ae044bd6'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/XxWD5pD3/versions/RRBDfS9L/appliedenergistics2-forge-15.3.2-beta.jar'
+
+[update.modrinth]
+mod-id = 'XxWD5pD3'
+version = 'RRBDfS9L'
