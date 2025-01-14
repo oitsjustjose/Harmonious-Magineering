@@ -45,3 +45,22 @@
 			#Set page visibility
 			visible = true
 
+	[multiblocks.better_fusion_reactor]
+
+		#JEI 'Building [Better Fusion Reactor]' page configuration
+		[multiblocks.better_fusion_reactor.better_fusion_reactor]
+			#Set page visibility
+			visible = true
+
+	[multiblocks.mekanism_extras]
+
+		#JEI 'Building [Reinforced Induction Matrix]' page configuration
+		[multiblocks.mekanism_extras.extra_matrix]
+			#Set page visibility
+			visible = true
+
+		#JEI 'Building [Naquadah Reactor]' page configuration
+		[multiblocks.mekanism_extras.naquadah_reacto]
+			#Set page visibility
+			visible = true
+

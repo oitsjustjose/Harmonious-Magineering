@@ -107,6 +107,7 @@
 				small_fireball = true
 				llama_spit = true
 				fireball = true
+				potion = true
 
 			[light_sources.settings.entities.ae2]
 				tiny_tnt_primed = true

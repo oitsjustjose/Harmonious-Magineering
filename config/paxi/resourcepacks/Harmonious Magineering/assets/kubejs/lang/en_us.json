@@ -6,7 +6,7 @@
   "tooltip.kubejs.pretty_pipes_module": "Will only work on a Pipe",
   "tooltip.kubejs.modular_routers_module": "Will only work in a Modular Router",
   "tooltip.kubejs.can_be_dyed": "Can be dyed",
-  "tooltip.kubejs.gated": "<shake>You aren't sure what this is...</shake>",
+  "tooltip.kubejs.gated": "<shake>You lack the knowledge to use this</shake>",
   "tooltip.kubejs.aether_loot_hint": "§8Obtained by conquering an §6Aether§8 dungeon..§r",
   "tooltip.kubejs.disabled": "This item is disabled",
   "item.kubejs.unknown_holy_item": "Blessed Artifact",

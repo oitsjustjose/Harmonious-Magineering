@@ -82,6 +82,7 @@
 			purple_glacia = true
 			gilded_oak = true
 			blighted_skyroot = true
+			fieldsproot = true
 
 	[types.wood_type]
 
@@ -162,6 +163,9 @@
 
 		[entries.leaves_type.cfm]
 			hedge = true
+
+		[entries.leaves_type.regions_unexplored]
+			shrub = true
 
 	[entries.wood_type]
 
@@ -244,6 +248,7 @@
 			trapped_chest = false
 			bookshelf = true
 			stripped_post = true
+			vertical_slab = true
 
 		[entries.wood_type.regions_unexplored]
 			branch = true

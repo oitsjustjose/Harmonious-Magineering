@@ -1,0 +1,3 @@
+#Don't render side panels (weapon / armor) when viewed in FTB Quests
+ftb_quests_skip_side_panels = false
+
