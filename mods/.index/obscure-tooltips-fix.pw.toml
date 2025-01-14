@@ -1,0 +1,16 @@
+filename = 'obscure_tooltips_fix-1.20.1-1.1.0-all.jar'
+name = 'Obscure Tooltips Fix'
+side = 'client'
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '24b809c486f1f412eb8e5ff5858e2d84af8a4871'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5993283
+project-id = 1103943

@@ -1,0 +1,16 @@
+filename = 'structureessentials-1.20.1-3.4.jar'
+name = 'Structure Essentials[Forge/Fabric]'
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '51e692526b5f83c5d106c03aa85270dd0258d9bb'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5392622
+project-id = 832882

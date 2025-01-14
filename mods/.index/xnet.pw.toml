@@ -1,0 +1,16 @@
+filename = 'xnet-1.20-6.1.6.jar'
+name = 'XNet'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '9e0f612a08e1211010cbef71b95846989042fe2c'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5712546
+project-id = 260912

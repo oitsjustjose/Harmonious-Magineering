@@ -1,0 +1,16 @@
+filename = 'mcjtylib-1.20-8.0.6.jar'
+name = 'McJtyLib'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '300afa123362f6f10c3791cc28d7086417379dad'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5613231
+project-id = 233105

@@ -1,0 +1,16 @@
+filename = 'Obscure-Tooltips-2.2.jar'
+name = 'Obscure Tooltips'
+side = 'client'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '8cc7c31f79a11bef3d5cc69b1740f07d5adbfc96'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 4686579
+project-id = 715660

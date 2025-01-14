@@ -1,0 +1,16 @@
+filename = 'trashslot-forge-1.20-15.1.1.jar'
+name = 'TrashSlot'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '8a2d0f69b59dac3314d3fa410c27e181791a95fd'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 6077703
+project-id = 235577

@@ -1,0 +1,16 @@
+filename = 'mvs-4.1.4-1.20-forge.jar'
+name = "MVS - Moog's Voyager Structures"
+side = 'server'
+x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1', '1.20.2', '1.20.3', '1.20.4' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'e148cb091339042eee0a498b73b1dcc166f8ad78'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5671867
+project-id = 656977

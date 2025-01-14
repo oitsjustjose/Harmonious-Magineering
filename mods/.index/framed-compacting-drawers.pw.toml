@@ -1,0 +1,16 @@
+filename = 'framedcompactdrawers-1.20-6.0.1.jar'
+name = 'Framed Compacting Drawers'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1', '1.20.2' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '83ae9354786cd23e4121f1bd3f8a3092b7be942a'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 5284254
+project-id = 376351

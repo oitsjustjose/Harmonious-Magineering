@@ -1,0 +1,16 @@
+filename = 'MekanismWeapons-1.20.1-2.5.jar'
+name = 'Mekanism: Weapons'
+side = 'server'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'dffec8074984b01de61edcba9bfdc72828c1d45e'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 6065486
+project-id = 929829

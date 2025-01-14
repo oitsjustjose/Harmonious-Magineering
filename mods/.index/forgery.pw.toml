@@ -1,0 +1,16 @@
+filename = 'forgery-3.5.6+1.20.jar'
+name = 'Forgery'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1' ]
+x-prismlauncher-release-type = 'beta'
+
+[download]
+hash = '1189bebf940a0fd6ebd0adb5438d301d2f3a0b54'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 6079550
+project-id = 434087
