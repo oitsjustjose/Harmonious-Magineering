@@ -1,17 +1,15 @@
 // priority: 1
-
-// These stages are copied DIRECTLY from Globals -- if you don't copy these,
-//  you'll run into issues where the Ingredients defined as an exception
-//  won't be consistent/correct.
-
-const FEATURE_FLAG_RENAME_ITEM_CLIENTSIDE = true;
-
 const stages = JsonIO.read('kubejs/globals/stages.json');
 
-const cacheRefreshFrequencySeconds = 5;
-let cachedServerPlayerRef = null;
-let lastCacheRefresh = 0;
-let lastHovNameRefresh = 0;
+/**
+ * Gets the local (or remote) server player -- this is required to properly read
+ *  data values that are stored on the server only, like Tags, NBT, etc..
+ * @returns The server player which matches UUIDs with the player, or null if none is found
+ */
+const getServerPlayer = () => {
+  const players = Utils.server.getPlayers().filter(x => x.getUuid() === Client.player.getUuid());
+  return players.length ? players[0] : null;
+};
 
 /**
  * Adds a "You don't know this item" tooltip & obfuscates the tooltip for items you don't have the corresponding stage unlocked for
@@ -19,66 +17,36 @@ let lastHovNameRefresh = 0;
  * @param {Internal.List<any>} tooltips
  */
 const modifyStackForStageProgress = (stack, tooltips) => {
-  // Fetch the server player only when needed
-  if (cachedServerPlayerRef === null || Date.now() - lastCacheRefresh > cacheRefreshFrequencySeconds * 1000) {
-    lastCacheRefresh = Date.now();
-    for (const player of Utils.server.getPlayers()) {
-      if (player.getUuid() === Client.player.getUuid()) {
-        cachedServerPlayerRef = player;
-        break;
-      }
-    }
+  // Determine if the current stack is an exception in ANY config
+  for (const tag of Object.keys(stages)) {
+    let config = stages[tag];
+    if (Ingredient.of(config.exceptions).test(stack.item.id)) return;
   }
 
-  if (!cachedServerPlayerRef) return;
-  if (cachedServerPlayerRef.isCreative()) return;
+  const player = getServerPlayer();
+  if (!player) return;
 
-  if (cachedServerPlayerRef !== null) {
-    // Determine if the current stack is an exception in ANY config
-    let isItemException = false;
-    for (const tag of Object.keys(stages)) {
-      let config = stages[tag];
-      if (Ingredient.of(config.exceptions).test(stack.item.id)) {
-        isItemException = true;
-        break;
+  for (const tag of Object.keys(stages)) {
+    // If the player already has this tag, we don't need to process for it
+    if (player.getTags() && player.getTags().contains(tag)) continue;
+
+    let config = stages[tag];
+    if (config.mods.contains(stack.getMod())) {
+      // We don't want to give the player any additional info on this item...
+      for (let i = 1; i < tooltips.length; i++) {
+        tooltips.remove(i);
       }
-    }
-
-    if (!isItemException) {
-      for (const tag of Object.keys(stages)) {
-        let config = stages[tag];
-        if (config.mods.contains(stack.getMod())) {
-          let obfName = Text.white(`abcde_${stack.id}`).obfuscated();
-          if (!cachedServerPlayerRef.getTags() || !cachedServerPlayerRef.getTags().contains(tag)) {
-            if (FEATURE_FLAG_RENAME_ITEM_CLIENTSIDE) {
-              // Just setting the name on the client-side. Doesn't actually rename the item permanently
-              if (stack.getHoverName() !== obfName && Date.now() - lastHovNameRefresh > 100) {
-                // Add ABCDE as 'noise' to prevent the word (alt) from showing up next to the obfuscated text
-                stack.setHoverName(obfName);
-                lastHovNameRefresh = Date.now();
-              }
-            }
-
-            // We don't want to give the player any additional info on this item...
-            for (let i = 1; i < tooltips.length; i++) {
-              tooltips.remove(i);
-            }
-            // Add the tooltip explaining you have no idea what this is
-            tooltips.add(Text.darkRed(Text.translate('tooltip.kubejs.gated')).underlined());
-            // RETURN here so that we don't add the mod to the tooltip like below:
-            return;
-          }
-        }
-      }
+      // Add the tooltip explaining you have no idea what this is
+      tooltips.add(Text.darkRed(Text.translate('tooltip.kubejs.gated')).underlined());
+      // RETURN here so that we don't add the mod to the tooltip like below:
+      return;
     }
   }
 };
 
 ItemEvents.tooltip(event => {
   event.addAdvanced(Ingredient.all, (stack, _, tooltips) => {
-    if (Utils.server !== null && !Utils.server.isDedicated()) {
-      modifyStackForStageProgress(stack, tooltips);
-    }
+    modifyStackForStageProgress(stack, tooltips);
 
     if (event.isShift()) {
       /* Aether loot hint */

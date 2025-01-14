@@ -20,17 +20,7 @@ ServerEvents.tags('block', event => {
   ores.forEach(ore => event.removeAllTagsFrom(ore));
 
   /* Add Mangrove Roots to HT's Treechop to make them more bareable */
-  event.add('treechop:choppables', [
-    'aether_redux:blightwillow_log_wall',
-    'aether_redux:blightwillow_wood_wall',
-    'aether_redux:cloudcap_hyphae_wall',
-    'aether_redux:cloudcap_stem_wall',
-    'aether_redux:stripped_blightwillow_log_wall',
-    'aether_redux:stripped_blightwillow_wood_wall',
-    'aether_redux:stripped_cloudcap_hyphae_wall',
-    'aether_redux:stripped_cloudcap_stem_wall',
-    'minecraft:mangrove_roots',
-  ]);
+  event.add('treechop:choppables', 'minecraft:mangrove_roots');
 
   /* Fix CFM Pickaxe Minability */
   event.add('minecraft:mineable/pickaxe', ['cfm:post_box']);
@@ -759,13 +749,6 @@ ServerEvents.tags('item', event => {
   event.add('immersiveengineering:circuits/pcb', 'pneumaticcraft:unassembled_pcb');
   /* Remove the unused Enchanted Gravitite Block as a proper repair material */
   event.remove('aether:gravitite_repairing', 'aether:enchanted_gravitite');
-  /* Quark hoe radius tag for high-ish tier hoes */
-  event.add('quark:big_harvesting_hoes', [
-    'aether:gravitite_hoe',
-    'aether:valkyrie_hoe',
-    'deep_aether:stratus_hoe',
-    'immersiveengineering:hoe_steel',
-  ]);
 
   /* Clean up Quark's messy tags -_- */
   [

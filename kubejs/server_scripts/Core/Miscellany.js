@@ -141,10 +141,6 @@ ServerEvents.recipes(event => {
       ],
       N: '#forge:nuggets/iron',
     });
-
-    /* Re-do branch stick crafting */
-    event.remove({output: 'minecraft:stick', input: '#regions_unexplored:branches'});
-    event.shaped(Item.of('minecraft:stick', 9), ['L', 'L'], {L: '#regions_unexplored:branches'});
   };
 
   const supplementaries = () => {
@@ -223,6 +219,10 @@ ServerEvents.recipes(event => {
   event.shapeless(_makeFirework(1, 3), ['minecraft:paper', 'minecraft:gunpowder']);
   event.shapeless(_makeFirework(2, 3), ['minecraft:paper', 'minecraft:gunpowder', 'minecraft:gunpowder']);
   event.shapeless(_makeFirework(3, 3), ['minecraft:paper', 'minecraft:gunpowder', 'minecraft:gunpowder', 'minecraft:gunpowder']);
+
+  /* Re-do branch stick crafting */
+  event.remove({output: 'minecraft:stick', input: '#regions_unexplored:branches'});
+  event.shaped(Item.of('minecraft:stick', 9), ['L', 'L'], {L: '#regions_unexplored:branches'});
 
   [architectsPalette, createWaxedCopper, foodstuffs, glass, outerEnd, quark, supplementaries].forEach(module => module());
 });
