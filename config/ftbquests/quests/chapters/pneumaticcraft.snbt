@@ -34,7 +34,7 @@
 				{
 					id: "034E7CF883CE20ED"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "patchouli:guide_book"
 						tag: {
 							"patchouli:book": "pneumaticcraft:book"
@@ -345,7 +345,7 @@
 			]
 			hide: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
 					Icon: "pneumaticcraft:item/failed_pcb"
@@ -567,7 +567,7 @@
 			dependencies: ["68B9B4F53C673B18"]
 			description: ["Looking for some type of ... &o&bModular Powersuit&r? Well look no further! The Compressed Iron armorset combined with additional oxygen tanks and a PCB to control the various modules can create quite a powerful armor set capable of augmenting your player with a built-in Elytra module, Electrolsys and more! Taking a look at the &9PNC:R Manual&r will give you a full lay of the land."]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "pneumaticcraft:pneumatic_helmet"
 				tag: {
 					Damage: 0
@@ -586,7 +586,7 @@
 				{
 					id: "4E1E1E449CA52531"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "pneumaticcraft:pneumatic_helmet"
 						tag: {
 							Damage: 0
@@ -597,7 +597,7 @@
 				{
 					id: "6C690747B784CC73"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "pneumaticcraft:pneumatic_chestplate"
 						tag: {
 							Damage: 0
@@ -608,7 +608,7 @@
 				{
 					id: "63E3D318221E6326"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "pneumaticcraft:pneumatic_leggings"
 						tag: {
 							Damage: 0
@@ -619,7 +619,7 @@
 				{
 					id: "39F17475B3D190D0"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "pneumaticcraft:pneumatic_boots"
 						tag: {
 							Damage: 0
@@ -643,7 +643,7 @@
 			]
 			hide: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "pneumaticcraft:jackhammer"
 				tag: {
 					"pneumaticcraft:air": 120000
@@ -687,7 +687,7 @@
 			rewards: [{
 				id: "15C5D93C75BB0722"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "patchouli:guide_book"
 					tag: {
 						"patchouli:book": "modularrouters:book"

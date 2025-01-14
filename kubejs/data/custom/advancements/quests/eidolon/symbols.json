@@ -2,9 +2,9 @@
   "parent": "custom:root",
   "display": {
     "icon": {
-      "item": "eidolon:pewter_nugget"
+      "item": "eidolon:holy_symbol"
     },
-    "title": "Obtain any nugget",
+    "title": "Create a Holy or Unholy Symbol",
     "description": "",
     "frame": "task",
     "show_toast": false,
@@ -16,9 +16,5 @@
       "trigger": "minecraft:impossible"
     }
   },
-  "requirements": [
-    [
-      "impossible"
-    ]
-  ]
+  "requirements": [["impossible"]]
 }

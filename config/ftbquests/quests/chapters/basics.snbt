@@ -5,7 +5,7 @@
 	filename: "basics"
 	group: "7B95A8B4604FCF48"
 	icon: {
-		Count: 1b
+		Count: 1
 		id: "minecraft:wooden_sword"
 		tag: {
 			Damage: 0
@@ -61,7 +61,7 @@
 			tasks: [{
 				id: "1C1377EF17F7840B"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "eccentrictome:tome"
 					tag: {
 						"eccentrictome:mods": { }
@@ -324,7 +324,7 @@
 			description: ["It seems that as long as the moon is &orelatively&r full, there aren't any monsters coming out at night on the surface!"]
 			hide: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
 					Icon: "supplementaries:item/globes/globe_moon"

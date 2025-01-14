@@ -2,9 +2,9 @@
   "parent": "custom:root",
   "display": {
     "icon": {
-      "item": "bloodmagic:sigilofsuppression"
+      "item": "minecraft:anvil"
     },
-    "title": "Create any (Non-divination) Sigil",
+    "title": "Find (or make) an Anvil",
     "description": "",
     "frame": "task",
     "show_toast": false,

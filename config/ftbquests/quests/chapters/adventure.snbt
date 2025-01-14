@@ -6,7 +6,7 @@
 	group: "7B95A8B4604FCF48"
 	hide_quest_until_deps_visible: true
 	icon: {
-		Count: 1b
+		Count: 1
 		id: "ftbquests:custom_icon"
 		tag: {
 			Icon: "supplementaries:item/cartographers_quill"
@@ -52,7 +52,7 @@
 			shape: "square"
 			tasks: [{
 				icon: {
-					Count: 1b
+					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
 						Icon: "aether:item/miscellaneous/bronze_dungeon_key"
@@ -165,7 +165,7 @@
 			shape: "hexagon"
 			tasks: [{
 				icon: {
-					Count: 1b
+					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
 						Icon: "moonlight:textures/map_marker/generic_structure.png"
@@ -188,7 +188,7 @@
 				"While you're here, you may want to take advantage of the storage capabilities that the &dShulkers&r contain.."
 			]
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
 					Icon: "supplementaries:textures/map_marker/end_city.png"
@@ -203,7 +203,7 @@
 			shape: "hexagon"
 			tasks: [{
 				icon: {
-					Count: 1b
+					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
 						Icon: "supplementaries:textures/map_marker/end_city.png"
@@ -232,7 +232,7 @@
 			shape: "hexagon"
 			tasks: [{
 				icon: {
-					Count: 1b
+					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
 						Icon: "supplementaries:textures/map_marker/ocean_ruin.png"
@@ -257,7 +257,7 @@
 			shape: "hexagon"
 			tasks: [{
 				icon: {
-					Count: 1b
+					Count: 1
 					id: "ftbquests:custom_icon"
 					tag: {
 						Icon: "supplementaries:textures/map_marker/jungle_temple.png"

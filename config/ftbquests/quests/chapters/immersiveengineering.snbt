@@ -242,7 +242,7 @@
 			]
 			hide: true
 			icon: {
-				Count: 1b
+				Count: 1
 				ForgeCaps: {
 					Parent: {
 						Items: [ ]
@@ -261,7 +261,7 @@
 				{
 					id: "03D5AD3611584377"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							Parent: {
 								Items: [ ]
@@ -278,7 +278,7 @@
 				{
 					id: "6DF36351A40728A3"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "immersiveengineering:hammer"
 						tag: {
 							Damage: 0
@@ -289,7 +289,7 @@
 				{
 					id: "1FA8DAAB93E791C6"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "immersiveengineering:wirecutter"
 						tag: {
 							Damage: 0
@@ -476,7 +476,7 @@
 			rewards: [{
 				id: "17ACFD346522B2D6"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "immersiveengineering:blueprint"
 					tag: {
 						blueprint: "molds"
@@ -675,7 +675,7 @@
 			rewards: [{
 				id: "408932CAA54EBC1D"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "patchouli:guide_book"
 					tag: {
 						"patchouli:book": "buildinggadgets2:buildinggadgets2book"

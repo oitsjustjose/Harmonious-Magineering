@@ -2,9 +2,9 @@
   "parent": "custom:root",
   "display": {
     "icon": {
-      "item": "bloodmagic:sigilofsuppression"
+      "item": "eidolon:censer"
     },
-    "title": "Create any (Non-divination) Sigil",
+    "title": "Create a Holy or Unholy Symbol",
     "description": "",
     "frame": "task",
     "show_toast": false,

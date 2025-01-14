@@ -167,7 +167,7 @@
 			]
 			hide: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
 					Icon: "bloodmagic:textures/entities/explosionprojectile.png"
@@ -401,7 +401,7 @@
 				{
 					id: "498083347940AEBF"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "mekanism:mekasuit_helmet"
 						tag: {
 							HideFlags: 2
@@ -412,7 +412,7 @@
 				{
 					id: "0165157E1F10EC2B"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "mekanism:mekasuit_bodyarmor"
 						tag: {
 							HideFlags: 2
@@ -423,7 +423,7 @@
 				{
 					id: "5D15803FC7F963B5"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "mekanism:mekasuit_pants"
 						tag: {
 							HideFlags: 2
@@ -434,7 +434,7 @@
 				{
 					id: "48F328F3879DEAC5"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "mekanism:mekasuit_boots"
 						tag: {
 							HideFlags: 2
@@ -478,7 +478,7 @@
 			subtitle: "A little less to worry about"
 			tasks: [{
 				icon: {
-					Count: 1b
+					Count: 1
 					id: "mekanism:hazmat_mask"
 					tag: {
 						HideFlags: 2
@@ -502,7 +502,7 @@
 			]
 			hide: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
 					Icon: "minecraft:block/fire_0"
@@ -535,7 +535,7 @@
 			hide: true
 			hide_dependency_lines: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "minecraft:firework_rocket"
 				tag: {
 					Fireworks: {

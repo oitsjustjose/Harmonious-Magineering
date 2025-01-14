@@ -148,7 +148,7 @@
 			]
 			hide: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ftbquests:custom_icon"
 				tag: {
 					Icon: "ae2:block/controller_column_lights"
@@ -433,7 +433,7 @@
 			hide: true
 			hide_dependency_lines: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "ae2:facade"
 				tag: {
 					item: "minecraft:stone"
@@ -455,7 +455,7 @@
 				{
 					id: "2DDF982FEB7E923E"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "ae2:facade"
 						tag: {
 							item: "minecraft:stone"
@@ -692,7 +692,7 @@
 			tasks: [{
 				id: "4F60A9876BDA3FCF"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "entangled:block"
 					tag: { }
 				}

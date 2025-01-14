@@ -2,9 +2,9 @@
   "parent": "custom:root",
   "display": {
     "icon": {
-      "item": "minecraft:anvil"
+      "item": "eidolon:pewter_nugget"
     },
-    "title": "Find (or make) an Anvil",
+    "title": "Obtain any nugget",
     "description": "",
     "frame": "task",
     "show_toast": false,
@@ -16,9 +16,5 @@
       "trigger": "minecraft:impossible"
     }
   },
-  "requirements": [
-    [
-      "impossible"
-    ]
-  ]
+  "requirements": [["impossible"]]
 }

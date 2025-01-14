@@ -431,7 +431,7 @@
 			tasks: [{
 				id: "04B8D138C945FB6F"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "mekanism:energy_tablet"
 					tag: {
 						mekData: {

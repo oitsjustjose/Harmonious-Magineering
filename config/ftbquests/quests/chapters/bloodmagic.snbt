@@ -31,7 +31,7 @@
 				{
 					id: "1B1240C8BA1CE159"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bloodmagic:sacrificialdagger"
 						tag: { }
 					}
@@ -40,7 +40,7 @@
 				{
 					id: "08512453153D83B9"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "patchouli:guide_book"
 						tag: {
 							"patchouli:book": "bloodmagic:guide"
@@ -291,7 +291,7 @@
 				{
 					id: "663463732E84F0C5"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bloodmagic:basemonstersoul"
 						tag: {
 							souls: 5.0d
@@ -377,7 +377,7 @@
 			rewards: [{
 				id: "34F7FC6ECC63BFF2"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "minecraft:enchanted_book"
 					tag: {
 						StoredEnchantments: [{
@@ -398,7 +398,7 @@
 				{
 					id: "2E02FEB7712D32FB"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "bloodmagic:basiccuttingfluid"
 						tag: {
 							Damage: 0
@@ -425,7 +425,7 @@
 					command: "/tag @p add embers"
 					elevate_perms: true
 					icon: {
-						Count: 1b
+						Count: 1
 						id: "ftbquests:custom_icon"
 						tag: {
 							Icon: "embers:item/sigil_explosion"
@@ -486,7 +486,7 @@
 			rewards: [{
 				id: "7697CDC7EAA4DB59"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "bloodmagic:sigilofholding"
 					tag: {
 						currentSigil: 5

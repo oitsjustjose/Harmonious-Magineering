@@ -32,7 +32,7 @@
 					count: 2
 					id: "7EB48C7605DD2FB4"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "aether:cold_parachute"
 						tag: {
 							Damage: 0
@@ -127,7 +127,7 @@
 			dependencies: ["7BF1DBC64ED535E6"]
 			hide: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "aether:valkyrie_chestplate"
 				tag: {
 					Damage: 0
@@ -147,7 +147,7 @@
 				{
 					id: "21BE74BBD5630971"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -163,7 +163,7 @@
 				{
 					id: "507CC3DDF8A5D81E"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -179,7 +179,7 @@
 				{
 					id: "31228B07D355692A"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -195,7 +195,7 @@
 				{
 					id: "3C3E4DDC236F5E62"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -211,7 +211,7 @@
 				{
 					id: "1699D2A62B50B156"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "aether:valkyrie_gloves"
 						tag: {
 							Damage: 0
@@ -228,7 +228,7 @@
 			dependencies: ["7BF1DBC64ED535E6"]
 			hide: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "aether:valkyrie_lance"
 				tag: {
 					Damage: 0
@@ -248,7 +248,7 @@
 				{
 					id: "3076E172A0040580"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "aether:valkyrie_lance"
 						tag: {
 							Damage: 0
@@ -259,7 +259,7 @@
 				{
 					id: "31F4387D8590C912"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "aether:valkyrie_pickaxe"
 						tag: {
 							Damage: 0
@@ -270,7 +270,7 @@
 				{
 					id: "192883863885F506"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "aether:valkyrie_shovel"
 						tag: {
 							Damage: 0
@@ -281,7 +281,7 @@
 				{
 					id: "2AA93B9FB8CA07F1"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "aether:valkyrie_axe"
 						tag: {
 							Damage: 0
@@ -292,7 +292,7 @@
 				{
 					id: "12DBC847A19DECAE"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "aether:valkyrie_hoe"
 						tag: {
 							Damage: 0
@@ -309,7 +309,7 @@
 			dependencies: ["583CBBEC8643FFC4"]
 			hide: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "aether:phoenix_chestplate"
 				tag: {
 					Damage: 0
@@ -329,7 +329,7 @@
 				{
 					id: "7591A34D9D9D3D82"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -345,7 +345,7 @@
 				{
 					id: "742764E52E75C1C8"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -361,7 +361,7 @@
 				{
 					id: "47A6BE04CC47E4BB"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -377,7 +377,7 @@
 				{
 					id: "3C371E8C683824BA"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -393,7 +393,7 @@
 				{
 					id: "5CC8F1F1D4492D1C"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "aether:phoenix_gloves"
 						tag: {
 							Damage: 0
@@ -411,7 +411,7 @@
 			description: ["(Read up on the &cPhoenix Gear&r in the &3Lore Book&r to learn more about obtaining this gear)"]
 			hide: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "aether:obsidian_chestplate"
 				tag: {
 					Damage: 0
@@ -431,7 +431,7 @@
 				{
 					id: "416267AB2C12B1E2"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -447,7 +447,7 @@
 				{
 					id: "349268C1306DA909"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -463,7 +463,7 @@
 				{
 					id: "72A5371EDA883E52"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -479,7 +479,7 @@
 				{
 					id: "6C735D3F7EE12910"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -495,7 +495,7 @@
 				{
 					id: "44462157F70B89A4"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "aether:obsidian_gloves"
 						tag: {
 							Damage: 0

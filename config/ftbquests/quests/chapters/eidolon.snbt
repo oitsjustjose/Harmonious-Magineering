@@ -5,7 +5,7 @@
 	filename: "eidolon"
 	group: "237E59D678B7F5E1"
 	icon: {
-		Count: 1b
+		Count: 1
 		id: "eidolon:soulfire_wand"
 		tag: {
 			Damage: 0
@@ -63,7 +63,11 @@
 			y: 2.5d
 		}
 		{
-			description: ["As you've explored your surroundings and faced several creatures, you've heard whispers of &o&6Eidolon&r from the various &2Zombie Brutes&r and &7Wraiths&r you've fought off. Perhaps it would be wise to explore this potentially occult magiks, and see if there's anything of use from it.."]
+			description: [
+				"As you've explored your surroundings and faced several creatures, you've heard whispers of &o&6Eidolon&r from the various &2Zombie Brutes&r and &7Wraiths&r you've fought off. Perhaps it would be wise to explore this potentially occult magiks, and see if there's anything of use from it."
+				""
+				"Should you find a &5Witch&r or a &6Cleric Villager&r, be sure to share your Ars Ecclesia with them so they can transfer their obscure knowledge to it for you to study and practice."
+			]
 			icon: "eidolon:codex"
 			id: "202D5B86D1E2CCC6"
 			rewards: [{
@@ -73,7 +77,7 @@
 			}]
 			shape: "diamond"
 			size: 2.0d
-			subtitle: "Responsible for all those giant Zombies"
+			subtitle: "Apothic Magic"
 			tasks: [{
 				id: "5C69F747FE47DBB2"
 				title: "Welcome to Eidolon"
@@ -115,7 +119,7 @@
 				{
 					id: "7C53D13BB906BCCA"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "minecraft:flint_and_steel"
 						tag: {
 							Damage: 0
@@ -210,7 +214,7 @@
 				{
 					id: "7E42D65CAF588F61"
 					item: {
-						Count: 1b
+						Count: 1
 						id: "eidolon:athame"
 						tag: {
 							Damage: 0
@@ -344,7 +348,7 @@
 			tasks: [{
 				id: "4567D5653CF8EFAC"
 				item: {
-					Count: 1b
+					Count: 1
 					id: "eidolon:reaper_scythe"
 					tag: {
 						Damage: 0
@@ -359,15 +363,11 @@
 		{
 			dependencies: ["2EFF78EBD4191993"]
 			description: [
-				"As you step further into the occult, you can't help but hear a voice from beyond beckoning out to you... perhaps demanding a sacrifice? That's odd..."
+				"As you step further into the occult, you can't help but hear a voice from beyond beckoning out to you... perhaps demanding a sacrifice of some sort? That's odd..."
 				""
-				"After consulting the local &l&dWitches&r and &nshowing them your &5Ars Ecclesia&r, they've shown you a new way to pray through &dChanting&r. You feel as though you might be able to reach back out to this Deity by chanting at an Altar once every so often, but what should you chant &oto&r? "
+				"After consulting your local &6Theurgists&r and &nshowing them your &5Ars Ecclesia&r, they've shown you a new way to pray through &dChanting&r. You feel as though you might be able to reach back out to this Deity by chanting at an Altar once every so often, but what should you chant &oto&r? "
 				""
-				"A crude &6Straw Effigy&r is the best you're able to fashion up for now - perhaps you should try chanting a &l&5Dark Prayer&r&r at this effigy."
-				"{@pagebreak}"
-				"Maybe your altar could use some more supernatural additions like Skulls and a Chalice..."
-				""
-				"{image:eidolon:textures/vfx/wicked_sign.png width:50 height:50 align:1}"
+				"A crude &6Straw Effigy&r is the best you're able to fashion up for now - perhaps you should try studying the lessons passed down to you by the local &5Witches&r and &6Clerics&r to see how you might reach out to the Diety.."
 			]
 			hide: true
 			icon: "eidolon:straw_effigy"
@@ -397,15 +397,16 @@
 		{
 			dependencies: ["270AFC0FA41305D1"]
 			description: [
-				"You've been told by the Deity you continue to pray to that it &ldemands&r a &4blood&r sacrifice.... good thing it doesn't have to be &oyour&r blood I suppose. You'll need somewhere to store the blood in, but a goblet can be fashioned from &6Arcane Gold&r and should be perfectly suitable for the time being. You can also improve your altar by upgrading it from a crude wooden one to a nicer Stone one made with &5Soul Shards&r."
+				"Depending on the route of your studies, you may find yourself trying to figure out what more the Deity desires."
 				""
-				"Try starting off with the blood of &nany animal&r using the &lSacrifice Animal&r chant - though this chant can only be used &nonce a day&r."
+				"On the &6Holy&r path, a &nCenser&r can be placed upon your altar, filled with &lOffering Incense&r and then lit."
 				""
+				"On the &5Unholy&r path, a &nGoblet&r can be placed upon your altar, and then with an animal sacrifice atop the Goblet, filled with the animals blood by slaying it."
 				""
-				"{image:eidolon:textures/vfx/sanguine_ritual.png width:50 height:50 align:1}"
+				"Both of these methods should only be practiced once per day."
 			]
 			hide: true
-			icon: "eidolon:stone_altar"
+			icon: "eidolon:censer"
 			id: "3C0939420ECF23DE"
 			rewards: [{
 				count: 4
@@ -414,20 +415,15 @@
 				random_bonus: 8
 				type: "item"
 			}]
-			subtitle: "Yay, &4Blood Sacrifice&r!"
-			tasks: [
-				{
-					id: "02DFD50B35AED111"
-					item: "eidolon:goblet"
-					type: "item"
-				}
-				{
-					id: "2A06423192338D37"
-					item: "eidolon:stone_altar"
-					type: "item"
-				}
-			]
-			title: "Expanding your Altar"
+			subtitle: "A small start to a cluttered desk"
+			tasks: [{
+				advancement: "custom:quests/eidolon/adornments"
+				criterion: ""
+				id: "4A242B2A943DC1C4"
+				title: "Upgrade your Altar with a Goblet or Censer"
+				type: "advancement"
+			}]
+			title: "Improved Praise"
 			x: 0.0d
 			y: 10.0d
 		}
@@ -436,18 +432,16 @@
 			description: [
 				"The Deity has told you about all of its ways and all of its magical tools and artifice, but you aren't able to make any of these things as a mere mortal.."
 				""
-				"Fortunately, the Deity has shown you how to create a symbol of its likeness to create some more potent things - all you need is to chant a &lTouch of Darkness&r towards a &6Pewter Inlay&r that has been placed on your &lAltar&r "
+				"Fortunately, the Deity has shown you how to create a symbol of its likeness to create some more potent things. In your praisings you've managed to scribble down the chants and target items in your &lArs Ecclesia&r."
 				""
-				"{image:eidolon:textures/vfx/soul_sign.png width:50 height:50 align:1}"
 				"{@pagebreak}"
-				"At this point, most of your remaining research in these &5Occult Practices&r will have to be self-led using the &6Ars Ecclesia&r to keep your notes and guide you along the way. If ever you find yourself stuck in your research, it is recommended to try the even your most wicked and cryptic ideas."
+				"Going forward it seems the remainder of your research in these &5Occult Practices&r will be self-led using the &6Ars Ecclesia&r to keep your notes and guide you along the way. If ever you find yourself stuck in your research, it is recommended to try the even your most wicked and cryptic ideas."
 				""
 				"There definitely seem to be new chants and possibly even &ospells&r? Much is left to be learned!"
 				""
 				"{image:eidolon:item/notetaking_tools width:50 height:50 align:1}"
 			]
 			hide: true
-			icon: "eidolon:unholy_symbol"
 			id: "259253F0B5E9952E"
 			rewards: [
 				{
@@ -469,9 +463,11 @@
 			size: 2.0d
 			subtitle: "&oNot accepted at any arcades that I know of...&r"
 			tasks: [{
-				id: "015192CC1BF147A1"
-				item: "eidolon:unholy_symbol"
-				type: "item"
+				advancement: "custom:quests/eidolon/symbols"
+				criterion: ""
+				id: "6C87865CCF1A38E0"
+				title: "Create a &6Holy&r or &5Unholy&r Symbol"
+				type: "advancement"
 			}]
 			title: "A Token"
 			x: 0.0d
@@ -515,8 +511,9 @@
 				"259253F0B5E9952E"
 				"1E00538EB87E83E6"
 			]
-			description: ["As you continue your prayers, you feel as though the crude effigy you made from scraps of Hay is no longer enough to properly respect and praise the Deity... fortunately the &8Unholy Symbol&r that you were sent to will allow you to form a closer bond to the Deity and learn even more chants and types of magiks as you continue on your journey."]
+			description: ["As you continue your prayers, you feel as though the crude effigy you made from scraps of Hay is no longer enough to properly respect and praise the Deity... fortunately the &8Symbol&r that you were sent will allow you to form a closer bond to the Deity and learn even more chants and types of magiks as you continue on your journey."]
 			hide: true
+			icon: "eidolon:unholy_effigy"
 			id: "0F7026A06FEB1170"
 			rewards: [{
 				count: 6
@@ -526,11 +523,19 @@
 				type: "item"
 			}]
 			subtitle: "Pray Louder!"
-			tasks: [{
-				id: "15C09BB372F0B668"
-				item: "eidolon:unholy_effigy"
-				type: "item"
-			}]
+			tasks: [
+				{
+					id: "31022BA4CEB1E0EB"
+					item: "eidolon:stone_altar"
+					type: "item"
+				}
+				{
+					id: "2D7AB74DE41645F4"
+					item: "eidolon:unholy_effigy"
+					type: "item"
+				}
+			]
+			title: "Altar-ations"
 			x: -2.0d
 			y: 13.5d
 		}
@@ -538,7 +543,7 @@
 			dependencies: ["259253F0B5E9952E"]
 			hide: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "eidolon:warlock_hat"
 				tag: {
 					Damage: 0
@@ -559,7 +564,7 @@
 				{
 					id: "32C86C3FBFE4B928"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -575,7 +580,7 @@
 				{
 					id: "229E9F3FDFF9FFFC"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -591,7 +596,7 @@
 				{
 					id: "55EBEFC2FCDCD406"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -618,7 +623,7 @@
 			dependencies: ["259253F0B5E9952E"]
 			hide: true
 			icon: {
-				Count: 1b
+				Count: 1
 				id: "eidolon:bonelord_helm"
 				tag: {
 					Damage: 0
@@ -638,7 +643,7 @@
 				{
 					id: "46D049C3BBFE7747"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -654,7 +659,7 @@
 				{
 					id: "6CFB0535D071C5E0"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
@@ -670,7 +675,7 @@
 				{
 					id: "6327201B1AC2DB4B"
 					item: {
-						Count: 1b
+						Count: 1
 						ForgeCaps: {
 							"cold_sweat:item_insulation": {
 								Insulation: [ ]
