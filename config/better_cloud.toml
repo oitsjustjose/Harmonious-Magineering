@@ -9,7 +9,7 @@ useIrisFBO = true
 gpuIncompatibleMessageEnabled = true
 #Range: 0.0 ~ 100.0
 windEffectFactor = 1.0
-celestialBodyHalo = false
+celestialBodyHalo = true
 #Range: 0.0 ~ 10.0
 randomPlacement = 0.0
 #Range: 0.0 ~ 10.0
@@ -27,7 +27,7 @@ sizeXZ = 16.0
 #Range: 0.0 ~ 10.0
 sizeY = 8.0
 #Range: 0.0 ~ 100.0
-travelSpeed = 0.03
+travelSpeed = 0.01
 #Range: 0.0 ~ 100.0
 colorVariationFactor = 1.0
 #Range: 0.0 ~ 100.0
@@ -37,8 +37,8 @@ scaleFalloffMin = 0.25
 #Range: 0.0 ~ 100.0
 fadeEdge = 0.15
 #Range: 1 ~ 1024
-chunkSize = 32
+chunkSize = 64
 #Range: 0 ~ 128
 selectedPreset = 0
-blackListedBiomes = ["minecraft:the_end"]
+blackListedBiomes = ["minecraft:the_end", "aether:the_aether", "ae2:spatial_storage", "bloodmagic:dungeon"]
 
