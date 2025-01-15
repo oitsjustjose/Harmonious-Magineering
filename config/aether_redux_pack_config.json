@@ -1,10 +1,10 @@
 {
   "mob": {
     "purple_aechor_plants": true,
-    "cockatrice_texture": "blighted"
+    "cockatrice_texture": "redux_retro"
   },
   "item": {
-    "veridium_type": "shadow",
+    "veridium_type": "modern",
     "swet_ball_type": "gel"
   },
   "tintable_grass": true,

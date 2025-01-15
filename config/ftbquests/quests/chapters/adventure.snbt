@@ -34,6 +34,14 @@
 			x: 0.0d
 			y: -2.5d
 		}
+		{
+			height: 6.0d
+			image: "minecraft:textures/map/map_background.png"
+			rotation: 0.0d
+			width: 6.0d
+			x: 0.0d
+			y: 7.5d
+		}
 	]
 	order_index: 1
 	quest_links: [ ]
@@ -270,6 +278,217 @@
 			}]
 			x: 1.5d
 			y: 1.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["2AB0349D89A4B983"]
+			hide: true
+			icon: {
+				Count: 1
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "supplementaries:item/cartographers_quill"
+				}
+			}
+			id: "5AA87BADB2055EA4"
+			optional: true
+			rewards: [{
+				auto: "no_toast"
+				command: "/give @p supplementaries:cartographers_quill{zoomLevel: 1, display: {Name: '{\"text\":\"Bronze Dungeon\"}'}, targetStructure: \"aether:bronze_dungeon\", decoration: \"minecraft:target_point\", maxSearchRadius: 50}"
+				elevate_perms: true
+				icon: {
+					Count: 1
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "supplementaries:item/cartographers_quill"
+					}
+				}
+				id: "616CBFE738C49D91"
+				silent: true
+				team_reward: false
+				title: "Cartographer's Quill to a Bronze Dungeon"
+				type: "command"
+			}]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				id: "1955DA88C558217E"
+				points: false
+				type: "xp"
+				value: 5L
+			}]
+			title: "Bronze Dungeon Finder"
+			x: 0.0d
+			y: 7.5d
+		}
+		{
+			can_repeat: true
+			dependencies: ["2AB0349D89A4B983"]
+			hide: true
+			icon: {
+				Count: 1
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "supplementaries:item/cartographers_quill"
+				}
+			}
+			id: "36629F52B1AC15EE"
+			optional: true
+			rewards: [{
+				auto: "no_toast"
+				command: "/give @p supplementaries:cartographers_quill{zoomLevel: 1, display: {Name: '{\"text\":\"Silver Dungeon\"}'}, targetStructure: \"aether:silver_dungeon\", decoration: \"minecraft:target_point\", maxSearchRadius: 50}"
+				elevate_perms: true
+				icon: {
+					Count: 1
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "supplementaries:item/cartographers_quill"
+					}
+				}
+				id: "408F690D35890C59"
+				ignore_reward_blocking: true
+				silent: true
+				team_reward: false
+				title: "Cartographer's Quill to a Silver Dungeon"
+				type: "command"
+			}]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				id: "301F916B584E0205"
+				points: false
+				type: "xp"
+				value: 10L
+			}]
+			title: "Silver Dungeon Quill"
+			x: -1.5d
+			y: 9.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["2AB0349D89A4B983"]
+			hide: true
+			icon: {
+				Count: 1
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "supplementaries:item/cartographers_quill"
+				}
+			}
+			id: "1E79E39C2D6CE938"
+			optional: true
+			rewards: [{
+				auto: "no_toast"
+				command: "/give @p supplementaries:cartographers_quill{zoomLevel: 1, display: {Name: '{\"text\":\"Gold Dungeon\"}'}, targetStructure: \"aether:gold_dungeon\", decoration: \"minecraft:target_point\", maxSearchRadius: 50}"
+				icon: {
+					Count: 1
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "supplementaries:item/cartographers_quill"
+					}
+				}
+				id: "1BD0D19F9B1F2C05"
+				silent: true
+				team_reward: false
+				title: "Cartographer's Quill to a Gold Dungeon"
+				type: "command"
+			}]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				id: "4C1E7C1E7FF54B6F"
+				points: false
+				type: "xp"
+				value: 15L
+			}]
+			title: "Gold Dungeon Finder"
+			x: 1.5d
+			y: 9.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["202D5B86D1E2CCC6"]
+			description: ["These towers are said to be a good source of one or two spawners, but also a Witch and a Cleric to gain knowledge from!"]
+			hide: true
+			icon: {
+				Count: 1
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "supplementaries:item/cartographers_quill"
+				}
+			}
+			id: "70A70BFDCC913CE3"
+			optional: true
+			rewards: [{
+				auto: "no_toast"
+				command: "/give @p supplementaries:cartographers_quill{zoomLevel: 1, display: {Name: '{\"text\":\"Stray Tower\"}'}, targetStructure: \"eidolon:stray_tower\", decoration: \"minecraft:target_point\", maxSearchRadius: 50}"
+				elevate_perms: true
+				icon: {
+					Count: 1
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "supplementaries:item/cartographers_quill"
+					}
+				}
+				id: "110B118F76F93C93"
+				silent: true
+				team_reward: false
+				title: "Cartographer's Quill to a Stray Tower"
+				type: "command"
+			}]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				id: "0EAD78F4B47C9E48"
+				points: false
+				type: "xp"
+				value: 5L
+			}]
+			title: "Stray Tower Finder"
+			x: -1.5d
+			y: 6.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["202D5B86D1E2CCC6"]
+			hide: true
+			icon: {
+				Count: 1
+				id: "ftbquests:custom_icon"
+				tag: {
+					Icon: "supplementaries:item/cartographers_quill"
+				}
+			}
+			id: "31923E99A727195C"
+			optional: true
+			rewards: [{
+				auto: "no_toast"
+				command: "/give @p supplementaries:cartographers_quill{zoomLevel: 1, display: {Name: '{\"text\":\"Catacomb\"}'}, targetStructure: \"eidolon:catacomb\", decoration: \"minecraft:target_point\", maxSearchRadius: 50}"
+				elevate_perms: true
+				icon: {
+					Count: 1
+					id: "ftbquests:custom_icon"
+					tag: {
+						Icon: "supplementaries:item/cartographers_quill"
+					}
+				}
+				id: "1F4CF2D8D095ABE6"
+				silent: true
+				team_reward: false
+				title: "Cartographer's Quill to a Catacomb"
+				type: "command"
+			}]
+			shape: "diamond"
+			size: 1.5d
+			tasks: [{
+				id: "71DEBE8F364C0775"
+				points: false
+				type: "xp"
+				value: 10L
+			}]
+			title: "Catacombs Finder"
+			x: 1.5d
+			y: 6.0d
 		}
 	]
 	title: "Adventure!"
