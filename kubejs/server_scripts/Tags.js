@@ -212,6 +212,7 @@ ServerEvents.tags('item', event => {
     event.add('vtweaks:colored_bed', allButWhite('minecraft', 'bed'));
 
     event.add('vtweaks:colored_stained_glass', allColorsOf('minecraft', 'stained_glass'));
+    event.add('vtweaks:colored_stained_glass_panes', allColorsOf('minecraft', 'stained_glass_pane'));
     event.add('vtweaks:colored_candle', allColorsOf('minecraft', 'candle'));
 
     // AE2

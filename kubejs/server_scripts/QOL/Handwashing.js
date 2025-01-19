@@ -28,6 +28,7 @@ ServerEvents.recipes(event => {
   wash('#vtweaks:colored_bed', 'minecraft:white_bed');
 
   wash('#vtweaks:colored_stained_glass', 'minecraft:glass');
+  wash('#vtweaks:colored_stained_glass_panes', 'minecraft:glass_pane');
   wash('#vtweaks:colored_candle', 'minecraft:candle');
 
   // AE2
@@ -80,4 +81,31 @@ ServerEvents.recipes(event => {
   wash('#vtweaks:colored_candle_holder', 'supplementaries:candle_holder');
   wash('#vtweaks:colored_gold_candle_holder', 'suppsquared:gold_candle_holder');
   wash('#vtweaks:colored_flag', 'supplementaries:flag_white');
+
+  // Copper Washing to quicken oxidization
+  const CopperStates = ['', 'weathered_', 'exposed_', 'oxidized_'];
+  const CopperBlocks = [
+    'architects_palette:~STATE~copper_nub',
+    'create:~STATE~copper_shingle_slab',
+    'create:~STATE~copper_shingle_stairs',
+    'create:~STATE~copper_shingles',
+    'create:~STATE~copper_tile_slab',
+    'create:~STATE~copper_tile_stairs',
+    'create:~STATE~copper_tiles',
+    'minecraft:~STATE~copper',
+    'minecraft:~STATE~cut_copper_slab',
+    'minecraft:~STATE~cut_copper_stairs',
+    'minecraft:~STATE~cut_copper',
+    'twigs:~STATE~copper_pillar',
+  ];
+
+  CopperBlocks.forEach(block => {
+    CopperStates.forEach((state, idx) => {
+      if (idx === CopperStates.length - 1) return;
+
+      const currentState = block.replace('~STATE~', state);
+      const nextState = block.replace('~STATE~', CopperStates[idx + 1]);
+      wash(currentState, nextState);
+    });
+  });
 });
