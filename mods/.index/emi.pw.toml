@@ -1,0 +1,16 @@
+filename = 'emi-1.1.19+1.20.1+forge.jar'
+name = 'EMI'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'dc6eea0544a0daba3868be6544900759e6d1f6892fba201722747bb3ace2a3b9eed4e20138474cc7c88e9d7d599972b0330053930bb6d0526853fed9fe995307'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/fRiHVvU7/versions/GSmsesll/emi-1.1.19%2B1.20.1%2Bforge.jar'
+
+[update.modrinth]
+mod-id = 'fRiHVvU7'
+version = 'GSmsesll'

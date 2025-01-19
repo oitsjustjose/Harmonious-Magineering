@@ -1,0 +1,16 @@
+filename = 'light-overlay-8.0.0-forge.jar'
+name = 'Light Overlay (Rift/Forge/Fabric)'
+side = 'both'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = 'f0b73885662b8ffbc448623d1d117b663673f35e'
+hash-format = 'sha1'
+mode = 'metadata:curseforge'
+url = ''
+
+[update.curseforge]
+file-id = 4573178
+project-id = 325492
