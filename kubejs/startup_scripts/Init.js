@@ -260,4 +260,6 @@ StartupEvents.registry('minecraft:item', event => {
     'unknown_engineering_item',
     'zinc_dust',
   ].forEach(x => event.create(x));
+
+  ['tiny_charcoal', 'tiny_coal'].forEach(x => event.create(x).burnTime(200));
 });

@@ -224,5 +224,8 @@ ServerEvents.recipes(event => {
   event.remove({output: 'minecraft:stick', input: '#regions_unexplored:branches'});
   event.shaped(Item.of('minecraft:stick', 9), ['L', 'L'], {L: '#regions_unexplored:branches'});
 
-  [architectsPalette, createWaxedCopper, foodstuffs, glass, outerEnd, quark, supplementaries].forEach(module => module());
+  event.shapeless(Item.of('kubejs:tiny_coal', 8), 'minecraft:coal');
+  event.shapeless(Item.of('kubejs:tiny_charcoal', 8), 'minecraft:charcoal');
+
+  [(architectsPalette, createWaxedCopper, foodstuffs, glass, outerEnd, quark, supplementaries)].forEach(module => module());
 });
