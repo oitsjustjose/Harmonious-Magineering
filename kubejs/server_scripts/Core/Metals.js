@@ -55,8 +55,8 @@ ServerEvents.recipes(event => {
       event.remove({type: 'minecraft:smelting', input: entry.dust});
       event.remove({type: 'minecraft:smelting', output: entry.ingot});
 
-      event.smelting(entry.ingot, entry.dust).xp(0.33).id(`${idBase}_smelting`);
-      event.blasting(entry.ingot, entry.dust).xp(0.33).id(`${idBase}_blasting`);
+      event.smelting(entry.ingot, entry.dust).xp(0.33).id(`kubejs:${idBase}_smelting`);
+      event.blasting(entry.ingot, entry.dust).xp(0.33).id(`kubejs:${idBase}_blasting`);
     });
   };
 
@@ -128,8 +128,15 @@ ServerEvents.recipes(event => {
   };
 
   const oreSmelting = () => {
+    const generateId = (output, input) => {
+      const inputConv = input.replace(/:/g, '_');
+      const outputConv = output.replace(/:/g, '_');
+      return `kubejs:${outputConv}_from_${inputConv}`;
+    };
+
     Object.keys(global.Metals).forEach(mat => {
       let metal = global.Metals[mat];
+
       // Remove raw ore -> ingot blasting/smelting
       event.remove({type: 'minecraft:smelting', input: `#forge:raw_materials/${mat}`, output: `#forge:ingots/${mat}`});
       event.remove({type: 'minecraft:blasting', input: `#forge:raw_materials/${mat}`, output: `#forge:ingots/${mat}`});
@@ -138,14 +145,19 @@ ServerEvents.recipes(event => {
       event.remove({type: 'minecraft:blasting', input: `#forge:ores/${mat}`, output: `#forge:ingots/${mat}`});
 
       // Raw ore smelting/blasting -> 3/4 nuggets
-      event.smelting(Item.of(metal.nugget, 3), `#forge:raw_materials/${mat}`).xp(0.3);
-      event.blasting(Item.of(metal.nugget, 4), `#forge:raw_materials/${mat}`).xp(0.4);
+      let id = generateId(metal.nugget, `raw_${mat}`); // Use let because const persists between iterations in the loop even though it's not supposed to
+      event.smelting(Item.of(metal.nugget, 3), `#forge:raw_materials/${mat}`).xp(0.3).id(`${id}_smelting`);
+      event.blasting(Item.of(metal.nugget, 4), `#forge:raw_materials/${mat}`).xp(0.4).id(`${id}_blasting`);
+
       // Whole ore smelting/blasting -> 1 ingot, always
-      event.smelting(metal.ingot, `#forge:ores/${mat}`).xp(1.0);
-      event.blasting(metal.ingot, `#forge:ores/${mat}`).xp(1.0);
+      id = generateId(metal.ingot, `${mat}_ore`);
+      event.smelting(metal.ingot, `#forge:ores/${mat}`).xp(1.0).id(`${id}_smelting`);
+      event.blasting(metal.ingot, `#forge:ores/${mat}`).xp(1.0).id(`${id}_blasting`);
+
       // Crushed Ore Smelting
-      event.smelting(metal.ingot, metal.crushed).xp(0.3);
-      event.blasting(metal.ingot, metal.crushed).xp(0.3);
+      id = generateId(metal.ingot, `crushed_${mat}`);
+      event.smelting(metal.ingot, metal.crushed).xp(0.3).id(`${id}_smelting`);
+      event.blasting(metal.ingot, metal.crushed).xp(0.3).id(`${id}_blasting`);
     });
   };
 

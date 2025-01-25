@@ -124,7 +124,7 @@ ServerEvents.recipes(event => {
     /* Moss things */
     event.remove({output: 'ecologics:surface_moss'});
     event.remove({output: 'quark:moss_paste'});
-    event.smelting(Item.of('ecologics:surface_moss', 9), 'minecraft:moss_block');
+    event.smelting(Item.of('ecologics:surface_moss', 9), 'minecraft:moss_block').id('kubejs:surface_moss_from_moss_block');
     event.replaceInput({}, 'quark:moss_paste', 'ecologics:surface_moss');
 
     event.remove('quark:building/crafting/framed_glass');
