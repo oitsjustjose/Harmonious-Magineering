@@ -83,28 +83,30 @@ ServerEvents.recipes(event => {
   wash('#vtweaks:colored_flag', 'supplementaries:flag_white');
 
   // Copper Washing to quicken oxidization
-  const CopperStates = ['', 'weathered_', 'exposed_', 'oxidized_'];
+  const CopperStates = ['', 'exposed_', 'weathered_', 'oxidized_'];
   const CopperBlocks = [
-    'architects_palette:~STATE~copper_nub',
-    'create:~STATE~copper_shingle_slab',
-    'create:~STATE~copper_shingle_stairs',
-    'create:~STATE~copper_shingles',
-    'create:~STATE~copper_tile_slab',
-    'create:~STATE~copper_tile_stairs',
-    'create:~STATE~copper_tiles',
-    'minecraft:~STATE~copper',
-    'minecraft:~STATE~cut_copper_slab',
-    'minecraft:~STATE~cut_copper_stairs',
-    'minecraft:~STATE~cut_copper',
-    'twigs:~STATE~copper_pillar',
+    {mod: 'architects_palette', block: 'copper_nub'},
+    {mod: 'create', block: 'copper_shingle_slab'},
+    {mod: 'create', block: 'copper_shingle_stairs'},
+    {mod: 'create', block: 'copper_shingles'},
+    {mod: 'create', block: 'copper_tile_slab'},
+    {mod: 'create', block: 'copper_tile_stairs'},
+    {mod: 'create', block: 'copper_tiles'},
+    {mod: 'minecraft', block: 'copper', initBlock: 'copper_block'},
+    {mod: 'minecraft', block: 'cut_copper_slab'},
+    {mod: 'minecraft', block: 'cut_copper_stairs'},
+    {mod: 'minecraft', block: 'cut_copper'},
+    {mod: 'twigs', block: 'copper_pillar'},
   ];
 
-  CopperBlocks.forEach(block => {
+  CopperBlocks.forEach(entry => {
     CopperStates.forEach((state, idx) => {
       if (idx === CopperStates.length - 1) return;
 
-      const currentState = block.replace('~STATE~', state);
-      const nextState = block.replace('~STATE~', CopperStates[idx + 1]);
+      const currentBlock = idx === 0 ? entry.initBlock || entry.block : entry.block;
+      const currentState = `${entry.mod}:${state}${currentBlock}`;
+      const nextState = `${entry.mod}:${CopperStates[idx + 1]}${entry.block}`;
+
       wash(currentState, nextState);
     });
   });

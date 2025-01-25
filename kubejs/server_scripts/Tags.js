@@ -783,6 +783,11 @@ ServerEvents.tags('item', event => {
     'quark:warped_trapped_chest',
   ].forEach(x => event.removeAllTagsFrom(x));
 
+  // Quark Larger Hoe AOE for "good" hoes
+  ['aether:gravitite_hoe', 'aether:valkyrie_hoe', 'deep_aether:stratus_hoe', 'embers:dawnstone_hoe', 'immersiveengineering:hoe_steel'].forEach(hoe =>
+    event.add('quark:big_harvesting_hoes', hoe)
+  );
+
   [colors, constructionBlocks, environments, exclusions, foods, lumber, osmium].forEach(module => module());
 });
 

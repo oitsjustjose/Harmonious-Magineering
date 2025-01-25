@@ -1142,6 +1142,14 @@ ServerEvents.recipes(event => {
       additives: [{tag: 'forge:nuggets/lead'}],
       results: [{base_ingredient: {tag: 'forge:ingots/pewter'}}],
     });
+
+    /* Some way to make Crying Obsidian without being in pain */
+    const step1Inputs = Array(8).fill(Item.of('regions_unexplored:cobalt_obsidian').toJson());
+    event.custom({
+      type: 'eidolon:crucible',
+      steps: [{items: step1Inputs}, {items: [Item.of('minecraft:ghast_tear').toJson()], stirs: 1}],
+      result: Item.of('minecraft:crying_obsidian', 8).toJson(),
+    });
   };
 
   const embers = () => {
