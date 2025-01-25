@@ -1,4 +1,4 @@
-filename = 'kleeslabs-forge-1.20-15.0.1.jar'
+filename = 'kleeslabs-forge-1.20-15.0.4.jar'
 name = 'KleeSlabs'
 side = 'both'
 x-prismlauncher-loaders = [ 'forge' ]
@@ -6,11 +6,11 @@ x-prismlauncher-mc-versions = [ '1.20', '1.20.1' ]
 x-prismlauncher-release-type = 'release'
 
 [download]
-hash = 'b78a268d588615e7e50dfad188ecaff99ed59963'
+hash = '3e5d06107b6e5b8aac3d6116c79d943305fb1b83'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 6077664
+file-id = 6119987
 project-id = 241895

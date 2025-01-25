@@ -1,16 +1,16 @@
-filename = 'Kiwi-1.20.1-Forge-11.8.28.jar'
-name = 'Kiwi 🥝'
+filename = 'Kiwi-1.20.1-Forge-11.8.29.jar'
+name = 'Kiwi Library'
 side = 'both'
 x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
 x-prismlauncher-mc-versions = [ '1.20.1' ]
 x-prismlauncher-release-type = 'release'
 
 [download]
-hash = 'd680cc90e9eefd9118206a8cbb4e2f82e61c12ed3d0396aa80d0b10ae7883ec900ebf83f9e9f813008f84c40ca52897cbea9f23f172eeec5e158f49c147beba0'
+hash = 'c44d51581e26593a60afe74c6531a5e9f150285eb2218fd3d7fea8daa806fbf55db809a9e3d3d6e33b5396e955bcada7e833df639ca036ff6fd011fdfa442d98'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/ufdDoWPd/versions/nxSd3PG9/Kiwi-1.20.1-Forge-11.8.28.jar'
+url = 'https://cdn.modrinth.com/data/ufdDoWPd/versions/A4YxIHAO/Kiwi-1.20.1-Forge-11.8.29.jar'
 
 [update.modrinth]
 mod-id = 'ufdDoWPd'
-version = 'nxSd3PG9'
+version = 'A4YxIHAO'
