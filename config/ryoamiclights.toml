@@ -108,6 +108,7 @@
 				llama_spit = true
 				fireball = true
 				potion = true
+				hopper_minecart = true
 
 			[light_sources.settings.entities.ae2]
 				tiny_tnt_primed = true
