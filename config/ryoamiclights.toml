@@ -109,6 +109,12 @@
 				fireball = true
 				potion = true
 				hopper_minecart = true
+				evoker_fangs = true
+				trident = true
+				eye_of_ender = true
+				area_effect_cloud = true
+				dragon_fireball = true
+				shulker_bullet = true
 
 			[light_sources.settings.entities.ae2]
 				tiny_tnt_primed = true
@@ -238,6 +244,10 @@
 				quail = true
 				venomite = true
 				fire_projectile = true
+				eots_controller = true
+				eots_segment = true
+				wind_crystal = true
+				storm_arrow = true
 
 			[light_sources.settings.entities.aether_redux]
 				volatile_fire_crystal = true

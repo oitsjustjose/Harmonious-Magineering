@@ -14,6 +14,8 @@
 	"Aerwhale King Flawless Boss Drop" = "deep_aether:aerwhale_saddle"
 	#The cooldown of the stratus dash. Set to a value below zero to disable the cooldown.
 	"Stratus dash cooldown" = 5
+	#The item dropped when the Eye of the Storm is defeated flawlessly, set value to null (with quotation marks!) to disable flawless boss drops from the Eye of the Storm
+	"Eye of the Storm Flawless Boss Drop" = "deep_aether:floaty_scarf"
 
 [Biomes]
 	#Disables Roseroot Forest biomes from generating. Might make some content unobtainable
@@ -26,4 +28,8 @@
 	"Disable Aerlavender Fields Biomes" = false
 	#The weighting of Deep Aether regions in the aether
 	"Deep Aether Biome Weight" = 20
+	#Disables Storm Cloud and Skyroot Rainforest biomes from generating. Might make some content unobtainable
+	"Disable Storm Cloud And Skyroot Rainforest Biomes" = false
+	#The weighting of Storm Cloud regions in the aether
+	"Storm Cloud Biome Weight" = 1
 
