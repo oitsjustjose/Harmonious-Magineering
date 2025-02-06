@@ -43,8 +43,8 @@ ServerEvents.recipes(event => {
     event.custom({
       type: 'immersiveengineering:crusher',
       energy: 3200,
-      input: {item: 'minecraft:quartz'},
-      result: {item: 'mekanism:dust_quartz'},
+      input: { item: 'minecraft:quartz' },
+      result: { item: 'mekanism:dust_quartz' },
       secondaries: [],
     });
 
@@ -52,8 +52,8 @@ ServerEvents.recipes(event => {
     event.custom({
       type: 'immersiveengineering:crusher',
       energy: 3200,
-      input: {tag: 'forge:gems/certus_quartz'},
-      result: {item: 'ae2:certus_quartz_dust'},
+      input: { tag: 'forge:gems/certus_quartz' },
+      result: { item: 'ae2:certus_quartz_dust' },
       secondaries: [],
     });
 
@@ -61,13 +61,13 @@ ServerEvents.recipes(event => {
     event.custom({
       type: 'immersiveengineering:crusher',
       energy: 3200,
-      input: {tag: 'forge:gems/fluix'},
-      result: {item: 'ae2:fluix_dust'},
+      input: { tag: 'forge:gems/fluix' },
+      result: { item: 'ae2:fluix_dust' },
       secondaries: [],
     });
 
-    event.replaceInput({mod: 'ae2'}, '#forge:ingots/iron', '#forge:ingots/steel');
-    event.replaceInput({mod: 'aeinfinitybooster'}, 'minecraft:ender_eye', 'ae2:singularity');
+    event.replaceInput({ mod: 'ae2' }, '#forge:ingots/iron', '#forge:ingots/steel');
+    event.replaceInput({ mod: 'aeinfinitybooster' }, 'minecraft:ender_eye', 'ae2:singularity');
     // By the time you get to AE, you'll have power...
     event.remove('ae2:network/blocks/crank');
 
@@ -77,9 +77,9 @@ ServerEvents.recipes(event => {
     event.recipes.create.compacting(Item.of('ae2:silicon', 2), [Item.of('mekanism:dust_quartz'), Item.of('mekanism:dust_coal')]).superheated();
     event.custom({
       type: 'mekanism:metallurgic_infusing',
-      chemicalInput: {amount: 10, tag: 'mekanism:carbon'},
-      itemInput: {ingredient: {item: 'minecraft:quartz'}},
-      output: {item: 'ae2:silicon', count: 2},
+      chemicalInput: { amount: 10, tag: 'mekanism:carbon' },
+      itemInput: { ingredient: { item: 'minecraft:quartz' } },
+      output: { item: 'ae2:silicon', count: 2 },
     });
 
     // Dusts shouldn't be made in the inscriber..
@@ -88,21 +88,21 @@ ServerEvents.recipes(event => {
     event.remove('ae2:inscriber/fluix_dust');
     event.remove('ae2:inscriber/sky_stone_dust');
 
-    event.custom({type: 'mekanism:crushing', input: {ingredient: {tag: 'forge:ender_pearls'}}, output: {item: 'ae2:ender_dust'}});
+    event.custom({ type: 'mekanism:crushing', input: { ingredient: { tag: 'forge:ender_pearls' } }, output: { item: 'ae2:ender_dust' } });
     event.custom({
       type: 'immersiveengineering:crusher',
       energy: 3000,
-      input: {item: 'ae2:sky_stone_block'},
-      result: {item: 'ae2:sky_dust'},
+      input: { item: 'ae2:sky_stone_block' },
+      result: { item: 'ae2:sky_dust' },
       secondaries: [],
     });
 
     // Use Skystone Dust in more recipes - it's massively under-utilized :/
-    event.replaceInput({output: 'ae2:cell_component_1k'}, '#forge:dusts', 'ae2:sky_dust');
-    event.replaceInput({output: 'ae2:cell_component_4k'}, '#forge:dusts', 'ae2:sky_dust');
-    event.replaceInput({output: 'ae2:cell_component_16k'}, '#forge:dusts', 'ae2:sky_dust');
-    event.replaceInput({output: 'ae2:cell_component_64k'}, '#forge:dusts', 'ae2:sky_dust');
-    event.replaceInput({output: 'ae2:cell_component_256k'}, '#forge:dusts', 'ae2:sky_dust');
+    event.replaceInput({ output: 'ae2:cell_component_1k' }, '#forge:dusts', 'ae2:sky_dust');
+    event.replaceInput({ output: 'ae2:cell_component_4k' }, '#forge:dusts', 'ae2:sky_dust');
+    event.replaceInput({ output: 'ae2:cell_component_16k' }, '#forge:dusts', 'ae2:sky_dust');
+    event.replaceInput({ output: 'ae2:cell_component_64k' }, '#forge:dusts', 'ae2:sky_dust');
+    event.replaceInput({ output: 'ae2:cell_component_256k' }, '#forge:dusts', 'ae2:sky_dust');
 
     // Use Copper Wiring in processor recipes
     event.remove('ae2:inscriber/logic_processor');
@@ -110,11 +110,11 @@ ServerEvents.recipes(event => {
       type: 'ae2:inscriber',
       mode: 'press',
       ingredients: {
-        bottom: {item: 'ae2:printed_silicon'},
-        middle: {tag: 'forge:wires/copper'},
-        top: {item: 'ae2:printed_logic_processor'},
+        bottom: { item: 'ae2:printed_silicon' },
+        middle: { tag: 'forge:wires/copper' },
+        top: { item: 'ae2:printed_logic_processor' },
       },
-      result: {item: 'ae2:logic_processor'},
+      result: { item: 'ae2:logic_processor' },
     });
 
     event.remove('ae2:inscriber/engineering_processor');
@@ -122,11 +122,11 @@ ServerEvents.recipes(event => {
       type: 'ae2:inscriber',
       mode: 'press',
       ingredients: {
-        bottom: {item: 'ae2:printed_silicon'},
-        middle: {tag: 'forge:wires/copper'},
-        top: {item: 'ae2:printed_engineering_processor'},
+        bottom: { item: 'ae2:printed_silicon' },
+        middle: { tag: 'forge:wires/copper' },
+        top: { item: 'ae2:printed_engineering_processor' },
       },
-      result: {item: 'ae2:engineering_processor'},
+      result: { item: 'ae2:engineering_processor' },
     });
 
     event.remove('ae2:inscriber/calculation_processor');
@@ -134,11 +134,11 @@ ServerEvents.recipes(event => {
       type: 'ae2:inscriber',
       mode: 'press',
       ingredients: {
-        bottom: {item: 'ae2:printed_silicon'},
-        middle: {tag: 'forge:wires/copper'},
-        top: {item: 'ae2:printed_calculation_processor'},
+        bottom: { item: 'ae2:printed_silicon' },
+        middle: { tag: 'forge:wires/copper' },
+        top: { item: 'ae2:printed_calculation_processor' },
       },
-      result: {item: 'ae2:calculation_processor'},
+      result: { item: 'ae2:calculation_processor' },
     });
 
     // Use mekanism circuits for the printed circuits
@@ -151,46 +151,46 @@ ServerEvents.recipes(event => {
       type: 'ae2:inscriber',
       mode: 'inscribe',
       ingredients: {
-        middle: {tag: 'forge:circuits/basic'},
-        top: {item: 'ae2:logic_processor_press'},
+        middle: { tag: 'forge:circuits/basic' },
+        top: { item: 'ae2:logic_processor_press' },
       },
-      result: {item: 'ae2:printed_logic_processor'},
+      result: { item: 'ae2:printed_logic_processor' },
     });
     // Advanced Control Circuit -> Calculation Processor
     event.custom({
       type: 'ae2:inscriber',
       mode: 'inscribe',
       ingredients: {
-        middle: {tag: 'forge:circuits/advanced'},
-        top: {item: 'ae2:calculation_processor_press'},
+        middle: { tag: 'forge:circuits/advanced' },
+        top: { item: 'ae2:calculation_processor_press' },
       },
-      result: {item: 'ae2:printed_calculation_processor'},
+      result: { item: 'ae2:printed_calculation_processor' },
     });
     // Elite Control Circuit -> Engineering Processor
     event.custom({
       type: 'ae2:inscriber',
       mode: 'inscribe',
       ingredients: {
-        middle: {tag: 'forge:circuits/elite'},
-        top: {item: 'ae2:engineering_processor_press'},
+        middle: { tag: 'forge:circuits/elite' },
+        top: { item: 'ae2:engineering_processor_press' },
       },
-      result: {item: 'ae2:printed_engineering_processor'},
+      result: { item: 'ae2:printed_engineering_processor' },
     });
 
     // Flawless Budding Quartz recipe
     event.custom({
       type: 'mekanism:reaction',
       duration: 100,
-      fluidInput: {amount: 150, tag: 'forge:redstone_acid'},
-      gasInput: {amount: 1000, gas: 'mekanism:water_vapor'},
-      itemInput: {amount: 48, ingredient: {item: 'ae2:flawed_budding_quartz'}},
-      itemOutput: {item: 'ae2:flawless_budding_quartz'},
+      fluidInput: { amount: 150, tag: 'forge:redstone_acid' },
+      gasInput: { amount: 1000, gas: 'mekanism:water_vapor' },
+      itemInput: { amount: 48, ingredient: { item: 'ae2:flawed_budding_quartz' } },
+      itemOutput: { item: 'ae2:flawless_budding_quartz' },
     });
   };
 
   const buildingGadgets = () => {
     const bG = item => `buildinggadgets2:${item}`;
-    event.remove({mod: 'buildinggadgets2'});
+    event.remove({ mod: 'buildinggadgets2' });
 
     event.shaped(bG('template_manager'), ['PPP', 'PTP', 'PEP'], {
       P: items.plastic,
@@ -241,7 +241,7 @@ ServerEvents.recipes(event => {
   };
 
   const chunkloaders = () => {
-    event.remove({mod: 'chunkloaders'});
+    event.remove({ mod: 'chunkloaders' });
 
     event.shapeless(Item.of('chunkloaders:single_chunk_loader', 9), ['chunkloaders:basic_chunk_loader']);
     event.shapeless('chunkloaders:basic_chunk_loader', [
@@ -297,7 +297,7 @@ ServerEvents.recipes(event => {
 
     // Replace the control circuit with a finished PCB
     event.remove('create_connected:sequenced_assembly/control_chip');
-    event.replaceInput({input: 'create_connected:control_chip'}, 'create_connected:control_chip', 'pneumaticcraft:printed_circuit_board');
+    event.replaceInput({ input: 'create_connected:control_chip' }, 'create_connected:control_chip', 'pneumaticcraft:printed_circuit_board');
 
     // Custom recipe to wash Cobalt Obsidian into Obsidian + chance of Nickel Nugget
     event.recipes.create.splashing(
@@ -333,8 +333,8 @@ ServerEvents.recipes(event => {
     ].forEach(recipe => {
       event.custom({
         type: 'mekanism:combining',
-        mainInput: {amount: 1, ingredient: recipe.block.toJson()},
-        extraInput: {ingredient: recipe.item.toJson()},
+        mainInput: { amount: 1, ingredient: recipe.block.toJson() },
+        extraInput: { ingredient: recipe.item.toJson() },
         output: recipe.result.toJson(),
       });
     });
@@ -343,10 +343,10 @@ ServerEvents.recipes(event => {
     event.remove('create:crafting/materials/andesite_alloy_from_zinc');
     event.custom({
       type: 'embers:stamping',
-      input: {item: 'minecraft:andesite'},
-      stamp: {item: 'embers:ingot_stamp'},
-      fluid: {amount: 90, tag: 'forge:molten_iron'},
-      output: {item: 'create:andesite_alloy', count: 1},
+      input: { item: 'minecraft:andesite' },
+      stamp: { item: 'embers:ingot_stamp' },
+      fluid: { amount: 90, tag: 'forge:molten_iron' },
+      output: { item: 'create:andesite_alloy', count: 1 },
     });
 
     // Make it easier to make Dawnstone once you get into Create :)
@@ -355,11 +355,11 @@ ServerEvents.recipes(event => {
       .heated();
 
     // Use brass plates rather than gold for Steam Engines.
-    event.replaceInput({output: 'create:steam_engine'}, '#forge:plates/gold', '#forge:plates/brass');
+    event.replaceInput({ output: 'create:steam_engine' }, '#forge:plates/gold', '#forge:plates/brass');
   };
 
   const dimStorage = () => {
-    event.remove({mod: 'dimstorage'});
+    event.remove({ mod: 'dimstorage' });
 
     event.shaped('dimstorage:dimensional_chest', ['SSS', 'HCH', 'SSS'], {
       S: '#forge:ingots/steel',
@@ -381,7 +381,7 @@ ServerEvents.recipes(event => {
   };
 
   const entangled = () => {
-    event.remove({output: 'entangled:block'});
+    event.remove({ output: 'entangled:block' });
     event.shaped('entangled:block', [' O ', 'OSO', ' O '], {
       O: '#forge:obsidian',
       S: 'ae2:singularity',
@@ -392,8 +392,8 @@ ServerEvents.recipes(event => {
     const mod = id => `immersiveengineering:${id}`;
 
     const steel = () => {
-      event.remove({output: mod('cokebrick')});
-      event.remove({output: mod('blastbrick')});
+      event.remove({ output: mod('cokebrick') });
+      event.remove({ output: mod('blastbrick') });
 
       event.custom({
         type: 'pneumaticcraft:pressure_chamber',
@@ -408,7 +408,7 @@ ServerEvents.recipes(event => {
             item: 'supplementaries:ash_brick',
             count: 4,
           },
-          {item: mod('component_iron')},
+          { item: mod('component_iron') },
         ],
         pressure: 3.5,
         results: [Item.of(mod('cokebrick'), 3).toJson()],
@@ -427,7 +427,7 @@ ServerEvents.recipes(event => {
             item: 'embers:ember_crystal',
             count: 4,
           },
-          {item: mod('component_steel'), count: 1},
+          { item: mod('component_steel'), count: 1 },
         ],
         pressure: 4.0,
         results: [Item.of(mod('blastbrick'), 3).toJson()],
@@ -436,33 +436,33 @@ ServerEvents.recipes(event => {
       event.custom({
         type: 'pneumaticcraft:thermo_plant',
         exothermic: true,
-        fluid_input: {type: 'pneumaticcraft:fluid', amount: 10, tag: 'forge:molten_iron'},
-        item_input: {tag: 'forge:dusts/ash'},
-        item_output: {item: 'mekanism:nugget_steel'},
-        temperature: {max_temp: 546},
+        fluid_input: { type: 'pneumaticcraft:fluid', amount: 10, tag: 'forge:molten_iron' },
+        item_input: { tag: 'forge:dusts/ash' },
+        item_output: { item: 'mekanism:nugget_steel' },
+        temperature: { max_temp: 546 },
       });
     };
 
     event.remove(mod('alloysmelter/brass'));
     event.remove(mod('alloysmelter/bronze'));
     event.remove(mod('crafting/redstone_acid'));
-    event.replaceInput({output: mod('conveyor_basic')}, 'minecraft:redstone', 'create:belt_connector');
-    event.replaceInput({output: mod('dynamo')}, 'minecraft:redstone', items.capacitor);
-    event.replaceInput({output: mod('fluid_sorter')}, 'minecraft:redstone', 'pneumaticcraft:printed_circuit_board');
-    event.replaceInput({output: mod('furnace_heater')}, 'minecraft:redstone', items.capacitor);
-    event.replaceInput({output: mod('hammer')}, '#forge:ingots/iron', '#forge:ingots/steel');
-    event.replaceInput({output: mod('sorter')}, 'minecraft:redstone', 'pneumaticcraft:printed_circuit_board');
-    event.replaceInput({output: mod('wirecutter')}, '#forge:ingots/iron', '#forge:ingots/steel');
-    event.remove({output: mod('component_iron')});
-    event.remove({output: mod('component_steel')});
-    event.remove({output: mod('circuit_board')});
-    event.remove({output: mod('plate_duroplast')});
+    event.replaceInput({ output: mod('conveyor_basic') }, 'minecraft:redstone', 'create:belt_connector');
+    event.replaceInput({ output: mod('dynamo') }, 'minecraft:redstone', items.capacitor);
+    event.replaceInput({ output: mod('fluid_sorter') }, 'minecraft:redstone', 'pneumaticcraft:printed_circuit_board');
+    event.replaceInput({ output: mod('furnace_heater') }, 'minecraft:redstone', items.capacitor);
+    event.replaceInput({ output: mod('hammer') }, '#forge:ingots/iron', '#forge:ingots/steel');
+    event.replaceInput({ output: mod('sorter') }, 'minecraft:redstone', 'pneumaticcraft:printed_circuit_board');
+    event.replaceInput({ output: mod('wirecutter') }, '#forge:ingots/iron', '#forge:ingots/steel');
+    event.remove({ output: mod('component_iron') });
+    event.remove({ output: mod('component_steel') });
+    event.remove({ output: mod('circuit_board') });
+    event.remove({ output: mod('plate_duroplast') });
     event.replaceInput({}, mod('circuit_board'), 'pneumaticcraft:printed_circuit_board');
     event.replaceInput({}, mod('plate_duroplast'), '#pneumaticcraft:plastic_sheets');
-    event.replaceInput({output: 'immersiveengineering:windmill'}, 'minecraft:iron_ingot', '#forge:ingots/steel');
+    event.replaceInput({ output: 'immersiveengineering:windmill' }, 'minecraft:iron_ingot', '#forge:ingots/steel');
 
     /* Wirecutters should only work for softer metals */
-    event.remove({input: mod('wirecutter'), output: '#forge:wires'});
+    event.remove({ input: mod('wirecutter'), output: '#forge:wires' });
     event.shapeless(mod('wire_copper'), [mod('wirecutter'), '#forge:plates/copper']);
     event.shapeless(mod('wire_aluminum'), [mod('wirecutter'), '#forge:plates/aluminum']);
 
@@ -471,9 +471,9 @@ ServerEvents.recipes(event => {
     /* And via IE bottling */
     event.custom({
       type: 'immersiveengineering:bottling_machine',
-      fluid: {amount: 125, tag: 'forge:creosote'},
-      input: {tag: 'minecraft:planks'},
-      results: [{item: mod('treated_wood_horizontal')}],
+      fluid: { amount: 125, tag: 'forge:creosote' },
+      input: { tag: 'minecraft:planks' },
+      results: [{ item: mod('treated_wood_horizontal') }],
     });
 
     event.remove(mod('blueprint/component_electronic_adv'));
@@ -482,11 +482,11 @@ ServerEvents.recipes(event => {
         type: 'immersiveengineering:blueprint',
         category: 'components',
         inputs: [
-          {item: 'pneumaticcraft:unassembled_pcb'},
-          {base_ingredient: {item: 'immersiveengineering:electron_tube'}, count: 2},
-          {tag: 'forge:wires/aluminum'},
+          { item: 'pneumaticcraft:unassembled_pcb' },
+          { base_ingredient: { item: 'immersiveengineering:electron_tube' }, count: 2 },
+          { tag: 'forge:wires/aluminum' },
         ],
-        result: {item: 'immersiveengineering:component_electronic_adv'},
+        result: { item: 'immersiveengineering:component_electronic_adv' },
       })
       .id(mod('blueprint/component_electronic_adv'));
 
@@ -510,11 +510,11 @@ ServerEvents.recipes(event => {
       type: 'immersiveengineering:blueprint',
       category: 'components',
       inputs: [
-        {base_ingredient: {tag: 'forge:plates/iron'}, count: 6},
-        {base_ingredient: {item: 'immersiveengineering:wire_copper'}, count: 2},
-        {base_ingredient: {item: 'pneumaticcraft:printed_circuit_board'}, count: 1},
+        { base_ingredient: { tag: 'forge:plates/iron' }, count: 6 },
+        { base_ingredient: { item: 'immersiveengineering:wire_copper' }, count: 2 },
+        { base_ingredient: { item: 'pneumaticcraft:printed_circuit_board' }, count: 1 },
       ],
-      result: {item: mod('component_iron'), count: 3},
+      result: { item: mod('component_iron'), count: 3 },
     });
 
     /* Steel Components */
@@ -522,11 +522,11 @@ ServerEvents.recipes(event => {
       type: 'immersiveengineering:blueprint',
       category: 'components',
       inputs: [
-        {base_ingredient: {tag: 'forge:plates/steel'}, count: 6},
-        {base_ingredient: {item: 'immersiveengineering:wire_copper'}, count: 2},
-        {base_ingredient: {item: 'pneumaticcraft:printed_circuit_board'}, count: 1},
+        { base_ingredient: { tag: 'forge:plates/steel' }, count: 6 },
+        { base_ingredient: { item: 'immersiveengineering:wire_copper' }, count: 2 },
+        { base_ingredient: { item: 'pneumaticcraft:printed_circuit_board' }, count: 1 },
       ],
-      result: {item: mod('component_steel'), count: 3},
+      result: { item: mod('component_steel'), count: 3 },
     });
 
     event.recipes.create.mixing(Fluid.of(mod('redstone_acid'), 20), [Fluid.of('minecraft:water', 20), Item.of('minecraft:redstone')]).heated();
@@ -549,34 +549,34 @@ ServerEvents.recipes(event => {
       event.custom({
         type: 'mekanism:nucleosynthesizing',
         duration: duration == null ? 500 : duration,
-        gasInput: {amount: amountMb == null ? 2 : amountMb, gas: 'mekanism:antimatter'},
-        itemInput: {ingredient: input.toJson()},
+        gasInput: { amount: amountMb == null ? 2 : amountMb, gas: 'mekanism:antimatter' },
+        itemInput: { ingredient: input.toJson() },
         output: output.toJson(),
       });
     };
 
     /* The muffling upgrade uses steel dust, which has replaced Osmium Dust, so we need to re-work the recipe */
-    event.replaceInput({output: 'mekanism:upgrade_muffling'}, '#forge:dusts/steel', '#minecraft:wool');
+    event.replaceInput({ output: 'mekanism:upgrade_muffling' }, '#forge:dusts/steel', '#minecraft:wool');
 
     /* Additional carbon compatibilities */
     event.remove('mekanism:enriching/enriched/carbon');
 
     event.custom({
       type: 'mekanism:enriching',
-      input: {ingredient: [{item: 'minecraft:coal'}, {item: 'minecraft:charcoal'}]},
-      output: {item: 'mekanism:enriched_carbon'},
+      input: { ingredient: [{ item: 'minecraft:coal' }, { item: 'minecraft:charcoal' }] },
+      output: { item: 'mekanism:enriched_carbon' },
     });
 
     event.custom({
       type: 'mekanism:enriching',
-      input: {amount: 2, ingredient: {item: 'supplementaries:ash'}},
-      output: {item: 'mekanism:enriched_carbon'},
+      input: { amount: 2, ingredient: { item: 'supplementaries:ash' } },
+      output: { item: 'mekanism:enriched_carbon' },
     });
 
     event.custom({
       type: 'mekanism:enriching',
-      input: {ingredient: {item: 'immersiveengineering:coal_coke'}},
-      output: {item: 'mekanism:enriched_carbon', count: 2},
+      input: { ingredient: { item: 'immersiveengineering:coal_coke' } },
+      output: { item: 'mekanism:enriched_carbon', count: 2 },
     });
 
     /* Remove the lazy infuse types */
@@ -595,12 +595,12 @@ ServerEvents.recipes(event => {
     event.custom({
       type: 'immersiveengineering:metal_press',
       energy: 2400,
-      input: {item: 'mekanism:hdpe_sheet'},
+      input: { item: 'mekanism:hdpe_sheet' },
       mold: 'immersiveengineering:mold_rod',
-      result: {base_ingredient: {item: 'mekanism:hdpe_stick'}, count: 2},
+      result: { base_ingredient: { item: 'mekanism:hdpe_stick' }, count: 2 },
     });
 
-    event.remove({output: 'mekanism:steel_casing'});
+    event.remove({ output: 'mekanism:steel_casing' });
     event.shaped('mekanism:steel_casing', [' S ', 'SCS', ' S '], {
       S: '#forge:ingots/steel',
       C: 'immersiveengineering:duroplast',
@@ -616,16 +616,16 @@ ServerEvents.recipes(event => {
     /* Easier recipe once you get into Mek some more :) */
     event.custom({
       type: 'mekanism:combining',
-      mainInput: {amount: 1, ingredient: {item: 'immersiveengineering:duroplast'}},
-      extraInput: {amount: 4, ingredient: {tag: 'forge:ingots/steel'}},
-      output: {item: 'mekanism:steel_casing'},
+      mainInput: { amount: 1, ingredient: { item: 'immersiveengineering:duroplast' } },
+      extraInput: { amount: 4, ingredient: { tag: 'forge:ingots/steel' } },
+      output: { item: 'mekanism:steel_casing' },
     });
 
     event.custom({
       type: 'mekanism:combining',
-      mainInput: {amount: 4, ingredient: {item: 'mekanism:hdpe_sheet'}},
-      extraInput: {amount: 4, ingredient: {tag: 'forge:ingots/steel'}},
-      output: {item: 'mekanism:steel_casing'},
+      mainInput: { amount: 4, ingredient: { item: 'mekanism:hdpe_sheet' } },
+      extraInput: { amount: 4, ingredient: { tag: 'forge:ingots/steel' } },
+      output: { item: 'mekanism:steel_casing' },
     });
 
     event.remove('mekanism:metallurgic_infuser');
@@ -683,15 +683,15 @@ ServerEvents.recipes(event => {
     });
 
     /* Replace 'Redstone' with actual circuit-like things :) */
-    event.replaceInput({output: 'mekanism:dosimeter'}, 'minecraft:redstone', 'pneumaticcraft:capacitor');
-    event.replaceInput({output: 'mekanism:qio_redstone_adapter'}, 'minecraft:redstone', '#forge:circuits/basic');
-    event.replaceInput({output: 'mekanism:superheating_element'}, 'minecraft:redstone', 'immersiveengineering:wirecoil_steel');
-    event.replaceInput({output: 'mekanismgenerators:bio_generator'}, 'minecraft:iron_ingot', '#forge:ingots/steel');
-    event.replaceInput({output: 'mekanismgenerators:bio_generator'}, 'minecraft:redstone', items.capacitor);
-    event.replaceInput({output: 'mekanismgenerators:fission_reactor_logic_adapter'}, 'minecraft:redstone', '#forge:circuits/basic');
-    event.replaceInput({output: 'mekanismgenerators:fusion_reactor_logic_adapter'}, 'minecraft:redstone', '#forge:circuits/basic');
+    event.replaceInput({ output: 'mekanism:dosimeter' }, 'minecraft:redstone', 'pneumaticcraft:capacitor');
+    event.replaceInput({ output: 'mekanism:qio_redstone_adapter' }, 'minecraft:redstone', '#forge:circuits/basic');
+    event.replaceInput({ output: 'mekanism:superheating_element' }, 'minecraft:redstone', 'immersiveengineering:wirecoil_steel');
+    event.replaceInput({ output: 'mekanismgenerators:bio_generator' }, 'minecraft:iron_ingot', '#forge:ingots/steel');
+    event.replaceInput({ output: 'mekanismgenerators:bio_generator' }, 'minecraft:redstone', items.capacitor);
+    event.replaceInput({ output: 'mekanismgenerators:fission_reactor_logic_adapter' }, 'minecraft:redstone', '#forge:circuits/basic');
+    event.replaceInput({ output: 'mekanismgenerators:fusion_reactor_logic_adapter' }, 'minecraft:redstone', '#forge:circuits/basic');
 
-    event.remove({output: 'mekanism:resistive_heater'});
+    event.remove({ output: 'mekanism:resistive_heater' });
     event.shaped('mekanism:resistive_heater', ['IPI', 'TST', 'ZBZ'], {
       B: '#forge:batteries',
       I: '#forge:ingots/tin',
@@ -701,7 +701,7 @@ ServerEvents.recipes(event => {
       Z: '#forge:ingots/steel',
     });
 
-    event.remove({output: 'mekanism:basic_energy_cube'});
+    event.remove({ output: 'mekanism:basic_energy_cube' });
     event.shaped('mekanism:basic_energy_cube', ['PEP', 'ISI', 'TET'], {
       E: '#forge:batteries',
       I: '#forge:ingots/steel',
@@ -710,7 +710,7 @@ ServerEvents.recipes(event => {
       T: items.transistor,
     });
 
-    event.remove({output: 'mekanism:pigment_extractor'});
+    event.remove({ output: 'mekanism:pigment_extractor' });
     event.shaped('mekanism:pigment_extractor', ['PCP', 'FSF', 'TCT'], {
       C: '#forge:circuits/basic',
       F: 'minecraft:glass_bottle',
@@ -719,7 +719,7 @@ ServerEvents.recipes(event => {
       T: items.transistor,
     });
 
-    event.remove({output: 'mekanism:electrolytic_separator'});
+    event.remove({ output: 'mekanism:electrolytic_separator' });
     event.shaped('mekanism:electrolytic_separator', ['SPS', 'AEA', 'STS'], {
       A: '#forge:alloys/advanced',
       E: 'mekanism:electrolytic_core',
@@ -728,7 +728,7 @@ ServerEvents.recipes(event => {
       T: items.transistor,
     });
 
-    event.remove({output: 'mekanism:nutritional_liquifier'});
+    event.remove({ output: 'mekanism:nutritional_liquifier' });
     event.shaped('mekanism:nutritional_liquifier', ['PCP', 'BSB', 'TCT'], {
       B: 'minecraft:bowl',
       C: '#forge:circuits/basic',
@@ -737,7 +737,7 @@ ServerEvents.recipes(event => {
       T: items.transistor,
     });
 
-    event.remove({output: 'mekanism:crusher'});
+    event.remove({ output: 'mekanism:crusher' });
     event.shaped('mekanism:crusher', ['PCP', 'LSL', 'TCT'], {
       C: '#forge:circuits/basic',
       L: 'immersiveengineering:rockcutter',
@@ -746,7 +746,7 @@ ServerEvents.recipes(event => {
       T: items.transistor,
     });
 
-    event.remove({output: 'mekanism:energized_smelter'});
+    event.remove({ output: 'mekanism:energized_smelter' });
     event.shaped('mekanism:energized_smelter', ['PHP', 'LSL', 'TCT'], {
       C: '#forge:circuits/basic',
       H: '#forge:ingots/hop_graphite',
@@ -756,7 +756,7 @@ ServerEvents.recipes(event => {
       T: items.transistor,
     });
 
-    event.remove({output: 'mekanism:enrichment_chamber'});
+    event.remove({ output: 'mekanism:enrichment_chamber' });
     event.shaped('mekanism:enrichment_chamber', ['PCP', 'LSL', 'TCT'], {
       C: ['#forge:circuits/basic', 'pneumaticcraft:printed_circuit_board'],
       L: 'create:crushing_wheel',
@@ -765,7 +765,7 @@ ServerEvents.recipes(event => {
       T: items.transistor,
     });
 
-    event.remove({output: 'mekanismgenerators:solar_panel'});
+    event.remove({ output: 'mekanismgenerators:solar_panel' });
     event.shaped('mekanismgenerators:solar_panel', ['PPP', 'TAT', 'SSS'], {
       A: '#forge:alloys/advanced',
       P: '#forge:glass_panes',
@@ -773,24 +773,24 @@ ServerEvents.recipes(event => {
       T: items.transistor,
     });
 
-    event.remove({id: 'mekanism:gas_conversion/osmium_from_ingot'});
-    event.remove({id: 'mekanism:gas_conversion/osmium_from_block'});
+    event.remove({ id: 'mekanism:gas_conversion/osmium_from_ingot' });
+    event.remove({ id: 'mekanism:gas_conversion/osmium_from_block' });
 
     /* Substitute compressor recipes here */
     event.custom({
       type: 'mekanism:combining',
-      mainInput: {ingredient: {tag: 'forge:ingots/steel'}},
-      extraInput: {ingredient: {item: 'mekanism:dust_refined_obsidian'}},
-      output: {item: 'mekanism:ingot_refined_obsidian'},
+      mainInput: { ingredient: { tag: 'forge:ingots/steel' } },
+      extraInput: { ingredient: { item: 'mekanism:dust_refined_obsidian' } },
+      output: { item: 'mekanism:ingot_refined_obsidian' },
     });
 
     /* Get rid of the Sawmill -- intercompat would be a nightmare here :/ */
-    event.remove({type: 'mekanism:sawing'});
+    event.remove({ type: 'mekanism:sawing' });
     /* Get rid of the Osmium Compressor -- we don't need it at all tbh */
-    event.remove({type: 'mekanism:compressing'});
+    event.remove({ type: 'mekanism:compressing' });
 
     /* Redo all Basic Factory recipes */
-    event.remove({output: 'mekanism:basic_tier_installer'});
+    event.remove({ output: 'mekanism:basic_tier_installer' });
     event.shaped('mekanism:basic_tier_installer', ['PCP', 'IBI', 'TCT'], {
       B: '#minecraft:planks',
       C: '#forge:circuits/basic',
@@ -800,15 +800,15 @@ ServerEvents.recipes(event => {
     });
 
     [
-      {factory: 'mekanism:basic_combining_factory', base: 'mekanism:combiner'},
-      {factory: 'mekanism:basic_crushing_factory', base: 'mekanism:crusher'},
-      {factory: 'mekanism:basic_enriching_factory', base: 'mekanism:enrichment_chamber'},
-      {factory: 'mekanism:basic_infusing_factory', base: 'mekanism:metallurgic_infuser'},
-      {factory: 'mekanism:basic_injecting_factory', base: 'mekanism:chemical_injection_chamber'},
-      {factory: 'mekanism:basic_purifying_factory', base: 'mekanism:purification_chamber'},
-      {factory: 'mekanism:basic_smelting_factory', base: 'mekanism:energized_smelter'},
+      { factory: 'mekanism:basic_combining_factory', base: 'mekanism:combiner' },
+      { factory: 'mekanism:basic_crushing_factory', base: 'mekanism:crusher' },
+      { factory: 'mekanism:basic_enriching_factory', base: 'mekanism:enrichment_chamber' },
+      { factory: 'mekanism:basic_infusing_factory', base: 'mekanism:metallurgic_infuser' },
+      { factory: 'mekanism:basic_injecting_factory', base: 'mekanism:chemical_injection_chamber' },
+      { factory: 'mekanism:basic_purifying_factory', base: 'mekanism:purification_chamber' },
+      { factory: 'mekanism:basic_smelting_factory', base: 'mekanism:energized_smelter' },
     ].forEach(pair => {
-      event.remove({output: pair.factory});
+      event.remove({ output: pair.factory });
       event.shaped(pair.factory, ['PCP', 'IBI', 'TCT'], {
         B: pair.base,
         C: '#forge:circuits/basic',
@@ -819,7 +819,7 @@ ServerEvents.recipes(event => {
     });
 
     /* Re-work Teleporter Frame recipe */
-    event.remove({output: 'mekanism:teleporter_frame'});
+    event.remove({ output: 'mekanism:teleporter_frame' });
     event.shaped(Item.of('mekanism:teleporter_frame', 3), ['SRS', 'TFT', 'SRS'], {
       F: 'ae2:fluix_pearl',
       T: 'mekanism:energy_tablet',
@@ -847,7 +847,7 @@ ServerEvents.recipes(event => {
     });
 
     // Music Discs
-    nucleosynthesizing(Item.of('aether_redux:slider_music_disc'), Ingredient.of('aether:carved_slab'), 1);
+    nucleosynthesizing(Item.of('aether:music_disc_sliders_wrath'), Ingredient.of('aether:carved_slab'), 1);
     nucleosynthesizing(Item.of('aether:music_disc_ascending_dawn'), Ingredient.of('aether_redux:golden_swet_ball'), 1);
     nucleosynthesizing(Item.of('create_connected:music_disc_elevator'), Ingredient.of('create:empty_schematic'), 1);
     nucleosynthesizing(Item.of('create_connected:music_disc_interlude'), Ingredient.of('create:experience_nugget'), 1);
@@ -896,8 +896,8 @@ ServerEvents.recipes(event => {
   };
 
   const modularRouters = () => {
-    event.replaceInput({output: 'modularrouters:blank_module'}, 'minecraft:paper', items.plastic);
-    event.replaceInput({output: 'modularrouters:blank_upgrade'}, 'minecraft:paper', items.plastic);
+    event.replaceInput({ output: 'modularrouters:blank_module' }, 'minecraft:paper', items.plastic);
+    event.replaceInput({ output: 'modularrouters:blank_upgrade' }, 'minecraft:paper', items.plastic);
     event.shaped('modularrouters:modular_router', ['EPE', 'PCP', 'EPE'], {
       P: items.plastic,
       E: '#forge:ender_pearls',
@@ -906,10 +906,10 @@ ServerEvents.recipes(event => {
   };
 
   const pnc = () => {
-    event.remove({type: 'pneumaticcraft:pressure_chamber_disenchanting'});
-    event.remove({type: 'pneumaticcraft:pressure_chamber_enchanting'});
-    event.remove({id: 'pneumaticcraft:pressure_chamber/pressure_chamber_disenchanting'});
-    event.remove({id: 'pneumaticcraft:pressure_chamber/pressure_chamber_enchanting'});
+    event.remove({ type: 'pneumaticcraft:pressure_chamber_disenchanting' });
+    event.remove({ type: 'pneumaticcraft:pressure_chamber_enchanting' });
+    event.remove({ id: 'pneumaticcraft:pressure_chamber/pressure_chamber_disenchanting' });
+    event.remove({ id: 'pneumaticcraft:pressure_chamber/pressure_chamber_enchanting' });
 
     // Remove explosion crafting recipes for Compressed Iron
     event.remove('pneumaticcraft:explosion_crafting/compressed_iron_block');
@@ -917,24 +917,24 @@ ServerEvents.recipes(event => {
     event.remove('pneumaticcraft:explosion_crafting/wheat_flour');
     event.custom({
       type: 'pneumaticcraft:explosion_crafting',
-      input: {tag: 'forge:crops/wheat'},
+      input: { tag: 'forge:crops/wheat' },
       loss_rate: 50,
-      results: [{item: 'create:wheat_flour'}],
+      results: [{ item: 'create:wheat_flour' }],
     });
 
     event.recipes.create.compacting('pneumaticcraft:compressed_iron_block', ['#forge:storage_blocks/iron', 'minecraft:tnt']).superheated();
 
-    event.replaceInput({output: 'pneumaticcraft:assembly_laser'}, 'minecraft:red_stained_glass', 'regions_unexplored:redstone_bulb');
+    event.replaceInput({ output: 'pneumaticcraft:assembly_laser' }, 'minecraft:red_stained_glass', 'regions_unexplored:redstone_bulb');
 
-    event.remove({id: 'pneumaticcraft:pressure_chamber/etching_acid'});
+    event.remove({ id: 'pneumaticcraft:pressure_chamber/etching_acid' });
     event.custom({
       type: 'create:mixing',
       heatRequirement: 'superheated',
       ingredients: [
-        {amount: 500, fluidTag: 'forge:redstone_acid'},
-        {amount: 500, fluidTag: 'pneumaticcraft:plastic'},
+        { amount: 500, fluidTag: 'forge:redstone_acid' },
+        { amount: 500, fluidTag: 'pneumaticcraft:plastic' },
       ],
-      results: [{amount: 1000, fluid: 'pneumaticcraft:etching_acid'}],
+      results: [{ amount: 1000, fluid: 'pneumaticcraft:etching_acid' }],
     });
 
     /* Capacitor */
@@ -943,12 +943,12 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'pneumaticcraft:pressure_chamber',
         inputs: [
-          {type: 'pneumaticcraft:stacked_item', count: 2, tag: 'forge:nuggets/copper'},
-          {type: 'pneumaticcraft:stacked_item', count: 6, tag: 'forge:dusts/redstone'},
-          {tag: 'pneumaticcraft:plastic_sheets'},
+          { type: 'pneumaticcraft:stacked_item', count: 2, tag: 'forge:nuggets/copper' },
+          { type: 'pneumaticcraft:stacked_item', count: 6, tag: 'forge:dusts/redstone' },
+          { tag: 'pneumaticcraft:plastic_sheets' },
         ],
         pressure: 1.0,
-        results: [{item: 'pneumaticcraft:capacitor'}],
+        results: [{ item: 'pneumaticcraft:capacitor' }],
       })
       .id('pneumaticcraft:pressure_chamber/capacitor');
 
@@ -958,12 +958,12 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'pneumaticcraft:pressure_chamber',
         inputs: [
-          {type: 'pneumaticcraft:stacked_item', count: 3, tag: 'forge:nuggets/copper'},
-          {type: 'pneumaticcraft:stacked_item', count: 2, tag: 'forge:silicon'},
-          {tag: 'pneumaticcraft:plastic_sheets'},
+          { type: 'pneumaticcraft:stacked_item', count: 3, tag: 'forge:nuggets/copper' },
+          { type: 'pneumaticcraft:stacked_item', count: 2, tag: 'forge:silicon' },
+          { tag: 'pneumaticcraft:plastic_sheets' },
         ],
         pressure: 1.0,
-        results: [{item: 'pneumaticcraft:transistor'}],
+        results: [{ item: 'pneumaticcraft:transistor' }],
       })
       .id('pneumaticcraft:pressure_chamber/transistor');
 
@@ -971,37 +971,37 @@ ServerEvents.recipes(event => {
     /* Capacitor */
     event.custom({
       type: 'mekanism:combining',
-      mainInput: {amount: 2, ingredient: {item: 'immersiveengineering:wirecoil_copper'}},
-      extraInput: {ingredient: {tag: 'pneumaticcraft:plastic_sheets'}},
-      output: {item: 'pneumaticcraft:capacitor'},
+      mainInput: { amount: 2, ingredient: { item: 'immersiveengineering:wirecoil_copper' } },
+      extraInput: { ingredient: { tag: 'pneumaticcraft:plastic_sheets' } },
+      output: { item: 'pneumaticcraft:capacitor' },
     });
 
     event.custom({
       type: 'immersiveengineering:blueprint',
       category: 'components',
       inputs: [
-        {base_ingredient: {item: 'immersiveengineering:wirecoil_copper'}, count: 2},
-        {base_ingredient: {tag: 'pneumaticcraft:plastic_sheets'}, count: 1},
+        { base_ingredient: { item: 'immersiveengineering:wirecoil_copper' }, count: 2 },
+        { base_ingredient: { tag: 'pneumaticcraft:plastic_sheets' }, count: 1 },
       ],
-      result: {item: 'pneumaticcraft:capacitor'},
+      result: { item: 'pneumaticcraft:capacitor' },
     });
 
     /* Transistor */
     event.custom({
       type: 'mekanism:combining',
-      mainInput: {amount: 2, ingredient: {tag: 'forge:silicon'}},
-      extraInput: {ingredient: {tag: 'pneumaticcraft:plastic_sheets'}},
-      output: {item: 'pneumaticcraft:transistor'},
+      mainInput: { amount: 2, ingredient: { tag: 'forge:silicon' } },
+      extraInput: { ingredient: { tag: 'pneumaticcraft:plastic_sheets' } },
+      output: { item: 'pneumaticcraft:transistor' },
     });
 
     event.custom({
       type: 'immersiveengineering:blueprint',
       category: 'components',
       inputs: [
-        {base_ingredient: {tag: 'forge:silicon'}, count: 2},
-        {base_ingredient: {tag: 'pneumaticcraft:plastic_sheets'}, count: 1},
+        { base_ingredient: { tag: 'forge:silicon' }, count: 2 },
+        { base_ingredient: { tag: 'pneumaticcraft:plastic_sheets' }, count: 1 },
       ],
-      result: {item: 'pneumaticcraft:transistor'},
+      result: { item: 'pneumaticcraft:transistor' },
     });
 
     /* Empty PCB */
@@ -1009,11 +1009,11 @@ ServerEvents.recipes(event => {
       type: 'immersiveengineering:blueprint',
       category: 'components',
       inputs: [
-        {base_ingredient: {item: 'minecraft:redstone_torch'}, count: 2},
-        {base_ingredient: {item: 'immersiveengineering:wire_copper'}, count: 3},
-        {base_ingredient: {tag: 'pneumaticcraft:plastic_sheets'}, count: 1},
+        { base_ingredient: { item: 'minecraft:redstone_torch' }, count: 2 },
+        { base_ingredient: { item: 'immersiveengineering:wire_copper' }, count: 3 },
+        { base_ingredient: { tag: 'pneumaticcraft:plastic_sheets' }, count: 1 },
       ],
-      result: {item: 'pneumaticcraft:empty_pcb', count: 3},
+      result: { item: 'pneumaticcraft:empty_pcb', count: 3 },
     });
 
     /* Compressed Iron Gear */
@@ -1022,9 +1022,9 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'immersiveengineering:metal_press',
         energy: 2400,
-        input: {base_ingredient: {tag: 'forge:ingots/compressed_iron'}, count: 4},
+        input: { base_ingredient: { tag: 'forge:ingots/compressed_iron' }, count: 4 },
         mold: 'immersiveengineering:mold_gear',
-        result: {item: 'pneumaticcraft:compressed_iron_gear'},
+        result: { item: 'pneumaticcraft:compressed_iron_gear' },
       })
       .id('pneumaticcraft:compressed_iron_gear');
 
@@ -1035,10 +1035,10 @@ ServerEvents.recipes(event => {
         dimensions: ['minecraft:overworld'],
         fail_chance: 0.025,
         sample_background: 'minecraft:sand',
-        ores: [{chance: 1.0, output: {item: 'kubejs:oil_droplet'}}],
+        ores: [{ chance: 1.0, output: { item: 'kubejs:oil_droplet' } }],
         spoils: [
-          {chance: 0.8, output: {item: 'minecraft:sand'}},
-          {chance: 0.2, output: {item: 'minecraft:gravel'}},
+          { chance: 0.8, output: { item: 'minecraft:sand' } },
+          { chance: 0.2, output: { item: 'minecraft:gravel' } },
         ],
         weight: 40,
       })
@@ -1052,14 +1052,14 @@ ServerEvents.recipes(event => {
         dimensions: ['minecraft:overworld'],
         fail_chance: 0.2,
         ores: [
-          {chance: 0.3, output: {tag: 'forge:ores/emerald'}},
-          {chance: 0.3, output: {tag: 'forge:ores/fluorite'}},
-          {chance: 0.7, output: {item: 'minecraft:prismarine'}},
+          { chance: 0.3, output: { tag: 'forge:ores/emerald' } },
+          { chance: 0.3, output: { tag: 'forge:ores/fluorite' } },
+          { chance: 0.7, output: { item: 'minecraft:prismarine' } },
         ],
         spoils: [
-          {chance: 0.2, output: {item: 'minecraft:gravel'}},
-          {chance: 0.5, output: {item: 'minecraft:cobblestone'}},
-          {chance: 0.3, output: {item: 'minecraft:cobbled_deepslate'}},
+          { chance: 0.2, output: { item: 'minecraft:gravel' } },
+          { chance: 0.5, output: { item: 'minecraft:cobblestone' } },
+          { chance: 0.3, output: { item: 'minecraft:cobbled_deepslate' } },
         ],
         weight: 5,
       })
@@ -1071,11 +1071,11 @@ ServerEvents.recipes(event => {
         type: 'immersiveengineering:mineral_mix',
         dimensions: ['minecraft:overworld'],
         fail_chance: 0.44,
-        ores: [{chance: 1.0, output: {tag: 'forge:ores/zinc'}}],
+        ores: [{ chance: 1.0, output: { tag: 'forge:ores/zinc' } }],
         spoils: [
-          {chance: 0.2, output: {item: 'minecraft:gravel'}},
-          {chance: 0.5, output: {item: 'minecraft:cobblestone'}},
-          {chance: 0.3, output: {item: 'minecraft:cobbled_deepslate'}},
+          { chance: 0.2, output: { item: 'minecraft:gravel' } },
+          { chance: 0.5, output: { item: 'minecraft:cobblestone' } },
+          { chance: 0.3, output: { item: 'minecraft:cobbled_deepslate' } },
         ],
         weight: 5,
       })
@@ -1087,13 +1087,13 @@ ServerEvents.recipes(event => {
         dimensions: ['bloodmagic:dungeon'],
         fail_chance: 0.8,
         ores: [
-          {chance: 0.3, output: {tag: 'forge:ores/hellforged'}},
-          {chance: 0.7, output: {tag: 'forge:ores/diamond'}},
+          { chance: 0.3, output: { tag: 'forge:ores/hellforged' } },
+          { chance: 0.7, output: { tag: 'forge:ores/diamond' } },
         ],
         spoils: [
-          {chance: 0.75, output: {item: 'bloodmagic:dungeon_stone'}},
-          {chance: 0.15, output: {item: 'immersiveengineering:dust_saltpeter'}},
-          {chance: 0.1, output: {item: 'eidolon:sulfur'}},
+          { chance: 0.75, output: { item: 'bloodmagic:dungeon_stone' } },
+          { chance: 0.15, output: { item: 'immersiveengineering:dust_saltpeter' } },
+          { chance: 0.1, output: { item: 'eidolon:sulfur' } },
         ],
         weight: 5,
       })
@@ -1104,8 +1104,8 @@ ServerEvents.recipes(event => {
     event.custom({
       type: 'immersiveengineering:squeezer',
       energy: 6400,
-      input: {item: 'kubejs:oil_droplet'},
-      fluid: {fluid: 'pneumaticcraft:oil', amount: 125},
+      input: { item: 'kubejs:oil_droplet' },
+      fluid: { fluid: 'pneumaticcraft:oil', amount: 125 },
     });
 
     event.custom({
@@ -1113,27 +1113,27 @@ ServerEvents.recipes(event => {
       speed: 0.5,
       pressure: 2.0,
       exothermic: false,
-      item_input: {item: 'kubejs:oil_droplet'},
-      fluid_output: {fluid: 'pneumaticcraft:oil', amount: 125},
+      item_input: { item: 'kubejs:oil_droplet' },
+      fluid_output: { fluid: 'pneumaticcraft:oil', amount: 125 },
     });
   };
 
   const prettyPipes = () => {
-    event.remove({mod: 'prettypipes'});
-    event.remove({mod: 'ppfluids'});
+    event.remove({ mod: 'prettypipes' });
+    event.remove({ mod: 'ppfluids' });
 
     /* New pipe recipe */
-    event.shaped(Item.of('prettypipes:pipe', 16), ['IGI'], {I: 'create:andesite_alloy', G: '#forge:glass/colorless'});
+    event.shaped(Item.of('prettypipes:pipe', 16), ['IGI'], { I: 'create:andesite_alloy', G: '#forge:glass/colorless' });
     event.recipes.create.sandpaper_polishing('prettypipes:pipe', 'ppfluids:fluid_pipe');
     event.custom({
       type: 'create:deploying',
-      ingredients: [{item: 'prettypipes:pipe'}, {item: 'minecraft:honeycomb_block'}],
+      ingredients: [{ item: 'prettypipes:pipe' }, { item: 'minecraft:honeycomb_block' }],
       keepHeldItem: true,
-      results: [{item: 'ppfluids:fluid_pipe'}],
+      results: [{ item: 'ppfluids:fluid_pipe' }],
     });
 
     /* New pipe wrench recipe */
-    event.shaped('prettypipes:wrench', [' A ', 'RRA', ' R '], {A: 'create:andesite_alloy', R: '#forge:dyes/red'});
+    event.shaped('prettypipes:wrench', [' A ', 'RRA', ' R '], { A: 'create:andesite_alloy', R: '#forge:dyes/red' });
     /* New blank module recipe */
     const blank = 'prettypipes:blank_module';
     event.recipes.create.pressing(blank, ['create:andesite_alloy']);
@@ -1151,16 +1151,16 @@ ServerEvents.recipes(event => {
     /* New crafting terminal recipe */
     event.smithing('prettypipes:crafting_terminal', 'minecraft:crafting_table', 'prettypipes:item_terminal', 'minecraft:crafting_table');
     /* New pipe frame recipe */
-    event.shaped('prettypipes:pipe_frame', ['SLS', 'LPL', 'SLS'], {S: '#forge:rods/wooden', L: '#forge:leather', P: 'prettypipes:pipe'});
+    event.shaped('prettypipes:pipe_frame', ['SLS', 'LPL', 'SLS'], { S: '#forge:rods/wooden', L: '#forge:leather', P: 'prettypipes:pipe' });
 
-    event.shaped('prettypipes:round_robin_sorting_modifier', ['LL ', 'LBL', ' LL'], {L: '#forge:gems/lapis', B: blank});
-    event.shaped('prettypipes:stack_size_module', [' L ', 'LBL', ' L '], {L: '#forge:leather', B: blank});
-    event.shaped('prettypipes:redstone_module', [' C ', 'RBR', ' R '], {C: 'minecraft:comparator', R: '#forge:dusts/redstone', B: blank});
-    event.shaped('prettypipes:random_sorting_modifier', [' C ', 'RBR', ' R '], {C: 'minecraft:dispenser', R: '#forge:dusts/redstone', B: blank});
-    event.shaped('prettypipes:damage_filter_modifier', [' T ', 'GBG', ' G '], {T: 'ae2:tiny_tnt', G: 'minecraft:gunpowder', B: blank});
-    event.shaped('prettypipes:mod_filter_modifier', [' S ', 'NBN', ' S '], {S: '#forge:plates/obsidian', N: '#forge:nuggets/brass', B: blank});
-    event.shaped('prettypipes:nbt_filter_modifier', [' Q ', 'QBQ', ' Q '], {Q: 'minecraft:quartz', B: blank});
-    event.shaped('prettypipes:tag_filter_modifier', [' N ', 'SBS', ' S '], {N: 'minecraft:name_tag', S: 'minecraft:string', B: blank});
+    event.shaped('prettypipes:round_robin_sorting_modifier', ['LL ', 'LBL', ' LL'], { L: '#forge:gems/lapis', B: blank });
+    event.shaped('prettypipes:stack_size_module', [' L ', 'LBL', ' L '], { L: '#forge:leather', B: blank });
+    event.shaped('prettypipes:redstone_module', [' C ', 'RBR', ' R '], { C: 'minecraft:comparator', R: '#forge:dusts/redstone', B: blank });
+    event.shaped('prettypipes:random_sorting_modifier', [' C ', 'RBR', ' R '], { C: 'minecraft:dispenser', R: '#forge:dusts/redstone', B: blank });
+    event.shaped('prettypipes:damage_filter_modifier', [' T ', 'GBG', ' G '], { T: 'ae2:tiny_tnt', G: 'minecraft:gunpowder', B: blank });
+    event.shaped('prettypipes:mod_filter_modifier', [' S ', 'NBN', ' S '], { S: '#forge:plates/obsidian', N: '#forge:nuggets/brass', B: blank });
+    event.shaped('prettypipes:nbt_filter_modifier', [' Q ', 'QBQ', ' Q '], { Q: 'minecraft:quartz', B: blank });
+    event.shaped('prettypipes:tag_filter_modifier', [' N ', 'SBS', ' S '], { N: 'minecraft:name_tag', S: 'minecraft:string', B: blank });
     event.shaped('prettypipes:filter_increase_modifier', [' C ', 'PBP', ' P '], {
       C: 'expandedstorage:wood_mini_chest',
       P: 'minecraft:paper',
@@ -1168,20 +1168,20 @@ ServerEvents.recipes(event => {
     });
 
     // Upgradable Modules
-    event.shaped('prettypipes:low_crafting_module', [' P ', 'PBP', ' P '], {P: '#minecraft:planks', B: blank});
-    event.shaped('prettypipes:low_filter_module', [' W ', 'NBN', ' W '], {W: '#minecraft:wool', N: '#forge:nuggets/iron', B: blank});
-    event.shaped('prettypipes:low_low_priority_module', [' S ', 'SBS', ' S '], {S: '#forge:rods/wooden', B: blank});
-    event.shaped('prettypipes:low_high_priority_module', ['S S', ' B ', 'S S'], {S: '#forge:rods/wooden', B: blank});
-    event.shaped('prettypipes:low_extraction_module', ['I I', 'IBI', ' I '], {I: '#forge:ingots/iron', B: blank});
-    event.shaped('prettypipes:low_retrieval_module', ['ISI', 'IBI', ' I '], {I: '#forge:ingots/iron', S: 'minecraft:sticky_piston', B: blank});
+    event.shaped('prettypipes:low_crafting_module', [' P ', 'PBP', ' P '], { P: '#minecraft:planks', B: blank });
+    event.shaped('prettypipes:low_filter_module', [' W ', 'NBN', ' W '], { W: '#minecraft:wool', N: '#forge:nuggets/iron', B: blank });
+    event.shaped('prettypipes:low_low_priority_module', [' S ', 'SBS', ' S '], { S: '#forge:rods/wooden', B: blank });
+    event.shaped('prettypipes:low_high_priority_module', ['S S', ' B ', 'S S'], { S: '#forge:rods/wooden', B: blank });
+    event.shaped('prettypipes:low_extraction_module', ['I I', 'IBI', ' I '], { I: '#forge:ingots/iron', B: blank });
+    event.shaped('prettypipes:low_retrieval_module', ['ISI', 'IBI', ' I '], { I: '#forge:ingots/iron', S: 'minecraft:sticky_piston', B: blank });
     event.shaped('prettypipes:low_speed_module', [' S ', 'SBS', ' S '], {
       S: ['minecraft:sugar', 'minecraft:honey_bottle', 'delightful:matcha'],
       B: blank,
     });
 
-    event.shaped('ppfluids:low_fluid_extraction_module', ['I I', 'IBI', ' I '], {I: '#forge:ingots/copper', B: blank});
-    event.shaped('ppfluids:low_fluid_retrieval_module', ['ISI', 'IBI', ' I '], {I: '#forge:ingots/copper', S: 'minecraft:sticky_piston', B: blank});
-    event.shaped('ppfluids:low_fluid_filter_module', [' W ', 'NBN', ' W '], {W: 'minecraft:iron_bars', N: '#forge:nuggets/copper', B: blank});
+    event.shaped('ppfluids:low_fluid_extraction_module', ['I I', 'IBI', ' I '], { I: '#forge:ingots/copper', B: blank });
+    event.shaped('ppfluids:low_fluid_retrieval_module', ['ISI', 'IBI', ' I '], { I: '#forge:ingots/copper', S: 'minecraft:sticky_piston', B: blank });
+    event.shaped('ppfluids:low_fluid_filter_module', [' W ', 'NBN', ' W '], { W: 'minecraft:iron_bars', N: '#forge:nuggets/copper', B: blank });
 
     ['retrieval_module', 'speed_module', 'filter_module', 'extraction_module', 'crafting_module'].forEach(module => {
       event.shaped(`prettypipes:medium_${module}`, ['BRB', 'BLB', 'BBB'], {
@@ -1260,8 +1260,8 @@ ServerEvents.recipes(event => {
   };
 
   const rfTools = () => {
-    event.remove({mod: 'rftoolsbase'});
-    event.remove({mod: 'xnet'});
+    event.remove({ mod: 'rftoolsbase' });
+    event.remove({ mod: 'xnet' });
 
     event.shaped(Item.of('xnet:netcable_routing', 16), ['CCC', 'CSC', 'CCC'], {
       C: 'mekanism:basic_logistical_transporter',
@@ -1312,9 +1312,9 @@ ServerEvents.recipes(event => {
     });
 
     event.smithing('xnet:wireless_router', 'mekanism:ultimate_control_circuit', 'xnet:router', 'mekanism:ultimate_control_circuit');
-    event.shaped('xnet:antenna', ['RIR', 'RIR', ' I '], {R: '#forge:rods/steel', I: '#forge:ingots/steel'});
-    event.shaped('xnet:antenna_base', [' R ', ' R ', 'IBI'], {R: '#forge:rods/steel', B: '#forge:storage_blocks/steel', I: '#forge:ingots/steel'});
-    event.shaped('xnet:antenna_dish', ['PPP', 'PPP', ' R '], {R: '#forge:rods/steel', P: '#forge:plates/steel'});
+    event.shaped('xnet:antenna', ['RIR', 'RIR', ' I '], { R: '#forge:rods/steel', I: '#forge:ingots/steel' });
+    event.shaped('xnet:antenna_base', [' R ', ' R ', 'IBI'], { R: '#forge:rods/steel', B: '#forge:storage_blocks/steel', I: '#forge:ingots/steel' });
+    event.shaped('xnet:antenna_dish', ['PPP', 'PPP', ' R '], { R: '#forge:rods/steel', P: '#forge:plates/steel' });
   };
 
   [

@@ -19,74 +19,74 @@ ServerEvents.recipes(event => {
       pattern: ['glg', 'lhl', 'glg'],
       reagents: 'gggg',
       key: {
-        g: {item: 'minecraft:glowstone'},
-        h: {tag: 'eidolon:patron_symbol'},
-        l: {item: 'minecraft:ice'},
+        g: { item: 'minecraft:glowstone' },
+        h: { tag: 'eidolon:patron_symbol' },
+        l: { item: 'minecraft:ice' },
       },
-      result: {item: 'aether:aether_portal_frame'},
+      result: { item: 'aether:aether_portal_frame' },
     });
 
     event.remove('aether:nature_staff');
-    event.shaped('aether:nature_staff', [' Z', 'S '], {Z: '#forge:gems/zanite', S: 'aether:skyroot_stick'}).id('aether:nature_staff');
+    event.shaped('aether:nature_staff', [' Z', 'S '], { Z: '#forge:gems/zanite', S: 'aether:skyroot_stick' }).id('aether:nature_staff');
 
-    event.replaceOutput({id: 'aether_redux:blue_swet_jelly'}, 'aether_redux:golden_swet_jelly', 'aether_redux:blue_swet_jelly');
+    event.replaceOutput({ id: 'aether_redux:blue_swet_jelly' }, 'aether_redux:golden_swet_jelly', 'aether_redux:blue_swet_jelly');
 
     [
-      {item: Ingredient.of('aether_redux:infused_veridium_axe'), time: 70},
-      {item: Ingredient.of('aether_redux:infused_veridium_hoe'), time: 70},
-      {item: Ingredient.of('aether_redux:infused_veridium_pickaxe'), time: 70},
-      {item: Ingredient.of('aether_redux:infused_veridium_shovel'), time: 70},
-      {item: Ingredient.of('aether_redux:infused_veridium_sword'), time: 70},
-      {item: Ingredient.of('aether_redux:infused_veridium_dart_shooter'), time: 70},
-      {item: Ingredient.of('aether_redux:subzero_crossbow'), time: 45},
-      {item: Ingredient.of('aether_redux:veridium_axe'), time: 35},
-      {item: Ingredient.of('aether_redux:veridium_hoe'), time: 35},
-      {item: Ingredient.of('aether_redux:veridium_pickaxe'), time: 35},
-      {item: Ingredient.of('aether_redux:veridium_shovel'), time: 35},
-      {item: Ingredient.of('aether_redux:veridium_sword'), time: 35},
-      {item: Ingredient.of('aether_redux:veridium_dart_shooter'), time: 35},
-      {item: Ingredient.of('aether:candy_cane_sword'), time: 20},
-      {item: Ingredient.of('aether:cloud_staff'), time: 90},
-      {item: Ingredient.of('aether:flaming_sword'), time: 90},
-      {item: Ingredient.of('aether:hammer_of_kingbdogz'), time: 90},
-      {item: Ingredient.of('aether:holy_sword'), time: 45},
-      {item: Ingredient.of('aether:ice_pendant'), time: 25},
-      {item: Ingredient.of('aether:ice_ring'), time: 25},
-      {item: Ingredient.of('aether:lightning_sword'), time: 90},
-      {item: Ingredient.of('aether:nature_staff'), time: 90},
-      {item: Ingredient.of('aether:neptune_boots'), time: 50},
-      {item: Ingredient.of('aether:neptune_chestplate'), time: 50},
-      {item: Ingredient.of('aether:neptune_gloves'), time: 50},
-      {item: Ingredient.of('aether:neptune_helmet'), time: 50},
-      {item: Ingredient.of('aether:neptune_leggings'), time: 50},
-      {item: Ingredient.of('aether:phoenix_boots'), time: 80},
-      {item: Ingredient.of('aether:phoenix_bow'), time: 80},
-      {item: Ingredient.of('aether:phoenix_chestplate'), time: 80},
-      {item: Ingredient.of('aether:phoenix_gloves'), time: 80},
-      {item: Ingredient.of('aether:phoenix_helmet'), time: 80},
-      {item: Ingredient.of('aether:phoenix_leggings'), time: 80},
-      {item: Ingredient.of('aether:pig_slayer'), time: 90},
-      {item: Ingredient.of('aether:poison_dart_shooter'), time: 90},
-      {item: Ingredient.of('aether:sentry_boots'), time: 90},
-      {item: Ingredient.of('aether:shield_of_repulsion'), time: 90},
-      {item: Ingredient.of('aether:valkyrie_axe'), time: 120},
-      {item: Ingredient.of('aether:valkyrie_boots'), time: 120},
-      {item: Ingredient.of('aether:valkyrie_chestplate'), time: 120},
-      {item: Ingredient.of('aether:valkyrie_gloves'), time: 120},
-      {item: Ingredient.of('aether:valkyrie_helmet'), time: 120},
-      {item: Ingredient.of('aether:valkyrie_hoe'), time: 120},
-      {item: Ingredient.of('aether:valkyrie_lance'), time: 120},
-      {item: Ingredient.of('aether:valkyrie_leggings'), time: 120},
-      {item: Ingredient.of('aether:valkyrie_pickaxe'), time: 120},
-      {item: Ingredient.of('aether:valkyrie_shovel'), time: 120},
-      {item: Ingredient.of('aether:vampire_blade'), time: 90},
-      {item: Ingredient.of('create:netherite_diving_boots'), time: 100},
-      {item: Ingredient.of('create:netherite_diving_helmet'), time: 100},
-      {item: Ingredient.of('deep_aether:gravitite_ring'), time: 75},
-      {item: Ingredient.of('deep_aether:skyjade_ring'), time: 37},
-      {item: Ingredient.of('deep_aether:stratus_ring'), time: 75},
-      {item: Ingredient.of('farmersdelight:netherite_knife'), time: 100},
-      {item: Ingredient.of('nethersdelight:netherite_machete'), time: 100},
+      { item: Ingredient.of('aether_redux:infused_veridium_axe'), time: 70 },
+      { item: Ingredient.of('aether_redux:infused_veridium_hoe'), time: 70 },
+      { item: Ingredient.of('aether_redux:infused_veridium_pickaxe'), time: 70 },
+      { item: Ingredient.of('aether_redux:infused_veridium_shovel'), time: 70 },
+      { item: Ingredient.of('aether_redux:infused_veridium_sword'), time: 70 },
+      { item: Ingredient.of('aether_redux:infused_veridium_dart_shooter'), time: 70 },
+      { item: Ingredient.of('aether_redux:subzero_crossbow'), time: 45 },
+      { item: Ingredient.of('aether_redux:veridium_axe'), time: 35 },
+      { item: Ingredient.of('aether_redux:veridium_hoe'), time: 35 },
+      { item: Ingredient.of('aether_redux:veridium_pickaxe'), time: 35 },
+      { item: Ingredient.of('aether_redux:veridium_shovel'), time: 35 },
+      { item: Ingredient.of('aether_redux:veridium_sword'), time: 35 },
+      { item: Ingredient.of('aether_redux:veridium_dart_shooter'), time: 35 },
+      { item: Ingredient.of('aether:candy_cane_sword'), time: 20 },
+      { item: Ingredient.of('aether:cloud_staff'), time: 90 },
+      { item: Ingredient.of('aether:flaming_sword'), time: 90 },
+      { item: Ingredient.of('aether:hammer_of_kingbdogz'), time: 90 },
+      { item: Ingredient.of('aether:holy_sword'), time: 45 },
+      { item: Ingredient.of('aether:ice_pendant'), time: 25 },
+      { item: Ingredient.of('aether:ice_ring'), time: 25 },
+      { item: Ingredient.of('aether:lightning_sword'), time: 90 },
+      { item: Ingredient.of('aether:nature_staff'), time: 90 },
+      { item: Ingredient.of('aether:neptune_boots'), time: 50 },
+      { item: Ingredient.of('aether:neptune_chestplate'), time: 50 },
+      { item: Ingredient.of('aether:neptune_gloves'), time: 50 },
+      { item: Ingredient.of('aether:neptune_helmet'), time: 50 },
+      { item: Ingredient.of('aether:neptune_leggings'), time: 50 },
+      { item: Ingredient.of('aether:phoenix_boots'), time: 80 },
+      { item: Ingredient.of('aether:phoenix_bow'), time: 80 },
+      { item: Ingredient.of('aether:phoenix_chestplate'), time: 80 },
+      { item: Ingredient.of('aether:phoenix_gloves'), time: 80 },
+      { item: Ingredient.of('aether:phoenix_helmet'), time: 80 },
+      { item: Ingredient.of('aether:phoenix_leggings'), time: 80 },
+      { item: Ingredient.of('aether:pig_slayer'), time: 90 },
+      { item: Ingredient.of('aether:poison_dart_shooter'), time: 90 },
+      { item: Ingredient.of('aether:sentry_boots'), time: 90 },
+      { item: Ingredient.of('aether:shield_of_repulsion'), time: 90 },
+      { item: Ingredient.of('aether:valkyrie_axe'), time: 120 },
+      { item: Ingredient.of('aether:valkyrie_boots'), time: 120 },
+      { item: Ingredient.of('aether:valkyrie_chestplate'), time: 120 },
+      { item: Ingredient.of('aether:valkyrie_gloves'), time: 120 },
+      { item: Ingredient.of('aether:valkyrie_helmet'), time: 120 },
+      { item: Ingredient.of('aether:valkyrie_hoe'), time: 120 },
+      { item: Ingredient.of('aether:valkyrie_lance'), time: 120 },
+      { item: Ingredient.of('aether:valkyrie_leggings'), time: 120 },
+      { item: Ingredient.of('aether:valkyrie_pickaxe'), time: 120 },
+      { item: Ingredient.of('aether:valkyrie_shovel'), time: 120 },
+      { item: Ingredient.of('aether:vampire_blade'), time: 90 },
+      { item: Ingredient.of('create:netherite_diving_boots'), time: 100 },
+      { item: Ingredient.of('create:netherite_diving_helmet'), time: 100 },
+      { item: Ingredient.of('deep_aether:gravitite_ring'), time: 75 },
+      { item: Ingredient.of('deep_aether:skyjade_ring'), time: 37 },
+      { item: Ingredient.of('deep_aether:stratus_ring'), time: 75 },
+      { item: Ingredient.of('farmersdelight:netherite_knife'), time: 100 },
+      { item: Ingredient.of('nethersdelight:netherite_machete'), time: 100 },
     ].forEach(pair => repairing(pair.item, pair.time));
 
     [
@@ -179,40 +179,40 @@ ServerEvents.recipes(event => {
     };
 
     // Everything in BM should use Arcane Gold
-    event.replaceInput({mod: 'bloodmagic', not: {type: 'bloodmagic:arc'}}, '#forge:nuggets/gold', '#forge:nuggets/arcane_gold');
-    event.replaceInput({mod: 'bloodmagic', not: {type: 'bloodmagic:arc'}}, '#forge:ingots/gold', '#forge:ingots/arcane_gold');
-    event.replaceInput({mod: 'bloodmagic', not: {type: 'bloodmagic:arc'}}, '#forge:storage_blocks/gold', '#forge:storage_blocks/arcane_gold');
+    event.replaceInput({ mod: 'bloodmagic', not: { type: 'bloodmagic:arc' } }, '#forge:nuggets/gold', '#forge:nuggets/arcane_gold');
+    event.replaceInput({ mod: 'bloodmagic', not: { type: 'bloodmagic:arc' } }, '#forge:ingots/gold', '#forge:ingots/arcane_gold');
+    event.replaceInput({ mod: 'bloodmagic', not: { type: 'bloodmagic:arc' } }, '#forge:storage_blocks/gold', '#forge:storage_blocks/arcane_gold');
     event.remove('bloodmagic:soulforge/pettytartaricgem');
     event.remove('bloodmagic:soulforge/lessertartaricgem');
 
     // More involved Petty Soul Gem recipe
-    event.remove({output: 'bloodmagic:soulgempetty'});
+    event.remove({ output: 'bloodmagic:soulgempetty' });
     event.custom({
       type: 'bloodmagic:soulforge',
       drain: 1.0,
-      input0: {item: 'eidolon:enchanted_ash'},
-      input1: {item: 'eidolon:soul_shard'},
-      input2: {tag: 'forge:ingots/arcane_gold'},
-      input3: {item: 'eidolon:death_essence'},
+      input0: { item: 'eidolon:enchanted_ash' },
+      input1: { item: 'eidolon:soul_shard' },
+      input2: { tag: 'forge:ingots/arcane_gold' },
+      input3: { item: 'eidolon:death_essence' },
       minimumDrain: 1.0,
-      output: {item: 'bloodmagic:soulgempetty'},
+      output: { item: 'bloodmagic:soulgempetty' },
     });
 
     // More involved Lesser Soul Gem recipe
-    event.remove({output: 'bloodmagic:soulgemlesser'});
+    event.remove({ output: 'bloodmagic:soulgemlesser' });
     event.custom({
       type: 'bloodmagic:soulforge',
       drain: 20.0,
-      input0: {item: 'bloodmagic:soulgempetty'},
-      input1: {item: 'eidolon:shadow_gem'},
-      input2: {item: 'eidolon:death_essence'},
-      input3: {item: 'eidolon:lesser_soul_gem'},
+      input0: { item: 'bloodmagic:soulgempetty' },
+      input1: { item: 'eidolon:shadow_gem' },
+      input2: { item: 'eidolon:death_essence' },
+      input3: { item: 'eidolon:lesser_soul_gem' },
       minimumDrain: 60.0,
-      output: {item: 'bloodmagic:soulgemlesser'},
+      output: { item: 'bloodmagic:soulgemlesser' },
     });
 
     // More involved Altar recipe
-    event.remove({output: 'bloodmagic:altar'});
+    event.remove({ output: 'bloodmagic:altar' });
     event.shaped('bloodmagic:altar', ['S S', 'EGE', 'EAE'], {
       S: 'eidolon:arcane_seal',
       E: 'aether:carved_stone',
@@ -226,8 +226,8 @@ ServerEvents.recipes(event => {
       altarSyphon: 1000,
       consumptionRate: 5,
       drainRate: 5,
-      input: {tag: 'forge:ingots/gold'},
-      output: {item: 'eidolon:arcane_gold_ingot'},
+      input: { tag: 'forge:ingots/gold' },
+      output: { item: 'eidolon:arcane_gold_ingot' },
       upgradeLevel: 1,
     });
 
@@ -236,28 +236,28 @@ ServerEvents.recipes(event => {
       altarSyphon: 111,
       consumptionRate: 5,
       drainRate: 5,
-      input: {tag: 'forge:nuggets/gold'},
-      output: {item: 'eidolon:arcane_gold_nugget'},
+      input: { tag: 'forge:nuggets/gold' },
+      output: { item: 'eidolon:arcane_gold_nugget' },
       upgradeLevel: 1,
     });
 
     // Alchemical Reaction Chamber recipes :)
     ['iron', 'gold', 'copper'].forEach(metal => {
-      event.remove({type: 'bloodmagic:arc', input: `#forge:ingots/${metal}`});
-      event.remove({type: 'bloodmagic:arc', input: `#forge:ores/${metal}`});
-      event.remove({type: 'bloodmagic:arc', input: `#forge:raw_materials/${metal}`});
+      event.remove({ type: 'bloodmagic:arc', input: `#forge:ingots/${metal}` });
+      event.remove({ type: 'bloodmagic:arc', input: `#forge:ores/${metal}` });
+      event.remove({ type: 'bloodmagic:arc', input: `#forge:raw_materials/${metal}` });
 
       /* I want actual *dust* to be only obtainable via IE or above */
       event.remove(`bloodmagic:arc/dustsfrom_gravel_${metal}`);
       event
         .custom({
           type: 'bloodmagic:arc',
-          tool: {tag: 'bloodmagic:arc/cuttingfluid'},
-          input: {tag: `bloodmagic:gravels/${metal}`},
+          tool: { tag: 'bloodmagic:arc/cuttingfluid' },
+          input: { tag: `bloodmagic:gravels/${metal}` },
           inputsize: 1,
           mainoutputchance: 0.0,
           consumeingredient: false,
-          output: {item: global.Metals[metal].crushed},
+          output: { item: global.Metals[metal].crushed },
         })
         .id(`bloodmagic:arc/dustsfrom_gravel_${metal}`);
     });
@@ -280,12 +280,12 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'bloodmagic:alchemytable',
         input: [
-          {item: 'bloodmagic:simplecatalyst'},
-          {tag: 'bloodmagic:gravels/copper'},
-          {item: 'minecraft:glow_berries'},
-          {item: 'minecraft:cobbled_deepslate'},
+          { item: 'bloodmagic:simplecatalyst' },
+          { tag: 'bloodmagic:gravels/copper' },
+          { item: 'minecraft:glow_berries' },
+          { item: 'minecraft:cobbled_deepslate' },
         ],
-        output: {item: 'bloodmagic:strengthenedcatalyst'},
+        output: { item: 'bloodmagic:strengthenedcatalyst' },
         syphon: 1000,
         ticks: 100,
         upgradeLevel: 4,
@@ -296,8 +296,8 @@ ServerEvents.recipes(event => {
     event
       .custom({
         type: 'bloodmagic:alchemytable',
-        input: [{item: 'minecraft:paper'}, {item: 'bloodmagic:soulsnare'}, {tag: 'bloodmagic:gravels/iron'}, {tag: 'forge:ingots/gold'}],
-        output: {item: 'bloodmagic:upgradetome', nbt: '{livingStats: {maxPoints: 10, upgrades: [{exp: 1.0d, key: "bloodmagic:curios_socket"}]}}'},
+        input: [{ item: 'minecraft:paper' }, { item: 'bloodmagic:soulsnare' }, { tag: 'bloodmagic:gravels/iron' }, { tag: 'forge:ingots/gold' }],
+        output: { item: 'bloodmagic:upgradetome', nbt: '{livingStats: {maxPoints: 10, upgrades: [{exp: 1.0d, key: "bloodmagic:curios_socket"}]}}' },
         syphon: 2000,
         ticks: 200,
         upgradeLevel: 3,
@@ -308,8 +308,8 @@ ServerEvents.recipes(event => {
     event
       .custom({
         type: 'bloodmagic:alchemytable',
-        input: [{item: 'bloodmagic:slate_vial'}, {tag: 'forge:crops/nether_wart'}, {tag: 'forge:ingots/copper'}, {tag: 'bloodmagic:gravels/gold'}],
-        output: {item: 'bloodmagic:weapon_repair_anointment'},
+        input: [{ item: 'bloodmagic:slate_vial' }, { tag: 'forge:crops/nether_wart' }, { tag: 'forge:ingots/copper' }, { tag: 'bloodmagic:gravels/gold' }],
+        output: { item: 'bloodmagic:weapon_repair_anointment' },
         syphon: 500,
         ticks: 100,
         upgradeLevel: 1,
@@ -321,12 +321,12 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'bloodmagic:alchemytable',
         input: [
-          {item: 'bloodmagic:weapon_repair_anointment'},
-          {item: 'bloodmagic:strong_tau'},
-          {tag: 'forge:ingots/copper'},
-          {tag: 'bloodmagic:gravels/gold'},
+          { item: 'bloodmagic:weapon_repair_anointment' },
+          { item: 'bloodmagic:strong_tau' },
+          { tag: 'forge:ingots/copper' },
+          { tag: 'bloodmagic:gravels/gold' },
         ],
-        output: {item: 'bloodmagic:weapon_repair_anointment_2'},
+        output: { item: 'bloodmagic:weapon_repair_anointment_2' },
         syphon: 1000,
         ticks: 100,
         upgradeLevel: 3,
@@ -338,12 +338,12 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'bloodmagic:alchemytable',
         input: [
-          {item: 'bloodmagic:weapon_repair_anointment'},
-          {item: 'bloodmagic:tauoil'},
-          {tag: 'forge:ingots/copper'},
-          {tag: 'bloodmagic:gravels/gold'},
+          { item: 'bloodmagic:weapon_repair_anointment' },
+          { item: 'bloodmagic:tauoil' },
+          { tag: 'forge:ingots/copper' },
+          { tag: 'bloodmagic:gravels/gold' },
         ],
-        output: {item: 'bloodmagic:weapon_repair_anointment_l'},
+        output: { item: 'bloodmagic:weapon_repair_anointment_l' },
         syphon: 1000,
         ticks: 100,
         upgradeLevel: 3,
@@ -358,8 +358,8 @@ ServerEvents.recipes(event => {
         altarSyphon: 1000,
         consumptionRate: 3,
         drainRate: 5,
-        input: {item: 'eidolon:enchanted_ash'},
-        output: {item: 'bloodmagic:arcaneashes'},
+        input: { item: 'eidolon:enchanted_ash' },
+        output: { item: 'bloodmagic:arcaneashes' },
         upgradeLevel: 1,
       })
       .id('bloodmagic:alchemytable/arcane_ash');
@@ -369,8 +369,8 @@ ServerEvents.recipes(event => {
     event
       .custom({
         type: 'bloodmagic:alchemytable',
-        input: [{item: 'aether:regeneration_stone'}, {item: 'eidolon:enchanted_ash'}, {item: 'minecraft:glowstone_dust'}],
-        output: {item: 'bloodmagic:reagentbinding', count: 2},
+        input: [{ item: 'aether:regeneration_stone' }, { item: 'eidolon:enchanted_ash' }, { item: 'minecraft:glowstone_dust' }],
+        output: { item: 'bloodmagic:reagentbinding', count: 2 },
         syphon: 1000,
         ticks: 200,
         upgradeLevel: 3,
@@ -385,8 +385,8 @@ ServerEvents.recipes(event => {
         altarSyphon: 1000,
         consumptionRate: 5,
         drainRate: 5,
-        input: {item: 'aether:carved_stone'},
-        output: {item: 'bloodmagic:blankslate'},
+        input: { item: 'aether:carved_stone' },
+        output: { item: 'bloodmagic:blankslate' },
         upgradeLevel: 0,
       })
       .id('bloodmagic:altar/slate');
@@ -401,9 +401,9 @@ ServerEvents.recipes(event => {
     event.remove('bloodmagic:blood_rune_blank');
     event
       .shaped(Item.of('bloodmagic:blankrune', 2), ['DSD', 'DOD', 'DDD'], {
-        D: {item: 'minecraft:deepslate'},
-        O: {type: 'bloodmagic:bloodorb', orb_tier: 1},
-        S: {item: 'bloodmagic:blankslate'},
+        D: { item: 'minecraft:deepslate' },
+        O: { type: 'bloodmagic:bloodorb', orb_tier: 1 },
+        S: { item: 'bloodmagic:blankslate' },
       })
       .id('bloodmagic:blood_rune_blank');
 
@@ -415,8 +415,8 @@ ServerEvents.recipes(event => {
         altarSyphon: 2000,
         consumptionRate: 5,
         drainRate: 1,
-        input: {item: 'minecraft:ender_pearl'},
-        output: {item: 'bloodmagic:teleposerfocus'},
+        input: { item: 'minecraft:ender_pearl' },
+        output: { item: 'bloodmagic:teleposerfocus' },
         upgradeLevel: 3,
       })
       .id('bloodmagic:altar/teleposer_focus');
@@ -434,8 +434,8 @@ ServerEvents.recipes(event => {
         altarSyphon: 2000,
         consumptionRate: 5,
         drainRate: 1,
-        input: {item: 'eidolon:crimson_gem'},
-        output: {item: 'bloodmagic:weakbloodorb'},
+        input: { item: 'eidolon:crimson_gem' },
+        output: { item: 'bloodmagic:weakbloodorb' },
         upgradeLevel: 0,
       })
       .id('bloodmagic:altar/weakbloodorb');
@@ -446,8 +446,8 @@ ServerEvents.recipes(event => {
         altarSyphon: 5000,
         consumptionRate: 5,
         drainRate: 5,
-        input: {item: 'minecraft:ender_eye'},
-        output: {item: 'bloodmagic:apprenticebloodorb'},
+        input: { item: 'minecraft:ender_eye' },
+        output: { item: 'bloodmagic:apprenticebloodorb' },
         upgradeLevel: 1,
       })
       .id('bloodmagic:altar/apprenticebloodorb');
@@ -458,8 +458,8 @@ ServerEvents.recipes(event => {
         altarSyphon: 25000,
         consumptionRate: 20,
         drainRate: 20,
-        input: {item: 'endermanoverhaul:soul_pearl'},
-        output: {item: 'bloodmagic:magicianbloodorb'},
+        input: { item: 'endermanoverhaul:soul_pearl' },
+        output: { item: 'bloodmagic:magicianbloodorb' },
         upgradeLevel: 2,
       })
       .id('bloodmagic:altar/magicianbloodorb');
@@ -470,8 +470,8 @@ ServerEvents.recipes(event => {
         altarSyphon: 40000,
         consumptionRate: 30,
         drainRate: 50,
-        input: {item: 'eidolon:offering_incense'},
-        output: {item: 'bloodmagic:masterbloodorb'},
+        input: { item: 'eidolon:offering_incense' },
+        output: { item: 'bloodmagic:masterbloodorb' },
         upgradeLevel: 3,
       })
       .id('bloodmagic:altar/masterbloodorb');
@@ -482,8 +482,8 @@ ServerEvents.recipes(event => {
         altarSyphon: 80000,
         consumptionRate: 50,
         drainRate: 100,
-        input: {item: 'minecraft:popped_chorus_fruit'},
-        output: {item: 'bloodmagic:archmagebloodorb'},
+        input: { item: 'minecraft:popped_chorus_fruit' },
+        output: { item: 'bloodmagic:archmagebloodorb' },
         upgradeLevel: 4,
       })
       .id('bloodmagic:altar/archmagebloodorb');
@@ -498,11 +498,11 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'bloodmagic:arc',
         consumeingredient: true,
-        input: {item: 'bloodmagic:weakbloodorb'},
+        input: { item: 'bloodmagic:weakbloodorb' },
         inputsize: 1,
         mainoutputchance: 0.0,
-        output: {item: 'eidolon:crimson_gem'},
-        tool: {tag: 'bloodmagic:arc/reverter'},
+        output: { item: 'eidolon:crimson_gem' },
+        tool: { tag: 'bloodmagic:arc/reverter' },
       })
       .id('bloodmagic:arc/reversion/weak_blood_orb');
 
@@ -510,11 +510,11 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'bloodmagic:arc',
         consumeingredient: true,
-        input: {item: 'bloodmagic:apprenticebloodorb'},
+        input: { item: 'bloodmagic:apprenticebloodorb' },
         inputsize: 1,
         mainoutputchance: 0.0,
-        output: {item: 'minecraft:ender_eye'},
-        tool: {tag: 'bloodmagic:arc/reverter'},
+        output: { item: 'minecraft:ender_eye' },
+        tool: { tag: 'bloodmagic:arc/reverter' },
       })
       .id('bloodmagic:arc/reversion/apprentice_blood_orb');
 
@@ -522,11 +522,11 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'bloodmagic:arc',
         consumeingredient: true,
-        input: {item: 'bloodmagic:magicianbloodorb'},
+        input: { item: 'bloodmagic:magicianbloodorb' },
         inputsize: 1,
         mainoutputchance: 0.0,
-        output: {item: 'endermanoverhaul:soul_pearl'},
-        tool: {tag: 'bloodmagic:arc/reverter'},
+        output: { item: 'endermanoverhaul:soul_pearl' },
+        tool: { tag: 'bloodmagic:arc/reverter' },
       })
       .id('bloodmagic:arc/reversion/magician_blood_orb');
 
@@ -534,11 +534,11 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'bloodmagic:arc',
         consumeingredient: true,
-        input: {item: 'bloodmagic:masterbloodorb'},
+        input: { item: 'bloodmagic:masterbloodorb' },
         inputsize: 1,
         mainoutputchance: 0.0,
-        output: {item: 'eidolon:offering_incense'},
-        tool: {tag: 'bloodmagic:arc/reverter'},
+        output: { item: 'eidolon:offering_incense' },
+        tool: { tag: 'bloodmagic:arc/reverter' },
       })
       .id('bloodmagic:arc/reversion/master_blood_orb');
 
@@ -549,19 +549,19 @@ ServerEvents.recipes(event => {
         altarSyphon: 3000,
         consumptionRate: 5,
         drainRate: 5,
-        input: {item: 'aether:vampire_blade'},
-        output: {item: 'bloodmagic:daggerofsacrifice'},
+        input: { item: 'aether:vampire_blade' },
+        output: { item: 'bloodmagic:daggerofsacrifice' },
         upgradeLevel: 1,
       })
       .id('bloodmagic:altar/daggerofsacrifice');
 
     // The Air Sigil is too cheap
-    event.remove({id: 'bloodmagic:alchemytable/reagent_air'});
+    event.remove({ id: 'bloodmagic:alchemytable/reagent_air' });
     event
       .custom({
         type: 'bloodmagic:alchemytable',
-        input: [{item: 'minecraft:elytra'}, {item: 'minecraft:ghast_tear'}, {tag: 'forge:feathers'}],
-        output: {item: 'bloodmagic:reagentair'},
+        input: [{ item: 'minecraft:elytra' }, { item: 'minecraft:ghast_tear' }, { tag: 'forge:feathers' }],
+        output: { item: 'bloodmagic:reagentair' },
         syphon: 2000,
         ticks: 200,
         upgradeLevel: 4,
@@ -600,16 +600,16 @@ ServerEvents.recipes(event => {
       });
     };
 
-    event.remove({type: 'minecraft:crafting_shaped', mod: 'cagedmobs'});
-    event.remove({type: 'minecraft:crafting_shapeless', mod: 'cagedmobs'});
-    event.remove({type: 'cagedmobs:entity_data'});
+    event.remove({ type: 'minecraft:crafting_shaped', mod: 'cagedmobs' });
+    event.remove({ type: 'minecraft:crafting_shapeless', mod: 'cagedmobs' });
+    event.remove({ type: 'cagedmobs:entity_data' });
     event.remove('cagedmobs:crafting/netherite_dna_sampler');
 
     // Iron DNA Sampler
     event.custom({
       type: 'bloodmagic:alchemytable',
-      input: [{item: 'bloodmagic:throwing_dagger_syringe'}, {item: 'minecraft:iron_block'}, {item: 'aether:golden_dart'}],
-      output: {item: 'cagedmobs:dna_sampler'},
+      input: [{ item: 'bloodmagic:throwing_dagger_syringe' }, { item: 'minecraft:iron_block' }, { item: 'aether:golden_dart' }],
+      output: { item: 'cagedmobs:dna_sampler' },
       syphon: 10000,
       ticks: 500,
       upgradeLevel: 4,
@@ -618,8 +618,8 @@ ServerEvents.recipes(event => {
     // Diamond DNA Sampler
     event.custom({
       type: 'bloodmagic:alchemytable',
-      input: [{item: 'bloodmagic:amethystthrowingdagger'}, {item: 'minecraft:diamond_block'}, {item: 'aether:enchanted_dart'}],
-      output: {item: 'cagedmobs:diamond_dna_sampler'},
+      input: [{ item: 'bloodmagic:amethystthrowingdagger' }, { item: 'minecraft:diamond_block' }, { item: 'aether:enchanted_dart' }],
+      output: { item: 'cagedmobs:diamond_dna_sampler' },
       syphon: 50000,
       ticks: 1000,
       upgradeLevel: 5,
@@ -631,13 +631,13 @@ ServerEvents.recipes(event => {
       altarSyphon: 50000,
       consumptionRate: 10,
       drainRate: 10,
-      input: {item: 'supplementaries:cage'},
-      output: {item: 'cagedmobs:mob_cage'},
+      input: { item: 'supplementaries:cage' },
+      output: { item: 'cagedmobs:mob_cage' },
       upgradeLevel: 4,
     });
 
     // Hopping Mob Cage
-    event.shaped('cagedmobs:hopping_mob_cage', ['C', 'H'], {C: 'cagedmobs:mob_cage', H: 'minecraft:hopper'});
+    event.shaped('cagedmobs:hopping_mob_cage', ['C', 'H'], { C: 'cagedmobs:mob_cage', H: 'minecraft:hopper' });
 
     // Environments (Pre-requisite)
     const environments = () => {
@@ -646,7 +646,7 @@ ServerEvents.recipes(event => {
 
       event.custom({
         type: 'cagedmobs:environment_data',
-        input: {tag: 'aether:aerclouds'},
+        input: { tag: 'aether:aerclouds' },
         render: 'aether:cold_aercloud',
         growModifier: 1.0,
         categories: ['aether'],
@@ -654,7 +654,7 @@ ServerEvents.recipes(event => {
 
       event.custom({
         type: 'cagedmobs:environment_data',
-        input: {tag: 'forge:actual_underground_stones'},
+        input: { tag: 'forge:actual_underground_stones' },
         render: 'minecraft:stone',
         growModifier: 1.0,
         categories: ['cave'],
@@ -662,7 +662,7 @@ ServerEvents.recipes(event => {
 
       event.custom({
         type: 'cagedmobs:environment_data',
-        input: {item: 'minecraft:dripstone_block'},
+        input: { item: 'minecraft:dripstone_block' },
         render: 'minecraft:stone',
         growModifier: 1.0,
         categories: ['dripstone'],
@@ -670,7 +670,7 @@ ServerEvents.recipes(event => {
 
       event.custom({
         type: 'cagedmobs:environment_data',
-        input: {item: 'minecraft:moss_block'},
+        input: { item: 'minecraft:moss_block' },
         render: 'minecraft:moss_block',
         growModifier: 1.0,
         categories: ['mossy'],
@@ -678,7 +678,7 @@ ServerEvents.recipes(event => {
 
       event.custom({
         type: 'cagedmobs:environment_data',
-        input: {tag: 'forge:mud'},
+        input: { tag: 'forge:mud' },
         render: 'minecraft:mud',
         growModifier: 1.0,
         categories: ['swampy'],
@@ -686,7 +686,7 @@ ServerEvents.recipes(event => {
 
       event.custom({
         type: 'cagedmobs:environment_data',
-        input: {tag: 'forge:ocean_blocks'},
+        input: { tag: 'forge:ocean_blocks' },
         render: 'minecraft:gravel',
         growModifier: 1.0,
         categories: ['ocean'],
@@ -694,7 +694,7 @@ ServerEvents.recipes(event => {
 
       event.custom({
         type: 'cagedmobs:environment_data',
-        input: {item: 'minecraft:sand'},
+        input: { item: 'minecraft:sand' },
         render: 'minecraft:sand',
         growModifier: 1.0,
         categories: ['white_sand'],
@@ -702,7 +702,7 @@ ServerEvents.recipes(event => {
 
       event.custom({
         type: 'cagedmobs:environment_data',
-        input: {tag: 'forge:podzol'},
+        input: { tag: 'forge:podzol' },
         render: 'minecraft:podzol',
         growModifier: 1.0,
         categories: ['wooded'],
@@ -1115,10 +1115,10 @@ ServerEvents.recipes(event => {
     /* Embers Melting */
     event.custom({
       type: 'embers:stamping',
-      input: {tag: 'forge:nuggets/lead'},
-      stamp: {item: 'embers:ingot_stamp'},
-      fluid: {amount: 90, tag: 'forge:molten_tin'},
-      output: {item: 'eidolon:pewter_ingot'},
+      input: { tag: 'forge:nuggets/lead' },
+      stamp: { item: 'embers:ingot_stamp' },
+      fluid: { amount: 90, tag: 'forge:molten_tin' },
+      output: { item: 'eidolon:pewter_ingot' },
     });
 
     /* Create Mixing */
@@ -1127,9 +1127,9 @@ ServerEvents.recipes(event => {
     /* Kiln */
     event.custom({
       type: 'immersiveengineering:alloy',
-      input0: {tag: 'forge:ingots/tin'},
-      input1: {tag: 'forge:nuggets/lead'},
-      result: {base_ingredient: {tag: 'forge:ingots/pewter'}},
+      input0: { tag: 'forge:ingots/tin' },
+      input1: { tag: 'forge:nuggets/lead' },
+      result: { base_ingredient: { tag: 'forge:ingots/pewter' } },
       time: 200,
     });
 
@@ -1138,23 +1138,23 @@ ServerEvents.recipes(event => {
       type: 'immersiveengineering:arc_furnace',
       energy: 6400,
       time: 200,
-      input: {tag: 'forge:ingots/tin'},
-      additives: [{tag: 'forge:nuggets/lead'}],
-      results: [{base_ingredient: {tag: 'forge:ingots/pewter'}}],
+      input: { tag: 'forge:ingots/tin' },
+      additives: [{ tag: 'forge:nuggets/lead' }],
+      results: [{ base_ingredient: { tag: 'forge:ingots/pewter' } }],
     });
 
     /* Some way to make Crying Obsidian without being in pain */
     const step1Inputs = Array(8).fill(Item.of('regions_unexplored:cobalt_obsidian').toJson());
     event.custom({
       type: 'eidolon:crucible',
-      steps: [{items: step1Inputs}, {items: [Item.of('minecraft:ghast_tear').toJson()], stirs: 1}],
+      steps: [{ items: step1Inputs }, { items: [Item.of('minecraft:ghast_tear').toJson()], stirs: 1 }],
       result: Item.of('minecraft:crying_obsidian', 8).toJson(),
     });
   };
 
   const embers = () => {
     // Gate the Tinker Hammer behind Hellforged Ingots from BloodMagic
-    event.remove({output: 'embers:tinker_hammer'});
+    event.remove({ output: 'embers:tinker_hammer' });
     event.shaped('embers:tinker_hammer', ['LDL', 'LSL', ' S '], {
       L: '#forge:ingots/pewter',
       D: '#forge:ingots/hellforged',
@@ -1170,8 +1170,11 @@ ServerEvents.recipes(event => {
       A: 'aether:angelic_stone',
     });
 
+
+    const _arrayify = inp => Array.isArray(inp) ? inp : [inp];
+
     // I swear to god the alchemy mechanic in Embers is straight crap...
-    event.findRecipes({type: 'embers:alchemy'}).forEach(recipe => {
+    event.findRecipes({ type: 'embers:alchemy' }).forEach(recipe => {
       // parse from GSON json to JS object
       let j = JSON.parse(recipe.json.toString());
 
@@ -1179,8 +1182,8 @@ ServerEvents.recipes(event => {
       event
         .custom({
           type: 'eidolon:ritual_brazier_crafting',
-          focusItems: Ingredient.of(j.aspects).toJson(),
-          pedestalItems: Ingredient.of(j.inputs).toJson(),
+          focusItems: _arrayify(Ingredient.of(j.aspects).toJson()),
+          pedestalItems: _arrayify(Ingredient.of(j.inputs).toJson()),
           reagent: [j.tablet],
           output: Item.of(j.output).toJson(),
         })
@@ -1189,7 +1192,7 @@ ServerEvents.recipes(event => {
   };
 
   const waystones = () => {
-    event.remove({mod: 'waystones'});
+    event.remove({ mod: 'waystones' });
 
     event.shaped('waystones:warp_stone', ['SZS', 'ZTZ', 'SZS'], {
       Z: 'aether:zanite_gemstone',
@@ -1200,14 +1203,14 @@ ServerEvents.recipes(event => {
     event.custom({
       type: 'bloodmagic:alchemytable',
       input: [
-        {item: 'eidolon:parchment'},
-        {item: 'eidolon:parchment'},
-        {item: 'eidolon:parchment'},
-        {item: 'eidolon:parchment'},
-        {item: 'eidolon:parchment'},
-        {item: 'endermanoverhaul:soul_pearl'},
+        { item: 'eidolon:parchment' },
+        { item: 'eidolon:parchment' },
+        { item: 'eidolon:parchment' },
+        { item: 'eidolon:parchment' },
+        { item: 'eidolon:parchment' },
+        { item: 'endermanoverhaul:soul_pearl' },
       ],
-      output: {item: 'waystones:bound_scroll', count: 5},
+      output: { item: 'waystones:bound_scroll', count: 5 },
       syphon: 1000,
       ticks: 200,
       upgradeLevel: 3,
@@ -1216,13 +1219,13 @@ ServerEvents.recipes(event => {
     event.custom({
       type: 'bloodmagic:alchemytable',
       input: [
-        {item: 'eidolon:parchment'},
-        {item: 'eidolon:parchment'},
-        {item: 'eidolon:parchment'},
-        {item: 'minecraft:emerald'},
-        {item: 'waystones:warp_stone'},
+        { item: 'eidolon:parchment' },
+        { item: 'eidolon:parchment' },
+        { item: 'eidolon:parchment' },
+        { item: 'minecraft:emerald' },
+        { item: 'waystones:warp_stone' },
       ],
-      output: {item: 'waystones:warp_scroll', count: 3},
+      output: { item: 'waystones:warp_scroll', count: 3 },
       syphon: 1000,
       ticks: 200,
       upgradeLevel: 2,
@@ -1253,7 +1256,7 @@ ServerEvents.recipes(event => {
       F: 'minecraft:stone_brick_wall',
     });
 
-    event.shaped('waystones:portstone', ['W', 'S'], {W: 'waystones:warp_stone', S: 'minecraft:stone_brick_stairs'});
+    event.shaped('waystones:portstone', ['W', 'S'], { W: 'waystones:warp_stone', S: 'minecraft:stone_brick_stairs' });
 
     [
       'black',

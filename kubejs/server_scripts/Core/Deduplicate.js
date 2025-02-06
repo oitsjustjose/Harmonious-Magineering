@@ -7,10 +7,10 @@ ServerEvents.recipes(event => {
     event
       .custom({
         type: 'pneumaticcraft:fluid_mixer',
-        fluid_output: {amount: 50, fluid: 'immersiveengineering:biodiesel'},
-        input1: {type: 'pneumaticcraft:fluid', amount: 25, tag: 'forge:plantoil'},
-        input2: {type: 'pneumaticcraft:fluid', amount: 25, tag: 'forge:ethanol'},
-        item_output: {item: 'pneumaticcraft:glycerol'},
+        fluid_output: { amount: 50, fluid: 'immersiveengineering:biodiesel' },
+        input1: { type: 'pneumaticcraft:fluid', amount: 25, tag: 'forge:plantoil' },
+        input2: { type: 'pneumaticcraft:fluid', amount: 25, tag: 'forge:ethanol' },
+        item_output: { item: 'pneumaticcraft:glycerol' },
         pressure: 2.0,
         time: 300,
       })
@@ -22,11 +22,11 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'pneumaticcraft:thermo_plant',
         exothermic: true,
-        fluid_input: {type: 'pneumaticcraft:fluid', amount: 100, tag: 'pneumaticcraft:yeast_culture'},
-        fluid_output: {amount: 50, fluid: 'immersiveengineering:ethanol'},
-        item_input: {item: 'minecraft:apple'},
+        fluid_input: { type: 'pneumaticcraft:fluid', amount: 100, tag: 'pneumaticcraft:yeast_culture' },
+        fluid_output: { amount: 50, fluid: 'immersiveengineering:ethanol' },
+        item_input: { item: 'minecraft:apple' },
         speed: 0.25,
-        temperature: {max_temp: 333, min_temp: 303},
+        temperature: { max_temp: 333, min_temp: 303 },
       })
       .id('pneumaticcraft:thermo_plant/ethanol_from_apple');
 
@@ -35,11 +35,11 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'pneumaticcraft:thermo_plant',
         exothermic: true,
-        fluid_input: {type: 'pneumaticcraft:fluid', amount: 100, tag: 'pneumaticcraft:yeast_culture'},
-        fluid_output: {amount: 10, fluid: 'immersiveengineering:ethanol'},
-        item_input: {item: 'minecraft:melon_slice'},
+        fluid_input: { type: 'pneumaticcraft:fluid', amount: 100, tag: 'pneumaticcraft:yeast_culture' },
+        fluid_output: { amount: 10, fluid: 'immersiveengineering:ethanol' },
+        item_input: { item: 'minecraft:melon_slice' },
         speed: 0.4,
-        temperature: {max_temp: 333, min_temp: 303},
+        temperature: { max_temp: 333, min_temp: 303 },
       })
       .id('pneumaticcraft:thermo_plant/ethanol_from_melon');
 
@@ -48,11 +48,11 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'pneumaticcraft:thermo_plant',
         exothermic: true,
-        fluid_input: {type: 'pneumaticcraft:fluid', amount: 100, tag: 'pneumaticcraft:yeast_culture'},
-        fluid_output: {amount: 50, fluid: 'immersiveengineering:ethanol'},
-        item_input: {item: 'minecraft:poisonous_potato'},
+        fluid_input: { type: 'pneumaticcraft:fluid', amount: 100, tag: 'pneumaticcraft:yeast_culture' },
+        fluid_output: { amount: 50, fluid: 'immersiveengineering:ethanol' },
+        item_input: { item: 'minecraft:poisonous_potato' },
         speed: 0.25,
-        temperature: {max_temp: 333, min_temp: 303},
+        temperature: { max_temp: 333, min_temp: 303 },
       })
       .id('pneumaticcraft:thermo_plant/ethanol_from_poisonous_potato');
 
@@ -61,11 +61,11 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'pneumaticcraft:thermo_plant',
         exothermic: true,
-        fluid_input: {type: 'pneumaticcraft:fluid', amount: 100, tag: 'pneumaticcraft:yeast_culture'},
-        fluid_output: {amount: 25, fluid: 'immersiveengineering:ethanol'},
-        item_input: {tag: 'forge:crops/potato'},
+        fluid_input: { type: 'pneumaticcraft:fluid', amount: 100, tag: 'pneumaticcraft:yeast_culture' },
+        fluid_output: { amount: 25, fluid: 'immersiveengineering:ethanol' },
+        item_input: { tag: 'forge:crops/potato' },
         speed: 0.25,
-        temperature: {max_temp: 333, min_temp: 303},
+        temperature: { max_temp: 333, min_temp: 303 },
       })
       .id('pneumaticcraft:thermo_plant/ethanol_from_potato');
 
@@ -74,11 +74,11 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'pneumaticcraft:thermo_plant',
         exothermic: true,
-        fluid_input: {type: 'pneumaticcraft:fluid', amount: 100, tag: 'pneumaticcraft:yeast_culture'},
-        fluid_output: {amount: 50, fluid: 'immersiveengineering:ethanol'},
-        item_input: {item: 'minecraft:sugar'},
+        fluid_input: { type: 'pneumaticcraft:fluid', amount: 100, tag: 'pneumaticcraft:yeast_culture' },
+        fluid_output: { amount: 50, fluid: 'immersiveengineering:ethanol' },
+        item_input: { item: 'minecraft:sugar' },
         speed: 0.5,
-        temperature: {max_temp: 333, min_temp: 303},
+        temperature: { max_temp: 333, min_temp: 303 },
       })
       .id('pneumaticcraft:thermo_plant/ethanol_from_sugar');
 
@@ -87,18 +87,18 @@ ServerEvents.recipes(event => {
       .custom({
         type: 'pneumaticcraft:thermo_plant',
         exothermic: true,
-        fluid_input: {type: 'pneumaticcraft:fluid', amount: 100, tag: 'pneumaticcraft:yeast_culture'},
-        fluid_output: {amount: 20, fluid: 'immersiveengineering:ethanol'},
-        item_input: {item: 'minecraft:sweet_berries'},
+        fluid_input: { type: 'pneumaticcraft:fluid', amount: 100, tag: 'pneumaticcraft:yeast_culture' },
+        fluid_output: { amount: 20, fluid: 'immersiveengineering:ethanol' },
+        item_input: { item: 'minecraft:sweet_berries' },
         speed: 0.4,
-        temperature: {max_temp: 333, min_temp: 303},
+        temperature: { max_temp: 333, min_temp: 303 },
       })
       .id('pneumaticcraft:thermo_plant/ethanol_from_sweet_berries');
   };
 
   const foods = () => {
     /* ~~Delightful:~~ Remove the easier pie recipe */
-    event.remove({output: 'minecraft:pumpkin_pie'});
+    event.remove({ output: 'minecraft:pumpkin_pie' });
     event.shaped('minecraft:pumpkin_pie', ['SPE', ' C '], {
       P: 'minecraft:pumpkin',
       S: 'minecraft:sugar',
@@ -108,62 +108,62 @@ ServerEvents.recipes(event => {
 
     event.custom({
       type: 'create:sequenced_assembly',
-      ingredient: {item: 'farmersdelight:pie_crust'},
+      ingredient: { item: 'farmersdelight:pie_crust' },
       loops: 1,
-      results: [{item: 'minecraft:pumpkin_pie'}],
+      results: [{ item: 'minecraft:pumpkin_pie' }],
       sequence: [
         {
           type: 'create:deploying',
-          ingredients: [{item: 'farmersdelight:pie_crust'}, [{tag: 'forge:eggs'}]],
-          results: [{item: 'farmersdelight:pie_crust'}],
+          ingredients: [{ item: 'farmersdelight:pie_crust' }, [{ tag: 'forge:eggs' }]],
+          results: [{ item: 'farmersdelight:pie_crust' }],
         },
         {
           type: 'create:deploying',
-          ingredients: [{item: 'farmersdelight:pie_crust'}, [{item: 'minecraft:sugar'}]],
-          results: [{item: 'farmersdelight:pie_crust'}],
+          ingredients: [{ item: 'farmersdelight:pie_crust' }, [{ item: 'minecraft:sugar' }]],
+          results: [{ item: 'farmersdelight:pie_crust' }],
         },
         {
           type: 'create:deploying',
-          ingredients: [{item: 'farmersdelight:pie_crust'}, [{item: 'minecraft:pumpkin'}]],
-          results: [{item: 'farmersdelight:pie_crust'}],
+          ingredients: [{ item: 'farmersdelight:pie_crust' }, [{ item: 'minecraft:pumpkin' }]],
+          results: [{ item: 'farmersdelight:pie_crust' }],
         },
         {
           type: 'create:pressing',
-          ingredients: [{item: 'farmersdelight:pie_crust'}],
-          results: [{item: 'farmersdelight:pie_crust'}],
+          ingredients: [{ item: 'farmersdelight:pie_crust' }],
+          results: [{ item: 'farmersdelight:pie_crust' }],
         },
       ],
-      transitionalItem: {item: 'farmersdelight:pie_crust'},
+      transitionalItem: { item: 'farmersdelight:pie_crust' },
     });
 
     event.custom({
       type: 'create:sequenced_assembly',
-      ingredient: {item: 'farmersdelight:pie_crust'},
+      ingredient: { item: 'farmersdelight:pie_crust' },
       loops: 1,
-      results: [{item: 'minecraft:pumpkin_pie'}],
+      results: [{ item: 'minecraft:pumpkin_pie' }],
       sequence: [
         {
           type: 'create:deploying',
-          ingredients: [{item: 'farmersdelight:pie_crust'}, [{tag: 'forge:eggs'}]],
-          results: [{item: 'farmersdelight:pie_crust'}],
+          ingredients: [{ item: 'farmersdelight:pie_crust' }, [{ tag: 'forge:eggs' }]],
+          results: [{ item: 'farmersdelight:pie_crust' }],
         },
         {
           type: 'create:filling',
-          ingredients: [{item: 'farmersdelight:pie_crust'}, {amount: 100, fluid: 'create:honey', nbt: {}}],
-          results: [{item: 'farmersdelight:pie_crust'}],
+          ingredients: [{ item: 'farmersdelight:pie_crust' }, { amount: 100, fluid: 'create:honey', nbt: {} }],
+          results: [{ item: 'farmersdelight:pie_crust' }],
         },
         {
           type: 'create:deploying',
-          ingredients: [{item: 'farmersdelight:pie_crust'}, [{item: 'minecraft:pumpkin'}]],
-          results: [{item: 'farmersdelight:pie_crust'}],
+          ingredients: [{ item: 'farmersdelight:pie_crust' }, [{ item: 'minecraft:pumpkin' }]],
+          results: [{ item: 'farmersdelight:pie_crust' }],
         },
         {
           type: 'create:pressing',
-          ingredients: [{item: 'farmersdelight:pie_crust'}],
-          results: [{item: 'farmersdelight:pie_crust'}],
+          ingredients: [{ item: 'farmersdelight:pie_crust' }],
+          results: [{ item: 'farmersdelight:pie_crust' }],
         },
       ],
-      transitionalItem: {item: 'farmersdelight:pie_crust'},
+      transitionalItem: { item: 'farmersdelight:pie_crust' },
     });
 
     /* ~~Cakes:~~ Dedup the 4 different recipes */
@@ -189,14 +189,14 @@ ServerEvents.recipes(event => {
     event.remove('pneumaticcraft:pressure_chamber/wheat_flour');
     event.custom({
       type: 'pneumaticcraft:pressure_chamber',
-      inputs: [{tag: 'forge:crops/wheat'}],
+      inputs: [{ tag: 'forge:crops/wheat' }],
       pressure: 1.5,
-      results: [{count: 3, item: 'create:wheat_flour'}],
+      results: [{ count: 3, item: 'create:wheat_flour' }],
     });
 
     /* ~~Dough~~ */
     event.replaceInput({}, 'create:dough', 'farmersdelight:wheat_dough');
-    event.replaceOutput({output: 'create:dough'}, 'create:dough', 'farmersdelight:wheat_dough');
+    event.replaceOutput({ output: 'create:dough' }, 'create:dough', 'farmersdelight:wheat_dough');
 
     /* ~~Eggs:~~ Unify Farmer's Delight Naturalist's Cooked Egg items */
     event.replaceInput({}, '#aether_redux:eggs_for_blueberry_pie', '#forge:eggs');
@@ -209,11 +209,11 @@ ServerEvents.recipes(event => {
     event.replaceOutput({}, 'delightful:salmonberries', 'regions_unexplored:salmonberry');
     event.custom({
       type: 'immersiveengineering:cloche',
-      input: {item: 'regions_unexplored:salmonberry'},
-      soil: {item: 'minecraft:dirt'},
-      render: {type: 'crop', block: 'regions_unexplored:salmonberry_bush'},
+      input: { item: 'regions_unexplored:salmonberry' },
+      soil: { item: 'minecraft:dirt' },
+      render: { type: 'crop', block: 'regions_unexplored:salmonberry_bush' },
       time: 800,
-      results: [{item: 'regions_unexplored:salmonberry', count: 3}],
+      results: [{ item: 'regions_unexplored:salmonberry', count: 3 }],
     });
   };
 
@@ -225,9 +225,9 @@ ServerEvents.recipes(event => {
     event
       .custom({
         type: 'embers:stamping',
-        input: {item: 'embers:alchemical_waste'},
-        output: {count: 8, item: 'supplementaries:ash'},
-        stamp: {item: 'embers:flat_stamp'},
+        input: { item: 'embers:alchemical_waste' },
+        output: { count: 8, item: 'supplementaries:ash' },
+        stamp: { item: 'embers:flat_stamp' },
       })
       .id('embers:stamping/ash');
 
@@ -235,10 +235,10 @@ ServerEvents.recipes(event => {
     event
       .custom({
         type: 'embers:alchemy',
-        aspects: [{tag: 'embers:aspectus/copper'}, {tag: 'embers:aspectus/iron'}],
-        inputs: [{item: 'minecraft:sand'}, {item: 'minecraft:sand'}, {item: 'minecraft:sand'}, {item: 'minecraft:sand'}],
-        tablet: {item: 'supplementaries:ash'},
-        output: {item: 'minecraft:soul_sand', count: 4},
+        aspects: [{ tag: 'embers:aspectus/copper' }, { tag: 'embers:aspectus/iron' }],
+        inputs: [{ item: 'minecraft:sand' }, { item: 'minecraft:sand' }, { item: 'minecraft:sand' }, { item: 'minecraft:sand' }],
+        tablet: { item: 'supplementaries:ash' },
+        output: { item: 'minecraft:soul_sand', count: 4 },
       })
       .id('embers:alchemy/soul_sand');
 
@@ -247,10 +247,10 @@ ServerEvents.recipes(event => {
     event.shapeless(Item.of('patchouli:guide_book', '{"patchouli:book":"modularrouters:book"}'), ['minecraft:book', 'modularrouters:modular_router']);
 
     /* ~~Candles~~ */
-    event.remove({output: 'eidolon:candle'});
+    event.remove({ output: 'eidolon:candle' });
     event.remove('delightful:candle_from_animal_fat');
-    event.shaped('minecraft:candle', ['S', 'T'], {S: 'minecraft:string', T: '#forge:tallow'});
-    event.replaceInput({mod: 'eidolon'}, 'eidolon:candle', 'minecraft:candle');
+    event.shaped('minecraft:candle', ['S', 'T'], { S: 'minecraft:string', T: '#forge:tallow' });
+    event.replaceInput({ mod: 'eidolon' }, 'eidolon:candle', 'minecraft:candle');
 
     /* ~~Leads~~ */
     event.remove('aether:swet_lead');
@@ -315,17 +315,17 @@ ServerEvents.recipes(event => {
   const changes = [];
   // Define a list of ingredient remaps we want
   const remaps = [
-    {in: 'create:crushed_raw_osmium', out: 'mekanism:dust_steel'},
-    {in: 'forge:dusts/osmium', out: 'forge:dusts/steel'},
-    {in: 'forge:ingots/osmium', out: 'forge:ingots/steel'},
-    {in: 'forge:nuggets/osmium', out: 'forge:nuggets/steel'},
-    {in: 'mekanism:block_osmium', out: 'mekanism:block_steel'},
-    {in: 'mekanism:dust_osmium', out: 'mekanism:dust_steel'},
-    {in: 'mekanism:ingot_osmium', out: 'mekanism:ingot_steel'},
-    {in: 'mekanism:nugget_osmium', out: 'mekanism:nugget_steel'},
-    {in: 'mekanism:nugget_osmium', out: 'mekanism:nugget_steel'},
+    { in: 'create:crushed_raw_osmium', out: 'mekanism:dust_steel' },
+    { in: 'forge:dusts/osmium', out: 'forge:dusts/steel' },
+    { in: 'forge:ingots/osmium', out: 'forge:ingots/steel' },
+    { in: 'forge:nuggets/osmium', out: 'forge:nuggets/steel' },
+    { in: 'mekanism:block_osmium', out: 'mekanism:block_steel' },
+    { in: 'mekanism:dust_osmium', out: 'mekanism:dust_steel' },
+    { in: 'mekanism:ingot_osmium', out: 'mekanism:ingot_steel' },
+    { in: 'mekanism:nugget_osmium', out: 'mekanism:nugget_steel' },
+    { in: 'mekanism:nugget_osmium', out: 'mekanism:nugget_steel' },
     /* Saltpeter / Nitrate Dust dedup */
-    {in: 'bloodmagic:saltpeter', out: 'immersiveengineering:dust_saltpeter'},
+    { in: 'bloodmagic:saltpeter', out: 'immersiveengineering:dust_saltpeter' },
   ];
 
   // Fiddle through each recipe, checking to see if the recipe contains anything we want to modify.
@@ -339,7 +339,7 @@ ServerEvents.recipes(event => {
       finalRecipe = finalRecipe.replaceAll(x.in, x.out);
     });
 
-    changes.push({id: rec.getId(), str: finalRecipe});
+    changes.push({ id: rec.getId(), str: finalRecipe });
   });
 
   // Remove the old recipe by its ID - this works 100% of the time
@@ -357,8 +357,8 @@ ServerEvents.recipes(event => {
     Ingredient.of(item)
       .getStacks()
       .forEach(stack => {
-        event.remove({input: stack});
-        event.remove({output: stack});
+        event.remove({ input: stack });
+        event.remove({ output: stack });
       });
   });
 

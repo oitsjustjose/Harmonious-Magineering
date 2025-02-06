@@ -8,6 +8,8 @@ global.Stages = JsonIO.read('kubejs/globals/stages.json');
 
 global.Tools = JsonIO.read('kubejs/globals/tools.json');
 
+global.Colors = JsonIO.read('kubejs/globals/colors.json');
+
 global.ToolScrapBlacklist = [
   'delightful:adamantium_knife',
   'delightful:alf_knife',
@@ -78,3 +80,4 @@ global.ToolScrapBlacklist = [
   'outer_end:rose_crystal_leggings',
   'outer_end:sinker_dagger',
 ];
+

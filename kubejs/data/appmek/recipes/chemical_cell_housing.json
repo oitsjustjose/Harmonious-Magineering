@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "O": {
+      "tag": "forge:ingots/refined_obsidian"
+    },
+    "Q": {
+      "item": "ae2:quartz_glass"
+    },
+    "R": {
+      "tag": "forge:dusts/redstone"
+    }
+  },
+  "pattern": ["QRQ", "R R", "OOO"],
+  "result": {
+    "item": "appmek:chemical_cell_housing"
+  },
+  "show_notification": true
+}

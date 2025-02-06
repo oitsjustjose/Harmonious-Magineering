@@ -17,12 +17,6 @@ const getServerPlayer = () => {
  * @param {Internal.List<any>} tooltips
  */
 const modifyStackForStageProgress = (stack, tooltips) => {
-  // Determine if the current stack is an exception in ANY config
-  for (const tag of Object.keys(stages)) {
-    let config = stages[tag];
-    if (Ingredient.of(config.exceptions).test(stack.item.id)) return;
-  }
-
   const player = getServerPlayer();
   if (!player) return;
 
@@ -32,6 +26,9 @@ const modifyStackForStageProgress = (stack, tooltips) => {
 
     let config = stages[tag];
     if (config.mods.contains(stack.getMod())) {
+      // If the item is an exception, then we can ignore it too
+      if (Ingredient.of(config.exceptions).test(stack.item.id)) return;
+
       // We don't want to give the player any additional info on this item...
       for (let i = 1; i < tooltips.length; i++) {
         tooltips.remove(i);
