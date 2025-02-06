@@ -1,16 +1,16 @@
-filename = 'emi_loot-0.7.4+1.20.1+forge.jar'
+filename = 'emi_loot-0.7.5+1.20.1+fix1+forge.jar'
 name = 'EMI Loot'
 side = 'both'
-x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
+x-prismlauncher-loaders = [ 'forge' ]
 x-prismlauncher-mc-versions = [ '1.20.1' ]
 x-prismlauncher-release-type = 'release'
 
 [download]
-hash = '5a2d79545b057149c09455841058bda33215a8ff8b8c5b4bfebddde734d66897fb6cea6fbbd536f66160e3a866390bb20ecbeb7256b851df13cff1f76d6e3973'
+hash = 'b2a8e77caa0325cced16ccf20648e6b53abcd4db50ffb5321d15f897893fc6ff10195713eadcee71b4161a0d9c18fb8295bbc8ef1e25d506912e0433dd5ded50'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/qbbO7Jns/versions/muA4mic3/emi_loot-0.7.4%2B1.20.1%2Bforge.jar'
+url = 'https://cdn.modrinth.com/data/qbbO7Jns/versions/1UGIiguq/emi_loot-0.7.5%2B1.20.1%2Bfix1%2Bforge.jar'
 
 [update.modrinth]
 mod-id = 'qbbO7Jns'
-version = 'muA4mic3'
+version = '1UGIiguq'

@@ -1,4 +1,4 @@
-filename = 'create_connected-0.9.3-mc1.20.1-all.jar'
+filename = 'create_connected-0.9.4-mc1.20.1-all.jar'
 name = 'Create: Connected'
 side = 'both'
 x-prismlauncher-loaders = [ 'forge' ]
@@ -6,11 +6,11 @@ x-prismlauncher-mc-versions = [ '1.20.1' ]
 x-prismlauncher-release-type = 'beta'
 
 [download]
-hash = '699f78c0fc8cca874ebd795ceaf2e44135f7ee90'
+hash = 'a079058a39c4c1cf5da046edcd7a9ad59010674d'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 6041737
+file-id = 6160354
 project-id = 947914

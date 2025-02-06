@@ -1,16 +1,16 @@
-filename = 'NekosEnchantedBooks-1.20.1-1.8.0.jar'
+filename = 'NekosEnchantedBooks-1.19.3-2.0.2.jar'
 name = "Neko's Enchanted Books"
-side = 'client'
+side = 'both'
 x-prismlauncher-loaders = [ 'forge' ]
-x-prismlauncher-mc-versions = [ '1.20', '1.20.1', '1.20.2', '1.20.3', '1.20.4' ]
+x-prismlauncher-mc-versions = [ '1.19.3', '1.19.4', '1.20', '1.20.1', '1.20.2', '1.20.3', '1.20.4' ]
 x-prismlauncher-release-type = 'release'
 
 [download]
-hash = 'fcd1486b75ba08901f2e69b37356192e7ebb161113b40aa34a3b3a6cd4cf0372ca864df0ed6482367bc83ed5cda2324ef889960c4485a840b815c0d644b21307'
+hash = 'b0cf910ef67141b2913f1804bd07a5c471a6b369b41ebfd41c7590f7bd697d7cf9ef734fdbf68e0f6283c4a30622a14f879aa5a363b6021f2f776a0094d5dad9'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/VZWuyRVr/versions/LEXIMrpP/NekosEnchantedBooks-1.20.1-1.8.0.jar'
+url = 'https://cdn.modrinth.com/data/VZWuyRVr/versions/qIMV8YYK/NekosEnchantedBooks-1.19.3-2.0.2.jar'
 
 [update.modrinth]
 mod-id = 'VZWuyRVr'
-version = 'LEXIMrpP'
+version = 'qIMV8YYK'

@@ -1,0 +1,16 @@
+filename = 'minecart_turning-1.1.0.jar'
+name = 'Minecart Turning Reforged'
+side = 'client'
+x-prismlauncher-loaders = [ 'forge' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1', '1.20.2', '1.20.3', '1.20.4' ]
+x-prismlauncher-release-type = 'release'
+
+[download]
+hash = '4d43bab0709d118220265b8d9f924112715890892ee51217638889e26ce612a189f602818cb23654540714bfd3021c55595fd1688619068a099071883278af12'
+hash-format = 'sha512'
+mode = 'url'
+url = 'https://cdn.modrinth.com/data/rdxC5AAW/versions/Z3zv8kZ1/minecart_turning-1.1.0.jar'
+
+[update.modrinth]
+mod-id = 'rdxC5AAW'
+version = 'Z3zv8kZ1'

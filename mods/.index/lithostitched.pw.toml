@@ -1,16 +1,16 @@
-filename = 'lithostitched-forge-1.20.1-1.4.jar'
+filename = 'lithostitched-forge-1.20.1-1.4.3.jar'
 name = 'Lithostitched'
-side = 'server'
+side = 'both'
 x-prismlauncher-loaders = [ 'forge' ]
-x-prismlauncher-mc-versions = [ '1.20.1' ]
+x-prismlauncher-mc-versions = [ '1.20', '1.20.1' ]
 x-prismlauncher-release-type = 'release'
 
 [download]
-hash = 'a78f688dcc2239e8dd579c86fd00d4670fbdf059cd33a8c57a9713e1a020f366f5ca0768d348d2ae89abab270dd79da829d9d8dc303ac8d0be46f1ba5c74f3c2'
+hash = '8177b4c3e0321c0093f566f00950ec8bbfdc034206601a33ba72bc438a8bd3efb8129a59394573ee88b04a756bfa0f0f01851ad256bb966fabe86e8b8ce7c614'
 hash-format = 'sha512'
 mode = 'url'
-url = 'https://cdn.modrinth.com/data/XaDC71GB/versions/K3JOHMgi/lithostitched-forge-1.20.1-1.4.jar'
+url = 'https://cdn.modrinth.com/data/XaDC71GB/versions/AVzJAkCU/lithostitched-forge-1.20.1-1.4.3.jar'
 
 [update.modrinth]
 mod-id = 'XaDC71GB'
-version = 'K3JOHMgi'
+version = 'AVzJAkCU'

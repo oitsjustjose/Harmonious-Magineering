@@ -1,4 +1,4 @@
-filename = 'sophisticatedbackpacks-1.20.1-3.22.4.1177.jar'
+filename = 'sophisticatedbackpacks-1.20.1-3.23.3.1192.jar'
 name = 'Sophisticated Backpacks'
 side = 'both'
 x-prismlauncher-loaders = [ 'neoforge', 'forge' ]
@@ -6,11 +6,11 @@ x-prismlauncher-mc-versions = [ '1.20.1' ]
 x-prismlauncher-release-type = 'release'
 
 [download]
-hash = '56b69c4cd9098847b328e869a66c8cb90dfd08d0'
+hash = '6421f64cbde2dc3afed58fb89bc4ed325894cca1'
 hash-format = 'sha1'
 mode = 'metadata:curseforge'
 url = ''
 
 [update.curseforge]
-file-id = 6117367
+file-id = 6157676
 project-id = 422301
