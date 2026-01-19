@@ -1,5 +1,3 @@
-# Harmonious Magineering
+# This Repo has Moved!
 
-![https://github.com/oitsjustjose/Harmonious-Magineering/blob/main/icon.png?raw=true](https://github.com/oitsjustjose/Harmonious-Magineering/blob/main/icon.png?raw=true)
-
-A balanced Magic -> Tech modpack for all to enjoy!
+This repository has been moved to a [new location!](https://git.oitsjustjose.com/me/Harmonious-Magineering)
